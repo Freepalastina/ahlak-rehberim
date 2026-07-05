@@ -16,28 +16,25 @@
         <div class="brandRow">
           <div class="appIcon">🌿</div>
           <div>
-            <div id="kicker" class="kicker">Bilinçli Tüketim Rehberi</div>
+            <div id="kicker" class="kicker">V10 Temiz Sistem</div>
             <h1 id="appTitle">Ahlak Rehberim</h1>
             <p id="appSubtitle">Bilinçli tüket, güvenle tercih et.</p>
           </div>
         </div>
-
         <div class="actions">
-          <div class="langSwitch" aria-label="Dil seçimi">
-            <button data-lang="tr" type="button" title="Türkçe">🇹🇷</button>
-            <button data-lang="en" type="button" title="English">🇬🇧</button>
-            <button data-lang="de" type="button" title="Deutsch">🇩🇪</button>
+          <div class="langSwitch">
+            <button data-lang="tr" type="button">🇹🇷</button>
+            <button data-lang="en" type="button">🇬🇧</button>
+            <button data-lang="de" type="button">🇩🇪</button>
           </div>
-          <button id="installBtn" class="iconBtn installBtn" type="button" aria-label="Uygulamayı kur" hidden>⬇️</button>
-          <button id="themeBtn" class="iconBtn" type="button" aria-label="Tema değiştir">🌙</button>
+          <button id="themeBtn" class="iconBtn" type="button">🌙</button>
         </div>
       </div>
-
       <div class="searchBox">
         <span>🔍</span>
-        <input id="search" type="search" placeholder="Marka, firma veya kategori ara..." autocomplete="off">
-        <button id="barcodeBtn" type="button" aria-label="Barkod numarası ara">▦</button>
-        <button id="clearBtn" type="button" aria-label="Aramayı temizle">×</button>
+        <input id="search" type="search" placeholder="Marka, firma, kategori veya barkod ara..." autocomplete="off">
+        <button id="barcodeBtn" type="button" title="Barkod">▦</button>
+        <button id="clearBtn" type="button">×</button>
       </div>
     </div>
   </header>
@@ -50,32 +47,13 @@
     <section id="results" class="results"></section>
   </main>
 
-  <nav class="bottomNav" aria-label="Alt menü">
+  <nav class="bottomNav">
     <button data-view="home" class="active" type="button"><span>🏠</span><small data-i="navHome">Ana</small></button>
     <button data-view="companies" type="button"><span>🏢</span><small data-i="navCompanies">Firmalar</small></button>
     <button data-view="categories" type="button"><span>📂</span><small data-i="navCategories">Kategori</small></button>
     <button data-view="favorites" type="button"><span>❤️</span><small data-i="navFavorites">Favori</small></button>
-    <button data-view="about" type="button"><span>ℹ️</span><small data-i="navAbout">Bilgi</small></button>
+    <button data-view="admin" type="button"><span>⚙️</span><small data-i="navAdmin">Yönetim</small></button>
   </nav>
-
-
-  <dialog id="barcodeDialog" class="barcodeDialog">
-    <div class="scannerHead">
-      <div>
-        <h2 id="scannerTitle">Barkod Tara</h2>
-        <p id="scannerHelp">Kamerayı barkoda doğru tut.</p>
-      </div>
-      <button id="closeScanner" class="scannerClose" type="button">×</button>
-    </div>
-    <div class="scannerBody">
-      <video id="barcodeVideo" playsinline muted></video>
-      <div class="scanFrame"></div>
-      <p id="scannerStatus" class="scannerStatus">Kamera hazırlanıyor...</p>
-    </div>
-    <div class="scannerActions">
-      <button id="manualBarcode" type="button">Barkod numarası yaz</button>
-    </div>
-  </dialog>
 
   <dialog id="detailDialog" class="detailDialog">
     <div id="detailContent"></div>

@@ -1,304 +1,79 @@
+const VERSION="20260705-v10-clean";
+const SUPABASE_URL="https://imicltjdfzqlxzvodheq.supabase.co";
+const SUPABASE_KEY="sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
+const supabaseClient=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
 
-const VERSION = "20260705-v9-ods-import";
-const SUPABASE_URL = "https://imicltjdfzqlxzvodheq.supabase.co";
-const SUPABASE_KEY = "sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
-const supabaseClient = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
+let DATA=[],view="home",filter="all",currentGroup=null,adminSession=null,importedRows=[];
+let favorites=loadFavorites(),lang=localStorage.getItem("boykot_lang")||"tr";
+const $=id=>document.getElementById(id);
+const search=$("search"),clearBtn=$("clearBtn"),barcodeBtn=$("barcodeBtn"),stats=$("stats"),quickActions=$("quickActions"),quickFilters=$("quickFilters"),sectionTitle=$("sectionTitle"),results=$("results"),themeBtn=$("themeBtn");
 
-let DATA = [];
-let view = "home";
-let filter = "all";
-let currentGroup = null;
-let favorites = loadFavorites();
-let lang = localStorage.getItem("boykot_lang") || "tr";
-let adminSession = null;
-let importedRows = [];
-
-const $ = id => document.getElementById(id);
-const search = $("search");
-const clearBtn = $("clearBtn");
-const barcodeBtn = $("barcodeBtn");
-const stats = $("stats");
-const quickActions = $("quickActions");
-const quickFilters = $("quickFilters");
-const sectionTitle = $("sectionTitle");
-const results = $("results");
-const themeBtn = $("themeBtn");
-const installBtn = $("installBtn");
-
-const I = {
-  tr:{htmlLang:"tr",kicker:" V8",title:"Ahlak Rehberim",subtitle:"Bilinçli tüket, güvenle tercih et.",search:"Marka, firma, kategori veya barkod ara...",navHome:"Ana",navCompanies:"Firmalar",navCategories:"Kategori",navFavorites:"Favori",navAbout:"Bilgi",boycott:"Boykot",notBoycotted:"Boykotta Değil",review:"İnceleniyor",withAlt:"Alternatifli",favorites:"Favoriler",all:"Tümü",results:"sonuç",brands:"marka",companies:"Ana Firmalar",categories:"Kategoriler",category:"Kategori",parent:"Ana Firma",barcode:"Barkod",alternative:"Alternatif",details:"Ayrıntıları Gör →",close:"Kapat",source:"Kaynak",note:"Not",openSource:"Kaynağı aç",noResult:"Sonuç bulunamadı.",safeInfo:"Bu marka boykot listesinde olmayanlar bölümüne eklendi.",quickTitle:"Hızlı Erişim",admin:"Yönetim",login:"Giriş",logout:"Çıkış",email:"E-posta",password:"Şifre",brandName:"Marka adı",save:"Kaydet",resetForm:"Formu temizle",chooseBrand:"Marka seç",deleteBrand:"Marka Sil",confirmDelete:"Bu markayı silmek istiyor musun?",dataSaved:"Kayıt güncellendi",dataAdded:"Marka eklendi",dataDeleted:"Kayıt silindi",requiredBrand:"Marka adı gerekli",importToSupabase:"data.json → Supabase aktar",exportData:"data.json indir",supabaseReady:"Supabase bağlı",supabaseFallback:"Supabase boş/ulaşılamıyor, data.json yedeği kullanılıyor.",localOnly:"Giriş yaptıysan değişiklikler Supabase’e kaydedilir.",aboutTitle:"📖 Ahlak Rehberim",aboutIntro:"Supabase destekli marka, barkod ve alternatif rehberi.",listStatus:"📊 Liste Durumu",listStatusText:c=>`${c.total} toplam kayıt var. ${c.boykot} boykot, ${c.safe} boykotta değil, ${c.altli} alternatif bilgisi içeriyor.`,howSearch:"🔍 Nasıl Aranır?",howSearchText:"Marka, ana firma, kategori, alternatif veya barkod yazabilirsin.",disclaimer:"⚠️ Bilgilendirme",disclaimerText:"Bu uygulama yalnızca bilgilendirme amacıyla hazırlanmıştır.",update:"🔄 Güncelleme",updateText:"V8 ile markalar, firmalar, kaynaklar ve barkodlar ayrı tablolarda yönetilir.",scanBarcode:"Barkod Tara",barcodePrompt:"Barkod numarasını yaz:",barcodeMissing:"Barkod alanı yoksa eşleşme bulunmayabilir.",downloaded:"İndirildi", dataCenter:"Veri Merkezi", chooseFile:"ODS / Excel / CSV seç", preview:"Önizleme", importFileToSupabase:"Dosyayı Supabase’e aktar", fileRows:"kayıt okundu", fileReady:"Dosya hazır", fileError:"Dosya okunamadı", importDone:"Aktarma tamamlandı", noFileData:"Önce dosya seç"},
-  en:{htmlLang:"en",kicker:"SupabaseV8",title:"Ahlak Rehberim",subtitle:"Choose consciously, shop with confidence.",search:"Search brand, company, category or barcode...",navHome:"Home",navCompanies:"Companies",navCategories:"Category",navFavorites:"Favorite",navAbout:"About",boycott:"Boycott",notBoycotted:"Not Boycotted",review:"Under Review",withAlt:"With Alternatives",favorites:"Favorites",all:"All",results:"results",brands:"brands",companies:"Parent Companies",categories:"Categories",category:"Category",parent:"Parent Company",barcode:"Barcode",alternative:"Alternative",details:"View Details →",close:"Close",source:"Source",note:"Note",openSource:"Open source",noResult:"No results found.",safeInfo:"This brand was added to Not Boycotted.",quickTitle:"Quick Access",admin:"Admin",login:"Login",logout:"Logout",email:"Email",password:"Password",brandName:"Brand name",save:"Save",resetForm:"Clear form",chooseBrand:"Select brand",deleteBrand:"Delete brand",confirmDelete:"Delete this brand?",dataSaved:"Record updated",dataAdded:"Brand added",dataDeleted:"Record deleted",requiredBrand:"Brand name required",importToSupabase:"Import data.json to Supabase",exportData:"Download data.json",supabaseReady:"Supabase connected",supabaseFallback:"Supabase empty/unavailable; using data.json fallback.",localOnly:"If logged in, changes are saved to Supabase.",aboutTitle:"📖 Ahlak Rehberim",aboutIntro:"Supabase-powered brand, barcode and alternative guide.",listStatus:"📊 List Status",listStatusText:c=>`${c.total} records. ${c.boykot} boycott, ${c.safe} not boycotted, ${c.altli} with alternatives.`,howSearch:"🔍 How to Search",howSearchText:"Search by brand, company, category, alternative or barcode.",disclaimer:"⚠️ Disclaimer",disclaimerText:"Informational purposes only.",update:"🔄 Updates",updateText:"In V8, brands, companies, sources and barcodes are managed in separate tables.",scanBarcode:"Scan Barcode",barcodePrompt:"Enter barcode number:",barcodeMissing:"If no barcode data exists, no match may be found.",downloaded:"Downloaded", dataCenter:"Data Center", chooseFile:"Choose ODS / Excel / CSV", preview:"Preview", importFileToSupabase:"Import file to Supabase", fileRows:"rows found", fileReady:"File ready", fileError:"Could not read file", importDone:"Import complete", noFileData:"Choose a file first"},
-  de:{htmlLang:"de",kicker:"base V8",title:"Ahlak Rehberim",subtitle:"Bewusst konsumieren, sicher wählen.",search:"Marke, Firma, Kategorie oder Barcode suchen...",navHome:"Start",navCompanies:"Firmen",navCategories:"Kategorie",navFavorites:"Favorit",navAbout:"Info",boycott:"Boykott",notBoycotted:"Nicht boykottiert",review:"In Prüfung",withAlt:"Mit Alternativen",favorites:"Favoriten",all:"Alle",results:"Ergebnisse",brands:"Marken",companies:"Mutterfirmen",categories:"Kategorien",category:"Kategorie",parent:"Mutterfirma",barcode:"Barcode",alternative:"Alternative",details:"Details ansehen →",close:"Schließen",source:"Quelle",note:"Notiz",openSource:"Quelle öffnen",noResult:"Keine Ergebnisse gefunden.",safeInfo:"Diese Marke wurde dem Bereich Nicht boykottiert hinzugefügt.",quickTitle:"Schnellzugriff",admin:"Verwaltung",login:"Anmelden",logout:"Abmelden",email:"E-Mail",password:"Passwort",brandName:"Markenname",save:"Speichern",resetForm:"Leeren",chooseBrand:"Marke auswählen",deleteBrand:"Marke löschen",confirmDelete:"Diese Marke löschen?",dataSaved:"Eintrag aktualisiert",dataAdded:"Marke hinzugefügt",dataDeleted:"Eintrag gelöscht",requiredBrand:"Markenname erforderlich",importToSupabase:"data.json nach Supabase importieren",exportData:"data.json herunterladen",supabaseReady:"Supabase verbunden",supabaseFallback:"Supabase leer/nicht verfügbar; data.json wird genutzt.",localOnly:"Wenn angemeldet, werden Änderungen in Supabase gespeichert.",aboutTitle:"📖 Ahlak Rehberim",aboutIntro:"Supabase-basierter Marken-, Barcode- und Alternativen-Ratgeber.",listStatus:"📊 Listenstatus",listStatusText:c=>`${c.total} Einträge. ${c.boykot} Boykott, ${c.safe} nicht boykottiert, ${c.altli} mit Alternativen.`,howSearch:"🔍 So suchst du",howSearchText:"Suche nach Marke, Firma, Kategorie, Alternative oder Barcode.",disclaimer:"⚠️ Hinweis",disclaimerText:"Nur zur Information.",update:"🔄 Aktualisierung",updateText:"In V8 werden Marken, Firmen, Quellen und Barcodes getrennt verwaltet.",scanBarcode:"Barcode scannen",barcodePrompt:"Barcode-Nummer eingeben:",barcodeMissing:"Wenn keine Barcode-Daten vorhanden sind, wird eventuell nichts gefunden.",downloaded:"Heruntergeladen", dataCenter:"Datenzentrum", chooseFile:"ODS / Excel / CSV wählen", preview:"Vorschau", importFileToSupabase:"Datei nach Supabase importieren", fileRows:"Einträge gefunden", fileReady:"Datei bereit", fileError:"Datei konnte nicht gelesen werden", importDone:"Import abgeschlossen", noFileData:"Bitte zuerst Datei wählen"}
+const I={
+tr:{kicker:"V10 Temiz Sistem",title:"Ahlak Rehberim",subtitle:"Bilinçli tüket, güvenle tercih et.",search:"Marka, firma, kategori veya barkod ara...",navHome:"Ana",navCompanies:"Firmalar",navCategories:"Kategori",navFavorites:"Favori",navAdmin:"Yönetim",boycott:"Boykot",notBoycotted:"Boykotta Değil",review:"İnceleniyor",withAlt:"Alternatifli",favorites:"Favoriler",all:"Tümü",results:"sonuç",brands:"marka",companies:"Ana Firmalar",categories:"Kategoriler",category:"Kategori",parent:"Ana Firma",barcode:"Barkod",alternative:"Alternatif",details:"Ayrıntıları Gör →",close:"Kapat",source:"Kaynak",note:"Not",openSource:"Kaynağı aç",noResult:"Sonuç bulunamadı.",safeInfo:"Bu marka boykot listesinde olmayanlar bölümüne eklendi.",quickTitle:"Hızlı Erişim",admin:"Yönetim",login:"Giriş",logout:"Çıkış",email:"E-posta",password:"Şifre",brandName:"Marka adı",save:"Kaydet",resetForm:"Temizle",chooseBrand:"Marka seç",deleteBrand:"Marka Sil",confirmDelete:"Bu markayı silmek istiyor musun?",dataSaved:"Kayıt güncellendi",dataAdded:"Marka eklendi",dataDeleted:"Kayıt silindi",requiredBrand:"Marka adı gerekli",importToSupabase:"data.json → Supabase aktar",exportData:"data.json indir",localOnly:"Giriş yaptıysan değişiklikler Supabase’e kaydedilir.",dataCenter:"Veri Merkezi",chooseFile:"ODS / Excel / CSV seç",importFileToSupabase:"Dosyayı Supabase’e aktar",fileRows:"kayıt okundu",fileReady:"Dosya hazır",fileError:"Dosya okunamadı",importDone:"Aktarma tamamlandı",noFileData:"Önce dosya seç",downloaded:"İndirildi",supabaseReady:"Supabase bağlı",supabaseFallback:"Supabase boş/ulaşılamıyor, data.json yedeği kullanılıyor.",barcodePrompt:"Barkod numarasını yaz:",barcodeMissing:"Barkod alanı yoksa eşleşme bulunmayabilir."},
+en:{kicker:"V10 Clean System",title:"Ahlak Rehberim",subtitle:"Choose consciously.",search:"Search brand, company, category or barcode...",navHome:"Home",navCompanies:"Companies",navCategories:"Category",navFavorites:"Favorite",navAdmin:"Admin",boycott:"Boycott",notBoycotted:"Not Boycotted",review:"Under Review",withAlt:"With Alternatives",favorites:"Favorites",all:"All",results:"results",brands:"brands",companies:"Companies",categories:"Categories",category:"Category",parent:"Parent Company",barcode:"Barcode",alternative:"Alternative",details:"View Details →",close:"Close",source:"Source",note:"Note",openSource:"Open source",noResult:"No results found.",safeInfo:"This brand is in Not Boycotted.",quickTitle:"Quick Access",admin:"Admin",login:"Login",logout:"Logout",email:"Email",password:"Password",brandName:"Brand name",save:"Save",resetForm:"Clear",chooseBrand:"Select brand",deleteBrand:"Delete brand",confirmDelete:"Delete this brand?",dataSaved:"Record updated",dataAdded:"Brand added",dataDeleted:"Record deleted",requiredBrand:"Brand required",importToSupabase:"Import data.json to Supabase",exportData:"Download data.json",localOnly:"If logged in, changes are saved to Supabase.",dataCenter:"Data Center",chooseFile:"Choose ODS / Excel / CSV",importFileToSupabase:"Import file to Supabase",fileRows:"rows found",fileReady:"File ready",fileError:"Could not read file",importDone:"Import complete",noFileData:"Choose a file first",downloaded:"Downloaded",supabaseReady:"Supabase connected",supabaseFallback:"Supabase empty/unavailable; using data.json fallback.",barcodePrompt:"Enter barcode:",barcodeMissing:"No match if barcode data is missing."},
+de:{kicker:"V10 Sauberes System",title:"Ahlak Rehberim",subtitle:"Bewusst konsumieren.",search:"Marke, Firma, Kategorie oder Barcode suchen...",navHome:"Start",navCompanies:"Firmen",navCategories:"Kategorie",navFavorites:"Favorit",navAdmin:"Admin",boycott:"Boykott",notBoycotted:"Nicht boykottiert",review:"In Prüfung",withAlt:"Mit Alternativen",favorites:"Favoriten",all:"Alle",results:"Ergebnisse",brands:"Marken",companies:"Firmen",categories:"Kategorien",category:"Kategorie",parent:"Mutterfirma",barcode:"Barcode",alternative:"Alternative",details:"Details ansehen →",close:"Schließen",source:"Quelle",note:"Notiz",openSource:"Quelle öffnen",noResult:"Keine Ergebnisse gefunden.",safeInfo:"Diese Marke ist nicht boykottiert.",quickTitle:"Schnellzugriff",admin:"Verwaltung",login:"Anmelden",logout:"Abmelden",email:"E-Mail",password:"Passwort",brandName:"Markenname",save:"Speichern",resetForm:"Leeren",chooseBrand:"Marke auswählen",deleteBrand:"Marke löschen",confirmDelete:"Diese Marke löschen?",dataSaved:"Eintrag aktualisiert",dataAdded:"Marke hinzugefügt",dataDeleted:"Eintrag gelöscht",requiredBrand:"Marke erforderlich",importToSupabase:"data.json importieren",exportData:"data.json herunterladen",localOnly:"Wenn angemeldet, werden Änderungen in Supabase gespeichert.",dataCenter:"Datenzentrum",chooseFile:"ODS / Excel / CSV wählen",importFileToSupabase:"Datei importieren",fileRows:"Einträge gefunden",fileReady:"Datei bereit",fileError:"Datei konnte nicht gelesen werden",importDone:"Import abgeschlossen",noFileData:"Bitte zuerst Datei wählen",downloaded:"Heruntergeladen",supabaseReady:"Supabase verbunden",supabaseFallback:"Supabase leer/nicht verfügbar; data.json wird genutzt.",barcodePrompt:"Barcode eingeben:",barcodeMissing:"Keine Übereinstimmung ohne Barcode-Daten."}
 };
-
-function t(k){return (I[lang]&&I[lang][k])||I.tr[k]||k}
+function t(k){return(I[lang]&&I[lang][k])||I.tr[k]||k}
 function esc(s){return String(s??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}
 function norm(s){return String(s||"").toLocaleLowerCase("tr-TR").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9ğüşöçıİĞÜŞÖÇäöüß]+/gi," ").trim()}
-function get(o,names){for(const n of names){if(o&&o[n]!==undefined&&o[n]!==null&&String(o[n]).trim()!=="")return String(o[n]).trim()}return""}
-function loadFavorites(){try{return JSON.parse(localStorage.getItem("ahlak_favorites_v7")||"[]")}catch{return[]}}
-function saveFavorites(){localStorage.setItem("ahlak_favorites_v7",JSON.stringify(favorites))}
+function get(o,names){for(const n of names){if(o&&o[n]!=null&&String(o[n]).trim()!=="")return String(o[n]).trim()}return""}
+function loadFavorites(){try{return JSON.parse(localStorage.getItem("ahlak_fav_v10")||"[]")}catch{return[]}}
+function saveFavorites(){localStorage.setItem("ahlak_fav_v10",JSON.stringify(favorites))}
 function isFav(m){return favorites.includes(norm(m))}
 function toggleFav(m){const k=norm(m);favorites=isFav(m)?favorites.filter(x=>x!==k):[...favorites,k];saveFavorites();render()}
-
 function rawStatus(r){const d=norm(get(r,["durum","status"]));if(d.includes("safe")||d.includes("boykotta degil")||d.includes("not boycotted"))return"safe";if(d.includes("alternatif")||d.includes("alternative"))return"alternatif";if(d.includes("dikkat")||d.includes("caution"))return"dikkat";if(d.includes("incelen")||d.includes("review"))return"inceleme";return d||"boykot"}
-function statusLabel(s){return {boykot:`🔴 ${t("boycott")}`,safe:`✅ ${t("notBoycotted")}`,alternatif:`🟢 ${t("alternative")}`,dikkat:"🟠 Dikkat",inceleme:`⚪ ${t("review")}`}[s]||s}
-function hasAlternative(x){const a=norm(x.alternatif);return !!a&&!a.includes("alternatif manuel eklenmeli")}
-function normalizeItem(raw,i){
-  const marka=get(raw,["marka","Marka","brand"])||`Marka ${i+1}`;
-  const anaFirma=get(raw,["anaFirma","ana_firma","anafirma","Ana Firma"])||marka;
-  const kategori=get(raw,["kategori","Kategori","category"]);
-  const alternatif=get(raw,["alternatif","Alternatif","alternative"]);
-  const kaynak=get(raw,["kaynak","Kaynak","source"]);
-  const not=get(raw,["notlar","not","Not","note"]);
-  const barkodRaw=raw.barkod??raw.barcode??raw.ean??raw.gtin??[];
-  const barkod=Array.isArray(barkodRaw)?barkodRaw:(barkodRaw?String(barkodRaw).split(/[;, ]+/).filter(Boolean):[]);
-  const imageUrl=get(raw,["image_url","imageUrl","image","gorsel","resim","logo"]);
-  const status=rawStatus(raw);
-  const hay=norm([marka,anaFirma,kategori,alternatif,kaynak,not,barkod.join(" "),imageUrl,statusLabel(status)].join(" "));
-  return {id:raw.id||null,marka,anaFirma,kategori,alternatif,kaynak,not,barkod,imageUrl,status,hay};
-}
-function toDbRow(x){return {marka:x.marka,ana_firma:x.anaFirma,kategori:x.kategori,alternatif:x.alternatif,kaynak:x.kaynak,notlar:x.not,durum:x.status,barkod:Array.isArray(x.barkod)?x.barkod:[],image_url:x.imageUrl||""}}
-function fromDbRow(r){return {id:r.id,marka:r.marka,anaFirma:r.ana_firma||r.anaFirma,kategori:r.kategori,alternatif:r.alternatif,kaynak:r.kaynak,not:r.notlar||r.not,durum:r.durum,barkod:r.barkod||[],image_url:r.image_url||""}}
+function statusLabel(s){return{boykot:`🔴 ${t("boycott")}`,safe:`✅ ${t("notBoycotted")}`,alternatif:`🟢 ${t("alternative")}`,dikkat:"🟠 Dikkat",inceleme:`⚪ ${t("review")}`}[s]||s}
+function hasAlternative(x){if(x.status==="alternatif")return true;const a=norm(x.alternatif);return !!a&&a!=="-"&&a!=="yok"&&!a.includes("alternatif manuel eklenmeli")}
+function normalizeItem(raw,i){const marka=get(raw,["marka","name","Marka","brand"])||`Marka ${i+1}`;const anaFirma=get(raw,["anaFirma","ana_firma","anaFirma","ana_firma","anaFirma","ana_firma","ana_firma","anaFirma","ana_firma","anaFirma","Ana Firma","company","ana_firma"])||get(raw,["ana_firma"])||marka;const kategori=get(raw,["kategori","category","Kategori"]);const alternatif=get(raw,["alternatif","alternative","Alternatif"]);const kaynak=get(raw,["kaynak","source","url","link","Kaynak"]);const not=get(raw,["not","note","notlar"]);const barkodRaw=raw.barkod??raw.barcode??raw.ean??raw.gtin??[];const barkod=Array.isArray(barkodRaw)?barkodRaw:(barkodRaw?String(barkodRaw).split(/[;, ]+/).filter(Boolean):[]);const imageUrl=get(raw,["image_url","imageUrl","image","logo","resim","gorsel","görsel"]);const status=rawStatus(raw);const hay=norm([marka,anaFirma,kategori,alternatif,kaynak,not,barkod.join(" "),imageUrl,statusLabel(status)].join(" "));return{id:raw.id||null,marka,anaFirma,kategori,alternatif,kaynak,not,barkod,imageUrl,status,hay}}
+function toLegacy(x){return{marka:x.marka,anaFirma:x.anaFirma,kategori:x.kategori,alternatif:x.alternatif,kaynak:x.kaynak,not:x.not,durum:x.status,barkod:Array.isArray(x.barkod)?x.barkod:[],image_url:x.imageUrl||""}}
 
-async function loadSupabaseSession(){if(!supabaseClient)return;const {data}=await supabaseClient.auth.getSession();adminSession=data.session||null}
-async function loadSupabaseData(){if(!supabaseClient)throw new Error("No Supabase");let all=[];let from=0;const step=1000;while(true){const {data,error}=await supabaseClient.from("brand_cards").select("*").order("marka").range(from,from+step-1);if(error)throw error;all=all.concat(data||[]);if(!data||data.length<step)break;from+=step}return all.map(fromDbRow)}
-async function loadFallbackData(){const res=await fetch(`data.json?v=${VERSION}`,{cache:"reload"});const json=await res.json();return Array.isArray(json)?json:(json.data||[])}
-async function init(){applyTheme();applyLang();setupServiceWorker();await loadSupabaseSession();try{let list=[];try{list=await loadSupabaseData()}catch(e){list=[]}if(!list.length){list=await loadFallbackData();toast(t("supabaseFallback"))}else toast(t("supabaseReady"));DATA=list.map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"));render()}catch(err){results.innerHTML=`<div class="empty">${esc(err.message)}</div>`}}
+async function loadSession(){if(!supabaseClient)return;const{data}=await supabaseClient.auth.getSession();adminSession=data.session||null}
+async function loadSupabase(){if(!supabaseClient)throw new Error("No Supabase");let all=[],from=0,step=1000;while(true){const{data,error}=await supabaseClient.from("brand_cards").select("*").order("marka").range(from,from+step-1);if(error)throw error;all=all.concat(data||[]);if(!data||data.length<step)break;from+=step}return all}
+async function loadFallback(){const r=await fetch(`data.json?v=${VERSION}`,{cache:"reload"});const j=await r.json();return Array.isArray(j)?j:(j.data||[])}
+async function init(){applyTheme();applyLang();setupServiceWorker();await loadSession();try{let list=[];try{list=await loadSupabase()}catch(e){list=[]}if(!list.length){list=await loadFallback();toast(t("supabaseFallback"))}else toast(t("supabaseReady"));DATA=list.map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"));render()}catch(e){results.innerHTML=`<div class="empty">${esc(e.message)}</div>`}}
 
-function counts(){return {total:DATA.length,boykot:DATA.filter(x=>x.status==="boykot").length,safe:DATA.filter(x=>x.status==="safe").length,inceleme:DATA.filter(x=>x.status==="inceleme").length,altli:DATA.filter(hasAlternative).length,fav:favorites.length,firmalar:new Set(DATA.map(x=>x.anaFirma||"-")).size,kategoriler:new Set(DATA.map(x=>x.kategori||"-").filter(Boolean)).size}}
+function counts(){return{total:DATA.length,boykot:DATA.filter(x=>x.status==="boykot").length,safe:DATA.filter(x=>x.status==="safe").length,inceleme:DATA.filter(x=>x.status==="inceleme").length,altli:DATA.filter(hasAlternative).length,fav:favorites.length,firmalar:new Set(DATA.map(x=>x.anaFirma||"-")).size,kategoriler:new Set(DATA.map(x=>x.kategori||"-").filter(Boolean)).size}}
 function renderStats(){const c=counts();stats.innerHTML=`<button class="stat red" data-stat="boykot"><small>🔴 ${t("boycott")}</small><b>${c.boykot}</b></button><button class="stat safe" data-stat="safe"><small>✅ ${t("notBoycotted")}</small><b>${c.safe}</b></button><button class="stat green" data-stat="altli"><small>⭐ ${t("withAlt")}</small><b>${c.altli}</b></button><button class="stat gray" data-stat="inceleme"><small>⚪ ${t("review")}</small><b>${c.inceleme}</b></button>`}
-function renderQuickActions(){const c=counts();quickActions.innerHTML=`<h2>${t("quickTitle")}</h2><div class="quickGrid"><button data-go="companies"><span>🏢</span><b>${t("companies")}</b><small>${c.firmalar}</small></button><button data-go="categories"><span>📂</span><b>${t("categories")}</b><small>${c.kategoriler}</small></button><button data-go="alternatives"><span>⭐</span><b>${t("withAlt")}</b><small>${c.altli}</small></button><button data-go="favorites"><span>❤️</span><b>${t("favorites")}</b><small>${c.fav}</small></button><button data-go="admin"><span>⚙️</span><b>${t("admin")}</b><small>DB</small></button></div>`}
+function renderQuickActions(){const c=counts();quickActions.innerHTML=`<h2>${t("quickTitle")}</h2><div class="quickGrid"><button data-go="companies"><span>🏢</span><b>${t("companies")}</b><small>${c.firmalar}</small></button><button data-go="categories"><span>📂</span><b>${t("categories")}</b><small>${c.kategoriler}</small></button><button data-go="alternatives"><span>⭐</span><b>${t("withAlt")}</b><small>${c.altli}</small></button><button data-go="favorites"><span>❤️</span><b>${t("favorites")}</b><small>${c.fav}</small></button><button data-go="admin"><span>⚙️</span><b>${t("admin")}</b><small>ODS</small></button></div>`}
 function renderFilters(){const arr=[["all",t("all")],["boykot",`🔴 ${t("boycott")}`],["safe",`✅ ${t("notBoycotted")}`],["altli",`⭐ ${t("withAlt")}`],["inceleme",`⚪ ${t("review")}`],["fav",`❤️ ${t("favorites")}`]];quickFilters.innerHTML=arr.map(([k,l])=>`<button class="chip ${filter===k?'active':''}" data-filter="${k}">${l}</button>`).join("")}
-function filteredList(base=DATA){const q=norm(search.value);return base.filter(x=>{const okQ=!q||x.hay.includes(q);const okF=filter==="all"||(filter==="boykot"&&x.status==="boykot")||(filter==="safe"&&x.status==="safe")||(filter==="altli"&&hasAlternative(x))||(filter==="inceleme"&&x.status==="inceleme")||(filter==="fav"&&isFav(x.marka));return okQ&&okF}).sort((a,b)=>Number(isFav(b.marka))-Number(isFav(a.marka))||a.marka.localeCompare(b.marka,"tr"))}
-function altHtml(x){if(x.status==="safe"&&!x.alternatif)return`<div class="altBox"><span>${t("notBoycotted")}</span><b>${t("safeInfo")}</b></div>`;if(!hasAlternative(x))return`<div class="altBox"><span>${t("alternative")}</span><b>-</b></div>`;const tags=x.alternatif.split(/[;,•]/).map(v=>v.trim()).filter(Boolean).slice(0,8);return`<div class="altBox"><span>${t("alternative")}</span><div class="tags">${tags.map(v=>`<em>${esc(v)}</em>`).join("")}</div></div>`}
-
-function imageHtml(x){
-  if(x.imageUrl){
-    return `<div class="brandImage"><img src="${esc(x.imageUrl)}" alt="${esc(x.marka)}" loading="lazy" onerror="this.parentElement.classList.add('noImage'); this.remove();"></div>`;
-  }
-  return `<div class="brandImage noImage"><span>🌿</span></div>`;
-}
-
-function card(x){return`<article class="card ${x.status}" data-brand="${encodeURIComponent(x.marka)}">${imageHtml(x)}<div class="cardTop"><div><div class="badgeLine"><span class="badge ${x.status}">${statusLabel(x.status)}</span>${hasAlternative(x)?`<span class="badge alternatif">⭐ ${t("withAlt")}</span>`:""}</div><h3>${esc(x.marka)}</h3><div class="company">🏢 ${esc(x.anaFirma||"-")}</div></div><button class="fav" data-fav="${encodeURIComponent(x.marka)}">${isFav(x.marka)?"❤️":"♡"}</button></div><div class="meta metaSingle"><div class="box"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div></div>${altHtml(x)}<button class="more">${t("details")}</button></article>`}
+function filteredList(base=DATA){const q=norm(search.value);return base.filter(x=>(!q||x.hay.includes(q))&&(filter==="all"||(filter==="boykot"&&x.status==="boykot")||(filter==="safe"&&x.status==="safe")||(filter==="altli"&&hasAlternative(x))||(filter==="inceleme"&&x.status==="inceleme")||(filter==="fav"&&isFav(x.marka)))).sort((a,b)=>Number(isFav(b.marka))-Number(isFav(a.marka))||a.marka.localeCompare(b.marka,"tr"))}
+function imageHtml(x){return x.imageUrl?`<div class="brandImage"><img src="${esc(x.imageUrl)}" alt="${esc(x.marka)}" loading="lazy" onerror="this.parentElement.classList.add('noImage');this.remove();"></div>`:`<div class="brandImage noImage"><span>🌿</span></div>`}
+function altHtml(x){if(x.status==="safe"&&!x.alternatif)return`<div class="altBox"><span>${t("notBoycotted")}</span><b>${t("safeInfo")}</b></div>`;if(!hasAlternative(x))return`<div class="altBox"><span>${t("alternative")}</span><b>-</b></div>`;const tags=String(x.alternatif).split(/[;,•]/).map(v=>v.trim()).filter(Boolean).slice(0,8);return`<div class="altBox"><span>${t("alternative")}</span><div class="tags">${tags.map(v=>`<em>${esc(v)}</em>`).join("")}</div></div>`}
+function card(x){return`<article class="card ${x.status}" data-brand="${encodeURIComponent(x.marka)}">${imageHtml(x)}<div class="cardTop"><div><div class="badgeLine"><span class="badge ${x.status}">${statusLabel(x.status)}</span>${hasAlternative(x)?`<span class="badge alternatif">⭐ ${t("withAlt")}</span>`:""}</div><h3>${esc(x.marka)}</h3><div class="company">🏢 ${esc(x.anaFirma||"-")}</div></div><button class="fav" data-fav="${encodeURIComponent(x.marka)}">${isFav(x.marka)?"❤️":"♡"}</button></div><div class="meta"><div class="box"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div></div>${altHtml(x)}<button class="more">${t("details")}</button></article>`}
 function titleFor(){if(currentGroup)return currentGroup.title;if(view==="favorites"||filter==="fav")return`❤️ ${t("favorites")}`;if(view==="alternatives"||filter==="altli")return`⭐ ${t("withAlt")}`;return t("all")}
 function renderHome(base=DATA){const list=filteredList(base);renderStats();renderQuickActions();renderFilters();sectionTitle.innerHTML=`<h2>${esc(titleFor())}</h2><span>${list.length} ${t("results")}</span>`;results.innerHTML=list.length?list.slice(0,800).map(card).join(""):`<div class="empty">${t("noResult")}</div>`}
-function groupBy(key,base=DATA){const m=new Map();for(const x of base){const name=x[key]||"-";if(!m.has(name))m.set(name,[]);m.get(name).push(x)}return[...m.entries()].sort((a,b)=>b[1].length-a[1].length||a[0].localeCompare(b[0],"tr"))}
-function renderCompanies(){currentGroup=null;renderStats();renderQuickActions();quickFilters.innerHTML="";search.value="";const g=groupBy("anaFirma");sectionTitle.innerHTML=`<h2>🏢 ${t("companies")}</h2><span>${g.length}</span>`;results.innerHTML=g.map(([name,items])=>`<button class="group" data-company="${encodeURIComponent(name)}"><div><b>${esc(name)}</b><small>${items.slice(0,4).map(x=>esc(x.marka)).join(", ")}${items.length>4?"...":""}</small></div><div class="count">${items.length}</div></button>`).join("")}
-function categoryIcon(name){const n=norm(name);if(n.includes("icecek")||n.includes("su"))return"🥤";if(n.includes("gida")||n.includes("cikolata"))return"🍫";if(n.includes("temizlik"))return"🧼";if(n.includes("kozmetik"))return"💄";if(n.includes("saglik"))return"💊";if(n.includes("giyim"))return"👕";return"📂"}
-function renderCategories(){currentGroup=null;renderStats();renderQuickActions();quickFilters.innerHTML="";search.value="";const g=groupBy("kategori").filter(([name])=>name&&name!=="-");sectionTitle.innerHTML=`<h2>📂 ${t("categories")}</h2><span>${g.length}</span>`;results.innerHTML=g.map(([name,items])=>`<button class="group" data-category="${encodeURIComponent(name)}"><div><b>${categoryIcon(name)} ${esc(name)}</b><small>${items.length} ${t("brands")}</small></div><div class="count">${items.length}</div></button>`).join("")}
-function renderAbout(){const c=counts();stats.innerHTML="";quickActions.innerHTML="";quickFilters.innerHTML="";sectionTitle.innerHTML="";results.innerHTML=`<section class="aboutHero"><h2>${t("aboutTitle")}</h2><p>${t("aboutIntro")}</p></section><div class="aboutGrid"><div class="aboutCard"><h3>${t("listStatus")}</h3><p>${I[lang].listStatusText(c)}</p></div><div class="aboutCard"><h3>${t("howSearch")}</h3><p>${t("howSearchText")}</p></div><div class="aboutCard"><h3>${t("disclaimer")}</h3><p>${t("disclaimerText")}</p></div><div class="aboutCard"><h3>${t("update")}</h3><p>${t("updateText")}</p></div></div>`}
+function groupBy(key){const m=new Map();DATA.forEach(x=>{const n=x[key]||"-";if(!m.has(n))m.set(n,[]);m.get(n).push(x)});return[...m.entries()].sort((a,b)=>b[1].length-a[1].length||a[0].localeCompare(b[0],"tr"))}
+function renderCompanies(){renderStats();renderQuickActions();quickFilters.innerHTML="";search.value="";const g=groupBy("anaFirma");sectionTitle.innerHTML=`<h2>🏢 ${t("companies")}</h2><span>${g.length}</span>`;results.innerHTML=g.map(([n,it])=>`<button class="group" data-company="${encodeURIComponent(n)}"><div><b>${esc(n)}</b><small>${it.slice(0,4).map(x=>esc(x.marka)).join(", ")}${it.length>4?"...":""}</small></div><div class="count">${it.length}</div></button>`).join("")}
+function catIcon(n){const x=norm(n);if(x.includes("icecek")||x.includes("su"))return"🥤";if(x.includes("gida")||x.includes("cikolata"))return"🍫";if(x.includes("temizlik"))return"🧼";if(x.includes("kozmetik"))return"💄";return"📂"}
+function renderCategories(){renderStats();renderQuickActions();quickFilters.innerHTML="";search.value="";const g=groupBy("kategori").filter(([n])=>n&&n!=="-");sectionTitle.innerHTML=`<h2>📂 ${t("categories")}</h2><span>${g.length}</span>`;results.innerHTML=g.map(([n,it])=>`<button class="group" data-category="${encodeURIComponent(n)}"><div><b>${catIcon(n)} ${esc(n)}</b><small>${it.length} ${t("brands")}</small></div><div class="count">${it.length}</div></button>`).join("")}
 
-
-function fieldValue(row, names){
-  for(const name of names){
-    const foundKey = Object.keys(row).find(k => norm(k) === norm(name));
-    if(foundKey && row[foundKey] !== undefined && row[foundKey] !== null && String(row[foundKey]).trim() !== ""){
-      return String(row[foundKey]).trim();
-    }
-  }
-  return "";
-}
-function mapSheetRow(row){
-  const barkodRaw = fieldValue(row, ["barkod","barcode","ean","gtin","Barkod"]);
-  const barkod = barkodRaw
-    ? String(barkodRaw).split(/[;, ]+/).map(x=>x.trim()).filter(Boolean)
-    : [];
-  return {
-    marka: fieldValue(row, ["marka","Marka","brand","Brand"]),
-    anaFirma: fieldValue(row, ["anaFirma","Ana Firma","anafirma","ana_firma","parent","company","Ana firma"]),
-    kategori: fieldValue(row, ["kategori","Kategori","category"]),
-    alternatif: fieldValue(row, ["alternatif","Alternatif","alternative","alternatives"]),
-    kaynak: fieldValue(row, ["kaynak","Kaynak","source","url","link"]),
-    not: fieldValue(row, ["not","Not","notlar","note","açıklama","aciklama"]),
-    durum: fieldValue(row, ["durum","Durum","status"]) || "boykot",
-    barkod,
-    image_url: fieldValue(row, ["image_url","image","imageUrl","görsel","gorsel","resim","logo","Görsel URL"])
-  };
-}
-function readSpreadsheetFile(file){
-  if(!file){toast(t("noFileData"));return}
-  const reader = new FileReader();
-  reader.onload = ev => {
-    try{
-      const data = new Uint8Array(ev.target.result);
-      const workbook = XLSX.read(data, {type:"array"});
-      const sheetName = workbook.SheetNames[0];
-      const sheet = workbook.Sheets[sheetName];
-      const rows = XLSX.utils.sheet_to_json(sheet, {defval:""});
-      importedRows = rows.map(mapSheetRow).filter(x => x.marka);
-      renderImportPreview();
-      toast(t("fileReady"));
-    }catch(e){
-      toast(t("fileError"));
-    }
-  };
-  reader.readAsArrayBuffer(file);
-}
-function renderImportPreview(){
-  const box = document.getElementById("importPreview");
-  if(!box) return;
-  const sample = importedRows.slice(0,10);
-  box.innerHTML = `
-    <div class="importSummary"><b>${importedRows.length}</b> ${esc(t("fileRows"))}</div>
-    <div class="importTable">
-      <table>
-        <thead><tr><th>Marka</th><th>Ana Firma</th><th>Kategori</th><th>Durum</th><th>Barkod</th></tr></thead>
-        <tbody>
-          ${sample.map(r=>`<tr><td>${esc(r.marka)}</td><td>${esc(r.anaFirma)}</td><td>${esc(r.kategori)}</td><td>${esc(r.durum)}</td><td>${esc((r.barkod||[]).join(", "))}</td></tr>`).join("")}
-        </tbody>
-      </table>
-    </div>`;
-}
-async function importSpreadsheetToSupabase(){
-  if(!adminSession){toast(t("login"));return}
-  if(!importedRows.length){toast(t("noFileData"));return}
-
-  for(const item of importedRows){
-    const legacy = {
-      marka: item.marka,
-      anaFirma: item.anaFirma || item.marka,
-      kategori: item.kategori,
-      alternatif: item.alternatif,
-      kaynak: item.kaynak,
-      not: item.not,
-      durum: item.durum || "boykot",
-      barkod: item.barkod || [],
-      image_url: item.image_url || ""
-    };
-
-    if(supabaseClient.rpc){
-      const {error}=await supabaseClient.rpc("import_legacy_brand", {p_item: legacy});
-      if(error){
-        // fallback for older V7 table
-        const row = {
-          marka: legacy.marka,
-          ana_firma: legacy.anaFirma,
-          kategori: legacy.kategori,
-          alternatif: legacy.alternatif,
-          kaynak: legacy.kaynak,
-          notlar: legacy.not,
-          durum: legacy.durum,
-          barkod: legacy.barkod,
-          image_url: legacy.image_url
-        };
-        const check = await supabaseClient.from("brands").select("id").ilike("marka", legacy.marka).limit(1);
-        if(check.error){toast(check.error.message);return}
-        if(check.data && check.data.length){
-          const res = await supabaseClient.from("brands").update(row).eq("id", check.data[0].id);
-          if(res.error){toast(res.error.message);return}
-        }else{
-          const res = await supabaseClient.from("brands").insert(row);
-          if(res.error){toast(res.error.message);return}
-        }
-      }
-    }
-  }
-
-  toast(t("importDone"));
-  await reloadFromSupabase();
-  view="admin";
-  render();
-}
-
-function adminOptions(){return DATA.map(x=>x.marka).filter((v,i,a)=>v&&a.indexOf(v)===i).sort((a,b)=>a.localeCompare(b,"tr")).map(name=>`<option value="${esc(name)}">${esc(name)}</option>`).join("")}
-function getAdminValues(){const raw=$("adminBarkod")?.value.trim()||"";return {marka:$("adminMarka").value.trim(),anaFirma:$("adminAnaFirma").value.trim(),kategori:$("adminKategori").value.trim(),alternatif:$("adminAlternatif").value.trim(),kaynak:$("adminKaynak").value.trim(),not:$("adminNot").value.trim(),barkod:raw?raw.split(/[;, ]+/).filter(Boolean):[],imageUrl:($("adminImageUrl")?.value||"").trim(),status:$("adminDurum").value}}
-async function saveAdminBrand(){
-  if(!adminSession){toast(t("login"));return}
-  const v=getAdminValues();
-  if(!v.marka){toast(t("requiredBrand"));return}
-  if(!v.anaFirma)v.anaFirma=v.marka;
-
-  const {error}=await supabaseClient.rpc("upsert_brand_full", {
-    p_marka: v.marka,
-    p_ana_firma: v.anaFirma,
-    p_kategori: v.kategori,
-    p_durum: v.status,
-    p_not: v.not,
-    p_image_url: v.imageUrl || "",
-    p_alternatif: v.alternatif,
-    p_kaynak: v.kaynak,
-    p_barkod: Array.isArray(v.barkod) ? v.barkod : []
-  });
-
-  if(error){toast(error.message);return}
-  toast(t("dataSaved"));
-  await reloadFromSupabase();
-  view="admin";
-  render();
-}
-async function deleteAdminBrand(){
-  if(!adminSession){toast(t("login"));return}
-  const name=$("adminSelect").value||$("adminMarka").value;
-  if(!name||!confirm(t("confirmDelete")))return;
-  const item=DATA.find(x=>x.marka===name);
-  const q = supabaseClient.from("brands").delete();
-  const {error}= item?.id ? await q.eq("id", item.id) : await q.eq("name", name);
-  if(error){toast(error.message);return}
-  toast(t("dataDeleted"));
-  await reloadFromSupabase();
-  view="admin";
-  render();
-}
-async function importToSupabase(){
-  if(!adminSession){toast(t("login"));return}
-
-  for(const item of DATA){
-    const legacy = {
-      marka: item.marka,
-      anaFirma: item.anaFirma,
-      kategori: item.kategori,
-      alternatif: item.alternatif,
-      kaynak: item.kaynak,
-      not: item.not,
-      durum: item.status,
-      barkod: Array.isArray(item.barkod) ? item.barkod : [],
-      image_url: item.imageUrl || ""
-    };
-    const {error}=await supabaseClient.rpc("import_legacy_brand", {p_item: legacy});
-    if(error){toast(error.message);return}
-  }
-
-  toast(t("dataSaved"));
-  await reloadFromSupabase();
-  view="admin";
-  render();
-}
-async function reloadFromSupabase(){const list=await loadSupabaseData();DATA=list.map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"))}
-function fillAdminForm(name){const item=DATA.find(x=>x.marka===name);if(!item)return;$("adminMarka").value=item.marka||"";$("adminAnaFirma").value=item.anaFirma||"";$("adminKategori").value=item.kategori||"";$("adminAlternatif").value=item.alternatif||"";$("adminKaynak").value=item.kaynak||"";$("adminNot").value=item.not||"";$("adminBarkod").value=Array.isArray(item.barkod)?item.barkod.join(", "):(item.barkod||"");$("adminImageUrl").value=item.imageUrl||"";$("adminDurum").value=item.status||"boykot"}
+function fieldValue(row,names){for(const name of names){const k=Object.keys(row).find(x=>norm(x)===norm(name));if(k&&row[k]!=null&&String(row[k]).trim()!=="")return String(row[k]).trim()}return""}
+function mapSheetRow(row){const barkodRaw=fieldValue(row,["barkod","barcode","ean","gtin","Barkod"]);return{marka:fieldValue(row,["marka","Marka","brand"]),anaFirma:fieldValue(row,["anaFirma","Ana Firma","anafirma","ana_firma","company"]),kategori:fieldValue(row,["kategori","Kategori","category"]),alternatif:fieldValue(row,["alternatif","Alternatif","alternative"]),kaynak:fieldValue(row,["kaynak","Kaynak","source","url","link"]),not:fieldValue(row,["not","Not","note","notlar"]),status:fieldValue(row,["durum","Durum","status"])||"boykot",barkod:barkodRaw?String(barkodRaw).split(/[;, ]+/).filter(Boolean):[],imageUrl:fieldValue(row,["image_url","image","logo","resim","gorsel","Görsel URL"])}}
+function readSpreadsheetFile(file){if(!file){toast(t("noFileData"));return}const r=new FileReader();r.onload=e=>{try{const wb=XLSX.read(new Uint8Array(e.target.result),{type:"array"});const rows=XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]],{defval:""});importedRows=rows.map(mapSheetRow).filter(x=>x.marka);renderImportPreview();toast(t("fileReady"))}catch(err){toast(t("fileError"))}};r.readAsArrayBuffer(file)}
+function renderImportPreview(){const box=$("importPreview");if(!box)return;const s=importedRows.slice(0,10);box.innerHTML=`<div class="importSummary"><b>${importedRows.length}</b> ${esc(t("fileRows"))}</div><div class="importTable"><table><thead><tr><th>Marka</th><th>Ana Firma</th><th>Kategori</th><th>Durum</th><th>Barkod</th></tr></thead><tbody>${s.map(r=>`<tr><td>${esc(r.marka)}</td><td>${esc(r.anaFirma)}</td><td>${esc(r.kategori)}</td><td>${esc(r.status)}</td><td>${esc((r.barkod||[]).join(", "))}</td></tr>`).join("")}</tbody></table></div>`}
+async function importLegacy(item){const legacy=toLegacy(item);const {error}=await supabaseClient.rpc("import_legacy_brand",{p_item:legacy});if(error)throw error}
+async function importSpreadsheetToSupabase(){if(!adminSession){toast(t("login"));return}if(!importedRows.length){toast(t("noFileData"));return}for(const r of importedRows){await importLegacy(r)}toast(t("importDone"));await reload();view="admin";render()}
+async function importToSupabase(){if(!adminSession){toast(t("login"));return}for(const item of DATA){await importLegacy(item)}toast(t("importDone"));await reload();view="admin";render()}
+async function saveAdminBrand(){if(!adminSession){toast(t("login"));return}const v=getAdminValues();if(!v.marka){toast(t("requiredBrand"));return}if(!v.anaFirma)v.anaFirma=v.marka;await importLegacy(v);toast(t("dataSaved"));await reload();view="admin";render()}
+async function deleteAdminBrand(){if(!adminSession){toast(t("login"));return}const name=$("adminSelect").value||$("adminMarka").value;if(!name||!confirm(t("confirmDelete")))return;const item=DATA.find(x=>x.marka===name);const {error}=await supabaseClient.from("brands").delete().eq(item?.id?"id":"name",item?.id||name);if(error){toast(error.message);return}toast(t("dataDeleted"));await reload();view="admin";render()}
+async function reload(){const list=await loadSupabase();DATA=list.map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"))}
+function adminOptions(){return DATA.map(x=>x.marka).filter((v,i,a)=>v&&a.indexOf(v)===i).sort((a,b)=>a.localeCompare(b,"tr")).map(n=>`<option value="${esc(n)}">${esc(n)}</option>`).join("")}
+function getAdminValues(){const raw=$("adminBarkod")?.value.trim()||"";return{marka:$("adminMarka").value.trim(),anaFirma:$("adminAnaFirma").value.trim(),kategori:$("adminKategori").value.trim(),alternatif:$("adminAlternatif").value.trim(),kaynak:$("adminKaynak").value.trim(),not:$("adminNot").value.trim(),barkod:raw?raw.split(/[;, ]+/).filter(Boolean):[],imageUrl:($("adminImageUrl")?.value||"").trim(),status:$("adminDurum").value}}
+function fillAdminForm(name){const x=DATA.find(v=>v.marka===name);if(!x)return;$("adminMarka").value=x.marka||"";$("adminAnaFirma").value=x.anaFirma||"";$("adminKategori").value=x.kategori||"";$("adminAlternatif").value=x.alternatif||"";$("adminKaynak").value=x.kaynak||"";$("adminNot").value=x.not||"";$("adminBarkod").value=Array.isArray(x.barkod)?x.barkod.join(", "):"";$("adminImageUrl").value=x.imageUrl||"";$("adminDurum").value=x.status||"boykot"}
 function clearAdminForm(){["adminMarka","adminAnaFirma","adminKategori","adminAlternatif","adminKaynak","adminNot","adminBarkod","adminImageUrl"].forEach(id=>$(id).value="");$("adminDurum").value="boykot"}
-async function adminLogin(){const email=$("adminEmail").value.trim();const password=$("adminPassword").value;const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});if(error){toast(error.message);return}adminSession=data.session;toast(t("supabaseReady"));renderAdmin()}
-async function adminLogout(){await supabaseClient.auth.signOut();adminSession=null;renderAdmin()}
-function downloadDataJson(){const raw=DATA.map(x=>{const o={marka:x.marka,anaFirma:x.anaFirma,kategori:x.kategori,alternatif:x.alternatif,kaynak:x.kaynak,not:x.not,durum:x.status};if(x.barkod?.length)o.barkod=x.barkod;if(x.imageUrl)o.image_url=x.imageUrl;Object.keys(o).forEach(k=>{if(!o[k]||(Array.isArray(o[k])&&!o[k].length))delete o[k]});return o});const blob=new Blob([JSON.stringify(raw,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="data.json";a.click();URL.revokeObjectURL(url);toast(t("downloaded"))}
-function renderAdmin(){stats.innerHTML="";quickActions.innerHTML="";quickFilters.innerHTML="";sectionTitle.innerHTML=`<h2>⚙️ ${t("admin")}</h2><span>${DATA.length} ${t("brands")}</span>`;results.innerHTML=`<section class="adminPanel"><p class="adminNotice">${esc(t("localOnly"))}</p><div class="adminLogin">${adminSession?`<button onclick="adminLogout()">🚪 ${esc(t("logout"))}</button>`:`<input id="adminEmail" placeholder="${esc(t("email"))}"><input id="adminPassword" type="password" placeholder="${esc(t("password"))}"><button onclick="adminLogin()">🔐 ${esc(t("login"))}</button>`}</div><div class="adminTools"><button onclick="importToSupabase()">☁️ ${esc(t("importToSupabase"))}</button><button onclick="downloadDataJson()">⬇️ ${esc(t("exportData"))}</button></div>
-<div class="dataCenter">
-  <h3>📥 ${esc(t("dataCenter"))}</h3>
-  <p>${esc(t("chooseFile"))}</p>
-  <input id="spreadsheetFile" type="file" accept=".ods,.xlsx,.xls,.csv">
-  <div id="importPreview" class="importPreview"></div>
-  <button type="button" onclick="importSpreadsheetToSupabase()">☁️ ${esc(t("importFileToSupabase"))}</button>
-</div><div class="adminSelectRow"><label>${esc(t("chooseBrand"))}</label><select id="adminSelect"><option value="">—</option>${adminOptions()}</select></div><div class="adminForm"><label>${esc(t("brandName"))}<input id="adminMarka"></label><label>${esc(t("parent"))}<input id="adminAnaFirma"></label><label>${esc(t("category"))}<input id="adminKategori"></label><label>${esc(t("alternative"))}<textarea id="adminAlternatif"></textarea></label><label>${esc(t("barcode"))}<textarea id="adminBarkod"></textarea></label><label>Görsel URL<input id="adminImageUrl" placeholder="https://..."></label><label>${esc(t("source"))}<input id="adminKaynak"></label><label>${esc(t("note"))}<textarea id="adminNot"></textarea></label><label>Durum<select id="adminDurum"><option value="boykot">${esc(t("boycott"))}</option><option value="safe">${esc(t("notBoycotted"))}</option><option value="alternatif">${esc(t("alternative"))}</option><option value="dikkat">Dikkat</option><option value="inceleme">${esc(t("review"))}</option></select></label></div><div class="adminButtons"><button onclick="saveAdminBrand()">✅ ${esc(t("save"))}</button><button onclick="clearAdminForm()">🧹 ${esc(t("resetForm"))}</button><button class="danger" onclick="deleteAdminBrand()">🗑️ ${esc(t("deleteBrand"))}</button></div></section>`;$("adminSelect").addEventListener("change",e=>fillAdminForm(e.target.value));
-  const sf = document.getElementById("spreadsheetFile");
-  if(sf) sf.addEventListener("change", e=>readSpreadsheetFile(e.target.files[0]));
-}
+async function adminLogin(){const{data,error}=await supabaseClient.auth.signInWithPassword({email:$("adminEmail").value.trim(),password:$("adminPassword").value});if(error){toast(error.message);return}adminSession=data.session;toast(t("supabaseReady"));renderAdmin()}
+async function adminLogout(){await supabaseClient.auth.signOut();adminSession=null;view="home";filter="all";search.value="";render()}
+function downloadDataJson(){const raw=DATA.map(toLegacy);const blob=new Blob([JSON.stringify(raw,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="data.json";a.click();URL.revokeObjectURL(url);toast(t("downloaded"))}
+function renderAdmin(){stats.innerHTML="";quickActions.innerHTML="";quickFilters.innerHTML="";sectionTitle.innerHTML=`<h2>⚙️ ${t("admin")}</h2><span>${DATA.length} ${t("brands")}</span>`;results.innerHTML=`<section class="adminPanel"><p class="adminNotice">${esc(t("localOnly"))}</p><div class="adminLogin">${adminSession?`<button onclick="adminLogout()">🚪 ${esc(t("logout"))}</button>`:`<input id="adminEmail" placeholder="${esc(t("email"))}"><input id="adminPassword" type="password" placeholder="${esc(t("password"))}"><button onclick="adminLogin()">🔐 ${esc(t("login"))}</button>`}</div><div class="dataCenter"><h3>📥 ${esc(t("dataCenter"))}</h3><p>${esc(t("chooseFile"))}</p><input id="spreadsheetFile" type="file" accept=".ods,.xlsx,.xls,.csv"><div id="importPreview"></div><button onclick="importSpreadsheetToSupabase()">☁️ ${esc(t("importFileToSupabase"))}</button></div><div class="adminTools"><button onclick="importToSupabase()">☁️ ${esc(t("importToSupabase"))}</button><button onclick="downloadDataJson()">⬇️ ${esc(t("exportData"))}</button></div><div class="adminSelectRow"><label>${esc(t("chooseBrand"))}</label><select id="adminSelect"><option value="">—</option>${adminOptions()}</select></div><div class="adminForm"><label>${esc(t("brandName"))}<input id="adminMarka"></label><label>${esc(t("parent"))}<input id="adminAnaFirma"></label><label>${esc(t("category"))}<input id="adminKategori"></label><label>${esc(t("alternative"))}<textarea id="adminAlternatif"></textarea></label><label>${esc(t("barcode"))}<textarea id="adminBarkod"></textarea></label><label>Görsel URL<input id="adminImageUrl" placeholder="https://..."></label><label>${esc(t("source"))}<input id="adminKaynak"></label><label>${esc(t("note"))}<textarea id="adminNot"></textarea></label><label>Durum<select id="adminDurum"><option value="boykot">${esc(t("boycott"))}</option><option value="safe">${esc(t("notBoycotted"))}</option><option value="alternatif">${esc(t("alternative"))}</option><option value="dikkat">Dikkat</option><option value="inceleme">${esc(t("review"))}</option></select></label></div><div class="adminButtons"><button onclick="saveAdminBrand()">✅ ${esc(t("save"))}</button><button onclick="clearAdminForm()">🧹 ${esc(t("resetForm"))}</button><button class="danger" onclick="deleteAdminBrand()">🗑️ ${esc(t("deleteBrand"))}</button></div></section>`;$("adminSelect").addEventListener("change",e=>fillAdminForm(e.target.value));$("spreadsheetFile").addEventListener("change",e=>readSpreadsheetFile(e.target.files[0]))}
 
-function render(){document.querySelectorAll(".bottomNav button").forEach(b=>b.classList.toggle("active",b.dataset.view===view));if(currentGroup)return renderHome(currentGroup.items);if(view==="home")return renderHome();if(view==="alternatives"){filter="altli";return renderHome()}if(view==="favorites"){filter="fav";return renderHome()}if(view==="companies")return renderCompanies();if(view==="categories")return renderCategories();if(view==="admin")return renderAdmin();if(view==="about")return renderAbout()}
-function detail(x){const d=$("detailDialog"),c=$("detailContent");c.innerHTML=`<div class="detailHead"><h2>${esc(x.marka)}</h2><p>${statusLabel(x.status)}</p></div><div class="detailBody">${x.imageUrl?`<div class="detailImage"><img src="${esc(x.imageUrl)}" alt="${esc(x.marka)}"></div>`:""}<div class="detailLine"><span>${t("parent")}</span><b>${esc(x.anaFirma||"-")}</b></div><div class="detailLine"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div><div class="detailLine"><span>${t("barcode")}</span><b>${esc(Array.isArray(x.barkod)?x.barkod.join(", "):(x.barkod||"-"))}</b></div><div class="detailLine"><span>${t("alternative")}</span><b>${esc(x.alternatif||"-")}</b></div><div class="detailLine"><span>${t("note")}</span><b>${esc(x.not||"-")}</b></div><div class="detailLine"><span>${t("source")}</span><b>${x.kaynak&&/^https?:\/\//i.test(x.kaynak)?`<a href="${esc(x.kaynak)}" target="_blank">${t("openSource")}</a>`:esc(x.kaynak||"-")}</b></div></div>`;d.showModal()}
+function render(){document.querySelectorAll(".bottomNav button").forEach(b=>b.classList.toggle("active",b.dataset.view===view));if(currentGroup)return renderHome(currentGroup.items);if(view==="home")return renderHome();if(view==="alternatives"){filter="altli";return renderHome()}if(view==="favorites"){filter="fav";return renderHome()}if(view==="companies")return renderCompanies();if(view==="categories")return renderCategories();if(view==="admin")return renderAdmin()}
+function detail(x){const d=$("detailDialog"),c=$("detailContent");c.innerHTML=`<div class="detailHead"><h2>${esc(x.marka)}</h2><p>${statusLabel(x.status)}</p></div><div class="detailBody">${x.imageUrl?`<div class="detailImage"><img src="${esc(x.imageUrl)}" alt="${esc(x.marka)}"></div>`:""}<div class="detailLine"><span>${t("parent")}</span><b>${esc(x.anaFirma||"-")}</b></div><div class="detailLine"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div><div class="detailLine"><span>${t("barcode")}</span><b>${esc((x.barkod||[]).join(", ")||"-")}</b></div><div class="detailLine"><span>${t("alternative")}</span><b>${esc(x.alternatif||"-")}</b></div><div class="detailLine"><span>${t("note")}</span><b>${esc(x.not||"-")}</b></div><div class="detailLine"><span>${t("source")}</span><b>${esc(x.kaynak||"-")}</b></div></div>`;d.showModal()}
 function handleBarcodeValue(code){const n=norm(code);const item=DATA.find(x=>Array.isArray(x.barkod)&&x.barkod.some(v=>norm(v)===n));if(item)detail(item);else{search.value=code;render()}}
-function toast(message){const el=document.createElement("div");el.className="toast";el.textContent=message;document.body.appendChild(el);requestAnimationFrame(()=>el.classList.add("show"));setTimeout(()=>{el.classList.remove("show");setTimeout(()=>el.remove(),300)},2800)}
-function setupServiceWorker(){if("serviceWorker" in navigator)navigator.serviceWorker.register(`sw.js?v=${VERSION}`).catch(()=>{})}
 function applyTheme(){const dark=localStorage.getItem("ahlak_theme")==="dark";document.body.classList.toggle("dark",dark);themeBtn.textContent=dark?"☀️":"🌙"}
-function applyLang(){document.documentElement.lang=t("htmlLang");$("kicker").textContent=t("kicker");$("appTitle").textContent=t("title");$("appSubtitle").textContent=t("subtitle");search.placeholder=t("search");$("closeDialog").textContent=t("close");document.querySelectorAll("[data-i]").forEach(el=>el.textContent=t(el.dataset.i));document.querySelectorAll(".langSwitch button").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang))}
+function applyLang(){document.documentElement.lang=lang;$("kicker").textContent=t("kicker");$("appTitle").textContent=t("title");$("appSubtitle").textContent=t("subtitle");search.placeholder=t("search");$("closeDialog").textContent=t("close");document.querySelectorAll("[data-i]").forEach(el=>el.textContent=t(el.dataset.i));document.querySelectorAll(".langSwitch button").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang))}
+function toast(m){const el=document.createElement("div");el.className="toast";el.textContent=m;document.body.appendChild(el);requestAnimationFrame(()=>el.classList.add("show"));setTimeout(()=>{el.classList.remove("show");setTimeout(()=>el.remove(),300)},2800)}
+function setupServiceWorker(){if("serviceWorker"in navigator)navigator.serviceWorker.register(`sw.js?v=${VERSION}`).catch(()=>{})}
 
-search.addEventListener("input",()=>{currentGroup=null;if(view!=="home"){view="home";filter="all"}render()});
-clearBtn.addEventListener("click",()=>{search.value="";search.focus();currentGroup=null;render()});
-if(barcodeBtn)barcodeBtn.addEventListener("click",()=>{const code=prompt(`${t("barcodePrompt")}\n${t("barcodeMissing")}`);if(code)handleBarcodeValue(code.trim())});
-quickFilters.addEventListener("click",e=>{const b=e.target.closest("[data-filter]");if(!b)return;currentGroup=null;filter=b.dataset.filter;view="home";render()});
-quickActions.addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(!b)return;currentGroup=null;view=b.dataset.go;if(view==="alternatives")filter="altli";if(view==="favorites")filter="fav";render()});
-stats.addEventListener("click",e=>{const b=e.target.closest("[data-stat]");if(!b)return;currentGroup=null;filter=b.dataset.stat;view="home";render()});
-results.addEventListener("click",e=>{const f=e.target.closest("[data-fav]");if(f){e.stopPropagation();toggleFav(decodeURIComponent(f.dataset.fav));return}const g=e.target.closest("[data-company]");if(g){const name=decodeURIComponent(g.dataset.company);currentGroup={title:`🏢 ${name}`,items:DATA.filter(x=>x.anaFirma===name)};view="home";filter="all";search.value="";render();return}const cat=e.target.closest("[data-category]");if(cat){const name=decodeURIComponent(cat.dataset.category);currentGroup={title:`${categoryIcon(name)} ${name}`,items:DATA.filter(x=>x.kategori===name)};view="home";filter="all";search.value="";render();return}const c=e.target.closest("[data-brand]");if(c){const name=decodeURIComponent(c.dataset.brand);const item=DATA.find(x=>x.marka===name);if(item)detail(item)}});
-document.querySelectorAll(".bottomNav button").forEach(b=>b.addEventListener("click",()=>{currentGroup=null;view=b.dataset.view;if(view==="home")filter="all";render()}));
-document.querySelectorAll(".langSwitch button").forEach(b=>b.addEventListener("click",()=>{lang=b.dataset.lang;localStorage.setItem("boykot_lang",lang);applyLang();render()}));
-themeBtn.addEventListener("click",()=>{const next=document.body.classList.contains("dark")?"light":"dark";localStorage.setItem("ahlak_theme",next);applyTheme()});
-$("closeDialog").addEventListener("click",()=>$("detailDialog").close());
-window.saveAdminBrand=saveAdminBrand;window.deleteAdminBrand=deleteAdminBrand;window.clearAdminForm=clearAdminForm;window.downloadDataJson=downloadDataJson;window.importToSupabase=importToSupabase;window.readSpreadsheetFile=readSpreadsheetFile;window.importSpreadsheetToSupabase=importSpreadsheetToSupabase;window.adminLogin=adminLogin;window.adminLogout=adminLogout;
+search.addEventListener("input",()=>{currentGroup=null;if(view!=="home"){view="home";filter="all"}render()});clearBtn.addEventListener("click",()=>{search.value="";filter="all";currentGroup=null;render()});barcodeBtn.addEventListener("click",()=>{const c=prompt(`${t("barcodePrompt")}\n${t("barcodeMissing")}`);if(c)handleBarcodeValue(c.trim())});quickFilters.addEventListener("click",e=>{const b=e.target.closest("[data-filter]");if(!b)return;filter=b.dataset.filter;view="home";currentGroup=null;render()});quickActions.addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(!b)return;view=b.dataset.go;currentGroup=null;if(view==="home")filter="all";render()});stats.addEventListener("click",e=>{const b=e.target.closest("[data-stat]");if(!b)return;filter=b.dataset.stat;view="home";currentGroup=null;render()});results.addEventListener("click",e=>{const f=e.target.closest("[data-fav]");if(f){e.stopPropagation();toggleFav(decodeURIComponent(f.dataset.fav));return}const g=e.target.closest("[data-company]");if(g){const n=decodeURIComponent(g.dataset.company);currentGroup={title:`🏢 ${n}`,items:DATA.filter(x=>x.anaFirma===n)};view="home";search.value="";filter="all";render();return}const cat=e.target.closest("[data-category]");if(cat){const n=decodeURIComponent(cat.dataset.category);currentGroup={title:`${catIcon(n)} ${n}`,items:DATA.filter(x=>x.kategori===n)};view="home";search.value="";filter="all";render();return}const c=e.target.closest("[data-brand]");if(c){const n=decodeURIComponent(c.dataset.brand);const item=DATA.find(x=>x.marka===n);if(item)detail(item)}});document.querySelectorAll(".bottomNav button").forEach(b=>b.addEventListener("click",()=>{view=b.dataset.view;currentGroup=null;if(view==="home")filter="all";render()}));document.querySelectorAll(".langSwitch button").forEach(b=>b.addEventListener("click",()=>{lang=b.dataset.lang;localStorage.setItem("boykot_lang",lang);applyLang();render()}));themeBtn.addEventListener("click",()=>{localStorage.setItem("ahlak_theme",document.body.classList.contains("dark")?"light":"dark");applyTheme()});$("closeDialog").addEventListener("click",()=>$("detailDialog").close());
+window.adminLogin=adminLogin;window.adminLogout=adminLogout;window.importToSupabase=importToSupabase;window.importSpreadsheetToSupabase=importSpreadsheetToSupabase;window.saveAdminBrand=saveAdminBrand;window.deleteAdminBrand=deleteAdminBrand;window.clearAdminForm=clearAdminForm;window.downloadDataJson=downloadDataJson;
 init();
