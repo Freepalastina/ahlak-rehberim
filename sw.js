@@ -1,4 +1,4 @@
-const CACHE_NAME = "ahlak-v4-ui";
+const CACHE_NAME = "ahlak-v4-core";
 self.addEventListener("install", event => {
   self.skipWaiting();
 });

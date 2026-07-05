@@ -1,13 +1,15 @@
-const VERSION = "20260705-v4-ui-bayrakli-dil";
+const VERSION = "20260705-v4-core";
 let DATA = [];
 let view = "home";
 let filter = "all";
+let currentGroup = null;
 let favorites = loadFavorites();
 let lang = localStorage.getItem("boykot_lang") || "tr";
 
 const $ = id => document.getElementById(id);
 const search = $("search");
 const clearBtn = $("clearBtn");
+const barcodeBtn = $("barcodeBtn");
 const stats = $("stats");
 const quickActions = $("quickActions");
 const quickFilters = $("quickFilters");
@@ -18,21 +20,22 @@ const themeBtn = $("themeBtn");
 const I = {
   tr: {
     htmlLang:"tr", kicker:"Bilinçli Tüketim Rehberi", title:"Ahlak Rehberim",
-    subtitle:"Bilinçli tüket, güvenle tercih et.", search:"Marka, firma veya kategori ara...",
+    subtitle:"Bilinçli tüket, güvenle tercih et.", search:"Marka, firma, kategori, kod veya barkod ara...",
     navHome:"Ana", navCompanies:"Firmalar", navCategories:"Kategori", navFavorites:"Favori", navAbout:"Bilgi",
     total:"Toplam", boycott:"Boykot", caution:"Dikkat", alternative:"Alternatif",
     notBoycotted:"Boykotta Değil", review:"İnceleniyor", withAlt:"Alternatifli",
     favorites:"Favoriler", all:"Tümü", results:"sonuç", brands:"marka", companies:"Ana Firmalar",
-    categories:"Kategoriler", category:"Kategori", code:"Kod", parent:"Ana Firma",
+    categories:"Kategoriler", category:"Kategori", code:"Kod", parent:"Ana Firma", barcode:"Barkod",
     details:"Ayrıntıları Gör →", close:"Kapat", source:"Kaynak", note:"Not", openSource:"Kaynağı aç",
     noResult:"Sonuç bulunamadı.", dataError:"Veri yüklenemedi.", dataHelp:"data.json dosyası index.html ile aynı klasörde olmalı.",
     safeInfo:"Bu marka boykot listesinde olmayanlar bölümüne eklendi.",
-    quickTitle:"Hızlı Erişim", open:"Aç",
+    quickTitle:"Hızlı Erişim", open:"Aç", back:"Geri",
+    barcodePrompt:"Barkod numarasını yaz:", barcodeMissing:"Bu veri içinde barkod alanı yoksa eşleşme bulunmayabilir.",
     aboutTitle:"📖 Ahlak Rehberim", aboutIntro:"Markaları, ana firmaları, kategorileri ve alternatifleri hızlıca bulmak için hazırlanmış mobil uyumlu rehber.",
     listStatus:"📊 Liste Durumu",
     listStatusText:c=>`${c.total} toplam kayıt var. ${c.boykot} boykot, ${c.safe} boykotta değil, ${c.altli} alternatif bilgisi içeriyor.`,
     safeText:"Bu bölüm, eklenen alternatif listesinden gelen ve ana boykot listesinde bulunmayan markaları gösterir.",
-    howSearch:"🔍 Nasıl Aranır?", howSearchText:"Arama kutusuna marka adı, ana firma, kategori, kod veya alternatif ürün yazabilirsin.",
+    howSearch:"🔍 Nasıl Aranır?", howSearchText:"Arama kutusuna marka adı, ana firma, kategori, kod, alternatif veya barkod yazabilirsin.",
     companiesText:"Aynı şirkete ait markaları görmek için Firmalar bölümünü aç.",
     favText:"Kalp işaretine basarak markaları favorilere ekleyebilirsin.",
     altText:"Alternatif olarak gösterilen ürünler aynı ürün grubunda değerlendirilebilecek seçeneklerdir. Satın almadan önce kendi araştırmanı yapman tavsiye edilir.",
@@ -41,21 +44,22 @@ const I = {
   },
   en: {
     htmlLang:"en", kicker:"Conscious Choice Guide", title:"Ahlak Rehberim",
-    subtitle:"Choose consciously, shop with confidence.", search:"Search brand, company or category...",
+    subtitle:"Choose consciously, shop with confidence.", search:"Search brand, company, category, code or barcode...",
     navHome:"Home", navCompanies:"Companies", navCategories:"Category", navFavorites:"Favorite", navAbout:"About",
     total:"Total", boycott:"Boycott", caution:"Caution", alternative:"Alternative",
     notBoycotted:"Not Boycotted", review:"Under Review", withAlt:"With Alternatives",
     favorites:"Favorites", all:"All", results:"results", brands:"brands", companies:"Parent Companies",
-    categories:"Categories", category:"Category", code:"Code", parent:"Parent Company",
+    categories:"Categories", category:"Category", code:"Code", parent:"Parent Company", barcode:"Barcode",
     details:"View Details →", close:"Close", source:"Source", note:"Note", openSource:"Open source",
     noResult:"No results found.", dataError:"Data could not be loaded.", dataHelp:"data.json must be in the same folder as index.html.",
     safeInfo:"This brand was added to the Not Boycotted section.",
-    quickTitle:"Quick Access", open:"Open",
+    quickTitle:"Quick Access", open:"Open", back:"Back",
+    barcodePrompt:"Enter barcode number:", barcodeMissing:"If barcode data is not present, no match may be found.",
     aboutTitle:"📖 Ahlak Rehberim", aboutIntro:"A mobile-friendly guide for quickly finding brands, parent companies, categories and alternatives.",
     listStatus:"📊 List Status",
     listStatusText:c=>`${c.total} total records. ${c.boykot} boycott entries, ${c.safe} not boycotted entries, ${c.altli} include alternatives.`,
     safeText:"This section shows brands from the added alternatives list that are not found in the main boycott list.",
-    howSearch:"🔍 How to Search", howSearchText:"Search by brand name, parent company, category, code or alternative product.",
+    howSearch:"🔍 How to Search", howSearchText:"Search by brand name, parent company, category, code, alternative or barcode.",
     companiesText:"Open Companies to view brands that belong to the same parent company.",
     favText:"Tap the heart to add brands to favorites.",
     altText:"Suggested alternatives are options in the same product group. Please do your own research before buying.",
@@ -64,21 +68,22 @@ const I = {
   },
   de: {
     htmlLang:"de", kicker:"Bewusster Konsum", title:"Ahlak Rehberim",
-    subtitle:"Bewusst konsumieren, sicher wählen.", search:"Marke, Firma oder Kategorie suchen...",
+    subtitle:"Bewusst konsumieren, sicher wählen.", search:"Marke, Firma, Kategorie, Code oder Barcode suchen...",
     navHome:"Start", navCompanies:"Firmen", navCategories:"Kategorie", navFavorites:"Favorit", navAbout:"Info",
     total:"Gesamt", boycott:"Boykott", caution:"Achtung", alternative:"Alternative",
     notBoycotted:"Nicht boykottiert", review:"In Prüfung", withAlt:"Mit Alternativen",
     favorites:"Favoriten", all:"Alle", results:"Ergebnisse", brands:"Marken", companies:"Mutterfirmen",
-    categories:"Kategorien", category:"Kategorie", code:"Code", parent:"Mutterfirma",
+    categories:"Kategorien", category:"Kategorie", code:"Code", parent:"Mutterfirma", barcode:"Barcode",
     details:"Details ansehen →", close:"Schließen", source:"Quelle", note:"Notiz", openSource:"Quelle öffnen",
     noResult:"Keine Ergebnisse gefunden.", dataError:"Daten konnten nicht geladen werden.", dataHelp:"data.json muss im selben Ordner wie index.html liegen.",
     safeInfo:"Diese Marke wurde dem Bereich Nicht boykottiert hinzugefügt.",
-    quickTitle:"Schnellzugriff", open:"Öffnen",
+    quickTitle:"Schnellzugriff", open:"Öffnen", back:"Zurück",
+    barcodePrompt:"Barcode-Nummer eingeben:", barcodeMissing:"Wenn keine Barcode-Daten vorhanden sind, wird eventuell nichts gefunden.",
     aboutTitle:"📖 Ahlak Rehberim", aboutIntro:"Ein mobiler Ratgeber, um Marken, Mutterfirmen, Kategorien und Alternativen schnell zu finden.",
     listStatus:"📊 Listenstatus",
     listStatusText:c=>`${c.total} Einträge. ${c.boykot} Boykott, ${c.safe} nicht boykottiert, ${c.altli} mit Alternativen.`,
     safeText:"Dieser Bereich zeigt Marken aus der Alternativliste, die nicht in der Haupt-Boykottliste vorkommen.",
-    howSearch:"🔍 So suchst du", howSearchText:"Suche nach Marke, Mutterfirma, Kategorie, Code oder Alternative.",
+    howSearch:"🔍 So suchst du", howSearchText:"Suche nach Marke, Mutterfirma, Kategorie, Code, Alternative oder Barcode.",
     companiesText:"Öffne Firmen, um Marken derselben Mutterfirma zu sehen.",
     favText:"Tippe auf das Herz, um Marken zu Favoriten hinzuzufügen.",
     altText:"Vorgeschlagene Alternativen sind Optionen aus derselben Produktgruppe. Bitte selbst prüfen.",
@@ -124,10 +129,10 @@ function normalizeItem(raw,i){
   const alternatif=get(raw,["alternatif","Alternatif","alternative","alternatives"]);
   const kaynak=get(raw,["kaynak","Kaynak","kanyak","source","link"]);
   const not=get(raw,["not","Not","note"]);
-  const barkod=get(raw,["barkod","Barkod","barcode","ean","EAN"]);
+  const barkod=get(raw,["barkod","Barkod","barcode","ean","EAN","gtin","GTIN"]);
   const status=rawStatus(raw,kod);
   const hay=norm([marka,anaFirma,kod,kategori,alternatif,kaynak,not,barkod,statusLabel(status)].join(" "));
-  return {marka,anaFirma,kod,kategori,alternatif,kaynak,not,barkod,status,hay};
+  return {marka,anaFirma,kod,kategori,alternatif,kaynak,not,barkod,status,hay,created:i};
 }
 
 async function clearOldCaches(){
@@ -168,7 +173,7 @@ function counts(){
     altli:DATA.filter(hasAlternative).length,
     fav:favorites.length,
     firmalar:new Set(DATA.map(x=>x.anaFirma||"-")).size,
-    kategoriler:new Set(DATA.map(x=>x.kategori||"-")).size
+    kategoriler:new Set(DATA.map(x=>x.kategori||"-").filter(x=>x && x !== "-")).size
   };
 }
 function renderStats(){
@@ -242,17 +247,19 @@ function card(x){
   </article>`;
 }
 function titleFor(){
+  if(currentGroup) return currentGroup.title;
   if(view==="boykot" || filter==="boykot") return `🔴 ${t("boycott")}`;
   if(view==="safe" || filter==="safe") return `✅ ${t("notBoycotted")}`;
   if(view==="favorites" || filter==="fav") return `❤️ ${t("favorites")}`;
   if(view==="alternatives" || filter==="altli") return `⭐ ${t("withAlt")}`;
   return t("all");
 }
-function renderHome(list=filteredList(),title=titleFor()){
+function renderHome(base=DATA){
+  const list=filteredList(base);
   renderStats();
   renderQuickActions();
   renderFilters();
-  sectionTitle.innerHTML=`<h2>${esc(title)}</h2><span>${list.length} ${t("results")}</span>`;
+  sectionTitle.innerHTML=`<h2>${esc(titleFor())}</h2><span>${list.length} ${t("results")}</span>`;
   results.innerHTML=list.length
     ? list.slice(0,800).map(card).join("") + (list.length>800 ? `<div class="empty">800 ${t("results")}. Daha dar arama yap.</div>` : "")
     : `<div class="empty">${t("noResult")}</div>`;
@@ -267,6 +274,7 @@ function groupBy(key,base=DATA){
   return [...m.entries()].sort((a,b)=>b[1].length-a[1].length || a[0].localeCompare(b[0],"tr"));
 }
 function renderCompanies(){
+  currentGroup=null;
   renderStats();
   renderQuickActions();
   quickFilters.innerHTML="";
@@ -290,6 +298,7 @@ function categoryIcon(name){
   return "📂";
 }
 function renderCategories(){
+  currentGroup=null;
   renderStats();
   renderQuickActions();
   quickFilters.innerHTML="";
@@ -303,6 +312,7 @@ function renderCategories(){
 }
 function renderAbout(){
   const c=counts();
+  currentGroup=null;
   stats.innerHTML="";
   quickActions.innerHTML="";
   quickFilters.innerHTML="";
@@ -322,6 +332,7 @@ function renderAbout(){
 }
 function render(){
   document.querySelectorAll(".bottomNav button").forEach(b=>b.classList.toggle("active",b.dataset.view===view));
+  if(currentGroup) return renderHome(currentGroup.items);
   if(view==="home") return renderHome();
   if(view==="boykot"){filter="boykot"; return renderHome();}
   if(view==="safe"){filter="safe"; return renderHome();}
@@ -338,6 +349,7 @@ function detail(x){
     <div class="detailLine"><span>${t("parent")}</span><b>${esc(x.anaFirma||"-")}</b></div>
     <div class="detailLine"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div>
     <div class="detailLine"><span>${t("code")}</span><b>${esc(x.kod||"-")}</b></div>
+    <div class="detailLine"><span>${t("barcode")}</span><b>${esc(x.barkod||"-")}</b></div>
     <div class="detailLine"><span>${t("alternative")}</span><b>${esc(x.alternatif||"-")}</b></div>
     <div class="detailLine"><span>${t("note")}</span><b>${esc(x.not||"-")}</b></div>
     <div class="detailLine"><span>${t("source")}</span><b>${x.kaynak && /^https?:\/\//i.test(x.kaynak)?`<a href="${esc(x.kaynak)}" target="_blank" rel="noopener">${t("openSource")}</a>`:esc(x.kaynak||"-")}</b></div>
@@ -359,25 +371,44 @@ function applyLang(){
   document.querySelectorAll("[data-i]").forEach(el=>el.textContent=t(el.dataset.i));
   document.querySelectorAll(".langSwitch button").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
 }
+function goHome(){
+  currentGroup=null;
+  view="home";
+  filter="all";
+  render();
+}
 
-search.addEventListener("input",()=>{if(view!=="home"){view="home";filter="all"} render();});
-clearBtn.addEventListener("click",()=>{search.value="";search.focus();render();});
-quickFilters.addEventListener("click",e=>{const b=e.target.closest("[data-filter]"); if(!b)return; filter=b.dataset.filter; view="home"; render();});
-quickActions.addEventListener("click",e=>{const b=e.target.closest("[data-go]"); if(!b)return; view=b.dataset.go; if(view==="alternatives")filter="altli"; if(view==="favorites")filter="fav"; render();});
-stats.addEventListener("click",e=>{const b=e.target.closest("[data-stat]"); if(!b)return; filter=b.dataset.stat; view=filter==="safe"?"safe":"home"; render();});
+search.addEventListener("input",()=>{currentGroup=null;if(view!=="home"){view="home";filter="all"} render();});
+clearBtn.addEventListener("click",()=>{search.value="";search.focus();currentGroup=null;render();});
+barcodeBtn.addEventListener("click",()=>{
+  const code=prompt(`${t("barcodePrompt")}\n${t("barcodeMissing")}`);
+  if(code){search.value=code.trim();currentGroup=null;view="home";filter="all";render();}
+});
+quickFilters.addEventListener("click",e=>{const b=e.target.closest("[data-filter]"); if(!b)return; currentGroup=null; filter=b.dataset.filter; view="home"; render();});
+quickActions.addEventListener("click",e=>{const b=e.target.closest("[data-go]"); if(!b)return; currentGroup=null; view=b.dataset.go; if(view==="alternatives")filter="altli"; if(view==="favorites")filter="fav"; render();});
+stats.addEventListener("click",e=>{const b=e.target.closest("[data-stat]"); if(!b)return; currentGroup=null; filter=b.dataset.stat; view=filter==="safe"?"safe":"home"; render();});
 results.addEventListener("click",e=>{
   const f=e.target.closest("[data-fav]");
   if(f){e.stopPropagation();toggleFav(decodeURIComponent(f.dataset.fav));return}
   const g=e.target.closest("[data-company]");
-  if(g){const name=decodeURIComponent(g.dataset.company);view="home";filter="all";search.value=name;render();return}
+  if(g){
+    const name=decodeURIComponent(g.dataset.company);
+    currentGroup={title:`🏢 ${name}`,items:DATA.filter(x=>x.anaFirma===name)};
+    view="home";filter="all";search.value="";render();return
+  }
   const cat=e.target.closest("[data-category]");
-  if(cat){const name=decodeURIComponent(cat.dataset.category);view="home";filter="all";search.value=name;render();return}
+  if(cat){
+    const name=decodeURIComponent(cat.dataset.category);
+    currentGroup={title:`${categoryIcon(name)} ${name}`,items:DATA.filter(x=>x.kategori===name)};
+    view="home";filter="all";search.value="";render();return
+  }
   const c=e.target.closest("[data-brand]");
   if(c){const name=decodeURIComponent(c.dataset.brand);const item=DATA.find(x=>x.marka===name);if(item)detail(item)}
 });
-document.querySelectorAll(".bottomNav button").forEach(b=>b.addEventListener("click",()=>{view=b.dataset.view;if(view==="home")filter="all";render();}));
+document.querySelectorAll(".bottomNav button").forEach(b=>b.addEventListener("click",()=>{currentGroup=null;view=b.dataset.view;if(view==="home")filter="all";render();}));
 document.querySelectorAll(".langSwitch button").forEach(b=>b.addEventListener("click",()=>{lang=b.dataset.lang;localStorage.setItem("boykot_lang",lang);applyLang();render();}));
 themeBtn.addEventListener("click",()=>{const next=document.body.classList.contains("dark")?"light":"dark";localStorage.setItem("ahlak_theme",next);applyTheme();});
 $("closeDialog").addEventListener("click",()=>$("detailDialog").close());
+
 if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js?v="+VERSION).catch(()=>{})}
 init();
