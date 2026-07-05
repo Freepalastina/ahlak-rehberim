@@ -1,10 +1,10 @@
 {
   "name": "Ahlak Rehberim",
   "short_name": "Ahlak",
-  "start_url": "./index.html",
+  "start_url": "./",
   "display": "standalone",
-  "background_color": "#f6f2e7",
-  "theme_color": "#65733e",
+  "background_color": "#f7f3e8",
+  "theme_color": "#617445",
   "icons": [
     {
       "src": "icon-192.png",

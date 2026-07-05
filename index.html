@@ -3,57 +3,55 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#5e7140">
+  <meta name="theme-color" content="#607246">
   <title>Ahlak Rehberim</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="heroInner">
-      <div class="topBar">
-        <div class="brandRow">
-          <div class="appIcon">🌿</div>
+  <div id="appShell" class="appShell">
+    <header class="hero">
+      <div class="heroTop">
+        <div class="brand">
+          <div class="logoMark">🌿</div>
           <div>
-            <div id="kicker" class="kicker">Bilinçli Tüketim Rehberi</div>
+            <p id="kicker" class="kicker">Bilinçli Tüketim Rehberi</p>
             <h1 id="appTitle">Ahlak Rehberim</h1>
             <p id="appSubtitle">Bilinçli tüket, güvenle tercih et.</p>
           </div>
         </div>
-
-        <div class="actions">
-          <div class="langSwitch" aria-label="Language">
-            <button data-lang="tr" type="button">TR</button>
-            <button data-lang="en" type="button">EN</button>
-            <button data-lang="de" type="button">DE</button>
+        <div class="heroActions">
+          <div class="langSwitch" aria-label="Dil seçimi">
+            <button type="button" data-lang="tr">TR</button>
+            <button type="button" data-lang="en">EN</button>
+            <button type="button" data-lang="de">DE</button>
           </div>
-          <button id="themeBtn" class="iconBtn" type="button" aria-label="Tema değiştir">🌙</button>
+          <button id="themeBtn" class="roundBtn" type="button" aria-label="Tema değiştir">🌙</button>
         </div>
       </div>
-
-      <div class="searchBox">
+      <div class="searchPanel">
         <span>🔍</span>
         <input id="search" type="search" placeholder="Marka, firma veya kategori ara..." autocomplete="off">
         <button id="clearBtn" type="button" aria-label="Aramayı temizle">×</button>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main class="shell">
-    <section id="stats" class="stats"></section>
-    <section id="quickActions" class="quickActions"></section>
-    <section id="quickFilters" class="quickFilters"></section>
-    <section id="sectionTitle" class="sectionTitle"></section>
-    <section id="results" class="results"></section>
-  </main>
+    <main class="content">
+      <section id="stats" class="stats"></section>
+      <section id="quickActions" class="quickActions"></section>
+      <section id="filters" class="filters"></section>
+      <section id="sectionTitle" class="sectionTitle"></section>
+      <section id="results" class="results"></section>
+    </main>
 
-  <nav class="bottomNav" aria-label="Alt menü">
-    <button data-view="home" class="active" type="button"><span>🏠</span><small data-i="navHome">Ana</small></button>
-    <button data-view="companies" type="button"><span>🏢</span><small data-i="navCompanies">Firmalar</small></button>
-    <button data-view="categories" type="button"><span>📂</span><small data-i="navCategories">Kategoriler</small></button>
-    <button data-view="favorites" type="button"><span>❤️</span><small data-i="navFavorites">Favoriler</small></button>
-    <button data-view="about" type="button"><span>ℹ️</span><small data-i="navAbout">Bilgi</small></button>
-  </nav>
+    <nav class="bottomNav" aria-label="Alt menü">
+      <button type="button" data-view="home" class="active"><span>🏠</span><small data-i="navHome">Ana</small></button>
+      <button type="button" data-view="companies"><span>🏢</span><small data-i="navCompanies">Firmalar</small></button>
+      <button type="button" data-view="categories"><span>📂</span><small data-i="navCategories">Kategoriler</small></button>
+      <button type="button" data-view="favorites"><span>❤️</span><small data-i="navFavorites">Favoriler</small></button>
+      <button type="button" data-view="about"><span>ℹ️</span><small data-i="navAbout">Bilgi</small></button>
+    </nav>
+  </div>
 
   <dialog id="detailDialog" class="detailDialog">
     <div id="detailContent"></div>

@@ -1,15 +1,10 @@
-# Boykot Rehberi v3.0
+# Ahlak Rehberim V4
 
-Çok dilli sürüm: Türkçe, English, Deutsch.
+Temiz sıfırdan hazırlanmış sürüm.
 
-## Dosyalar
-- index.html
-- app.js
-- style.css
-- data.json
-- manifest.json
-- sw.js
-- icon-192.png
-- icon-512.png
-
-GitHub Pages için tüm dosyaları repository ana dizinine yükleyin.
+- Toplam kayıt: 1571
+- Ana liste: 1362
+- Boykotta değil olarak eklenen: 209
+- Tekrar olduğu için eklenmeyen: 9
+- Alan adı: `anaFirma`
+- Açık tema ve dark mode birlikte tasarlandı.
