@@ -1,15 +1,16 @@
-# Ahlak Rehberim V5 - Open Food Facts
+# Ahlak Rehberim - Yeni İkon Paketi
 
-Bu sürümde V4-Final üzerine eklenenler:
+GitHub'a yükle:
+- icon-72.png
+- icon-96.png
+- icon-128.png
+- icon-144.png
+- icon-152.png
+- icon-180.png
+- icon-192.png
+- icon-384.png
+- icon-512.png
+- apple-touch-icon.png
+- manifest.json
 
-- Barkod okutunca önce yerel `data.json` aranır
-- Yerelde yoksa Open Food Facts API üzerinden ürün bilgisi alınır
-- Ürün adı / marka bilgisi mevcut marka listesiyle eşleştirilir
-- Eşleşme bulunursa marka detayı açılır
-- Eşleşen barkodlar tarayıcıda öğrenilir ve sonraki taramada daha hızlı bulunur
-- Manuel barkod girişi korunur
-- PWA, dark mode, bayraklı dil seçimi korunur
-
-Kayıt sayısı: 1571
-
-Not: Open Food Facts verileri gönüllü kullanıcılar tarafından sağlanır; sonuçlar bağımsız doğrulanmalıdır.
+Eski icon-192.png, icon-512.png ve manifest.json dosyalarının üzerine yazdır.
