@@ -1,4 +1,4 @@
-const VERSION = "20260705-v51-barcode-panel";
+const VERSION = "20260705-v6-admin-panel";
 let DATA = [];
 let view = "home";
 let filter = "all";
@@ -147,6 +147,198 @@ function normalizeItem(raw,i){
   return {marka,anaFirma,kod,kategori,alternatif,kaynak,not,barkod,status,hay,created:i};
 }
 
+
+function loadLocalDataOverride(){
+  try{
+    const raw = localStorage.getItem("ahlak_data_override_v6");
+    if(!raw) return null;
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : null;
+  }catch{return null}
+}
+function saveLocalDataOverride(){
+  const raw = DATA.map(x => ({
+    marka: x.marka,
+    anaFirma: x.anaFirma,
+    kategori: x.kategori,
+    alternatif: x.alternatif,
+    kaynak: x.kaynak,
+    not: x.not,
+    barkod: x.barkod,
+    durum: x.status
+  }));
+  localStorage.setItem("ahlak_data_override_v6", JSON.stringify(raw));
+}
+function downloadDataJson(){
+  const raw = DATA.map(x => {
+    const item = {
+      marka: x.marka,
+      anaFirma: x.anaFirma,
+      kategori: x.kategori,
+      alternatif: x.alternatif,
+      kaynak: x.kaynak,
+      not: x.not,
+      durum: x.status
+    };
+    if(x.barkod){
+      item.barkod = x.barkod;
+    }
+    Object.keys(item).forEach(k => {
+      if(item[k] === "" || item[k] === null || item[k] === undefined) delete item[k];
+    });
+    return item;
+  });
+  const text = JSON.stringify(raw, null, 2);
+  const blob = new Blob([text], {type:"application/json"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "data.json";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+  toast(t("downloaded"));
+}
+function importDataJson(file){
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try{
+      const parsed = JSON.parse(reader.result);
+      const list = Array.isArray(parsed) ? parsed : (Array.isArray(parsed.data) ? parsed.data : []);
+      DATA = list.map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"));
+      saveLocalDataOverride();
+      toast(t("dataSaved"));
+      view = "admin";
+      render();
+    }catch(e){
+      toast(t("dataError"));
+    }
+  };
+  reader.readAsText(file, "utf-8");
+}
+function adminOptions(){
+  return DATA
+    .map(x=>x.marka)
+    .filter((v,i,a)=>v && a.indexOf(v)===i)
+    .sort((a,b)=>a.localeCompare(b,"tr"))
+    .map(name=>`<option value="${esc(name)}">${esc(name)}</option>`)
+    .join("");
+}
+function getAdminFormValues(){
+  const barkodRaw = $("adminBarkod").value.trim();
+  const barkod = barkodRaw.includes(",") || barkodRaw.includes(";")
+    ? barkodRaw.split(/[;,]+/).map(x=>x.trim()).filter(Boolean)
+    : barkodRaw;
+  return {
+    marka: $("adminMarka").value.trim(),
+    anaFirma: $("adminAnaFirma").value.trim(),
+    kategori: $("adminKategori").value.trim(),
+    alternatif: $("adminAlternatif").value.trim(),
+    kaynak: $("adminKaynak").value.trim(),
+    not: $("adminNot").value.trim(),
+    barkod,
+    durum: $("adminDurum").value
+  };
+}
+function fillAdminForm(name){
+  const item = DATA.find(x=>x.marka === name);
+  if(!item) return;
+  $("adminMarka").value = item.marka || "";
+  $("adminAnaFirma").value = item.anaFirma || "";
+  $("adminKategori").value = item.kategori || "";
+  $("adminAlternatif").value = item.alternatif || "";
+  $("adminKaynak").value = item.kaynak || "";
+  $("adminNot").value = item.not || "";
+  $("adminBarkod").value = Array.isArray(item.barkod) ? item.barkod.join(", ") : (item.barkod || "");
+  $("adminDurum").value = item.status || "boykot";
+}
+function clearAdminForm(){
+  ["adminMarka","adminAnaFirma","adminKategori","adminAlternatif","adminKaynak","adminNot","adminBarkod"].forEach(id=>$(id).value="");
+  $("adminDurum").value = "boykot";
+}
+function saveAdminBrand(){
+  const raw = getAdminFormValues();
+  if(!raw.marka){
+    toast(t("requiredBrand"));
+    return;
+  }
+  if(!raw.anaFirma) raw.anaFirma = raw.marka;
+  const idx = DATA.findIndex(x=>norm(x.marka) === norm(raw.marka));
+  const normalized = normalizeItem(raw, idx >= 0 ? idx : DATA.length);
+  if(idx >= 0){
+    DATA[idx] = normalized;
+    toast(t("dataSaved"));
+  }else{
+    DATA.push(normalized);
+    toast(t("dataAdded"));
+  }
+  DATA.sort((a,b)=>a.marka.localeCompare(b.marka,"tr"));
+  saveLocalDataOverride();
+  renderAdmin();
+}
+function deleteAdminBrand(){
+  const name = $("adminSelect").value || $("adminMarka").value;
+  if(!name) return;
+  if(!confirm(t("confirmDelete"))) return;
+  DATA = DATA.filter(x=>x.marka !== name);
+  saveLocalDataOverride();
+  clearAdminForm();
+  toast(t("dataDeleted"));
+  renderAdmin();
+}
+function renderAdmin(){
+  stats.innerHTML="";
+  quickActions.innerHTML="";
+  quickFilters.innerHTML="";
+  sectionTitle.innerHTML=`<h2>⚙️ ${t("admin")}</h2><span>${DATA.length} ${t("brands")}</span>`;
+  results.innerHTML = `
+    <section class="adminPanel">
+      <p class="adminNotice">${esc(t("localOnly"))}</p>
+
+      <div class="adminTools">
+        <button type="button" onclick="downloadDataJson()">⬇️ ${esc(t("exportData"))}</button>
+        <label class="importLabel">⬆️ ${esc(t("importData"))}<input id="adminImport" type="file" accept=".json,application/json"></label>
+      </div>
+
+      <div class="adminSelectRow">
+        <label>${esc(t("chooseBrand"))}</label>
+        <select id="adminSelect">
+          <option value="">—</option>
+          ${adminOptions()}
+        </select>
+      </div>
+
+      <div class="adminForm">
+        <label>${esc(t("brandName"))}<input id="adminMarka" type="text"></label>
+        <label>${esc(t("parent"))}<input id="adminAnaFirma" type="text"></label>
+        <label>${esc(t("category"))}<input id="adminKategori" type="text"></label>
+        <label>${esc(t("alternative"))}<textarea id="adminAlternatif"></textarea></label>
+        <label>${esc(t("barcode"))}<textarea id="adminBarkod" placeholder="3017620422003, 869..."></textarea></label>
+        <label>${esc(t("source"))}<input id="adminKaynak" type="text"></label>
+        <label>${esc(t("note"))}<textarea id="adminNot"></textarea></label>
+        <label>Durum
+          <select id="adminDurum">
+            <option value="boykot">${esc(t("boycott"))}</option>
+            <option value="safe">${esc(t("notBoycotted"))}</option>
+            <option value="alternatif">${esc(t("alternative"))}</option>
+            <option value="dikkat">${esc(t("caution"))}</option>
+            <option value="inceleme">${esc(t("review"))}</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="adminButtons">
+        <button type="button" onclick="saveAdminBrand()">✅ ${esc(t("save"))}</button>
+        <button type="button" onclick="clearAdminForm()">🧹 ${esc(t("resetForm"))}</button>
+        <button type="button" class="danger" onclick="deleteAdminBrand()">🗑️ ${esc(t("deleteBrand"))}</button>
+      </div>
+    </section>`;
+  $("adminSelect").addEventListener("change", e=>fillAdminForm(e.target.value));
+  $("adminImport").addEventListener("change", e=>importDataJson(e.target.files[0]));
+}
+
 async function clearOldCaches(){
   try{
     if("caches" in window){
@@ -163,7 +355,8 @@ async function init(){
     const res=await fetch(`data.json?v=${VERSION}`,{cache:"reload"});
     if(!res.ok) throw new Error(`data.json: ${res.status}`);
     const json=await res.json();
-    const list=Array.isArray(json) ? json : (Array.isArray(json.data) ? json.data : []);
+    const override = loadLocalDataOverride();
+    const list = override || (Array.isArray(json) ? json : (Array.isArray(json.data) ? json.data : []));
     DATA=list.map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"));
     render();
   }catch(err){
@@ -206,6 +399,7 @@ function renderQuickActions(){
       <button data-go="alternatives" type="button"><span>⭐</span><b>${t("withAlt")}</b><small>${c.altli}</small></button>
       <button data-go="favorites" type="button"><span>❤️</span><b>${t("favorites")}</b><small>${c.fav}</small></button>
       <button data-export-barcodes="1" type="button"><span>📦</span><b>${t("exportBarcodes")}</b><small>JSON</small></button>
+      <button data-go="admin" type="button"><span>⚙️</span><b>${t("admin")}</b><small>JSON</small></button>
     </div>`;
 }
 function renderFilters(){
@@ -350,6 +544,7 @@ function render(){
   if(view==="favorites"){filter="fav"; return renderHome();}
   if(view==="companies") return renderCompanies();
   if(view==="categories") return renderCategories();
+  if(view==="admin") return renderAdmin();
   if(view==="about") return renderAbout();
 }
 function detail(x){

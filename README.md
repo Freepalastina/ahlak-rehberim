@@ -1,13 +1,19 @@
-# Ahlak Rehberim V5.1 - Barkod Eşleştirme Paneli
+# Ahlak Rehberim V6 - Yeni İkonlu Sürüm
 
-Eklenenler:
-- Barkod okutulduğunda eşleşme yoksa marka seçme paneli
-- “Barkodu markaya bağla” butonu
-- Kaydedilen barkodlar tarayıcıda saklanır
-- Sonraki taramada otomatik eşleşir
-- “Barkodları dışa aktar” butonu
-- `barcodes.json` olarak indirme
-- Open Food Facts entegrasyonu korunur
-- PWA, dark mode ve bayraklı dil seçimi korunur
+Bu pakette V6 Yönetim Paneli korunur ve ikonlar yenilenmiştir.
 
-Kayıt sayısı: 1571
+Yükle:
+- index.html
+- app.js
+- style.css
+- data.json
+- sw.js
+- manifest.json
+- icon-192.png
+- icon-512.png
+- apple-touch-icon.png
+- README.md
+
+Not:
+GitHub'a ZIP dosyasını değil, ZIP içindeki dosyaları yükleyin.
+Telefonunuzda eski ikon görünürse uygulamayı kaldırıp tekrar ana ekrana ekleyin.
