@@ -2,7 +2,6 @@
   {
     "marka": "3M",
     "anaFirma": "3M",
-    "kod": "A2",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.3m.com/",
@@ -11,7 +10,6 @@
   {
     "marka": "5GUM",
     "anaFirma": "Mars",
-    "kod": "A2",
     "kategori": "Çikolata/Evcil Hayvan",
     "alternatif": "Eti, Elvan, Torku; evcil hayvanda Reflex/Goody kontrol",
     "kaynak": "https://www.mars.com/our-brands",
@@ -20,7 +18,6 @@
   {
     "marka": "5Star",
     "anaFirma": "Mondelēz",
-    "kod": "A2",
     "kategori": "Gıda",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.mondelezinternational.com/our-brands/",
@@ -29,7 +26,6 @@
   {
     "marka": "7Days",
     "anaFirma": "Mondelēz",
-    "kod": "A2",
     "kategori": "Gıda",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.mondelezinternational.com/our-brands/",
@@ -38,7 +34,6 @@
   {
     "marka": "7UP",
     "anaFirma": "PepsiCo",
-    "kod": "A2",
     "kategori": "İçecek",
     "alternatif": "Uludağ, Çamlıca, Kristal, Beypazarı, yerel cips markaları",
     "kaynak": "https://www.pepsico.com/brands",
@@ -47,7 +42,6 @@
   {
     "marka": "8×4",
     "anaFirma": "Beiersdorf",
-    "kod": "A2",
     "kategori": "Kozmetik/Kişisel Bakım",
     "alternatif": "Eyüp Sabri Tuncer, Duru, Otacı, Bioxcin",
     "kaynak": "https://www.beiersdorf.com/brands",
@@ -56,16 +50,14 @@
   {
     "marka": "A101",
     "anaFirma": "A101",
-    "kod": "A2",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.a101.com.tr/",
-    "not": "Alternatif manuel eklenmeli"
+    "not": "BIM,yerel marketler"
   },
   {
     "marka": "Aareal Bank",
     "anaFirma": "Aareal Bank",
-    "kod": "A2",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.aareal-bank.com/",
