@@ -31,3 +31,9 @@ Uygulama yine tek liste gibi çalışır. Bunun için Supabase içinde `brand_ca
 - Görseller ayrı
 - Tekrar eden veri azalır
 - Uzun vadede çok daha düzenli çalışır
+
+
+## V8.1 düzeltme
+- Admin sayfasından çıkış yapınca otomatik Ana sayfaya döner
+- Arama ve filtreler temizlenir
+- Alt menü aktif durumu düzeltilir
