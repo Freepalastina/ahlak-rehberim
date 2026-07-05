@@ -1,1 +1,12 @@
-const CACHE_NAME="ahlak-rehberim-v4-clean";self.addEventListener("install",e=>self.skipWaiting());self.addEventListener("activate",e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.map(k=>caches.delete(k)))).then(()=>self.clients.claim())));self.addEventListener("fetch",e=>e.respondWith(fetch(e.request).catch(()=>caches.match(e.request))));
+const CACHE_NAME = "ahlak-v4-ui";
+self.addEventListener("install", event => {
+  self.skipWaiting();
+});
+self.addEventListener("activate", event => {
+  event.waitUntil(
+    caches.keys().then(keys => Promise.all(keys.map(k => caches.delete(k)))).then(() => self.clients.claim())
+  );
+});
+self.addEventListener("fetch", event => {
+  event.respondWith(fetch(event.request).catch(() => caches.match(event.request)));
+});
