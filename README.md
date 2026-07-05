@@ -50,3 +50,15 @@ Bu sürüm `master.xlsx / master.ods` dosyasındaki ayrı sayfaları okuyabilir:
 - Alternatifler
 
 İçe aktarma sırasında önce Markalar sayfasını okur, sonra Kaynaklar/Barkodlar/Alternatifler sayfalarını marka adına göre bağlar.
+
+
+## V13.1 Durum Fix
+Bu sürümde şu değerlerin tamamı `Boykotta Değil` olarak okunur:
+- `boykottaDegil`
+- `boykot_degil`
+- `boykot degil`
+- `boykotta degil`
+- `safe`
+- `notBoycotted`
+
+Master dosya içe aktarılırken durum değerleri otomatik normalize edilir.
