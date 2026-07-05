@@ -1,5 +1,15 @@
 [
   {
+    "marka": ".",
+    "anaFirma": "Koç Holding",
+    "kod": "A2",
+    "kategori": "",
+    "alternatif": "Kontrol gerekli - aynı kategoride yerel/bağımsız alternatif seçin",
+    "kaynak": "https://www.koc.com.tr/",
+    "not": "Manuel kontrol",
+    "durum": ""
+  },
+  {
     "marka": "3M",
     "anaFirma": "3M",
     "kod": "A2",

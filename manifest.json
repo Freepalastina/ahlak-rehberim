@@ -1,11 +1,10 @@
 {
-  "name": "Boykot Rehberi",
-  "short_name": "Boykot",
+  "name": "Ahlak Rehberim",
+  "short_name": "Ahlak",
   "start_url": "./index.html",
-  "scope": "./",
   "display": "standalone",
-  "background_color": "#fbf7ec",
-  "theme_color": "#60703a",
+  "background_color": "#f6f2e7",
+  "theme_color": "#65733e",
   "icons": [
     {
       "src": "icon-192.png",
