@@ -22,3 +22,18 @@ Temiz sürüm:
 
 Desteklenen sütunlar:
 marka, anaFirma, kategori, alternatif, kaynak, barkod, image_url, not, durum
+
+
+## V10.1 ODS Fix
+- ODS / Excel / CSV yükleme alanı Yönetim sayfasında en üste alındı
+- Giriş yapmadan da dosya seçme alanı görünür
+- Supabase’e aktarmak için giriş gerekir
+- Alan daha büyük ve belirgin hale getirildi
+
+
+## V11 ODS Raw Import Fix
+- Başlıksız LibreOffice ODS dosyaları desteklendi
+- İlk sütun otomatik marka kabul edilir
+- İkinci sütun `o`, `x`, `✓` gibi işaretleri durum olarak yorumlar
+- Tüm sayfalar taranır, en çok kayıt bulunan sayfa kullanılır
+- Aktarım durum mesajı ve hata mesajı görünür

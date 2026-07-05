@@ -15,3 +15,42 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}.heroInner{max-w
 .toast{position:fixed;left:50%;bottom:104px;transform:translateX(-50%) translateY(18px);z-index:80;padding:13px 16px;border-radius:999px;background:rgba(31,40,24,.92);color:white;font-weight:900;opacity:0;transition:.25s}.toast.show{opacity:1;transform:translateX(-50%)}
 body.dark{--bg:#14180f;--bg2:#0d120b;--paper:#202719;--ink:#f5f1e5;--muted:#b9c0a8;--line:#354126;background:linear-gradient(180deg,var(--bg),var(--bg2))}body.dark .stat,body.dark .quickGrid button,body.dark .card,body.dark .group,body.dark .adminPanel,body.dark .bottomNav,body.dark .chip{background:#202719;color:var(--ink)}body.dark .box,body.dark .altBox,body.dark .detailLine,body.dark .adminLogin input,body.dark .adminForm input,body.dark .adminForm textarea,body.dark .adminForm select,body.dark .adminSelectRow select,body.dark .dataCenter{background:#1a2014;color:var(--ink)}
 @media(max-width:900px){.stats,.quickGrid{grid-template-columns:repeat(2,1fr)}.results{grid-template-columns:1fr}}@media(max-width:760px){.topBar{flex-direction:column}.adminForm{grid-template-columns:1fr}h1{font-size:29px}}
+
+/* V10.1 ODS alanı belirginleştirme */
+.dataCenterTop{
+  border:3px solid var(--olive);
+  background:linear-gradient(145deg,#eef3df,#fffef9);
+  box-shadow:0 18px 50px rgba(95,113,56,.20);
+}
+.dataCenterTop h3{
+  font-size:24px;
+  margin-bottom:10px;
+}
+.dataCenterTop input[type=file]{
+  font-size:16px;
+  border-width:2px;
+  border-style:dashed;
+}
+.dataCenterTop button{
+  width:100%;
+  font-size:16px;
+  padding:16px;
+}
+body.dark .dataCenterTop{
+  background:linear-gradient(145deg,#2e3921,#1a2014);
+}
+
+/* V11 import status */
+.importStatus{
+  margin-top:12px;
+  padding:12px 14px;
+  border-radius:18px;
+  background:#26311f;
+  color:white;
+  font-weight:950;
+  min-height:18px;
+}
+body.dark .importStatus{
+  background:#8fa35a;
+  color:#10150e;
+}

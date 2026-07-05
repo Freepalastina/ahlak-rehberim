@@ -1,17 +1,18 @@
-const VERSION="20260705-v10-clean";
+const VERSION="20260705-v11-ods-raw-import";
 const SUPABASE_URL="https://imicltjdfzqlxzvodheq.supabase.co";
 const SUPABASE_KEY="sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
 const supabaseClient=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
 
+let importBusy=false;
 let DATA=[],view="home",filter="all",currentGroup=null,adminSession=null,importedRows=[];
 let favorites=loadFavorites(),lang=localStorage.getItem("boykot_lang")||"tr";
 const $=id=>document.getElementById(id);
 const search=$("search"),clearBtn=$("clearBtn"),barcodeBtn=$("barcodeBtn"),stats=$("stats"),quickActions=$("quickActions"),quickFilters=$("quickFilters"),sectionTitle=$("sectionTitle"),results=$("results"),themeBtn=$("themeBtn");
 
 const I={
-tr:{kicker:"V10 Temiz Sistem",title:"Ahlak Rehberim",subtitle:"Bilinçli tüket, güvenle tercih et.",search:"Marka, firma, kategori veya barkod ara...",navHome:"Ana",navCompanies:"Firmalar",navCategories:"Kategori",navFavorites:"Favori",navAdmin:"Yönetim",boycott:"Boykot",notBoycotted:"Boykotta Değil",review:"İnceleniyor",withAlt:"Alternatifli",favorites:"Favoriler",all:"Tümü",results:"sonuç",brands:"marka",companies:"Ana Firmalar",categories:"Kategoriler",category:"Kategori",parent:"Ana Firma",barcode:"Barkod",alternative:"Alternatif",details:"Ayrıntıları Gör →",close:"Kapat",source:"Kaynak",note:"Not",openSource:"Kaynağı aç",noResult:"Sonuç bulunamadı.",safeInfo:"Bu marka boykot listesinde olmayanlar bölümüne eklendi.",quickTitle:"Hızlı Erişim",admin:"Yönetim",login:"Giriş",logout:"Çıkış",email:"E-posta",password:"Şifre",brandName:"Marka adı",save:"Kaydet",resetForm:"Temizle",chooseBrand:"Marka seç",deleteBrand:"Marka Sil",confirmDelete:"Bu markayı silmek istiyor musun?",dataSaved:"Kayıt güncellendi",dataAdded:"Marka eklendi",dataDeleted:"Kayıt silindi",requiredBrand:"Marka adı gerekli",importToSupabase:"data.json → Supabase aktar",exportData:"data.json indir",localOnly:"Giriş yaptıysan değişiklikler Supabase’e kaydedilir.",dataCenter:"Veri Merkezi",chooseFile:"ODS / Excel / CSV seç",importFileToSupabase:"Dosyayı Supabase’e aktar",fileRows:"kayıt okundu",fileReady:"Dosya hazır",fileError:"Dosya okunamadı",importDone:"Aktarma tamamlandı",noFileData:"Önce dosya seç",downloaded:"İndirildi",supabaseReady:"Supabase bağlı",supabaseFallback:"Supabase boş/ulaşılamıyor, data.json yedeği kullanılıyor.",barcodePrompt:"Barkod numarasını yaz:",barcodeMissing:"Barkod alanı yoksa eşleşme bulunmayabilir."},
-en:{kicker:"V10 Clean System",title:"Ahlak Rehberim",subtitle:"Choose consciously.",search:"Search brand, company, category or barcode...",navHome:"Home",navCompanies:"Companies",navCategories:"Category",navFavorites:"Favorite",navAdmin:"Admin",boycott:"Boycott",notBoycotted:"Not Boycotted",review:"Under Review",withAlt:"With Alternatives",favorites:"Favorites",all:"All",results:"results",brands:"brands",companies:"Companies",categories:"Categories",category:"Category",parent:"Parent Company",barcode:"Barcode",alternative:"Alternative",details:"View Details →",close:"Close",source:"Source",note:"Note",openSource:"Open source",noResult:"No results found.",safeInfo:"This brand is in Not Boycotted.",quickTitle:"Quick Access",admin:"Admin",login:"Login",logout:"Logout",email:"Email",password:"Password",brandName:"Brand name",save:"Save",resetForm:"Clear",chooseBrand:"Select brand",deleteBrand:"Delete brand",confirmDelete:"Delete this brand?",dataSaved:"Record updated",dataAdded:"Brand added",dataDeleted:"Record deleted",requiredBrand:"Brand required",importToSupabase:"Import data.json to Supabase",exportData:"Download data.json",localOnly:"If logged in, changes are saved to Supabase.",dataCenter:"Data Center",chooseFile:"Choose ODS / Excel / CSV",importFileToSupabase:"Import file to Supabase",fileRows:"rows found",fileReady:"File ready",fileError:"Could not read file",importDone:"Import complete",noFileData:"Choose a file first",downloaded:"Downloaded",supabaseReady:"Supabase connected",supabaseFallback:"Supabase empty/unavailable; using data.json fallback.",barcodePrompt:"Enter barcode:",barcodeMissing:"No match if barcode data is missing."},
-de:{kicker:"V10 Sauberes System",title:"Ahlak Rehberim",subtitle:"Bewusst konsumieren.",search:"Marke, Firma, Kategorie oder Barcode suchen...",navHome:"Start",navCompanies:"Firmen",navCategories:"Kategorie",navFavorites:"Favorit",navAdmin:"Admin",boycott:"Boykott",notBoycotted:"Nicht boykottiert",review:"In Prüfung",withAlt:"Mit Alternativen",favorites:"Favoriten",all:"Alle",results:"Ergebnisse",brands:"Marken",companies:"Firmen",categories:"Kategorien",category:"Kategorie",parent:"Mutterfirma",barcode:"Barcode",alternative:"Alternative",details:"Details ansehen →",close:"Schließen",source:"Quelle",note:"Notiz",openSource:"Quelle öffnen",noResult:"Keine Ergebnisse gefunden.",safeInfo:"Diese Marke ist nicht boykottiert.",quickTitle:"Schnellzugriff",admin:"Verwaltung",login:"Anmelden",logout:"Abmelden",email:"E-Mail",password:"Passwort",brandName:"Markenname",save:"Speichern",resetForm:"Leeren",chooseBrand:"Marke auswählen",deleteBrand:"Marke löschen",confirmDelete:"Diese Marke löschen?",dataSaved:"Eintrag aktualisiert",dataAdded:"Marke hinzugefügt",dataDeleted:"Eintrag gelöscht",requiredBrand:"Marke erforderlich",importToSupabase:"data.json importieren",exportData:"data.json herunterladen",localOnly:"Wenn angemeldet, werden Änderungen in Supabase gespeichert.",dataCenter:"Datenzentrum",chooseFile:"ODS / Excel / CSV wählen",importFileToSupabase:"Datei importieren",fileRows:"Einträge gefunden",fileReady:"Datei bereit",fileError:"Datei konnte nicht gelesen werden",importDone:"Import abgeschlossen",noFileData:"Bitte zuerst Datei wählen",downloaded:"Heruntergeladen",supabaseReady:"Supabase verbunden",supabaseFallback:"Supabase leer/nicht verfügbar; data.json wird genutzt.",barcodePrompt:"Barcode eingeben:",barcodeMissing:"Keine Übereinstimmung ohne Barcode-Daten."}
+tr:{kicker:"V10 Temiz Sistem",title:"Ahlak Rehberim",subtitle:"Bilinçli tüket, güvenle tercih et.",search:"Marka, firma, kategori veya barkod ara...",navHome:"Ana",navCompanies:"Firmalar",navCategories:"Kategori",navFavorites:"Favori",navAdmin:"Yönetim",boycott:"Boykot",notBoycotted:"Boykotta Değil",review:"İnceleniyor",withAlt:"Alternatifli",favorites:"Favoriler",all:"Tümü",results:"sonuç",brands:"marka",companies:"Ana Firmalar",categories:"Kategoriler",category:"Kategori",parent:"Ana Firma",barcode:"Barkod",alternative:"Alternatif",details:"Ayrıntıları Gör →",close:"Kapat",source:"Kaynak",note:"Not",openSource:"Kaynağı aç",noResult:"Sonuç bulunamadı.",safeInfo:"Bu marka boykot listesinde olmayanlar bölümüne eklendi.",quickTitle:"Hızlı Erişim",admin:"Yönetim",login:"Giriş",logout:"Çıkış",email:"E-posta",password:"Şifre",brandName:"Marka adı",save:"Kaydet",resetForm:"Temizle",chooseBrand:"Marka seç",deleteBrand:"Marka Sil",confirmDelete:"Bu markayı silmek istiyor musun?",dataSaved:"Kayıt güncellendi",dataAdded:"Marka eklendi",dataDeleted:"Kayıt silindi",requiredBrand:"Marka adı gerekli",importToSupabase:"data.json → Supabase aktar",exportData:"data.json indir",localOnly:"Giriş yaptıysan değişiklikler Supabase’e kaydedilir.",dataCenter:"📥 LibreOffice / Excel Yükle",chooseFile:"Buradan .ods, .xlsx veya .csv dosyanı seç",importFileToSupabase:"☁ Seçilen Dosyayı Supabase’e Aktar",fileRows:"kayıt okundu",fileReady:"Dosya hazır",fileError:"Dosya okunamadı",importDone:"Aktarma tamamlandı",noFileData:"Önce dosya seç", importStarted:"Aktarım başladı...", importNeedLogin:"Önce admin girişi yap", importProgress:"Aktarılıyor", importError:"Aktarım hatası",downloaded:"İndirildi",supabaseReady:"Supabase bağlı",supabaseFallback:"Supabase boş/ulaşılamıyor, data.json yedeği kullanılıyor.",barcodePrompt:"Barkod numarasını yaz:",barcodeMissing:"Barkod alanı yoksa eşleşme bulunmayabilir."},
+en:{kicker:"V10 Clean System",title:"Ahlak Rehberim",subtitle:"Choose consciously.",search:"Search brand, company, category or barcode...",navHome:"Home",navCompanies:"Companies",navCategories:"Category",navFavorites:"Favorite",navAdmin:"Admin",boycott:"Boycott",notBoycotted:"Not Boycotted",review:"Under Review",withAlt:"With Alternatives",favorites:"Favorites",all:"All",results:"results",brands:"brands",companies:"Companies",categories:"Categories",category:"Category",parent:"Parent Company",barcode:"Barcode",alternative:"Alternative",details:"View Details →",close:"Close",source:"Source",note:"Note",openSource:"Open source",noResult:"No results found.",safeInfo:"This brand is in Not Boycotted.",quickTitle:"Quick Access",admin:"Admin",login:"Login",logout:"Logout",email:"Email",password:"Password",brandName:"Brand name",save:"Save",resetForm:"Clear",chooseBrand:"Select brand",deleteBrand:"Delete brand",confirmDelete:"Delete this brand?",dataSaved:"Record updated",dataAdded:"Brand added",dataDeleted:"Record deleted",requiredBrand:"Brand required",importToSupabase:"Import data.json to Supabase",exportData:"Download data.json",localOnly:"If logged in, changes are saved to Supabase.",dataCenter:"Data Center",chooseFile:"Choose ODS / Excel / CSV",importFileToSupabase:"Import file to Supabase",fileRows:"rows found",fileReady:"File ready",fileError:"Could not read file",importDone:"Import complete",noFileData:"Choose a file first", importStarted:"Import started...", importNeedLogin:"Please login first", importProgress:"Importing", importError:"Import error",downloaded:"Downloaded",supabaseReady:"Supabase connected",supabaseFallback:"Supabase empty/unavailable; using data.json fallback.",barcodePrompt:"Enter barcode:",barcodeMissing:"No match if barcode data is missing."},
+de:{kicker:"V10 Sauberes System",title:"Ahlak Rehberim",subtitle:"Bewusst konsumieren.",search:"Marke, Firma, Kategorie oder Barcode suchen...",navHome:"Start",navCompanies:"Firmen",navCategories:"Kategorie",navFavorites:"Favorit",navAdmin:"Admin",boycott:"Boykott",notBoycotted:"Nicht boykottiert",review:"In Prüfung",withAlt:"Mit Alternativen",favorites:"Favoriten",all:"Alle",results:"Ergebnisse",brands:"Marken",companies:"Firmen",categories:"Kategorien",category:"Kategorie",parent:"Mutterfirma",barcode:"Barcode",alternative:"Alternative",details:"Details ansehen →",close:"Schließen",source:"Quelle",note:"Notiz",openSource:"Quelle öffnen",noResult:"Keine Ergebnisse gefunden.",safeInfo:"Diese Marke ist nicht boykottiert.",quickTitle:"Schnellzugriff",admin:"Verwaltung",login:"Anmelden",logout:"Abmelden",email:"E-Mail",password:"Passwort",brandName:"Markenname",save:"Speichern",resetForm:"Leeren",chooseBrand:"Marke auswählen",deleteBrand:"Marke löschen",confirmDelete:"Diese Marke löschen?",dataSaved:"Eintrag aktualisiert",dataAdded:"Marke hinzugefügt",dataDeleted:"Eintrag gelöscht",requiredBrand:"Marke erforderlich",importToSupabase:"data.json importieren",exportData:"data.json herunterladen",localOnly:"Wenn angemeldet, werden Änderungen in Supabase gespeichert.",dataCenter:"Datenzentrum",chooseFile:"ODS / Excel / CSV wählen",importFileToSupabase:"Datei importieren",fileRows:"Einträge gefunden",fileReady:"Datei bereit",fileError:"Datei konnte nicht gelesen werden",importDone:"Import abgeschlossen",noFileData:"Bitte zuerst Datei wählen", importStarted:"Import gestartet...", importNeedLogin:"Bitte zuerst anmelden", importProgress:"Import läuft", importError:"Importfehler",downloaded:"Heruntergeladen",supabaseReady:"Supabase verbunden",supabaseFallback:"Supabase leer/nicht verfügbar; data.json wird genutzt.",barcodePrompt:"Barcode eingeben:",barcodeMissing:"Keine Übereinstimmung ohne Barcode-Daten."}
 };
 function t(k){return(I[lang]&&I[lang][k])||I.tr[k]||k}
 function esc(s){return String(s??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}
@@ -47,10 +48,129 @@ function renderCompanies(){renderStats();renderQuickActions();quickFilters.inner
 function catIcon(n){const x=norm(n);if(x.includes("icecek")||x.includes("su"))return"🥤";if(x.includes("gida")||x.includes("cikolata"))return"🍫";if(x.includes("temizlik"))return"🧼";if(x.includes("kozmetik"))return"💄";return"📂"}
 function renderCategories(){renderStats();renderQuickActions();quickFilters.innerHTML="";search.value="";const g=groupBy("kategori").filter(([n])=>n&&n!=="-");sectionTitle.innerHTML=`<h2>📂 ${t("categories")}</h2><span>${g.length}</span>`;results.innerHTML=g.map(([n,it])=>`<button class="group" data-category="${encodeURIComponent(n)}"><div><b>${catIcon(n)} ${esc(n)}</b><small>${it.length} ${t("brands")}</small></div><div class="count">${it.length}</div></button>`).join("")}
 
-function fieldValue(row,names){for(const name of names){const k=Object.keys(row).find(x=>norm(x)===norm(name));if(k&&row[k]!=null&&String(row[k]).trim()!=="")return String(row[k]).trim()}return""}
-function mapSheetRow(row){const barkodRaw=fieldValue(row,["barkod","barcode","ean","gtin","Barkod"]);return{marka:fieldValue(row,["marka","Marka","brand"]),anaFirma:fieldValue(row,["anaFirma","Ana Firma","anafirma","ana_firma","company"]),kategori:fieldValue(row,["kategori","Kategori","category"]),alternatif:fieldValue(row,["alternatif","Alternatif","alternative"]),kaynak:fieldValue(row,["kaynak","Kaynak","source","url","link"]),not:fieldValue(row,["not","Not","note","notlar"]),status:fieldValue(row,["durum","Durum","status"])||"boykot",barkod:barkodRaw?String(barkodRaw).split(/[;, ]+/).filter(Boolean):[],imageUrl:fieldValue(row,["image_url","image","logo","resim","gorsel","Görsel URL"])}}
-function readSpreadsheetFile(file){if(!file){toast(t("noFileData"));return}const r=new FileReader();r.onload=e=>{try{const wb=XLSX.read(new Uint8Array(e.target.result),{type:"array"});const rows=XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]],{defval:""});importedRows=rows.map(mapSheetRow).filter(x=>x.marka);renderImportPreview();toast(t("fileReady"))}catch(err){toast(t("fileError"))}};r.readAsArrayBuffer(file)}
-function renderImportPreview(){const box=$("importPreview");if(!box)return;const s=importedRows.slice(0,10);box.innerHTML=`<div class="importSummary"><b>${importedRows.length}</b> ${esc(t("fileRows"))}</div><div class="importTable"><table><thead><tr><th>Marka</th><th>Ana Firma</th><th>Kategori</th><th>Durum</th><th>Barkod</th></tr></thead><tbody>${s.map(r=>`<tr><td>${esc(r.marka)}</td><td>${esc(r.anaFirma)}</td><td>${esc(r.kategori)}</td><td>${esc(r.status)}</td><td>${esc((r.barkod||[]).join(", "))}</td></tr>`).join("")}</tbody></table></div>`}
+function fieldValue(row,names){
+  for(const name of names){
+    const k=Object.keys(row).find(x=>norm(x)===norm(name));
+    if(k&&row[k]!=null&&String(row[k]).trim()!=="")return String(row[k]).trim();
+  }
+  return "";
+}
+function rowHasHeaderKeys(row){
+  const keys = Object.keys(row).map(norm).join(" ");
+  return keys.includes("marka") || keys.includes("brand") || keys.includes("ana firma") || keys.includes("kategori");
+}
+function mapSheetRow(row){
+  const barkodRaw=fieldValue(row,["barkod","barcode","ean","gtin","Barkod"]);
+  return{
+    marka:fieldValue(row,["marka","Marka","brand"]),
+    anaFirma:fieldValue(row,["anaFirma","Ana Firma","anafirma","ana_firma","company"]),
+    kategori:fieldValue(row,["kategori","Kategori","category"]),
+    alternatif:fieldValue(row,["alternatif","Alternatif","alternative"]),
+    kaynak:fieldValue(row,["kaynak","Kaynak","source","url","link"]),
+    not:fieldValue(row,["not","Not","note","notlar"]),
+    status:fieldValue(row,["durum","Durum","status"])||"boykot",
+    barkod:barkodRaw?String(barkodRaw).split(/[;, ]+/).filter(Boolean):[],
+    imageUrl:fieldValue(row,["image_url","image","logo","resim","gorsel","Görsel URL"])
+  };
+}
+function rawRowToBrand(arr){
+  const vals = (arr||[]).map(v=>String(v??"").trim());
+  const marka = vals[0] || "";
+  if(!marka) return null;
+  const second = norm(vals[1]||"");
+  let status = "boykot";
+  if(second==="" || second==="-" || second==="0") status = "inceleme";
+  if(second.includes("degil") || second.includes("safe") || second.includes("not")) status = "safe";
+  if(second.includes("alt")) status = "alternatif";
+  return {
+    marka,
+    anaFirma: vals[2] || marka,
+    kategori: vals[3] || "",
+    alternatif: vals[4] || "",
+    kaynak: vals[5] || "",
+    not: vals[6] || "",
+    status,
+    barkod: vals[7] ? vals[7].split(/[;, ]+/).filter(Boolean) : [],
+    imageUrl: vals[8] || ""
+  };
+}
+function parseWorkbook(workbook){
+  let best = [];
+  for(const sheetName of workbook.SheetNames){
+    const sheet = workbook.Sheets[sheetName];
+
+    // 1) Try header based import
+    const jsonRows = XLSX.utils.sheet_to_json(sheet, {defval:""});
+    const mapped = jsonRows.map(mapSheetRow).filter(x=>x.marka);
+    if(mapped.length > best.length) best = mapped;
+
+    // 2) Try raw array import for user format: first column = brand, second column = marker like "o"
+    const raw = XLSX.utils.sheet_to_json(sheet, {header:1, defval:"", blankrows:false});
+    const rawMapped = raw
+      .filter(r => Array.isArray(r) && String(r[0]??"").trim() !== "")
+      .filter(r => {
+        const first = norm(r[0]);
+        return first !== "marka" && first !== "brand" && first !== "ürün" && first !== "urun";
+      })
+      .map(rawRowToBrand)
+      .filter(Boolean);
+
+    if(rawMapped.length > best.length) best = rawMapped;
+  }
+  return best;
+}
+function readSpreadsheetFile(file){
+  if(!file){toast(t("noFileData"));return}
+  const r=new FileReader();
+  r.onload=e=>{
+    try{
+      const wb=XLSX.read(new Uint8Array(e.target.result),{type:"array"});
+      importedRows=parseWorkbook(wb);
+      renderImportPreview();
+      toast(`${t("fileReady")}: ${importedRows.length}`);
+    }catch(err){
+      console.error(err);
+      toast(t("fileError"));
+    }
+  };
+  r.readAsArrayBuffer(file);
+}
+function renderImportPreview(){
+  const box=$("importPreview");
+  if(!box)return;
+  const s=importedRows.slice(0,10);
+  box.innerHTML=`<div class="importSummary"><b>${importedRows.length}</b> ${esc(t("fileRows"))}</div><div class="importTable"><table><thead><tr><th>Marka</th><th>Ana Firma</th><th>Kategori</th><th>Durum</th><th>Barkod</th></tr></thead><tbody>${s.map(r=>`<tr><td>${esc(r.marka)}</td><td>${esc(r.anaFirma)}</td><td>${esc(r.kategori)}</td><td>${esc(r.status)}</td><td>${esc((r.barkod||[]).join(", "))}</td></tr>`).join("")}</tbody></table></div>`;
+}
+function setImportStatus(msg){
+  let el = document.getElementById("importStatus");
+  if(el) el.textContent = msg || "";
+}
+async function importSpreadsheetToSupabase(){
+  if(!adminSession){toast(t("importNeedLogin") || t("login"));return}
+  if(!importedRows.length){toast(t("noFileData"));return}
+  if(importBusy) return;
+  importBusy = true;
+  setImportStatus(t("importStarted"));
+  try{
+    let ok = 0;
+    for(const r of importedRows){
+      await importLegacy(r);
+      ok++;
+      if(ok % 25 === 0) setImportStatus(`${t("importProgress")}: ${ok}/${importedRows.length}`);
+    }
+    setImportStatus(`${t("importDone")}: ${ok}/${importedRows.length}`);
+    toast(t("importDone"));
+    await reload();
+    view="admin";
+    render();
+  }catch(err){
+    console.error(err);
+    setImportStatus(`${t("importError")}: ${err.message || err}`);
+    toast(err.message || t("importError"));
+  }finally{
+    importBusy = false;
+  }
+}
 async function importLegacy(item){const legacy=toLegacy(item);const {error}=await supabaseClient.rpc("import_legacy_brand",{p_item:legacy});if(error)throw error}
 async function importSpreadsheetToSupabase(){if(!adminSession){toast(t("login"));return}if(!importedRows.length){toast(t("noFileData"));return}for(const r of importedRows){await importLegacy(r)}toast(t("importDone"));await reload();view="admin";render()}
 async function importToSupabase(){if(!adminSession){toast(t("login"));return}for(const item of DATA){await importLegacy(item)}toast(t("importDone"));await reload();view="admin";render()}
@@ -64,7 +184,74 @@ function clearAdminForm(){["adminMarka","adminAnaFirma","adminKategori","adminAl
 async function adminLogin(){const{data,error}=await supabaseClient.auth.signInWithPassword({email:$("adminEmail").value.trim(),password:$("adminPassword").value});if(error){toast(error.message);return}adminSession=data.session;toast(t("supabaseReady"));renderAdmin()}
 async function adminLogout(){await supabaseClient.auth.signOut();adminSession=null;view="home";filter="all";search.value="";render()}
 function downloadDataJson(){const raw=DATA.map(toLegacy);const blob=new Blob([JSON.stringify(raw,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="data.json";a.click();URL.revokeObjectURL(url);toast(t("downloaded"))}
-function renderAdmin(){stats.innerHTML="";quickActions.innerHTML="";quickFilters.innerHTML="";sectionTitle.innerHTML=`<h2>⚙️ ${t("admin")}</h2><span>${DATA.length} ${t("brands")}</span>`;results.innerHTML=`<section class="adminPanel"><p class="adminNotice">${esc(t("localOnly"))}</p><div class="adminLogin">${adminSession?`<button onclick="adminLogout()">🚪 ${esc(t("logout"))}</button>`:`<input id="adminEmail" placeholder="${esc(t("email"))}"><input id="adminPassword" type="password" placeholder="${esc(t("password"))}"><button onclick="adminLogin()">🔐 ${esc(t("login"))}</button>`}</div><div class="dataCenter"><h3>📥 ${esc(t("dataCenter"))}</h3><p>${esc(t("chooseFile"))}</p><input id="spreadsheetFile" type="file" accept=".ods,.xlsx,.xls,.csv"><div id="importPreview"></div><button onclick="importSpreadsheetToSupabase()">☁️ ${esc(t("importFileToSupabase"))}</button></div><div class="adminTools"><button onclick="importToSupabase()">☁️ ${esc(t("importToSupabase"))}</button><button onclick="downloadDataJson()">⬇️ ${esc(t("exportData"))}</button></div><div class="adminSelectRow"><label>${esc(t("chooseBrand"))}</label><select id="adminSelect"><option value="">—</option>${adminOptions()}</select></div><div class="adminForm"><label>${esc(t("brandName"))}<input id="adminMarka"></label><label>${esc(t("parent"))}<input id="adminAnaFirma"></label><label>${esc(t("category"))}<input id="adminKategori"></label><label>${esc(t("alternative"))}<textarea id="adminAlternatif"></textarea></label><label>${esc(t("barcode"))}<textarea id="adminBarkod"></textarea></label><label>Görsel URL<input id="adminImageUrl" placeholder="https://..."></label><label>${esc(t("source"))}<input id="adminKaynak"></label><label>${esc(t("note"))}<textarea id="adminNot"></textarea></label><label>Durum<select id="adminDurum"><option value="boykot">${esc(t("boycott"))}</option><option value="safe">${esc(t("notBoycotted"))}</option><option value="alternatif">${esc(t("alternative"))}</option><option value="dikkat">Dikkat</option><option value="inceleme">${esc(t("review"))}</option></select></label></div><div class="adminButtons"><button onclick="saveAdminBrand()">✅ ${esc(t("save"))}</button><button onclick="clearAdminForm()">🧹 ${esc(t("resetForm"))}</button><button class="danger" onclick="deleteAdminBrand()">🗑️ ${esc(t("deleteBrand"))}</button></div></section>`;$("adminSelect").addEventListener("change",e=>fillAdminForm(e.target.value));$("spreadsheetFile").addEventListener("change",e=>readSpreadsheetFile(e.target.files[0]))}
+function renderAdmin(){
+stats.innerHTML="";
+quickActions.innerHTML="";
+quickFilters.innerHTML="";
+sectionTitle.innerHTML=`<h2>⚙️ ${t("admin")}</h2><span>${DATA.length} ${t("brands")}</span>`;
+
+results.innerHTML=`<section class="adminPanel">
+  <div class="dataCenter dataCenterTop">
+    <h3>📥 LibreOffice / Excel / CSV Yükle</h3>
+    <p>.ods, .xlsx, .xls veya .csv dosyanı buradan seç. Önizleme geldikten sonra Supabase’e aktar.</p>
+    <input id="spreadsheetFile" type="file" accept=".ods,.xlsx,.xls,.csv,application/vnd.oasis.opendocument.spreadsheet,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv">
+    <div id="importPreview" class="importPreview"></div><div id="importStatus" class="importStatus"></div>
+    <button type="button" onclick="importSpreadsheetToSupabase()">☁ Seçilen Dosyayı Supabase’e Aktar</button>
+  </div>
+
+  <p class="adminNotice">${esc(t("localOnly"))}</p>
+
+  <div class="adminLogin">
+    ${adminSession
+      ? `<button type="button" onclick="adminLogout()">🚪 ${esc(t("logout"))}</button>`
+      : `<input id="adminEmail" placeholder="${esc(t("email"))}">
+         <input id="adminPassword" type="password" placeholder="${esc(t("password"))}">
+         <button type="button" onclick="adminLogin()">🔐 ${esc(t("login"))}</button>`}
+  </div>
+
+  <div class="adminTools">
+    <button type="button" onclick="importToSupabase()">☁ ${esc(t("importToSupabase"))}</button>
+    <button type="button" onclick="downloadDataJson()">⬇️ ${esc(t("exportData"))}</button>
+  </div>
+
+  <div class="adminSelectRow">
+    <label>${esc(t("chooseBrand"))}</label>
+    <select id="adminSelect"><option value="">—</option>${adminOptions()}</select>
+  </div>
+
+  <div class="adminForm">
+    <label>${esc(t("brandName"))}<input id="adminMarka"></label>
+    <label>${esc(t("parent"))}<input id="adminAnaFirma"></label>
+    <label>${esc(t("category"))}<input id="adminKategori"></label>
+    <label>${esc(t("alternative"))}<textarea id="adminAlternatif"></textarea></label>
+    <label>${esc(t("barcode"))}<textarea id="adminBarkod"></textarea></label>
+    <label>Görsel URL<input id="adminImageUrl" placeholder="https://..."></label>
+    <label>${esc(t("source"))}<input id="adminKaynak"></label>
+    <label>${esc(t("note"))}<textarea id="adminNot"></textarea></label>
+    <label>Durum
+      <select id="adminDurum">
+        <option value="boykot">${esc(t("boycott"))}</option>
+        <option value="safe">${esc(t("notBoycotted"))}</option>
+        <option value="alternatif">${esc(t("alternative"))}</option>
+        <option value="dikkat">Dikkat</option>
+        <option value="inceleme">${esc(t("review"))}</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="adminButtons">
+    <button type="button" onclick="saveAdminBrand()">✅ ${esc(t("save"))}</button>
+    <button type="button" onclick="clearAdminForm()">🧹 ${esc(t("resetForm"))}</button>
+    <button type="button" class="danger" onclick="deleteAdminBrand()">🗑️ ${esc(t("deleteBrand"))}</button>
+  </div>
+</section>`;
+
+const sel = $("adminSelect");
+if(sel) sel.addEventListener("change", e=>fillAdminForm(e.target.value));
+
+const fileInput = $("spreadsheetFile");
+if(fileInput) fileInput.addEventListener("change", e=>readSpreadsheetFile(e.target.files[0]));
+}
 
 function render(){document.querySelectorAll(".bottomNav button").forEach(b=>b.classList.toggle("active",b.dataset.view===view));if(currentGroup)return renderHome(currentGroup.items);if(view==="home")return renderHome();if(view==="alternatives"){filter="altli";return renderHome()}if(view==="favorites"){filter="fav";return renderHome()}if(view==="companies")return renderCompanies();if(view==="categories")return renderCategories();if(view==="admin")return renderAdmin()}
 function detail(x){const d=$("detailDialog"),c=$("detailContent");c.innerHTML=`<div class="detailHead"><h2>${esc(x.marka)}</h2><p>${statusLabel(x.status)}</p></div><div class="detailBody">${x.imageUrl?`<div class="detailImage"><img src="${esc(x.imageUrl)}" alt="${esc(x.marka)}"></div>`:""}<div class="detailLine"><span>${t("parent")}</span><b>${esc(x.anaFirma||"-")}</b></div><div class="detailLine"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div><div class="detailLine"><span>${t("barcode")}</span><b>${esc((x.barkod||[]).join(", ")||"-")}</b></div><div class="detailLine"><span>${t("alternative")}</span><b>${esc(x.alternatif||"-")}</b></div><div class="detailLine"><span>${t("note")}</span><b>${esc(x.not||"-")}</b></div><div class="detailLine"><span>${t("source")}</span><b>${esc(x.kaynak||"-")}</b></div></div>`;d.showModal()}
