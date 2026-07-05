@@ -1,5 +1,5 @@
 
-const VERSION = "20260705-v7-3-gorsel-destegi";
+const VERSION = "20260705-v8-profesyonel-db";
 const SUPABASE_URL = "https://imicltjdfzqlxzvodheq.supabase.co";
 const SUPABASE_KEY = "sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
 const supabaseClient = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
@@ -25,9 +25,9 @@ const themeBtn = $("themeBtn");
 const installBtn = $("installBtn");
 
 const I = {
-  tr:{htmlLang:"tr",kicker:"Supabase V7",title:"Ahlak Rehberim",subtitle:"Bilinçli tüket, güvenle tercih et.",search:"Marka, firma, kategori veya barkod ara...",navHome:"Ana",navCompanies:"Firmalar",navCategories:"Kategori",navFavorites:"Favori",navAbout:"Bilgi",boycott:"Boykot",notBoycotted:"Boykotta Değil",review:"İnceleniyor",withAlt:"Alternatifli",favorites:"Favoriler",all:"Tümü",results:"sonuç",brands:"marka",companies:"Ana Firmalar",categories:"Kategoriler",category:"Kategori",parent:"Ana Firma",barcode:"Barkod",alternative:"Alternatif",details:"Ayrıntıları Gör →",close:"Kapat",source:"Kaynak",note:"Not",openSource:"Kaynağı aç",noResult:"Sonuç bulunamadı.",safeInfo:"Bu marka boykot listesinde olmayanlar bölümüne eklendi.",quickTitle:"Hızlı Erişim",admin:"Yönetim",login:"Giriş",logout:"Çıkış",email:"E-posta",password:"Şifre",brandName:"Marka adı",save:"Kaydet",resetForm:"Formu temizle",chooseBrand:"Marka seç",deleteBrand:"Marka Sil",confirmDelete:"Bu markayı silmek istiyor musun?",dataSaved:"Kayıt güncellendi",dataAdded:"Marka eklendi",dataDeleted:"Kayıt silindi",requiredBrand:"Marka adı gerekli",importToSupabase:"data.json → Supabase aktar",exportData:"data.json indir",supabaseReady:"Supabase bağlı",supabaseFallback:"Supabase boş/ulaşılamıyor, data.json yedeği kullanılıyor.",localOnly:"Giriş yaptıysan değişiklikler Supabase’e kaydedilir.",aboutTitle:"📖 Ahlak Rehberim",aboutIntro:"Supabase destekli marka, barkod ve alternatif rehberi.",listStatus:"📊 Liste Durumu",listStatusText:c=>`${c.total} toplam kayıt var. ${c.boykot} boykot, ${c.safe} boykotta değil, ${c.altli} alternatif bilgisi içeriyor.`,howSearch:"🔍 Nasıl Aranır?",howSearchText:"Marka, ana firma, kategori, alternatif veya barkod yazabilirsin.",disclaimer:"⚠️ Bilgilendirme",disclaimerText:"Bu uygulama yalnızca bilgilendirme amacıyla hazırlanmıştır.",update:"🔄 Güncelleme",updateText:"V7 ile veriler Supabase üzerinden güncellenir.",scanBarcode:"Barkod Tara",barcodePrompt:"Barkod numarasını yaz:",barcodeMissing:"Barkod alanı yoksa eşleşme bulunmayabilir.",downloaded:"İndirildi"},
-  en:{htmlLang:"en",kicker:"Supabase V7",title:"Ahlak Rehberim",subtitle:"Choose consciously, shop with confidence.",search:"Search brand, company, category or barcode...",navHome:"Home",navCompanies:"Companies",navCategories:"Category",navFavorites:"Favorite",navAbout:"About",boycott:"Boycott",notBoycotted:"Not Boycotted",review:"Under Review",withAlt:"With Alternatives",favorites:"Favorites",all:"All",results:"results",brands:"brands",companies:"Parent Companies",categories:"Categories",category:"Category",parent:"Parent Company",barcode:"Barcode",alternative:"Alternative",details:"View Details →",close:"Close",source:"Source",note:"Note",openSource:"Open source",noResult:"No results found.",safeInfo:"This brand was added to Not Boycotted.",quickTitle:"Quick Access",admin:"Admin",login:"Login",logout:"Logout",email:"Email",password:"Password",brandName:"Brand name",save:"Save",resetForm:"Clear form",chooseBrand:"Select brand",deleteBrand:"Delete brand",confirmDelete:"Delete this brand?",dataSaved:"Record updated",dataAdded:"Brand added",dataDeleted:"Record deleted",requiredBrand:"Brand name required",importToSupabase:"Import data.json to Supabase",exportData:"Download data.json",supabaseReady:"Supabase connected",supabaseFallback:"Supabase empty/unavailable; using data.json fallback.",localOnly:"If logged in, changes are saved to Supabase.",aboutTitle:"📖 Ahlak Rehberim",aboutIntro:"Supabase-powered brand, barcode and alternative guide.",listStatus:"📊 List Status",listStatusText:c=>`${c.total} records. ${c.boykot} boycott, ${c.safe} not boycotted, ${c.altli} with alternatives.`,howSearch:"🔍 How to Search",howSearchText:"Search by brand, company, category, alternative or barcode.",disclaimer:"⚠️ Disclaimer",disclaimerText:"Informational purposes only.",update:"🔄 Updates",updateText:"In V7, data is updated through Supabase.",scanBarcode:"Scan Barcode",barcodePrompt:"Enter barcode number:",barcodeMissing:"If no barcode data exists, no match may be found.",downloaded:"Downloaded"},
-  de:{htmlLang:"de",kicker:"Supabase V7",title:"Ahlak Rehberim",subtitle:"Bewusst konsumieren, sicher wählen.",search:"Marke, Firma, Kategorie oder Barcode suchen...",navHome:"Start",navCompanies:"Firmen",navCategories:"Kategorie",navFavorites:"Favorit",navAbout:"Info",boycott:"Boykott",notBoycotted:"Nicht boykottiert",review:"In Prüfung",withAlt:"Mit Alternativen",favorites:"Favoriten",all:"Alle",results:"Ergebnisse",brands:"Marken",companies:"Mutterfirmen",categories:"Kategorien",category:"Kategorie",parent:"Mutterfirma",barcode:"Barcode",alternative:"Alternative",details:"Details ansehen →",close:"Schließen",source:"Quelle",note:"Notiz",openSource:"Quelle öffnen",noResult:"Keine Ergebnisse gefunden.",safeInfo:"Diese Marke wurde dem Bereich Nicht boykottiert hinzugefügt.",quickTitle:"Schnellzugriff",admin:"Verwaltung",login:"Anmelden",logout:"Abmelden",email:"E-Mail",password:"Passwort",brandName:"Markenname",save:"Speichern",resetForm:"Leeren",chooseBrand:"Marke auswählen",deleteBrand:"Marke löschen",confirmDelete:"Diese Marke löschen?",dataSaved:"Eintrag aktualisiert",dataAdded:"Marke hinzugefügt",dataDeleted:"Eintrag gelöscht",requiredBrand:"Markenname erforderlich",importToSupabase:"data.json nach Supabase importieren",exportData:"data.json herunterladen",supabaseReady:"Supabase verbunden",supabaseFallback:"Supabase leer/nicht verfügbar; data.json wird genutzt.",localOnly:"Wenn angemeldet, werden Änderungen in Supabase gespeichert.",aboutTitle:"📖 Ahlak Rehberim",aboutIntro:"Supabase-basierter Marken-, Barcode- und Alternativen-Ratgeber.",listStatus:"📊 Listenstatus",listStatusText:c=>`${c.total} Einträge. ${c.boykot} Boykott, ${c.safe} nicht boykottiert, ${c.altli} mit Alternativen.`,howSearch:"🔍 So suchst du",howSearchText:"Suche nach Marke, Firma, Kategorie, Alternative oder Barcode.",disclaimer:"⚠️ Hinweis",disclaimerText:"Nur zur Information.",update:"🔄 Aktualisierung",updateText:"In V7 werden Daten über Supabase aktualisiert.",scanBarcode:"Barcode scannen",barcodePrompt:"Barcode-Nummer eingeben:",barcodeMissing:"Wenn keine Barcode-Daten vorhanden sind, wird eventuell nichts gefunden.",downloaded:"Heruntergeladen"}
+  tr:{htmlLang:"tr",kicker:"Supabase V8",title:"Ahlak Rehberim",subtitle:"Bilinçli tüket, güvenle tercih et.",search:"Marka, firma, kategori veya barkod ara...",navHome:"Ana",navCompanies:"Firmalar",navCategories:"Kategori",navFavorites:"Favori",navAbout:"Bilgi",boycott:"Boykot",notBoycotted:"Boykotta Değil",review:"İnceleniyor",withAlt:"Alternatifli",favorites:"Favoriler",all:"Tümü",results:"sonuç",brands:"marka",companies:"Ana Firmalar",categories:"Kategoriler",category:"Kategori",parent:"Ana Firma",barcode:"Barkod",alternative:"Alternatif",details:"Ayrıntıları Gör →",close:"Kapat",source:"Kaynak",note:"Not",openSource:"Kaynağı aç",noResult:"Sonuç bulunamadı.",safeInfo:"Bu marka boykot listesinde olmayanlar bölümüne eklendi.",quickTitle:"Hızlı Erişim",admin:"Yönetim",login:"Giriş",logout:"Çıkış",email:"E-posta",password:"Şifre",brandName:"Marka adı",save:"Kaydet",resetForm:"Formu temizle",chooseBrand:"Marka seç",deleteBrand:"Marka Sil",confirmDelete:"Bu markayı silmek istiyor musun?",dataSaved:"Kayıt güncellendi",dataAdded:"Marka eklendi",dataDeleted:"Kayıt silindi",requiredBrand:"Marka adı gerekli",importToSupabase:"data.json → Supabase aktar",exportData:"data.json indir",supabaseReady:"Supabase bağlı",supabaseFallback:"Supabase boş/ulaşılamıyor, data.json yedeği kullanılıyor.",localOnly:"Giriş yaptıysan değişiklikler Supabase’e kaydedilir.",aboutTitle:"📖 Ahlak Rehberim",aboutIntro:"Supabase destekli marka, barkod ve alternatif rehberi.",listStatus:"📊 Liste Durumu",listStatusText:c=>`${c.total} toplam kayıt var. ${c.boykot} boykot, ${c.safe} boykotta değil, ${c.altli} alternatif bilgisi içeriyor.`,howSearch:"🔍 Nasıl Aranır?",howSearchText:"Marka, ana firma, kategori, alternatif veya barkod yazabilirsin.",disclaimer:"⚠️ Bilgilendirme",disclaimerText:"Bu uygulama yalnızca bilgilendirme amacıyla hazırlanmıştır.",update:"🔄 Güncelleme",updateText:"V8 ile markalar, firmalar, kaynaklar ve barkodlar ayrı tablolarda yönetilir.",scanBarcode:"Barkod Tara",barcodePrompt:"Barkod numarasını yaz:",barcodeMissing:"Barkod alanı yoksa eşleşme bulunmayabilir.",downloaded:"İndirildi"},
+  en:{htmlLang:"en",kicker:"Supabase V8",title:"Ahlak Rehberim",subtitle:"Choose consciously, shop with confidence.",search:"Search brand, company, category or barcode...",navHome:"Home",navCompanies:"Companies",navCategories:"Category",navFavorites:"Favorite",navAbout:"About",boycott:"Boycott",notBoycotted:"Not Boycotted",review:"Under Review",withAlt:"With Alternatives",favorites:"Favorites",all:"All",results:"results",brands:"brands",companies:"Parent Companies",categories:"Categories",category:"Category",parent:"Parent Company",barcode:"Barcode",alternative:"Alternative",details:"View Details →",close:"Close",source:"Source",note:"Note",openSource:"Open source",noResult:"No results found.",safeInfo:"This brand was added to Not Boycotted.",quickTitle:"Quick Access",admin:"Admin",login:"Login",logout:"Logout",email:"Email",password:"Password",brandName:"Brand name",save:"Save",resetForm:"Clear form",chooseBrand:"Select brand",deleteBrand:"Delete brand",confirmDelete:"Delete this brand?",dataSaved:"Record updated",dataAdded:"Brand added",dataDeleted:"Record deleted",requiredBrand:"Brand name required",importToSupabase:"Import data.json to Supabase",exportData:"Download data.json",supabaseReady:"Supabase connected",supabaseFallback:"Supabase empty/unavailable; using data.json fallback.",localOnly:"If logged in, changes are saved to Supabase.",aboutTitle:"📖 Ahlak Rehberim",aboutIntro:"Supabase-powered brand, barcode and alternative guide.",listStatus:"📊 List Status",listStatusText:c=>`${c.total} records. ${c.boykot} boycott, ${c.safe} not boycotted, ${c.altli} with alternatives.`,howSearch:"🔍 How to Search",howSearchText:"Search by brand, company, category, alternative or barcode.",disclaimer:"⚠️ Disclaimer",disclaimerText:"Informational purposes only.",update:"🔄 Updates",updateText:"In V8, brands, companies, sources and barcodes are managed in separate tables.",scanBarcode:"Scan Barcode",barcodePrompt:"Enter barcode number:",barcodeMissing:"If no barcode data exists, no match may be found.",downloaded:"Downloaded"},
+  de:{htmlLang:"de",kicker:"Supabase V8",title:"Ahlak Rehberim",subtitle:"Bewusst konsumieren, sicher wählen.",search:"Marke, Firma, Kategorie oder Barcode suchen...",navHome:"Start",navCompanies:"Firmen",navCategories:"Kategorie",navFavorites:"Favorit",navAbout:"Info",boycott:"Boykott",notBoycotted:"Nicht boykottiert",review:"In Prüfung",withAlt:"Mit Alternativen",favorites:"Favoriten",all:"Alle",results:"Ergebnisse",brands:"Marken",companies:"Mutterfirmen",categories:"Kategorien",category:"Kategorie",parent:"Mutterfirma",barcode:"Barcode",alternative:"Alternative",details:"Details ansehen →",close:"Schließen",source:"Quelle",note:"Notiz",openSource:"Quelle öffnen",noResult:"Keine Ergebnisse gefunden.",safeInfo:"Diese Marke wurde dem Bereich Nicht boykottiert hinzugefügt.",quickTitle:"Schnellzugriff",admin:"Verwaltung",login:"Anmelden",logout:"Abmelden",email:"E-Mail",password:"Passwort",brandName:"Markenname",save:"Speichern",resetForm:"Leeren",chooseBrand:"Marke auswählen",deleteBrand:"Marke löschen",confirmDelete:"Diese Marke löschen?",dataSaved:"Eintrag aktualisiert",dataAdded:"Marke hinzugefügt",dataDeleted:"Eintrag gelöscht",requiredBrand:"Markenname erforderlich",importToSupabase:"data.json nach Supabase importieren",exportData:"data.json herunterladen",supabaseReady:"Supabase verbunden",supabaseFallback:"Supabase leer/nicht verfügbar; data.json wird genutzt.",localOnly:"Wenn angemeldet, werden Änderungen in Supabase gespeichert.",aboutTitle:"📖 Ahlak Rehberim",aboutIntro:"Supabase-basierter Marken-, Barcode- und Alternativen-Ratgeber.",listStatus:"📊 Listenstatus",listStatusText:c=>`${c.total} Einträge. ${c.boykot} Boykott, ${c.safe} nicht boykottiert, ${c.altli} mit Alternativen.`,howSearch:"🔍 So suchst du",howSearchText:"Suche nach Marke, Firma, Kategorie, Alternative oder Barcode.",disclaimer:"⚠️ Hinweis",disclaimerText:"Nur zur Information.",update:"🔄 Aktualisierung",updateText:"In V8 werden Marken, Firmen, Quellen und Barcodes getrennt verwaltet.",scanBarcode:"Barcode scannen",barcodePrompt:"Barcode-Nummer eingeben:",barcodeMissing:"Wenn keine Barcode-Daten vorhanden sind, wird eventuell nichts gefunden.",downloaded:"Heruntergeladen"}
 };
 
 function t(k){return (I[lang]&&I[lang][k])||I.tr[k]||k}
@@ -57,10 +57,10 @@ function normalizeItem(raw,i){
   return {id:raw.id||null,marka,anaFirma,kategori,alternatif,kaynak,not,barkod,imageUrl,status,hay};
 }
 function toDbRow(x){return {marka:x.marka,ana_firma:x.anaFirma,kategori:x.kategori,alternatif:x.alternatif,kaynak:x.kaynak,notlar:x.not,durum:x.status,barkod:Array.isArray(x.barkod)?x.barkod:[],image_url:x.imageUrl||""}}
-function fromDbRow(r){return {id:r.id,marka:r.marka,anaFirma:r.ana_firma,kategori:r.kategori,alternatif:r.alternatif,kaynak:r.kaynak,not:r.notlar,durum:r.durum,barkod:r.barkod||[],image_url:r.image_url||""}}
+function fromDbRow(r){return {id:r.id,marka:r.marka,anaFirma:r.ana_firma||r.anaFirma,kategori:r.kategori,alternatif:r.alternatif,kaynak:r.kaynak,not:r.notlar||r.not,durum:r.durum,barkod:r.barkod||[],image_url:r.image_url||""}}
 
 async function loadSupabaseSession(){if(!supabaseClient)return;const {data}=await supabaseClient.auth.getSession();adminSession=data.session||null}
-async function loadSupabaseData(){if(!supabaseClient)throw new Error("No Supabase");let all=[];let from=0;const step=1000;while(true){const {data,error}=await supabaseClient.from("brands").select("*").order("marka").range(from,from+step-1);if(error)throw error;all=all.concat(data||[]);if(!data||data.length<step)break;from+=step}return all.map(fromDbRow)}
+async function loadSupabaseData(){if(!supabaseClient)throw new Error("No Supabase");let all=[];let from=0;const step=1000;while(true){const {data,error}=await supabaseClient.from("brand_cards").select("*").order("marka").range(from,from+step-1);if(error)throw error;all=all.concat(data||[]);if(!data||data.length<step)break;from+=step}return all.map(fromDbRow)}
 async function loadFallbackData(){const res=await fetch(`data.json?v=${VERSION}`,{cache:"reload"});const json=await res.json();return Array.isArray(json)?json:(json.data||[])}
 async function init(){applyTheme();applyLang();setupServiceWorker();await loadSupabaseSession();try{let list=[];try{list=await loadSupabaseData()}catch(e){list=[]}if(!list.length){list=await loadFallbackData();toast(t("supabaseFallback"))}else toast(t("supabaseReady"));DATA=list.map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"));render()}catch(err){results.innerHTML=`<div class="empty">${esc(err.message)}</div>`}}
 
@@ -95,46 +95,54 @@ async function saveAdminBrand(){
   if(!v.marka){toast(t("requiredBrand"));return}
   if(!v.anaFirma)v.anaFirma=v.marka;
 
-  const row=toDbRow(v);
-  let existing=DATA.find(x=>norm(x.marka)===norm(v.marka));
-  let res;
+  const {error}=await supabaseClient.rpc("upsert_brand_full", {
+    p_marka: v.marka,
+    p_ana_firma: v.anaFirma,
+    p_kategori: v.kategori,
+    p_durum: v.status,
+    p_not: v.not,
+    p_image_url: v.imageUrl || "",
+    p_alternatif: v.alternatif,
+    p_kaynak: v.kaynak,
+    p_barkod: Array.isArray(v.barkod) ? v.barkod : []
+  });
 
-  if(existing && existing.id){
-    res = await supabaseClient.from("brands").update(row).eq("id", existing.id);
-  }else{
-    const check = await supabaseClient.from("brands").select("id,marka").ilike("marka", v.marka).limit(1);
-    if(check.error){toast(check.error.message);return}
-
-    if(check.data && check.data.length){
-      res = await supabaseClient.from("brands").update(row).eq("id", check.data[0].id);
-      existing = true;
-    }else{
-      res = await supabaseClient.from("brands").insert(row);
-    }
-  }
-
-  if(res.error){toast(res.error.message);return}
-  toast(existing?t("dataSaved"):t("dataAdded"));
+  if(error){toast(error.message);return}
+  toast(t("dataSaved"));
   await reloadFromSupabase();
   view="admin";
   render();
 }
-async function deleteAdminBrand(){if(!adminSession){toast(t("login"));return}const name=$("adminSelect").value||$("adminMarka").value;if(!name||!confirm(t("confirmDelete")))return;const item=DATA.find(x=>x.marka===name);if(item?.id){const {error}=await supabaseClient.from("brands").delete().eq("id",item.id);if(error){toast(error.message);return}}toast(t("dataDeleted"));await reloadFromSupabase();view="admin";render()}
+async function deleteAdminBrand(){
+  if(!adminSession){toast(t("login"));return}
+  const name=$("adminSelect").value||$("adminMarka").value;
+  if(!name||!confirm(t("confirmDelete")))return;
+  const item=DATA.find(x=>x.marka===name);
+  const q = supabaseClient.from("brands").delete();
+  const {error}= item?.id ? await q.eq("id", item.id) : await q.eq("name", name);
+  if(error){toast(error.message);return}
+  toast(t("dataDeleted"));
+  await reloadFromSupabase();
+  view="admin";
+  render();
+}
 async function importToSupabase(){
   if(!adminSession){toast(t("login"));return}
 
   for(const item of DATA){
-    const row = toDbRow(item);
-    const check = await supabaseClient.from("brands").select("id").ilike("marka", item.marka).limit(1);
-    if(check.error){toast(check.error.message);return}
-
-    if(check.data && check.data.length){
-      const {error} = await supabaseClient.from("brands").update(row).eq("id", check.data[0].id);
-      if(error){toast(error.message);return}
-    }else{
-      const {error} = await supabaseClient.from("brands").insert(row);
-      if(error){toast(error.message);return}
-    }
+    const legacy = {
+      marka: item.marka,
+      anaFirma: item.anaFirma,
+      kategori: item.kategori,
+      alternatif: item.alternatif,
+      kaynak: item.kaynak,
+      not: item.not,
+      durum: item.status,
+      barkod: Array.isArray(item.barkod) ? item.barkod : [],
+      image_url: item.imageUrl || ""
+    };
+    const {error}=await supabaseClient.rpc("import_legacy_brand", {p_item: legacy});
+    if(error){toast(error.message);return}
   }
 
   toast(t("dataSaved"));

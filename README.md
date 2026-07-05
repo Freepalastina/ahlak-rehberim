@@ -1,29 +1,33 @@
-# Ahlak Rehberim V7.1 - Supabase Fix
+# Ahlak Rehberim V8 - Profesyonel Veritabanı
 
-Bu sürümde:
-- ON CONFLICT tamamen kaldırıldı
-- UNIQUE hatası çözülür
-- Marka varsa UPDATE yapılır
-- Marka yoksa INSERT yapılır
-- data.json → Supabase aktarımı artık UNIQUE constraint gerektirmez
+Bu sürümde veriler artık ayrı tablolara bölündü:
 
-Kurulum:
-1. Supabase SQL Editor'da `supabase_setup.sql` dosyasını çalıştır
-2. ZIP içindeki dosyaları GitHub'a yükle
-3. Uygulamada Yönetim'e gir
-4. Admin kullanıcı ile giriş yap
-5. `data.json → Supabase aktar` butonuna bas
+- `companies` → Ana firmalar
+- `categories` → Kategoriler
+- `brands` → Markalar
+- `barcodes` → Barkodlar
+- `sources` → Kaynaklar
+- `brand_images` → Görseller
+- `alternatives` → Alternatifler
 
+Uygulama yine tek liste gibi çalışır. Bunun için Supabase içinde `brand_cards` görünümü oluşturulur.
 
-## V7.2 düzeltme
-- Alternatif sayacı düzeltildi
-- `durum = alternatif` kayıtları da alternatif sayısına dahil edilir
-- Boş, `-`, `yok`, `none` gibi alanlar sayılmaz
+## Kurulum
 
+1. Supabase Dashboard > SQL Editor aç
+2. `supabase_setup_v8.sql` dosyasını aç
+3. İçindeki SQL'i yapıştır ve RUN bas
+4. ZIP içindeki dosyaları GitHub'a yükle
+5. Siteyi aç
+6. Yönetim bölümünde giriş yap
+7. `data.json → Supabase aktar` butonuna bas
 
-## V7.3 Görsel desteği
-- `image_url`, `image`, `logo`, `resim`, `gorsel` alanları desteklenir
-- Kartlarda marka/ürün görseli gösterilir
-- Görsel yoksa zeytin ikonlu placeholder görünür
-- Supabase tablosuna `image_url` alanı eklendi
-- Admin panelde Görsel URL alanı eklendi
+## Avantaj
+
+- Markalar ayrı
+- Ana firmalar ayrı
+- Kaynaklar ayrı
+- Barkodlar ayrı
+- Görseller ayrı
+- Tekrar eden veri azalır
+- Uzun vadede çok daha düzenli çalışır

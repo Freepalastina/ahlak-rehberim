@@ -1,4 +1,4 @@
-const CACHE_VERSION = "20260705-v7-3-gorsel-destegi";
+const CACHE_VERSION = "20260705-v8-profesyonel-db";
 const CACHE_NAME = `ahlak-rehberim-${CACHE_VERSION}`;
 const APP_SHELL = ["./","./index.html","./style.css","./app.js","./manifest.json","./data.json","./icon-192.png","./icon-512.png"];
 self.addEventListener("install", event => { self.skipWaiting(); event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)).catch(()=>{})); });
