@@ -1,10 +1,13 @@
-# Ahlak Rehberim V4
+# Ahlak Rehberim V4-PWA
 
-Temiz sıfırdan hazırlanmış sürüm.
+Bu aşamada eklenenler:
 
-- Toplam kayıt: 1571
-- Ana liste: 1362
-- Boykotta değil olarak eklenen: 209
-- Tekrar olduğu için eklenmeyen: 9
-- Alan adı: `anaFirma`
-- Açık tema ve dark mode birlikte tasarlandı.
+- PWA manifest güncellendi
+- Ana ekrana ekleme desteği
+- Offline cache sistemi
+- data.json için güncel veri stratejisi
+- Eski cache temizleme
+- Kurulum butonu
+- V4-Barkod özellikleri korunur
+
+GitHub'a ZIP içindeki dosyaları yükleyin, ZIP'i değil.

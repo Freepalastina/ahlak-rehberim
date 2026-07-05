@@ -1,20 +1,30 @@
 {
   "name": "Ahlak Rehberim",
   "short_name": "Ahlak",
+  "description": "Bilinçli tüketim, marka ve alternatif rehberi.",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#f7f3e8",
-  "theme_color": "#617445",
+  "orientation": "portrait",
+  "background_color": "#f7f4eb",
+  "theme_color": "#5F7138",
+  "categories": [
+    "shopping",
+    "lifestyle",
+    "utilities"
+  ],
   "icons": [
     {
       "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

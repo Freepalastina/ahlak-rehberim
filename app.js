@@ -1,4 +1,4 @@
-const VERSION = "20260705-v4-barkod";
+const VERSION = "20260705-v4-pwa";
 let DATA = [];
 let view = "home";
 let filter = "all";
@@ -26,6 +26,8 @@ const quickFilters = $("quickFilters");
 const sectionTitle = $("sectionTitle");
 const results = $("results");
 const themeBtn = $("themeBtn");
+const installBtn = $("installBtn");
+let deferredInstallPrompt = null;
 
 const I = {
   tr: {
@@ -50,7 +52,7 @@ const I = {
     favText:"Kalp işaretine basarak markaları favorilere ekleyebilirsin.",
     altText:"Alternatif olarak gösterilen ürünler aynı ürün grubunda değerlendirilebilecek seçeneklerdir. Satın almadan önce kendi araştırmanı yapman tavsiye edilir.",
     disclaimer:"⚠️ Bilgilendirme", disclaimerText:"Bu uygulama yalnızca bilgilendirme amacıyla hazırlanmıştır. Bilgiler farklı kaynaklardan derlenmiştir ve zamanla değişebilir.",
-    update:"🔄 Güncelleme", updateText:"Yeni marka eklemek veya bilgileri değiştirmek için data.json dosyasını güncellemen yeterlidir."
+    update:"🔄 Güncelleme", updateText:"Yeni marka eklemek veya bilgileri değiştirmek için data.json dosyasını güncellemen yeterlidir.", installApp:"Uygulamayı kur", updateReady:"Yeni sürüm hazır. Sayfayı yenile.", offlineReady:"Uygulama çevrimdışı kullanım için hazır."
   },
   en: {
     htmlLang:"en", kicker:"Conscious Choice Guide", title:"Ahlak Rehberim",
@@ -74,7 +76,7 @@ const I = {
     favText:"Tap the heart to add brands to favorites.",
     altText:"Suggested alternatives are options in the same product group. Please do your own research before buying.",
     disclaimer:"⚠️ Disclaimer", disclaimerText:"This app is for informational purposes only. Information is compiled from different sources and may change over time.",
-    update:"🔄 Updates", updateText:"To add or edit brands, update the data.json file."
+    update:"🔄 Updates", updateText:"To add or edit brands, update the data.json file.", installApp:"Install app", updateReady:"New version ready. Refresh the page.", offlineReady:"App is ready for offline use."
   },
   de: {
     htmlLang:"de", kicker:"Bewusster Konsum", title:"Ahlak Rehberim",
@@ -98,7 +100,7 @@ const I = {
     favText:"Tippe auf das Herz, um Marken zu Favoriten hinzuzufügen.",
     altText:"Vorgeschlagene Alternativen sind Optionen aus derselben Produktgruppe. Bitte selbst prüfen.",
     disclaimer:"⚠️ Hinweis", disclaimerText:"Diese App dient nur zur Information. Daten können sich ändern.",
-    update:"🔄 Aktualisierung", updateText:"Um Daten zu ändern, aktualisiere die Datei data.json."
+    update:"🔄 Aktualisierung", updateText:"Um Daten zu ändern, aktualisiere die Datei data.json.", installApp:"App installieren", updateReady:"Neue Version bereit. Seite neu laden.", offlineReady:"App ist für Offline-Nutzung bereit."
   }
 };
 
@@ -381,6 +383,7 @@ function applyLang(){
   document.querySelectorAll("[data-i]").forEach(el=>el.textContent=t(el.dataset.i));
   document.querySelectorAll(".langSwitch button").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
   setScannerText();
+  if(installBtn) installBtn.title = t("installApp");
 }
 function goHome(){
   currentGroup=null;
@@ -474,6 +477,59 @@ function stopBarcodeScanner(close=true){
   }
 }
 
+
+function toast(message){
+  const el = document.createElement("div");
+  el.className = "toast";
+  el.textContent = message;
+  document.body.appendChild(el);
+  requestAnimationFrame(()=>el.classList.add("show"));
+  setTimeout(()=>{
+    el.classList.remove("show");
+    setTimeout(()=>el.remove(), 300);
+  }, 2800);
+}
+function setupInstallPrompt(){
+  if(!installBtn) return;
+  installBtn.title = t("installApp");
+  window.addEventListener("beforeinstallprompt", event=>{
+    event.preventDefault();
+    deferredInstallPrompt = event;
+    installBtn.hidden = false;
+  });
+  installBtn.addEventListener("click", async ()=>{
+    if(!deferredInstallPrompt) return;
+    installBtn.hidden = true;
+    deferredInstallPrompt.prompt();
+    await deferredInstallPrompt.userChoice;
+    deferredInstallPrompt = null;
+  });
+  window.addEventListener("appinstalled", ()=>{
+    deferredInstallPrompt = null;
+    installBtn.hidden = true;
+  });
+}
+function setupServiceWorker(){
+  if(!("serviceWorker" in navigator)) return;
+  navigator.serviceWorker.register(`sw.js?v=${VERSION}`).then(reg=>{
+    if(reg.waiting){
+      toast(t("updateReady"));
+    }
+    reg.addEventListener("updatefound", ()=>{
+      const worker = reg.installing;
+      if(!worker) return;
+      worker.addEventListener("statechange", ()=>{
+        if(worker.state === "installed" && navigator.serviceWorker.controller){
+          toast(t("updateReady"));
+        }
+      });
+    });
+  }).catch(()=>{});
+  navigator.serviceWorker.addEventListener("controllerchange", ()=>{
+    // prevent forced reload loops; user can refresh manually
+  });
+}
+
 search.addEventListener("input",()=>{currentGroup=null;if(view!=="home"){view="home";filter="all"} render();});
 clearBtn.addEventListener("click",()=>{search.value="";search.focus();currentGroup=null;render();});
 barcodeBtn.addEventListener("click",()=>startBarcodeScanner());
@@ -505,5 +561,6 @@ document.querySelectorAll(".langSwitch button").forEach(b=>b.addEventListener("c
 themeBtn.addEventListener("click",()=>{const next=document.body.classList.contains("dark")?"light":"dark";localStorage.setItem("ahlak_theme",next);applyTheme();});
 $("closeDialog").addEventListener("click",()=>$("detailDialog").close());
 
-if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js?v="+VERSION).catch(()=>{})}
+setupInstallPrompt();
+setupServiceWorker();
 init();
