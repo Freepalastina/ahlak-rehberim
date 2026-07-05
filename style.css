@@ -244,3 +244,9 @@ body.dark .toast{
 
 /* Final kodsuz düzen */
 .metaSingle{grid-template-columns:1fr}
+
+/* V5 Open Food Facts result helper */
+.detailBody .closeDialog{
+  margin:0;
+  width:100%;
+}

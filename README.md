@@ -1,22 +1,15 @@
-# Ahlak Rehberim V4 Final - Kodsuz
+# Ahlak Rehberim V5 - Open Food Facts
 
-Bu final pakette:
+Bu sürümde V4-Final üzerine eklenenler:
 
-- `data.json` içindeki `kod` alanları kaldırıldı
-- Uygulamada Kod alanı artık kartlarda ve detayda görünmez
-- Marka, ana firma, kategori, alternatif ve barkod araması devam eder
-- Bayraklı dil seçimi korunur
-- Dark mode korunur
-- Barkod tarama korunur
-- PWA/offline destek korunur
+- Barkod okutunca önce yerel `data.json` aranır
+- Yerelde yoksa Open Food Facts API üzerinden ürün bilgisi alınır
+- Ürün adı / marka bilgisi mevcut marka listesiyle eşleştirilir
+- Eşleşme bulunursa marka detayı açılır
+- Eşleşen barkodlar tarayıcıda öğrenilir ve sonraki taramada daha hızlı bulunur
+- Manuel barkod girişi korunur
+- PWA, dark mode, bayraklı dil seçimi korunur
 
 Kayıt sayısı: 1571
-GitHub'a ZIP dosyasını değil, ZIP içindeki dosyaları yükleyin.
 
-
-## Barkod Paketi 1 - Gıda/İçecek
-
-Eklenen marka sayısı: 11
-Eklenen markalar: Coca-Cola, Fanta, Sprite, Nutella, KitKat, Nescafe, Doritos, Lay’s, Oreo, Pringles, Milka
-
-Not: Barkodlar ürün bazlıdır; aynı markanın farklı gramaj/ülke/ambalaj ürünlerinde farklı barkodları olabilir.
+Not: Open Food Facts verileri gönüllü kullanıcılar tarafından sağlanır; sonuçlar bağımsız doğrulanmalıdır.
