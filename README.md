@@ -1,13 +1,14 @@
-# Ahlak Rehberim V4-PWA
+# Ahlak Rehberim V4 Final - Kodsuz
 
-Bu aşamada eklenenler:
+Bu final pakette:
 
-- PWA manifest güncellendi
-- Ana ekrana ekleme desteği
-- Offline cache sistemi
-- data.json için güncel veri stratejisi
-- Eski cache temizleme
-- Kurulum butonu
-- V4-Barkod özellikleri korunur
+- `data.json` içindeki `kod` alanları kaldırıldı
+- Uygulamada Kod alanı artık kartlarda ve detayda görünmez
+- Marka, ana firma, kategori, alternatif ve barkod araması devam eder
+- Bayraklı dil seçimi korunur
+- Dark mode korunur
+- Barkod tarama korunur
+- PWA/offline destek korunur
 
-GitHub'a ZIP içindeki dosyaları yükleyin, ZIP'i değil.
+Kayıt sayısı: 1571
+GitHub'a ZIP dosyasını değil, ZIP içindeki dosyaları yükleyin.

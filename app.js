@@ -1,4 +1,4 @@
-const VERSION = "20260705-v4-pwa";
+const VERSION = "20260705-v4-final-kodsuz";
 let DATA = [];
 let view = "home";
 let filter = "all";
@@ -32,7 +32,7 @@ let deferredInstallPrompt = null;
 const I = {
   tr: {
     htmlLang:"tr", kicker:"Bilinçli Tüketim Rehberi", title:"Ahlak Rehberim",
-    subtitle:"Bilinçli tüket, güvenle tercih et.", search:"Marka, firma, kategori, kod veya barkod ara...",
+    subtitle:"Bilinçli tüket, güvenle tercih et.", search:"Marka, firma, kategori veya barkod ara...",
     navHome:"Ana", navCompanies:"Firmalar", navCategories:"Kategori", navFavorites:"Favori", navAbout:"Bilgi",
     total:"Toplam", boycott:"Boykot", caution:"Dikkat", alternative:"Alternatif",
     notBoycotted:"Boykotta Değil", review:"İnceleniyor", withAlt:"Alternatifli",
@@ -47,7 +47,7 @@ const I = {
     listStatus:"📊 Liste Durumu",
     listStatusText:c=>`${c.total} toplam kayıt var. ${c.boykot} boykot, ${c.safe} boykotta değil, ${c.altli} alternatif bilgisi içeriyor.`,
     safeText:"Bu bölüm, eklenen alternatif listesinden gelen ve ana boykot listesinde bulunmayan markaları gösterir.",
-    howSearch:"🔍 Nasıl Aranır?", howSearchText:"Arama kutusuna marka adı, ana firma, kategori, kod, alternatif veya barkod yazabilirsin.",
+    howSearch:"🔍 Nasıl Aranır?", howSearchText:"Arama kutusuna marka adı, ana firma, kategori, alternatif veya barkod yazabilirsin.",
     companiesText:"Aynı şirkete ait markaları görmek için Firmalar bölümünü aç.",
     favText:"Kalp işaretine basarak markaları favorilere ekleyebilirsin.",
     altText:"Alternatif olarak gösterilen ürünler aynı ürün grubunda değerlendirilebilecek seçeneklerdir. Satın almadan önce kendi araştırmanı yapman tavsiye edilir.",
@@ -56,7 +56,7 @@ const I = {
   },
   en: {
     htmlLang:"en", kicker:"Conscious Choice Guide", title:"Ahlak Rehberim",
-    subtitle:"Choose consciously, shop with confidence.", search:"Search brand, company, category, code or barcode...",
+    subtitle:"Choose consciously, shop with confidence.", search:"Search brand, company, category or barcode...",
     navHome:"Home", navCompanies:"Companies", navCategories:"Category", navFavorites:"Favorite", navAbout:"About",
     total:"Total", boycott:"Boycott", caution:"Caution", alternative:"Alternative",
     notBoycotted:"Not Boycotted", review:"Under Review", withAlt:"With Alternatives",
@@ -71,7 +71,7 @@ const I = {
     listStatus:"📊 List Status",
     listStatusText:c=>`${c.total} total records. ${c.boykot} boycott entries, ${c.safe} not boycotted entries, ${c.altli} include alternatives.`,
     safeText:"This section shows brands from the added alternatives list that are not found in the main boycott list.",
-    howSearch:"🔍 How to Search", howSearchText:"Search by brand name, parent company, category, code, alternative or barcode.",
+    howSearch:"🔍 How to Search", howSearchText:"Search by brand name, parent company, category, alternative or barcode.",
     companiesText:"Open Companies to view brands that belong to the same parent company.",
     favText:"Tap the heart to add brands to favorites.",
     altText:"Suggested alternatives are options in the same product group. Please do your own research before buying.",
@@ -80,7 +80,7 @@ const I = {
   },
   de: {
     htmlLang:"de", kicker:"Bewusster Konsum", title:"Ahlak Rehberim",
-    subtitle:"Bewusst konsumieren, sicher wählen.", search:"Marke, Firma, Kategorie, Code oder Barcode suchen...",
+    subtitle:"Bewusst konsumieren, sicher wählen.", search:"Marke, Firma, Kategorie oder Barcode suchen...",
     navHome:"Start", navCompanies:"Firmen", navCategories:"Kategorie", navFavorites:"Favorit", navAbout:"Info",
     total:"Gesamt", boycott:"Boykott", caution:"Achtung", alternative:"Alternative",
     notBoycotted:"Nicht boykottiert", review:"In Prüfung", withAlt:"Mit Alternativen",
@@ -95,7 +95,7 @@ const I = {
     listStatus:"📊 Listenstatus",
     listStatusText:c=>`${c.total} Einträge. ${c.boykot} Boykott, ${c.safe} nicht boykottiert, ${c.altli} mit Alternativen.`,
     safeText:"Dieser Bereich zeigt Marken aus der Alternativliste, die nicht in der Haupt-Boykottliste vorkommen.",
-    howSearch:"🔍 So suchst du", howSearchText:"Suche nach Marke, Mutterfirma, Kategorie, Code, Alternative oder Barcode.",
+    howSearch:"🔍 So suchst du", howSearchText:"Suche nach Marke, Mutterfirma, Kategorie, Alternative oder Barcode.",
     companiesText:"Öffne Firmen, um Marken derselben Mutterfirma zu sehen.",
     favText:"Tippe auf das Herz, um Marken zu Favoriten hinzuzufügen.",
     altText:"Vorgeschlagene Alternativen sind Optionen aus derselben Produktgruppe. Bitte selbst prüfen.",
@@ -136,14 +136,14 @@ function hasAlternative(x){
 function normalizeItem(raw,i){
   const marka=get(raw,["marka","Marka","brand"]) || `Marka ${i+1}`;
   const anaFirma=get(raw,["anaFirma","anafirma","Ana Firma","AnaFirma","ana_firma","parentCompany"]) || marka;
-  const kod=get(raw,["kod","Kod","code"]) || "A2";
+  const kod=get(raw,["kod","Kod","code"]) || "";
   const kategori=get(raw,["kategori","Kategori","category"]);
   const alternatif=get(raw,["alternatif","Alternatif","alternative","alternatives"]);
   const kaynak=get(raw,["kaynak","Kaynak","kanyak","source","link"]);
   const not=get(raw,["not","Not","note"]);
   const barkod=get(raw,["barkod","Barkod","barcode","ean","EAN","gtin","GTIN"]);
   const status=rawStatus(raw,kod);
-  const hay=norm([marka,anaFirma,kod,kategori,alternatif,kaynak,not,barkod,statusLabel(status)].join(" "));
+  const hay=norm([marka,anaFirma,kategori,alternatif,kaynak,not,barkod,statusLabel(status)].join(" "));
   return {marka,anaFirma,kod,kategori,alternatif,kaynak,not,barkod,status,hay,created:i};
 }
 
@@ -250,10 +250,7 @@ function card(x){
       </div>
       <button class="fav" data-fav="${encodeURIComponent(x.marka)}" type="button" aria-label="Favori">${isFav(x.marka)?"❤️":"♡"}</button>
     </div>
-    <div class="meta">
-      <div class="box"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div>
-      <div class="box"><span>${t("code")}</span><b>${esc(x.kod||"-")}</b></div>
-    </div>
+    <div class="meta metaSingle"><div class="box"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div></div>
     ${altHtml(x)}
     <button class="more" type="button">${t("details")}</button>
   </article>`;
@@ -360,7 +357,6 @@ function detail(x){
   <div class="detailBody">
     <div class="detailLine"><span>${t("parent")}</span><b>${esc(x.anaFirma||"-")}</b></div>
     <div class="detailLine"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div>
-    <div class="detailLine"><span>${t("code")}</span><b>${esc(x.kod||"-")}</b></div>
     <div class="detailLine"><span>${t("barcode")}</span><b>${esc(x.barkod||"-")}</b></div>
     <div class="detailLine"><span>${t("alternative")}</span><b>${esc(x.alternatif||"-")}</b></div>
     <div class="detailLine"><span>${t("note")}</span><b>${esc(x.not||"-")}</b></div>

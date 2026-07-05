@@ -241,3 +241,6 @@ body.dark .toast{
   background:rgba(245,241,229,.92);
   color:#10150e;
 }
+
+/* Final kodsuz düzen */
+.metaSingle{grid-template-columns:1fr}

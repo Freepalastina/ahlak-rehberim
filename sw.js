@@ -1,4 +1,4 @@
-const CACHE_VERSION = "20260705-v4-pwa";
+const CACHE_VERSION = "20260705-v4-final-kodsuz";
 const CACHE_NAME = `ahlak-rehberim-${CACHE_VERSION}`;
 
 const APP_SHELL = [
@@ -15,7 +15,9 @@ const APP_SHELL = [
 self.addEventListener("install", event => {
   self.skipWaiting();
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL.map(url => new Request(url, {cache: "reload"}))).catch(()=>{}))
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(APP_SHELL.map(url => new Request(url, {cache: "reload"}))))
+      .catch(() => {})
   );
 });
 
@@ -29,7 +31,6 @@ self.addEventListener("activate", event => {
 
 self.addEventListener("fetch", event => {
   const req = event.request;
-
   if (req.method !== "GET") return;
 
   const url = new URL(req.url);
