@@ -10,6 +10,7 @@ create table if not exists public.brands (
   notlar text,
   durum text not null default 'boykot',
   barkod jsonb not null default '[]'::jsonb,
+  image_url text,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
@@ -58,3 +59,6 @@ create policy "Authenticated can delete brands"
 on public.brands for delete
 to authenticated
 using (true);
+
+
+alter table public.brands add column if not exists image_url text;

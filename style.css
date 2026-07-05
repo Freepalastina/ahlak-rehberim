@@ -415,3 +415,50 @@ body.dark .adminButtons .danger{
 .adminForm{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
 .adminForm textarea{min-height:86px;resize:vertical}
 @media(max-width:760px){.adminForm{grid-template-columns:1fr}}
+
+
+/* V7.3 marka görsel desteği */
+.brandImage{
+  height:150px;
+  margin:14px 14px 0;
+  border-radius:26px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(169,185,123,.38), transparent 45%),
+    linear-gradient(145deg,#eef3df,#fffef9);
+  display:grid;
+  place-items:center;
+  border:1px solid var(--line);
+}
+.brandImage img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:white;
+}
+.brandImage.noImage span{
+  font-size:58px;
+  opacity:.75;
+}
+.detailImage{
+  border:1px solid var(--line);
+  border-radius:24px;
+  overflow:hidden;
+  background:#fff;
+  display:grid;
+  place-items:center;
+}
+.detailImage img{
+  width:100%;
+  max-height:260px;
+  object-fit:contain;
+}
+body.dark .brandImage{
+  background:
+    radial-gradient(circle at 30% 20%, rgba(143,163,90,.24), transparent 45%),
+    linear-gradient(145deg,#1a2014,#202719);
+}
+body.dark .brandImage img,
+body.dark .detailImage{
+  background:#202719;
+}
