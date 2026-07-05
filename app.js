@@ -22,7 +22,15 @@ function loadFavorites(){try{return JSON.parse(localStorage.getItem("ahlak_fav_v
 function saveFavorites(){localStorage.setItem("ahlak_fav_v10",JSON.stringify(favorites))}
 function isFav(m){return favorites.includes(norm(m))}
 function toggleFav(m){const k=norm(m);favorites=isFav(m)?favorites.filter(x=>x!==k):[...favorites,k];saveFavorites();render()}
-function rawStatus(r){const d=norm(get(r,["durum","status"]));if(d.includes("safe")||d.includes("boykotta degil")||d.includes("not boycotted"))return"safe";if(d.includes("alternatif")||d.includes("alternative"))return"alternatif";if(d.includes("dikkat")||d.includes("caution"))return"dikkat";if(d.includes("incelen")||d.includes("review"))return"inceleme";return d||"boykot"}
+function rawStatus(r){const d=norm(get(r,["durum","status"]));if (
+    d.includes("safe") ||
+    d.includes("boykotta degil") ||
+    d.includes("boykottadegil") ||
+    d.includes("boykot_degil") ||
+    d.includes("boykottaDegil".toLowerCase()) ||
+    d.includes("not boycotted")
+)
+    return "safe";if(d.includes("alternatif")||d.includes("alternative"))return"alternatif";if(d.includes("dikkat")||d.includes("caution"))return"dikkat";if(d.includes("incelen")||d.includes("review"))return"inceleme";return d||"boykot"}
 function statusLabel(s){return{boykot:`🔴 ${t("boycott")}`,safe:`✅ ${t("notBoycotted")}`,alternatif:`🟢 ${t("alternative")}`,dikkat:"🟠 Dikkat",inceleme:`⚪ ${t("review")}`}[s]||s}
 function hasAlternative(x){if(x.status==="alternatif")return true;const a=norm(x.alternatif);return !!a&&a!=="-"&&a!=="yok"&&!a.includes("alternatif manuel eklenmeli")}
 function normalizeItem(raw,i){const marka=get(raw,["marka","name","Marka","brand"])||`Marka ${i+1}`;const anaFirma=get(raw,["anaFirma","ana_firma","anaFirma","ana_firma","anaFirma","ana_firma","ana_firma","anaFirma","ana_firma","anaFirma","Ana Firma","company","ana_firma"])||get(raw,["ana_firma"])||marka;const kategori=get(raw,["kategori","category","Kategori"]);const alternatif=get(raw,["alternatif","alternative","Alternatif"]);const kaynak=get(raw,["kaynak","source","url","link","Kaynak"]);const not=get(raw,["not","note","notlar"]);const barkodRaw=raw.barkod??raw.barcode??raw.ean??raw.gtin??[];const barkod=Array.isArray(barkodRaw)?barkodRaw:(barkodRaw?String(barkodRaw).split(/[;, ]+/).filter(Boolean):[]);const imageUrl=get(raw,["image_url","imageUrl","image","logo","resim","gorsel","görsel"]);const status=rawStatus(raw);const hay=norm([marka,anaFirma,kategori,alternatif,kaynak,not,barkod.join(" "),imageUrl,statusLabel(status)].join(" "));return{id:raw.id||null,marka,anaFirma,kategori,alternatif,kaynak,not,barkod,imageUrl,status,hay}}
