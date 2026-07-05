@@ -1,5 +1,5 @@
 
-const VERSION = "20260705-v7-supabase";
+const VERSION = "20260705-v7-1-supabase-no-conflict";
 const SUPABASE_URL = "https://imicltjdfzqlxzvodheq.supabase.co";
 const SUPABASE_KEY = "sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
 const supabaseClient = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
@@ -80,9 +80,59 @@ function renderAbout(){const c=counts();stats.innerHTML="";quickActions.innerHTM
 
 function adminOptions(){return DATA.map(x=>x.marka).filter((v,i,a)=>v&&a.indexOf(v)===i).sort((a,b)=>a.localeCompare(b,"tr")).map(name=>`<option value="${esc(name)}">${esc(name)}</option>`).join("")}
 function getAdminValues(){const raw=$("adminBarkod")?.value.trim()||"";return {marka:$("adminMarka").value.trim(),anaFirma:$("adminAnaFirma").value.trim(),kategori:$("adminKategori").value.trim(),alternatif:$("adminAlternatif").value.trim(),kaynak:$("adminKaynak").value.trim(),not:$("adminNot").value.trim(),barkod:raw?raw.split(/[;, ]+/).filter(Boolean):[],status:$("adminDurum").value}}
-async function saveAdminBrand(){if(!adminSession){toast(t("login"));return}const v=getAdminValues();if(!v.marka){toast(t("requiredBrand"));return}if(!v.anaFirma)v.anaFirma=v.marka;const row=toDbRow(v);let existing=DATA.find(x=>norm(x.marka)===norm(v.marka));let res;if(existing&&existing.id)res=await supabaseClient.from("brands").update(row).eq("id",existing.id);else res=await supabaseClient.from("brands").upsert(row,{onConflict:"marka"});if(res.error){toast(res.error.message);return}toast(existing?t("dataSaved"):t("dataAdded"));await reloadFromSupabase();view="admin";render()}
+async function saveAdminBrand(){
+  if(!adminSession){toast(t("login"));return}
+  const v=getAdminValues();
+  if(!v.marka){toast(t("requiredBrand"));return}
+  if(!v.anaFirma)v.anaFirma=v.marka;
+
+  const row=toDbRow(v);
+  let existing=DATA.find(x=>norm(x.marka)===norm(v.marka));
+  let res;
+
+  if(existing && existing.id){
+    res = await supabaseClient.from("brands").update(row).eq("id", existing.id);
+  }else{
+    const check = await supabaseClient.from("brands").select("id,marka").ilike("marka", v.marka).limit(1);
+    if(check.error){toast(check.error.message);return}
+
+    if(check.data && check.data.length){
+      res = await supabaseClient.from("brands").update(row).eq("id", check.data[0].id);
+      existing = true;
+    }else{
+      res = await supabaseClient.from("brands").insert(row);
+    }
+  }
+
+  if(res.error){toast(res.error.message);return}
+  toast(existing?t("dataSaved"):t("dataAdded"));
+  await reloadFromSupabase();
+  view="admin";
+  render();
+}
 async function deleteAdminBrand(){if(!adminSession){toast(t("login"));return}const name=$("adminSelect").value||$("adminMarka").value;if(!name||!confirm(t("confirmDelete")))return;const item=DATA.find(x=>x.marka===name);if(item?.id){const {error}=await supabaseClient.from("brands").delete().eq("id",item.id);if(error){toast(error.message);return}}toast(t("dataDeleted"));await reloadFromSupabase();view="admin";render()}
-async function importToSupabase(){if(!adminSession){toast(t("login"));return}const rows=DATA.map(toDbRow);for(let i=0;i<rows.length;i+=400){const {error}=await supabaseClient.from("brands").upsert(rows.slice(i,i+400),{onConflict:"marka"});if(error){toast(error.message);return}}toast(t("dataSaved"));await reloadFromSupabase();view="admin";render()}
+async function importToSupabase(){
+  if(!adminSession){toast(t("login"));return}
+
+  for(const item of DATA){
+    const row = toDbRow(item);
+    const check = await supabaseClient.from("brands").select("id").ilike("marka", item.marka).limit(1);
+    if(check.error){toast(check.error.message);return}
+
+    if(check.data && check.data.length){
+      const {error} = await supabaseClient.from("brands").update(row).eq("id", check.data[0].id);
+      if(error){toast(error.message);return}
+    }else{
+      const {error} = await supabaseClient.from("brands").insert(row);
+      if(error){toast(error.message);return}
+    }
+  }
+
+  toast(t("dataSaved"));
+  await reloadFromSupabase();
+  view="admin";
+  render();
+}
 async function reloadFromSupabase(){const list=await loadSupabaseData();DATA=list.map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"))}
 function fillAdminForm(name){const item=DATA.find(x=>x.marka===name);if(!item)return;$("adminMarka").value=item.marka||"";$("adminAnaFirma").value=item.anaFirma||"";$("adminKategori").value=item.kategori||"";$("adminAlternatif").value=item.alternatif||"";$("adminKaynak").value=item.kaynak||"";$("adminNot").value=item.not||"";$("adminBarkod").value=Array.isArray(item.barkod)?item.barkod.join(", "):(item.barkod||"");$("adminDurum").value=item.status||"boykot"}
 function clearAdminForm(){["adminMarka","adminAnaFirma","adminKategori","adminAlternatif","adminKaynak","adminNot","adminBarkod"].forEach(id=>$(id).value="");$("adminDurum").value="boykot"}

@@ -14,7 +14,8 @@ create table if not exists public.brands (
   updated_at timestamptz not null default now()
 );
 
-create unique index if not exists brands_marka_unique_idx on public.brands (lower(marka));
+-- V7.1: UNIQUE zorunlu değil. Uygulama marka varsa UPDATE, yoksa INSERT yapar.
+create index if not exists brands_marka_lower_idx on public.brands (lower(marka));
 create index if not exists brands_durum_idx on public.brands (durum);
 create index if not exists brands_barkod_gin_idx on public.brands using gin (barkod);
 
