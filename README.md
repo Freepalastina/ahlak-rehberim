@@ -62,3 +62,14 @@ Bu sürümde şu değerlerin tamamı `Boykotta Değil` olarak okunur:
 - `notBoycotted`
 
 Master dosya içe aktarılırken durum değerleri otomatik normalize edilir.
+
+
+## V13.2 Safe Detection Fix
+Bu sürüm sadece `durum` alanına bakmaz.
+Aşağıdaki alanlarda işaret varsa kayıt otomatik `Boykotta Değil` sayılır:
+- kategori = Boykotta Değil
+- kaynak = alternatif.ods
+- not = Boykot listesinde olmayan
+- durum = boykottaDegil / boykot_degil / safe / notBoycotted
+
+Bu, eski Supabase aktarımında yanlış `boykot` görünen kayıtları da ekranda doğru gösterir.
