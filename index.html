@@ -56,6 +56,25 @@
     <button data-view="about" type="button"><span>ℹ️</span><small data-i="navAbout">Bilgi</small></button>
   </nav>
 
+
+  <dialog id="barcodeDialog" class="barcodeDialog">
+    <div class="scannerHead">
+      <div>
+        <h2 id="scannerTitle">Barkod Tara</h2>
+        <p id="scannerHelp">Kamerayı barkoda doğru tut.</p>
+      </div>
+      <button id="closeScanner" class="scannerClose" type="button">×</button>
+    </div>
+    <div class="scannerBody">
+      <video id="barcodeVideo" playsinline muted></video>
+      <div class="scanFrame"></div>
+      <p id="scannerStatus" class="scannerStatus">Kamera hazırlanıyor...</p>
+    </div>
+    <div class="scannerActions">
+      <button id="manualBarcode" type="button">Barkod numarası yaz</button>
+    </div>
+  </dialog>
+
   <dialog id="detailDialog" class="detailDialog">
     <div id="detailContent"></div>
     <button id="closeDialog" class="closeDialog" type="button">Kapat</button>

@@ -1,4 +1,4 @@
-const VERSION = "20260705-v4-core";
+const VERSION = "20260705-v4-barkod";
 let DATA = [];
 let view = "home";
 let filter = "all";
@@ -10,6 +10,16 @@ const $ = id => document.getElementById(id);
 const search = $("search");
 const clearBtn = $("clearBtn");
 const barcodeBtn = $("barcodeBtn");
+const barcodeDialog = $("barcodeDialog");
+const barcodeVideo = $("barcodeVideo");
+const scannerStatus = $("scannerStatus");
+const scannerTitle = $("scannerTitle");
+const scannerHelp = $("scannerHelp");
+const closeScanner = $("closeScanner");
+const manualBarcode = $("manualBarcode");
+let barcodeStream = null;
+let barcodeTimer = null;
+let barcodeDetector = null;
 const stats = $("stats");
 const quickActions = $("quickActions");
 const quickFilters = $("quickFilters");
@@ -30,7 +40,7 @@ const I = {
     noResult:"Sonuç bulunamadı.", dataError:"Veri yüklenemedi.", dataHelp:"data.json dosyası index.html ile aynı klasörde olmalı.",
     safeInfo:"Bu marka boykot listesinde olmayanlar bölümüne eklendi.",
     quickTitle:"Hızlı Erişim", open:"Aç", back:"Geri",
-    barcodePrompt:"Barkod numarasını yaz:", barcodeMissing:"Bu veri içinde barkod alanı yoksa eşleşme bulunmayabilir.",
+    barcodePrompt:"Barkod numarasını yaz:", barcodeMissing:"Bu veri içinde barkod alanı yoksa eşleşme bulunmayabilir.", scanBarcode:"Barkod Tara", scanHelp:"Kamerayı barkoda doğru tut.", scannerStarting:"Kamera hazırlanıyor...", scannerFound:"Barkod bulundu:", scannerUnsupported:"Bu cihazda kamera ile barkod okuma desteklenmiyor. Manuel giriş kullanabilirsin.", scannerError:"Kamera açılamadı. Manuel giriş kullanabilirsin.", scannerSearching:"Barkod aranıyor...", manualBarcode:"Barkod numarası yaz",
     aboutTitle:"📖 Ahlak Rehberim", aboutIntro:"Markaları, ana firmaları, kategorileri ve alternatifleri hızlıca bulmak için hazırlanmış mobil uyumlu rehber.",
     listStatus:"📊 Liste Durumu",
     listStatusText:c=>`${c.total} toplam kayıt var. ${c.boykot} boykot, ${c.safe} boykotta değil, ${c.altli} alternatif bilgisi içeriyor.`,
@@ -54,7 +64,7 @@ const I = {
     noResult:"No results found.", dataError:"Data could not be loaded.", dataHelp:"data.json must be in the same folder as index.html.",
     safeInfo:"This brand was added to the Not Boycotted section.",
     quickTitle:"Quick Access", open:"Open", back:"Back",
-    barcodePrompt:"Enter barcode number:", barcodeMissing:"If barcode data is not present, no match may be found.",
+    barcodePrompt:"Enter barcode number:", barcodeMissing:"If barcode data is not present, no match may be found.", scanBarcode:"Scan Barcode", scanHelp:"Point your camera at the barcode.", scannerStarting:"Preparing camera...", scannerFound:"Barcode found:", scannerUnsupported:"Camera barcode scanning is not supported on this device. You can use manual entry.", scannerError:"Could not open camera. You can use manual entry.", scannerSearching:"Searching barcode...", manualBarcode:"Enter barcode number",
     aboutTitle:"📖 Ahlak Rehberim", aboutIntro:"A mobile-friendly guide for quickly finding brands, parent companies, categories and alternatives.",
     listStatus:"📊 List Status",
     listStatusText:c=>`${c.total} total records. ${c.boykot} boycott entries, ${c.safe} not boycotted entries, ${c.altli} include alternatives.`,
@@ -78,7 +88,7 @@ const I = {
     noResult:"Keine Ergebnisse gefunden.", dataError:"Daten konnten nicht geladen werden.", dataHelp:"data.json muss im selben Ordner wie index.html liegen.",
     safeInfo:"Diese Marke wurde dem Bereich Nicht boykottiert hinzugefügt.",
     quickTitle:"Schnellzugriff", open:"Öffnen", back:"Zurück",
-    barcodePrompt:"Barcode-Nummer eingeben:", barcodeMissing:"Wenn keine Barcode-Daten vorhanden sind, wird eventuell nichts gefunden.",
+    barcodePrompt:"Barcode-Nummer eingeben:", barcodeMissing:"Wenn keine Barcode-Daten vorhanden sind, wird eventuell nichts gefunden.", scanBarcode:"Barcode scannen", scanHelp:"Halte die Kamera auf den Barcode.", scannerStarting:"Kamera wird vorbereitet...", scannerFound:"Barcode gefunden:", scannerUnsupported:"Barcode-Scan mit Kamera wird auf diesem Gerät nicht unterstützt. Du kannst die manuelle Eingabe nutzen.", scannerError:"Kamera konnte nicht geöffnet werden. Du kannst die manuelle Eingabe nutzen.", scannerSearching:"Barcode wird gesucht...", manualBarcode:"Barcode-Nummer eingeben",
     aboutTitle:"📖 Ahlak Rehberim", aboutIntro:"Ein mobiler Ratgeber, um Marken, Mutterfirmen, Kategorien und Alternativen schnell zu finden.",
     listStatus:"📊 Listenstatus",
     listStatusText:c=>`${c.total} Einträge. ${c.boykot} Boykott, ${c.safe} nicht boykottiert, ${c.altli} mit Alternativen.`,
@@ -370,6 +380,7 @@ function applyLang(){
   $("closeDialog").textContent=t("close");
   document.querySelectorAll("[data-i]").forEach(el=>el.textContent=t(el.dataset.i));
   document.querySelectorAll(".langSwitch button").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
+  setScannerText();
 }
 function goHome(){
   currentGroup=null;
@@ -378,12 +389,96 @@ function goHome(){
   render();
 }
 
+
+function setScannerText(){
+  if(scannerTitle) scannerTitle.textContent = t("scanBarcode");
+  if(scannerHelp) scannerHelp.textContent = t("scanHelp");
+  if(manualBarcode) manualBarcode.textContent = t("manualBarcode");
+}
+function manualBarcodeSearch(){
+  const code = prompt(`${t("barcodePrompt")}\n${t("barcodeMissing")}`);
+  if(code){
+    stopBarcodeScanner();
+    search.value = code.trim();
+    currentGroup = null;
+    view = "home";
+    filter = "all";
+    render();
+  }
+}
+async function startBarcodeScanner(){
+  setScannerText();
+  if(!barcodeDialog || !barcodeVideo){
+    manualBarcodeSearch();
+    return;
+  }
+
+  barcodeDialog.showModal();
+  scannerStatus.textContent = t("scannerStarting");
+
+  if(!("BarcodeDetector" in window)){
+    scannerStatus.textContent = t("scannerUnsupported");
+    return;
+  }
+
+  try{
+    const formats = ["ean_13","ean_8","upc_a","upc_e","code_128","code_39","code_93","itf","codabar"];
+    barcodeDetector = new BarcodeDetector({formats});
+    barcodeStream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: { ideal: "environment" } },
+      audio: false
+    });
+
+    barcodeVideo.srcObject = barcodeStream;
+    await barcodeVideo.play();
+    scannerStatus.textContent = t("scannerSearching");
+
+    barcodeTimer = setInterval(scanBarcodeFrame, 450);
+  }catch(err){
+    scannerStatus.textContent = t("scannerError");
+  }
+}
+async function scanBarcodeFrame(){
+  if(!barcodeDetector || !barcodeVideo || barcodeVideo.readyState < 2) return;
+  try{
+    const codes = await barcodeDetector.detect(barcodeVideo);
+    if(codes && codes.length){
+      const value = codes[0].rawValue || "";
+      if(value){
+        scannerStatus.textContent = `${t("scannerFound")} ${value}`;
+        stopBarcodeScanner(false);
+        search.value = value;
+        currentGroup = null;
+        view = "home";
+        filter = "all";
+        render();
+      }
+    }
+  }catch(e){}
+}
+function stopBarcodeScanner(close=true){
+  if(barcodeTimer){
+    clearInterval(barcodeTimer);
+    barcodeTimer = null;
+  }
+  if(barcodeStream){
+    barcodeStream.getTracks().forEach(track=>track.stop());
+    barcodeStream = null;
+  }
+  if(barcodeVideo){
+    barcodeVideo.pause();
+    barcodeVideo.srcObject = null;
+  }
+  if(close && barcodeDialog && barcodeDialog.open){
+    barcodeDialog.close();
+  }
+}
+
 search.addEventListener("input",()=>{currentGroup=null;if(view!=="home"){view="home";filter="all"} render();});
 clearBtn.addEventListener("click",()=>{search.value="";search.focus();currentGroup=null;render();});
-barcodeBtn.addEventListener("click",()=>{
-  const code=prompt(`${t("barcodePrompt")}\n${t("barcodeMissing")}`);
-  if(code){search.value=code.trim();currentGroup=null;view="home";filter="all";render();}
-});
+barcodeBtn.addEventListener("click",()=>startBarcodeScanner());
+if(closeScanner){closeScanner.addEventListener("click",()=>stopBarcodeScanner());}
+if(manualBarcode){manualBarcode.addEventListener("click",()=>manualBarcodeSearch());}
 quickFilters.addEventListener("click",e=>{const b=e.target.closest("[data-filter]"); if(!b)return; currentGroup=null; filter=b.dataset.filter; view="home"; render();});
 quickActions.addEventListener("click",e=>{const b=e.target.closest("[data-go]"); if(!b)return; currentGroup=null; view=b.dataset.go; if(view==="alternatives")filter="altli"; if(view==="favorites")filter="fav"; render();});
 stats.addEventListener("click",e=>{const b=e.target.closest("[data-stat]"); if(!b)return; currentGroup=null; filter=b.dataset.stat; view=filter==="safe"?"safe":"home"; render();});
