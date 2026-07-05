@@ -1,4 +1,4 @@
-const VERSION = "20260705-v4-final-kodsuz";
+const VERSION = "20260705-v4-final-barkod-paket1";
 let DATA = [];
 let view = "home";
 let filter = "all";

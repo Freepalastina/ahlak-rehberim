@@ -1,4 +1,4 @@
-const CACHE_VERSION = "20260705-v4-final-kodsuz";
+const CACHE_VERSION = "20260705-v4-final-barkod-paket1";
 const CACHE_NAME = `ahlak-rehberim-${CACHE_VERSION}`;
 
 const APP_SHELL = [

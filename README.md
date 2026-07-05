@@ -12,3 +12,11 @@ Bu final pakette:
 
 Kayıt sayısı: 1571
 GitHub'a ZIP dosyasını değil, ZIP içindeki dosyaları yükleyin.
+
+
+## Barkod Paketi 1 - Gıda/İçecek
+
+Eklenen marka sayısı: 11
+Eklenen markalar: Coca-Cola, Fanta, Sprite, Nutella, KitKat, Nescafe, Doritos, Lay’s, Oreo, Pringles, Milka
+
+Not: Barkodlar ürün bazlıdır; aynı markanın farklı gramaj/ülke/ambalaj ürünlerinde farklı barkodları olabilir.
