@@ -250,3 +250,54 @@ body.dark .toast{
   margin:0;
   width:100%;
 }
+
+
+/* V5.1 Barkod eşleştirme paneli */
+.barcodePanel{
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:14px;
+  background:#f8f5ec;
+  display:grid;
+  gap:10px;
+}
+.barcodePanel label{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:950;
+  text-transform:uppercase;
+}
+.barcodePanel select{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:13px;
+  background:var(--paper);
+  color:var(--ink);
+  font-weight:800;
+}
+.barcodePanel button{
+  border:0;
+  border-radius:18px;
+  padding:13px;
+  background:var(--olive);
+  color:white;
+  font-weight:950;
+}
+body.dark .barcodePanel{
+  background:#1a2014;
+}
+body.dark .barcodePanel select{
+  background:#202719;
+  color:var(--ink);
+}
+body.dark .barcodePanel button{
+  background:#8fa35a;
+  color:#10150e;
+}
+.quickGrid{
+  grid-template-columns:repeat(5,1fr);
+}
+@media(max-width:900px){
+  .quickGrid{ grid-template-columns:repeat(2,1fr); }
+}

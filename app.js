@@ -1,4 +1,4 @@
-const VERSION = "20260705-v4-final-kodsuz";
+const VERSION = "20260705-v51-barcode-panel";
 let DATA = [];
 let view = "home";
 let filter = "all";
@@ -205,6 +205,7 @@ function renderQuickActions(){
       <button data-go="categories" type="button"><span>📂</span><b>${t("categories")}</b><small>${c.kategoriler}</small></button>
       <button data-go="alternatives" type="button"><span>⭐</span><b>${t("withAlt")}</b><small>${c.altli}</small></button>
       <button data-go="favorites" type="button"><span>❤️</span><b>${t("favorites")}</b><small>${c.fav}</small></button>
+      <button data-export-barcodes="1" type="button"><span>📦</span><b>${t("exportBarcodes")}</b><small>JSON</small></button>
     </div>`;
 }
 function renderFilters(){
@@ -532,7 +533,17 @@ barcodeBtn.addEventListener("click",()=>startBarcodeScanner());
 if(closeScanner){closeScanner.addEventListener("click",()=>stopBarcodeScanner());}
 if(manualBarcode){manualBarcode.addEventListener("click",()=>manualBarcodeSearch());}
 quickFilters.addEventListener("click",e=>{const b=e.target.closest("[data-filter]"); if(!b)return; currentGroup=null; filter=b.dataset.filter; view="home"; render();});
-quickActions.addEventListener("click",e=>{const b=e.target.closest("[data-go]"); if(!b)return; currentGroup=null; view=b.dataset.go; if(view==="alternatives")filter="altli"; if(view==="favorites")filter="fav"; render();});
+quickActions.addEventListener("click",e=>{
+  const exportBtn = e.target.closest("[data-export-barcodes]");
+  if(exportBtn){ exportLearnedBarcodes(); return; }
+  const b=e.target.closest("[data-go]");
+  if(!b)return;
+  currentGroup=null;
+  view=b.dataset.go;
+  if(view==="alternatives")filter="altli";
+  if(view==="favorites")filter="fav";
+  render();
+});
 stats.addEventListener("click",e=>{const b=e.target.closest("[data-stat]"); if(!b)return; currentGroup=null; filter=b.dataset.stat; view=filter==="safe"?"safe":"home"; render();});
 results.addEventListener("click",e=>{
   const f=e.target.closest("[data-fav]");

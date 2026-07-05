@@ -1,16 +1,13 @@
-# Ahlak Rehberim - Yeni İkon Paketi
+# Ahlak Rehberim V5.1 - Barkod Eşleştirme Paneli
 
-GitHub'a yükle:
-- icon-72.png
-- icon-96.png
-- icon-128.png
-- icon-144.png
-- icon-152.png
-- icon-180.png
-- icon-192.png
-- icon-384.png
-- icon-512.png
-- apple-touch-icon.png
-- manifest.json
+Eklenenler:
+- Barkod okutulduğunda eşleşme yoksa marka seçme paneli
+- “Barkodu markaya bağla” butonu
+- Kaydedilen barkodlar tarayıcıda saklanır
+- Sonraki taramada otomatik eşleşir
+- “Barkodları dışa aktar” butonu
+- `barcodes.json` olarak indirme
+- Open Food Facts entegrasyonu korunur
+- PWA, dark mode ve bayraklı dil seçimi korunur
 
-Eski icon-192.png, icon-512.png ve manifest.json dosyalarının üzerine yazdır.
+Kayıt sayısı: 1571
