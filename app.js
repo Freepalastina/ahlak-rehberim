@@ -1,4 +1,4 @@
-const VERSION="20260705-v11-ods-raw-import";
+const VERSION="20260705-v13-master-ods";
 const SUPABASE_URL="https://imicltjdfzqlxzvodheq.supabase.co";
 const SUPABASE_KEY="sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
 const supabaseClient=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
@@ -10,7 +10,7 @@ const $=id=>document.getElementById(id);
 const search=$("search"),clearBtn=$("clearBtn"),barcodeBtn=$("barcodeBtn"),stats=$("stats"),quickActions=$("quickActions"),quickFilters=$("quickFilters"),sectionTitle=$("sectionTitle"),results=$("results"),themeBtn=$("themeBtn");
 
 const I={
-tr:{kicker:"V10 Temiz Sistem",title:"Ahlak Rehberim",subtitle:"Bilinçli tüket, güvenle tercih et.",search:"Marka, firma, kategori veya barkod ara...",navHome:"Ana",navCompanies:"Firmalar",navCategories:"Kategori",navFavorites:"Favori",navAdmin:"Yönetim",boycott:"Boykot",notBoycotted:"Boykotta Değil",review:"İnceleniyor",withAlt:"Alternatifli",favorites:"Favoriler",all:"Tümü",results:"sonuç",brands:"marka",companies:"Ana Firmalar",categories:"Kategoriler",category:"Kategori",parent:"Ana Firma",barcode:"Barkod",alternative:"Alternatif",details:"Ayrıntıları Gör →",close:"Kapat",source:"Kaynak",note:"Not",openSource:"Kaynağı aç",noResult:"Sonuç bulunamadı.",safeInfo:"Bu marka boykot listesinde olmayanlar bölümüne eklendi.",quickTitle:"Hızlı Erişim",admin:"Yönetim",login:"Giriş",logout:"Çıkış",email:"E-posta",password:"Şifre",brandName:"Marka adı",save:"Kaydet",resetForm:"Temizle",chooseBrand:"Marka seç",deleteBrand:"Marka Sil",confirmDelete:"Bu markayı silmek istiyor musun?",dataSaved:"Kayıt güncellendi",dataAdded:"Marka eklendi",dataDeleted:"Kayıt silindi",requiredBrand:"Marka adı gerekli",importToSupabase:"data.json → Supabase aktar",exportData:"data.json indir",localOnly:"Giriş yaptıysan değişiklikler Supabase’e kaydedilir.",dataCenter:"📥 LibreOffice / Excel Yükle",chooseFile:"Buradan .ods, .xlsx veya .csv dosyanı seç",importFileToSupabase:"☁ Seçilen Dosyayı Supabase’e Aktar",fileRows:"kayıt okundu",fileReady:"Dosya hazır",fileError:"Dosya okunamadı",importDone:"Aktarma tamamlandı",noFileData:"Önce dosya seç", importStarted:"Aktarım başladı...", importNeedLogin:"Önce admin girişi yap", importProgress:"Aktarılıyor", importError:"Aktarım hatası",downloaded:"İndirildi",supabaseReady:"Supabase bağlı",supabaseFallback:"Supabase boş/ulaşılamıyor, data.json yedeği kullanılıyor.",barcodePrompt:"Barkod numarasını yaz:",barcodeMissing:"Barkod alanı yoksa eşleşme bulunmayabilir."},
+tr:{kicker:"V10 Temiz Sistem",title:"Ahlak Rehberim",subtitle:"Bilinçli tüket, güvenle tercih et.",search:"Marka, firma, kategori veya barkod ara...",navHome:"Ana",navCompanies:"Firmalar",navCategories:"Kategori",navFavorites:"Favori",navAdmin:"Yönetim",boycott:"Boykot",notBoycotted:"Boykotta Değil",review:"İnceleniyor",withAlt:"Alternatifli",favorites:"Favoriler",all:"Tümü",results:"sonuç",brands:"marka",companies:"Ana Firmalar",categories:"Kategoriler",category:"Kategori",parent:"Ana Firma",barcode:"Barkod",alternative:"Alternatif",details:"Ayrıntıları Gör →",close:"Kapat",source:"Kaynak",note:"Not",openSource:"Kaynağı aç",noResult:"Sonuç bulunamadı.",safeInfo:"Bu marka boykot listesinde olmayanlar bölümüne eklendi.",quickTitle:"Hızlı Erişim",admin:"Yönetim",login:"Giriş",logout:"Çıkış",email:"E-posta",password:"Şifre",brandName:"Marka adı",save:"Kaydet",resetForm:"Temizle",chooseBrand:"Marka seç",deleteBrand:"Marka Sil",confirmDelete:"Bu markayı silmek istiyor musun?",dataSaved:"Kayıt güncellendi",dataAdded:"Marka eklendi",dataDeleted:"Kayıt silindi",requiredBrand:"Marka adı gerekli",importToSupabase:"data.json → Supabase aktar",exportData:"data.json indir",localOnly:"Giriş yaptıysan değişiklikler Supabase’e kaydedilir.",dataCenter:"📥 LibreOffice / Excel Yükle",chooseFile:"V13 master.xlsx / master.ods dosyanı seç",importFileToSupabase:"☁ Seçilen Dosyayı Supabase’e Aktar",fileRows:"kayıt okundu",fileReady:"Dosya hazır",fileError:"Dosya okunamadı",importDone:"Aktarma tamamlandı",noFileData:"Önce dosya seç", importStarted:"Aktarım başladı...", importNeedLogin:"Önce admin girişi yap", importProgress:"Aktarılıyor", importError:"Aktarım hatası",downloaded:"İndirildi",supabaseReady:"Supabase bağlı",supabaseFallback:"Supabase boş/ulaşılamıyor, data.json yedeği kullanılıyor.",barcodePrompt:"Barkod numarasını yaz:",barcodeMissing:"Barkod alanı yoksa eşleşme bulunmayabilir."},
 en:{kicker:"V10 Clean System",title:"Ahlak Rehberim",subtitle:"Choose consciously.",search:"Search brand, company, category or barcode...",navHome:"Home",navCompanies:"Companies",navCategories:"Category",navFavorites:"Favorite",navAdmin:"Admin",boycott:"Boycott",notBoycotted:"Not Boycotted",review:"Under Review",withAlt:"With Alternatives",favorites:"Favorites",all:"All",results:"results",brands:"brands",companies:"Companies",categories:"Categories",category:"Category",parent:"Parent Company",barcode:"Barcode",alternative:"Alternative",details:"View Details →",close:"Close",source:"Source",note:"Note",openSource:"Open source",noResult:"No results found.",safeInfo:"This brand is in Not Boycotted.",quickTitle:"Quick Access",admin:"Admin",login:"Login",logout:"Logout",email:"Email",password:"Password",brandName:"Brand name",save:"Save",resetForm:"Clear",chooseBrand:"Select brand",deleteBrand:"Delete brand",confirmDelete:"Delete this brand?",dataSaved:"Record updated",dataAdded:"Brand added",dataDeleted:"Record deleted",requiredBrand:"Brand required",importToSupabase:"Import data.json to Supabase",exportData:"Download data.json",localOnly:"If logged in, changes are saved to Supabase.",dataCenter:"Data Center",chooseFile:"Choose ODS / Excel / CSV",importFileToSupabase:"Import file to Supabase",fileRows:"rows found",fileReady:"File ready",fileError:"Could not read file",importDone:"Import complete",noFileData:"Choose a file first", importStarted:"Import started...", importNeedLogin:"Please login first", importProgress:"Importing", importError:"Import error",downloaded:"Downloaded",supabaseReady:"Supabase connected",supabaseFallback:"Supabase empty/unavailable; using data.json fallback.",barcodePrompt:"Enter barcode:",barcodeMissing:"No match if barcode data is missing."},
 de:{kicker:"V10 Sauberes System",title:"Ahlak Rehberim",subtitle:"Bewusst konsumieren.",search:"Marke, Firma, Kategorie oder Barcode suchen...",navHome:"Start",navCompanies:"Firmen",navCategories:"Kategorie",navFavorites:"Favorit",navAdmin:"Admin",boycott:"Boykott",notBoycotted:"Nicht boykottiert",review:"In Prüfung",withAlt:"Mit Alternativen",favorites:"Favoriten",all:"Alle",results:"Ergebnisse",brands:"Marken",companies:"Firmen",categories:"Kategorien",category:"Kategorie",parent:"Mutterfirma",barcode:"Barcode",alternative:"Alternative",details:"Details ansehen →",close:"Schließen",source:"Quelle",note:"Notiz",openSource:"Quelle öffnen",noResult:"Keine Ergebnisse gefunden.",safeInfo:"Diese Marke ist nicht boykottiert.",quickTitle:"Schnellzugriff",admin:"Verwaltung",login:"Anmelden",logout:"Abmelden",email:"E-Mail",password:"Passwort",brandName:"Markenname",save:"Speichern",resetForm:"Leeren",chooseBrand:"Marke auswählen",deleteBrand:"Marke löschen",confirmDelete:"Diese Marke löschen?",dataSaved:"Eintrag aktualisiert",dataAdded:"Marke hinzugefügt",dataDeleted:"Eintrag gelöscht",requiredBrand:"Marke erforderlich",importToSupabase:"data.json importieren",exportData:"data.json herunterladen",localOnly:"Wenn angemeldet, werden Änderungen in Supabase gespeichert.",dataCenter:"Datenzentrum",chooseFile:"ODS / Excel / CSV wählen",importFileToSupabase:"Datei importieren",fileRows:"Einträge gefunden",fileReady:"Datei bereit",fileError:"Datei konnte nicht gelesen werden",importDone:"Import abgeschlossen",noFileData:"Bitte zuerst Datei wählen", importStarted:"Import gestartet...", importNeedLogin:"Bitte zuerst anmelden", importProgress:"Import läuft", importError:"Importfehler",downloaded:"Heruntergeladen",supabaseReady:"Supabase verbunden",supabaseFallback:"Supabase leer/nicht verfügbar; data.json wird genutzt.",barcodePrompt:"Barcode eingeben:",barcodeMissing:"Keine Übereinstimmung ohne Barcode-Daten."}
 };
@@ -94,17 +94,95 @@ function rawRowToBrand(arr){
     imageUrl: vals[8] || ""
   };
 }
+function normalizeHeaderKey(s){
+  return norm(s).replace(/\s+/g," ");
+}
+function sheetRowsByName(workbook, wanted){
+  const found = workbook.SheetNames.find(n => normalizeHeaderKey(n) === normalizeHeaderKey(wanted));
+  if(!found) return [];
+  return XLSX.utils.sheet_to_json(workbook.Sheets[found], {defval:""});
+}
+function getRowValue(row, aliases){
+  const keys = Object.keys(row);
+  for(const a of aliases){
+    const k = keys.find(x => normalizeHeaderKey(x) === normalizeHeaderKey(a));
+    if(k && row[k] !== undefined && row[k] !== null && String(row[k]).trim() !== "") return String(row[k]).trim();
+  }
+  return "";
+}
+function parseMasterWorkbook(workbook){
+  const brandRows = sheetRowsByName(workbook, "Markalar");
+  if(!brandRows.length) return [];
+
+  const sourcesRows = sheetRowsByName(workbook, "Kaynaklar");
+  const barcodeRows = sheetRowsByName(workbook, "Barkodlar");
+  const altRows = sheetRowsByName(workbook, "Alternatifler");
+
+  const byBrand = {};
+  const makeKey = v => norm(v);
+
+  for(const row of brandRows){
+    const marka = getRowValue(row, ["Marka","marka","Brand","name"]);
+    if(!marka) continue;
+    const k = makeKey(marka);
+    byBrand[k] = {
+      marka,
+      anaFirma: getRowValue(row, ["Ana Firma","anaFirma","ana_firma","Firma"]),
+      kategori: getRowValue(row, ["Kategori","category"]),
+      status: getRowValue(row, ["Durum","status"]) || "boykot",
+      not: getRowValue(row, ["Not","note","notlar"]),
+      imageUrl: getRowValue(row, ["Görsel URL","image_url","image","logo","resim","gorsel"]),
+      kaynak: "",
+      barkod: [],
+      alternatif: ""
+    };
+  }
+
+  for(const row of sourcesRows){
+    const marka = getRowValue(row, ["Marka","marka","Brand"]);
+    const url = getRowValue(row, ["URL","Kaynak","kaynak","source","link"]);
+    if(!marka || !url) continue;
+    const k = makeKey(marka);
+    if(!byBrand[k]) continue;
+    const list = byBrand[k].kaynak ? byBrand[k].kaynak.split(";").map(x=>x.trim()).filter(Boolean) : [];
+    if(!list.includes(url)) list.push(url);
+    byBrand[k].kaynak = list.join("; ");
+  }
+
+  for(const row of barcodeRows){
+    const marka = getRowValue(row, ["Marka","marka","Brand"]);
+    const barkod = getRowValue(row, ["Barkod","barcode","ean","gtin"]);
+    if(!marka || !barkod) continue;
+    const k = makeKey(marka);
+    if(!byBrand[k]) continue;
+    if(!byBrand[k].barkod.includes(barkod)) byBrand[k].barkod.push(barkod);
+  }
+
+  for(const row of altRows){
+    const marka = getRowValue(row, ["Marka","marka","Brand"]);
+    const alt = getRowValue(row, ["Alternatif","alternative"]);
+    if(!marka || !alt) continue;
+    const k = makeKey(marka);
+    if(!byBrand[k]) continue;
+    const list = byBrand[k].alternatif ? byBrand[k].alternatif.split(";").map(x=>x.trim()).filter(Boolean) : [];
+    if(!list.includes(alt)) list.push(alt);
+    byBrand[k].alternatif = list.join("; ");
+  }
+
+  return Object.values(byBrand);
+}
 function parseWorkbook(workbook){
+  const normalized = parseMasterWorkbook(workbook);
+  if(normalized.length) return normalized;
+
   let best = [];
   for(const sheetName of workbook.SheetNames){
     const sheet = workbook.Sheets[sheetName];
 
-    // 1) Try header based import
     const jsonRows = XLSX.utils.sheet_to_json(sheet, {defval:""});
     const mapped = jsonRows.map(mapSheetRow).filter(x=>x.marka);
     if(mapped.length > best.length) best = mapped;
 
-    // 2) Try raw array import for user format: first column = brand, second column = marker like "o"
     const raw = XLSX.utils.sheet_to_json(sheet, {header:1, defval:"", blankrows:false});
     const rawMapped = raw
       .filter(r => Array.isArray(r) && String(r[0]??"").trim() !== "")

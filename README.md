@@ -37,3 +37,16 @@ marka, anaFirma, kategori, alternatif, kaynak, barkod, image_url, not, durum
 - İkinci sütun `o`, `x`, `✓` gibi işaretleri durum olarak yorumlar
 - Tüm sayfalar taranır, en çok kayıt bulunan sayfa kullanılır
 - Aktarım durum mesajı ve hata mesajı görünür
+
+
+## V13 Master ODS Sistemi
+Bu sürüm `master.xlsx / master.ods` dosyasındaki ayrı sayfaları okuyabilir:
+
+- Markalar
+- Firmalar
+- Kategoriler
+- Kaynaklar
+- Barkodlar
+- Alternatifler
+
+İçe aktarma sırasında önce Markalar sayfasını okur, sonra Kaynaklar/Barkodlar/Alternatifler sayfalarını marka adına göre bağlar.
