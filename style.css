@@ -462,3 +462,82 @@ body.dark .brandImage img,
 body.dark .detailImage{
   background:#202719;
 }
+
+
+/* V9 ODS / Excel içe aktarma */
+.dataCenter{
+  margin:18px 0;
+  padding:16px;
+  border:1px solid var(--line);
+  border-radius:26px;
+  background:#f8f5ec;
+}
+.dataCenter h3{
+  margin:0 0 8px;
+  font-size:20px;
+}
+.dataCenter p{
+  margin:0 0 12px;
+  color:var(--muted);
+  font-weight:800;
+}
+.dataCenter input[type=file]{
+  width:100%;
+  border:1px dashed var(--olive);
+  border-radius:18px;
+  padding:16px;
+  background:var(--paper);
+  color:var(--ink);
+  font-weight:850;
+}
+.dataCenter button{
+  margin-top:12px;
+  border:0;
+  border-radius:20px;
+  padding:13px 16px;
+  background:var(--olive);
+  color:white;
+  font-weight:950;
+}
+.importPreview{
+  margin-top:12px;
+}
+.importSummary{
+  padding:10px 12px;
+  border-radius:16px;
+  background:#edf3df;
+  color:var(--oliveDark);
+  font-weight:900;
+}
+.importTable{
+  margin-top:10px;
+  overflow:auto;
+  border:1px solid var(--line);
+  border-radius:18px;
+}
+.importTable table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:13px;
+}
+.importTable th,.importTable td{
+  padding:9px 10px;
+  border-bottom:1px solid var(--line);
+  text-align:left;
+}
+.importTable th{
+  background:#eef3df;
+  color:var(--oliveDark);
+}
+body.dark .dataCenter{
+  background:#1a2014;
+}
+body.dark .dataCenter input[type=file]{
+  background:#202719;
+  color:var(--ink);
+}
+body.dark .importSummary,
+body.dark .importTable th{
+  background:#2e3921;
+  color:#eaf0d6;
+}

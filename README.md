@@ -37,3 +37,21 @@ Uygulama yine tek liste gibi çalışır. Bunun için Supabase içinde `brand_ca
 - Admin sayfasından çıkış yapınca otomatik Ana sayfaya döner
 - Arama ve filtreler temizlenir
 - Alt menü aktif durumu düzeltilir
+
+
+## V9 ODS / Excel / CSV içe aktarma
+Yönetim panelinde:
+1. ODS / XLSX / CSV dosyası seç
+2. Önizlemeyi kontrol et
+3. `Dosyayı Supabase’e aktar` butonuna bas
+
+Desteklenen sütun adları:
+- Marka / marka / brand
+- Ana Firma / anaFirma / anafirma / ana_firma
+- Kategori / kategori / category
+- Alternatif / alternatif / alternative
+- Kaynak / kaynak / source / url / link
+- Barkod / barkod / barcode / ean / gtin
+- Görsel URL / image_url / image / logo / resim / gorsel
+- Not / not / note
+- Durum / durum / status
