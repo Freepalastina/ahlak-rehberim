@@ -1,19 +1,15 @@
-# Ahlak Rehberim V6 - Yeni İkonlu Sürüm
+# Ahlak Rehberim V7 - Supabase
 
-Bu pakette V6 Yönetim Paneli korunur ve ikonlar yenilenmiştir.
+Kurulum:
+1. Supabase Dashboard > SQL Editor aç
+2. `supabase_setup.sql` dosyasındaki SQL'i çalıştır
+3. Supabase > Authentication > Users bölümünden admin kullanıcı oluştur
+4. ZIP içindeki dosyaları GitHub'a yükle
+5. Uygulamada Yönetim bölümüne gir
+6. Admin e-posta/şifre ile giriş yap
+7. `data.json → Supabase aktar` butonuna bas
 
-Yükle:
-- index.html
-- app.js
-- style.css
-- data.json
-- sw.js
-- manifest.json
-- icon-192.png
-- icon-512.png
-- apple-touch-icon.png
-- README.md
+Veriler artık Supabase `brands` tablosundan gelir.
+Supabase boşsa uygulama `data.json` yedeğini kullanır.
 
-Not:
-GitHub'a ZIP dosyasını değil, ZIP içindeki dosyaları yükleyin.
-Telefonunuzda eski ikon görünürse uygulamayı kaldırıp tekrar ana ekrana ekleyin.
+Project URL: https://imicltjdfzqlxzvodheq.supabase.co

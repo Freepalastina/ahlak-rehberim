@@ -401,3 +401,17 @@ body.dark .adminButtons .danger{
     grid-template-columns:1fr;
   }
 }
+
+/* V7 Supabase Admin */
+.adminPanel{grid-column:1/-1;background:var(--paper);border:1px solid var(--line);border-radius:34px;padding:20px;box-shadow:var(--shadow)}
+.adminNotice{margin:0 0 16px;padding:14px;border-radius:22px;background:#edf3df;color:var(--oliveDark);font-weight:850;line-height:1.5}
+.adminLogin,.adminTools,.adminButtons{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.adminLogin input{border:1px solid var(--line);border-radius:18px;padding:13px;background:#f8f5ec;color:var(--ink);font-weight:750}
+.adminLogin button,.adminTools button,.adminButtons button{border:0;border-radius:20px;padding:13px 16px;background:var(--olive);color:white;font-weight:950;cursor:pointer}
+.adminButtons .danger{background:var(--red)}
+.adminSelectRow{display:grid;gap:8px;margin:15px 0}
+.adminSelectRow label,.adminForm label{color:var(--muted);font-size:12px;font-weight:950;text-transform:uppercase}
+.adminSelectRow select,.adminForm input,.adminForm textarea,.adminForm select{width:100%;border:1px solid var(--line);border-radius:18px;padding:13px;background:#f8f5ec;color:var(--ink);font-weight:750;margin-top:7px}
+.adminForm{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.adminForm textarea{min-height:86px;resize:vertical}
+@media(max-width:760px){.adminForm{grid-template-columns:1fr}}

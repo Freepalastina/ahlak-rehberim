@@ -1,25 +1,21 @@
-const VERSION = "20260705-v6-admin-panel";
+
+const VERSION = "20260705-v7-supabase";
+const SUPABASE_URL = "https://imicltjdfzqlxzvodheq.supabase.co";
+const SUPABASE_KEY = "sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
+const supabaseClient = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
+
 let DATA = [];
 let view = "home";
 let filter = "all";
 let currentGroup = null;
 let favorites = loadFavorites();
 let lang = localStorage.getItem("boykot_lang") || "tr";
+let adminSession = null;
 
 const $ = id => document.getElementById(id);
 const search = $("search");
 const clearBtn = $("clearBtn");
 const barcodeBtn = $("barcodeBtn");
-const barcodeDialog = $("barcodeDialog");
-const barcodeVideo = $("barcodeVideo");
-const scannerStatus = $("scannerStatus");
-const scannerTitle = $("scannerTitle");
-const scannerHelp = $("scannerHelp");
-const closeScanner = $("closeScanner");
-const manualBarcode = $("manualBarcode");
-let barcodeStream = null;
-let barcodeTimer = null;
-let barcodeDetector = null;
 const stats = $("stats");
 const quickActions = $("quickActions");
 const quickFilters = $("quickFilters");
@@ -27,742 +23,92 @@ const sectionTitle = $("sectionTitle");
 const results = $("results");
 const themeBtn = $("themeBtn");
 const installBtn = $("installBtn");
-let deferredInstallPrompt = null;
 
 const I = {
-  tr: {
-    htmlLang:"tr", kicker:"Bilinçli Tüketim Rehberi", title:"Ahlak Rehberim",
-    subtitle:"Bilinçli tüket, güvenle tercih et.", search:"Marka, firma, kategori veya barkod ara...",
-    navHome:"Ana", navCompanies:"Firmalar", navCategories:"Kategori", navFavorites:"Favori", navAbout:"Bilgi",
-    total:"Toplam", boycott:"Boykot", caution:"Dikkat", alternative:"Alternatif",
-    notBoycotted:"Boykotta Değil", review:"İnceleniyor", withAlt:"Alternatifli",
-    favorites:"Favoriler", all:"Tümü", results:"sonuç", brands:"marka", companies:"Ana Firmalar",
-    categories:"Kategoriler", category:"Kategori", code:"Kod", parent:"Ana Firma", barcode:"Barkod",
-    details:"Ayrıntıları Gör →", close:"Kapat", source:"Kaynak", note:"Not", openSource:"Kaynağı aç",
-    noResult:"Sonuç bulunamadı.", dataError:"Veri yüklenemedi.", dataHelp:"data.json dosyası index.html ile aynı klasörde olmalı.",
-    safeInfo:"Bu marka boykot listesinde olmayanlar bölümüne eklendi.",
-    quickTitle:"Hızlı Erişim", open:"Aç", back:"Geri",
-    barcodePrompt:"Barkod numarasını yaz:", barcodeMissing:"Bu veri içinde barkod alanı yoksa eşleşme bulunmayabilir.", scanBarcode:"Barkod Tara", scanHelp:"Kamerayı barkoda doğru tut.", scannerStarting:"Kamera hazırlanıyor...", scannerFound:"Barkod bulundu:", scannerUnsupported:"Bu cihazda kamera ile barkod okuma desteklenmiyor. Manuel giriş kullanabilirsin.", scannerError:"Kamera açılamadı. Manuel giriş kullanabilirsin.", scannerSearching:"Barkod aranıyor...", manualBarcode:"Barkod numarası yaz",
-    aboutTitle:"📖 Ahlak Rehberim", aboutIntro:"Markaları, ana firmaları, kategorileri ve alternatifleri hızlıca bulmak için hazırlanmış mobil uyumlu rehber.",
-    listStatus:"📊 Liste Durumu",
-    listStatusText:c=>`${c.total} toplam kayıt var. ${c.boykot} boykot, ${c.safe} boykotta değil, ${c.altli} alternatif bilgisi içeriyor.`,
-    safeText:"Bu bölüm, eklenen alternatif listesinden gelen ve ana boykot listesinde bulunmayan markaları gösterir.",
-    howSearch:"🔍 Nasıl Aranır?", howSearchText:"Arama kutusuna marka adı, ana firma, kategori, alternatif veya barkod yazabilirsin.",
-    companiesText:"Aynı şirkete ait markaları görmek için Firmalar bölümünü aç.",
-    favText:"Kalp işaretine basarak markaları favorilere ekleyebilirsin.",
-    altText:"Alternatif olarak gösterilen ürünler aynı ürün grubunda değerlendirilebilecek seçeneklerdir. Satın almadan önce kendi araştırmanı yapman tavsiye edilir.",
-    disclaimer:"⚠️ Bilgilendirme", disclaimerText:"Bu uygulama yalnızca bilgilendirme amacıyla hazırlanmıştır. Bilgiler farklı kaynaklardan derlenmiştir ve zamanla değişebilir.",
-    update:"🔄 Güncelleme", updateText:"Yeni marka eklemek veya bilgileri değiştirmek için data.json dosyasını güncellemen yeterlidir.", installApp:"Uygulamayı kur", updateReady:"Yeni sürüm hazır. Sayfayı yenile.", offlineReady:"Uygulama çevrimdışı kullanım için hazır."
-  },
-  en: {
-    htmlLang:"en", kicker:"Conscious Choice Guide", title:"Ahlak Rehberim",
-    subtitle:"Choose consciously, shop with confidence.", search:"Search brand, company, category or barcode...",
-    navHome:"Home", navCompanies:"Companies", navCategories:"Category", navFavorites:"Favorite", navAbout:"About",
-    total:"Total", boycott:"Boycott", caution:"Caution", alternative:"Alternative",
-    notBoycotted:"Not Boycotted", review:"Under Review", withAlt:"With Alternatives",
-    favorites:"Favorites", all:"All", results:"results", brands:"brands", companies:"Parent Companies",
-    categories:"Categories", category:"Category", code:"Code", parent:"Parent Company", barcode:"Barcode",
-    details:"View Details →", close:"Close", source:"Source", note:"Note", openSource:"Open source",
-    noResult:"No results found.", dataError:"Data could not be loaded.", dataHelp:"data.json must be in the same folder as index.html.",
-    safeInfo:"This brand was added to the Not Boycotted section.",
-    quickTitle:"Quick Access", open:"Open", back:"Back",
-    barcodePrompt:"Enter barcode number:", barcodeMissing:"If barcode data is not present, no match may be found.", scanBarcode:"Scan Barcode", scanHelp:"Point your camera at the barcode.", scannerStarting:"Preparing camera...", scannerFound:"Barcode found:", scannerUnsupported:"Camera barcode scanning is not supported on this device. You can use manual entry.", scannerError:"Could not open camera. You can use manual entry.", scannerSearching:"Searching barcode...", manualBarcode:"Enter barcode number",
-    aboutTitle:"📖 Ahlak Rehberim", aboutIntro:"A mobile-friendly guide for quickly finding brands, parent companies, categories and alternatives.",
-    listStatus:"📊 List Status",
-    listStatusText:c=>`${c.total} total records. ${c.boykot} boycott entries, ${c.safe} not boycotted entries, ${c.altli} include alternatives.`,
-    safeText:"This section shows brands from the added alternatives list that are not found in the main boycott list.",
-    howSearch:"🔍 How to Search", howSearchText:"Search by brand name, parent company, category, alternative or barcode.",
-    companiesText:"Open Companies to view brands that belong to the same parent company.",
-    favText:"Tap the heart to add brands to favorites.",
-    altText:"Suggested alternatives are options in the same product group. Please do your own research before buying.",
-    disclaimer:"⚠️ Disclaimer", disclaimerText:"This app is for informational purposes only. Information is compiled from different sources and may change over time.",
-    update:"🔄 Updates", updateText:"To add or edit brands, update the data.json file.", installApp:"Install app", updateReady:"New version ready. Refresh the page.", offlineReady:"App is ready for offline use."
-  },
-  de: {
-    htmlLang:"de", kicker:"Bewusster Konsum", title:"Ahlak Rehberim",
-    subtitle:"Bewusst konsumieren, sicher wählen.", search:"Marke, Firma, Kategorie oder Barcode suchen...",
-    navHome:"Start", navCompanies:"Firmen", navCategories:"Kategorie", navFavorites:"Favorit", navAbout:"Info",
-    total:"Gesamt", boycott:"Boykott", caution:"Achtung", alternative:"Alternative",
-    notBoycotted:"Nicht boykottiert", review:"In Prüfung", withAlt:"Mit Alternativen",
-    favorites:"Favoriten", all:"Alle", results:"Ergebnisse", brands:"Marken", companies:"Mutterfirmen",
-    categories:"Kategorien", category:"Kategorie", code:"Code", parent:"Mutterfirma", barcode:"Barcode",
-    details:"Details ansehen →", close:"Schließen", source:"Quelle", note:"Notiz", openSource:"Quelle öffnen",
-    noResult:"Keine Ergebnisse gefunden.", dataError:"Daten konnten nicht geladen werden.", dataHelp:"data.json muss im selben Ordner wie index.html liegen.",
-    safeInfo:"Diese Marke wurde dem Bereich Nicht boykottiert hinzugefügt.",
-    quickTitle:"Schnellzugriff", open:"Öffnen", back:"Zurück",
-    barcodePrompt:"Barcode-Nummer eingeben:", barcodeMissing:"Wenn keine Barcode-Daten vorhanden sind, wird eventuell nichts gefunden.", scanBarcode:"Barcode scannen", scanHelp:"Halte die Kamera auf den Barcode.", scannerStarting:"Kamera wird vorbereitet...", scannerFound:"Barcode gefunden:", scannerUnsupported:"Barcode-Scan mit Kamera wird auf diesem Gerät nicht unterstützt. Du kannst die manuelle Eingabe nutzen.", scannerError:"Kamera konnte nicht geöffnet werden. Du kannst die manuelle Eingabe nutzen.", scannerSearching:"Barcode wird gesucht...", manualBarcode:"Barcode-Nummer eingeben",
-    aboutTitle:"📖 Ahlak Rehberim", aboutIntro:"Ein mobiler Ratgeber, um Marken, Mutterfirmen, Kategorien und Alternativen schnell zu finden.",
-    listStatus:"📊 Listenstatus",
-    listStatusText:c=>`${c.total} Einträge. ${c.boykot} Boykott, ${c.safe} nicht boykottiert, ${c.altli} mit Alternativen.`,
-    safeText:"Dieser Bereich zeigt Marken aus der Alternativliste, die nicht in der Haupt-Boykottliste vorkommen.",
-    howSearch:"🔍 So suchst du", howSearchText:"Suche nach Marke, Mutterfirma, Kategorie, Alternative oder Barcode.",
-    companiesText:"Öffne Firmen, um Marken derselben Mutterfirma zu sehen.",
-    favText:"Tippe auf das Herz, um Marken zu Favoriten hinzuzufügen.",
-    altText:"Vorgeschlagene Alternativen sind Optionen aus derselben Produktgruppe. Bitte selbst prüfen.",
-    disclaimer:"⚠️ Hinweis", disclaimerText:"Diese App dient nur zur Information. Daten können sich ändern.",
-    update:"🔄 Aktualisierung", updateText:"Um Daten zu ändern, aktualisiere die Datei data.json.", installApp:"App installieren", updateReady:"Neue Version bereit. Seite neu laden.", offlineReady:"App ist für Offline-Nutzung bereit."
-  }
+  tr:{htmlLang:"tr",kicker:"Supabase V7",title:"Ahlak Rehberim",subtitle:"Bilinçli tüket, güvenle tercih et.",search:"Marka, firma, kategori veya barkod ara...",navHome:"Ana",navCompanies:"Firmalar",navCategories:"Kategori",navFavorites:"Favori",navAbout:"Bilgi",boycott:"Boykot",notBoycotted:"Boykotta Değil",review:"İnceleniyor",withAlt:"Alternatifli",favorites:"Favoriler",all:"Tümü",results:"sonuç",brands:"marka",companies:"Ana Firmalar",categories:"Kategoriler",category:"Kategori",parent:"Ana Firma",barcode:"Barkod",alternative:"Alternatif",details:"Ayrıntıları Gör →",close:"Kapat",source:"Kaynak",note:"Not",openSource:"Kaynağı aç",noResult:"Sonuç bulunamadı.",safeInfo:"Bu marka boykot listesinde olmayanlar bölümüne eklendi.",quickTitle:"Hızlı Erişim",admin:"Yönetim",login:"Giriş",logout:"Çıkış",email:"E-posta",password:"Şifre",brandName:"Marka adı",save:"Kaydet",resetForm:"Formu temizle",chooseBrand:"Marka seç",deleteBrand:"Marka Sil",confirmDelete:"Bu markayı silmek istiyor musun?",dataSaved:"Kayıt güncellendi",dataAdded:"Marka eklendi",dataDeleted:"Kayıt silindi",requiredBrand:"Marka adı gerekli",importToSupabase:"data.json → Supabase aktar",exportData:"data.json indir",supabaseReady:"Supabase bağlı",supabaseFallback:"Supabase boş/ulaşılamıyor, data.json yedeği kullanılıyor.",localOnly:"Giriş yaptıysan değişiklikler Supabase’e kaydedilir.",aboutTitle:"📖 Ahlak Rehberim",aboutIntro:"Supabase destekli marka, barkod ve alternatif rehberi.",listStatus:"📊 Liste Durumu",listStatusText:c=>`${c.total} toplam kayıt var. ${c.boykot} boykot, ${c.safe} boykotta değil, ${c.altli} alternatif bilgisi içeriyor.`,howSearch:"🔍 Nasıl Aranır?",howSearchText:"Marka, ana firma, kategori, alternatif veya barkod yazabilirsin.",disclaimer:"⚠️ Bilgilendirme",disclaimerText:"Bu uygulama yalnızca bilgilendirme amacıyla hazırlanmıştır.",update:"🔄 Güncelleme",updateText:"V7 ile veriler Supabase üzerinden güncellenir.",scanBarcode:"Barkod Tara",barcodePrompt:"Barkod numarasını yaz:",barcodeMissing:"Barkod alanı yoksa eşleşme bulunmayabilir.",downloaded:"İndirildi"},
+  en:{htmlLang:"en",kicker:"Supabase V7",title:"Ahlak Rehberim",subtitle:"Choose consciously, shop with confidence.",search:"Search brand, company, category or barcode...",navHome:"Home",navCompanies:"Companies",navCategories:"Category",navFavorites:"Favorite",navAbout:"About",boycott:"Boycott",notBoycotted:"Not Boycotted",review:"Under Review",withAlt:"With Alternatives",favorites:"Favorites",all:"All",results:"results",brands:"brands",companies:"Parent Companies",categories:"Categories",category:"Category",parent:"Parent Company",barcode:"Barcode",alternative:"Alternative",details:"View Details →",close:"Close",source:"Source",note:"Note",openSource:"Open source",noResult:"No results found.",safeInfo:"This brand was added to Not Boycotted.",quickTitle:"Quick Access",admin:"Admin",login:"Login",logout:"Logout",email:"Email",password:"Password",brandName:"Brand name",save:"Save",resetForm:"Clear form",chooseBrand:"Select brand",deleteBrand:"Delete brand",confirmDelete:"Delete this brand?",dataSaved:"Record updated",dataAdded:"Brand added",dataDeleted:"Record deleted",requiredBrand:"Brand name required",importToSupabase:"Import data.json to Supabase",exportData:"Download data.json",supabaseReady:"Supabase connected",supabaseFallback:"Supabase empty/unavailable; using data.json fallback.",localOnly:"If logged in, changes are saved to Supabase.",aboutTitle:"📖 Ahlak Rehberim",aboutIntro:"Supabase-powered brand, barcode and alternative guide.",listStatus:"📊 List Status",listStatusText:c=>`${c.total} records. ${c.boykot} boycott, ${c.safe} not boycotted, ${c.altli} with alternatives.`,howSearch:"🔍 How to Search",howSearchText:"Search by brand, company, category, alternative or barcode.",disclaimer:"⚠️ Disclaimer",disclaimerText:"Informational purposes only.",update:"🔄 Updates",updateText:"In V7, data is updated through Supabase.",scanBarcode:"Scan Barcode",barcodePrompt:"Enter barcode number:",barcodeMissing:"If no barcode data exists, no match may be found.",downloaded:"Downloaded"},
+  de:{htmlLang:"de",kicker:"Supabase V7",title:"Ahlak Rehberim",subtitle:"Bewusst konsumieren, sicher wählen.",search:"Marke, Firma, Kategorie oder Barcode suchen...",navHome:"Start",navCompanies:"Firmen",navCategories:"Kategorie",navFavorites:"Favorit",navAbout:"Info",boycott:"Boykott",notBoycotted:"Nicht boykottiert",review:"In Prüfung",withAlt:"Mit Alternativen",favorites:"Favoriten",all:"Alle",results:"Ergebnisse",brands:"Marken",companies:"Mutterfirmen",categories:"Kategorien",category:"Kategorie",parent:"Mutterfirma",barcode:"Barcode",alternative:"Alternative",details:"Details ansehen →",close:"Schließen",source:"Quelle",note:"Notiz",openSource:"Quelle öffnen",noResult:"Keine Ergebnisse gefunden.",safeInfo:"Diese Marke wurde dem Bereich Nicht boykottiert hinzugefügt.",quickTitle:"Schnellzugriff",admin:"Verwaltung",login:"Anmelden",logout:"Abmelden",email:"E-Mail",password:"Passwort",brandName:"Markenname",save:"Speichern",resetForm:"Leeren",chooseBrand:"Marke auswählen",deleteBrand:"Marke löschen",confirmDelete:"Diese Marke löschen?",dataSaved:"Eintrag aktualisiert",dataAdded:"Marke hinzugefügt",dataDeleted:"Eintrag gelöscht",requiredBrand:"Markenname erforderlich",importToSupabase:"data.json nach Supabase importieren",exportData:"data.json herunterladen",supabaseReady:"Supabase verbunden",supabaseFallback:"Supabase leer/nicht verfügbar; data.json wird genutzt.",localOnly:"Wenn angemeldet, werden Änderungen in Supabase gespeichert.",aboutTitle:"📖 Ahlak Rehberim",aboutIntro:"Supabase-basierter Marken-, Barcode- und Alternativen-Ratgeber.",listStatus:"📊 Listenstatus",listStatusText:c=>`${c.total} Einträge. ${c.boykot} Boykott, ${c.safe} nicht boykottiert, ${c.altli} mit Alternativen.`,howSearch:"🔍 So suchst du",howSearchText:"Suche nach Marke, Firma, Kategorie, Alternative oder Barcode.",disclaimer:"⚠️ Hinweis",disclaimerText:"Nur zur Information.",update:"🔄 Aktualisierung",updateText:"In V7 werden Daten über Supabase aktualisiert.",scanBarcode:"Barcode scannen",barcodePrompt:"Barcode-Nummer eingeben:",barcodeMissing:"Wenn keine Barcode-Daten vorhanden sind, wird eventuell nichts gefunden.",downloaded:"Heruntergeladen"}
 };
 
-function t(k){return (I[lang] && I[lang][k]) || I.tr[k] || k}
-function esc(s){return String(s ?? "").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}
-function norm(s){return String(s||"").toLocaleLowerCase("tr-TR").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[’'`´]/g,"").replace(/[^a-z0-9ğüşöçıİĞÜŞÖÇäöüß]+/gi," ").trim()}
-function get(o,names){for(const n of names){if(o && o[n]!==undefined && o[n]!==null && String(o[n]).trim()!=="") return String(o[n]).trim()}return ""}
-function loadFavorites(){try{return JSON.parse(localStorage.getItem("ahlak_favorites_v4")||"[]")}catch{return[]}}
-function saveFavorites(){localStorage.setItem("ahlak_favorites_v4",JSON.stringify(favorites))}
-function favKey(m){return norm(m)}
-function isFav(m){return favorites.includes(favKey(m))}
-function toggleFav(m){const k=favKey(m); favorites=isFav(m)?favorites.filter(x=>x!==k):[...favorites,k]; saveFavorites(); render()}
+function t(k){return (I[lang]&&I[lang][k])||I.tr[k]||k}
+function esc(s){return String(s??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}
+function norm(s){return String(s||"").toLocaleLowerCase("tr-TR").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9ğüşöçıİĞÜŞÖÇäöüß]+/gi," ").trim()}
+function get(o,names){for(const n of names){if(o&&o[n]!==undefined&&o[n]!==null&&String(o[n]).trim()!=="")return String(o[n]).trim()}return""}
+function loadFavorites(){try{return JSON.parse(localStorage.getItem("ahlak_favorites_v7")||"[]")}catch{return[]}}
+function saveFavorites(){localStorage.setItem("ahlak_favorites_v7",JSON.stringify(favorites))}
+function isFav(m){return favorites.includes(norm(m))}
+function toggleFav(m){const k=norm(m);favorites=isFav(m)?favorites.filter(x=>x!==k):[...favorites,k];saveFavorites();render()}
 
-function rawStatus(r,kod){
-  const d=norm(get(r,["durum","Durum","status"]));
-  if(d.includes("boykottadegil") || d.includes("boykotta degil") || d.includes("not boycotted") || d==="safe") return "safe";
-  if(d.includes("alternatif") || d.includes("alternative")) return "alternatif";
-  if(d.includes("dikkat") || d.includes("caution")) return "dikkat";
-  if(d.includes("incelen") || d.includes("review")) return "inceleme";
-  if(/^E/i.test(kod)) return "safe";
-  if(/^C/i.test(kod)) return "alternatif";
-  if(/^B/i.test(kod)) return "dikkat";
-  if(/^D/i.test(kod)) return "inceleme";
-  return "boykot";
-}
-function statusLabel(s){
-  return {boykot:`🔴 ${t("boycott")}`,dikkat:`🟠 ${t("caution")}`,alternatif:`🟢 ${t("alternative")}`,safe:`✅ ${t("notBoycotted")}`,inceleme:`⚪ ${t("review")}`}[s] || s
-}
-function hasAlternative(x){
-  const a=norm(x.alternatif);
-  return !!a && !a.includes("alternatif manuel eklenmeli");
-}
+function rawStatus(r){const d=norm(get(r,["durum","status"]));if(d.includes("safe")||d.includes("boykotta degil")||d.includes("not boycotted"))return"safe";if(d.includes("alternatif")||d.includes("alternative"))return"alternatif";if(d.includes("dikkat")||d.includes("caution"))return"dikkat";if(d.includes("incelen")||d.includes("review"))return"inceleme";return d||"boykot"}
+function statusLabel(s){return {boykot:`🔴 ${t("boycott")}`,safe:`✅ ${t("notBoycotted")}`,alternatif:`🟢 ${t("alternative")}`,dikkat:"🟠 Dikkat",inceleme:`⚪ ${t("review")}`}[s]||s}
+function hasAlternative(x){const a=norm(x.alternatif);return !!a&&!a.includes("alternatif manuel eklenmeli")}
 function normalizeItem(raw,i){
-  const marka=get(raw,["marka","Marka","brand"]) || `Marka ${i+1}`;
-  const anaFirma=get(raw,["anaFirma","anafirma","Ana Firma","AnaFirma","ana_firma","parentCompany"]) || marka;
-  const kod=get(raw,["kod","Kod","code"]) || "";
+  const marka=get(raw,["marka","Marka","brand"])||`Marka ${i+1}`;
+  const anaFirma=get(raw,["anaFirma","ana_firma","anafirma","Ana Firma"])||marka;
   const kategori=get(raw,["kategori","Kategori","category"]);
-  const alternatif=get(raw,["alternatif","Alternatif","alternative","alternatives"]);
-  const kaynak=get(raw,["kaynak","Kaynak","kanyak","source","link"]);
-  const not=get(raw,["not","Not","note"]);
-  const barkod=get(raw,["barkod","Barkod","barcode","ean","EAN","gtin","GTIN"]);
-  const status=rawStatus(raw,kod);
-  const hay=norm([marka,anaFirma,kategori,alternatif,kaynak,not,barkod,statusLabel(status)].join(" "));
-  return {marka,anaFirma,kod,kategori,alternatif,kaynak,not,barkod,status,hay,created:i};
+  const alternatif=get(raw,["alternatif","Alternatif","alternative"]);
+  const kaynak=get(raw,["kaynak","Kaynak","source"]);
+  const not=get(raw,["notlar","not","Not","note"]);
+  const barkodRaw=raw.barkod??raw.barcode??raw.ean??raw.gtin??[];
+  const barkod=Array.isArray(barkodRaw)?barkodRaw:(barkodRaw?String(barkodRaw).split(/[;, ]+/).filter(Boolean):[]);
+  const status=rawStatus(raw);
+  const hay=norm([marka,anaFirma,kategori,alternatif,kaynak,not,barkod.join(" "),statusLabel(status)].join(" "));
+  return {id:raw.id||null,marka,anaFirma,kategori,alternatif,kaynak,not,barkod,status,hay};
 }
+function toDbRow(x){return {marka:x.marka,ana_firma:x.anaFirma,kategori:x.kategori,alternatif:x.alternatif,kaynak:x.kaynak,notlar:x.not,durum:x.status,barkod:Array.isArray(x.barkod)?x.barkod:[]}}
+function fromDbRow(r){return {id:r.id,marka:r.marka,anaFirma:r.ana_firma,kategori:r.kategori,alternatif:r.alternatif,kaynak:r.kaynak,not:r.notlar,durum:r.durum,barkod:r.barkod||[]}}
 
+async function loadSupabaseSession(){if(!supabaseClient)return;const {data}=await supabaseClient.auth.getSession();adminSession=data.session||null}
+async function loadSupabaseData(){if(!supabaseClient)throw new Error("No Supabase");let all=[];let from=0;const step=1000;while(true){const {data,error}=await supabaseClient.from("brands").select("*").order("marka").range(from,from+step-1);if(error)throw error;all=all.concat(data||[]);if(!data||data.length<step)break;from+=step}return all.map(fromDbRow)}
+async function loadFallbackData(){const res=await fetch(`data.json?v=${VERSION}`,{cache:"reload"});const json=await res.json();return Array.isArray(json)?json:(json.data||[])}
+async function init(){applyTheme();applyLang();setupServiceWorker();await loadSupabaseSession();try{let list=[];try{list=await loadSupabaseData()}catch(e){list=[]}if(!list.length){list=await loadFallbackData();toast(t("supabaseFallback"))}else toast(t("supabaseReady"));DATA=list.map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"));render()}catch(err){results.innerHTML=`<div class="empty">${esc(err.message)}</div>`}}
 
-function loadLocalDataOverride(){
-  try{
-    const raw = localStorage.getItem("ahlak_data_override_v6");
-    if(!raw) return null;
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : null;
-  }catch{return null}
-}
-function saveLocalDataOverride(){
-  const raw = DATA.map(x => ({
-    marka: x.marka,
-    anaFirma: x.anaFirma,
-    kategori: x.kategori,
-    alternatif: x.alternatif,
-    kaynak: x.kaynak,
-    not: x.not,
-    barkod: x.barkod,
-    durum: x.status
-  }));
-  localStorage.setItem("ahlak_data_override_v6", JSON.stringify(raw));
-}
-function downloadDataJson(){
-  const raw = DATA.map(x => {
-    const item = {
-      marka: x.marka,
-      anaFirma: x.anaFirma,
-      kategori: x.kategori,
-      alternatif: x.alternatif,
-      kaynak: x.kaynak,
-      not: x.not,
-      durum: x.status
-    };
-    if(x.barkod){
-      item.barkod = x.barkod;
-    }
-    Object.keys(item).forEach(k => {
-      if(item[k] === "" || item[k] === null || item[k] === undefined) delete item[k];
-    });
-    return item;
-  });
-  const text = JSON.stringify(raw, null, 2);
-  const blob = new Blob([text], {type:"application/json"});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "data.json";
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  URL.revokeObjectURL(url);
-  toast(t("downloaded"));
-}
-function importDataJson(file){
-  if(!file) return;
-  const reader = new FileReader();
-  reader.onload = () => {
-    try{
-      const parsed = JSON.parse(reader.result);
-      const list = Array.isArray(parsed) ? parsed : (Array.isArray(parsed.data) ? parsed.data : []);
-      DATA = list.map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"));
-      saveLocalDataOverride();
-      toast(t("dataSaved"));
-      view = "admin";
-      render();
-    }catch(e){
-      toast(t("dataError"));
-    }
-  };
-  reader.readAsText(file, "utf-8");
-}
-function adminOptions(){
-  return DATA
-    .map(x=>x.marka)
-    .filter((v,i,a)=>v && a.indexOf(v)===i)
-    .sort((a,b)=>a.localeCompare(b,"tr"))
-    .map(name=>`<option value="${esc(name)}">${esc(name)}</option>`)
-    .join("");
-}
-function getAdminFormValues(){
-  const barkodRaw = $("adminBarkod").value.trim();
-  const barkod = barkodRaw.includes(",") || barkodRaw.includes(";")
-    ? barkodRaw.split(/[;,]+/).map(x=>x.trim()).filter(Boolean)
-    : barkodRaw;
-  return {
-    marka: $("adminMarka").value.trim(),
-    anaFirma: $("adminAnaFirma").value.trim(),
-    kategori: $("adminKategori").value.trim(),
-    alternatif: $("adminAlternatif").value.trim(),
-    kaynak: $("adminKaynak").value.trim(),
-    not: $("adminNot").value.trim(),
-    barkod,
-    durum: $("adminDurum").value
-  };
-}
-function fillAdminForm(name){
-  const item = DATA.find(x=>x.marka === name);
-  if(!item) return;
-  $("adminMarka").value = item.marka || "";
-  $("adminAnaFirma").value = item.anaFirma || "";
-  $("adminKategori").value = item.kategori || "";
-  $("adminAlternatif").value = item.alternatif || "";
-  $("adminKaynak").value = item.kaynak || "";
-  $("adminNot").value = item.not || "";
-  $("adminBarkod").value = Array.isArray(item.barkod) ? item.barkod.join(", ") : (item.barkod || "");
-  $("adminDurum").value = item.status || "boykot";
-}
-function clearAdminForm(){
-  ["adminMarka","adminAnaFirma","adminKategori","adminAlternatif","adminKaynak","adminNot","adminBarkod"].forEach(id=>$(id).value="");
-  $("adminDurum").value = "boykot";
-}
-function saveAdminBrand(){
-  const raw = getAdminFormValues();
-  if(!raw.marka){
-    toast(t("requiredBrand"));
-    return;
-  }
-  if(!raw.anaFirma) raw.anaFirma = raw.marka;
-  const idx = DATA.findIndex(x=>norm(x.marka) === norm(raw.marka));
-  const normalized = normalizeItem(raw, idx >= 0 ? idx : DATA.length);
-  if(idx >= 0){
-    DATA[idx] = normalized;
-    toast(t("dataSaved"));
-  }else{
-    DATA.push(normalized);
-    toast(t("dataAdded"));
-  }
-  DATA.sort((a,b)=>a.marka.localeCompare(b.marka,"tr"));
-  saveLocalDataOverride();
-  renderAdmin();
-}
-function deleteAdminBrand(){
-  const name = $("adminSelect").value || $("adminMarka").value;
-  if(!name) return;
-  if(!confirm(t("confirmDelete"))) return;
-  DATA = DATA.filter(x=>x.marka !== name);
-  saveLocalDataOverride();
-  clearAdminForm();
-  toast(t("dataDeleted"));
-  renderAdmin();
-}
-function renderAdmin(){
-  stats.innerHTML="";
-  quickActions.innerHTML="";
-  quickFilters.innerHTML="";
-  sectionTitle.innerHTML=`<h2>⚙️ ${t("admin")}</h2><span>${DATA.length} ${t("brands")}</span>`;
-  results.innerHTML = `
-    <section class="adminPanel">
-      <p class="adminNotice">${esc(t("localOnly"))}</p>
+function counts(){return {total:DATA.length,boykot:DATA.filter(x=>x.status==="boykot").length,safe:DATA.filter(x=>x.status==="safe").length,inceleme:DATA.filter(x=>x.status==="inceleme").length,altli:DATA.filter(hasAlternative).length,fav:favorites.length,firmalar:new Set(DATA.map(x=>x.anaFirma||"-")).size,kategoriler:new Set(DATA.map(x=>x.kategori||"-").filter(Boolean)).size}}
+function renderStats(){const c=counts();stats.innerHTML=`<button class="stat red" data-stat="boykot"><small>🔴 ${t("boycott")}</small><b>${c.boykot}</b></button><button class="stat safe" data-stat="safe"><small>✅ ${t("notBoycotted")}</small><b>${c.safe}</b></button><button class="stat green" data-stat="altli"><small>⭐ ${t("withAlt")}</small><b>${c.altli}</b></button><button class="stat gray" data-stat="inceleme"><small>⚪ ${t("review")}</small><b>${c.inceleme}</b></button>`}
+function renderQuickActions(){const c=counts();quickActions.innerHTML=`<h2>${t("quickTitle")}</h2><div class="quickGrid"><button data-go="companies"><span>🏢</span><b>${t("companies")}</b><small>${c.firmalar}</small></button><button data-go="categories"><span>📂</span><b>${t("categories")}</b><small>${c.kategoriler}</small></button><button data-go="alternatives"><span>⭐</span><b>${t("withAlt")}</b><small>${c.altli}</small></button><button data-go="favorites"><span>❤️</span><b>${t("favorites")}</b><small>${c.fav}</small></button><button data-go="admin"><span>⚙️</span><b>${t("admin")}</b><small>DB</small></button></div>`}
+function renderFilters(){const arr=[["all",t("all")],["boykot",`🔴 ${t("boycott")}`],["safe",`✅ ${t("notBoycotted")}`],["altli",`⭐ ${t("withAlt")}`],["inceleme",`⚪ ${t("review")}`],["fav",`❤️ ${t("favorites")}`]];quickFilters.innerHTML=arr.map(([k,l])=>`<button class="chip ${filter===k?'active':''}" data-filter="${k}">${l}</button>`).join("")}
+function filteredList(base=DATA){const q=norm(search.value);return base.filter(x=>{const okQ=!q||x.hay.includes(q);const okF=filter==="all"||(filter==="boykot"&&x.status==="boykot")||(filter==="safe"&&x.status==="safe")||(filter==="altli"&&hasAlternative(x))||(filter==="inceleme"&&x.status==="inceleme")||(filter==="fav"&&isFav(x.marka));return okQ&&okF}).sort((a,b)=>Number(isFav(b.marka))-Number(isFav(a.marka))||a.marka.localeCompare(b.marka,"tr"))}
+function altHtml(x){if(x.status==="safe"&&!x.alternatif)return`<div class="altBox"><span>${t("notBoycotted")}</span><b>${t("safeInfo")}</b></div>`;if(!hasAlternative(x))return`<div class="altBox"><span>${t("alternative")}</span><b>-</b></div>`;const tags=x.alternatif.split(/[;,•]/).map(v=>v.trim()).filter(Boolean).slice(0,8);return`<div class="altBox"><span>${t("alternative")}</span><div class="tags">${tags.map(v=>`<em>${esc(v)}</em>`).join("")}</div></div>`}
+function card(x){return`<article class="card ${x.status}" data-brand="${encodeURIComponent(x.marka)}"><div class="cardTop"><div><div class="badgeLine"><span class="badge ${x.status}">${statusLabel(x.status)}</span>${hasAlternative(x)?`<span class="badge alternatif">⭐ ${t("withAlt")}</span>`:""}</div><h3>${esc(x.marka)}</h3><div class="company">🏢 ${esc(x.anaFirma||"-")}</div></div><button class="fav" data-fav="${encodeURIComponent(x.marka)}">${isFav(x.marka)?"❤️":"♡"}</button></div><div class="meta metaSingle"><div class="box"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div></div>${altHtml(x)}<button class="more">${t("details")}</button></article>`}
+function titleFor(){if(currentGroup)return currentGroup.title;if(view==="favorites"||filter==="fav")return`❤️ ${t("favorites")}`;if(view==="alternatives"||filter==="altli")return`⭐ ${t("withAlt")}`;return t("all")}
+function renderHome(base=DATA){const list=filteredList(base);renderStats();renderQuickActions();renderFilters();sectionTitle.innerHTML=`<h2>${esc(titleFor())}</h2><span>${list.length} ${t("results")}</span>`;results.innerHTML=list.length?list.slice(0,800).map(card).join(""):`<div class="empty">${t("noResult")}</div>`}
+function groupBy(key,base=DATA){const m=new Map();for(const x of base){const name=x[key]||"-";if(!m.has(name))m.set(name,[]);m.get(name).push(x)}return[...m.entries()].sort((a,b)=>b[1].length-a[1].length||a[0].localeCompare(b[0],"tr"))}
+function renderCompanies(){currentGroup=null;renderStats();renderQuickActions();quickFilters.innerHTML="";search.value="";const g=groupBy("anaFirma");sectionTitle.innerHTML=`<h2>🏢 ${t("companies")}</h2><span>${g.length}</span>`;results.innerHTML=g.map(([name,items])=>`<button class="group" data-company="${encodeURIComponent(name)}"><div><b>${esc(name)}</b><small>${items.slice(0,4).map(x=>esc(x.marka)).join(", ")}${items.length>4?"...":""}</small></div><div class="count">${items.length}</div></button>`).join("")}
+function categoryIcon(name){const n=norm(name);if(n.includes("icecek")||n.includes("su"))return"🥤";if(n.includes("gida")||n.includes("cikolata"))return"🍫";if(n.includes("temizlik"))return"🧼";if(n.includes("kozmetik"))return"💄";if(n.includes("saglik"))return"💊";if(n.includes("giyim"))return"👕";return"📂"}
+function renderCategories(){currentGroup=null;renderStats();renderQuickActions();quickFilters.innerHTML="";search.value="";const g=groupBy("kategori").filter(([name])=>name&&name!=="-");sectionTitle.innerHTML=`<h2>📂 ${t("categories")}</h2><span>${g.length}</span>`;results.innerHTML=g.map(([name,items])=>`<button class="group" data-category="${encodeURIComponent(name)}"><div><b>${categoryIcon(name)} ${esc(name)}</b><small>${items.length} ${t("brands")}</small></div><div class="count">${items.length}</div></button>`).join("")}
+function renderAbout(){const c=counts();stats.innerHTML="";quickActions.innerHTML="";quickFilters.innerHTML="";sectionTitle.innerHTML="";results.innerHTML=`<section class="aboutHero"><h2>${t("aboutTitle")}</h2><p>${t("aboutIntro")}</p></section><div class="aboutGrid"><div class="aboutCard"><h3>${t("listStatus")}</h3><p>${I[lang].listStatusText(c)}</p></div><div class="aboutCard"><h3>${t("howSearch")}</h3><p>${t("howSearchText")}</p></div><div class="aboutCard"><h3>${t("disclaimer")}</h3><p>${t("disclaimerText")}</p></div><div class="aboutCard"><h3>${t("update")}</h3><p>${t("updateText")}</p></div></div>`}
 
-      <div class="adminTools">
-        <button type="button" onclick="downloadDataJson()">⬇️ ${esc(t("exportData"))}</button>
-        <label class="importLabel">⬆️ ${esc(t("importData"))}<input id="adminImport" type="file" accept=".json,application/json"></label>
-      </div>
+function adminOptions(){return DATA.map(x=>x.marka).filter((v,i,a)=>v&&a.indexOf(v)===i).sort((a,b)=>a.localeCompare(b,"tr")).map(name=>`<option value="${esc(name)}">${esc(name)}</option>`).join("")}
+function getAdminValues(){const raw=$("adminBarkod")?.value.trim()||"";return {marka:$("adminMarka").value.trim(),anaFirma:$("adminAnaFirma").value.trim(),kategori:$("adminKategori").value.trim(),alternatif:$("adminAlternatif").value.trim(),kaynak:$("adminKaynak").value.trim(),not:$("adminNot").value.trim(),barkod:raw?raw.split(/[;, ]+/).filter(Boolean):[],status:$("adminDurum").value}}
+async function saveAdminBrand(){if(!adminSession){toast(t("login"));return}const v=getAdminValues();if(!v.marka){toast(t("requiredBrand"));return}if(!v.anaFirma)v.anaFirma=v.marka;const row=toDbRow(v);let existing=DATA.find(x=>norm(x.marka)===norm(v.marka));let res;if(existing&&existing.id)res=await supabaseClient.from("brands").update(row).eq("id",existing.id);else res=await supabaseClient.from("brands").upsert(row,{onConflict:"marka"});if(res.error){toast(res.error.message);return}toast(existing?t("dataSaved"):t("dataAdded"));await reloadFromSupabase();view="admin";render()}
+async function deleteAdminBrand(){if(!adminSession){toast(t("login"));return}const name=$("adminSelect").value||$("adminMarka").value;if(!name||!confirm(t("confirmDelete")))return;const item=DATA.find(x=>x.marka===name);if(item?.id){const {error}=await supabaseClient.from("brands").delete().eq("id",item.id);if(error){toast(error.message);return}}toast(t("dataDeleted"));await reloadFromSupabase();view="admin";render()}
+async function importToSupabase(){if(!adminSession){toast(t("login"));return}const rows=DATA.map(toDbRow);for(let i=0;i<rows.length;i+=400){const {error}=await supabaseClient.from("brands").upsert(rows.slice(i,i+400),{onConflict:"marka"});if(error){toast(error.message);return}}toast(t("dataSaved"));await reloadFromSupabase();view="admin";render()}
+async function reloadFromSupabase(){const list=await loadSupabaseData();DATA=list.map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"))}
+function fillAdminForm(name){const item=DATA.find(x=>x.marka===name);if(!item)return;$("adminMarka").value=item.marka||"";$("adminAnaFirma").value=item.anaFirma||"";$("adminKategori").value=item.kategori||"";$("adminAlternatif").value=item.alternatif||"";$("adminKaynak").value=item.kaynak||"";$("adminNot").value=item.not||"";$("adminBarkod").value=Array.isArray(item.barkod)?item.barkod.join(", "):(item.barkod||"");$("adminDurum").value=item.status||"boykot"}
+function clearAdminForm(){["adminMarka","adminAnaFirma","adminKategori","adminAlternatif","adminKaynak","adminNot","adminBarkod"].forEach(id=>$(id).value="");$("adminDurum").value="boykot"}
+async function adminLogin(){const email=$("adminEmail").value.trim();const password=$("adminPassword").value;const {data,error}=await supabaseClient.auth.signInWithPassword({email,password});if(error){toast(error.message);return}adminSession=data.session;toast(t("supabaseReady"));renderAdmin()}
+async function adminLogout(){await supabaseClient.auth.signOut();adminSession=null;renderAdmin()}
+function downloadDataJson(){const raw=DATA.map(x=>{const o={marka:x.marka,anaFirma:x.anaFirma,kategori:x.kategori,alternatif:x.alternatif,kaynak:x.kaynak,not:x.not,durum:x.status};if(x.barkod?.length)o.barkod=x.barkod;Object.keys(o).forEach(k=>{if(!o[k]||(Array.isArray(o[k])&&!o[k].length))delete o[k]});return o});const blob=new Blob([JSON.stringify(raw,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="data.json";a.click();URL.revokeObjectURL(url);toast(t("downloaded"))}
+function renderAdmin(){stats.innerHTML="";quickActions.innerHTML="";quickFilters.innerHTML="";sectionTitle.innerHTML=`<h2>⚙️ ${t("admin")}</h2><span>${DATA.length} ${t("brands")}</span>`;results.innerHTML=`<section class="adminPanel"><p class="adminNotice">${esc(t("localOnly"))}</p><div class="adminLogin">${adminSession?`<button onclick="adminLogout()">🚪 ${esc(t("logout"))}</button>`:`<input id="adminEmail" placeholder="${esc(t("email"))}"><input id="adminPassword" type="password" placeholder="${esc(t("password"))}"><button onclick="adminLogin()">🔐 ${esc(t("login"))}</button>`}</div><div class="adminTools"><button onclick="importToSupabase()">☁️ ${esc(t("importToSupabase"))}</button><button onclick="downloadDataJson()">⬇️ ${esc(t("exportData"))}</button></div><div class="adminSelectRow"><label>${esc(t("chooseBrand"))}</label><select id="adminSelect"><option value="">—</option>${adminOptions()}</select></div><div class="adminForm"><label>${esc(t("brandName"))}<input id="adminMarka"></label><label>${esc(t("parent"))}<input id="adminAnaFirma"></label><label>${esc(t("category"))}<input id="adminKategori"></label><label>${esc(t("alternative"))}<textarea id="adminAlternatif"></textarea></label><label>${esc(t("barcode"))}<textarea id="adminBarkod"></textarea></label><label>${esc(t("source"))}<input id="adminKaynak"></label><label>${esc(t("note"))}<textarea id="adminNot"></textarea></label><label>Durum<select id="adminDurum"><option value="boykot">${esc(t("boycott"))}</option><option value="safe">${esc(t("notBoycotted"))}</option><option value="alternatif">${esc(t("alternative"))}</option><option value="dikkat">Dikkat</option><option value="inceleme">${esc(t("review"))}</option></select></label></div><div class="adminButtons"><button onclick="saveAdminBrand()">✅ ${esc(t("save"))}</button><button onclick="clearAdminForm()">🧹 ${esc(t("resetForm"))}</button><button class="danger" onclick="deleteAdminBrand()">🗑️ ${esc(t("deleteBrand"))}</button></div></section>`;$("adminSelect").addEventListener("change",e=>fillAdminForm(e.target.value))}
 
-      <div class="adminSelectRow">
-        <label>${esc(t("chooseBrand"))}</label>
-        <select id="adminSelect">
-          <option value="">—</option>
-          ${adminOptions()}
-        </select>
-      </div>
+function render(){document.querySelectorAll(".bottomNav button").forEach(b=>b.classList.toggle("active",b.dataset.view===view));if(currentGroup)return renderHome(currentGroup.items);if(view==="home")return renderHome();if(view==="alternatives"){filter="altli";return renderHome()}if(view==="favorites"){filter="fav";return renderHome()}if(view==="companies")return renderCompanies();if(view==="categories")return renderCategories();if(view==="admin")return renderAdmin();if(view==="about")return renderAbout()}
+function detail(x){const d=$("detailDialog"),c=$("detailContent");c.innerHTML=`<div class="detailHead"><h2>${esc(x.marka)}</h2><p>${statusLabel(x.status)}</p></div><div class="detailBody"><div class="detailLine"><span>${t("parent")}</span><b>${esc(x.anaFirma||"-")}</b></div><div class="detailLine"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div><div class="detailLine"><span>${t("barcode")}</span><b>${esc(Array.isArray(x.barkod)?x.barkod.join(", "):(x.barkod||"-"))}</b></div><div class="detailLine"><span>${t("alternative")}</span><b>${esc(x.alternatif||"-")}</b></div><div class="detailLine"><span>${t("note")}</span><b>${esc(x.not||"-")}</b></div><div class="detailLine"><span>${t("source")}</span><b>${x.kaynak&&/^https?:\/\//i.test(x.kaynak)?`<a href="${esc(x.kaynak)}" target="_blank">${t("openSource")}</a>`:esc(x.kaynak||"-")}</b></div></div>`;d.showModal()}
+function handleBarcodeValue(code){const n=norm(code);const item=DATA.find(x=>Array.isArray(x.barkod)&&x.barkod.some(v=>norm(v)===n));if(item)detail(item);else{search.value=code;render()}}
+function toast(message){const el=document.createElement("div");el.className="toast";el.textContent=message;document.body.appendChild(el);requestAnimationFrame(()=>el.classList.add("show"));setTimeout(()=>{el.classList.remove("show");setTimeout(()=>el.remove(),300)},2800)}
+function setupServiceWorker(){if("serviceWorker" in navigator)navigator.serviceWorker.register(`sw.js?v=${VERSION}`).catch(()=>{})}
+function applyTheme(){const dark=localStorage.getItem("ahlak_theme")==="dark";document.body.classList.toggle("dark",dark);themeBtn.textContent=dark?"☀️":"🌙"}
+function applyLang(){document.documentElement.lang=t("htmlLang");$("kicker").textContent=t("kicker");$("appTitle").textContent=t("title");$("appSubtitle").textContent=t("subtitle");search.placeholder=t("search");$("closeDialog").textContent=t("close");document.querySelectorAll("[data-i]").forEach(el=>el.textContent=t(el.dataset.i));document.querySelectorAll(".langSwitch button").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang))}
 
-      <div class="adminForm">
-        <label>${esc(t("brandName"))}<input id="adminMarka" type="text"></label>
-        <label>${esc(t("parent"))}<input id="adminAnaFirma" type="text"></label>
-        <label>${esc(t("category"))}<input id="adminKategori" type="text"></label>
-        <label>${esc(t("alternative"))}<textarea id="adminAlternatif"></textarea></label>
-        <label>${esc(t("barcode"))}<textarea id="adminBarkod" placeholder="3017620422003, 869..."></textarea></label>
-        <label>${esc(t("source"))}<input id="adminKaynak" type="text"></label>
-        <label>${esc(t("note"))}<textarea id="adminNot"></textarea></label>
-        <label>Durum
-          <select id="adminDurum">
-            <option value="boykot">${esc(t("boycott"))}</option>
-            <option value="safe">${esc(t("notBoycotted"))}</option>
-            <option value="alternatif">${esc(t("alternative"))}</option>
-            <option value="dikkat">${esc(t("caution"))}</option>
-            <option value="inceleme">${esc(t("review"))}</option>
-          </select>
-        </label>
-      </div>
-
-      <div class="adminButtons">
-        <button type="button" onclick="saveAdminBrand()">✅ ${esc(t("save"))}</button>
-        <button type="button" onclick="clearAdminForm()">🧹 ${esc(t("resetForm"))}</button>
-        <button type="button" class="danger" onclick="deleteAdminBrand()">🗑️ ${esc(t("deleteBrand"))}</button>
-      </div>
-    </section>`;
-  $("adminSelect").addEventListener("change", e=>fillAdminForm(e.target.value));
-  $("adminImport").addEventListener("change", e=>importDataJson(e.target.files[0]));
-}
-
-async function clearOldCaches(){
-  try{
-    if("caches" in window){
-      const keys=await caches.keys();
-      await Promise.all(keys.filter(k=>k.includes("boykot") || k.includes("ahlak")).map(k=>caches.delete(k)));
-    }
-  }catch(e){}
-}
-async function init(){
-  applyTheme();
-  applyLang();
-  await clearOldCaches();
-  try{
-    const res=await fetch(`data.json?v=${VERSION}`,{cache:"reload"});
-    if(!res.ok) throw new Error(`data.json: ${res.status}`);
-    const json=await res.json();
-    const override = loadLocalDataOverride();
-    const list = override || (Array.isArray(json) ? json : (Array.isArray(json.data) ? json.data : []));
-    DATA=list.map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"));
-    render();
-  }catch(err){
-    stats.innerHTML="";
-    quickActions.innerHTML="";
-    quickFilters.innerHTML="";
-    sectionTitle.innerHTML="";
-    results.innerHTML=`<div class="empty"><b>${esc(t("dataError"))}</b><br>${esc(err.message)}<br><br>${esc(t("dataHelp"))}</div>`;
-  }
-}
-function counts(){
-  return {
-    total:DATA.length,
-    boykot:DATA.filter(x=>x.status==="boykot").length,
-    dikkat:DATA.filter(x=>x.status==="dikkat").length,
-    alternatif:DATA.filter(x=>x.status==="alternatif").length,
-    safe:DATA.filter(x=>x.status==="safe").length,
-    inceleme:DATA.filter(x=>x.status==="inceleme").length,
-    altli:DATA.filter(hasAlternative).length,
-    fav:favorites.length,
-    firmalar:new Set(DATA.map(x=>x.anaFirma||"-")).size,
-    kategoriler:new Set(DATA.map(x=>x.kategori||"-").filter(x=>x && x !== "-")).size
-  };
-}
-function renderStats(){
-  const c=counts();
-  stats.innerHTML=`
-    <button class="stat red" data-stat="boykot" type="button"><small>🔴 ${t("boycott")}</small><b>${c.boykot}</b></button>
-    <button class="stat safe" data-stat="safe" type="button"><small>✅ ${t("notBoycotted")}</small><b>${c.safe}</b></button>
-    <button class="stat green" data-stat="altli" type="button"><small>⭐ ${t("withAlt")}</small><b>${c.altli}</b></button>
-    <button class="stat gray" data-stat="inceleme" type="button"><small>⚪ ${t("review")}</small><b>${c.inceleme}</b></button>`;
-}
-function renderQuickActions(){
-  const c=counts();
-  quickActions.innerHTML=`
-    <h2>${t("quickTitle")}</h2>
-    <div class="quickGrid">
-      <button data-go="companies" type="button"><span>🏢</span><b>${t("companies")}</b><small>${c.firmalar}</small></button>
-      <button data-go="categories" type="button"><span>📂</span><b>${t("categories")}</b><small>${c.kategoriler}</small></button>
-      <button data-go="alternatives" type="button"><span>⭐</span><b>${t("withAlt")}</b><small>${c.altli}</small></button>
-      <button data-go="favorites" type="button"><span>❤️</span><b>${t("favorites")}</b><small>${c.fav}</small></button>
-      <button data-export-barcodes="1" type="button"><span>📦</span><b>${t("exportBarcodes")}</b><small>JSON</small></button>
-      <button data-go="admin" type="button"><span>⚙️</span><b>${t("admin")}</b><small>JSON</small></button>
-    </div>`;
-}
-function renderFilters(){
-  const arr=[
-    ["all",t("all")],
-    ["boykot",`🔴 ${t("boycott")}`],
-    ["safe",`✅ ${t("notBoycotted")}`],
-    ["altli",`⭐ ${t("withAlt")}`],
-    ["inceleme",`⚪ ${t("review")}`],
-    ["fav",`❤️ ${t("favorites")}`]
-  ];
-  quickFilters.innerHTML=arr.map(([k,l])=>`<button class="chip ${filter===k?'active':''}" data-filter="${k}" type="button">${l}</button>`).join("");
-}
-function filteredList(base=DATA){
-  const q=norm(search.value);
-  return base.filter(x=>{
-    const okQ=!q || x.hay.includes(q);
-    const okF=filter==="all"
-      || (filter==="boykot" && x.status==="boykot")
-      || (filter==="safe" && x.status==="safe")
-      || (filter==="altli" && hasAlternative(x))
-      || (filter==="inceleme" && x.status==="inceleme")
-      || (filter==="fav" && isFav(x.marka));
-    return okQ && okF;
-  }).sort((a,b)=>Number(isFav(b.marka))-Number(isFav(a.marka)) || a.marka.localeCompare(b.marka,"tr"));
-}
-function badge(x){
-  return `<span class="badge ${x.status}">${statusLabel(x.status)} <b>${esc(x.kod||"")}</b></span>`;
-}
-function altHtml(x){
-  if(x.status==="safe" && !x.alternatif) return `<div class="altBox"><span>${t("notBoycotted")}</span><b>${t("safeInfo")}</b></div>`;
-  if(!hasAlternative(x)) return `<div class="altBox"><span>${t("alternative")}</span><b>-</b></div>`;
-  const tags=x.alternatif.split(/[;,•]/).map(v=>v.trim()).filter(Boolean).slice(0,8);
-  return `<div class="altBox"><span>${t("alternative")}</span><div class="tags">${tags.map(v=>`<em>${esc(v)}</em>`).join("")}</div></div>`;
-}
-function card(x){
-  return `<article class="card ${x.status}" data-brand="${encodeURIComponent(x.marka)}">
-    <div class="cardTop">
-      <div>
-        <div class="badgeLine">${badge(x)}${hasAlternative(x)?`<span class="badge alternatif">⭐ ${t("withAlt")}</span>`:""}</div>
-        <h3>${esc(x.marka)}</h3>
-        <div class="company">🏢 ${esc(x.anaFirma||"-")}</div>
-      </div>
-      <button class="fav" data-fav="${encodeURIComponent(x.marka)}" type="button" aria-label="Favori">${isFav(x.marka)?"❤️":"♡"}</button>
-    </div>
-    <div class="meta metaSingle"><div class="box"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div></div>
-    ${altHtml(x)}
-    <button class="more" type="button">${t("details")}</button>
-  </article>`;
-}
-function titleFor(){
-  if(currentGroup) return currentGroup.title;
-  if(view==="boykot" || filter==="boykot") return `🔴 ${t("boycott")}`;
-  if(view==="safe" || filter==="safe") return `✅ ${t("notBoycotted")}`;
-  if(view==="favorites" || filter==="fav") return `❤️ ${t("favorites")}`;
-  if(view==="alternatives" || filter==="altli") return `⭐ ${t("withAlt")}`;
-  return t("all");
-}
-function renderHome(base=DATA){
-  const list=filteredList(base);
-  renderStats();
-  renderQuickActions();
-  renderFilters();
-  sectionTitle.innerHTML=`<h2>${esc(titleFor())}</h2><span>${list.length} ${t("results")}</span>`;
-  results.innerHTML=list.length
-    ? list.slice(0,800).map(card).join("") + (list.length>800 ? `<div class="empty">800 ${t("results")}. Daha dar arama yap.</div>` : "")
-    : `<div class="empty">${t("noResult")}</div>`;
-}
-function groupBy(key,base=DATA){
-  const m=new Map();
-  for(const x of base){
-    const name=x[key] || "-";
-    if(!m.has(name)) m.set(name,[]);
-    m.get(name).push(x);
-  }
-  return [...m.entries()].sort((a,b)=>b[1].length-a[1].length || a[0].localeCompare(b[0],"tr"));
-}
-function renderCompanies(){
-  currentGroup=null;
-  renderStats();
-  renderQuickActions();
-  quickFilters.innerHTML="";
-  search.value="";
-  const g=groupBy("anaFirma");
-  sectionTitle.innerHTML=`<h2>🏢 ${t("companies")}</h2><span>${g.length}</span>`;
-  results.innerHTML=g.map(([name,items])=>`<button class="group" data-company="${encodeURIComponent(name)}" type="button">
-    <div><b>${esc(name)}</b><small>${items.slice(0,4).map(x=>esc(x.marka)).join(", ")}${items.length>4?"...":""}</small></div>
-    <div class="count">${items.length}</div>
-  </button>`).join("");
-}
-function categoryIcon(name){
-  const n=norm(name);
-  if(n.includes("icecek")||n.includes("su")) return "🥤";
-  if(n.includes("gida")||n.includes("cikolata")||n.includes("biskuvi")) return "🍫";
-  if(n.includes("temizlik")||n.includes("bulasik")) return "🧼";
-  if(n.includes("kozmetik")||n.includes("bakim")) return "💄";
-  if(n.includes("saglik")||n.includes("ilac")||n.includes("vitamin")) return "💊";
-  if(n.includes("giyim")) return "👕";
-  if(n.includes("oyuncak")) return "🧸";
-  return "📂";
-}
-function renderCategories(){
-  currentGroup=null;
-  renderStats();
-  renderQuickActions();
-  quickFilters.innerHTML="";
-  search.value="";
-  const g=groupBy("kategori").filter(([name])=>name && name !== "-");
-  sectionTitle.innerHTML=`<h2>📂 ${t("categories")}</h2><span>${g.length}</span>`;
-  results.innerHTML=g.map(([name,items])=>`<button class="group categoryGroup" data-category="${encodeURIComponent(name)}" type="button">
-    <div><b>${categoryIcon(name)} ${esc(name)}</b><small>${items.length} ${t("brands")}</small></div>
-    <div class="count">${items.length}</div>
-  </button>`).join("");
-}
-function renderAbout(){
-  const c=counts();
-  currentGroup=null;
-  stats.innerHTML="";
-  quickActions.innerHTML="";
-  quickFilters.innerHTML="";
-  sectionTitle.innerHTML="";
-  search.value="";
-  results.innerHTML=`<section class="aboutHero"><h2>${t("aboutTitle")}</h2><p>${t("aboutIntro")}</p></section>
-  <div class="aboutGrid">
-    <div class="aboutCard"><h3>${t("listStatus")}</h3><p>${I[lang].listStatusText(c)}</p></div>
-    <div class="aboutCard"><h3>✅ ${t("notBoycotted")}</h3><p>${t("safeText")}</p></div>
-    <div class="aboutCard"><h3>${t("howSearch")}</h3><p>${t("howSearchText")}</p></div>
-    <div class="aboutCard"><h3>🏢 ${t("companies")}</h3><p>${t("companiesText")}</p></div>
-    <div class="aboutCard"><h3>❤️ ${t("favorites")}</h3><p>${t("favText")}</p></div>
-    <div class="aboutCard"><h3>⭐ ${t("alternative")}</h3><p>${t("altText")}</p></div>
-    <div class="aboutCard"><h3>${t("disclaimer")}</h3><p>${t("disclaimerText")}</p></div>
-    <div class="aboutCard"><h3>${t("update")}</h3><p>${t("updateText")}</p></div>
-  </div>`;
-}
-function render(){
-  document.querySelectorAll(".bottomNav button").forEach(b=>b.classList.toggle("active",b.dataset.view===view));
-  if(currentGroup) return renderHome(currentGroup.items);
-  if(view==="home") return renderHome();
-  if(view==="boykot"){filter="boykot"; return renderHome();}
-  if(view==="safe"){filter="safe"; return renderHome();}
-  if(view==="alternatives"){filter="altli"; return renderHome();}
-  if(view==="favorites"){filter="fav"; return renderHome();}
-  if(view==="companies") return renderCompanies();
-  if(view==="categories") return renderCategories();
-  if(view==="admin") return renderAdmin();
-  if(view==="about") return renderAbout();
-}
-function detail(x){
-  const d=$("detailDialog"), c=$("detailContent");
-  c.innerHTML=`<div class="detailHead"><h2>${esc(x.marka)}</h2><p>${statusLabel(x.status)}</p></div>
-  <div class="detailBody">
-    <div class="detailLine"><span>${t("parent")}</span><b>${esc(x.anaFirma||"-")}</b></div>
-    <div class="detailLine"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div>
-    <div class="detailLine"><span>${t("barcode")}</span><b>${esc(x.barkod||"-")}</b></div>
-    <div class="detailLine"><span>${t("alternative")}</span><b>${esc(x.alternatif||"-")}</b></div>
-    <div class="detailLine"><span>${t("note")}</span><b>${esc(x.not||"-")}</b></div>
-    <div class="detailLine"><span>${t("source")}</span><b>${x.kaynak && /^https?:\/\//i.test(x.kaynak)?`<a href="${esc(x.kaynak)}" target="_blank" rel="noopener">${t("openSource")}</a>`:esc(x.kaynak||"-")}</b></div>
-  </div>`;
-  d.showModal();
-}
-function applyTheme(){
-  const dark=localStorage.getItem("ahlak_theme")==="dark";
-  document.body.classList.toggle("dark",dark);
-  themeBtn.textContent=dark ? "☀️" : "🌙";
-}
-function applyLang(){
-  document.documentElement.lang=t("htmlLang");
-  $("kicker").textContent=t("kicker");
-  $("appTitle").textContent=t("title");
-  $("appSubtitle").textContent=t("subtitle");
-  search.placeholder=t("search");
-  $("closeDialog").textContent=t("close");
-  document.querySelectorAll("[data-i]").forEach(el=>el.textContent=t(el.dataset.i));
-  document.querySelectorAll(".langSwitch button").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
-  setScannerText();
-  if(installBtn) installBtn.title = t("installApp");
-}
-function goHome(){
-  currentGroup=null;
-  view="home";
-  filter="all";
-  render();
-}
-
-
-function setScannerText(){
-  if(scannerTitle) scannerTitle.textContent = t("scanBarcode");
-  if(scannerHelp) scannerHelp.textContent = t("scanHelp");
-  if(manualBarcode) manualBarcode.textContent = t("manualBarcode");
-}
-function manualBarcodeSearch(){
-  const code = prompt(`${t("barcodePrompt")}\n${t("barcodeMissing")}`);
-  if(code){
-    stopBarcodeScanner();
-    search.value = code.trim();
-    currentGroup = null;
-    view = "home";
-    filter = "all";
-    render();
-  }
-}
-async function startBarcodeScanner(){
-  setScannerText();
-  if(!barcodeDialog || !barcodeVideo){
-    manualBarcodeSearch();
-    return;
-  }
-
-  barcodeDialog.showModal();
-  scannerStatus.textContent = t("scannerStarting");
-
-  if(!("BarcodeDetector" in window)){
-    scannerStatus.textContent = t("scannerUnsupported");
-    return;
-  }
-
-  try{
-    const formats = ["ean_13","ean_8","upc_a","upc_e","code_128","code_39","code_93","itf","codabar"];
-    barcodeDetector = new BarcodeDetector({formats});
-    barcodeStream = await navigator.mediaDevices.getUserMedia({
-      video: { facingMode: { ideal: "environment" } },
-      audio: false
-    });
-
-    barcodeVideo.srcObject = barcodeStream;
-    await barcodeVideo.play();
-    scannerStatus.textContent = t("scannerSearching");
-
-    barcodeTimer = setInterval(scanBarcodeFrame, 450);
-  }catch(err){
-    scannerStatus.textContent = t("scannerError");
-  }
-}
-async function scanBarcodeFrame(){
-  if(!barcodeDetector || !barcodeVideo || barcodeVideo.readyState < 2) return;
-  try{
-    const codes = await barcodeDetector.detect(barcodeVideo);
-    if(codes && codes.length){
-      const value = codes[0].rawValue || "";
-      if(value){
-        scannerStatus.textContent = `${t("scannerFound")} ${value}`;
-        stopBarcodeScanner(false);
-        search.value = value;
-        currentGroup = null;
-        view = "home";
-        filter = "all";
-        render();
-      }
-    }
-  }catch(e){}
-}
-function stopBarcodeScanner(close=true){
-  if(barcodeTimer){
-    clearInterval(barcodeTimer);
-    barcodeTimer = null;
-  }
-  if(barcodeStream){
-    barcodeStream.getTracks().forEach(track=>track.stop());
-    barcodeStream = null;
-  }
-  if(barcodeVideo){
-    barcodeVideo.pause();
-    barcodeVideo.srcObject = null;
-  }
-  if(close && barcodeDialog && barcodeDialog.open){
-    barcodeDialog.close();
-  }
-}
-
-
-function toast(message){
-  const el = document.createElement("div");
-  el.className = "toast";
-  el.textContent = message;
-  document.body.appendChild(el);
-  requestAnimationFrame(()=>el.classList.add("show"));
-  setTimeout(()=>{
-    el.classList.remove("show");
-    setTimeout(()=>el.remove(), 300);
-  }, 2800);
-}
-function setupInstallPrompt(){
-  if(!installBtn) return;
-  installBtn.title = t("installApp");
-  window.addEventListener("beforeinstallprompt", event=>{
-    event.preventDefault();
-    deferredInstallPrompt = event;
-    installBtn.hidden = false;
-  });
-  installBtn.addEventListener("click", async ()=>{
-    if(!deferredInstallPrompt) return;
-    installBtn.hidden = true;
-    deferredInstallPrompt.prompt();
-    await deferredInstallPrompt.userChoice;
-    deferredInstallPrompt = null;
-  });
-  window.addEventListener("appinstalled", ()=>{
-    deferredInstallPrompt = null;
-    installBtn.hidden = true;
-  });
-}
-function setupServiceWorker(){
-  if(!("serviceWorker" in navigator)) return;
-  navigator.serviceWorker.register(`sw.js?v=${VERSION}`).then(reg=>{
-    if(reg.waiting){
-      toast(t("updateReady"));
-    }
-    reg.addEventListener("updatefound", ()=>{
-      const worker = reg.installing;
-      if(!worker) return;
-      worker.addEventListener("statechange", ()=>{
-        if(worker.state === "installed" && navigator.serviceWorker.controller){
-          toast(t("updateReady"));
-        }
-      });
-    });
-  }).catch(()=>{});
-  navigator.serviceWorker.addEventListener("controllerchange", ()=>{
-    // prevent forced reload loops; user can refresh manually
-  });
-}
-
-search.addEventListener("input",()=>{currentGroup=null;if(view!=="home"){view="home";filter="all"} render();});
-clearBtn.addEventListener("click",()=>{search.value="";search.focus();currentGroup=null;render();});
-barcodeBtn.addEventListener("click",()=>startBarcodeScanner());
-if(closeScanner){closeScanner.addEventListener("click",()=>stopBarcodeScanner());}
-if(manualBarcode){manualBarcode.addEventListener("click",()=>manualBarcodeSearch());}
-quickFilters.addEventListener("click",e=>{const b=e.target.closest("[data-filter]"); if(!b)return; currentGroup=null; filter=b.dataset.filter; view="home"; render();});
-quickActions.addEventListener("click",e=>{
-  const exportBtn = e.target.closest("[data-export-barcodes]");
-  if(exportBtn){ exportLearnedBarcodes(); return; }
-  const b=e.target.closest("[data-go]");
-  if(!b)return;
-  currentGroup=null;
-  view=b.dataset.go;
-  if(view==="alternatives")filter="altli";
-  if(view==="favorites")filter="fav";
-  render();
-});
-stats.addEventListener("click",e=>{const b=e.target.closest("[data-stat]"); if(!b)return; currentGroup=null; filter=b.dataset.stat; view=filter==="safe"?"safe":"home"; render();});
-results.addEventListener("click",e=>{
-  const f=e.target.closest("[data-fav]");
-  if(f){e.stopPropagation();toggleFav(decodeURIComponent(f.dataset.fav));return}
-  const g=e.target.closest("[data-company]");
-  if(g){
-    const name=decodeURIComponent(g.dataset.company);
-    currentGroup={title:`🏢 ${name}`,items:DATA.filter(x=>x.anaFirma===name)};
-    view="home";filter="all";search.value="";render();return
-  }
-  const cat=e.target.closest("[data-category]");
-  if(cat){
-    const name=decodeURIComponent(cat.dataset.category);
-    currentGroup={title:`${categoryIcon(name)} ${name}`,items:DATA.filter(x=>x.kategori===name)};
-    view="home";filter="all";search.value="";render();return
-  }
-  const c=e.target.closest("[data-brand]");
-  if(c){const name=decodeURIComponent(c.dataset.brand);const item=DATA.find(x=>x.marka===name);if(item)detail(item)}
-});
-document.querySelectorAll(".bottomNav button").forEach(b=>b.addEventListener("click",()=>{currentGroup=null;view=b.dataset.view;if(view==="home")filter="all";render();}));
-document.querySelectorAll(".langSwitch button").forEach(b=>b.addEventListener("click",()=>{lang=b.dataset.lang;localStorage.setItem("boykot_lang",lang);applyLang();render();}));
-themeBtn.addEventListener("click",()=>{const next=document.body.classList.contains("dark")?"light":"dark";localStorage.setItem("ahlak_theme",next);applyTheme();});
+search.addEventListener("input",()=>{currentGroup=null;if(view!=="home"){view="home";filter="all"}render()});
+clearBtn.addEventListener("click",()=>{search.value="";search.focus();currentGroup=null;render()});
+if(barcodeBtn)barcodeBtn.addEventListener("click",()=>{const code=prompt(`${t("barcodePrompt")}\n${t("barcodeMissing")}`);if(code)handleBarcodeValue(code.trim())});
+quickFilters.addEventListener("click",e=>{const b=e.target.closest("[data-filter]");if(!b)return;currentGroup=null;filter=b.dataset.filter;view="home";render()});
+quickActions.addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(!b)return;currentGroup=null;view=b.dataset.go;if(view==="alternatives")filter="altli";if(view==="favorites")filter="fav";render()});
+stats.addEventListener("click",e=>{const b=e.target.closest("[data-stat]");if(!b)return;currentGroup=null;filter=b.dataset.stat;view="home";render()});
+results.addEventListener("click",e=>{const f=e.target.closest("[data-fav]");if(f){e.stopPropagation();toggleFav(decodeURIComponent(f.dataset.fav));return}const g=e.target.closest("[data-company]");if(g){const name=decodeURIComponent(g.dataset.company);currentGroup={title:`🏢 ${name}`,items:DATA.filter(x=>x.anaFirma===name)};view="home";filter="all";search.value="";render();return}const cat=e.target.closest("[data-category]");if(cat){const name=decodeURIComponent(cat.dataset.category);currentGroup={title:`${categoryIcon(name)} ${name}`,items:DATA.filter(x=>x.kategori===name)};view="home";filter="all";search.value="";render();return}const c=e.target.closest("[data-brand]");if(c){const name=decodeURIComponent(c.dataset.brand);const item=DATA.find(x=>x.marka===name);if(item)detail(item)}});
+document.querySelectorAll(".bottomNav button").forEach(b=>b.addEventListener("click",()=>{currentGroup=null;view=b.dataset.view;if(view==="home")filter="all";render()}));
+document.querySelectorAll(".langSwitch button").forEach(b=>b.addEventListener("click",()=>{lang=b.dataset.lang;localStorage.setItem("boykot_lang",lang);applyLang();render()}));
+themeBtn.addEventListener("click",()=>{const next=document.body.classList.contains("dark")?"light":"dark";localStorage.setItem("ahlak_theme",next);applyTheme()});
 $("closeDialog").addEventListener("click",()=>$("detailDialog").close());
-
-setupInstallPrompt();
-setupServiceWorker();
+window.saveAdminBrand=saveAdminBrand;window.deleteAdminBrand=deleteAdminBrand;window.clearAdminForm=clearAdminForm;window.downloadDataJson=downloadDataJson;window.importToSupabase=importToSupabase;window.adminLogin=adminLogin;window.adminLogout=adminLogout;
 init();
