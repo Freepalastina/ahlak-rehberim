@@ -227,3 +227,9 @@ Güvenlik:
 - Öneri durum güncelleme eklendi.
 - Editör notu ekleme eklendi.
 - Yerel önerileri gösterme eklendi.
+
+## V37 Kamera Barkod Tarama
+- Kamera ile barkod tarama eklendi.
+- Barkod bulunduğunda marka detayı açılır.
+- Barkod listede yoksa öneri formuna yönlendirme yapılır.
+- Desteklenmeyen tarayıcılarda manuel barkod girişi kullanılabilir.

@@ -7,7 +7,7 @@ if(location.search.includes("clear-cache") || location.search.includes("v20-clea
   }catch(e){}
 }
 
-const VERSION="20260706-v34-moderasyon-paneli";
+const VERSION="20260706-v37-kamera-barkod";
 const SUPABASE_URL="https://imicltjdfzqlxzvodheq.supabase.co";
 const SUPABASE_KEY="sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
 const supabaseClient=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
@@ -67,6 +67,112 @@ function showLegalNoticeOnce(){
     document.body.appendChild(box);
     document.getElementById("legalOk").onclick=()=>{localStorage.setItem(key,"ok");box.remove();};
   },500);
+}
+
+
+/* V37 Camera Barcode Scanner */
+let barcodeStream=null;
+let barcodeDetector=null;
+let barcodeScanTimer=null;
+
+function barcodeScannerSupported(){
+  return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia && "BarcodeDetector" in window);
+}
+async function startBarcodeScanner(){
+  const overlay=document.getElementById("barcodeScannerOverlay") || createBarcodeScannerOverlay();
+  overlay.hidden=false;
+  const status=document.getElementById("barcodeScanStatus");
+  const video=document.getElementById("barcodeVideo");
+  try{
+    if(!barcodeScannerSupported()){
+      status.textContent="Bu tarayıcıda otomatik barkod algılama desteklenmiyor. Barkod numarasını elle yazabilirsiniz.";
+      return;
+    }
+    barcodeDetector=new BarcodeDetector({formats:["ean_13","ean_8","upc_a","upc_e","code_128","code_39","itf"]});
+    barcodeStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:"environment"}}});
+    video.srcObject=barcodeStream;
+    await video.play();
+    status.textContent="Kamerayı barkoda tutun...";
+    scanBarcodeLoop();
+  }catch(e){
+    status.textContent="Kamera açılamadı: "+e.message;
+  }
+}
+function stopBarcodeScanner(){
+  if(barcodeScanTimer) cancelAnimationFrame(barcodeScanTimer);
+  barcodeScanTimer=null;
+  if(barcodeStream){
+    barcodeStream.getTracks().forEach(t=>t.stop());
+    barcodeStream=null;
+  }
+  const overlay=document.getElementById("barcodeScannerOverlay");
+  if(overlay) overlay.hidden=true;
+}
+async function scanBarcodeLoop(){
+  const video=document.getElementById("barcodeVideo");
+  const status=document.getElementById("barcodeScanStatus");
+  if(!video || !barcodeDetector || !barcodeStream) return;
+  try{
+    const codes=await barcodeDetector.detect(video);
+    if(codes && codes.length){
+      const code=String(codes[0].rawValue||"").replace(/\D+/g,"");
+      if(code){
+        status.textContent="Barkod bulundu: "+code;
+        stopBarcodeScanner();
+        handleBarcodeResult(code);
+        return;
+      }
+    }
+  }catch(e){}
+  barcodeScanTimer=requestAnimationFrame(scanBarcodeLoop);
+}
+function handleBarcodeResult(code){
+  const found=findByBarcode(code);
+  if(found){
+    openDetail(found.id);
+    return;
+  }
+  const ask=confirm("Barkod bulundu ama listede kayıt yok: "+code+"\\nÖneri formuna eklensin mi?");
+  if(ask){
+    view="suggestions";
+    render();
+    setTimeout(()=>{
+      const brand=document.getElementById("sgBrand");
+      const note=document.getElementById("sgNote");
+      const type=document.getElementById("sgType");
+      if(type) type.value="marka";
+      if(note) note.value="Barkod ile bulunan ama listede olmayan ürün. Barkod: "+code;
+      if(brand) brand.focus();
+    },80);
+  }
+}
+function createBarcodeScannerOverlay(){
+  const div=document.createElement("div");
+  div.id="barcodeScannerOverlay";
+  div.className="scannerOverlay";
+  div.hidden=true;
+  div.innerHTML=`<div class="scannerBox">
+    <h2>📷 Barkod Tara</h2>
+    <video id="barcodeVideo" playsinline muted></video>
+    <div class="scanFrame"></div>
+    <p id="barcodeScanStatus">Hazırlanıyor...</p>
+    <div class="scannerActions">
+      <button id="barcodeStop">Kapat</button>
+    </div>
+  </div>`;
+  document.body.appendChild(div);
+  document.getElementById("barcodeStop").onclick=stopBarcodeScanner;
+  return div;
+}
+function scannerButtonHtml(){
+  return `<button id="openBarcodeScanner" class="scannerOpen">📷 Kamerayla Barkod Tara</button>`;
+}
+function ensureScannerButton(){
+  if(document.getElementById("openBarcodeScanner")) return;
+  const box=document.getElementById("barcodeBox");
+  if(!box) return;
+  box.insertAdjacentHTML("beforeend",scannerButtonHtml());
+  document.getElementById("openBarcodeScanner").onclick=startBarcodeScanner;
 }
 
 function ensureBarcodeSearch(){
@@ -683,14 +789,14 @@ async function init(){applyTheme();applyLang();setupServiceWorker();showLegalNot
 
 function counts(){return{total:DATA.length,boykot:DATA.filter(x=>x.status==="boykot").length,safe:DATA.filter(x=>x.status==="safe").length,inceleme:DATA.filter(x=>x.status==="inceleme").length,altli:DATA.filter(hasAlternative).length,fav:favorites.length,firmalar:new Set(DATA.map(x=>x.anaFirma||"-")).size,kategoriler:new Set(DATA.map(x=>x.kategori||"-").filter(Boolean)).size,ulkeler:new Set(DATA.map(x=>x.ulke||"").filter(Boolean)).size}}
 function renderStats(){const c=counts();stats.innerHTML=`<button class="stat red" data-stat="boykot"><small>🔴 ${t("boycott")}</small><b>${c.boykot}</b></button><button class="stat safe" data-stat="safe"><small>✅ ${t("notBoycotted")}</small><b>${c.safe}</b></button><button class="stat green" data-stat="altli"><small>⭐ ${t("withAlt")}</small><b>${c.altli}</b></button><button class="stat gray" data-stat="inceleme"><small>⚪ ${t("review")}</small><b>${c.inceleme}</b></button>`}
-function renderQuickActions(){const c=counts();quickActions.innerHTML=`<h2>${t("quickTitle")}</h2><div class="quickGrid"><button data-go="companies"><span>🏢</span><b>${t("companies")}</b><small>${c.firmalar}</small></button><button data-go="categories"><span>📂</span><b>${t("categories")}</b><small>${c.kategoriler}</small></button><button data-go="countries"><span>🌍</span><b>${t("countries")||"Ülkeler"}</b><small>${c.ulkeler||0}</small></button><button data-go="alternatives"><span>⭐</span><b>${t("withAlt")}</b><small>${c.altli}</small></button><button data-go="favorites"><span>❤️</span><b>${t("favorites")}</b><small>${c.fav}</small></button><button data-go="moderation"><span>🛡️</span><b>Moderasyon</b><small>⚙️</small></button><button data-go="suggestions"><span>📝</span><b>Öneri</b><small>+</small></button><button data-go="compare"><span>⚖️</span><b>Karşılaştır</b><small>2</small></button><button data-go="admin"><span>⚙️</span><b>${t("admin")}</b><small>ODS</small></button></div>`}
+function renderQuickActions(){const c=counts();quickActions.innerHTML=`<h2>${t("quickTitle")}</h2><div class="quickGrid"><button data-go="companies"><span>🏢</span><b>${t("companies")}</b><small>${c.firmalar}</small></button><button data-go="categories"><span>📂</span><b>${t("categories")}</b><small>${c.kategoriler}</small></button><button data-go="countries"><span>🌍</span><b>${t("countries")||"Ülkeler"}</b><small>${c.ulkeler||0}</small></button><button data-go="alternatives"><span>⭐</span><b>${t("withAlt")}</b><small>${c.altli}</small></button><button data-go="favorites"><span>❤️</span><b>${t("favorites")}</b><small>${c.fav}</small></button><button data-go="moderation"><span>🛡️</span><b>Moderasyon</b><small>⚙️</small></button><button data-action="scanBarcode"><span>📷</span><b>Barkod Tara</b><small>EAN</small></button><button data-go="suggestions"><span>📝</span><b>Öneri</b><small>+</small></button><button data-go="compare"><span>⚖️</span><b>Karşılaştır</b><small>2</small></button><button data-go="admin"><span>⚙️</span><b>${t("admin")}</b><small>ODS</small></button></div>`}
 function renderFilters(){const arr=[["all",t("all")],["boykot",`🔴 ${t("boycott")}`],["safe",`✅ ${t("notBoycotted")}`],["altli",`⭐ ${t("withAlt")}`],["inceleme",`⚪ ${t("review")}`],["fav",`❤️ ${t("favorites")}`]];quickFilters.innerHTML=arr.map(([k,l])=>`<button class="chip ${filter===k?'active':''}" data-filter="${k}">${l}</button>`).join("")}
 function filteredList(base=DATA){const q=norm(search.value);return base.filter(x=>(!q||x.hay.includes(q))&&(filter==="all"||(filter==="boykot"&&x.status==="boykot")||(filter==="safe"&&x.status==="safe")||(filter==="altli"&&hasAlternative(x))||(filter==="inceleme"&&x.status==="inceleme")||(filter==="fav"&&isFav(x.marka)))).sort((a,b)=>Number(isFav(b.marka))-Number(isFav(a.marka))||a.marka.localeCompare(b.marka,"tr"))}
 function imageHtml(x){return x.imageUrl?`<div class="brandImage"><img src="${esc(x.imageUrl)}" alt="${esc(x.marka)}" loading="lazy" onerror="this.parentElement.classList.add('noImage');this.remove();"></div>`:`<div class="brandImage noImage"><span>🌿</span></div>`}
 function altHtml(x){if(x.status==="safe"&&!x.alternatif)return`<div class="altBox"><span>${t("notBoycotted")}</span><b>${t("safeInfo")}</b></div>`;if(!hasAlternative(x))return`<div class="altBox"><span>${t("alternative")}</span><b>-</b></div>`;const tags=String(x.alternatif).split(/[;,•]/).map(v=>v.trim()).filter(Boolean).slice(0,8);return`<div class="altBox"><span>${t("alternative")}</span><div class="tags">${tags.map(v=>`<em>${esc(v)}</em>`).join("")}</div></div>`}
 function card(x){return`<article class="card ${x.status}" data-brand="${encodeURIComponent(x.marka)}">${imageHtml(x)}<div class="cardTop"><div><div class="badgeLine"><span class="badge ${x.status}">${statusLabel(x.status)}</span>${hasAlternative(x)?`<span class="badge alternatif">⭐ ${t("withAlt")}</span>`:""}</div><h3>${esc(x.marka)}</h3><div class="company">🏢 ${esc(x.anaFirma||"-")}</div></div><button class="fav" data-fav="${encodeURIComponent(x.marka)}">${isFav(x.marka)?"❤️":"♡"}</button></div><div class="meta"><div class="box"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div>${x.ulke?`<div class="box" style="margin-top:8px"><span>${t("country")||"Ülke"}</span><b>${esc(x.ulke)}</b></div>`:""}</div>${altHtml(x)}<button class="more">${t("details")}</button></article>`}
 function titleFor(){if(currentGroup)return currentGroup.title;if(view==="favorites"||filter==="fav")return`❤️ ${t("favorites")}`;if(view==="alternatives"||filter==="altli")return`⭐ ${t("withAlt")}`;return t("all")}
-function renderHome(base=DATA){const list=filteredList(base);renderStats();ensureBarcodeSearch();renderQuickActions();renderFilters();sectionTitle.innerHTML=`<h2>${esc(titleFor())}</h2><span>${list.length} ${t("results")}</span>`;results.innerHTML=(list.length?list.slice(0,800).map(card).join(""):`<div class="empty">${t("noResult")}</div>`)+renderLegalFooter()}
+function renderHome(base=DATA){const list=filteredList(base);renderStats();ensureBarcodeSearch();ensureScannerButton();renderQuickActions();renderFilters();sectionTitle.innerHTML=`<h2>${esc(titleFor())}</h2><span>${list.length} ${t("results")}</span>`;results.innerHTML=(list.length?list.slice(0,800).map(card).join(""):`<div class="empty">${t("noResult")}</div>`)+renderLegalFooter()}
 function groupBy(key){const m=new Map();DATA.forEach(x=>{const n=x[key]||"-";if(!m.has(n))m.set(n,[]);m.get(n).push(x)});return[...m.entries()].sort((a,b)=>b[1].length-a[1].length||a[0].localeCompare(b[0],"tr"))}
 function renderCompanies(){renderStats();renderQuickActions();quickFilters.innerHTML="";search.value="";const g=groupBy("anaFirma");sectionTitle.innerHTML=`<h2>🏢 ${t("companies")}</h2><span>${g.length}</span>`;results.innerHTML=g.map(([n,it])=>`<button class="group" data-company="${encodeURIComponent(n)}"><div><b>${esc(n)}</b><small>${it.slice(0,4).map(x=>esc(x.marka)).join(", ")}${it.length>4?"...":""}</small></div><div class="count">${it.length}</div></button>`).join("")}
 function catIcon(n){const x=norm(n);if(x.includes("icecek")||x.includes("su"))return"🥤";if(x.includes("gida")||x.includes("cikolata"))return"🍫";if(x.includes("temizlik"))return"🧼";if(x.includes("kozmetik"))return"💄";return"📂"}
