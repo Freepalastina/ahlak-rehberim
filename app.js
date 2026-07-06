@@ -7,7 +7,7 @@ if(location.search.includes("clear-cache") || location.search.includes("v20-clea
   }catch(e){}
 }
 
-const VERSION="20260706-v27-supabase-admin-sync";
+const VERSION="20260706-v28-supabase-live-read";
 const SUPABASE_URL="https://imicltjdfzqlxzvodheq.supabase.co";
 const SUPABASE_KEY="sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
 const supabaseClient=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
@@ -370,7 +370,7 @@ async function loadCompanyDb(){
 async function loadSession(){if(!supabaseClient)return;const{data}=await supabaseClient.auth.getSession();adminSession=data.session||null}
 async function loadSupabase(){if(!supabaseClient)throw new Error("No Supabase");let all=[],from=0,step=1000;while(true){const{data,error}=await supabaseClient.from("brand_cards").select("*").order("marka").range(from,from+step-1);if(error)throw error;all=all.concat(data||[]);if(!data||data.length<step)break;from+=step}return all}
 async function loadFallback(){const r=await fetch(`data.json?v=${VERSION}`,{cache:"reload"});const j=await r.json();return Array.isArray(j)?j:(j.data||[])}
-async function init(){applyTheme();applyLang();setupServiceWorker();showLegalNoticeOnce();await loadCompanyDb();await loadSession();try{let list=[];try{list=await loadSupabase()}catch(e){list=[]}if(!list.length){list=await loadFallback();toast(t("supabaseFallback"))}else toast(t("supabaseReady"));DATA=enrichCompanies(list).map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"));render()}catch(e){results.innerHTML=`<div class="empty">${esc(e.message)}</div>`}}
+async function init(){applyTheme();applyLang();setupServiceWorker();showLegalNoticeOnce();await loadCompanyDb();await loadDataSmart(loadSession);try{let list=[];try{list=await loadSupabase()}catch(e){list=[]}if(!list.length){list=await loadFallback();toast(t("supabaseFallback"))}else toast(t("supabaseReady"));DATA=enrichCompanies(list).map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"));render()}catch(e){results.innerHTML=`<div class="empty">${esc(e.message)}</div>`}}
 
 function counts(){return{total:DATA.length,boykot:DATA.filter(x=>x.status==="boykot").length,safe:DATA.filter(x=>x.status==="safe").length,inceleme:DATA.filter(x=>x.status==="inceleme").length,altli:DATA.filter(hasAlternative).length,fav:favorites.length,firmalar:new Set(DATA.map(x=>x.anaFirma||"-")).size,kategoriler:new Set(DATA.map(x=>x.kategori||"-").filter(Boolean)).size,ulkeler:new Set(DATA.map(x=>x.ulke||"").filter(Boolean)).size}}
 function renderStats(){const c=counts();stats.innerHTML=`<button class="stat red" data-stat="boykot"><small>🔴 ${t("boycott")}</small><b>${c.boykot}</b></button><button class="stat safe" data-stat="safe"><small>✅ ${t("notBoycotted")}</small><b>${c.safe}</b></button><button class="stat green" data-stat="altli"><small>⭐ ${t("withAlt")}</small><b>${c.altli}</b></button><button class="stat gray" data-stat="inceleme"><small>⚪ ${t("review")}</small><b>${c.inceleme}</b></button>`}
@@ -678,7 +678,7 @@ function adminFormHtml(existing={}){
       <button id="admExportOne">Bu Kaydı JSON İndir</button>
       <button id="admExportAll">Tüm Veriyi JSON İndir</button>
     </div>
-    ${supabasePanelHtml()}<h3>Yerel Taslaklar</h3>
+    ${supabasePanelHtml()}${supabaseLiveControlsHtml()}<h3>Yerel Taslaklar</h3>
     <div id="admDrafts"></div>
   </section>`;
 }
@@ -731,7 +731,75 @@ function setupAdminPanel(){
     downloadText("ahlak_rehberim_export.json", JSON.stringify(merged,null,2));
   };
   renderAdminDrafts();
-  setupSupabasePanel();
+  setupSupabasePanel();setupSupabaseLiveControls();
+}
+
+
+/* V28 Supabase Live Read */
+function useSupabaseLiveKey(){return "ahlak_use_supabase_live_v28";}
+function getUseSupabaseLive(){return localStorage.getItem(useSupabaseLiveKey())==="1";}
+function setUseSupabaseLive(v){localStorage.setItem(useSupabaseLiveKey(),v?"1":"0")}
+function supabaseRowToLegacy(r){
+  return {
+    id:r.id||null,
+    marka:r.marka||"",
+    anaFirma:r.ana_firma||r.anaFirma||"",
+    kategori:r.kategori||"",
+    ulke:r.ulke||"",
+    durum:r.durum||"inceleme",
+    image_url:r.image_url||"",
+    not:r.notlar||r.not||"",
+    ozet:r.ozet||"",
+    kaynaklar:Array.isArray(r.kaynaklar)?r.kaynaklar:[],
+    alternatifler:Array.isArray(r.alternatifler)?r.alternatifler:[],
+    barkodlar:Array.isArray(r.barkodlar)?r.barkodlar:[],
+    sonGuncelleme:r.son_guncelleme||r.sonGuncelleme||"",
+    kaynakDurumu:r.kaynak_durumu||r.kaynakDurumu||"",
+    alternatifDurumu:r.alternatif_durumu||r.alternatifDurumu||"",
+    barkodDurumu:r.barkod_durumu||r.barkodDurumu||""
+  };
+}
+async function loadSupabaseBrands(){
+  const c=getSbConfig();
+  if(!c.url||!c.key||!c.table) throw new Error("Supabase ayarları eksik.");
+  const url=sbEndpoint(c.table)+"?select=*&order=marka.asc&limit=5000";
+  const res=await fetch(url,{headers:sbHeaders(c.key)});
+  const text=await res.text();
+  if(!res.ok) throw new Error(text||res.statusText);
+  const rows=JSON.parse(text);
+  return rows.map(supabaseRowToLegacy);
+}
+async function loadDataSmart(originalLoader){
+  if(getUseSupabaseLive()){
+    try{
+      const rows=await loadSupabaseBrands();
+      if(rows.length){
+        DATA=enrichCompanies(rows).map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"));
+        window.__DATA_SOURCE__="supabase";
+        render();
+        return;
+      }
+    }catch(e){
+      console.warn("Supabase canlı veri alınamadı, data.json kullanılacak:",e);
+      window.__DATA_SOURCE__="data.json fallback";
+    }
+  }
+  return originalLoader();
+}
+function supabaseLiveControlsHtml(){
+  return `<section class="supabasePanel">
+    <h3>📡 Canlı Veri Okuma</h3>
+    <p class="legal-small">Açık ise uygulama markaları Supabase tablosundan okur. Hata olursa otomatik data.json yedeğine döner.</p>
+    <label class="switchLine"><input type="checkbox" id="sbLiveToggle" ${getUseSupabaseLive()?"checked":""}> Supabase canlı veriyi kullan</label>
+    <div class="adminActions"><button id="sbLiveReload">Canlı Veriyi Yenile</button></div>
+    <div id="sbLiveResult" class="sourceEmpty">Veri kaynağı: ${esc(window.__DATA_SOURCE__||"henüz yüklenmedi")}</div>
+  </section>`;
+}
+function setupSupabaseLiveControls(){
+  const tgl=document.getElementById("sbLiveToggle");
+  if(!tgl) return;
+  tgl.onchange=()=>{setUseSupabaseLive(tgl.checked); document.getElementById("sbLiveResult").textContent="Ayar kaydedildi. Sayfayı yenileyin veya Canlı Veriyi Yenile butonuna basın."};
+  document.getElementById("sbLiveReload").onclick=()=>location.reload();
 }
 
 /* V27 Supabase Admin Sync */

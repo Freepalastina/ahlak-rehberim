@@ -272,3 +272,7 @@ body.dark .importStatus{
 }
 .supabasePanel h3{margin-top:0;color:#1d4ed8}
 #sbResult{margin-top:12px;white-space:pre-wrap}
+
+/* V28 live read */
+.switchLine{display:flex!important;flex-direction:row!important;align-items:center;gap:10px;background:rgba(95,113,56,.08);padding:12px;border-radius:16px}
+.switchLine input{width:auto!important}

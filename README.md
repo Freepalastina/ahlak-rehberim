@@ -188,3 +188,9 @@ Güvenlik:
 - service_role key kullanmayın.
 - Public anon/publishable key kullanın.
 - Yazma izinlerini Supabase RLS ile sınırlandırın.
+
+## V28 Supabase Live Read
+- Uygulama veriyi Supabase `brands` tablosundan okuyabilir.
+- Ayar yönetim panelinden açılıp kapatılır.
+- Supabase çalışmazsa otomatik `data.json` yedeğine döner.
+- `supabase_live_read_kullanim.md` eklendi.
