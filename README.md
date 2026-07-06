@@ -205,3 +205,8 @@ Güvenlik:
 - İki marka yan yana karşılaştırılabilir.
 - Marka detayında “Karşılaştır” butonu eklendi.
 - Karşılaştırma sayfasında arama ile marka ekleme eklendi.
+
+## V31 QR + Paylaşım
+- Marka detayına QR kod eklendi.
+- Link kopyalama ve mobil paylaşım eklendi.
+- `?marka=` parametresiyle doğrudan marka açma eklendi.

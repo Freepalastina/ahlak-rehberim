@@ -7,7 +7,7 @@ if(location.search.includes("clear-cache") || location.search.includes("v20-clea
   }catch(e){}
 }
 
-const VERSION="20260706-v30-karsilastirma";
+const VERSION="20260706-v31-qr-paylasim";
 const SUPABASE_URL="https://imicltjdfzqlxzvodheq.supabase.co";
 const SUPABASE_KEY="sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
 const supabaseClient=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
@@ -92,6 +92,35 @@ function ensureBarcodeSearch(){
 /* V29 Smart Product Relations */
 
 /* V30 Compare */
+
+/* V31 QR + Share */
+function productUrl(x){
+  const base=location.origin+location.pathname;
+  return `${base}?marka=${encodeURIComponent(x.marka||"")}`;
+}
+function qrUrlFor(text){
+  return `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(text)}`;
+}
+function renderShareBox(x){
+  const url=productUrl(x);
+  return `<section class="shareBox">
+    <h3>🔗 Paylaş</h3>
+    <div class="qrWrap"><img src="${qrUrlFor(url)}" alt="QR ${esc(x.marka)}" loading="lazy"></div>
+    <input class="shareInput" value="${esc(url)}" readonly>
+    <div class="shareActions">
+      <button data-copy-url="${esc(url)}">Linki Kopyala</button>
+      <button data-native-share="${esc(x.id)}">Paylaş</button>
+    </div>
+  </section>`;
+}
+function openBrandFromUrl(){
+  const p=new URLSearchParams(location.search);
+  const m=p.get("marka");
+  if(!m||!DATA.length) return;
+  const found=DATA.find(x=>norm(x.marka)===norm(m))||DATA.find(x=>norm(x.marka).includes(norm(m)));
+  if(found) setTimeout(()=>openDetail(found.id),400);
+}
+
 function compareKey(){return "ahlak_compare_v30";}
 function getCompareIds(){try{return JSON.parse(localStorage.getItem(compareKey())||"[]")}catch(e){return []}}
 function setCompareIds(ids){localStorage.setItem(compareKey(),JSON.stringify([...new Set(ids)].slice(0,2)))}
@@ -717,7 +746,7 @@ async function importSpreadsheetToSupabase(){
     toast(t("importDone"));
     await reload();
     view="admin";
-    render();
+    render();if(!window.__OPEN_BRAND_DONE__){window.__OPEN_BRAND_DONE__=true;openBrandFromUrl();}
   }catch(err){
     console.error(err);
     setImportStatus(`${t("importError")}: ${err.message || err}`);

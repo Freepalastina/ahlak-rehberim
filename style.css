@@ -394,3 +394,47 @@ body.dark .importStatus{
   .compareHead,.compareRow{grid-template-columns:1fr}
   .compareHead div:first-child,.compareRow div:first-child{display:none}
 }
+
+
+/* V31 share qr */
+.shareBox{
+  margin:14px 0;
+  padding:14px;
+  border-radius:20px;
+  background:rgba(95,113,56,.07);
+  border:1px solid rgba(95,113,56,.18);
+}
+.qrWrap{
+  display:flex;
+  justify-content:center;
+  margin:10px 0;
+}
+.qrWrap img{
+  width:150px;
+  height:150px;
+  border-radius:16px;
+  background:#fff;
+  padding:8px;
+}
+.shareInput{
+  width:100%;
+  border:1px solid rgba(95,113,56,.22);
+  border-radius:14px;
+  padding:10px;
+  font-size:13px;
+}
+.shareActions{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+.shareActions button{
+  flex:1;
+  border:0;
+  border-radius:14px;
+  padding:11px;
+  background:#5F7138;
+  color:white;
+  font-weight:900;
+  cursor:pointer;
+}
