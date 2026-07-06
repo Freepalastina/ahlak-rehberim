@@ -85,3 +85,19 @@ Eklenenler:
 - Ülkeye göre listeleme
 - Kategori filtresinin Alt Kategori / Ana Kategori ile çalışması
 - Marka kartında ülke gösterimi
+
+
+## V16 Pages Workflow Fix
+
+Bu sürüm GitHub Pages için gerekli workflow dosyasını içerir:
+
+`.github/workflows/deploy.yml`
+
+Kurulum:
+1. Bu ZIP'i aç.
+2. İçindeki tüm dosyaları repo klasörünün içine kopyala.
+3. `.github` klasörünün de kopyalandığından emin ol.
+4. Terminalde:
+   git add .
+   git commit -m "V16 Pages workflow fix"
+   git push
