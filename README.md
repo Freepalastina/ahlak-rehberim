@@ -73,3 +73,15 @@ Aşağıdaki alanlarda işaret varsa kayıt otomatik `Boykotta Değil` sayılır
 - durum = boykottaDegil / boykot_degil / safe / notBoycotted
 
 Bu, eski Supabase aktarımında yanlış `boykot` görünen kayıtları da ekranda doğru gösterir.
+
+## V15.1 Ülke + Kategori Filtre Fix
+Bu sürüm V15 master dosyasındaki şu alanları okur:
+- Ana Kategori
+- Alt Kategori
+- Ülke
+
+Eklenenler:
+- Ülkeler hızlı erişim butonu
+- Ülkeye göre listeleme
+- Kategori filtresinin Alt Kategori / Ana Kategori ile çalışması
+- Marka kartında ülke gösterimi

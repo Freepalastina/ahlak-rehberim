@@ -1,4 +1,4 @@
-const CACHE_VERSION="20260705-v13-2-safe-detection-fix";
+const CACHE_VERSION="20260706-v15-1-country-category-fix";
 const CACHE_NAME=`ahlak-rehberim-${CACHE_VERSION}`;
 const APP_SHELL=["./","./index.html","./style.css","./app.js","./manifest.json","./data.json","./icon-192.png","./icon-512.png"];
 self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(APP_SHELL)).catch(()=>{}))});
