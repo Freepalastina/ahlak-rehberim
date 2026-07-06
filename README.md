@@ -110,11 +110,11 @@ Eklenenler:
 - `hukuki-bilgilendirme.html`
 - Riskli kesin suçlama dilinden kaçınan metinler
 
-## V19 Ahlak Rehberim - Etik Tüketim Bilgi Rehberi
-Profesyonel platform yaklaşımı:
-- Daha güvenli ve tarafsız dil
-- Hukuki bilgilendirme, kullanım şartları, gizlilik, kaynak politikası, düzeltme politikası
-- “Boykot” yerine kullanıcı arayüzünde “İncelenmesi Önerilir”
-- “Boykotta Değil” yerine “Tercih Edilebilir”
-- Her kayıtta bilgi rehberi ve düzeltme notu
-- GitHub Pages workflow korunur
+## V20 Mevcut Tasarım + Güvenli Bilgilendirme
+Bu sürüm V17 dosyasının üzerine hazırlandı.
+- Mevcut ikonlar ve tasarım korundu.
+- Çok dilli bilgilendirme metni eklendi: TR / DE / EN.
+- Açılış notu V20 anahtarıyla tekrar gösterilir.
+- Hukuki/kaynak/düzeltme sayfaları üç dilli içerikle güncellendi.
+- UI dili daha tarafsız yapıldı.
+- Cache temizleme için `?v20-clear-cache` parametresi desteklenir.
