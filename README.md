@@ -101,3 +101,11 @@ Kurulum:
    git add .
    git commit -m "V16 Pages workflow fix"
    git push
+
+## V17 Hukuki Güvenlik
+Eklenenler:
+- Açılışta bilgilendirme/sorumluluk reddi
+- Marka detaylarında kısa hukuki not
+- Daha yumuşak etiketler: “İncele / Dikkat”, “Alternatif / Tercih Edilebilir”
+- `hukuki-bilgilendirme.html`
+- Riskli kesin suçlama dilinden kaçınan metinler
