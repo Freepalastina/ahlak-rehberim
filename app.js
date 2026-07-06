@@ -7,7 +7,7 @@ if(location.search.includes("clear-cache") || location.search.includes("v20-clea
   }catch(e){}
 }
 
-const VERSION="20260706-v33-oneri-supabase";
+const VERSION="20260706-v34-moderasyon-paneli";
 const SUPABASE_URL="https://imicltjdfzqlxzvodheq.supabase.co";
 const SUPABASE_KEY="sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
 const supabaseClient=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
@@ -95,6 +95,68 @@ function ensureBarcodeSearch(){
 
 /* V31 QR + Share */
 
+
+
+/* V34 Moderation Panel */
+async function fetchSuggestionsFromSupabase(){
+  const c=getSbConfig();
+  if(!c.url||!c.key) throw new Error("Supabase ayarları eksik.");
+  const url=c.url.replace(/\/+$/,"")+"/rest/v1/suggestions?select=*&order=created_at.desc&limit=200";
+  const res=await fetch(url,{headers:sbHeaders(c.key)});
+  const text=await res.text();
+  if(!res.ok) throw new Error(text||res.statusText);
+  return JSON.parse(text);
+}
+async function updateSuggestionStatus(id,durum,editorNotu){
+  const c=getSbConfig();
+  if(!c.url||!c.key) throw new Error("Supabase ayarları eksik.");
+  const url=c.url.replace(/\/+$/,"")+"/rest/v1/suggestions?id=eq."+encodeURIComponent(id);
+  const payload={durum,editor_notu:editorNotu||"",reviewed_at:new Date().toISOString()};
+  const res=await fetch(url,{method:"PATCH",headers:sbHeaders(c.key),body:JSON.stringify(payload)});
+  const text=await res.text();
+  if(!res.ok) throw new Error(text||res.statusText);
+  return text;
+}
+function renderModeration(){
+  renderStats();
+  sectionTitle.innerHTML=`<h2>🛡️ Moderasyon</h2><span>V34</span>`;
+  results.innerHTML=`<section class="moderationPanel">
+    <h2>🛡️ Öneri Moderasyonu</h2>
+    <p class="legal-small">Supabase suggestions tablosundaki önerileri listeler. Okuma/güncelleme için authenticated policy gerekebilir.</p>
+    <div class="adminActions">
+      <button id="modLoad">Önerileri Yükle</button>
+      <button id="modLocal">Yerel Önerileri Göster</button>
+    </div>
+    <div id="modResult" class="sourceEmpty">Henüz yüklenmedi.</div>
+  </section>`;
+  document.getElementById("modLoad").onclick=loadModerationList;
+  document.getElementById("modLocal").onclick=()=>renderModerationList(getSuggestions().map((s,i)=>({...s,id:"local-"+i,durum:"yerel"})),true);
+}
+async function loadModerationList(){
+  const box=document.getElementById("modResult");
+  try{
+    box.textContent="Yükleniyor...";
+    const list=await fetchSuggestionsFromSupabase();
+    renderModerationList(list,false);
+  }catch(e){box.textContent="Hata: "+e.message}
+}
+function renderModerationList(list,isLocal){
+  const box=document.getElementById("modResult");
+  if(!list.length){box.innerHTML=`<div class="sourceEmpty">Öneri bulunamadı.</div>`;return}
+  box.innerHTML=`<div class="moderationList">${list.map(s=>`
+    <article class="moderationItem">
+      <div class="modTop"><b>${esc(s.tur||"-")} · ${esc(s.marka||"-")}</b><span>${esc(s.durum||"bekliyor")}</span></div>
+      <p>${esc(s.aciklama||"")}</p>
+      ${s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.url)}</a>`:""}
+      <small>${esc(s.created_at||s.tarih||"")}</small>
+      ${isLocal?"":`<div class="modActions">
+        <input placeholder="Editör notu" id="note-${esc(s.id)}">
+        <button data-mod-approve="${esc(s.id)}">Onayla</button>
+        <button data-mod-reject="${esc(s.id)}">Reddet</button>
+        <button data-mod-review="${esc(s.id)}">İncelemede</button>
+      </div>`}
+    </article>`).join("")}</div>`;
+}
 
 /* V33 Suggestions Supabase Sync */
 async function sendSuggestionToSupabase(s){
@@ -621,7 +683,7 @@ async function init(){applyTheme();applyLang();setupServiceWorker();showLegalNot
 
 function counts(){return{total:DATA.length,boykot:DATA.filter(x=>x.status==="boykot").length,safe:DATA.filter(x=>x.status==="safe").length,inceleme:DATA.filter(x=>x.status==="inceleme").length,altli:DATA.filter(hasAlternative).length,fav:favorites.length,firmalar:new Set(DATA.map(x=>x.anaFirma||"-")).size,kategoriler:new Set(DATA.map(x=>x.kategori||"-").filter(Boolean)).size,ulkeler:new Set(DATA.map(x=>x.ulke||"").filter(Boolean)).size}}
 function renderStats(){const c=counts();stats.innerHTML=`<button class="stat red" data-stat="boykot"><small>🔴 ${t("boycott")}</small><b>${c.boykot}</b></button><button class="stat safe" data-stat="safe"><small>✅ ${t("notBoycotted")}</small><b>${c.safe}</b></button><button class="stat green" data-stat="altli"><small>⭐ ${t("withAlt")}</small><b>${c.altli}</b></button><button class="stat gray" data-stat="inceleme"><small>⚪ ${t("review")}</small><b>${c.inceleme}</b></button>`}
-function renderQuickActions(){const c=counts();quickActions.innerHTML=`<h2>${t("quickTitle")}</h2><div class="quickGrid"><button data-go="companies"><span>🏢</span><b>${t("companies")}</b><small>${c.firmalar}</small></button><button data-go="categories"><span>📂</span><b>${t("categories")}</b><small>${c.kategoriler}</small></button><button data-go="countries"><span>🌍</span><b>${t("countries")||"Ülkeler"}</b><small>${c.ulkeler||0}</small></button><button data-go="alternatives"><span>⭐</span><b>${t("withAlt")}</b><small>${c.altli}</small></button><button data-go="favorites"><span>❤️</span><b>${t("favorites")}</b><small>${c.fav}</small></button><button data-go="suggestions"><span>📝</span><b>Öneri</b><small>+</small></button><button data-go="compare"><span>⚖️</span><b>Karşılaştır</b><small>2</small></button><button data-go="admin"><span>⚙️</span><b>${t("admin")}</b><small>ODS</small></button></div>`}
+function renderQuickActions(){const c=counts();quickActions.innerHTML=`<h2>${t("quickTitle")}</h2><div class="quickGrid"><button data-go="companies"><span>🏢</span><b>${t("companies")}</b><small>${c.firmalar}</small></button><button data-go="categories"><span>📂</span><b>${t("categories")}</b><small>${c.kategoriler}</small></button><button data-go="countries"><span>🌍</span><b>${t("countries")||"Ülkeler"}</b><small>${c.ulkeler||0}</small></button><button data-go="alternatives"><span>⭐</span><b>${t("withAlt")}</b><small>${c.altli}</small></button><button data-go="favorites"><span>❤️</span><b>${t("favorites")}</b><small>${c.fav}</small></button><button data-go="moderation"><span>🛡️</span><b>Moderasyon</b><small>⚙️</small></button><button data-go="suggestions"><span>📝</span><b>Öneri</b><small>+</small></button><button data-go="compare"><span>⚖️</span><b>Karşılaştır</b><small>2</small></button><button data-go="admin"><span>⚙️</span><b>${t("admin")}</b><small>ODS</small></button></div>`}
 function renderFilters(){const arr=[["all",t("all")],["boykot",`🔴 ${t("boycott")}`],["safe",`✅ ${t("notBoycotted")}`],["altli",`⭐ ${t("withAlt")}`],["inceleme",`⚪ ${t("review")}`],["fav",`❤️ ${t("favorites")}`]];quickFilters.innerHTML=arr.map(([k,l])=>`<button class="chip ${filter===k?'active':''}" data-filter="${k}">${l}</button>`).join("")}
 function filteredList(base=DATA){const q=norm(search.value);return base.filter(x=>(!q||x.hay.includes(q))&&(filter==="all"||(filter==="boykot"&&x.status==="boykot")||(filter==="safe"&&x.status==="safe")||(filter==="altli"&&hasAlternative(x))||(filter==="inceleme"&&x.status==="inceleme")||(filter==="fav"&&isFav(x.marka)))).sort((a,b)=>Number(isFav(b.marka))-Number(isFav(a.marka))||a.marka.localeCompare(b.marka,"tr"))}
 function imageHtml(x){return x.imageUrl?`<div class="brandImage"><img src="${esc(x.imageUrl)}" alt="${esc(x.marka)}" loading="lazy" onerror="this.parentElement.classList.add('noImage');this.remove();"></div>`:`<div class="brandImage noImage"><span>🌿</span></div>`}
@@ -1201,7 +1263,7 @@ const fileInput = $("spreadsheetFile");
 if(fileInput) fileInput.addEventListener("change", e=>readSpreadsheetFile(e.target.files[0]));
 }
 
-function render(){document.querySelectorAll(".bottomNav button").forEach(b=>b.classList.toggle("active",b.dataset.view===view));if(currentGroup)return renderHome(currentGroup.items);if(view==="home")return renderHome();if(view==="alternatives"){filter="altli";return renderHome()}if(view==="favorites"){filter="fav";return renderHome()}if(view==="companies")return renderCompanies();if(view==="categories")return renderCategories();if(view==="countries")return renderCountries();if(view==="suggestions")return renderSuggestions();if(view==="compare")return renderCompare();if(view==="admin")return renderAdminLocal()}
+function render(){document.querySelectorAll(".bottomNav button").forEach(b=>b.classList.toggle("active",b.dataset.view===view));if(currentGroup)return renderHome(currentGroup.items);if(view==="home")return renderHome();if(view==="alternatives"){filter="altli";return renderHome()}if(view==="favorites"){filter="fav";return renderHome()}if(view==="companies")return renderCompanies();if(view==="categories")return renderCategories();if(view==="countries")return renderCountries();if(view==="moderation")return renderModeration();if(view==="suggestions")return renderSuggestions();if(view==="compare")return renderCompare();if(view==="admin")return renderAdminLocal()}
 function detail(x){const d=$("detailDialog"),c=$("detailContent");c.innerHTML=`<div class="detailHead"><h2>${esc(x.marka)}</h2><p>${statusLabel(x.status)}</p></div><div class="detailBody">${x.imageUrl?`<div class="detailImage"><img src="${esc(x.imageUrl)}" alt="${esc(x.marka)}"></div>`:""}<div class="detailLine"><span>${t("parent")}</span><b>${esc(x.anaFirma||"-")}</b></div><div class="detailLine"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div><div class="detailLine"><span>${t("country")||"Ülke"}</span><b>${esc(x.ulke||"-")}</b></div><div class="detailLine"><span>${t("barcode")}</span><b>${esc((x.barkod||[]).join(", ")||"-")}</b></div><div class="detailLine"><span>${t("alternative")}</span><b>${esc(x.alternatif||"-")}</b></div><div class="detailLine"><span>${t("note")}</span><b>${esc(x.not||"-")}</b></div><div class="legalDetail">⚖️ ${esc(legalShortText())}<br>📝 ${esc(correctionPolicyText())}</div><div class="detailLine"><span>${t("source")}</span><b>${esc(x.kaynak||"-")}</b></div></div>`;d.showModal()}
 function handleBarcodeValue(code){const n=norm(code);const item=DATA.find(x=>Array.isArray(x.barkod)&&x.barkod.some(v=>norm(v)===n));if(item)detail(item);else{search.value=code;render()}}
 function applyTheme(){const dark=localStorage.getItem("ahlak_theme")==="dark";document.body.classList.toggle("dark",dark);themeBtn.textContent=dark?"☀️":"🌙"}

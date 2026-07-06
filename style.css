@@ -482,3 +482,43 @@ body.dark .importStatus{
 #sgSendSupabase{
   background:#0f766e!important;
 }
+
+
+/* V34 moderation panel */
+.moderationPanel{
+  grid-column:1/-1;
+  background:var(--card,#fff);
+  border-radius:26px;
+  padding:20px;
+  box-shadow:0 10px 32px rgba(0,0,0,.06);
+}
+.moderationList{display:grid;gap:12px}
+.moderationItem{
+  border:1px solid rgba(15,118,110,.18);
+  background:rgba(15,118,110,.06);
+  border-radius:18px;
+  padding:14px;
+}
+.modTop{display:flex;justify-content:space-between;gap:10px}
+.modTop span{
+  background:#0f766e;color:white;border-radius:999px;
+  padding:5px 10px;font-weight:900;font-size:12px;
+}
+.moderationItem a{color:#5F7138;font-weight:800;word-break:break-all}
+.moderationItem small{display:block;color:var(--muted,#66705f);margin-top:8px}
+.modActions{
+  display:grid;
+  grid-template-columns:1fr auto auto auto;
+  gap:8px;
+  margin-top:12px;
+}
+.modActions input{
+  border:1px solid rgba(95,113,56,.22);
+  border-radius:12px;
+  padding:10px;
+}
+.modActions button{
+  border:0;border-radius:12px;padding:10px 12px;
+  background:#0f766e;color:white;font-weight:900;
+}
+@media(max-width:760px){.modActions{grid-template-columns:1fr}.modTop{flex-direction:column}}

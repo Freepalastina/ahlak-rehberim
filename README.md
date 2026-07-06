@@ -221,3 +221,9 @@ Güvenlik:
 - Kullanıcı önerilerini Supabase `suggestions` tablosuna gönderme eklendi.
 - `supabase_v33_suggestions.sql` eklendi.
 - Moderasyon altyapısı için durum/editor_notu alanları eklendi.
+
+## V34 Moderasyon Paneli
+- Supabase önerilerini listeleme eklendi.
+- Öneri durum güncelleme eklendi.
+- Editör notu ekleme eklendi.
+- Yerel önerileri gösterme eklendi.
