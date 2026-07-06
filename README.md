@@ -140,3 +140,11 @@ Görsel ekleme:
 1. Görseli `images/` klasörüne koy.
 2. `data.json` içinde ilgili markaya `"image_url": "images/dosya-adi.png"` yaz.
 3. Commit ve push yap.
+
+## V23 Kaynak Merkezi
+- Marka detayında düzenli Kaynak Merkezi eklendi.
+- `kaynaklar` alanı desteklenir: başlık, URL, tür, tarih, not.
+- `sonGuncelleme`, `ozet`, `kaynakDurumu` alanları eklendi.
+- Eski `kaynak` metinlerinden 2000 adet kaynak nesnesi üretildi.
+- Kaynaksız kayıtlar için “Kaynak kontrolü gerekli” mesajı gösterilir.
+- `kaynak_sablonu.json` eklendi.

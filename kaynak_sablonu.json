@@ -1,0 +1,15 @@
+{
+  "marka": "Örnek Marka",
+  "kaynaklar": [
+    {
+      "baslik": "Kaynak başlığı",
+      "url": "https://...",
+      "tur": "Resmî şirket / Haber / STK raporu / Kamu belgesi",
+      "tarih": "YYYY-MM-DD",
+      "not": "Kaynak hakkında kısa açıklama"
+    }
+  ],
+  "sonGuncelleme": "YYYY-MM-DD",
+  "ozet": "Kayıt hakkında tarafsız kısa bilgi özeti.",
+  "kaynakDurumu": "Kaynak mevcut / Kaynak kontrolü gerekli / Doğrulanıyor"
+}

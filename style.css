@@ -153,3 +153,30 @@ body.dark .importStatus{
   .brandImage{height:150px}
   .detailImage{height:210px}
 }
+
+
+/* V23 source center */
+.sourceList{display:grid;gap:10px;margin:12px 0 16px}
+.sourceItem{
+  border:1px solid rgba(95,113,56,.18);
+  background:rgba(95,113,56,.07);
+  border-radius:18px;
+  padding:12px;
+}
+.sourceItem b{display:block}
+.sourceItem small{display:block;color:var(--muted,#66705f);margin-top:3px}
+.sourceItem a{
+  display:inline-block;margin-top:9px;
+  background:#5F7138;color:#fff!important;
+  text-decoration:none;border-radius:12px;
+  padding:8px 12px;font-weight:800;
+}
+.sourceItem p{margin:8px 0 0;line-height:1.45}
+.sourceEmpty{
+  border:1px dashed rgba(95,113,56,.35);
+  background:rgba(95,113,56,.06);
+  border-radius:18px;
+  padding:14px;
+  color:var(--muted,#66705f);
+  line-height:1.5;
+}

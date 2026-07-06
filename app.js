@@ -7,7 +7,7 @@ if(location.search.includes("clear-cache") || location.search.includes("v20-clea
   }catch(e){}
 }
 
-const VERSION="20260706-v22-marka-gorselleri";
+const VERSION="20260706-v23-kaynak-merkezi";
 const SUPABASE_URL="https://imicltjdfzqlxzvodheq.supabase.co";
 const SUPABASE_KEY="sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
 const supabaseClient=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
@@ -171,6 +171,31 @@ function rawStatus(r){
   return d ? d : "boykot";
 }
 
+
+function parseSources(x){
+  if(Array.isArray(x.kaynaklar)) return x.kaynaklar.filter(s=>s && (s.url||s.baslik));
+  const raw=String(x.kaynak||"").split(/[;\n]+/).map(v=>v.trim()).filter(Boolean);
+  return raw.map(u=>({baslik:"Bilgi kaynağı",url:u,tur:"Kamuya açık kaynak",tarih:"",not:""}));
+}
+function sourceCount(x){return parseSources(x).length}
+function sourceStatusLabel(x){
+  const n=sourceCount(x);
+  if(n>0) return `📚 ${n} ${t("source")}`;
+  return "📚 Kaynak kontrolü gerekli";
+}
+function renderSourcesList(x){
+  const list=parseSources(x);
+  if(!list.length){
+    return `<div class="sourceEmpty">Bu kayıt için henüz düzenli kaynak eklenmemiştir. Kamuya açık ve doğrulanabilir kaynak eklenmesi önerilir.</div>`;
+  }
+  return `<div class="sourceList">${list.map(s=>`
+    <article class="sourceItem">
+      <div><b>${esc(s.baslik||"Bilgi kaynağı")}</b><small>${esc(s.tur||"Kamuya açık kaynak")}${s.tarih?` · ${esc(s.tarih)}`:""}</small></div>
+      ${s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener">Aç</a>`:""}
+      ${s.not?`<p>${esc(s.not)}</p>`:""}
+    </article>`).join("")}</div>`;
+}
+
 function fallbackBrandImage(name){
   const text = encodeURIComponent((name||"A").trim().slice(0,2).toUpperCase());
   return `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='300' viewBox='0 0 480 300'%3E%3Crect width='480' height='300' rx='34' fill='%23EEF3DF'/%3E%3Ccircle cx='240' cy='140' r='70' fill='%235F7138' opacity='.16'/%3E%3Ctext x='240' y='162' text-anchor='middle' font-family='Arial,sans-serif' font-size='52' font-weight='800' fill='%235F7138'%3E${text}%3C/text%3E%3Ctext x='240' y='225' text-anchor='middle' font-family='Arial,sans-serif' font-size='20' font-weight='700' fill='%235F7138' opacity='.75'%3EAhlak Rehberim%3C/text%3E%3C/svg%3E`;
@@ -208,7 +233,7 @@ function normalizeItem(raw,i){
   if(typeof isSafeRecord==="function" && isSafeRecord(raw)) status="safe";
 
   const hay=norm([marka,anaFirma,anaKategori,altKategori,kategori,ulke,alternatif,kaynak,not,barkod.join(" "),imageUrl,statusLabel(status)].join(" "));
-  return {id:raw.id||null,marka,anaFirma,anaKategori,altKategori,kategori,ulke,alternatif,kaynak,not,barkod,imageUrl,status,hay};
+  return {id:raw.id||null,marka,anaFirma,anaKategori,altKategori,kategori,ulke,alternatif,kaynak,kaynaklar:raw.kaynaklar||[],sonGuncelleme:raw.sonGuncelleme||raw.son_guncelleme||"",ozet:raw.ozet||raw.özet||"",kaynakDurumu:raw.kaynakDurumu||"",not,barkod,imageUrl,status,hay};
 }
 function toLegacy(x){
   let normalizedStatus = rawStatus({durum:x.status || x.durum || ""});
@@ -232,7 +257,7 @@ function toLegacy(x){
     not:x.not,
     durum:normalizedStatus,
     barkod:Array.isArray(x.barkod)?x.barkod:[],
-    image_url:x.imageUrl||x.image_url||""
+    image_url:x.imageUrl||x.image_url||"", kaynaklar:x.kaynaklar||[], sonGuncelleme:x.sonGuncelleme||"", ozet:x.ozet||"", kaynakDurumu:x.kaynakDurumu||""
   };
 }
 
