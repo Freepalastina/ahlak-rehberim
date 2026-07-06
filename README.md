@@ -156,3 +156,13 @@ Görsel ekleme:
 - Eski `alternatif` metinlerinden 2156 alternatif nesnesi üretildi.
 - Alternatif yoksa “Alternatif önerisi bekleniyor” mesajı gösterilir.
 - `alternatif_sablonu.json` eklendi.
+
+## V25 Barkod Merkezi
+- Marka kartlarında barkod sayısı gösterilir.
+- Marka detayında `📦 Barkod Merkezi` bölümü eklendi.
+- Barkod arama alanı eklendi.
+- `barkodlar` alanı desteklenir: kod, tür, not.
+- Mevcut veriden 0 barkod nesnesi üretildi.
+- `barkod_sablonu.json` eklendi.
+
+Not: Bu sürüm kamera ile canlı barkod tarama değil, barkod numarasıyla arama yapar. Kamera tarama V26’da eklenebilir.

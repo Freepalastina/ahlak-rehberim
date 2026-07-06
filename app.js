@@ -7,7 +7,7 @@ if(location.search.includes("clear-cache") || location.search.includes("v20-clea
   }catch(e){}
 }
 
-const VERSION="20260706-v24-alternatif-merkezi";
+const VERSION="20260706-v25-barkod-merkezi";
 const SUPABASE_URL="https://imicltjdfzqlxzvodheq.supabase.co";
 const SUPABASE_KEY="sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
 const supabaseClient=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
@@ -68,6 +68,26 @@ function showLegalNoticeOnce(){
     document.getElementById("legalOk").onclick=()=>{localStorage.setItem(key,"ok");box.remove();};
   },500);
 }
+
+function ensureBarcodeSearch(){
+  if(document.getElementById("barcodeBox")) return;
+  const searchCard=document.querySelector(".search-card")||document.querySelector(".searchBox")||document.querySelector("#search")?.parentElement;
+  if(!searchCard) return;
+  const box=document.createElement("div");
+  box.id="barcodeBox";
+  box.className="barcodeBox";
+  box.innerHTML=`<input id="barcodeInput" inputmode="numeric" placeholder="Barkod ara / EAN / GTIN"><button id="barcodeFind">📦 Ara</button>`;
+  searchCard.insertAdjacentElement("afterend",box);
+  document.getElementById("barcodeFind").onclick=()=>{
+    const found=findByBarcode(document.getElementById("barcodeInput").value);
+    if(found){ openDetail(found.id); }
+    else{ alert("Barkod bulunamadı."); }
+  };
+  document.getElementById("barcodeInput").addEventListener("keydown",e=>{
+    if(e.key==="Enter") document.getElementById("barcodeFind").click();
+  });
+}
+
 function renderLegalFooter(){
   return `<div class="legalFooter"><b>Bilgilendirme:</b> ${esc(legalShortText())}<br>${esc(correctionPolicyText())}<br><a href="hukuki-bilgilendirme.html">Hukuki Bilgilendirme</a> · <a href="kaynak-politikasi.html">Kaynak Politikası</a> · <a href="duzeltme-politikasi.html">Düzeltme Politikası</a></div>`;
 }
@@ -173,6 +193,36 @@ function rawStatus(r){
 
 
 
+
+function parseBarcodes(x){
+  if(Array.isArray(x.barkodlar)) return x.barkodlar.filter(b=>b && (b.kod||b.code));
+  const raw=Array.isArray(x.barkod)?x.barkod:String(x.barkod||"").split(/[;\n, ]+/);
+  return raw.map(v=>String(v).trim()).filter(v=>/^\d{6,14}$/.test(v)).map(v=>({kod:v,tur:"EAN/GTIN",not:""}));
+}
+function barcodeCount(x){return parseBarcodes(x).length}
+function barcodeStatusLabel(x){
+  const n=barcodeCount(x);
+  if(n>0) return `📦 ${n} Barkod`;
+  return "📦 Barkod bekleniyor";
+}
+function renderBarcodesList(x){
+  const list=parseBarcodes(x);
+  if(!list.length){
+    return `<div class="barcodeEmpty">Bu kayıt için henüz barkod eklenmemiştir.</div>`;
+  }
+  return `<div class="barcodeList">${list.map(b=>`
+    <article class="barcodeItem">
+      <b>📦 ${esc(b.kod||b.code)}</b>
+      <small>${esc(b.tur||"EAN/GTIN")}</small>
+      ${b.not?`<p>${esc(b.not)}</p>`:""}
+    </article>`).join("")}</div>`;
+}
+function findByBarcode(code){
+  const clean=String(code||"").replace(/\D+/g,"");
+  if(!clean) return null;
+  return DATA.find(x=>parseBarcodes(x).some(b=>String(b.kod||b.code)===clean));
+}
+
 function parseAlternatives(x){
   if(Array.isArray(x.alternatifler)) return x.alternatifler.filter(a=>a && (a.marka||a.name));
   const raw=String(x.alternatif||"").split(/[;\n,•]+/).map(v=>v.trim()).filter(Boolean);
@@ -258,7 +308,7 @@ function normalizeItem(raw,i){
   if(typeof isSafeRecord==="function" && isSafeRecord(raw)) status="safe";
 
   const hay=norm([marka,anaFirma,anaKategori,altKategori,kategori,ulke,alternatif,kaynak,not,barkod.join(" "),imageUrl,statusLabel(status)].join(" "));
-  return {id:raw.id||null,marka,anaFirma,anaKategori,altKategori,kategori,ulke,alternatif,kaynak,kaynaklar:raw.kaynaklar||[],alternatifler:raw.alternatifler||[],alternatifDurumu:raw.alternatifDurumu||"",sonGuncelleme:raw.sonGuncelleme||raw.son_guncelleme||"",ozet:raw.ozet||raw.özet||"",kaynakDurumu:raw.kaynakDurumu||"",not,barkod,imageUrl,status,hay};
+  return {id:raw.id||null,marka,anaFirma,anaKategori,altKategori,kategori,ulke,alternatif,kaynak,kaynaklar:raw.kaynaklar||[],alternatifler:raw.alternatifler||[],alternatifDurumu:raw.alternatifDurumu||"",barkodlar:raw.barkodlar||[],barkodDurumu:raw.barkodDurumu||"",sonGuncelleme:raw.sonGuncelleme||raw.son_guncelleme||"",ozet:raw.ozet||raw.özet||"",kaynakDurumu:raw.kaynakDurumu||"",not,barkod,imageUrl,status,hay};
 }
 function toLegacy(x){
   let normalizedStatus = rawStatus({durum:x.status || x.durum || ""});
@@ -282,7 +332,7 @@ function toLegacy(x){
     not:x.not,
     durum:normalizedStatus,
     barkod:Array.isArray(x.barkod)?x.barkod:[],
-    image_url:x.imageUrl||x.image_url||"", kaynaklar:x.kaynaklar||[], alternatifler:x.alternatifler||[], alternatifDurumu:x.alternatifDurumu||"", sonGuncelleme:x.sonGuncelleme||"", ozet:x.ozet||"", kaynakDurumu:x.kaynakDurumu||""
+    image_url:x.imageUrl||x.image_url||"", kaynaklar:x.kaynaklar||[], alternatifler:x.alternatifler||[], alternatifDurumu:x.alternatifDurumu||"", barkodlar:x.barkodlar||[], barkodDurumu:x.barkodDurumu||"", sonGuncelleme:x.sonGuncelleme||"", ozet:x.ozet||"", kaynakDurumu:x.kaynakDurumu||""
   };
 }
 
@@ -331,7 +381,7 @@ function imageHtml(x){return x.imageUrl?`<div class="brandImage"><img src="${esc
 function altHtml(x){if(x.status==="safe"&&!x.alternatif)return`<div class="altBox"><span>${t("notBoycotted")}</span><b>${t("safeInfo")}</b></div>`;if(!hasAlternative(x))return`<div class="altBox"><span>${t("alternative")}</span><b>-</b></div>`;const tags=String(x.alternatif).split(/[;,•]/).map(v=>v.trim()).filter(Boolean).slice(0,8);return`<div class="altBox"><span>${t("alternative")}</span><div class="tags">${tags.map(v=>`<em>${esc(v)}</em>`).join("")}</div></div>`}
 function card(x){return`<article class="card ${x.status}" data-brand="${encodeURIComponent(x.marka)}">${imageHtml(x)}<div class="cardTop"><div><div class="badgeLine"><span class="badge ${x.status}">${statusLabel(x.status)}</span>${hasAlternative(x)?`<span class="badge alternatif">⭐ ${t("withAlt")}</span>`:""}</div><h3>${esc(x.marka)}</h3><div class="company">🏢 ${esc(x.anaFirma||"-")}</div></div><button class="fav" data-fav="${encodeURIComponent(x.marka)}">${isFav(x.marka)?"❤️":"♡"}</button></div><div class="meta"><div class="box"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div>${x.ulke?`<div class="box" style="margin-top:8px"><span>${t("country")||"Ülke"}</span><b>${esc(x.ulke)}</b></div>`:""}</div>${altHtml(x)}<button class="more">${t("details")}</button></article>`}
 function titleFor(){if(currentGroup)return currentGroup.title;if(view==="favorites"||filter==="fav")return`❤️ ${t("favorites")}`;if(view==="alternatives"||filter==="altli")return`⭐ ${t("withAlt")}`;return t("all")}
-function renderHome(base=DATA){const list=filteredList(base);renderStats();renderQuickActions();renderFilters();sectionTitle.innerHTML=`<h2>${esc(titleFor())}</h2><span>${list.length} ${t("results")}</span>`;results.innerHTML=(list.length?list.slice(0,800).map(card).join(""):`<div class="empty">${t("noResult")}</div>`)+renderLegalFooter()}
+function renderHome(base=DATA){const list=filteredList(base);renderStats();ensureBarcodeSearch();renderQuickActions();renderFilters();sectionTitle.innerHTML=`<h2>${esc(titleFor())}</h2><span>${list.length} ${t("results")}</span>`;results.innerHTML=(list.length?list.slice(0,800).map(card).join(""):`<div class="empty">${t("noResult")}</div>`)+renderLegalFooter()}
 function groupBy(key){const m=new Map();DATA.forEach(x=>{const n=x[key]||"-";if(!m.has(n))m.set(n,[]);m.get(n).push(x)});return[...m.entries()].sort((a,b)=>b[1].length-a[1].length||a[0].localeCompare(b[0],"tr"))}
 function renderCompanies(){renderStats();renderQuickActions();quickFilters.innerHTML="";search.value="";const g=groupBy("anaFirma");sectionTitle.innerHTML=`<h2>🏢 ${t("companies")}</h2><span>${g.length}</span>`;results.innerHTML=g.map(([n,it])=>`<button class="group" data-company="${encodeURIComponent(n)}"><div><b>${esc(n)}</b><small>${it.slice(0,4).map(x=>esc(x.marka)).join(", ")}${it.length>4?"...":""}</small></div><div class="count">${it.length}</div></button>`).join("")}
 function catIcon(n){const x=norm(n);if(x.includes("icecek")||x.includes("su"))return"🥤";if(x.includes("gida")||x.includes("cikolata"))return"🍫";if(x.includes("temizlik"))return"🧼";if(x.includes("kozmetik"))return"💄";return"📂"}

@@ -1,0 +1,11 @@
+{
+  "marka": "Örnek Marka",
+  "barkodlar": [
+    {
+      "kod": "1234567890123",
+      "tur": "EAN/GTIN",
+      "not": "Ürün barkodu"
+    }
+  ],
+  "barkodDurumu": "Barkod mevcut / Barkod bekleniyor"
+}
