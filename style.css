@@ -477,3 +477,8 @@ body.dark .importStatus{
   background:#7c3aed;color:white;font-weight:900;
   align-self:flex-start;
 }
+
+/* V33 suggestions supabase */
+#sgSendSupabase{
+  background:#0f766e!important;
+}

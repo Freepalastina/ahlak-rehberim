@@ -216,3 +216,8 @@ Güvenlik:
 - Marka detayından doğrudan düzeltme önerisi başlatılabilir.
 - Öneriler localStorage içinde saklanır.
 - Öneriler JSON olarak dışa aktarılabilir.
+
+## V33 Öneri Supabase Sync
+- Kullanıcı önerilerini Supabase `suggestions` tablosuna gönderme eklendi.
+- `supabase_v33_suggestions.sql` eklendi.
+- Moderasyon altyapısı için durum/editor_notu alanları eklendi.

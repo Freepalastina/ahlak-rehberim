@@ -7,7 +7,7 @@ if(location.search.includes("clear-cache") || location.search.includes("v20-clea
   }catch(e){}
 }
 
-const VERSION="20260706-v32-kullanici-oneri";
+const VERSION="20260706-v33-oneri-supabase";
 const SUPABASE_URL="https://imicltjdfzqlxzvodheq.supabase.co";
 const SUPABASE_KEY="sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
 const supabaseClient=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
@@ -95,6 +95,40 @@ function ensureBarcodeSearch(){
 
 /* V31 QR + Share */
 
+
+/* V33 Suggestions Supabase Sync */
+async function sendSuggestionToSupabase(s){
+  const c=getSbConfig();
+  if(!c.url||!c.key) throw new Error("Supabase ayarları eksik.");
+  const table="suggestions";
+  const url=c.url.replace(/\/+$/,"")+"/rest/v1/"+table;
+  const payload={
+    tur:s.tur,
+    marka:s.marka,
+    ana_firma:s.anaFirma,
+    url:s.url,
+    aciklama:s.aciklama,
+    durum:"bekliyor",
+    created_at:s.tarih||new Date().toISOString()
+  };
+  const res=await fetch(url,{method:"POST",headers:sbHeaders(c.key),body:JSON.stringify(payload)});
+  const text=await res.text();
+  if(!res.ok) throw new Error(text||res.statusText);
+  return text;
+}
+async function sendAllSuggestionsToSupabase(){
+  const list=getSuggestions();
+  if(!list.length){alert("Gönderilecek öneri yok.");return}
+  let ok=0,fail=0,msgs=[];
+  for(const s of list){
+    try{await sendSuggestionToSupabase(s);ok++}catch(e){fail++;msgs.push(e.message)}
+  }
+  alert(`Gönderildi: ${ok}\nHata: ${fail}${msgs[0]?"\nİlk hata: "+msgs[0]:""}`);
+}
+function suggestionSyncButtonHtml(){
+  return `<button id="sgSendSupabase">Önerileri Supabase'e Gönder</button>`;
+}
+
 /* V32 User Suggestions */
 function suggestionKey(){return "ahlak_user_suggestions_v32";}
 function getSuggestions(){try{return JSON.parse(localStorage.getItem(suggestionKey())||"[]")}catch(e){return []}}
@@ -117,7 +151,7 @@ function suggestionFormHtml(prefill={}){
     <label>Açıklama<textarea id="sgNote" placeholder="Kısa ve tarafsız açıklama yazın. Kesin suçlama içeren ifade kullanmayın."></textarea></label>
     <div class="adminActions">
       <button id="sgSave">Öneriyi Kaydet</button>
-      <button id="sgExport">Önerileri JSON İndir</button>
+      <button id="sgExport">Önerileri JSON İndir</button>${suggestionSyncButtonHtml()}
       <button id="sgClear">Önerileri Temizle</button>
     </div>
     <h3>Kaydedilen Öneriler</h3>
@@ -154,7 +188,7 @@ function setupSuggestionForm(){
     alert("Öneri kaydedildi.");
   };
   document.getElementById("sgExport").onclick=()=>downloadText("ahlak_rehberim_oneriler.json",JSON.stringify(getSuggestions(),null,2));
-  document.getElementById("sgClear").onclick=()=>{if(confirm("Tüm öneriler silinsin mi?")){setSuggestions([]);renderSuggestionList()}};
+  document.getElementById("sgClear").onclick=()=>{if(confirm("Tüm öneriler silinsin mi?")){setSuggestions([]);renderSuggestionList()}}; const sgSend=document.getElementById("sgSendSupabase"); if(sgSend) sgSend.onclick=()=>sendAllSuggestionsToSupabase();
   renderSuggestionList();
 }
 function renderSuggestions(){
