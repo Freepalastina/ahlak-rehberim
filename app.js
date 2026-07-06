@@ -7,7 +7,7 @@ if(location.search.includes("clear-cache") || location.search.includes("v20-clea
   }catch(e){}
 }
 
-const VERSION="20260706-v25-barkod-merkezi";
+const VERSION="20260706-v26-admin-panel";
 const SUPABASE_URL="https://imicltjdfzqlxzvodheq.supabase.co";
 const SUPABASE_KEY="sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
 const supabaseClient=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
@@ -628,6 +628,117 @@ function clearAdminForm(){["adminMarka","adminAnaFirma","adminKategori","adminAl
 async function adminLogin(){const{data,error}=await supabaseClient.auth.signInWithPassword({email:$("adminEmail").value.trim(),password:$("adminPassword").value});if(error){toast(error.message);return}adminSession=data.session;toast(t("supabaseReady"));renderAdmin()}
 async function adminLogout(){await supabaseClient.auth.signOut();adminSession=null;view="home";filter="all";search.value="";render()}
 function downloadDataJson(){const raw=DATA.map(toLegacy);const blob=new Blob([JSON.stringify(raw,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="data.json";a.click();URL.revokeObjectURL(url);toast(t("downloaded"))}
+
+/* V26 Admin Panel */
+function adminStorageKey(){ return "ahlak_admin_local_v26"; }
+function getAdminDrafts(){
+  try{return JSON.parse(localStorage.getItem(adminStorageKey())||"[]")}catch(e){return []}
+}
+function setAdminDrafts(list){
+  localStorage.setItem(adminStorageKey(), JSON.stringify(list||[]));
+}
+function downloadText(filename, text){
+  const blob=new Blob([text],{type:"application/json;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download=filename;
+  a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+}
+function adminFormHtml(existing={}){
+  const srcs=Array.isArray(existing.kaynaklar)?existing.kaynaklar:[];
+  const alts=Array.isArray(existing.alternatifler)?existing.alternatifler:[];
+  const bcs=Array.isArray(existing.barkodlar)?existing.barkodlar:[];
+  return `<section class="adminPanel">
+    <h2>⚙️ Yönetim Paneli</h2>
+    <p class="legal-small">Bu panel tarayıcıda yerel taslak oluşturur. Supabase bağlantısı kurulana kadar değişiklikleri JSON olarak dışa aktarabilirsiniz.</p>
+    <div class="adminGrid">
+      <label>Marka<input id="admMarka" value="${esc(existing.marka||"")}"></label>
+      <label>Ana Firma<input id="admFirma" value="${esc(existing.anaFirma||"")}"></label>
+      <label>Kategori<input id="admKategori" value="${esc(existing.kategori||"")}"></label>
+      <label>Ülke<input id="admUlke" value="${esc(existing.ulke||"")}"></label>
+      <label>Durum<select id="admDurum">
+        <option value="boykot">İncelenmesi Önerilir</option>
+        <option value="safe">Tercih Edilebilir</option>
+        <option value="inceleme">Bilgi Bekleniyor</option>
+        <option value="alternatif">Alternatif</option>
+      </select></label>
+      <label>Görsel URL<input id="admImage" value="${esc(existing.image_url||existing.imageUrl||"")}"></label>
+    </div>
+    <label>Bilgi Özeti<textarea id="admOzet">${esc(existing.ozet||"")}</textarea></label>
+    <label>Açıklama<textarea id="admNot">${esc(existing.not||"")}</textarea></label>
+    <h3>📚 Kaynaklar</h3>
+    <textarea id="admKaynaklar" placeholder="Her satıra bir kaynak URL">${esc(srcs.map(s=>s.url||"").filter(Boolean).join("\n") || existing.kaynak || "")}</textarea>
+    <h3>⭐ Alternatifler</h3>
+    <textarea id="admAlternatifler" placeholder="Her satıra bir alternatif marka">${esc(alts.map(a=>a.marka||a.name||"").filter(Boolean).join("\n") || existing.alternatif || "")}</textarea>
+    <h3>📦 Barkodlar</h3>
+    <textarea id="admBarkodlar" placeholder="Her satıra bir barkod">${esc(bcs.map(b=>b.kod||b.code||"").filter(Boolean).join("\n") || "")}</textarea>
+    <div class="adminActions">
+      <button id="admSave">Yerel Taslak Kaydet</button>
+      <button id="admExportOne">Bu Kaydı JSON İndir</button>
+      <button id="admExportAll">Tüm Veriyi JSON İndir</button>
+    </div>
+    <h3>Yerel Taslaklar</h3>
+    <div id="admDrafts"></div>
+  </section>`;
+}
+function readAdminForm(){
+  const lines=id=>String(document.getElementById(id)?.value||"").split(/\n+/).map(x=>x.trim()).filter(Boolean);
+  const marka=document.getElementById("admMarka").value.trim();
+  return {
+    marka,
+    anaFirma:document.getElementById("admFirma").value.trim(),
+    kategori:document.getElementById("admKategori").value.trim(),
+    ulke:document.getElementById("admUlke").value.trim(),
+    durum:document.getElementById("admDurum").value,
+    image_url:document.getElementById("admImage").value.trim(),
+    ozet:document.getElementById("admOzet").value.trim(),
+    not:document.getElementById("admNot").value.trim(),
+    kaynaklar:lines("admKaynaklar").map(u=>({baslik:"Bilgi kaynağı",url:u,tur:"Kamuya açık kaynak",tarih:"",not:""})),
+    alternatifler:lines("admAlternatifler").map(a=>({marka:a,kategori:document.getElementById("admKategori").value.trim(),ulke:"",not:""})),
+    barkodlar:lines("admBarkodlar").map(b=>({kod:b.replace(/\D+/g,""),tur:"EAN/GTIN",not:""})).filter(b=>b.kod),
+    sonGuncelleme:new Date().toISOString().slice(0,10),
+    kaynakDurumu:"Kaynak kontrolü gerekli",
+    alternatifDurumu:"Alternatif kontrolü gerekli",
+    barkodDurumu:"Barkod kontrolü gerekli"
+  };
+}
+function renderAdminDrafts(){
+  const box=document.getElementById("admDrafts");
+  if(!box) return;
+  const drafts=getAdminDrafts();
+  box.innerHTML=drafts.length?drafts.map((d,i)=>`<div class="draftItem"><b>${esc(d.marka||"-")}</b><span>${esc(d.durum||"")}</span><button data-load-draft="${i}">Aç</button><button data-del-draft="${i}">Sil</button></div>`).join(""):`<div class="sourceEmpty">Henüz yerel taslak yok.</div>`;
+}
+function setupAdminPanel(){
+  const save=document.getElementById("admSave");
+  if(!save) return;
+  save.onclick=()=>{
+    const item=readAdminForm();
+    if(!item.marka){alert("Marka adı gerekli.");return;}
+    const drafts=getAdminDrafts();
+    const idx=drafts.findIndex(x=>String(x.marka).toLowerCase()===String(item.marka).toLowerCase());
+    if(idx>=0) drafts[idx]=item; else drafts.push(item);
+    setAdminDrafts(drafts);
+    renderAdminDrafts();
+    alert("Yerel taslak kaydedildi.");
+  };
+  document.getElementById("admExportOne").onclick=()=>{
+    const item=readAdminForm();
+    downloadText(`${(item.marka||"kayit").replace(/[^a-z0-9ğüşöçıİĞÜŞÖÇ]+/gi,"_")}.json`, JSON.stringify(item,null,2));
+  };
+  document.getElementById("admExportAll").onclick=()=>{
+    const merged=[...DATA.map(x=>x.raw||x),...getAdminDrafts()];
+    downloadText("ahlak_rehberim_export.json", JSON.stringify(merged,null,2));
+  };
+  renderAdminDrafts();
+}
+function renderAdminLocal(){
+  renderStats();
+  sectionTitle.innerHTML=`<h2>⚙️ Yönetim</h2><span>V26</span>`;
+  results.innerHTML=adminFormHtml();
+  setupAdminPanel();
+}
+
 function renderAdmin(){
 stats.innerHTML="";
 quickActions.innerHTML="";
@@ -697,7 +808,7 @@ const fileInput = $("spreadsheetFile");
 if(fileInput) fileInput.addEventListener("change", e=>readSpreadsheetFile(e.target.files[0]));
 }
 
-function render(){document.querySelectorAll(".bottomNav button").forEach(b=>b.classList.toggle("active",b.dataset.view===view));if(currentGroup)return renderHome(currentGroup.items);if(view==="home")return renderHome();if(view==="alternatives"){filter="altli";return renderHome()}if(view==="favorites"){filter="fav";return renderHome()}if(view==="companies")return renderCompanies();if(view==="categories")return renderCategories();if(view==="countries")return renderCountries();if(view==="admin")return renderAdmin()}
+function render(){document.querySelectorAll(".bottomNav button").forEach(b=>b.classList.toggle("active",b.dataset.view===view));if(currentGroup)return renderHome(currentGroup.items);if(view==="home")return renderHome();if(view==="alternatives"){filter="altli";return renderHome()}if(view==="favorites"){filter="fav";return renderHome()}if(view==="companies")return renderCompanies();if(view==="categories")return renderCategories();if(view==="countries")return renderCountries();if(view==="admin")return renderAdminLocal()}
 function detail(x){const d=$("detailDialog"),c=$("detailContent");c.innerHTML=`<div class="detailHead"><h2>${esc(x.marka)}</h2><p>${statusLabel(x.status)}</p></div><div class="detailBody">${x.imageUrl?`<div class="detailImage"><img src="${esc(x.imageUrl)}" alt="${esc(x.marka)}"></div>`:""}<div class="detailLine"><span>${t("parent")}</span><b>${esc(x.anaFirma||"-")}</b></div><div class="detailLine"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div><div class="detailLine"><span>${t("country")||"Ülke"}</span><b>${esc(x.ulke||"-")}</b></div><div class="detailLine"><span>${t("barcode")}</span><b>${esc((x.barkod||[]).join(", ")||"-")}</b></div><div class="detailLine"><span>${t("alternative")}</span><b>${esc(x.alternatif||"-")}</b></div><div class="detailLine"><span>${t("note")}</span><b>${esc(x.not||"-")}</b></div><div class="legalDetail">⚖️ ${esc(legalShortText())}<br>📝 ${esc(correctionPolicyText())}</div><div class="detailLine"><span>${t("source")}</span><b>${esc(x.kaynak||"-")}</b></div></div>`;d.showModal()}
 function handleBarcodeValue(code){const n=norm(code);const item=DATA.find(x=>Array.isArray(x.barkod)&&x.barkod.some(v=>norm(v)===n));if(item)detail(item);else{search.value=code;render()}}
 function applyTheme(){const dark=localStorage.getItem("ahlak_theme")==="dark";document.body.classList.toggle("dark",dark);themeBtn.textContent=dark?"☀️":"🌙"}

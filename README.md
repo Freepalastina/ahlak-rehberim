@@ -166,3 +166,13 @@ Görsel ekleme:
 - `barkod_sablonu.json` eklendi.
 
 Not: Bu sürüm kamera ile canlı barkod tarama değil, barkod numarasıyla arama yapar. Kamera tarama V26’da eklenebilir.
+
+## V26 Admin Panel
+- Tarayıcıdan marka taslağı oluşturma
+- Kaynak / alternatif / barkod alanları
+- Yerel taslak kaydetme
+- Tek kayıt JSON indirme
+- Tüm veri JSON dışa aktarma
+- `admin_kullanim.md` eklendi
+
+Not: Bu sürüm Supabase'e doğrudan yazmaz. Güvenli ilk adım olarak yerel taslak + JSON dışa aktarma kullanır.

@@ -232,3 +232,31 @@ body.dark .importStatus{
   border-radius:18px;padding:14px;
   color:var(--muted,#66705f);
 }
+
+
+/* V26 admin panel */
+.adminPanel{
+  grid-column:1/-1;
+  background:var(--card,#fff);
+  border-radius:26px;
+  padding:20px;
+  box-shadow:0 10px 32px rgba(0,0,0,.06);
+}
+.adminGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.adminPanel label{display:flex;flex-direction:column;gap:7px;font-weight:800;margin:10px 0}
+.adminPanel input,.adminPanel textarea,.adminPanel select{
+  width:100%;border:1px solid rgba(95,113,56,.22);
+  border-radius:16px;padding:12px;background:#fff;font:inherit;
+}
+.adminPanel textarea{min-height:90px;resize:vertical}
+.adminActions{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+.adminActions button,.draftItem button{
+  border:0;border-radius:14px;padding:11px 14px;
+  background:#5F7138;color:white;font-weight:900;cursor:pointer;
+}
+.draftItem{
+  display:flex;gap:10px;align-items:center;justify-content:space-between;
+  border:1px solid rgba(95,113,56,.16);
+  border-radius:16px;padding:10px;margin:8px 0;background:rgba(95,113,56,.06);
+}
+.draftItem span{color:var(--muted,#66705f)}
