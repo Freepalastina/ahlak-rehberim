@@ -109,3 +109,12 @@ Eklenenler:
 - Daha yumuşak etiketler: “İncele / Dikkat”, “Alternatif / Tercih Edilebilir”
 - `hukuki-bilgilendirme.html`
 - Riskli kesin suçlama dilinden kaçınan metinler
+
+## V19 Ahlak Rehberim - Etik Tüketim Bilgi Rehberi
+Profesyonel platform yaklaşımı:
+- Daha güvenli ve tarafsız dil
+- Hukuki bilgilendirme, kullanım şartları, gizlilik, kaynak politikası, düzeltme politikası
+- “Boykot” yerine kullanıcı arayüzünde “İncelenmesi Önerilir”
+- “Boykotta Değil” yerine “Tercih Edilebilir”
+- Her kayıtta bilgi rehberi ve düzeltme notu
+- GitHub Pages workflow korunur

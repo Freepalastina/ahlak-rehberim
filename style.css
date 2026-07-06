@@ -83,3 +83,14 @@ body.dark .importStatus{
   background:rgba(95,113,56,.10); color:var(--muted,#5b6258);
   line-height:1.5; font-weight:700;
 }
+
+
+/* V19 professional platform polish */
+.legalFooter a{color:#5F7138;font-weight:900;text-decoration:none}
+.legalFooter a:hover{text-decoration:underline}
+.badge.boykot{background:#FFF3CD!important;color:#7A4B00!important}
+.stat.red{background:linear-gradient(135deg,#FFF3CD,#FDE68A)!important;color:#7A4B00!important}
+.platformNote{
+  margin:16px 0;padding:16px;border-radius:22px;background:rgba(95,113,56,.10);
+  border:1px solid rgba(95,113,56,.22);line-height:1.6
+}
