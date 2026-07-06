@@ -7,7 +7,7 @@ if(location.search.includes("clear-cache") || location.search.includes("v20-clea
   }catch(e){}
 }
 
-const VERSION="20260706-v28-supabase-live-read";
+const VERSION="20260706-v30-karsilastirma";
 const SUPABASE_URL="https://imicltjdfzqlxzvodheq.supabase.co";
 const SUPABASE_KEY="sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
 const supabaseClient=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
@@ -86,6 +86,117 @@ function ensureBarcodeSearch(){
   document.getElementById("barcodeInput").addEventListener("keydown",e=>{
     if(e.key==="Enter") document.getElementById("barcodeFind").click();
   });
+}
+
+
+/* V29 Smart Product Relations */
+
+/* V30 Compare */
+function compareKey(){return "ahlak_compare_v30";}
+function getCompareIds(){try{return JSON.parse(localStorage.getItem(compareKey())||"[]")}catch(e){return []}}
+function setCompareIds(ids){localStorage.setItem(compareKey(),JSON.stringify([...new Set(ids)].slice(0,2)))}
+function addCompare(id){
+  let ids=getCompareIds();
+  id=Number(id);
+  if(!ids.includes(id)) ids.push(id);
+  if(ids.length>2) ids=ids.slice(ids.length-2);
+  setCompareIds(ids);
+  alert("Karşılaştırmaya eklendi.");
+}
+function clearCompare(){setCompareIds([]);renderCompare()}
+function compareButton(x){return `<button class="compareAdd" data-compare-add="${esc(x.id)}">⚖️ Karşılaştır</button>`}
+function compareCell(x,field){
+  if(!x) return "-";
+  if(field==="durum") return statusLabel(x.status);
+  if(field==="kaynak") return typeof sourceCount==="function"?sourceCount(x):0;
+  if(field==="alternatif") return typeof altCount==="function"?altCount(x):0;
+  if(field==="barkod") return typeof barcodeCount==="function"?barcodeCount(x):0;
+  return esc(x[field]||"-");
+}
+function renderCompare(){
+  renderStats();
+  const ids=getCompareIds();
+  const items=ids.map(id=>DATA.find(x=>Number(x.id)===Number(id))).filter(Boolean);
+  sectionTitle.innerHTML=`<h2>⚖️ Karşılaştırma</h2><span>${items.length}/2</span>`;
+  const selector=`<div class="compareSearch">
+    <input id="compareSearchInput" placeholder="Karşılaştırmaya marka ekle...">
+    <div id="compareSearchResults"></div>
+  </div>`;
+  if(items.length<2){
+    results.innerHTML=selector+`<div class="sourceEmpty">Karşılaştırma için iki marka seç. Marka detayından “Karşılaştır” butonuna basabilir veya yukarıdan arayabilirsin.</div>${renderCompareCards(items)}`;
+  }else{
+    results.innerHTML=selector+renderCompareTable(items)+`<div class="adminActions"><button onclick="clearCompare()">Karşılaştırmayı Temizle</button></div>`;
+  }
+  setupCompareSearch();
+}
+function renderCompareCards(items){
+  if(!items.length) return "";
+  return `<div class="miniGrid">${items.map(miniBrandButton).join("")}</div>`;
+}
+function renderCompareTable(items){
+  const [a,b]=items;
+  const rows=[
+    ["Marka","marka"],
+    ["Ana Firma","anaFirma"],
+    ["Kategori","kategori"],
+    ["Ülke","ulke"],
+    ["Durum","durum"],
+    ["Kaynak Sayısı","kaynak"],
+    ["Alternatif Sayısı","alternatif"],
+    ["Barkod Sayısı","barkod"],
+    ["Son Güncelleme","sonGuncelleme"]
+  ];
+  return `<div class="compareTable">
+    <div class="compareHead"><div>Özellik</div><div>${esc(a.marka)}</div><div>${esc(b.marka)}</div></div>
+    ${rows.map(([label,field])=>`<div class="compareRow"><div>${label}</div><div>${compareCell(a,field)}</div><div>${compareCell(b,field)}</div></div>`).join("")}
+  </div>`;
+}
+function setupCompareSearch(){
+  const input=document.getElementById("compareSearchInput");
+  const box=document.getElementById("compareSearchResults");
+  if(!input||!box) return;
+  input.oninput=()=>{
+    const q=norm(input.value);
+    if(!q){box.innerHTML="";return}
+    const found=DATA.filter(x=>x.hay.includes(q)).slice(0,8);
+    box.innerHTML=found.map(x=>`<button class="compareResult" data-compare-add="${esc(x.id)}"><b>${esc(x.marka)}</b><small>${esc(x.anaFirma||"")} · ${statusLabel(x.status)}</small></button>`).join("");
+  };
+}
+
+function sameCompanyBrands(x){
+  if(!x || !x.anaFirma) return [];
+  return DATA.filter(y=>y.id!==x.id && y.anaFirma && y.anaFirma===x.anaFirma).slice(0,24);
+}
+function sameCategoryBrands(x){
+  if(!x || !x.kategori) return [];
+  return DATA.filter(y=>y.id!==x.id && y.kategori && y.kategori===x.kategori).slice(0,24);
+}
+function miniBrandButton(y){
+  return `<button class="miniBrand" data-id="${esc(y.id)}">
+    <b>${esc(y.marka)}</b>
+    <small>${statusLabel(y.status)}${y.ulke?` · ${esc(y.ulke)}`:""}</small>
+  </button>`;
+}
+function renderRelatedBrands(x){
+  const company=sameCompanyBrands(x);
+  const category=sameCategoryBrands(x);
+  return `<section class="relationBox">
+    <h3>🏢 Aynı Ana Firmaya Ait Markalar</h3>
+    ${company.length?`<div class="miniGrid">${company.map(miniBrandButton).join("")}</div>`:`<div class="relationEmpty">Aynı ana firmaya ait başka marka bulunamadı.</div>`}
+    <h3>📂 Aynı Kategorideki Diğer Kayıtlar</h3>
+    ${category.length?`<div class="miniGrid">${category.map(miniBrandButton).join("")}</div>`:`<div class="relationEmpty">Aynı kategoride başka kayıt bulunamadı.</div>`}
+  </section>`;
+}
+function productTrustSummary(x){
+  const sources=typeof sourceCount==="function"?sourceCount(x):0;
+  const alts=typeof altCount==="function"?altCount(x):0;
+  const bcs=typeof barcodeCount==="function"?barcodeCount(x):0;
+  return `<div class="trustGrid">
+    <div><small>📚 Kaynak</small><b>${sources}</b></div>
+    <div><small>⭐ Alternatif</small><b>${alts}</b></div>
+    <div><small>📦 Barkod</small><b>${bcs}</b></div>
+    <div><small>🗓️ Güncelleme</small><b>${esc(x.sonGuncelleme||"-")}</b></div>
+  </div>`;
 }
 
 function renderLegalFooter(){
@@ -374,7 +485,7 @@ async function init(){applyTheme();applyLang();setupServiceWorker();showLegalNot
 
 function counts(){return{total:DATA.length,boykot:DATA.filter(x=>x.status==="boykot").length,safe:DATA.filter(x=>x.status==="safe").length,inceleme:DATA.filter(x=>x.status==="inceleme").length,altli:DATA.filter(hasAlternative).length,fav:favorites.length,firmalar:new Set(DATA.map(x=>x.anaFirma||"-")).size,kategoriler:new Set(DATA.map(x=>x.kategori||"-").filter(Boolean)).size,ulkeler:new Set(DATA.map(x=>x.ulke||"").filter(Boolean)).size}}
 function renderStats(){const c=counts();stats.innerHTML=`<button class="stat red" data-stat="boykot"><small>🔴 ${t("boycott")}</small><b>${c.boykot}</b></button><button class="stat safe" data-stat="safe"><small>✅ ${t("notBoycotted")}</small><b>${c.safe}</b></button><button class="stat green" data-stat="altli"><small>⭐ ${t("withAlt")}</small><b>${c.altli}</b></button><button class="stat gray" data-stat="inceleme"><small>⚪ ${t("review")}</small><b>${c.inceleme}</b></button>`}
-function renderQuickActions(){const c=counts();quickActions.innerHTML=`<h2>${t("quickTitle")}</h2><div class="quickGrid"><button data-go="companies"><span>🏢</span><b>${t("companies")}</b><small>${c.firmalar}</small></button><button data-go="categories"><span>📂</span><b>${t("categories")}</b><small>${c.kategoriler}</small></button><button data-go="countries"><span>🌍</span><b>${t("countries")||"Ülkeler"}</b><small>${c.ulkeler||0}</small></button><button data-go="alternatives"><span>⭐</span><b>${t("withAlt")}</b><small>${c.altli}</small></button><button data-go="favorites"><span>❤️</span><b>${t("favorites")}</b><small>${c.fav}</small></button><button data-go="admin"><span>⚙️</span><b>${t("admin")}</b><small>ODS</small></button></div>`}
+function renderQuickActions(){const c=counts();quickActions.innerHTML=`<h2>${t("quickTitle")}</h2><div class="quickGrid"><button data-go="companies"><span>🏢</span><b>${t("companies")}</b><small>${c.firmalar}</small></button><button data-go="categories"><span>📂</span><b>${t("categories")}</b><small>${c.kategoriler}</small></button><button data-go="countries"><span>🌍</span><b>${t("countries")||"Ülkeler"}</b><small>${c.ulkeler||0}</small></button><button data-go="alternatives"><span>⭐</span><b>${t("withAlt")}</b><small>${c.altli}</small></button><button data-go="favorites"><span>❤️</span><b>${t("favorites")}</b><small>${c.fav}</small></button><button data-go="compare"><span>⚖️</span><b>Karşılaştır</b><small>2</small></button><button data-go="admin"><span>⚙️</span><b>${t("admin")}</b><small>ODS</small></button></div>`}
 function renderFilters(){const arr=[["all",t("all")],["boykot",`🔴 ${t("boycott")}`],["safe",`✅ ${t("notBoycotted")}`],["altli",`⭐ ${t("withAlt")}`],["inceleme",`⚪ ${t("review")}`],["fav",`❤️ ${t("favorites")}`]];quickFilters.innerHTML=arr.map(([k,l])=>`<button class="chip ${filter===k?'active':''}" data-filter="${k}">${l}</button>`).join("")}
 function filteredList(base=DATA){const q=norm(search.value);return base.filter(x=>(!q||x.hay.includes(q))&&(filter==="all"||(filter==="boykot"&&x.status==="boykot")||(filter==="safe"&&x.status==="safe")||(filter==="altli"&&hasAlternative(x))||(filter==="inceleme"&&x.status==="inceleme")||(filter==="fav"&&isFav(x.marka)))).sort((a,b)=>Number(isFav(b.marka))-Number(isFav(a.marka))||a.marka.localeCompare(b.marka,"tr"))}
 function imageHtml(x){return x.imageUrl?`<div class="brandImage"><img src="${esc(x.imageUrl)}" alt="${esc(x.marka)}" loading="lazy" onerror="this.parentElement.classList.add('noImage');this.remove();"></div>`:`<div class="brandImage noImage"><span>🌿</span></div>`}
@@ -954,7 +1065,7 @@ const fileInput = $("spreadsheetFile");
 if(fileInput) fileInput.addEventListener("change", e=>readSpreadsheetFile(e.target.files[0]));
 }
 
-function render(){document.querySelectorAll(".bottomNav button").forEach(b=>b.classList.toggle("active",b.dataset.view===view));if(currentGroup)return renderHome(currentGroup.items);if(view==="home")return renderHome();if(view==="alternatives"){filter="altli";return renderHome()}if(view==="favorites"){filter="fav";return renderHome()}if(view==="companies")return renderCompanies();if(view==="categories")return renderCategories();if(view==="countries")return renderCountries();if(view==="admin")return renderAdminLocal()}
+function render(){document.querySelectorAll(".bottomNav button").forEach(b=>b.classList.toggle("active",b.dataset.view===view));if(currentGroup)return renderHome(currentGroup.items);if(view==="home")return renderHome();if(view==="alternatives"){filter="altli";return renderHome()}if(view==="favorites"){filter="fav";return renderHome()}if(view==="companies")return renderCompanies();if(view==="categories")return renderCategories();if(view==="countries")return renderCountries();if(view==="compare")return renderCompare();if(view==="admin")return renderAdminLocal()}
 function detail(x){const d=$("detailDialog"),c=$("detailContent");c.innerHTML=`<div class="detailHead"><h2>${esc(x.marka)}</h2><p>${statusLabel(x.status)}</p></div><div class="detailBody">${x.imageUrl?`<div class="detailImage"><img src="${esc(x.imageUrl)}" alt="${esc(x.marka)}"></div>`:""}<div class="detailLine"><span>${t("parent")}</span><b>${esc(x.anaFirma||"-")}</b></div><div class="detailLine"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div><div class="detailLine"><span>${t("country")||"Ülke"}</span><b>${esc(x.ulke||"-")}</b></div><div class="detailLine"><span>${t("barcode")}</span><b>${esc((x.barkod||[]).join(", ")||"-")}</b></div><div class="detailLine"><span>${t("alternative")}</span><b>${esc(x.alternatif||"-")}</b></div><div class="detailLine"><span>${t("note")}</span><b>${esc(x.not||"-")}</b></div><div class="legalDetail">⚖️ ${esc(legalShortText())}<br>📝 ${esc(correctionPolicyText())}</div><div class="detailLine"><span>${t("source")}</span><b>${esc(x.kaynak||"-")}</b></div></div>`;d.showModal()}
 function handleBarcodeValue(code){const n=norm(code);const item=DATA.find(x=>Array.isArray(x.barkod)&&x.barkod.some(v=>norm(v)===n));if(item)detail(item);else{search.value=code;render()}}
 function applyTheme(){const dark=localStorage.getItem("ahlak_theme")==="dark";document.body.classList.toggle("dark",dark);themeBtn.textContent=dark?"☀️":"🌙"}

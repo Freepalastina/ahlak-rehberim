@@ -194,3 +194,14 @@ Güvenlik:
 - Ayar yönetim panelinden açılıp kapatılır.
 - Supabase çalışmazsa otomatik `data.json` yedeğine döner.
 - `supabase_live_read_kullanim.md` eklendi.
+
+## V29 Akıllı Ürün Sayfası
+- Detay sayfasında güven/özet kutuları eklendi.
+- Aynı ana firmaya ait markalar gösterilir.
+- Aynı kategorideki diğer kayıtlar gösterilir.
+- Mini marka butonlarıyla ilişkili kayıtlara hızlı geçiş yapılır.
+
+## V30 Karşılaştırma
+- İki marka yan yana karşılaştırılabilir.
+- Marka detayında “Karşılaştır” butonu eklendi.
+- Karşılaştırma sayfasında arama ile marka ekleme eklendi.
