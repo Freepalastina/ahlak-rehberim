@@ -260,3 +260,15 @@ body.dark .importStatus{
   border-radius:16px;padding:10px;margin:8px 0;background:rgba(95,113,56,.06);
 }
 .draftItem span{color:var(--muted,#66705f)}
+
+
+/* V27 supabase admin sync */
+.supabasePanel{
+  margin:20px 0;
+  padding:18px;
+  border-radius:22px;
+  background:rgba(59,130,246,.06);
+  border:1px solid rgba(59,130,246,.20);
+}
+.supabasePanel h3{margin-top:0;color:#1d4ed8}
+#sbResult{margin-top:12px;white-space:pre-wrap}

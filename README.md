@@ -176,3 +176,15 @@ Not: Bu sürüm kamera ile canlı barkod tarama değil, barkod numarasıyla aram
 - `admin_kullanim.md` eklendi
 
 Not: Bu sürüm Supabase'e doğrudan yazmaz. Güvenli ilk adım olarak yerel taslak + JSON dışa aktarma kullanır.
+
+## V27 Supabase Admin Sync
+- Admin paneline Supabase bağlantı ayarları eklendi.
+- Bağlantı testi eklendi.
+- Tek kaydı Supabase `brands` tablosuna gönderme eklendi.
+- `supabase_v27_schema.sql` eklendi.
+- `supabase_admin_kullanim.md` eklendi.
+
+Güvenlik:
+- service_role key kullanmayın.
+- Public anon/publishable key kullanın.
+- Yazma izinlerini Supabase RLS ile sınırlandırın.

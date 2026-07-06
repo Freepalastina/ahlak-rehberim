@@ -7,7 +7,7 @@ if(location.search.includes("clear-cache") || location.search.includes("v20-clea
   }catch(e){}
 }
 
-const VERSION="20260706-v26-admin-panel";
+const VERSION="20260706-v27-supabase-admin-sync";
 const SUPABASE_URL="https://imicltjdfzqlxzvodheq.supabase.co";
 const SUPABASE_KEY="sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
 const supabaseClient=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
@@ -678,7 +678,7 @@ function adminFormHtml(existing={}){
       <button id="admExportOne">Bu Kaydı JSON İndir</button>
       <button id="admExportAll">Tüm Veriyi JSON İndir</button>
     </div>
-    <h3>Yerel Taslaklar</h3>
+    ${supabasePanelHtml()}<h3>Yerel Taslaklar</h3>
     <div id="admDrafts"></div>
   </section>`;
 }
@@ -731,7 +731,85 @@ function setupAdminPanel(){
     downloadText("ahlak_rehberim_export.json", JSON.stringify(merged,null,2));
   };
   renderAdminDrafts();
+  setupSupabasePanel();
 }
+
+/* V27 Supabase Admin Sync */
+function sbConfigKey(){return "ahlak_supabase_config_v27";}
+function getSbConfig(){try{return JSON.parse(localStorage.getItem(sbConfigKey())||"{}")}catch(e){return {}}}
+function setSbConfig(c){localStorage.setItem(sbConfigKey(),JSON.stringify(c||{}))}
+function sbHeaders(key){return {"apikey":key,"Authorization":"Bearer "+key,"Content-Type":"application/json","Prefer":"return=representation"}}
+function sbEndpoint(table){
+  const c=getSbConfig();
+  if(!c.url||!table) return "";
+  return c.url.replace(/\/+$/,"")+"/rest/v1/"+encodeURIComponent(table);
+}
+function supabasePanelHtml(){
+  const c=getSbConfig();
+  return `<section class="supabasePanel">
+    <h3>🗄️ Supabase Bağlantısı</h3>
+    <p class="legal-small">Bu bilgiler sadece senin tarayıcında localStorage içinde tutulur. Public anon key kullan; service_role key kullanma.</p>
+    <div class="adminGrid">
+      <label>Supabase URL<input id="sbUrl" value="${esc(c.url||"")}" placeholder="https://...supabase.co"></label>
+      <label>Publishable / anon key<input id="sbKey" value="${esc(c.key||"")}" placeholder="sb_publishable... veya anon key"></label>
+      <label>Tablo adı<input id="sbTable" value="${esc(c.table||"brands")}" placeholder="brands"></label>
+    </div>
+    <div class="adminActions">
+      <button id="sbSave">Ayarları Kaydet</button>
+      <button id="sbTest">Bağlantıyı Test Et</button>
+      <button id="sbSendOne">Bu Kaydı Supabase'e Gönder</button>
+    </div>
+    <div id="sbResult" class="sourceEmpty">Henüz test yapılmadı.</div>
+  </section>`;
+}
+function setupSupabasePanel(){
+  const save=document.getElementById("sbSave");
+  if(!save) return;
+  const msg=(m)=>{const r=document.getElementById("sbResult"); if(r) r.textContent=m;};
+  save.onclick=()=>{
+    setSbConfig({url:document.getElementById("sbUrl").value.trim(),key:document.getElementById("sbKey").value.trim(),table:document.getElementById("sbTable").value.trim()||"brands"});
+    msg("Ayarlar kaydedildi.");
+  };
+  document.getElementById("sbTest").onclick=async()=>{
+    try{
+      save.click();
+      const c=getSbConfig();
+      if(!c.url||!c.key) throw new Error("URL ve key gerekli.");
+      const res=await fetch(sbEndpoint(c.table)+"?select=*&limit=1",{headers:sbHeaders(c.key)});
+      const text=await res.text();
+      if(!res.ok) throw new Error(text||res.statusText);
+      msg("Bağlantı başarılı.");
+    }catch(e){msg("Hata: "+e.message)}
+  };
+  document.getElementById("sbSendOne").onclick=async()=>{
+    try{
+      save.click();
+      const c=getSbConfig();
+      if(!c.url||!c.key) throw new Error("URL ve key gerekli.");
+      const item=readAdminForm();
+      if(!item.marka) throw new Error("Marka adı gerekli.");
+      const payload={
+        marka:item.marka,
+        ana_firma:item.anaFirma,
+        kategori:item.kategori,
+        ulke:item.ulke,
+        durum:item.durum,
+        image_url:item.image_url,
+        notlar:item.not,
+        ozet:item.ozet,
+        kaynaklar:item.kaynaklar,
+        alternatifler:item.alternatifler,
+        barkodlar:item.barkodlar,
+        son_guncelleme:item.sonGuncelleme
+      };
+      const res=await fetch(sbEndpoint(c.table),{method:"POST",headers:sbHeaders(c.key),body:JSON.stringify(payload)});
+      const text=await res.text();
+      if(!res.ok) throw new Error(text||res.statusText);
+      msg("Kayıt Supabase'e gönderildi.");
+    }catch(e){msg("Hata: "+e.message)}
+  };
+}
+
 function renderAdminLocal(){
   renderStats();
   sectionTitle.innerHTML=`<h2>⚙️ Yönetim</h2><span>V26</span>`;
