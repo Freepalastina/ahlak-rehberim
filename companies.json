@@ -1,0 +1,644 @@
+[
+  {
+    "id": "nestle",
+    "name": "Nestlé S.A.",
+    "country": "İsviçre",
+    "brandAliases": [
+      "nescafe",
+      "nescafé",
+      "nesquik",
+      "kitkat",
+      "kit kat",
+      "maggi",
+      "purina",
+      "felix",
+      "gourmet",
+      "perrier",
+      "san pellegrino",
+      "vittel",
+      "buitoni",
+      "wagner",
+      "lion",
+      "after eight",
+      "smarties",
+      "aero",
+      "quality street",
+      "cheerios",
+      "cini minis",
+      "fitness",
+      "chocapic"
+    ]
+  },
+  {
+    "id": "unilever",
+    "name": "Unilever",
+    "country": "Birleşik Krallık / Hollanda",
+    "brandAliases": [
+      "dove",
+      "axe",
+      "lynx",
+      "rexona",
+      "sure",
+      "degree",
+      "knorr",
+      "lipton",
+      "domestos",
+      "cif",
+      "omo",
+      "surf",
+      "persil unilever",
+      "magnum",
+      "ben jerry",
+      "ben & jerry",
+      "hellmann",
+      "hellmann's",
+      "calve",
+      "calvé",
+      "vaseline",
+      "lux",
+      "sunsilk",
+      "clear",
+      "tresemme",
+      "tresemmé",
+      "signal"
+    ]
+  },
+  {
+    "id": "pg",
+    "name": "Procter & Gamble",
+    "country": "ABD",
+    "brandAliases": [
+      "ariel",
+      "fairy",
+      "gillette",
+      "venus",
+      "pampers",
+      "prima",
+      "always",
+      "tampax",
+      "oral b",
+      "oral-b",
+      "blend a med",
+      "blend-a-med",
+      "head shoulders",
+      "head & shoulders",
+      "pantene",
+      "olay",
+      "old spice",
+      "braun",
+      "lenor",
+      "dash",
+      "febreze",
+      "swiffer",
+      "mr proper",
+      "mr clean"
+    ]
+  },
+  {
+    "id": "coca_cola",
+    "name": "The Coca-Cola Company",
+    "country": "ABD",
+    "brandAliases": [
+      "coca cola",
+      "coca-cola",
+      "fanta",
+      "sprite",
+      "schweppes",
+      "cappy",
+      "fuse tea",
+      "fuzetea",
+      "mezzo mix",
+      "powerade",
+      "glaceau",
+      "vitaminwater",
+      "aquarius",
+      "minute maid"
+    ]
+  },
+  {
+    "id": "pepsico",
+    "name": "PepsiCo",
+    "country": "ABD",
+    "brandAliases": [
+      "pepsi",
+      "pepsi max",
+      "7up",
+      "7 up",
+      "mirinda",
+      "mountain dew",
+      "lays",
+      "lay's",
+      "doritos",
+      "cheetos",
+      "ruffles",
+      "tostitos",
+      "quaker",
+      "gatorade",
+      "lipton ice tea",
+      "walker",
+      "walkers"
+    ]
+  },
+  {
+    "id": "mars",
+    "name": "Mars, Incorporated",
+    "country": "ABD",
+    "brandAliases": [
+      "mars",
+      "snickers",
+      "twix",
+      "bounty",
+      "m&m",
+      "mms",
+      "maltesers",
+      "milky way",
+      "5gum",
+      "5 gum",
+      "orbit",
+      "extra",
+      "whiskas",
+      "pedigree",
+      "sheba",
+      "cesar",
+      "royal canin",
+      "frolic"
+    ]
+  },
+  {
+    "id": "mondelez",
+    "name": "Mondelez International",
+    "country": "ABD",
+    "brandAliases": [
+      "oreo",
+      "milka",
+      "toblerone",
+      "cadbury",
+      "ritz",
+      "tuc",
+      "belvita",
+      "trident",
+      "halls",
+      "stimorol",
+      "cote d or",
+      "côte d'or",
+      "lu",
+      "prince"
+    ]
+  },
+  {
+    "id": "loreal",
+    "name": "L'Oréal Groupe",
+    "country": "Fransa",
+    "brandAliases": [
+      "loreal",
+      "l'oréal",
+      "garnier",
+      "maybelline",
+      "lancome",
+      "lancôme",
+      "vichy",
+      "la roche posay",
+      "la roche-posay",
+      "cerave",
+      "cera ve",
+      "kiehl",
+      "kiehl's",
+      "nyx",
+      "matrix",
+      "redken",
+      "essie"
+    ]
+  },
+  {
+    "id": "danone",
+    "name": "Danone",
+    "country": "Fransa",
+    "brandAliases": [
+      "danone",
+      "activia",
+      "actimel",
+      "alpro",
+      "evian",
+      "volvic",
+      "aptamil",
+      "nutricia",
+      "blédina",
+      "bledina"
+    ]
+  },
+  {
+    "id": "ferrero",
+    "name": "Ferrero Group",
+    "country": "İtalya",
+    "brandAliases": [
+      "ferrero",
+      "nutella",
+      "kinder",
+      "tic tac",
+      "mon cherie",
+      "mon chéri",
+      "rocher",
+      "duplo",
+      "hanuta",
+      "yogurette"
+    ]
+  },
+  {
+    "id": "beiersdorf",
+    "name": "Beiersdorf AG",
+    "country": "Almanya",
+    "brandAliases": [
+      "nivea",
+      "eucerin",
+      "hansaplast",
+      "labello",
+      "la prairie",
+      "8x4",
+      "tesa"
+    ]
+  },
+  {
+    "id": "reckitt",
+    "name": "Reckitt",
+    "country": "Birleşik Krallık",
+    "brandAliases": [
+      "finish",
+      "calgon",
+      "vanish",
+      "air wick",
+      "airwick",
+      "durex",
+      "veet",
+      "sagrotan",
+      "lysol",
+      "clearasil",
+      "strepsils",
+      "nurofen",
+      "gaviscon"
+    ]
+  },
+  {
+    "id": "henkel",
+    "name": "Henkel",
+    "country": "Almanya",
+    "brandAliases": [
+      "persil",
+      "perwoll",
+      "pril",
+      "somat",
+      "schwarzkopf",
+      "syoss",
+      "gliss",
+      "taft",
+      "pritt",
+      "loctite",
+      "fa",
+      "dial"
+    ]
+  },
+  {
+    "id": "colgate",
+    "name": "Colgate-Palmolive",
+    "country": "ABD",
+    "brandAliases": [
+      "colgate",
+      "palmolive",
+      "elmex",
+      "meridol",
+      "ajax",
+      "protex",
+      "sanex",
+      "softlan"
+    ]
+  },
+  {
+    "id": "johnson",
+    "name": "Johnson & Johnson",
+    "country": "ABD",
+    "brandAliases": [
+      "johnson",
+      "neutrogena",
+      "listerine",
+      "aveeno",
+      "bebe",
+      "clean clear",
+      "clean & clear",
+      "penaten",
+      "carefree",
+      "o.b.",
+      "ob tampons"
+    ]
+  },
+  {
+    "id": "kraft_heinz",
+    "name": "The Kraft Heinz Company",
+    "country": "ABD",
+    "brandAliases": [
+      "heinz",
+      "kraft",
+      "philadelphia",
+      "capri sun",
+      "capri-sun",
+      "classico",
+      "velveeta",
+      "oscar mayer"
+    ]
+  },
+  {
+    "id": "kellogg",
+    "name": "Kellanova / WK Kellogg",
+    "country": "ABD",
+    "brandAliases": [
+      "kellogg",
+      "pringles",
+      "corn flakes",
+      "frosties",
+      "special k",
+      "coco pops",
+      "rice krispies"
+    ]
+  },
+  {
+    "id": "general_mills",
+    "name": "General Mills",
+    "country": "ABD",
+    "brandAliases": [
+      "haagen dazs",
+      "häagen-dazs",
+      "old el paso",
+      "nature valley",
+      "cheerios general mills",
+      "yoplait"
+    ]
+  },
+  {
+    "id": "inditex",
+    "name": "Inditex",
+    "country": "İspanya",
+    "brandAliases": [
+      "zara",
+      "bershka",
+      "pull bear",
+      "pull&bear",
+      "stradivarius",
+      "massimo dutti",
+      "oysho",
+      "lefties"
+    ]
+  },
+  {
+    "id": "hm",
+    "name": "H&M Group",
+    "country": "İsveç",
+    "brandAliases": [
+      "h&m",
+      "hm",
+      "cos",
+      "monki",
+      "weekday",
+      "arket",
+      "& other stories",
+      "other stories"
+    ]
+  },
+  {
+    "id": "nike",
+    "name": "Nike, Inc.",
+    "country": "ABD",
+    "brandAliases": [
+      "nike",
+      "jordan",
+      "converse"
+    ]
+  },
+  {
+    "id": "adidas",
+    "name": "Adidas AG",
+    "country": "Almanya",
+    "brandAliases": [
+      "adidas",
+      "reebok"
+    ]
+  },
+  {
+    "id": "apple",
+    "name": "Apple Inc.",
+    "country": "ABD",
+    "brandAliases": [
+      "apple",
+      "iphone",
+      "ipad",
+      "macbook",
+      "beats"
+    ]
+  },
+  {
+    "id": "samsung",
+    "name": "Samsung Electronics",
+    "country": "Güney Kore",
+    "brandAliases": [
+      "samsung",
+      "galaxy"
+    ]
+  },
+  {
+    "id": "sony",
+    "name": "Sony Group Corporation",
+    "country": "Japonya",
+    "brandAliases": [
+      "sony",
+      "playstation"
+    ]
+  },
+  {
+    "id": "amazon",
+    "name": "Amazon.com, Inc.",
+    "country": "ABD",
+    "brandAliases": [
+      "amazon",
+      "prime video",
+      "audible",
+      "kindle",
+      "alexa",
+      "twitch"
+    ]
+  },
+  {
+    "id": "mcdonalds",
+    "name": "McDonald's Corporation",
+    "country": "ABD",
+    "brandAliases": [
+      "mcdonald",
+      "mcdonalds",
+      "mcdonald's"
+    ]
+  },
+  {
+    "id": "burger_king",
+    "name": "Restaurant Brands International",
+    "country": "Kanada",
+    "brandAliases": [
+      "burger king",
+      "tim hortons",
+      "popeyes"
+    ]
+  },
+  {
+    "id": "yum",
+    "name": "Yum! Brands",
+    "country": "ABD",
+    "brandAliases": [
+      "kfc",
+      "pizza hut",
+      "taco bell"
+    ]
+  },
+  {
+    "id": "starbucks",
+    "name": "Starbucks Corporation",
+    "country": "ABD",
+    "brandAliases": [
+      "starbucks"
+    ]
+  },
+  {
+    "id": "aldi_sued",
+    "name": "Aldi Süd",
+    "country": "Almanya",
+    "brandAliases": [
+      "aldi süd",
+      "aldi sud",
+      "aldi south",
+      "aldi"
+    ]
+  },
+  {
+    "id": "lidl",
+    "name": "Schwarz Gruppe",
+    "country": "Almanya",
+    "brandAliases": [
+      "lidl",
+      "kaufland"
+    ]
+  },
+  {
+    "id": "rewe",
+    "name": "REWE Group",
+    "country": "Almanya",
+    "brandAliases": [
+      "rewe",
+      "billa",
+      "penny",
+      "nahkauf"
+    ]
+  },
+  {
+    "id": "edeka",
+    "name": "EDEKA Zentrale",
+    "country": "Almanya",
+    "brandAliases": [
+      "edeka",
+      "netto marken discount",
+      "netto"
+    ]
+  },
+  {
+    "id": "dm",
+    "name": "dm-drogerie markt",
+    "country": "Almanya",
+    "brandAliases": [
+      "dm",
+      "babylove",
+      "denkmit",
+      "balea",
+      "alverde",
+      "ebelin"
+    ]
+  },
+  {
+    "id": "rossmann",
+    "name": "Dirk Rossmann GmbH",
+    "country": "Almanya",
+    "brandAliases": [
+      "rossmann",
+      "isana",
+      "domol",
+      "altapharma",
+      "babydream"
+    ]
+  },
+  {
+    "id": "kocholding",
+    "name": "Koç Holding",
+    "country": "Türkiye",
+    "brandAliases": [
+      "arçelik",
+      "arcelik",
+      "beko",
+      "grundig",
+      "tüpraş",
+      "tupras",
+      "aygaz",
+      "opet",
+      "yapı kredi",
+      "yapi kredi",
+      "ford otosan"
+    ]
+  },
+  {
+    "id": "yildiz",
+    "name": "Yıldız Holding",
+    "country": "Türkiye",
+    "brandAliases": [
+      "ülker",
+      "ulker",
+      "godiva",
+      "pladis",
+      "mc vities",
+      "mcvities",
+      "de met's",
+      "demets"
+    ]
+  },
+  {
+    "id": "eti",
+    "name": "Eti Gıda",
+    "country": "Türkiye",
+    "brandAliases": [
+      "eti",
+      "wanted",
+      "cin",
+      "canga",
+      "popkek",
+      "tutku",
+      "burçak",
+      "burcak"
+    ]
+  },
+  {
+    "id": "torku",
+    "name": "Torku",
+    "country": "Türkiye",
+    "brandAliases": [
+      "torku"
+    ]
+  },
+  {
+    "id": "sutas",
+    "name": "Sütaş",
+    "country": "Türkiye",
+    "brandAliases": [
+      "sütaş",
+      "sutas"
+    ]
+  },
+  {
+    "id": "pinar",
+    "name": "Pınar",
+    "country": "Türkiye",
+    "brandAliases": [
+      "pınar",
+      "pinar"
+    ]
+  }
+]

@@ -118,3 +118,12 @@ Bu sürüm V17 dosyasının üzerine hazırlandı.
 - Hukuki/kaynak/düzeltme sayfaları üç dilli içerikle güncellendi.
 - UI dili daha tarafsız yapıldı.
 - Cache temizleme için `?v20-clear-cache` parametresi desteklenir.
+
+## V21 Ana Firma + Kırmızı Durum Düzeltmesi
+- “İncelenmesi Önerilir” artık kırmızı rozetle gösterilir.
+- `companies.json` ana firma sözlüğü eklendi.
+- `data.json` içinde 151 kayıt için ana firma temel sözlükle güncellendi.
+- `ana_firma_duzeltme_raporu.csv` raporu eklendi.
+- Yeni veri yüklense bile uygulama `companies.json` üzerinden ana firma eşleştirmesi yapabilir.
+
+Not: Ana firma eşleştirmeleri temel sözlükle yapılmıştır. Büyük veri seti için sonraki aşamada eksik kalan markalar manuel/ kaynaklı kontrol edilmelidir.

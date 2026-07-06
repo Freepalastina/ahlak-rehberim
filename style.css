@@ -90,3 +90,18 @@ body.dark .importStatus{
 .legalFooter a:hover{text-decoration:underline}
 .legalDetail{font-weight:700}
 .badge.boykot{background:#FFF3CD!important;color:#7A4B00!important}
+
+
+/* V21 status colors */
+.badge.boykot{
+  background:#FDEBE8!important;
+  color:#B42318!important;
+  border:1px solid rgba(180,35,24,.18);
+}
+.card.boykot{
+  border-color:rgba(180,35,24,.25)!important;
+}
+.stat.red,.stat.boykot{
+  background:linear-gradient(135deg,#FDEBE8,#FECACA)!important;
+  color:#B42318!important;
+}

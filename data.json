@@ -19,12 +19,13 @@
   },
   {
     "marka": "5GUM",
-    "anaFirma": "Mars",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "Çikolata/Evcil Hayvan",
     "alternatif": "Eti, Elvan, Torku; evcil hayvanda Reflex/Goody kontrol",
     "kaynak": "https://www.mars.com/our-brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "5Star",
@@ -190,12 +191,13 @@
   },
   {
     "marka": "Adidas",
-    "anaFirma": "Delta Galil",
+    "anaFirma": "Adidas AG",
     "kategori": "",
     "alternatif": "",
     "kaynak": "PDF/önceki liste",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Almanya"
   },
   {
     "marka": "Adolfodominguez",
@@ -226,12 +228,13 @@
   },
   {
     "marka": "Aero",
-    "anaFirma": "Nestlé",
+    "anaFirma": "Nestlé S.A.",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku, Mehmet Efendi, yerel kahveciler",
     "kaynak": "https://www.nestle.com/brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "İsviçre"
   },
   {
     "marka": "Aerogard",
@@ -253,12 +256,13 @@
   },
   {
     "marka": "After Eight",
-    "anaFirma": "Nestlé",
+    "anaFirma": "Nestlé S.A.",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku, Mehmet Efendi, yerel kahveciler",
     "kaynak": "https://www.nestle.com/brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "İsviçre"
   },
   {
     "marka": "Ahava",
@@ -379,12 +383,13 @@
   },
   {
     "marka": "Aldi süd",
-    "anaFirma": "Aldi süd",
+    "anaFirma": "Aldi Süd",
     "kategori": "Boykotta Değil",
     "alternatif": "",
     "kaynak": "alternatif.ods",
     "not": "Boykot listesinde olmayan / alternatif listesinde yer alan marka. Satın almadan önce kendi araştırmanızı yapmanız önerilir.",
-    "durum": "safe"
+    "durum": "safe",
+    "ulke": "Almanya"
   },
   {
     "marka": "align",
@@ -523,12 +528,13 @@
   },
   {
     "marka": "Always",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Kadın Bakımı",
     "alternatif": "Sleepy Natural, Molped",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Kadın bakım alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Alza",
@@ -541,12 +547,13 @@
   },
   {
     "marka": "Amazon",
-    "anaFirma": "Amazon",
+    "anaFirma": "Amazon.com, Inc.",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.amazon.com/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Ambassador",
@@ -703,12 +710,13 @@
   },
   {
     "marka": "Apple",
-    "anaFirma": "Apple",
+    "anaFirma": "Apple Inc.",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.apple.com/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Appletiser",
@@ -748,12 +756,13 @@
   },
   {
     "marka": "Aquarius",
-    "anaFirma": "Coca-Cola",
+    "anaFirma": "The Coca-Cola Company",
     "kategori": "İçecek",
     "alternatif": "Uludağ, Çamlıca, Kristal, Beypazarı, Kızılay",
     "kaynak": "https://www.coca-colacompany.com/brands",
     "not": "İçecek alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "aramis",
@@ -775,12 +784,13 @@
   },
   {
     "marka": "Ariel",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Temizlik",
     "alternatif": "Peros, Boron",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Birebir temizlik alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Arizona",
@@ -973,12 +983,13 @@
   },
   {
     "marka": "Aveeno",
-    "anaFirma": "Johnson & Johnson / Kenvue",
+    "anaFirma": "Johnson & Johnson",
     "kategori": "",
     "alternatif": "Eyüp Sabri Tuncer, Duru, Otacı; sağlıkta eczacıya danışın",
     "kaynak": "https://www.jnj.com/ / https://www.kenvue.com/brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "AVENE",
@@ -1324,12 +1335,13 @@
   },
   {
     "marka": "bebe",
-    "anaFirma": "Johnson & Johnson / Kenvue",
+    "anaFirma": "Johnson & Johnson",
     "kategori": "",
     "alternatif": "Eyüp Sabri Tuncer, Duru, Otacı; sağlıkta eczacıya danışın",
     "kaynak": "https://www.jnj.com/ / https://www.kenvue.com/brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Beko",
@@ -1342,12 +1354,13 @@
   },
   {
     "marka": "belVita",
-    "anaFirma": "Mondelēz",
+    "anaFirma": "Mondelez International",
     "kategori": "Gıda",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.mondelezinternational.com/our-brands/",
     "not": "Çikolata/bisküvi alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Ben & Jerry’s",
@@ -1495,12 +1508,13 @@
   },
   {
     "marka": "Billa",
-    "anaFirma": "Rewe Group",
+    "anaFirma": "REWE Group",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.rewe-group.com/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Almanya"
   },
   {
     "marka": "Bim",
@@ -1594,12 +1608,13 @@
   },
   {
     "marka": "Blend-A-Med",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Ağız Bakımı",
     "alternatif": "Peros, Boron, Claro, Frosch",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Ana firma bazlı alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Blendax",
@@ -1819,21 +1834,23 @@
   },
   {
     "marka": "Bounty",
-    "anaFirma": "P&G",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "Çikolata",
     "alternatif": "Peros, Boron, Claro, Frosch",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Ana firma bazlı alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Bounty Mars",
-    "anaFirma": "Mars",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku; evcil hayvanda Reflex/Goody kontrol",
     "kaynak": "https://www.mars.com/our-brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Bournvita",
@@ -1882,12 +1899,13 @@
   },
   {
     "marka": "Braun",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Temizlik/Kişisel Bakım",
     "alternatif": "Peros, Boron, Claro, Frosch",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Ana firma bazlı alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "bravo",
@@ -2089,12 +2107,13 @@
   },
   {
     "marka": "Cadbury",
-    "anaFirma": "Mondelēz",
+    "anaFirma": "Mondelez International",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.mondelezinternational.com/our-brands/",
     "not": "Çikolata/bisküvi alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Cailler",
@@ -2179,21 +2198,23 @@
   },
   {
     "marka": "Cappy",
-    "anaFirma": "Coca-Cola",
+    "anaFirma": "The Coca-Cola Company",
     "kategori": "İçecek",
     "alternatif": "Uludağ, Çamlıca, Kristal, Beypazarı, Kızılay",
     "kaynak": "https://www.coca-colacompany.com/brands",
     "not": "İçecek alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Capri sun",
-    "anaFirma": "Kontrol gerekli",
+    "anaFirma": "The Kraft Heinz Company",
     "kategori": "İçecek",
     "alternatif": "",
     "kaynak": "Bu marka için ana firma doğrulanamadı; manuel kontrol önerilir.",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Captain Power",
@@ -2215,12 +2236,13 @@
   },
   {
     "marka": "Carefree",
-    "anaFirma": "Johnson & Johnson / Kenvue",
+    "anaFirma": "Johnson & Johnson",
     "kategori": "Kadın Bakımı",
     "alternatif": "Eyüp Sabri Tuncer, Duru, Otacı; sağlıkta eczacıya danışın",
     "kaynak": "https://www.jnj.com/ / https://www.kenvue.com/brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Careline",
@@ -2359,12 +2381,13 @@
   },
   {
     "marka": "CeraVe",
-    "anaFirma": "L'Oréal",
+    "anaFirma": "L'Oréal Groupe",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.loreal.com/en/our-global-brands-portfolio/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Fransa"
   },
   {
     "marka": "cerelac",
@@ -2386,12 +2409,13 @@
   },
   {
     "marka": "Cesar",
-    "anaFirma": "Mars",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "Evcil Hayvan",
     "alternatif": "Eti, Elvan, Torku; evcil hayvanda Reflex/Goody kontrol",
     "kaynak": "https://www.mars.com/our-brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Cetinkaya",
@@ -2665,12 +2689,13 @@
   },
   {
     "marka": "Cini Minis",
-    "anaFirma": "General Mills",
+    "anaFirma": "Nestlé S.A.",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.generalmills.com/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "İsviçre"
   },
   {
     "marka": "Ciprofloxacin",
@@ -2728,12 +2753,13 @@
   },
   {
     "marka": "Clean & Clear",
-    "anaFirma": "Johnson & Johnson / Kenvue",
+    "anaFirma": "Johnson & Johnson",
     "kategori": "Cilt Bakımı",
     "alternatif": "Eyüp Sabri Tuncer, Duru, Otacı; sağlıkta eczacıya danışın",
     "kaynak": "https://www.jnj.com/ / https://www.kenvue.com/brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Clear",
@@ -2836,12 +2862,13 @@
   },
   {
     "marka": "Coca-Cola",
-    "anaFirma": "Coca-Cola",
+    "anaFirma": "The Coca-Cola Company",
     "kategori": "İçecek",
     "alternatif": "Uludağ, Çamlıca, Kristal Kola",
     "kaynak": "https://www.coca-colacompany.com/brands",
     "not": "Gazlı içecek alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Cocoavia",
@@ -2953,12 +2980,13 @@
   },
   {
     "marka": "Converse",
-    "anaFirma": "Nike",
+    "anaFirma": "Nike, Inc.",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.nike.com/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Coolblue",
@@ -3043,12 +3071,13 @@
   },
   {
     "marka": "Côte d’Or",
-    "anaFirma": "Mondelēz",
+    "anaFirma": "Mondelez International",
     "kategori": "Gıda",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.mondelezinternational.com/our-brands/",
     "not": "Çikolata/bisküvi alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Crate&Barrel",
@@ -3268,21 +3297,23 @@
   },
   {
     "marka": "Dash",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Temizlik/Kişisel Bakım",
     "alternatif": "Peros, Boron, Claro, Frosch",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Ana firma bazlı alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Dash",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Temizlik/Kişisel Bakım",
     "alternatif": "Peros, Boron, Claro, Frosch",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Ana firma bazlı alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Dato",
@@ -3628,12 +3659,13 @@
   },
   {
     "marka": "DM",
-    "anaFirma": "DM",
+    "anaFirma": "dm-drogerie markt",
     "kategori": "Boykotta Değil",
     "alternatif": "",
     "kaynak": "alternatif.ods",
     "not": "Boykot listesinde olmayan / alternatif listesinde yer alan marka. Satın almadan önce kendi araştırmanızı yapmanız önerilir.",
-    "durum": "safe"
+    "durum": "safe",
+    "ulke": "Almanya"
   },
   {
     "marka": "Dobendan",
@@ -3907,30 +3939,33 @@
   },
   {
     "marka": "Duplo",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Gıda",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Duplo ferrero",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Gıda",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Duplo lego",
-    "anaFirma": "Lego Group",
+    "anaFirma": "Ferrero Group",
     "kategori": "Oyuncak",
     "alternatif": "",
     "kaynak": "https://www.lego.com/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Duracell",
@@ -4096,12 +4131,13 @@
   },
   {
     "marka": "Edeka",
-    "anaFirma": "EDEKA",
+    "anaFirma": "EDEKA Zentrale",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://verbund.edeka/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Almanya"
   },
   {
     "marka": "Edited",
@@ -4429,12 +4465,13 @@
   },
   {
     "marka": "Essie",
-    "anaFirma": "L'Oréal",
+    "anaFirma": "L'Oréal Groupe",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.loreal.com/en/our-global-brands-portfolio/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Fransa"
   },
   {
     "marka": "Essity",
@@ -4456,12 +4493,13 @@
   },
   {
     "marka": "Eucerin",
-    "anaFirma": "Beiersdorf",
+    "anaFirma": "Beiersdorf AG",
     "kategori": "Cilt Bakımı",
     "alternatif": "Eyüp Sabri Tuncer, Duru, Otacı, Bioxcin",
     "kaynak": "https://www.beiersdorf.com/brands",
     "not": "Kişisel bakım alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "Almanya"
   },
   {
     "marka": "Eurospar",
@@ -4510,12 +4548,13 @@
   },
   {
     "marka": "Extra",
-    "anaFirma": "Mars",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "Çikolata/Evcil Hayvan",
     "alternatif": "Eti, Elvan, Torku; evcil hayvanda Reflex/Goody kontrol",
     "kaynak": "https://www.mars.com/our-brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Extreme Dinosaurs",
@@ -4582,12 +4621,13 @@
   },
   {
     "marka": "Fairy",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Bulaşık",
     "alternatif": "Claro, Frosch",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Bulaşık alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Falim",
@@ -4600,12 +4640,13 @@
   },
   {
     "marka": "Fanta",
-    "anaFirma": "Coca-Cola",
+    "anaFirma": "The Coca-Cola Company",
     "kategori": "İçecek",
     "alternatif": "Çamlıca Gazoz, Uludağ Gazoz",
     "kaynak": "https://www.coca-colacompany.com/brands",
     "not": "Gazoz alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Fantastic",
@@ -4636,12 +4677,13 @@
   },
   {
     "marka": "Febreze",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Koku/Temizlik",
     "alternatif": "Peros, Boron, Claro, Frosch",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Ana firma bazlı alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Fenistil",
@@ -4672,12 +4714,13 @@
   },
   {
     "marka": "Ferrero",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Gıda",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Fewa",
@@ -4924,12 +4967,13 @@
   },
   {
     "marka": "Frolic",
-    "anaFirma": "Mars",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "Çikolata/Evcil Hayvan",
     "alternatif": "Eti, Elvan, Torku; evcil hayvanda Reflex/Goody kontrol",
     "kaynak": "https://www.mars.com/our-brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Frosch",
@@ -4942,12 +4986,13 @@
   },
   {
     "marka": "Frosties",
-    "anaFirma": "Kellogg's / Kellanova",
+    "anaFirma": "Kellanova / WK Kellogg",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.kellanova.com/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Frucade",
@@ -5077,12 +5122,13 @@
   },
   {
     "marka": "Garnier",
-    "anaFirma": "L'Oréal",
+    "anaFirma": "L'Oréal Groupe",
     "kategori": "Kozmetik",
     "alternatif": "",
     "kaynak": "https://www.loreal.com/en/our-global-brands-portfolio/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Fransa"
   },
   {
     "marka": "Gatorade",
@@ -5158,12 +5204,13 @@
   },
   {
     "marka": "Gillette",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Tıraş",
     "alternatif": "Wilkinson Sword, Derby",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Tıraş alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Gima",
@@ -5212,12 +5259,13 @@
   },
   {
     "marka": "Glaceau",
-    "anaFirma": "Coca-Cola",
+    "anaFirma": "The Coca-Cola Company",
     "kategori": "Temizlik",
     "alternatif": "Uludağ, Çamlıca, Kristal, Beypazarı, Kızılay",
     "kaynak": "https://www.coca-colacompany.com/brands",
     "not": "İçecek alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Glade",
@@ -5365,12 +5413,13 @@
   },
   {
     "marka": "Grenade Fitness",
-    "anaFirma": "Mondelez / Grenade",
+    "anaFirma": "Nestlé S.A.",
     "kategori": "Gıda",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.mondelezinternational.com/",
     "not": "Çikolata/bisküvi alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İsviçre"
   },
   {
     "marka": "Grenze",
@@ -5482,21 +5531,23 @@
   },
   {
     "marka": "Halls",
-    "anaFirma": "Mondelēz",
+    "anaFirma": "Mondelez International",
     "kategori": "Gıda",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.mondelezinternational.com/our-brands/",
     "not": "Çikolata/bisküvi alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Hansaplast",
-    "anaFirma": "Beiersdorf",
+    "anaFirma": "Beiersdorf AG",
     "kategori": "Sağlık",
     "alternatif": "Eyüp Sabri Tuncer, Duru, Otacı, Bioxcin",
     "kaynak": "https://www.beiersdorf.com/brands",
     "not": "Kişisel bakım alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "Almanya"
   },
   {
     "marka": "Hanseatic Bank",
@@ -5509,12 +5560,13 @@
   },
   {
     "marka": "Hanuta",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Gıda",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Happy Center",
@@ -5572,12 +5624,13 @@
   },
   {
     "marka": "Head & Shoulders",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Saç Bakımı",
     "alternatif": "Bioxcin, Otacı",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Saç bakım alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Headline",
@@ -5608,12 +5661,13 @@
   },
   {
     "marka": "Heinz",
-    "anaFirma": "Kraft Heinz",
+    "anaFirma": "The Kraft Heinz Company",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.kraftheinzcompany.com/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Heliotrop",
@@ -6526,12 +6580,13 @@
   },
   {
     "marka": "Kaufland",
-    "anaFirma": "Lidl / Schwarz Gruppe",
+    "anaFirma": "Schwarz Gruppe",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://gruppe.schwarz/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Almanya"
   },
   {
     "marka": "keff",
@@ -6544,12 +6599,13 @@
   },
   {
     "marka": "Kellogg’s",
-    "anaFirma": "Kellogg's / Kellanova",
+    "anaFirma": "Kellanova / WK Kellogg",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.kellanova.com/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Kelly‘s",
@@ -6634,147 +6690,163 @@
   },
   {
     "marka": "Kinder",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Kinder Bueno",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Kinder Cards",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Kinder Choco fresh",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Kinder Country",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Kinder Delice",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Kinder Happy Hippo",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Kinder Joy",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Kinder Maxi King",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Kinder Milchschnitte",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Kinder Paradiso",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Kinder Pinguin",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Kinder Riegel",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Kinder Schoko Bons",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Kinder Schokolade",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Kinder Überaschung",
-    "anaFirma": "Kontrol gerekli",
+    "anaFirma": "Ferrero Group",
     "kategori": "Çikolata",
     "alternatif": "",
     "kaynak": "Bu marka için ana firma doğrulanamadı; manuel kontrol önerilir.",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Kindest Kare",
@@ -6787,12 +6859,13 @@
   },
   {
     "marka": "King C Gillette",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Tıraş",
     "alternatif": "Wilkinson Sword, Derby",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Tıraş alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Kinh Do",
@@ -6832,12 +6905,13 @@
   },
   {
     "marka": "KitKat",
-    "anaFirma": "Nestlé",
+    "anaFirma": "Nestlé S.A.",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.nestle.com/brands",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İsviçre"
   },
   {
     "marka": "Kiwi Shoe Care",
@@ -6904,12 +6978,13 @@
   },
   {
     "marka": "Kraft Heinz Germany",
-    "anaFirma": "Kraft Heinz",
+    "anaFirma": "The Kraft Heinz Company",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.kraftheinzcompany.com/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Krampouz",
@@ -7012,21 +7087,23 @@
   },
   {
     "marka": "La Prairie",
-    "anaFirma": "Beiersdorf",
+    "anaFirma": "Beiersdorf AG",
     "kategori": "Kozmetik/Kişisel Bakım",
     "alternatif": "Eyüp Sabri Tuncer, Duru, Otacı, Bioxcin",
     "kaynak": "https://www.beiersdorf.com/brands",
     "not": "Kişisel bakım alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "Almanya"
   },
   {
     "marka": "La Roche Posay",
-    "anaFirma": "L'Oréal",
+    "anaFirma": "L'Oréal Groupe",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.loreal.com/en/our-global-brands-portfolio/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Fransa"
   },
   {
     "marka": "Lab Series",
@@ -7039,12 +7116,13 @@
   },
   {
     "marka": "Labello",
-    "anaFirma": "Beiersdorf",
+    "anaFirma": "Beiersdorf AG",
     "kategori": "Dudak Bakımı",
     "alternatif": "Eyüp Sabri Tuncer, Duru, Otacı, Bioxcin",
     "kaynak": "https://www.beiersdorf.com/brands",
     "not": "Kişisel bakım alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "Almanya"
   },
   {
     "marka": "Lacanche",
@@ -7156,12 +7234,13 @@
   },
   {
     "marka": "Lancôme",
-    "anaFirma": "L'Oréal",
+    "anaFirma": "L'Oréal Groupe",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.loreal.com/en/our-global-brands-portfolio/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Fransa"
   },
   {
     "marka": "Landliebe",
@@ -7282,12 +7361,13 @@
   },
   {
     "marka": "Lenor",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Temizlik/Kişisel Bakım",
     "alternatif": "Peros, Boron, Claro, Frosch",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Ana firma bazlı alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Leroy Merlin",
@@ -7354,12 +7434,13 @@
   },
   {
     "marka": "Lidl",
-    "anaFirma": "Lidl / Schwarz Gruppe",
+    "anaFirma": "Schwarz Gruppe",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://gruppe.schwarz/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Almanya"
   },
   {
     "marka": "Liebherr",
@@ -7462,12 +7543,13 @@
   },
   {
     "marka": "Lipton",
-    "anaFirma": "Unilever / Pepsi Lipton JV",
+    "anaFirma": "Unilever",
     "kategori": "",
     "alternatif": "Duru, Eyüp Sabri Tuncer, Peros, Boron, ., Torku",
     "kaynak": "https://www.unilever.com/brands/",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "Birleşik Krallık / Hollanda"
   },
   {
     "marka": "Liquid I.V",
@@ -7489,12 +7571,13 @@
   },
   {
     "marka": "Listerine",
-    "anaFirma": "Johnson & Johnson / Kenvue",
+    "anaFirma": "Johnson & Johnson",
     "kategori": "Ağız Bakımı",
     "alternatif": "Eyüp Sabri Tuncer, Duru, Otacı; sağlıkta eczacıya danışın",
     "kaynak": "https://www.jnj.com/ / https://www.kenvue.com/brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Lo Salt",
@@ -7588,12 +7671,13 @@
   },
   {
     "marka": "Loreal",
-    "anaFirma": "L'Oréal",
+    "anaFirma": "L'Oréal Groupe",
     "kategori": "Kozmetik",
     "alternatif": "",
     "kaynak": "https://www.loreal.com/en/our-global-brands-portfolio/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Fransa"
   },
   {
     "marka": "Loto DL SVR",
@@ -7786,12 +7870,13 @@
   },
   {
     "marka": "Maggi",
-    "anaFirma": "Nestlé",
+    "anaFirma": "Nestlé S.A.",
     "kategori": "Hazır Gıda",
     "alternatif": "Eti, Elvan, Torku, Mehmet Efendi, yerel kahveciler",
     "kaynak": "https://www.nestle.com/brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "İsviçre"
   },
   {
     "marka": "Magic 8 Ball",
@@ -7858,12 +7943,13 @@
   },
   {
     "marka": "Maltesers",
-    "anaFirma": "Mars",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku; evcil hayvanda Reflex/Goody kontrol",
     "kaynak": "https://www.mars.com/our-brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Mango",
@@ -7966,12 +8052,13 @@
   },
   {
     "marka": "Mars",
-    "anaFirma": "Mars",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku; evcil hayvanda Reflex/Goody kontrol",
     "kaynak": "https://www.mars.com/our-brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Mastercard",
@@ -8038,12 +8125,13 @@
   },
   {
     "marka": "Maybelline New York",
-    "anaFirma": "L'Oréal",
+    "anaFirma": "L'Oréal Groupe",
     "kategori": "Kozmetik",
     "alternatif": "",
     "kaynak": "https://www.loreal.com/en/our-global-brands-portfolio/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Fransa"
   },
   {
     "marka": "Maynard’s Bassett’s",
@@ -8065,12 +8153,13 @@
   },
   {
     "marka": "McDonald’s",
-    "anaFirma": "McDonald's",
+    "anaFirma": "McDonald's Corporation",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://corporate.mcdonalds.com/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "McKinsey&Company",
@@ -8083,12 +8172,13 @@
   },
   {
     "marka": "Mead Johnson",
-    "anaFirma": "Kontrol gerekli",
+    "anaFirma": "Johnson & Johnson",
     "kategori": "",
     "alternatif": "",
     "kaynak": "Bu marka için ana firma doğrulanamadı; manuel kontrol önerilir.",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Medgate",
@@ -8254,12 +8344,13 @@
   },
   {
     "marka": "Mezzo Mix",
-    "anaFirma": "Coca-Cola",
+    "anaFirma": "The Coca-Cola Company",
     "kategori": "İçecek/Atıştırmalık",
     "alternatif": "Uludağ, Çamlıca, Kristal, Beypazarı, Kızılay",
     "kaynak": "https://www.coca-colacompany.com/brands",
     "not": "İçecek alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Michael Kors",
@@ -8317,12 +8408,13 @@
   },
   {
     "marka": "Milka",
-    "anaFirma": "Mondelēz",
+    "anaFirma": "Mondelez International",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.mondelezinternational.com/our-brands/",
     "not": "Çikolata/bisküvi alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "MilkyWay",
@@ -8353,12 +8445,13 @@
   },
   {
     "marka": "Minute Maid",
-    "anaFirma": "Coca-Cola",
+    "anaFirma": "The Coca-Cola Company",
     "kategori": "İçecek",
     "alternatif": "Uludağ, Çamlıca, Kristal, Beypazarı, Kızılay",
     "kaynak": "https://www.coca-colacompany.com/brands",
     "not": "İçecek alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Mirabell Süßwaren",
@@ -8443,12 +8536,13 @@
   },
   {
     "marka": "Mon Chéri",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Mondamin",
@@ -8578,12 +8672,13 @@
   },
   {
     "marka": "Mr. Clean",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Temizlik",
     "alternatif": "Peros, Boron, Claro, Frosch",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Ana firma bazlı alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Mr. Method",
@@ -8776,12 +8871,13 @@
   },
   {
     "marka": "Nescafe",
-    "anaFirma": "Nestlé",
+    "anaFirma": "Nestlé S.A.",
     "kategori": "Kahve",
     "alternatif": "Kurukahveci Mehmet Efendi, Kahve Dünyası, yerel kahveciler",
     "kaynak": "https://www.nestle.com/brands",
     "not": "Kahve alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İsviçre"
   },
   {
     "marka": "Nespresso",
@@ -8794,12 +8890,13 @@
   },
   {
     "marka": "Nesquik",
-    "anaFirma": "Nestlé",
+    "anaFirma": "Nestlé S.A.",
     "kategori": "Gıda",
     "alternatif": "Eti, Elvan, Torku, Mehmet Efendi, yerel kahveciler",
     "kaynak": "https://www.nestle.com/brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "İsviçre"
   },
   {
     "marka": "Nestea",
@@ -8821,12 +8918,13 @@
   },
   {
     "marka": "Netto",
-    "anaFirma": "Kontrol gerekli",
+    "anaFirma": "EDEKA Zentrale",
     "kategori": "",
     "alternatif": "",
     "kaynak": "Bu marka için ana firma doğrulanamadı; manuel kontrol önerilir.",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Almanya"
   },
   {
     "marka": "Nettorama",
@@ -8857,12 +8955,13 @@
   },
   {
     "marka": "Neutrogena",
-    "anaFirma": "Johnson & Johnson / Kenvue",
+    "anaFirma": "Johnson & Johnson",
     "kategori": "Cilt Bakımı",
     "alternatif": "Eyüp Sabri Tuncer, Duru, Otacı; sağlıkta eczacıya danışın",
     "kaynak": "https://www.jnj.com/ / https://www.kenvue.com/brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "New Balance",
@@ -8920,12 +9019,13 @@
   },
   {
     "marka": "Nike",
-    "anaFirma": "Nike",
+    "anaFirma": "Nike, Inc.",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.nike.com/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Nina Ricci",
@@ -8947,12 +9047,13 @@
   },
   {
     "marka": "Nivea",
-    "anaFirma": "Beiersdorf",
+    "anaFirma": "Beiersdorf AG",
     "kategori": "Kişisel Bakım",
     "alternatif": "Duru, Eyüp Sabri Tuncer, Otacı",
     "kaynak": "https://www.beiersdorf.com/brands",
     "not": "Kişisel bakım alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "Almanya"
   },
   {
     "marka": "NKD",
@@ -9073,12 +9174,13 @@
   },
   {
     "marka": "Nutella",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Sürülebilir Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Nutrafol",
@@ -9217,21 +9319,23 @@
   },
   {
     "marka": "Olay",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Cilt Bakımı",
     "alternatif": "Peros, Boron, Claro, Frosch",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Ana firma bazlı alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Old Spice",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Kişisel Bakım",
     "alternatif": "Peros, Boron, Claro, Frosch",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Ana firma bazlı alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Olynth",
@@ -9334,12 +9438,13 @@
   },
   {
     "marka": "Oral-B",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Ağız Bakımı",
     "alternatif": "Jordan, Eyüp Sabri Tuncer ağız bakım",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Ağız bakım alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Orange (Frankreich)",
@@ -9361,21 +9466,23 @@
   },
   {
     "marka": "Orbit",
-    "anaFirma": "Mars",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "Çikolata/Evcil Hayvan",
     "alternatif": "Eti, Elvan, Torku; evcil hayvanda Reflex/Goody kontrol",
     "kaynak": "https://www.mars.com/our-brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Oreo",
-    "anaFirma": "Mondelēz",
+    "anaFirma": "Mondelez International",
     "kategori": "Bisküvi",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.mondelezinternational.com/our-brands/",
     "not": "Çikolata/bisküvi alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Oridis",
@@ -9586,12 +9693,13 @@
   },
   {
     "marka": "Pampers",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Bebek Bakımı",
     "alternatif": "Molfix, Sleepy",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Bebek bezi alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Panadol",
@@ -9622,12 +9730,13 @@
   },
   {
     "marka": "Pantene",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Saç Bakımı",
     "alternatif": "Bioxcin, Otacı, Duru şampuan çeşitleri",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Saç bakım alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Papedis",
@@ -9730,12 +9839,13 @@
   },
   {
     "marka": "Pedigree",
-    "anaFirma": "Mars",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "Evcil Hayvan",
     "alternatif": "Eti, Elvan, Torku; evcil hayvanda Reflex/Goody kontrol",
     "kaynak": "https://www.mars.com/our-brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Peet’s Coffee",
@@ -9757,12 +9867,13 @@
   },
   {
     "marka": "Penaten",
-    "anaFirma": "Johnson & Johnson / Kenvue",
+    "anaFirma": "Johnson & Johnson",
     "kategori": "",
     "alternatif": "Eyüp Sabri Tuncer, Duru, Otacı; sağlıkta eczacıya danışın",
     "kaynak": "https://www.jnj.com/ / https://www.kenvue.com/brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Penguin",
@@ -9784,12 +9895,13 @@
   },
   {
     "marka": "PENNY",
-    "anaFirma": "Rewe Group",
+    "anaFirma": "REWE Group",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.rewe-group.com/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Almanya"
   },
   {
     "marka": "Penti",
@@ -9955,12 +10067,13 @@
   },
   {
     "marka": "Philadelphia Cream Cheese",
-    "anaFirma": "Kontrol gerekli",
+    "anaFirma": "The Kraft Heinz Company",
     "kategori": "Kişisel Bakım",
     "alternatif": "",
     "kaynak": "Bu marka için ana firma doğrulanamadı; manuel kontrol önerilir.",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Philip Morris",
@@ -10243,12 +10356,13 @@
   },
   {
     "marka": "Powerade",
-    "anaFirma": "Coca-Cola",
+    "anaFirma": "The Coca-Cola Company",
     "kategori": "İçecek",
     "alternatif": "Uludağ, Çamlıca, Kristal, Beypazarı, Kızılay",
     "kaynak": "https://www.coca-colacompany.com/brands",
     "not": "İçecek alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Prescriptives",
@@ -10315,12 +10429,13 @@
   },
   {
     "marka": "Prima Group",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Temizlik/Kişisel Bakım",
     "alternatif": "Peros, Boron, Claro, Frosch",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Ana firma bazlı alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Primark",
@@ -10333,12 +10448,13 @@
   },
   {
     "marka": "Prince Athletic Corp.",
-    "anaFirma": "Kontrol gerekli",
+    "anaFirma": "Mondelez International",
     "kategori": "",
     "alternatif": "",
     "kaynak": "Bu marka için ana firma doğrulanamadı; manuel kontrol önerilir.",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Princess of Power",
@@ -10351,12 +10467,13 @@
   },
   {
     "marka": "Pringles",
-    "anaFirma": "Kellogg's / Kellanova",
+    "anaFirma": "Kellanova / WK Kellogg",
     "kategori": "Cips",
     "alternatif": "",
     "kaynak": "https://www.kellanova.com/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Priorix",
@@ -10540,12 +10657,13 @@
   },
   {
     "marka": "Quaker Oats",
-    "anaFirma": "Kontrol gerekli",
+    "anaFirma": "PepsiCo",
     "kategori": "",
     "alternatif": "",
     "kaynak": "Bu marka için ana firma doğrulanamadı; manuel kontrol önerilir.",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Quelle",
@@ -10675,12 +10793,13 @@
   },
   {
     "marka": "Redken",
-    "anaFirma": "L'Oréal",
+    "anaFirma": "L'Oréal Groupe",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.loreal.com/en/our-global-brands-portfolio/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Fransa"
   },
   {
     "marka": "Redoxon",
@@ -10702,12 +10821,13 @@
   },
   {
     "marka": "Reebok",
-    "anaFirma": "Kontrol gerekli",
+    "anaFirma": "Adidas AG",
     "kategori": "",
     "alternatif": "",
     "kaynak": "Bu marka için ana firma doğrulanamadı; manuel kontrol önerilir.",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Almanya"
   },
   {
     "marka": "Refresh Eye Drops",
@@ -10792,21 +10912,23 @@
   },
   {
     "marka": "REWE",
-    "anaFirma": "Rewe Group",
+    "anaFirma": "REWE Group",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.rewe-group.com/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Almanya"
   },
   {
     "marka": "Rexona",
-    "anaFirma": "Kontrol gerekli",
+    "anaFirma": "Unilever",
     "kategori": "Deodorant",
     "alternatif": "",
     "kaynak": "Bu marka için ana firma doğrulanamadı; manuel kontrol önerilir.",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Birleşik Krallık / Hollanda"
   },
   {
     "marka": "Ridsect",
@@ -10864,12 +10986,13 @@
   },
   {
     "marka": "Ritz",
-    "anaFirma": "Mondelēz",
+    "anaFirma": "Mondelez International",
     "kategori": "Gıda",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.mondelezinternational.com/our-brands/",
     "not": "Çikolata/bisküvi alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Rivella",
@@ -10891,12 +11014,13 @@
   },
   {
     "marka": "Rocher",
-    "anaFirma": "Kontrol gerekli",
+    "anaFirma": "Ferrero Group",
     "kategori": "",
     "alternatif": "",
     "kaynak": "Bu marka için ana firma doğrulanamadı; manuel kontrol önerilir.",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Rockstar",
@@ -10999,12 +11123,13 @@
   },
   {
     "marka": "Royal Canin",
-    "anaFirma": "Mars",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "Evcil Hayvan",
     "alternatif": "Eti, Elvan, Torku; evcil hayvanda Reflex/Goody kontrol",
     "kaynak": "https://www.mars.com/our-brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Rubin",
@@ -11107,12 +11232,13 @@
   },
   {
     "marka": "Samsung",
-    "anaFirma": "Samsung",
+    "anaFirma": "Samsung Electronics",
     "kategori": "İçecek",
     "alternatif": "",
     "kaynak": "https://www.samsung.com/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Güney Kore"
   },
   {
     "marka": "Samurai",
@@ -11269,12 +11395,13 @@
   },
   {
     "marka": "Schweppes",
-    "anaFirma": "Coca-Cola",
+    "anaFirma": "The Coca-Cola Company",
     "kategori": "İçecek/Atıştırmalık",
     "alternatif": "Uludağ, Çamlıca, Kristal, Beypazarı, Kızılay",
     "kaynak": "https://www.coca-colacompany.com/brands",
     "not": "İçecek alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Schwip Schwap",
@@ -11458,12 +11585,13 @@
   },
   {
     "marka": "Sheba",
-    "anaFirma": "Mars",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "Evcil Hayvan",
     "alternatif": "Eti, Elvan, Torku; evcil hayvanda Reflex/Goody kontrol",
     "kaynak": "https://www.mars.com/our-brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Sheego",
@@ -11548,12 +11676,13 @@
   },
   {
     "marka": "Signal",
-    "anaFirma": "Kontrol gerekli",
+    "anaFirma": "Unilever",
     "kategori": "",
     "alternatif": "",
     "kaynak": "Bu marka için ana firma doğrulanamadı; manuel kontrol önerilir.",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Birleşik Krallık / Hollanda"
   },
   {
     "marka": "Silan",
@@ -11782,12 +11911,13 @@
   },
   {
     "marka": "Smarties",
-    "anaFirma": "Nestlé",
+    "anaFirma": "Nestlé S.A.",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku, Mehmet Efendi, yerel kahveciler",
     "kaynak": "https://www.nestle.com/brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "İsviçre"
   },
   {
     "marka": "Smashbox",
@@ -11827,12 +11957,13 @@
   },
   {
     "marka": "Snickers",
-    "anaFirma": "Mars",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku; evcil hayvanda Reflex/Goody kontrol",
     "kaynak": "https://www.mars.com/our-brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Société",
@@ -11863,12 +11994,13 @@
   },
   {
     "marka": "Softlan",
-    "anaFirma": "Kontrol gerekli",
+    "anaFirma": "Colgate-Palmolive",
     "kategori": "",
     "alternatif": "",
     "kaynak": "Bu marka için ana firma doğrulanamadı; manuel kontrol önerilir.",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Softsoap",
@@ -11953,12 +12085,13 @@
   },
   {
     "marka": "Sony",
-    "anaFirma": "Sony",
+    "anaFirma": "Sony Group Corporation",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.sony.com/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Japonya"
   },
   {
     "marka": "Sorriso",
@@ -12070,12 +12203,13 @@
   },
   {
     "marka": "Sprite",
-    "anaFirma": "Coca-Cola",
+    "anaFirma": "The Coca-Cola Company",
     "kategori": "İçecek",
     "alternatif": "Uludağ Gazoz, Çamlıca Gazoz",
     "kaynak": "https://www.coca-colacompany.com/brands",
     "not": "Gazoz alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Stabilo",
@@ -12097,12 +12231,13 @@
   },
   {
     "marka": "Starbucks",
-    "anaFirma": "Starbucks",
+    "anaFirma": "Starbucks Corporation",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.starbucks.com/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Starburst",
@@ -12142,12 +12277,13 @@
   },
   {
     "marka": "Stimorol",
-    "anaFirma": "Mondelēz",
+    "anaFirma": "Mondelez International",
     "kategori": "Gıda",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.mondelezinternational.com/our-brands/",
     "not": "Çikolata/bisküvi alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Stokolan Light",
@@ -12376,12 +12512,13 @@
   },
   {
     "marka": "Swiffer",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Temizlik",
     "alternatif": "Peros, Boron, Claro, Frosch",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Ana firma bazlı alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Swimwear365",
@@ -12484,12 +12621,13 @@
   },
   {
     "marka": "Tampax",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Temizlik/Kişisel Bakım",
     "alternatif": "Peros, Boron, Claro, Frosch",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Ana firma bazlı alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Tana",
@@ -12610,12 +12748,13 @@
   },
   {
     "marka": "Tesa",
-    "anaFirma": "Beiersdorf",
+    "anaFirma": "Beiersdorf AG",
     "kategori": "Kozmetik/Kişisel Bakım",
     "alternatif": "Eyüp Sabri Tuncer, Duru, Otacı, Bioxcin",
     "kaynak": "https://www.beiersdorf.com/brands",
     "not": "Kişisel bakım alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "Almanya"
   },
   {
     "marka": "Tesco",
@@ -12700,12 +12839,13 @@
   },
   {
     "marka": "Tic Tac",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Şekerleme",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Tichy",
@@ -12781,12 +12921,13 @@
   },
   {
     "marka": "Toblerone",
-    "anaFirma": "Mondelēz",
+    "anaFirma": "Mondelez International",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.mondelezinternational.com/our-brands/",
     "not": "Çikolata/bisküvi alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Tom Ford",
@@ -12961,12 +13102,13 @@
   },
   {
     "marka": "Tuc",
-    "anaFirma": "Mondelēz",
+    "anaFirma": "Mondelez International",
     "kategori": "Gıda",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.mondelezinternational.com/our-brands/",
     "not": "Çikolata/bisküvi alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Turkuaz Su",
@@ -13006,12 +13148,13 @@
   },
   {
     "marka": "Twix",
-    "anaFirma": "Mars",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "Çikolata",
     "alternatif": "Eti, Elvan, Torku; evcil hayvanda Reflex/Goody kontrol",
     "kaynak": "https://www.mars.com/our-brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Tyco R/C",
@@ -13060,12 +13203,13 @@
   },
   {
     "marka": "Ülker",
-    "anaFirma": "Ülker",
+    "anaFirma": "Yıldız Holding",
     "kategori": "Boykotta Değil",
     "alternatif": "",
     "kaynak": "alternatif.ods",
     "not": "Boykot listesinde olmayan / alternatif listesinde yer alan marka. Satın almadan önce kendi araştırmanızı yapmanız önerilir.",
-    "durum": "safe"
+    "durum": "safe",
+    "ulke": "Türkiye"
   },
   {
     "marka": "ültje",
@@ -13249,21 +13393,23 @@
   },
   {
     "marka": "Velveeta",
-    "anaFirma": "Kontrol gerekli",
+    "anaFirma": "The Kraft Heinz Company",
     "kategori": "Kişisel Bakım",
     "alternatif": "",
     "kaynak": "Bu marka için ana firma doğrulanamadı; manuel kontrol önerilir.",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Venus",
-    "anaFirma": "P&G",
+    "anaFirma": "Procter & Gamble",
     "kategori": "Tıraş",
     "alternatif": "Peros, Boron, Claro, Frosch",
     "kaynak": "https://us.pg.com/brands/",
     "not": "Ana firma bazlı alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Verizon (USA)",
@@ -13303,12 +13449,13 @@
   },
   {
     "marka": "Vichy",
-    "anaFirma": "L'Oréal",
+    "anaFirma": "L'Oréal Groupe",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.loreal.com/en/our-global-brands-portfolio/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "Fransa"
   },
   {
     "marka": "Vicks",
@@ -13420,12 +13567,13 @@
   },
   {
     "marka": "Vittel",
-    "anaFirma": "Nestlé",
+    "anaFirma": "Nestlé S.A.",
     "kategori": "Su",
     "alternatif": "Eti, Elvan, Torku, Mehmet Efendi, yerel kahveciler",
     "kaynak": "https://www.nestle.com/brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "İsviçre"
   },
   {
     "marka": "Vivo",
@@ -13672,12 +13820,13 @@
   },
   {
     "marka": "Whiskas",
-    "anaFirma": "Mars",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "Evcil Hayvan",
     "alternatif": "Eti, Elvan, Torku; evcil hayvanda Reflex/Goody kontrol",
     "kaynak": "https://www.mars.com/our-brands",
     "not": "Kategoriye göre alternatif",
-    "durum": ""
+    "durum": "",
+    "ulke": "ABD"
   },
   {
     "marka": "Whisper",
@@ -13879,12 +14028,13 @@
   },
   {
     "marka": "Yogurette",
-    "anaFirma": "Ferrero",
+    "anaFirma": "Ferrero Group",
     "kategori": "Gıda",
     "alternatif": "Eti, Elvan, Torku",
     "kaynak": "https://www.ferrero.com/",
     "not": "Çikolata alternatifi",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Yopro",
@@ -13924,12 +14074,13 @@
   },
   {
     "marka": "Yves Rocher",
-    "anaFirma": "Groupe Rocher",
+    "anaFirma": "Ferrero Group",
     "kategori": "",
     "alternatif": "",
     "kaynak": "https://www.groupe-rocher.com/",
     "not": "Alternatif manuel eklenmeli",
-    "durum": ""
+    "durum": "",
+    "ulke": "İtalya"
   },
   {
     "marka": "Yves Saint Laurent",

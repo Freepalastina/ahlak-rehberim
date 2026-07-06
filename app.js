@@ -7,7 +7,7 @@ if(location.search.includes("clear-cache") || location.search.includes("v20-clea
   }catch(e){}
 }
 
-const VERSION="20260706-v20-mevcut-tasarim-guvenli";
+const VERSION="20260706-v21-ana-firma-red-status";
 const SUPABASE_URL="https://imicltjdfzqlxzvodheq.supabase.co";
 const SUPABASE_KEY="sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
 const supabaseClient=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
@@ -170,7 +170,7 @@ function rawStatus(r){
 
   return d ? d : "boykot";
 }
-function statusLabel(s){return{boykot:`🟡 ${t("boycott")}`,safe:`🟢 ${t("notBoycotted")}`,alternatif:`🔵 ${t("alternative")}`,dikkat:"🟠 Dikkat",inceleme:`⚪ ${t("review")}`}[s]||s}
+function statusLabel(s){return{boykot:`🔴 ${t("boycott")}`,safe:`🟢 ${t("notBoycotted")}`,alternatif:`🔵 ${t("alternative")}`,dikkat:"🟠 Dikkat",inceleme:`⚪ ${t("review")}`}[s]||s}
 function hasAlternative(x){if(x.status==="alternatif")return true;const a=norm(x.alternatif);return !!a&&a!=="-"&&a!=="yok"&&!a.includes("alternatif manuel eklenmeli")}
 function normalizeItem(raw,i){
   const marka=get(raw,["marka","name","Marka","brand"])||`Marka ${i+1}`;
@@ -220,10 +220,41 @@ function toLegacy(x){
   };
 }
 
+
+let COMPANY_DB=[];
+function companyNorm(s){return String(s||"").toLocaleLowerCase("tr-TR").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/ı/g,"i").replace(/[^a-z0-9]+/g," ").trim();}
+function findCompanyFromDb(brand){
+  const b=companyNorm(brand);
+  for(const c of COMPANY_DB){
+    const aliases=c.brandAliases||[];
+    for(const a of aliases){
+      const k=companyNorm(a);
+      if(k && (b===k || (k.length>=5 && (b.startsWith(k+" ") || b.endsWith(" "+k)))) ) return c;
+    }
+  }
+  return null;
+}
+function enrichCompanies(list){
+  return (list||[]).map(item=>{
+    const c=findCompanyFromDb(item.marka||item.Marka||item.name||"");
+    if(c){
+      item.anaFirma=c.name;
+      if(!item.ulke && !item["Ülke"]) item.ulke=c.country||"";
+    }
+    return item;
+  });
+}
+async function loadCompanyDb(){
+  try{
+    const r=await fetch(`companies.json?v=${VERSION}`,{cache:"reload"});
+    COMPANY_DB=await r.json();
+  }catch(e){COMPANY_DB=[]}
+}
+
 async function loadSession(){if(!supabaseClient)return;const{data}=await supabaseClient.auth.getSession();adminSession=data.session||null}
 async function loadSupabase(){if(!supabaseClient)throw new Error("No Supabase");let all=[],from=0,step=1000;while(true){const{data,error}=await supabaseClient.from("brand_cards").select("*").order("marka").range(from,from+step-1);if(error)throw error;all=all.concat(data||[]);if(!data||data.length<step)break;from+=step}return all}
 async function loadFallback(){const r=await fetch(`data.json?v=${VERSION}`,{cache:"reload"});const j=await r.json();return Array.isArray(j)?j:(j.data||[])}
-async function init(){applyTheme();applyLang();setupServiceWorker();showLegalNoticeOnce();await loadSession();try{let list=[];try{list=await loadSupabase()}catch(e){list=[]}if(!list.length){list=await loadFallback();toast(t("supabaseFallback"))}else toast(t("supabaseReady"));DATA=list.map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"));render()}catch(e){results.innerHTML=`<div class="empty">${esc(e.message)}</div>`}}
+async function init(){applyTheme();applyLang();setupServiceWorker();showLegalNoticeOnce();await loadCompanyDb();await loadSession();try{let list=[];try{list=await loadSupabase()}catch(e){list=[]}if(!list.length){list=await loadFallback();toast(t("supabaseFallback"))}else toast(t("supabaseReady"));DATA=enrichCompanies(list).map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"));render()}catch(e){results.innerHTML=`<div class="empty">${esc(e.message)}</div>`}}
 
 function counts(){return{total:DATA.length,boykot:DATA.filter(x=>x.status==="boykot").length,safe:DATA.filter(x=>x.status==="safe").length,inceleme:DATA.filter(x=>x.status==="inceleme").length,altli:DATA.filter(hasAlternative).length,fav:favorites.length,firmalar:new Set(DATA.map(x=>x.anaFirma||"-")).size,kategoriler:new Set(DATA.map(x=>x.kategori||"-").filter(Boolean)).size,ulkeler:new Set(DATA.map(x=>x.ulke||"").filter(Boolean)).size}}
 function renderStats(){const c=counts();stats.innerHTML=`<button class="stat red" data-stat="boykot"><small>🔴 ${t("boycott")}</small><b>${c.boykot}</b></button><button class="stat safe" data-stat="safe"><small>✅ ${t("notBoycotted")}</small><b>${c.safe}</b></button><button class="stat green" data-stat="altli"><small>⭐ ${t("withAlt")}</small><b>${c.altli}</b></button><button class="stat gray" data-stat="inceleme"><small>⚪ ${t("review")}</small><b>${c.inceleme}</b></button>`}
@@ -473,7 +504,7 @@ async function importSpreadsheetToSupabase(){if(!adminSession){toast(t("login"))
 async function importToSupabase(){if(!adminSession){toast(t("login"));return}for(const item of DATA){await importLegacy(item)}toast(t("importDone"));await reload();view="admin";render()}
 async function saveAdminBrand(){if(!adminSession){toast(t("login"));return}const v=getAdminValues();if(!v.marka){toast(t("requiredBrand"));return}if(!v.anaFirma)v.anaFirma=v.marka;await importLegacy(v);toast(t("dataSaved"));await reload();view="admin";render()}
 async function deleteAdminBrand(){if(!adminSession){toast(t("login"));return}const name=$("adminSelect").value||$("adminMarka").value;if(!name||!confirm(t("confirmDelete")))return;const item=DATA.find(x=>x.marka===name);const {error}=await supabaseClient.from("brands").delete().eq(item?.id?"id":"name",item?.id||name);if(error){toast(error.message);return}toast(t("dataDeleted"));await reload();view="admin";render()}
-async function reload(){const list=await loadSupabase();DATA=list.map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"))}
+async function reload(){const list=await loadSupabase();DATA=enrichCompanies(list).map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"))}
 function adminOptions(){return DATA.map(x=>x.marka).filter((v,i,a)=>v&&a.indexOf(v)===i).sort((a,b)=>a.localeCompare(b,"tr")).map(n=>`<option value="${esc(n)}">${esc(n)}</option>`).join("")}
 function getAdminValues(){const raw=$("adminBarkod")?.value.trim()||"";return{marka:$("adminMarka").value.trim(),anaFirma:$("adminAnaFirma").value.trim(),kategori:$("adminKategori").value.trim(),alternatif:$("adminAlternatif").value.trim(),kaynak:$("adminKaynak").value.trim(),not:$("adminNot").value.trim(),barkod:raw?raw.split(/[;, ]+/).filter(Boolean):[],imageUrl:($("adminImageUrl")?.value||"").trim(),status:$("adminDurum").value}}
 function fillAdminForm(name){const x=DATA.find(v=>v.marka===name);if(!x)return;$("adminMarka").value=x.marka||"";$("adminAnaFirma").value=x.anaFirma||"";$("adminKategori").value=x.kategori||"";$("adminAlternatif").value=x.alternatif||"";$("adminKaynak").value=x.kaynak||"";$("adminNot").value=x.not||"";$("adminBarkod").value=Array.isArray(x.barkod)?x.barkod.join(", "):"";$("adminImageUrl").value=x.imageUrl||"";$("adminDurum").value=x.status||"boykot"}
