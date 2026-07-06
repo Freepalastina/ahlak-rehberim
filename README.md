@@ -210,3 +210,9 @@ Güvenlik:
 - Marka detayına QR kod eklendi.
 - Link kopyalama ve mobil paylaşım eklendi.
 - `?marka=` parametresiyle doğrudan marka açma eklendi.
+
+## V32 Kullanıcı Öneri Sistemi
+- Öneri / düzeltme formu eklendi.
+- Marka detayından doğrudan düzeltme önerisi başlatılabilir.
+- Öneriler localStorage içinde saklanır.
+- Öneriler JSON olarak dışa aktarılabilir.

@@ -7,7 +7,7 @@ if(location.search.includes("clear-cache") || location.search.includes("v20-clea
   }catch(e){}
 }
 
-const VERSION="20260706-v31-qr-paylasim";
+const VERSION="20260706-v32-kullanici-oneri";
 const SUPABASE_URL="https://imicltjdfzqlxzvodheq.supabase.co";
 const SUPABASE_KEY="sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
 const supabaseClient=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
@@ -94,6 +94,79 @@ function ensureBarcodeSearch(){
 /* V30 Compare */
 
 /* V31 QR + Share */
+
+/* V32 User Suggestions */
+function suggestionKey(){return "ahlak_user_suggestions_v32";}
+function getSuggestions(){try{return JSON.parse(localStorage.getItem(suggestionKey())||"[]")}catch(e){return []}}
+function setSuggestions(list){localStorage.setItem(suggestionKey(),JSON.stringify(list||[]))}
+function suggestionFormHtml(prefill={}){
+  return `<section class="suggestPanel">
+    <h2>📝 Öneri / Düzeltme Gönder</h2>
+    <p class="legal-small">Bu form tarayıcıda yerel olarak kaydedilir. Yönetici daha sonra JSON olarak dışa aktarabilir.</p>
+    <div class="adminGrid">
+      <label>Talep Türü<select id="sgType">
+        <option value="marka">Yeni marka önerisi</option>
+        <option value="kaynak">Kaynak ekleme</option>
+        <option value="alternatif">Alternatif önerisi</option>
+        <option value="duzeltme">Düzeltme / itiraz</option>
+      </select></label>
+      <label>İlgili Marka<input id="sgBrand" value="${esc(prefill.marka||"")}" placeholder="Marka adı"></label>
+      <label>Önerilen Ana Firma<input id="sgCompany" value="${esc(prefill.anaFirma||"")}" placeholder="Varsa"></label>
+      <label>Kaynak URL<input id="sgUrl" placeholder="https://..."></label>
+    </div>
+    <label>Açıklama<textarea id="sgNote" placeholder="Kısa ve tarafsız açıklama yazın. Kesin suçlama içeren ifade kullanmayın."></textarea></label>
+    <div class="adminActions">
+      <button id="sgSave">Öneriyi Kaydet</button>
+      <button id="sgExport">Önerileri JSON İndir</button>
+      <button id="sgClear">Önerileri Temizle</button>
+    </div>
+    <h3>Kaydedilen Öneriler</h3>
+    <div id="sgList"></div>
+  </section>`;
+}
+function readSuggestion(){
+  return {
+    id:Date.now(),
+    tur:document.getElementById("sgType").value,
+    marka:document.getElementById("sgBrand").value.trim(),
+    anaFirma:document.getElementById("sgCompany").value.trim(),
+    url:document.getElementById("sgUrl").value.trim(),
+    aciklama:document.getElementById("sgNote").value.trim(),
+    tarih:new Date().toISOString()
+  };
+}
+function renderSuggestionList(){
+  const box=document.getElementById("sgList");
+  if(!box) return;
+  const list=getSuggestions();
+  box.innerHTML=list.length?list.map((s,i)=>`<div class="suggestItem">
+    <div><b>${esc(s.tur)} · ${esc(s.marka||"-")}</b><small>${esc(s.tarih||"")}</small><p>${esc(s.aciklama||"")}</p>${s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.url)}</a>`:""}</div>
+    <button data-del-suggestion="${i}">Sil</button>
+  </div>`).join(""):`<div class="sourceEmpty">Henüz öneri yok.</div>`;
+}
+function setupSuggestionForm(){
+  const save=document.getElementById("sgSave");
+  if(!save) return;
+  save.onclick=()=>{
+    const s=readSuggestion();
+    if(!s.marka && !s.aciklama){alert("Marka veya açıklama gerekli.");return}
+    const list=getSuggestions(); list.push(s); setSuggestions(list); renderSuggestionList();
+    alert("Öneri kaydedildi.");
+  };
+  document.getElementById("sgExport").onclick=()=>downloadText("ahlak_rehberim_oneriler.json",JSON.stringify(getSuggestions(),null,2));
+  document.getElementById("sgClear").onclick=()=>{if(confirm("Tüm öneriler silinsin mi?")){setSuggestions([]);renderSuggestionList()}};
+  renderSuggestionList();
+}
+function renderSuggestions(){
+  renderStats();
+  sectionTitle.innerHTML=`<h2>📝 Öneri / Düzeltme</h2><span>${getSuggestions().length}</span>`;
+  results.innerHTML=suggestionFormHtml();
+  setupSuggestionForm();
+}
+function suggestionButton(x){
+  return `<button class="suggestBtn" data-suggest-brand="${esc(x.id)}">📝 Düzeltme / Kaynak Öner</button>`;
+}
+
 function productUrl(x){
   const base=location.origin+location.pathname;
   return `${base}?marka=${encodeURIComponent(x.marka||"")}`;
@@ -514,7 +587,7 @@ async function init(){applyTheme();applyLang();setupServiceWorker();showLegalNot
 
 function counts(){return{total:DATA.length,boykot:DATA.filter(x=>x.status==="boykot").length,safe:DATA.filter(x=>x.status==="safe").length,inceleme:DATA.filter(x=>x.status==="inceleme").length,altli:DATA.filter(hasAlternative).length,fav:favorites.length,firmalar:new Set(DATA.map(x=>x.anaFirma||"-")).size,kategoriler:new Set(DATA.map(x=>x.kategori||"-").filter(Boolean)).size,ulkeler:new Set(DATA.map(x=>x.ulke||"").filter(Boolean)).size}}
 function renderStats(){const c=counts();stats.innerHTML=`<button class="stat red" data-stat="boykot"><small>🔴 ${t("boycott")}</small><b>${c.boykot}</b></button><button class="stat safe" data-stat="safe"><small>✅ ${t("notBoycotted")}</small><b>${c.safe}</b></button><button class="stat green" data-stat="altli"><small>⭐ ${t("withAlt")}</small><b>${c.altli}</b></button><button class="stat gray" data-stat="inceleme"><small>⚪ ${t("review")}</small><b>${c.inceleme}</b></button>`}
-function renderQuickActions(){const c=counts();quickActions.innerHTML=`<h2>${t("quickTitle")}</h2><div class="quickGrid"><button data-go="companies"><span>🏢</span><b>${t("companies")}</b><small>${c.firmalar}</small></button><button data-go="categories"><span>📂</span><b>${t("categories")}</b><small>${c.kategoriler}</small></button><button data-go="countries"><span>🌍</span><b>${t("countries")||"Ülkeler"}</b><small>${c.ulkeler||0}</small></button><button data-go="alternatives"><span>⭐</span><b>${t("withAlt")}</b><small>${c.altli}</small></button><button data-go="favorites"><span>❤️</span><b>${t("favorites")}</b><small>${c.fav}</small></button><button data-go="compare"><span>⚖️</span><b>Karşılaştır</b><small>2</small></button><button data-go="admin"><span>⚙️</span><b>${t("admin")}</b><small>ODS</small></button></div>`}
+function renderQuickActions(){const c=counts();quickActions.innerHTML=`<h2>${t("quickTitle")}</h2><div class="quickGrid"><button data-go="companies"><span>🏢</span><b>${t("companies")}</b><small>${c.firmalar}</small></button><button data-go="categories"><span>📂</span><b>${t("categories")}</b><small>${c.kategoriler}</small></button><button data-go="countries"><span>🌍</span><b>${t("countries")||"Ülkeler"}</b><small>${c.ulkeler||0}</small></button><button data-go="alternatives"><span>⭐</span><b>${t("withAlt")}</b><small>${c.altli}</small></button><button data-go="favorites"><span>❤️</span><b>${t("favorites")}</b><small>${c.fav}</small></button><button data-go="suggestions"><span>📝</span><b>Öneri</b><small>+</small></button><button data-go="compare"><span>⚖️</span><b>Karşılaştır</b><small>2</small></button><button data-go="admin"><span>⚙️</span><b>${t("admin")}</b><small>ODS</small></button></div>`}
 function renderFilters(){const arr=[["all",t("all")],["boykot",`🔴 ${t("boycott")}`],["safe",`✅ ${t("notBoycotted")}`],["altli",`⭐ ${t("withAlt")}`],["inceleme",`⚪ ${t("review")}`],["fav",`❤️ ${t("favorites")}`]];quickFilters.innerHTML=arr.map(([k,l])=>`<button class="chip ${filter===k?'active':''}" data-filter="${k}">${l}</button>`).join("")}
 function filteredList(base=DATA){const q=norm(search.value);return base.filter(x=>(!q||x.hay.includes(q))&&(filter==="all"||(filter==="boykot"&&x.status==="boykot")||(filter==="safe"&&x.status==="safe")||(filter==="altli"&&hasAlternative(x))||(filter==="inceleme"&&x.status==="inceleme")||(filter==="fav"&&isFav(x.marka)))).sort((a,b)=>Number(isFav(b.marka))-Number(isFav(a.marka))||a.marka.localeCompare(b.marka,"tr"))}
 function imageHtml(x){return x.imageUrl?`<div class="brandImage"><img src="${esc(x.imageUrl)}" alt="${esc(x.marka)}" loading="lazy" onerror="this.parentElement.classList.add('noImage');this.remove();"></div>`:`<div class="brandImage noImage"><span>🌿</span></div>`}
@@ -1094,7 +1167,7 @@ const fileInput = $("spreadsheetFile");
 if(fileInput) fileInput.addEventListener("change", e=>readSpreadsheetFile(e.target.files[0]));
 }
 
-function render(){document.querySelectorAll(".bottomNav button").forEach(b=>b.classList.toggle("active",b.dataset.view===view));if(currentGroup)return renderHome(currentGroup.items);if(view==="home")return renderHome();if(view==="alternatives"){filter="altli";return renderHome()}if(view==="favorites"){filter="fav";return renderHome()}if(view==="companies")return renderCompanies();if(view==="categories")return renderCategories();if(view==="countries")return renderCountries();if(view==="compare")return renderCompare();if(view==="admin")return renderAdminLocal()}
+function render(){document.querySelectorAll(".bottomNav button").forEach(b=>b.classList.toggle("active",b.dataset.view===view));if(currentGroup)return renderHome(currentGroup.items);if(view==="home")return renderHome();if(view==="alternatives"){filter="altli";return renderHome()}if(view==="favorites"){filter="fav";return renderHome()}if(view==="companies")return renderCompanies();if(view==="categories")return renderCategories();if(view==="countries")return renderCountries();if(view==="suggestions")return renderSuggestions();if(view==="compare")return renderCompare();if(view==="admin")return renderAdminLocal()}
 function detail(x){const d=$("detailDialog"),c=$("detailContent");c.innerHTML=`<div class="detailHead"><h2>${esc(x.marka)}</h2><p>${statusLabel(x.status)}</p></div><div class="detailBody">${x.imageUrl?`<div class="detailImage"><img src="${esc(x.imageUrl)}" alt="${esc(x.marka)}"></div>`:""}<div class="detailLine"><span>${t("parent")}</span><b>${esc(x.anaFirma||"-")}</b></div><div class="detailLine"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div><div class="detailLine"><span>${t("country")||"Ülke"}</span><b>${esc(x.ulke||"-")}</b></div><div class="detailLine"><span>${t("barcode")}</span><b>${esc((x.barkod||[]).join(", ")||"-")}</b></div><div class="detailLine"><span>${t("alternative")}</span><b>${esc(x.alternatif||"-")}</b></div><div class="detailLine"><span>${t("note")}</span><b>${esc(x.not||"-")}</b></div><div class="legalDetail">⚖️ ${esc(legalShortText())}<br>📝 ${esc(correctionPolicyText())}</div><div class="detailLine"><span>${t("source")}</span><b>${esc(x.kaynak||"-")}</b></div></div>`;d.showModal()}
 function handleBarcodeValue(code){const n=norm(code);const item=DATA.find(x=>Array.isArray(x.barkod)&&x.barkod.some(v=>norm(v)===n));if(item)detail(item);else{search.value=code;render()}}
 function applyTheme(){const dark=localStorage.getItem("ahlak_theme")==="dark";document.body.classList.toggle("dark",dark);themeBtn.textContent=dark?"☀️":"🌙"}
