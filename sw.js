@@ -1,4 +1,4 @@
-const CACHE_VERSION="20260706-v23-kaynak-merkezi";
+const CACHE_VERSION="20260706-v24-alternatif-merkezi";
 const CACHE_NAME=`ahlak-rehberim-${CACHE_VERSION}`;
 const APP_SHELL=["./","./index.html","./style.css","./app.js","./manifest.json","./data.json","./icon-192.png","./icon-512.png"];
 self.addEventListener("install",e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(APP_SHELL)).catch(()=>{}))});

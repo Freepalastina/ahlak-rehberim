@@ -148,3 +148,11 @@ Görsel ekleme:
 - Eski `kaynak` metinlerinden 2000 adet kaynak nesnesi üretildi.
 - Kaynaksız kayıtlar için “Kaynak kontrolü gerekli” mesajı gösterilir.
 - `kaynak_sablonu.json` eklendi.
+
+## V24 Alternatif Merkezi
+- Marka kartlarında alternatif sayısı gösterilir.
+- Marka detayında `⭐ Alternatif Merkezi` bölümü eklendi.
+- `alternatifler` alanı desteklenir: marka, kategori, ülke, not.
+- Eski `alternatif` metinlerinden 2156 alternatif nesnesi üretildi.
+- Alternatif yoksa “Alternatif önerisi bekleniyor” mesajı gösterilir.
+- `alternatif_sablonu.json` eklendi.

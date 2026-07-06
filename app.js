@@ -7,7 +7,7 @@ if(location.search.includes("clear-cache") || location.search.includes("v20-clea
   }catch(e){}
 }
 
-const VERSION="20260706-v23-kaynak-merkezi";
+const VERSION="20260706-v24-alternatif-merkezi";
 const SUPABASE_URL="https://imicltjdfzqlxzvodheq.supabase.co";
 const SUPABASE_KEY="sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
 const supabaseClient=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
@@ -172,6 +172,31 @@ function rawStatus(r){
 }
 
 
+
+function parseAlternatives(x){
+  if(Array.isArray(x.alternatifler)) return x.alternatifler.filter(a=>a && (a.marka||a.name));
+  const raw=String(x.alternatif||"").split(/[;\n,•]+/).map(v=>v.trim()).filter(Boolean);
+  return raw.map(v=>({marka:v,kategori:x.kategori||"",ulke:"",not:""}));
+}
+function altCount(x){return parseAlternatives(x).length}
+function altStatusLabel(x){
+  const n=altCount(x);
+  if(n>0) return `⭐ ${n} Alternatif`;
+  return "⭐ Alternatif önerisi bekleniyor";
+}
+function renderAlternativesList(x){
+  const list=parseAlternatives(x);
+  if(!list.length){
+    return `<div class="altEmpty">Bu kayıt için henüz alternatif önerisi eklenmemiştir. Aynı kategoride tercih edilebilir alternatif biliyorsanız ekleyebilirsiniz.</div>`;
+  }
+  return `<div class="altList">${list.map(a=>`
+    <article class="altItem">
+      <b>⭐ ${esc(a.marka||a.name||"Alternatif")}</b>
+      <small>${a.kategori?`📂 ${esc(a.kategori)}`:""}${a.ulke?` · 🌍 ${esc(a.ulke)}`:""}</small>
+      ${a.not?`<p>${esc(a.not)}</p>`:""}
+    </article>`).join("")}</div>`;
+}
+
 function parseSources(x){
   if(Array.isArray(x.kaynaklar)) return x.kaynaklar.filter(s=>s && (s.url||s.baslik));
   const raw=String(x.kaynak||"").split(/[;\n]+/).map(v=>v.trim()).filter(Boolean);
@@ -233,7 +258,7 @@ function normalizeItem(raw,i){
   if(typeof isSafeRecord==="function" && isSafeRecord(raw)) status="safe";
 
   const hay=norm([marka,anaFirma,anaKategori,altKategori,kategori,ulke,alternatif,kaynak,not,barkod.join(" "),imageUrl,statusLabel(status)].join(" "));
-  return {id:raw.id||null,marka,anaFirma,anaKategori,altKategori,kategori,ulke,alternatif,kaynak,kaynaklar:raw.kaynaklar||[],sonGuncelleme:raw.sonGuncelleme||raw.son_guncelleme||"",ozet:raw.ozet||raw.özet||"",kaynakDurumu:raw.kaynakDurumu||"",not,barkod,imageUrl,status,hay};
+  return {id:raw.id||null,marka,anaFirma,anaKategori,altKategori,kategori,ulke,alternatif,kaynak,kaynaklar:raw.kaynaklar||[],alternatifler:raw.alternatifler||[],alternatifDurumu:raw.alternatifDurumu||"",sonGuncelleme:raw.sonGuncelleme||raw.son_guncelleme||"",ozet:raw.ozet||raw.özet||"",kaynakDurumu:raw.kaynakDurumu||"",not,barkod,imageUrl,status,hay};
 }
 function toLegacy(x){
   let normalizedStatus = rawStatus({durum:x.status || x.durum || ""});
@@ -257,7 +282,7 @@ function toLegacy(x){
     not:x.not,
     durum:normalizedStatus,
     barkod:Array.isArray(x.barkod)?x.barkod:[],
-    image_url:x.imageUrl||x.image_url||"", kaynaklar:x.kaynaklar||[], sonGuncelleme:x.sonGuncelleme||"", ozet:x.ozet||"", kaynakDurumu:x.kaynakDurumu||""
+    image_url:x.imageUrl||x.image_url||"", kaynaklar:x.kaynaklar||[], alternatifler:x.alternatifler||[], alternatifDurumu:x.alternatifDurumu||"", sonGuncelleme:x.sonGuncelleme||"", ozet:x.ozet||"", kaynakDurumu:x.kaynakDurumu||""
   };
 }
 

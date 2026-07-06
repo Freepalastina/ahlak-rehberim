@@ -1,0 +1,12 @@
+{
+  "marka": "Örnek İncelenmesi Önerilen Marka",
+  "alternatifler": [
+    {
+      "marka": "Alternatif Marka",
+      "kategori": "Aynı kategori",
+      "ulke": "Türkiye",
+      "not": "Tercih edilebilir alternatif açıklaması"
+    }
+  ],
+  "alternatifDurumu": "Alternatif mevcut / Alternatif önerisi bekleniyor"
+}

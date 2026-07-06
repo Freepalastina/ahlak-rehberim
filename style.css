@@ -180,3 +180,24 @@ body.dark .importStatus{
   color:var(--muted,#66705f);
   line-height:1.5;
 }
+
+
+/* V24 alternatives center */
+.altList{display:grid;gap:10px;margin:12px 0 16px}
+.altItem{
+  border:1px solid rgba(59,130,246,.18);
+  background:rgba(59,130,246,.07);
+  border-radius:18px;
+  padding:12px;
+}
+.altItem b{display:block;color:#1d4ed8}
+.altItem small{display:block;color:var(--muted,#66705f);margin-top:4px}
+.altItem p{margin:8px 0 0;line-height:1.45}
+.altEmpty{
+  border:1px dashed rgba(59,130,246,.35);
+  background:rgba(59,130,246,.06);
+  border-radius:18px;
+  padding:14px;
+  color:var(--muted,#66705f);
+  line-height:1.5;
+}
