@@ -7,7 +7,7 @@ if(location.search.includes("clear-cache") || location.search.includes("v20-clea
   }catch(e){}
 }
 
-const VERSION="20260706-v21-ana-firma-red-status";
+const VERSION="20260706-v22-marka-gorselleri";
 const SUPABASE_URL="https://imicltjdfzqlxzvodheq.supabase.co";
 const SUPABASE_KEY="sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
 const supabaseClient=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
@@ -170,6 +170,22 @@ function rawStatus(r){
 
   return d ? d : "boykot";
 }
+
+function fallbackBrandImage(name){
+  const text = encodeURIComponent((name||"A").trim().slice(0,2).toUpperCase());
+  return `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='300' viewBox='0 0 480 300'%3E%3Crect width='480' height='300' rx='34' fill='%23EEF3DF'/%3E%3Ccircle cx='240' cy='140' r='70' fill='%235F7138' opacity='.16'/%3E%3Ctext x='240' y='162' text-anchor='middle' font-family='Arial,sans-serif' font-size='52' font-weight='800' fill='%235F7138'%3E${text}%3C/text%3E%3Ctext x='240' y='225' text-anchor='middle' font-family='Arial,sans-serif' font-size='20' font-weight='700' fill='%235F7138' opacity='.75'%3EAhlak Rehberim%3C/text%3E%3C/svg%3E`;
+}
+function safeImageUrl(url,name){
+  const u=String(url||"").trim();
+  if(!u) return fallbackBrandImage(name);
+  if(u.startsWith("http://")||u.startsWith("https://")||u.startsWith("data:image/")||u.startsWith("./")||u.startsWith("/")||u.startsWith("images/")||u.startsWith("assets/")) return u;
+  return fallbackBrandImage(name);
+}
+function imageError(el,name){
+  el.onerror=null;
+  el.src=fallbackBrandImage(name);
+}
+
 function statusLabel(s){return{boykot:`🔴 ${t("boycott")}`,safe:`🟢 ${t("notBoycotted")}`,alternatif:`🔵 ${t("alternative")}`,dikkat:"🟠 Dikkat",inceleme:`⚪ ${t("review")}`}[s]||s}
 function hasAlternative(x){if(x.status==="alternatif")return true;const a=norm(x.alternatif);return !!a&&a!=="-"&&a!=="yok"&&!a.includes("alternatif manuel eklenmeli")}
 function normalizeItem(raw,i){
@@ -186,7 +202,7 @@ function normalizeItem(raw,i){
   const not=get(raw,["not","note","notlar","Not"]);
   const barkodRaw=raw.barkod??raw.barcode??raw.ean??raw.gtin??[];
   const barkod=Array.isArray(barkodRaw)?barkodRaw:(barkodRaw?String(barkodRaw).split(/[;, ]+/).filter(Boolean):[]);
-  const imageUrl=get(raw,["image_url","imageUrl","image","logo","resim","gorsel","görsel","Görsel URL"]);
+  const imageUrl=get(raw,["image_url","imageUrl","image","logo","resim","gorsel","görsel","Görsel URL","Marka Görseli","Görsel","Logo URL"]);
 
   let status=rawStatus(raw);
   if(typeof isSafeRecord==="function" && isSafeRecord(raw)) status="safe";
@@ -216,7 +232,7 @@ function toLegacy(x){
     not:x.not,
     durum:normalizedStatus,
     barkod:Array.isArray(x.barkod)?x.barkod:[],
-    image_url:x.imageUrl||""
+    image_url:x.imageUrl||x.image_url||""
   };
 }
 

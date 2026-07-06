@@ -127,3 +127,16 @@ Bu sürüm V17 dosyasının üzerine hazırlandı.
 - Yeni veri yüklense bile uygulama `companies.json` üzerinden ana firma eşleştirmesi yapabilir.
 
 Not: Ana firma eşleştirmeleri temel sözlükle yapılmıştır. Büyük veri seti için sonraki aşamada eksik kalan markalar manuel/ kaynaklı kontrol edilmelidir.
+
+## V22 Marka Görselleri
+- Kartlara marka/ürün görsel alanı eklendi.
+- Detay sayfasına büyük görsel alanı eklendi.
+- `image_url` alanı desteklenir.
+- Görsel yoksa otomatik güvenli varsayılan görsel gösterilir.
+- `images/` klasörü eklendi.
+- data.json içinde image_url alanı olmayan 1571 kayda boş image_url alanı eklendi.
+
+Görsel ekleme:
+1. Görseli `images/` klasörüne koy.
+2. `data.json` içinde ilgili markaya `"image_url": "images/dosya-adi.png"` yaz.
+3. Commit ve push yap.
