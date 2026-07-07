@@ -1,11 +1,12 @@
-# Ahlak Rehberim V45 Görsel Sistem
+# Ahlak Rehberim V47 Görsel Eşleştirme Geliştirildi
 
-Eklenenler:
-- Marka logosu alanı
-- Ürün görseli alanı
-- Ana firma logosu alanı
-- WebP klasör yapısı
-- Eksik görseller için placeholder
-- Kartlarda görsel gösterimi
-- Detayda büyük görsel
-- Görsele dokununca tam ekran açma
+Slayt içindeki marka yazıları ile görsel konumları karşılaştırılarak ek eşleştirme yapıldı.
+
+- Toplam kayıt: 1777
+- Toplam ürün görseli: 947
+- V47 yeni ek eşleşme: 0
+- Kalan görselsiz kayıt: 830
+
+Rapor:
+image_import_report/v47_position_assignments.json
+image_import_report/remaining_without_product_image.txt
