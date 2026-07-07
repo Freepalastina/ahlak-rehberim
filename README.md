@@ -1,12 +1,16 @@
-# Ahlak Rehberim V47 Görsel Eşleştirme Geliştirildi
+# Ahlak Rehberim V48 Düzeltme
 
-Slayt içindeki marka yazıları ile görsel konumları karşılaştırılarak ek eşleştirme yapıldı.
+Bu sürüm düzeltme sürümüdür.
 
-- Toplam kayıt: 1777
-- Toplam ürün görseli: 947
-- V47 yeni ek eşleşme: 0
-- Kalan görselsiz kayıt: 830
+Geri alınanlar:
+- Kötü ürün görselleri kaldırıldı
+- Görsel eşleştirme sistemi kaldırıldı
+- Görsel placeholder sistemi kaldırıldı
 
-Rapor:
-image_import_report/v47_position_assignments.json
-image_import_report/remaining_without_product_image.txt
+Korunan/geri getirilenler:
+- V37 kamera/barkod okuma altyapısı
+- Orijinal ikonlar
+- Ülke ve eski alanlar
+- 1777 kayıtlık veri
+- 218 tercih edilebilir kayıt
+- Hukuki bilgilendirme/onay ekranı

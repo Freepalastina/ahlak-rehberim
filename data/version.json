@@ -1,5 +1,5 @@
 {
-  "version": "2026.07.07-v45-visual-system",
+  "version": "2026.07.07-v40-final",
   "date": "2026-07-07",
   "statusKey": "review",
   "statusLabel": "İncelenmesi önerilir",
@@ -11,11 +11,5 @@
   "note": "Hukuki nedenlerle nötr inceleme dili kullanılır.",
   "preferredListCount": 218,
   "preferredMatched": 15,
-  "preferredAdded": 203,
-  "visualSystem": true,
-  "visualFolders": [
-    "assets/logos",
-    "assets/products",
-    "assets/companies"
-  ]
+  "preferredAdded": 203
 }
