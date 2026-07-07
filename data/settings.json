@@ -2,5 +2,6 @@
   "appName": "Ahlak Rehberim",
   "defaultStatus": "review",
   "defaultStatusLabel": "İncelenmesi önerilir",
+  "forbiddenWordsRemoved": true,
   "dataMode": "central-json"
 }
