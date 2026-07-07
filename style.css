@@ -46,3 +46,15 @@ h3{margin:22px 0 10px}.pillrow{display:flex;flex-wrap:wrap;gap:8px}.pill{border:
 #installHelp{
   width:min(720px,calc(100vw - 24px));
 }
+
+.legalDialog{width:min(820px,calc(100vw - 22px));border:0;border-radius:28px;background:var(--card);box-shadow:0 30px 90px rgba(0,0,0,.38);max-height:92vh;overflow:auto}
+.legalDialog::backdrop{background:rgba(0,0,0,.62)}
+.legalContent p{line-height:1.65;color:var(--text)}
+.legalActions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.legalActions button{border:0;border-radius:16px;padding:14px 18px;font-weight:900;cursor:pointer}
+#acceptLegalNoticeBtn{background:#5F7138;color:white}
+#exitLegalNoticeBtn{background:#FDEBE8;color:#B42318}
+.legalLinks{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.legalLinks a{color:#3f5028;font-weight:900;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:8px 11px;background:white}
+.legalPage{padding:24px}.legalPage p{line-height:1.7}
+@media(max-width:640px){.legalActions{grid-template-columns:1fr}}

@@ -1,4 +1,4 @@
-const VERSION="20260707-v42-android-apple-pwa";
+const VERSION="20260707-v44-legal-notice";
 let DATA=[];
 let FILTERED=[];
 const $=s=>document.querySelector(s);
@@ -43,6 +43,7 @@ async function loadData(){
   FILTERED=DATA;
   fillFilters();
   render();
+  showLegalNoticeIfNeeded();
 }
 function unique(arr){return [...new Set(arr.filter(Boolean))].sort((a,b)=>a.localeCompare(b,"tr"))}
 function fillSelect(sel,values){
@@ -137,7 +138,7 @@ function detailHtml(x){
     <div class="list">${x.alternatifler.length?x.alternatifler.map(a=>`<div class="listItem"><b>${esc(a.marka||a.name||a.alternatifMarka||a)}</b><br><span class="meta">${esc(a.kategori||x.altKategori||"")}</span></div>`).join(""):`<div class="listItem">Alternatif önerisi henüz eklenmemiş.</div>`}</div>
     <h3>📚 Kaynaklar</h3>
     <div class="list">${x.kaynaklar.length?x.kaynaklar.map(s=>`<div class="listItem"><b>${esc(s.baslik||s.title||"Bilgi kaynağı")}</b><br><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.url)}</a><p class="meta">${esc(s.not||"")}</p></div>`).join(""):`<div class="listItem">Kaynak kontrolü gerekli.</div>`}</div>
-    <h3>📦 Barkodlar</h3>
+    <h3>ℹ️ Bilgilendirme</h3><div class="listItem">Bu kayıt kamuya açık kaynaklar ve uygulama veri tabanı üzerinden hazırlanmıştır. Bilgiler zaman içinde değişebilir. Güncel durumu doğrulamak için ilgili kaynakları inceleyiniz.</div><h3>📦 Barkodlar</h3>
     <div class="pillrow">${x.barkodlar.length?x.barkodlar.map(b=>`<span class="pill">${esc(b.kod||b.code||b)}</span>`).join(""):`<span class="pill">Barkod eklenmemiş</span>`}</div>
   </div>`;
 }
@@ -223,4 +224,31 @@ document.addEventListener("click",e=>{
     const d=document.getElementById("installHelp");
     if(d) d.close();
   }
+});
+
+
+const LEGAL_ACCEPT_KEY="ahlak_rehberim_legal_notice_v1";
+function showLegalNoticeIfNeeded(){
+  if(localStorage.getItem(LEGAL_ACCEPT_KEY)==="accepted") return;
+  const d=document.getElementById("legalNotice");
+  if(d && d.showModal) d.showModal();
+}
+function acceptLegalNotice(){
+  localStorage.setItem(LEGAL_ACCEPT_KEY,"accepted");
+  const d=document.getElementById("legalNotice");
+  if(d) d.close();
+}
+function exitApp(){
+  document.body.innerHTML=`<main class="wrap"><section class="empty"><h2>Bilgilendirme kabul edilmedi</h2><p>Uygulamayı kullanmak için bilgilendirmeyi okuyup kabul etmeniz gerekir.</p></section></main>`;
+}
+function showLegalAgain(){
+  const d=document.getElementById("legalNotice");
+  if(d && d.showModal) d.showModal();
+}
+
+
+document.addEventListener("click",e=>{
+  if(e.target && e.target.id==="acceptLegalNoticeBtn") acceptLegalNotice();
+  if(e.target && e.target.id==="exitLegalNoticeBtn") exitApp();
+  if(e.target && e.target.id==="openLegalNoticeBtn") showLegalAgain();
 });

@@ -4,20 +4,10 @@ Yükleme:
 3. Terminalde:
 
 git add .
-git commit -m "V42 android apple pwa kurulum"
+git commit -m "V44 hukuki bilgilendirme ve onay ekrani"
 git push
 
-4. GitHub Pages güncellenince siteyi Ctrl+F5 ile yenile.
+4. GitHub Pages güncellenince Ctrl+F5 ile yenile.
 
-Android:
-- Chrome ile siteyi aç.
-- Uygulamayı Yükle butonuna bas.
-- Çıkmazsa ⋮ > Ana ekrana ekle / Uygulamayı yükle.
-
-iPhone:
-- Safari ile siteyi aç.
-- Paylaş > Ana Ekrana Ekle > Ekle.
-
-Önemli:
-iPhone’da otomatik kurulum penceresi Apple tarafından desteklenmez.
-Gerçek App Store uygulaması için Apple Developer hesabı gerekir.
+Not:
+Kullanıcı ilk açılışta bilgilendirme ekranını kabul etmeden uygulamayı kullanamaz.

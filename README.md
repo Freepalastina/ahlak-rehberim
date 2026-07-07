@@ -1,10 +1,12 @@
-# Ahlak Rehberim V42
-
-Android ve Apple PWA kurulumu güçlendirildi.
+# Ahlak Rehberim V44
 
 Eklenenler:
-- Android PWA install desteği
-- Apple touch icon
-- iPhone Safari ana ekrana ekleme meta etiketleri
-- Kurulum yardım penceresi
-- Service Worker offline cache
+- İlk açılışta zorunlu bilgilendirme/onay ekranı
+- Kabul durumu cihazda saklanır
+- Bilgilendirme butonu
+- Ürün detaylarında kısa bilgilendirme notu
+- Hukuki bilgilendirme sayfası
+- Kullanım koşulları
+- Gizlilik politikası
+- Kaynak politikası
+- Hakkında sayfası
