@@ -1,12 +1,12 @@
-# Ahlak Rehberim V49 Temiz Barkodlu
+# Ahlak Rehberim V50 Dil Desteği Düzeltildi
 
 Düzeltmeler:
-- Alternatifler geri korundu
-- Ana ekranda tek İncelenmesi önerilir sayacı var
-- Tercih edilebilir sayacı var
-- Kırmızı sayaç doğru hesaplanır
-- Barkod/kamera tarama eklendi
-- Kötü görseller kaldırıldı
+- Türkçe / Almanca / İngilizce / Arapça dil seçimi geri eklendi
+- Alternatifler korundu
+- Sayaçlar korundu
+- Barkod tarama korundu
+- Görseller eklenmedi
+- Hukuki bilgilendirme korundu
 
 Veri:
 - Toplam kayıt: 1777

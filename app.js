@@ -1,4 +1,136 @@
-const VERSION="20260707-v49-clean-barcode";
+const VERSION="20260707-v50-language-fixed";
+
+const I18N={
+  tr:{
+    title:"Etik tüketim rehberi",
+    subtitle:"Marka, ana firma, kategori, alternatif ve kaynak bilgilerini inceleyin.",
+    refresh:"Veriyi Yenile",
+    clear:"Temizle",
+    searchPlaceholder:"Marka, ana firma, kategori veya barkod ara...",
+    review:"İncelenmesi önerilir",
+    preferred:"Tercih edilebilir",
+    alternative:"Alternatifli kayıt",
+    sourced:"Kaynaklı kayıt",
+    control:"Kontrol gerekli",
+    allFilter:"Filtre / tümü",
+    categoryAll:"Kategori / tümü",
+    companyAll:"Ana firma / tümü",
+    countryAll:"Ülke / tümü",
+    detail:"Detay",
+    alternatives:"Alternatifler",
+    sources:"Kaynaklar",
+    barcodes:"Barkodlar",
+    info:"Bilgilendirme",
+    sourceCheck:"Kaynak kontrolü gerekli.",
+    altEmpty:"Alternatif önerisi henüz eklenmemiş.",
+    barcodeScan:"Barkod Tara"
+  },
+  de:{
+    title:"Ethischer Einkaufsratgeber",
+    subtitle:"Prüfe Marke, Mutterfirma, Kategorie, Alternativen und Quellen.",
+    refresh:"Daten aktualisieren",
+    clear:"Löschen",
+    searchPlaceholder:"Marke, Mutterfirma, Kategorie oder Barcode suchen...",
+    review:"Zur Prüfung empfohlen",
+    preferred:"Bevorzugbar",
+    alternative:"Mit Alternativen",
+    sourced:"Mit Quellen",
+    control:"Prüfung erforderlich",
+    allFilter:"Filter / alle",
+    categoryAll:"Kategorie / alle",
+    companyAll:"Mutterfirma / alle",
+    countryAll:"Land / alle",
+    detail:"Details",
+    alternatives:"Alternativen",
+    sources:"Quellen",
+    barcodes:"Barcodes",
+    info:"Hinweis",
+    sourceCheck:"Quellenprüfung erforderlich.",
+    altEmpty:"Noch keine Alternative eingetragen.",
+    barcodeScan:"Barcode scannen"
+  },
+  en:{
+    title:"Ethical consumption guide",
+    subtitle:"Review brands, parent companies, categories, alternatives and sources.",
+    refresh:"Refresh data",
+    clear:"Clear",
+    searchPlaceholder:"Search brand, parent company, category or barcode...",
+    review:"Recommended for review",
+    preferred:"Preferred",
+    alternative:"With alternatives",
+    sourced:"With sources",
+    control:"Check required",
+    allFilter:"Filter / all",
+    categoryAll:"Category / all",
+    companyAll:"Parent company / all",
+    countryAll:"Country / all",
+    detail:"Details",
+    alternatives:"Alternatives",
+    sources:"Sources",
+    barcodes:"Barcodes",
+    info:"Notice",
+    sourceCheck:"Source check required.",
+    altEmpty:"No alternative suggestion added yet.",
+    barcodeScan:"Scan barcode"
+  },
+  ar:{
+    title:"دليل الاستهلاك الأخلاقي",
+    subtitle:"راجع العلامات التجارية والشركات والفئات والبدائل والمصادر.",
+    refresh:"تحديث البيانات",
+    clear:"مسح",
+    searchPlaceholder:"ابحث عن علامة تجارية أو شركة أو فئة أو باركود...",
+    review:"يوصى بمراجعته",
+    preferred:"مفضل",
+    alternative:"له بدائل",
+    sourced:"له مصادر",
+    control:"يتطلب التحقق",
+    allFilter:"التصفية / الكل",
+    categoryAll:"الفئة / الكل",
+    companyAll:"الشركة / الكل",
+    countryAll:"الدولة / الكل",
+    detail:"التفاصيل",
+    alternatives:"البدائل",
+    sources:"المصادر",
+    barcodes:"الباركود",
+    info:"تنبيه",
+    sourceCheck:"يلزم التحقق من المصدر.",
+    altEmpty:"لم تتم إضافة بديل بعد.",
+    barcodeScan:"مسح الباركود"
+  }
+};
+let LANG=localStorage.getItem("ahlak_lang")||"tr";
+function tt(k){return (I18N[LANG]&&I18N[LANG][k])||I18N.tr[k]||k}
+function applyLanguage(){
+  document.documentElement.lang=LANG;
+  document.documentElement.dir=LANG==="ar"?"rtl":"ltr";
+  const sel=document.getElementById("langSelect");
+  if(sel) sel.value=LANG;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{el.textContent=tt(el.dataset.i18n)});
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{el.placeholder=tt(el.dataset.i18nPlaceholder)});
+  const statusFilter=document.getElementById("statusFilter");
+  if(statusFilter){
+    const opts=statusFilter.options;
+    if(opts[0]) opts[0].textContent=tt("allFilter");
+    if(opts[1]) opts[1].textContent=tt("review");
+    if(opts[2]) opts[2].textContent=tt("preferred");
+    if(opts[3]) opts[3].textContent=tt("alternative");
+    if(opts[4]) opts[4].textContent=tt("sourced");
+    if(opts[5]) opts[5].textContent=tt("control");
+  }
+  const cat=document.getElementById("categoryFilter"); if(cat&&cat.options[0]) cat.options[0].textContent=tt("categoryAll");
+  const comp=document.getElementById("companyFilter"); if(comp&&comp.options[0]) comp.options[0].textContent=tt("companyAll");
+  const country=document.getElementById("countryFilter"); if(country&&country.options[0]) country.options[0].textContent=tt("countryAll");
+  const barcode=document.getElementById("barcodeBtn"); if(barcode) barcode.textContent="📷 "+tt("barcodeScan");
+}
+document.addEventListener("change",e=>{
+  if(e.target&&e.target.id==="langSelect"){
+    LANG=e.target.value;
+    localStorage.setItem("ahlak_lang",LANG);
+    applyLanguage();
+    render();
+  }
+});
+
 let DATA=[];
 let FILTERED=[];
 const $=s=>document.querySelector(s);
@@ -6,10 +138,10 @@ const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&
 const norm=s=>String(s??"").toLocaleLowerCase("tr").normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/ı/g,"i");
 
 function statusLabel(x){
-  if(x==="preferred") return "✅ Tercih edilebilir";
-  if(x==="control") return "⚪ Bilgi/kaynak kontrolü gerekli";
-  if(x==="alternative") return "⭐ Alternatifli";
-  return "🔴 İncelenmesi önerilir";
+  if(x==="preferred") return "✅ "+tt("preferred");
+  if(x==="control") return "⚪ "+tt("control");
+  if(x==="alternative") return "⭐ "+tt("alternative");
+  return "🔴 "+tt("review");
 }
 function normalizeItem(x,i){
   const alts=Array.isArray(x.alternatifler)?x.alternatifler:[];
@@ -68,10 +200,10 @@ function counts(){
 function renderStats(){
   const c=counts();
   $("#stats").innerHTML=`
-    <article class="stat review"><span>🔴 İncelenmesi önerilir</span><b>${c.review}</b></article>
-    <article class="stat preferred"><span>✅ Tercih edilebilir</span><b>${c.preferred}</b></article>
-    <article class="stat"><span>⭐ Alternatifli kayıt</span><b>${c.alternative}</b></article>
-    <article class="stat"><span>📚 Kaynaklı kayıt</span><b>${c.sourced}</b></article>`;
+    <article class="stat review"><span>🔴 ${tt("review")}</span><b>${c.review}</b></article>
+    <article class="stat preferred"><span>✅ ${tt("preferred")}</span><b>${c.preferred}</b></article>
+    <article class="stat"><span>⭐ ${tt("alternative")}</span><b>${c.alternative}</b></article>
+    <article class="stat"><span>📚 ${tt("sourced")}</span><b>${c.sourced}</b></article>`;
 }
 function currentFilters(){
   return {
@@ -117,7 +249,7 @@ function cardHtml(x){
       <span class="pill">📦 ${x.barkodlar.length}</span>
       ${control?`<span class="pill">⚪ Kontrol</span>`:""}
     </div>
-    <button data-open="${x.id}">Detay</button>
+    <button data-open="${x.id}">${tt("detail")}</button>
   </article>`;
 }
 function detailHtml(x){
@@ -133,12 +265,12 @@ function detailHtml(x){
       <div class="infoBox"><small>Son güncelleme</small><b>${esc(x.sonGuncelleme||"-")}</b></div>
     </div>
     ${control?`<h3>⚪ Bilgi/kaynak kontrolü</h3><div class="listItem">${esc(x.kontrolNotu||"Bu kayıtta ana firma, kaynak veya lisans bilgisi ayrıca kontrol edilmelidir.")}</div>`:""}
-    <h3>⭐ Alternatifler</h3>
-    <div class="list">${x.alternatifler.length?x.alternatifler.map(a=>`<div class="listItem"><b>${esc(a.marka||a.name||a.alternatifMarka||a)}</b><br><span class="meta">${esc(a.kategori||x.altKategori||"")}</span></div>`).join(""):`<div class="listItem">Alternatif önerisi henüz eklenmemiş.</div>`}</div>
-    <h3>📚 Kaynaklar</h3>
-    <div class="list">${x.kaynaklar.length?x.kaynaklar.map(s=>`<div class="listItem"><b>${esc(s.baslik||s.title||"Bilgi kaynağı")}</b><br><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.url)}</a><p class="meta">${esc(s.not||"")}</p></div>`).join(""):`<div class="listItem">Kaynak kontrolü gerekli.</div>`}</div>
-    <h3>ℹ️ Bilgilendirme</h3><div class="listItem">Bu kayıt kamuya açık kaynaklar ve uygulama veri tabanı üzerinden hazırlanmıştır. Bilgiler zaman içinde değişebilir. Güncel durumu doğrulamak için ilgili kaynakları inceleyiniz.</div>
-    <h3>📦 Barkodlar</h3>
+    <h3>⭐ ${tt("alternatives")}</h3>
+    <div class="list">${x.alternatifler.length?x.alternatifler.map(a=>`<div class="listItem"><b>${esc(a.marka||a.name||a.alternatifMarka||a)}</b><br><span class="meta">${esc(a.kategori||x.altKategori||"")}</span></div>`).join(""):`<div class="listItem">${tt("altEmpty")}</div>`}</div>
+    <h3>📚 ${tt("sources")}</h3>
+    <div class="list">${x.kaynaklar.length?x.kaynaklar.map(s=>`<div class="listItem"><b>${esc(s.baslik||s.title||"Bilgi kaynağı")}</b><br><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.url)}</a><p class="meta">${esc(s.not||"")}</p></div>`).join(""):`<div class="listItem">${tt("sourceCheck")}</div>`}</div>
+    <h3>ℹ️ ${tt("info")}</h3><div class="listItem">Bu kayıt kamuya açık kaynaklar ve uygulama veri tabanı üzerinden hazırlanmıştır. Bilgiler zaman içinde değişebilir. Güncel durumu doğrulamak için ilgili kaynakları inceleyiniz.</div>
+    <h3>📦 ${tt("barcodes")}</h3>
     <div class="pillrow">${x.barkodlar.length?x.barkodlar.map(b=>`<span class="pill">${esc(b.kod||b.code||b)}</span>`).join(""):`<span class="pill">Barkod eklenmemiş</span>`}</div>
   </div>`;
 }
