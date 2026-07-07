@@ -1,0 +1,9472 @@
+[
+  {
+    "brand": "Johnson&Johnson",
+    "image": "Pictures/10000001000000F700000139C3299BCE.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      247,
+      313
+    ]
+  },
+  {
+    "brand": "Acqua di Parma",
+    "image": "Pictures/100000010000012800000088D42011DA.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      296,
+      136
+    ]
+  },
+  {
+    "brand": "Estee Lauder",
+    "image": "Pictures/10000001000000CB0000008A5832678A.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      203,
+      138
+    ]
+  },
+  {
+    "brand": "Aareal Bank",
+    "image": "Pictures/10000000000000C6000000874A14C3D9.jpg",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      198,
+      135
+    ]
+  },
+  {
+    "brand": "After Eight",
+    "image": "Pictures/10000001000000E400000067248E459D.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      228,
+      103
+    ]
+  },
+  {
+    "brand": "Aciclobene",
+    "image": "Pictures/10000000000000C200000078245F080F.jpg",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      194,
+      120
+    ]
+  },
+  {
+    "brand": "Beiersdorf",
+    "image": "Pictures/100000000000009500000095186271A7.jpg",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      149,
+      149
+    ]
+  },
+  {
+    "brand": "OTTO group",
+    "image": "Pictures/10000001000000CE0000006909B1ADF3.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      206,
+      105
+    ]
+  },
+  {
+    "brand": "About You",
+    "image": "Pictures/100000010000009E0000008619EF3805.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      158,
+      134
+    ]
+  },
+  {
+    "brand": "Ackermann",
+    "image": "Pictures/100000010000009200000090DEC45E70.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      146,
+      144
+    ]
+  },
+  {
+    "brand": "Aerogard",
+    "image": "Pictures/10000000000000AA000000770BCBF11B.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      170,
+      119
+    ]
+  },
+  {
+    "brand": "Air Wick",
+    "image": "Pictures/10000001000000BB0000006971849B64.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      187,
+      105
+    ]
+  },
+  {
+    "brand": "Airborne",
+    "image": "Pictures/100000000000008C0000008CDB57FB98.jpg",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      140,
+      140
+    ]
+  },
+  {
+    "brand": "Airwaves",
+    "image": "Pictures/100000010000009200000086D048CEB1.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      146,
+      134
+    ]
+  },
+  {
+    "brand": "Actimel",
+    "image": "Pictures/100000000000008600000086D54E3626.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      134,
+      134
+    ]
+  },
+  {
+    "brand": "Activia",
+    "image": "Pictures/100000010000008500000085683F457E.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      133,
+      133
+    ]
+  },
+  {
+    "brand": "PepsiCo",
+    "image": "Pictures/1000000000000084000000840D787EF7.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      132,
+      132
+    ]
+  },
+  {
+    "brand": "Reckitt",
+    "image": "Pictures/10000000000000BF00000059429CDDFF.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      191,
+      89
+    ]
+  },
+  {
+    "brand": "Zalando",
+    "image": "Pictures/10000001000000CB000000511A584131.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      203,
+      81
+    ]
+  },
+  {
+    "brand": "Johnson",
+    "image": "Pictures/10000000000000CB0000004CC234409E.jpg",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      203,
+      76
+    ]
+  },
+  {
+    "brand": "Acuvue",
+    "image": "Pictures/10000000000000BA0000004C2C9BED39.jpg",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      186,
+      76
+    ]
+  },
+  {
+    "brand": "Adidas",
+    "image": "Pictures/100000000000006B00000080812158B9.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      107,
+      128
+    ]
+  },
+  {
+    "brand": "Danone",
+    "image": "Pictures/10000001000000B8000000469DE5194B.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      184,
+      70
+    ]
+  },
+  {
+    "brand": "5Star",
+    "image": "Pictures/10000001000000B50000003D06272A72.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      181,
+      61
+    ]
+  },
+  {
+    "brand": "7Days",
+    "image": "Pictures/10000000000000B80000003AA9C53C2C.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      184,
+      58
+    ]
+  },
+  {
+    "brand": "Aerin",
+    "image": "Pictures/1000000000000056000000789011D73E.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      86,
+      120
+    ]
+  },
+  {
+    "brand": "Afrin",
+    "image": "Pictures/10000000000000D30000002D92D891E0.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      211,
+      45
+    ]
+  },
+  {
+    "brand": "Ahava",
+    "image": "Pictures/10000000000000A40000002DDA1B85A3.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      164,
+      45
+    ]
+  },
+  {
+    "brand": "5GUM",
+    "image": "Pictures/10000001000000AF000000288AAEE586.png",
+    "slide": 1,
+    "method": "multi_brand_order",
+    "size": [
+      175,
+      40
+    ]
+  },
+  {
+    "brand": "Colgate-Palmolive",
+    "image": "Pictures/100000000000010100000074D0C416B1.jpg",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      257,
+      116
+    ]
+  },
+  {
+    "brand": "Anadolu Grubu",
+    "image": "Pictures/10000000000000AB000000936B6A97A6.jpg",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      171,
+      147
+    ]
+  },
+  {
+    "brand": "Albert Heijn",
+    "image": "Pictures/10000000000000A50000008A6B00385A.png",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      165,
+      138
+    ]
+  },
+  {
+    "brand": "Alka Seltzer",
+    "image": "Pictures/100000000000009500000095D46D7AE9.jpg",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      149,
+      149
+    ]
+  },
+  {
+    "brand": "Apollinaris",
+    "image": "Pictures/10000000000000A60000008496D19024.jpg",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      166,
+      132
+    ]
+  },
+  {
+    "brand": "Alpen Gold",
+    "image": "Pictures/100000000000008D00000094245662FD.png",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      141,
+      148
+    ]
+  },
+  {
+    "brand": "SC Johnson",
+    "image": "Pictures/10000000000000C00000006C18DC047C.jpg",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      192,
+      108
+    ]
+  },
+  {
+    "brand": "Aldi Nord",
+    "image": "Pictures/1000000000000097000000890870F986.png",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      151,
+      137
+    ]
+  },
+  {
+    "brand": "AllSaints",
+    "image": "Pictures/100000000000008D00000091E3D4E138.png",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      141,
+      145
+    ]
+  },
+  {
+    "brand": "Palmolive",
+    "image": "Pictures/10000000000000A10000007C2A24A3FB.png",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      161,
+      124
+    ]
+  },
+  {
+    "brand": "SEB Group",
+    "image": "Pictures/100000000000008D0000008C7F242598.jpg",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      141,
+      140
+    ]
+  },
+  {
+    "brand": "All-Clad",
+    "image": "Pictures/10000001000000B900000068C275B516.png",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      185,
+      104
+    ]
+  },
+  {
+    "brand": "Lactalis",
+    "image": "Pictures/10000001000000B900000065C845DD08.png",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      185,
+      101
+    ]
+  },
+  {
+    "brand": "Delhaize",
+    "image": "Pictures/10000000000000AE0000006B30278293.png",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      107
+    ]
+  },
+  {
+    "brand": "Al Fajr",
+    "image": "Pictures/100000000000009D00000075A0B4FF44.png",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      157,
+      117
+    ]
+  },
+  {
+    "brand": "Alldays",
+    "image": "Pictures/100000010000009A00000077507C83C8.png",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      154,
+      119
+    ]
+  },
+  {
+    "brand": "Allianz",
+    "image": "Pictures/10000000000000B10000005781214BCA.png",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      177,
+      87
+    ]
+  },
+  {
+    "brand": "Altoids",
+    "image": "Pictures/100000010000009C0000005D05BE3FBB.png",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      156,
+      93
+    ]
+  },
+  {
+    "brand": "Ambipur",
+    "image": "Pictures/100000010000008B000000684FE139CC.png",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      139,
+      104
+    ]
+  },
+  {
+    "brand": "AniCura",
+    "image": "Pictures/10000001000000CC00000046515B1CB0.png",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      204,
+      70
+    ]
+  },
+  {
+    "brand": "Antikal",
+    "image": "Pictures/10000000000000CB0000003AD13AB9AE.png",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      203,
+      58
+    ]
+  },
+  {
+    "brand": "Colgate",
+    "image": "Pictures/100000000000006F000000688E0194A9.jpg",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      111,
+      104
+    ]
+  },
+  {
+    "brand": "Akmina",
+    "image": "Pictures/1000000000000092000000421E9793F2.jpg",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      146,
+      66
+    ]
+  },
+  {
+    "brand": "Aktren",
+    "image": "Pictures/10000000000000A10000003B6FDB914B.png",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      161,
+      59
+    ]
+  },
+  {
+    "brand": "Alcare",
+    "image": "Pictures/100000000000004B0000005E10ACD236.jpg",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      75,
+      94
+    ]
+  },
+  {
+    "brand": "Allout",
+    "image": "Pictures/100000000000006E0000002FDA7208C4.jpg",
+    "slide": 2,
+    "method": "multi_brand_order",
+    "size": [
+      110,
+      47
+    ]
+  },
+  {
+    "brand": "Axel Springer",
+    "image": "Pictures/10000000000000E700000070E0085170.png",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      231,
+      112
+    ]
+  },
+  {
+    "brand": "Appletiser",
+    "image": "Pictures/10000000000000A10000007E8C0A5015.png",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      161,
+      126
+    ]
+  },
+  {
+    "brand": "Aquadrops",
+    "image": "Pictures/100000000000008700000087EB165D9F.jpg",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      135,
+      135
+    ]
+  },
+  {
+    "brand": "Aquafresh",
+    "image": "Pictures/10000001000000AE00000067837C39C4.png",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      103
+    ]
+  },
+  {
+    "brand": "Aquarius",
+    "image": "Pictures/100000000000009300000073A44612C8.jpg",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      147,
+      115
+    ]
+  },
+  {
+    "brand": "Unilever",
+    "image": "Pictures/10000001000000A30000006427E8E9D2.png",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      163,
+      100
+    ]
+  },
+  {
+    "brand": "Aptamil",
+    "image": "Pictures/10000001000000D00000004B75B4C3FE.png",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      208,
+      75
+    ]
+  },
+  {
+    "brand": "Arcelik",
+    "image": "Pictures/10000001000000BD00000050D42A81E7.png",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      189,
+      80
+    ]
+  },
+  {
+    "brand": "Aspirin",
+    "image": "Pictures/10000001000000CC00000048A4258A3A.png",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      204,
+      72
+    ]
+  },
+  {
+    "brand": "aramis",
+    "image": "Pictures/10000000000000C600000049C6ABA9B2.jpg",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      198,
+      73
+    ]
+  },
+  {
+    "brand": "Atrium",
+    "image": "Pictures/10000000000000A80000004C5E071027.jpg",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      168,
+      76
+    ]
+  },
+  {
+    "brand": "Aussie",
+    "image": "Pictures/10000000000000B400000044D8100C2B.jpg",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      180,
+      68
+    ]
+  },
+  {
+    "brand": "Avanti",
+    "image": "Pictures/10000001000000B30000004476C3C0B6.png",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      179,
+      68
+    ]
+  },
+  {
+    "brand": "Aveeno",
+    "image": "Pictures/10000000000000C50000003CE751F5E9.jpg",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      197,
+      60
+    ]
+  },
+  {
+    "brand": "Apple",
+    "image": "Pictures/10000000000000AA0000003C28C2512D.png",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      170,
+      60
+    ]
+  },
+  {
+    "brand": "Ariel",
+    "image": "Pictures/10000001000000CB00000032B82210CB.png",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      203,
+      50
+    ]
+  },
+  {
+    "brand": "ASICS",
+    "image": "Pictures/10000000000000CB000000312758F359.png",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      203,
+      49
+    ]
+  },
+  {
+    "brand": "Autan",
+    "image": "Pictures/10000001000000AE00000036CA9CF925.png",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      54
+    ]
+  },
+  {
+    "brand": "Aveda",
+    "image": "Pictures/100000010000009F00000037824E4A8A.png",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      159,
+      55
+    ]
+  },
+  {
+    "brand": "AVENE",
+    "image": "Pictures/10000000000000B8000000280E36C9AF.png",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      184,
+      40
+    ]
+  },
+  {
+    "brand": "Arno",
+    "image": "Pictures/10000000000000820000003179569BF0.png",
+    "slide": 3,
+    "method": "multi_brand_order",
+    "size": [
+      130,
+      49
+    ]
+  },
+  {
+    "brand": "Bank of America",
+    "image": "Pictures/10000000000000C80000009600455516.png",
+    "slide": 4,
+    "method": "multi_brand_order",
+    "size": [
+      200,
+      150
+    ]
+  },
+  {
+    "brand": "Bactoshield",
+    "image": "Pictures/10000000000000A700000092B4435392.png",
+    "slide": 4,
+    "method": "multi_brand_order",
+    "size": [
+      167,
+      146
+    ]
+  },
+  {
+    "brand": "Aydin Örme",
+    "image": "Pictures/10000001000000BF000000778AD37B22.png",
+    "slide": 4,
+    "method": "multi_brand_order",
+    "size": [
+      191,
+      119
+    ]
+  },
+  {
+    "brand": "Babyganics",
+    "image": "Pictures/10000000000000C2000000759DD5917B.png",
+    "slide": 4,
+    "method": "multi_brand_order",
+    "size": [
+      194,
+      117
+    ]
+  },
+  {
+    "brand": "Bauknecht",
+    "image": "Pictures/10000000000000A50000007137830DCB.png",
+    "slide": 4,
+    "method": "multi_brand_order",
+    "size": [
+      165,
+      113
+    ]
+  },
+  {
+    "brand": "Badagoni",
+    "image": "Pictures/10000001000000A80000005CDA587702.png",
+    "slide": 4,
+    "method": "multi_brand_order",
+    "size": [
+      168,
+      92
+    ]
+  },
+  {
+    "brand": "Band-Aid",
+    "image": "Pictures/10000000000000C30000004FEC474FA0.jpg",
+    "slide": 4,
+    "method": "multi_brand_order",
+    "size": [
+      195,
+      79
+    ]
+  },
+  {
+    "brand": "Banfield",
+    "image": "Pictures/10000001000000A0000000584801CEC7.png",
+    "slide": 4,
+    "method": "multi_brand_order",
+    "size": [
+      160,
+      88
+    ]
+  },
+  {
+    "brand": "Bassetts",
+    "image": "Pictures/10000001000000C3000000418398BF0D.png",
+    "slide": 4,
+    "method": "multi_brand_order",
+    "size": [
+      195,
+      65
+    ]
+  },
+  {
+    "brand": "BayernLB",
+    "image": "Pictures/10000000000000A30000004BAE7F50F0.jpg",
+    "slide": 4,
+    "method": "multi_brand_order",
+    "size": [
+      163,
+      75
+    ]
+  },
+  {
+    "brand": "Balisto",
+    "image": "Pictures/10000001000000DD0000003685F739C5.png",
+    "slide": 4,
+    "method": "multi_brand_order",
+    "size": [
+      221,
+      54
+    ]
+  },
+  {
+    "brand": "Bayclin",
+    "image": "Pictures/10000000000000B70000003E4588B2AB.png",
+    "slide": 4,
+    "method": "multi_brand_order",
+    "size": [
+      183,
+      62
+    ]
+  },
+  {
+    "brand": "Action",
+    "image": "Pictures/10000001000000B500000032384DE08A.png",
+    "slide": 4,
+    "method": "multi_brand_order",
+    "size": [
+      181,
+      50
+    ]
+  },
+  {
+    "brand": "Badoit",
+    "image": "Pictures/10000000000000B1000000249BCD789D.png",
+    "slide": 4,
+    "method": "multi_brand_order",
+    "size": [
+      177,
+      36
+    ]
+  },
+  {
+    "brand": "Barbie",
+    "image": "Pictures/10000000000000A7000000268DE1EFC2.png",
+    "slide": 4,
+    "method": "multi_brand_order",
+    "size": [
+      167,
+      38
+    ]
+  },
+  {
+    "brand": "Batman",
+    "image": "Pictures/10000000000000A800000023E2B203B8.png",
+    "slide": 4,
+    "method": "multi_brand_order",
+    "size": [
+      168,
+      35
+    ]
+  },
+  {
+    "brand": "Baygon",
+    "image": "Pictures/100000000000006900000031D0689564.png",
+    "slide": 4,
+    "method": "multi_brand_order",
+    "size": [
+      105,
+      49
+    ]
+  },
+  {
+    "brand": "Ben’s Original",
+    "image": "Pictures/10000000000000A7000000A75CEC4960.png",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      167,
+      167
+    ]
+  },
+  {
+    "brand": "Ben & Jerry’s",
+    "image": "Pictures/10000001000000BA0000007F4D922DCB.png",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      186,
+      127
+    ]
+  },
+  {
+    "brand": "Bertelsmann",
+    "image": "Pictures/10000000000000E50000006729806407.jpg",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      229,
+      103
+    ]
+  },
+  {
+    "brand": "Beyond Meat",
+    "image": "Pictures/10000000000000F90000005A61C2BB07.png",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      249,
+      90
+    ]
+  },
+  {
+    "brand": "Bepanthen",
+    "image": "Pictures/10000000000000A30000007E88B29DBC.png",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      163,
+      126
+    ]
+  },
+  {
+    "brand": "BetterDoc",
+    "image": "Pictures/10000000000000C2000000691D49B4DB.jpg",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      194,
+      105
+    ]
+  },
+  {
+    "brand": "Bio Shout",
+    "image": "Pictures/100000000000008E0000008DDB635BDF.png",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      142,
+      141
+    ]
+  },
+  {
+    "brand": "Biofreeze",
+    "image": "Pictures/10000000000000B600000068209045AD.png",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      182,
+      104
+    ]
+  },
+  {
+    "brand": "Vitarella",
+    "image": "Pictures/10000000000000D4000000527C3EA4A5.jpg",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      212,
+      82
+    ]
+  },
+  {
+    "brand": "Ben Jerry",
+    "image": "Pictures/10000000000000BA0000005A3BE9F602.png",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      186,
+      90
+    ]
+  },
+  {
+    "brand": "Benadryl",
+    "image": "Pictures/10000000000000A8000000616841189F.jpg",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      168,
+      97
+    ]
+  },
+  {
+    "brand": "Bensdrop",
+    "image": "Pictures/100000010000011C0000003482975248.png",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      284,
+      52
+    ]
+  },
+  {
+    "brand": "Biotherm",
+    "image": "Pictures/10000001000000B4000000519A238125.png",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      180,
+      81
+    ]
+  },
+  {
+    "brand": "Be-Kind",
+    "image": "Pictures/10000000000000A90000004C12AC3F1F.png",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      169,
+      76
+    ]
+  },
+  {
+    "brand": "belVita",
+    "image": "Pictures/10000001000000A8000000476E8959CB.png",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      168,
+      71
+    ]
+  },
+  {
+    "brand": "Berocca",
+    "image": "Pictures/10000000000000A80000004507DDA936.jpg",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      168,
+      69
+    ]
+  },
+  {
+    "brand": "Bershka",
+    "image": "Pictures/10000000000000AE0000003BEBAEB5FD.png",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      59
+    ]
+  },
+  {
+    "brand": "Big Jim",
+    "image": "Pictures/100000010000005600000077B84FB97B.png",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      86,
+      119
+    ]
+  },
+  {
+    "brand": "Big Red",
+    "image": "Pictures/10000000000000A0000000356F1F700A.png",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      160,
+      53
+    ]
+  },
+  {
+    "brand": "L'Oréal",
+    "image": "Pictures/10000000000000890000003B63096B5C.jpg",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      137,
+      59
+    ]
+  },
+  {
+    "brand": "Bengay",
+    "image": "Pictures/1000000000000080000000328427B6A2.jpg",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      128,
+      50
+    ]
+  },
+  {
+    "brand": "bilkom",
+    "image": "Pictures/10000000000000B1000000247D348D74.png",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      177,
+      36
+    ]
+  },
+  {
+    "brand": "Birmot",
+    "image": "Pictures/100000000000008200000030F1872838.png",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      130,
+      48
+    ]
+  },
+  {
+    "brand": "Henkel",
+    "image": "Pictures/100000000000006A00000034A2FC4954.png",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      106,
+      52
+    ]
+  },
+  {
+    "brand": "Bidex",
+    "image": "Pictures/100000000000006900000033070B78BF.jpg",
+    "slide": 5,
+    "method": "multi_brand_order",
+    "size": [
+      105,
+      51
+    ]
+  },
+  {
+    "brand": "Bobbi Brown Cosmetics",
+    "image": "Pictures/100000000000009B0000009782ABFC50.jpg",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      155,
+      151
+    ]
+  },
+  {
+    "brand": "Blend-A-Med",
+    "image": "Pictures/10000000000000BA00000076322C15C9.png",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      186,
+      118
+    ]
+  },
+  {
+    "brand": "Bounty Mars",
+    "image": "Pictures/100000010000009000000090F9722B85.png",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      144,
+      144
+    ]
+  },
+  {
+    "brand": "BluePearl",
+    "image": "Pictures/10000000000000880000008A50BB7523.jpg",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      136,
+      138
+    ]
+  },
+  {
+    "brand": "Bona Aqua",
+    "image": "Pictures/100000000000009C000000774B9CAA33.png",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      156,
+      119
+    ]
+  },
+  {
+    "brand": "Borotalco",
+    "image": "Pictures/1000000100000091000000803EE85855.png",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      145,
+      128
+    ]
+  },
+  {
+    "brand": "Bournvita",
+    "image": "Pictures/10000001000000E80000004E19802B08.png",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      232,
+      78
+    ]
+  },
+  {
+    "brand": "Blomberg",
+    "image": "Pictures/10000000000000A30000006D76B63DB8.png",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      163,
+      109
+    ]
+  },
+  {
+    "brand": "BlueBand",
+    "image": "Pictures/100000000000009400000072339E02E3.png",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      148,
+      114
+    ]
+  },
+  {
+    "brand": "BlueStar",
+    "image": "Pictures/10000000000000DF0000004A1B344E77.jpg",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      223,
+      74
+    ]
+  },
+  {
+    "brand": "Blendax",
+    "image": "Pictures/100000000000009D00000066448C74B5.png",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      157,
+      102
+    ]
+  },
+  {
+    "brand": "BlondMe",
+    "image": "Pictures/1000000100000075000000871CB37146.png",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      117,
+      135
+    ]
+  },
+  {
+    "brand": "Bonjela",
+    "image": "Pictures/100000000000006D00000090B210287A.png",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      109,
+      144
+    ]
+  },
+  {
+    "brand": "Bonprix",
+    "image": "Pictures/100000000000007A000000680F714DCD.png",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      122,
+      104
+    ]
+  },
+  {
+    "brand": "Booking",
+    "image": "Pictures/10000000000000A30000004D00C5A9F0.png",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      163,
+      77
+    ]
+  },
+  {
+    "brand": "Bonami",
+    "image": "Pictures/10000001000000970000003DE6E5B2FB.png",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      151,
+      61
+    ]
+  },
+  {
+    "brand": "Bostik",
+    "image": "Pictures/100000000000008B000000409712CBD2.png",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      139,
+      64
+    ]
+  },
+  {
+    "brand": "Bounty",
+    "image": "Pictures/10000000000000B4000000308E9703B1.jpg",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      180,
+      48
+    ]
+  },
+  {
+    "brand": "Brasso",
+    "image": "Pictures/10000000000000C80000002A3B3890C3.jpg",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      200,
+      42
+    ]
+  },
+  {
+    "brand": "Bonux",
+    "image": "Pictures/10000000000000B2000000286D61F323.png",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      178,
+      40
+    ]
+  },
+  {
+    "brand": "Bosch",
+    "image": "Pictures/10000000000000C90000002271A2D172.jpg",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      201,
+      34
+    ]
+  },
+  {
+    "brand": "Braun",
+    "image": "Pictures/10000000000000CA0000001C4DCD0B54.jpg",
+    "slide": 6,
+    "method": "multi_brand_order",
+    "size": [
+      202,
+      28
+    ]
+  },
+  {
+    "brand": "Cabbage Patch Kids",
+    "image": "Pictures/10000000000000A40000009F1BFF0663.jpg",
+    "slide": 7,
+    "method": "multi_brand_order",
+    "size": [
+      164,
+      159
+    ]
+  },
+  {
+    "brand": "Bumble&Bumble",
+    "image": "Pictures/10000001000000B8000000796702D48A.png",
+    "slide": 7,
+    "method": "multi_brand_order",
+    "size": [
+      184,
+      121
+    ]
+  },
+  {
+    "brand": "C.Dairy Milk",
+    "image": "Pictures/10000000000000AE0000007E533ED5A9.jpg",
+    "slide": 7,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      126
+    ]
+  },
+  {
+    "brand": "Calvin Klein",
+    "image": "Pictures/100000000000009F000000841DEE4AD4.png",
+    "slide": 7,
+    "method": "multi_brand_order",
+    "size": [
+      159,
+      132
+    ]
+  },
+  {
+    "brand": "Burger King",
+    "image": "Pictures/10000000000000C9000000644DF3F8AC.png",
+    "slide": 7,
+    "method": "multi_brand_order",
+    "size": [
+      201,
+      100
+    ]
+  },
+  {
+    "brand": "Brilliance",
+    "image": "Pictures/1000000000000095000000856F5CA949.png",
+    "slide": 7,
+    "method": "multi_brand_order",
+    "size": [
+      149,
+      133
+    ]
+  },
+  {
+    "brand": "By Kilian",
+    "image": "Pictures/10000000000000BB0000006058EDC5CC.png",
+    "slide": 7,
+    "method": "multi_brand_order",
+    "size": [
+      187,
+      96
+    ]
+  },
+  {
+    "brand": "Burberry",
+    "image": "Pictures/10000000000000AC000000554128283C.jpg",
+    "slide": 7,
+    "method": "multi_brand_order",
+    "size": [
+      172,
+      85
+    ]
+  },
+  {
+    "brand": "Calgonit",
+    "image": "Pictures/10000000000000A600000056D439DB78.png",
+    "slide": 7,
+    "method": "multi_brand_order",
+    "size": [
+      166,
+      86
+    ]
+  },
+  {
+    "brand": "Bvlgari",
+    "image": "Pictures/10000000000000BB000000479B942614.png",
+    "slide": 7,
+    "method": "multi_brand_order",
+    "size": [
+      187,
+      71
+    ]
+  },
+  {
+    "brand": "Cadbury",
+    "image": "Pictures/10000001000000A40000004CFC74CF70.png",
+    "slide": 7,
+    "method": "multi_brand_order",
+    "size": [
+      164,
+      76
+    ]
+  },
+  {
+    "brand": "Cailler",
+    "image": "Pictures/10000001000000B600000044D53A07EA.png",
+    "slide": 7,
+    "method": "multi_brand_order",
+    "size": [
+      182,
+      68
+    ]
+  },
+  {
+    "brand": "Caldrea",
+    "image": "Pictures/10000001000000860000005C61E2C01F.png",
+    "slide": 7,
+    "method": "multi_brand_order",
+    "size": [
+      134,
+      92
+    ]
+  },
+  {
+    "brand": "Breaka",
+    "image": "Pictures/10000000000000C600000021A298AB82.jpg",
+    "slide": 7,
+    "method": "multi_brand_order",
+    "size": [
+      198,
+      33
+    ]
+  },
+  {
+    "brand": "Bridel",
+    "image": "Pictures/10000000000000870000002FA9B323AA.png",
+    "slide": 7,
+    "method": "multi_brand_order",
+    "size": [
+      135,
+      47
+    ]
+  },
+  {
+    "brand": "Calgon",
+    "image": "Pictures/10000000000000B0000000217C364FDE.png",
+    "slide": 7,
+    "method": "multi_brand_order",
+    "size": [
+      176,
+      33
+    ]
+  },
+  {
+    "brand": "Captain Power",
+    "image": "Pictures/10000000000000F40000007310475C05.jpg",
+    "slide": 8,
+    "method": "multi_brand_order",
+    "size": [
+      244,
+      115
+    ]
+  },
+  {
+    "brand": "Caputo Flour",
+    "image": "Pictures/10000000000000B100000099A3FEAAF1.jpg",
+    "slide": 8,
+    "method": "multi_brand_order",
+    "size": [
+      177,
+      153
+    ]
+  },
+  {
+    "brand": "Celebrations",
+    "image": "Pictures/10000000000000BB0000008BA58778CB.jpg",
+    "slide": 8,
+    "method": "multi_brand_order",
+    "size": [
+      187,
+      139
+    ]
+  },
+  {
+    "brand": "Chantecaille",
+    "image": "Pictures/10000000000000C900000075FADCF200.jpg",
+    "slide": 8,
+    "method": "multi_brand_order",
+    "size": [
+      201,
+      117
+    ]
+  },
+  {
+    "brand": "Carte d’Or",
+    "image": "Pictures/10000001000000CF00000069D1639C04.png",
+    "slide": 8,
+    "method": "multi_brand_order",
+    "size": [
+      207,
+      105
+    ]
+  },
+  {
+    "brand": "Candibene",
+    "image": "Pictures/10000000000000BA0000005F830FBD4B.png",
+    "slide": 8,
+    "method": "multi_brand_order",
+    "size": [
+      186,
+      95
+    ]
+  },
+  {
+    "brand": "Carrefour",
+    "image": "Pictures/10000000000000A20000006BF6E0004A.jpg",
+    "slide": 8,
+    "method": "multi_brand_order",
+    "size": [
+      162,
+      107
+    ]
+  },
+  {
+    "brand": "Cera Clen",
+    "image": "Pictures/10000001000000900000007735E9172B.png",
+    "slide": 8,
+    "method": "multi_brand_order",
+    "size": [
+      144,
+      119
+    ]
+  },
+  {
+    "brand": "Ceramicol",
+    "image": "Pictures/100000000000009D0000006D164C4C60.png",
+    "slide": 8,
+    "method": "multi_brand_order",
+    "size": [
+      157,
+      109
+    ]
+  },
+  {
+    "brand": "Canesten",
+    "image": "Pictures/10000000000000BC0000005A25A75483.jpg",
+    "slide": 8,
+    "method": "multi_brand_order",
+    "size": [
+      188,
+      90
+    ]
+  },
+  {
+    "brand": "Carefree",
+    "image": "Pictures/1000000100000077000000810C003863.png",
+    "slide": 8,
+    "method": "multi_brand_order",
+    "size": [
+      119,
+      129
+    ]
+  },
+  {
+    "brand": "Careline",
+    "image": "Pictures/100000010000009C000000628F810D04.png",
+    "slide": 8,
+    "method": "multi_brand_order",
+    "size": [
+      156,
+      98
+    ]
+  },
+  {
+    "brand": "Champion",
+    "image": "Pictures/10000000000000A4000000574DFE147F.png",
+    "slide": 8,
+    "method": "multi_brand_order",
+    "size": [
+      164,
+      87
+    ]
+  },
+  {
+    "brand": "Chappies",
+    "image": "Pictures/10000000000000C00000004891D81789.jpg",
+    "slide": 8,
+    "method": "multi_brand_order",
+    "size": [
+      192,
+      72
+    ]
+  },
+  {
+    "brand": "Carolin",
+    "image": "Pictures/10000000000000A40000004E5CCCE540.png",
+    "slide": 8,
+    "method": "multi_brand_order",
+    "size": [
+      164,
+      78
+    ]
+  },
+  {
+    "brand": "Cepacol",
+    "image": "Pictures/10000001000000B60000003A75CAA75A.png",
+    "slide": 8,
+    "method": "multi_brand_order",
+    "size": [
+      182,
+      58
+    ]
+  },
+  {
+    "brand": "cerelac",
+    "image": "Pictures/10000000000000E40000002A39632384.jpg",
+    "slide": 8,
+    "method": "multi_brand_order",
+    "size": [
+      228,
+      42
+    ]
+  },
+  {
+    "brand": "Ceresit",
+    "image": "Pictures/10000000000000810000004A857EA319.png",
+    "slide": 8,
+    "method": "multi_brand_order",
+    "size": [
+      129,
+      74
+    ]
+  },
+  {
+    "brand": "Charmin",
+    "image": "Pictures/10000000000000CD0000002E6F503907.png",
+    "slide": 8,
+    "method": "multi_brand_order",
+    "size": [
+      205,
+      46
+    ]
+  },
+  {
+    "brand": "Cherry Merry Muffin",
+    "image": "Pictures/10000001000001E80000009343DE4CAD.png",
+    "slide": 9,
+    "method": "multi_brand_order",
+    "size": [
+      488,
+      147
+    ]
+  },
+  {
+    "brand": "Christian Dior",
+    "image": "Pictures/10000000000001360000006488742AB2.png",
+    "slide": 9,
+    "method": "multi_brand_order",
+    "size": [
+      310,
+      100
+    ]
+  },
+  {
+    "brand": "Chaudfontaine",
+    "image": "Pictures/10000001000000C10000009FB1A7F690.png",
+    "slide": 9,
+    "method": "multi_brand_order",
+    "size": [
+      193,
+      159
+    ]
+  },
+  {
+    "brand": "Ciprofloxacin",
+    "image": "Pictures/10000000000000B40000009EEA82E8E5.jpg",
+    "slide": 9,
+    "method": "multi_brand_order",
+    "size": [
+      180,
+      158
+    ]
+  },
+  {
+    "brand": "Chlorhexamed",
+    "image": "Pictures/10000000000000CB00000082350683EC.jpg",
+    "slide": 9,
+    "method": "multi_brand_order",
+    "size": [
+      203,
+      130
+    ]
+  },
+  {
+    "brand": "Cillit Bang",
+    "image": "Pictures/100000000000010F00000057B04F0B4E.png",
+    "slide": 9,
+    "method": "multi_brand_order",
+    "size": [
+      271,
+      87
+    ]
+  },
+  {
+    "brand": "Clean & Clear",
+    "image": "Pictures/10000001000000C1000000788DAEF297.png",
+    "slide": 9,
+    "method": "multi_brand_order",
+    "size": [
+      193,
+      120
+    ]
+  },
+  {
+    "brand": "Chips Ahoy!",
+    "image": "Pictures/10000000000000C100000077BF47A600.jpg",
+    "slide": 9,
+    "method": "multi_brand_order",
+    "size": [
+      193,
+      119
+    ]
+  },
+  {
+    "brand": "Cini Minis",
+    "image": "Pictures/10000000000000A800000087A0F81E33.jpg",
+    "slide": 9,
+    "method": "multi_brand_order",
+    "size": [
+      168,
+      135
+    ]
+  },
+  {
+    "brand": "ClaraVital",
+    "image": "Pictures/10000001000000A70000008776499D62.png",
+    "slide": 9,
+    "method": "multi_brand_order",
+    "size": [
+      167,
+      135
+    ]
+  },
+  {
+    "brand": "Citigroup",
+    "image": "Pictures/10000001000000E3000000453EB5CB2B.png",
+    "slide": 9,
+    "method": "multi_brand_order",
+    "size": [
+      227,
+      69
+    ]
+  },
+  {
+    "brand": "Clearasil",
+    "image": "Pictures/100000000000009E0000005C32D25095.png",
+    "slide": 9,
+    "method": "multi_brand_order",
+    "size": [
+      158,
+      92
+    ]
+  },
+  {
+    "brand": "Clearblue",
+    "image": "Pictures/10000001000000820000006F9D8B8246.png",
+    "slide": 9,
+    "method": "multi_brand_order",
+    "size": [
+      130,
+      111
+    ]
+  },
+  {
+    "brand": "Chemotox",
+    "image": "Pictures/10000000000000AD000000481F309AF4.png",
+    "slide": 9,
+    "method": "multi_brand_order",
+    "size": [
+      173,
+      72
+    ]
+  },
+  {
+    "brand": "Claritin",
+    "image": "Pictures/10000000000000B000000046DDDBD6FE.png",
+    "slide": 9,
+    "method": "multi_brand_order",
+    "size": [
+      176,
+      70
+    ]
+  },
+  {
+    "brand": "Clinique",
+    "image": "Pictures/10000000000000840000005B7B3CC410.png",
+    "slide": 9,
+    "method": "multi_brand_order",
+    "size": [
+      132,
+      91
+    ]
+  },
+  {
+    "brand": "Cheetos",
+    "image": "Pictures/10000000000000AD00000039AC296C28.jpg",
+    "slide": 9,
+    "method": "multi_brand_order",
+    "size": [
+      173,
+      57
+    ]
+  },
+  {
+    "brand": "Clairol",
+    "image": "Pictures/10000001000000B900000035FE9AC9E9.png",
+    "slide": 9,
+    "method": "multi_brand_order",
+    "size": [
+      185,
+      53
+    ]
+  },
+  {
+    "brand": "Clorets",
+    "image": "Pictures/10000001000000A80000003092B198AF.png",
+    "slide": 9,
+    "method": "multi_brand_order",
+    "size": [
+      168,
+      48
+    ]
+  },
+  {
+    "brand": "Columbia Sportswear",
+    "image": "Pictures/10000001000001CA0000014C8DDECD65.png",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      458,
+      332
+    ]
+  },
+  {
+    "brand": "Computer Warriors",
+    "image": "Pictures/10000000000000BC000000A1DD9D506C.jpg",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      188,
+      161
+    ]
+  },
+  {
+    "brand": "Costa Coffee",
+    "image": "Pictures/10000000000000A60000009FF9096749.jpg",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      166,
+      159
+    ]
+  },
+  {
+    "brand": "Crate&Barrel",
+    "image": "Pictures/10000000000000BA000000886C665B1E.jpg",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      186,
+      136
+    ]
+  },
+  {
+    "brand": "Club Social",
+    "image": "Pictures/10000001000000A400000089C161A336.png",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      164,
+      137
+    ]
+  },
+  {
+    "brand": "Coffee Mate",
+    "image": "Pictures/100000010000008F0000009C5CB16AE0.png",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      143,
+      156
+    ]
+  },
+  {
+    "brand": "Commerzbank",
+    "image": "Pictures/10000000000000B50000007B525C369B.jpg",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      181,
+      123
+    ]
+  },
+  {
+    "brand": "Constructa",
+    "image": "Pictures/100000010000008F0000008F32777FFD.png",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      143,
+      143
+    ]
+  },
+  {
+    "brand": "Coopertone",
+    "image": "Pictures/10000000000000BF0000006BF8CD7FA0.jpg",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      191,
+      107
+    ]
+  },
+  {
+    "brand": "Crate&Kids",
+    "image": "Pictures/10000000000000B60000005AEB82CBE1.jpg",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      182,
+      90
+    ]
+  },
+  {
+    "brand": "Creation L",
+    "image": "Pictures/10000000000000AE0000005D39B52929.jpg",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      93
+    ]
+  },
+  {
+    "brand": "Cremissimo",
+    "image": "Pictures/10000001000000A800000060C9A4C6B9.png",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      168,
+      96
+    ]
+  },
+  {
+    "brand": "Crunch Bar",
+    "image": "Pictures/10000000000000C70000004AB592C08A.jpg",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      199,
+      74
+    ]
+  },
+  {
+    "brand": "Coca-Cola",
+    "image": "Pictures/10000000000000CD00000046BC902EC4.jpg",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      205,
+      70
+    ]
+  },
+  {
+    "brand": "Collistar",
+    "image": "Pictures/10000001000000CF00000041B59BDD99.png",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      207,
+      65
+    ]
+  },
+  {
+    "brand": "Cora Shop",
+    "image": "Pictures/10000000000000A30000004CDBB8691A.jpg",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      163,
+      76
+    ]
+  },
+  {
+    "brand": "Côte d’Or",
+    "image": "Pictures/10000001000000BA0000003FC8A15E2C.png",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      186,
+      63
+    ]
+  },
+  {
+    "brand": "Cocoavia",
+    "image": "Pictures/10000000000000CD00000037EB5A4939.png",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      205,
+      55
+    ]
+  },
+  {
+    "brand": "Converse",
+    "image": "Pictures/10000001000000BF000000308D80BBA2.png",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      191,
+      48
+    ]
+  },
+  {
+    "brand": "Cornetto",
+    "image": "Pictures/10000000000000C90000002C98D74932.png",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      201,
+      44
+    ]
+  },
+  {
+    "brand": "Cremesso",
+    "image": "Pictures/10000000000000CA0000002AB9433D6F.jpg",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      202,
+      42
+    ]
+  },
+  {
+    "brand": "Closeup",
+    "image": "Pictures/100000000000008400000038DFE83EBD.png",
+    "slide": 10,
+    "method": "multi_brand_order",
+    "size": [
+      132,
+      56
+    ]
+  },
+  {
+    "brand": "Dany Chocolate",
+    "image": "Pictures/100000010000008E0000008E02BF3A0E.png",
+    "slide": 11,
+    "method": "multi_brand_order",
+    "size": [
+      142,
+      142
+    ]
+  },
+  {
+    "brand": "Daimler Truck",
+    "image": "Pictures/100000000000009D0000007E4ADEF132.jpg",
+    "slide": 11,
+    "method": "multi_brand_order",
+    "size": [
+      157,
+      126
+    ]
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "image": "Pictures/10000001000000810000008E3BA76C48.png",
+    "slide": 11,
+    "method": "multi_brand_order",
+    "size": [
+      129,
+      142
+    ]
+  },
+  {
+    "brand": "Danklorix",
+    "image": "Pictures/10000000000000B00000006292AFAD4E.png",
+    "slide": 11,
+    "method": "multi_brand_order",
+    "size": [
+      176,
+      98
+    ]
+  },
+  {
+    "brand": "Deichmann",
+    "image": "Pictures/1000000000000083000000833AE31F25.jpg",
+    "slide": 11,
+    "method": "multi_brand_order",
+    "size": [
+      131,
+      131
+    ]
+  },
+  {
+    "brand": "Curvissa",
+    "image": "Pictures/10000000000000C700000047503A86F9.png",
+    "slide": 11,
+    "method": "multi_brand_order",
+    "size": [
+      199,
+      71
+    ]
+  },
+  {
+    "brand": "Damla Su",
+    "image": "Pictures/10000000000000B20000004BD921E2B5.png",
+    "slide": 11,
+    "method": "multi_brand_order",
+    "size": [
+      178,
+      75
+    ]
+  },
+  {
+    "brand": "Dawlance",
+    "image": "Pictures/10000000000000BE0000004119FD4605.png",
+    "slide": 11,
+    "method": "multi_brand_order",
+    "size": [
+      190,
+      65
+    ]
+  },
+  {
+    "brand": "De Beers",
+    "image": "Pictures/100000010000009600000051043C3369.png",
+    "slide": 11,
+    "method": "multi_brand_order",
+    "size": [
+      150,
+      81
+    ]
+  },
+  {
+    "brand": "Danette",
+    "image": "Pictures/10000000000000CC0000003000B1C125.png",
+    "slide": 11,
+    "method": "multi_brand_order",
+    "size": [
+      204,
+      48
+    ]
+  },
+  {
+    "brand": "Darphin",
+    "image": "Pictures/10000001000000BB00000034156690DB.png",
+    "slide": 11,
+    "method": "multi_brand_order",
+    "size": [
+      187,
+      52
+    ]
+  },
+  {
+    "brand": "DB Bahn",
+    "image": "Pictures/10000000000000C300000030120CB6F9.png",
+    "slide": 11,
+    "method": "multi_brand_order",
+    "size": [
+      195,
+      48
+    ]
+  },
+  {
+    "brand": "Curtis",
+    "image": "Pictures/100000010000009200000034CDF11470.png",
+    "slide": 11,
+    "method": "multi_brand_order",
+    "size": [
+      146,
+      52
+    ]
+  },
+  {
+    "brand": "Digestive Advantage",
+    "image": "Pictures/1000000100000196000001587209716D.png",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      406,
+      344
+    ]
+  },
+  {
+    "brand": "Deutsche Telekom",
+    "image": "Pictures/10000000000000CC00000092B9204B20.jpg",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      204,
+      146
+    ]
+  },
+  {
+    "brand": "Domino’s Pizza",
+    "image": "Pictures/10000000000000D100000071F6E16510.jpg",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      209,
+      113
+    ]
+  },
+  {
+    "brand": "Deutsche Bank",
+    "image": "Pictures/1000000000000099000000999BB36524.png",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      153,
+      153
+    ]
+  },
+  {
+    "brand": "Discreet plus",
+    "image": "Pictures/10000000000000B20000007FD30DFA83.jpg",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      178,
+      127
+    ]
+  },
+  {
+    "brand": "Diskont Tank",
+    "image": "Pictures/10000000000000F6000000590B4C3318.png",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      246,
+      89
+    ]
+  },
+  {
+    "brand": "Der General",
+    "image": "Pictures/10000001000000970000008640E8D986.png",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      151,
+      134
+    ]
+  },
+  {
+    "brand": "Dermalogica",
+    "image": "Pictures/100000000000008D0000008AFB67AB3B.png",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      141,
+      138
+    ]
+  },
+  {
+    "brand": "Schwarzkopf",
+    "image": "Pictures/10000000000000B400000067C4AC21DE.png",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      180,
+      103
+    ]
+  },
+  {
+    "brand": "Dentagard",
+    "image": "Pictures/10000000000000A10000006FF3AD5991.jpg",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      161,
+      111
+    ]
+  },
+  {
+    "brand": "Diane-35",
+    "image": "Pictures/10000000000000BE0000004EA68CE6A4.jpg",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      190,
+      78
+    ]
+  },
+  {
+    "brand": "Dobendan",
+    "image": "Pictures/10000000000000C50000004B9383AF13.png",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      197,
+      75
+    ]
+  },
+  {
+    "brand": "Dolobene",
+    "image": "Pictures/10000000000000BC0000004D92C20E9D.jpg",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      188,
+      77
+    ]
+  },
+  {
+    "brand": "Dolormin",
+    "image": "Pictures/10000001000000C50000003A92682BBC.png",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      197,
+      58
+    ]
+  },
+  {
+    "brand": "Domestos",
+    "image": "Pictures/10000000000000890000005307EE895F.jpg",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      137,
+      83
+    ]
+  },
+  {
+    "brand": "Dentyne",
+    "image": "Pictures/10000000000000DC0000002AF2E1D813.jpg",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      220,
+      42
+    ]
+  },
+  {
+    "brand": "Disprin",
+    "image": "Pictures/10000000000000B90000002F32897718.jpg",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      185,
+      47
+    ]
+  },
+  {
+    "brand": "Dogadan",
+    "image": "Pictures/100000000000007F00000043732AD355.png",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      127,
+      67
+    ]
+  },
+  {
+    "brand": "Delsym",
+    "image": "Pictures/10000001000000A10000003090820AA4.png",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      161,
+      48
+    ]
+  },
+  {
+    "brand": "Denner",
+    "image": "Pictures/10000000000000AA0000002868B8DC9D.png",
+    "slide": 12,
+    "method": "multi_brand_order",
+    "size": [
+      170,
+      40
+    ]
+  },
+  {
+    "brand": "Douwe Egberts",
+    "image": "Pictures/100000000000010700000060185894C1.jpg",
+    "slide": 13,
+    "method": "multi_brand_order",
+    "size": [
+      263,
+      96
+    ]
+  },
+  {
+    "brand": "Dunkin Donuts",
+    "image": "Pictures/10000001000000B60000008673BE2614.png",
+    "slide": 13,
+    "method": "multi_brand_order",
+    "size": [
+      182,
+      134
+    ]
+  },
+  {
+    "brand": "Duplo ferrero",
+    "image": "Pictures/100000000000009B0000009B3DF86830.jpg",
+    "slide": 13,
+    "method": "multi_brand_order",
+    "size": [
+      155,
+      155
+    ]
+  },
+  {
+    "brand": "Doublemint",
+    "image": "Pictures/100000000000009B0000009B98EC37C0.jpg",
+    "slide": 13,
+    "method": "multi_brand_order",
+    "size": [
+      155,
+      155
+    ]
+  },
+  {
+    "brand": "Dosenbach",
+    "image": "Pictures/10000001000000CD0000006D10F25A7D.png",
+    "slide": 13,
+    "method": "multi_brand_order",
+    "size": [
+      205,
+      109
+    ]
+  },
+  {
+    "brand": "Dr.Pepper",
+    "image": "Pictures/100000000000009B0000008F683D86F3.jpg",
+    "slide": 13,
+    "method": "multi_brand_order",
+    "size": [
+      155,
+      143
+    ]
+  },
+  {
+    "brand": "Dreamies",
+    "image": "Pictures/10000000000000A80000008240795F62.jpg",
+    "slide": 13,
+    "method": "multi_brand_order",
+    "size": [
+      168,
+      130
+    ]
+  },
+  {
+    "brand": "Dugladze",
+    "image": "Pictures/100000010000009D0000008341B209EE.png",
+    "slide": 13,
+    "method": "multi_brand_order",
+    "size": [
+      157,
+      131
+    ]
+  },
+  {
+    "brand": "Duracell",
+    "image": "Pictures/10000000000000CF00000063A30870BF.jpg",
+    "slide": 13,
+    "method": "multi_brand_order",
+    "size": [
+      207,
+      99
+    ]
+  },
+  {
+    "brand": "Duschdas",
+    "image": "Pictures/10000001000000B90000006820EB5B66.png",
+    "slide": 13,
+    "method": "multi_brand_order",
+    "size": [
+      185,
+      104
+    ]
+  },
+  {
+    "brand": "Doritos",
+    "image": "Pictures/10000000000000BE0000005E89241FE0.png",
+    "slide": 13,
+    "method": "multi_brand_order",
+    "size": [
+      190,
+      94
+    ]
+  },
+  {
+    "brand": "Douglas",
+    "image": "Pictures/10000001000000850000008516592D3C.png",
+    "slide": 13,
+    "method": "multi_brand_order",
+    "size": [
+      133,
+      133
+    ]
+  },
+  {
+    "brand": "Dr. Best",
+    "image": "Pictures/10000000000000AD000000658559B983.png",
+    "slide": 13,
+    "method": "multi_brand_order",
+    "size": [
+      173,
+      101
+    ]
+  },
+  {
+    "brand": "Dr. Jart+",
+    "image": "Pictures/1000000100000066000000A2A1417B67.png",
+    "slide": 13,
+    "method": "multi_brand_order",
+    "size": [
+      102,
+      162
+    ]
+  },
+  {
+    "brand": "Ferrero",
+    "image": "Pictures/1000000100000099000000665451ABBB.png",
+    "slide": 13,
+    "method": "multi_brand_order",
+    "size": [
+      153,
+      102
+    ]
+  },
+  {
+    "brand": "Jacobs",
+    "image": "Pictures/10000000000000A600000040BA9EC8C2.png",
+    "slide": 13,
+    "method": "multi_brand_order",
+    "size": [
+      166,
+      64
+    ]
+  },
+  {
+    "brand": "Dosia",
+    "image": "Pictures/10000000000000A60000003C6208A65D.png",
+    "slide": 13,
+    "method": "multi_brand_order",
+    "size": [
+      166,
+      60
+    ]
+  },
+  {
+    "brand": "Downy",
+    "image": "Pictures/10000000000000C0000000320C7E287F.png",
+    "slide": 13,
+    "method": "multi_brand_order",
+    "size": [
+      192,
+      50
+    ]
+  },
+  {
+    "brand": "Drano",
+    "image": "Pictures/10000001000000880000003AB673391B.png",
+    "slide": 13,
+    "method": "multi_brand_order",
+    "size": [
+      136,
+      58
+    ]
+  },
+  {
+    "brand": "Editions de Parfums",
+    "image": "Pictures/10000001000000D00000007C206650F0.png",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      208,
+      124
+    ]
+  },
+  {
+    "brand": "elektrabregenz",
+    "image": "Pictures/10000000000000980000009C8FD97A26.png",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      152,
+      156
+    ]
+  },
+  {
+    "brand": "Eckes Granini",
+    "image": "Pictures/10000000000000C70000006A2BD6DD0D.jpg",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      199,
+      106
+    ]
+  },
+  {
+    "brand": "Electro Depot",
+    "image": "Pictures/10000000000000C40000006B46FC44E5.jpg",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      196,
+      107
+    ]
+  },
+  {
+    "brand": "Ellen Betrix",
+    "image": "Pictures/10000000000000AB0000007A10950156.jpg",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      171,
+      122
+    ]
+  },
+  {
+    "brand": "el Primero",
+    "image": "Pictures/100000000000009B0000008046B85414.png",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      155,
+      128
+    ]
+  },
+  {
+    "brand": "Elektrolux",
+    "image": "Pictures/10000000000000E500000056BBF9A264.png",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      229,
+      86
+    ]
+  },
+  {
+    "brand": "empiriecom",
+    "image": "Pictures/10000001000000A60000006F56F4866E.png",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      166,
+      111
+    ]
+  },
+  {
+    "brand": "Enalapril",
+    "image": "Pictures/100000000000009D0000006D31D3732A.png",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      157,
+      109
+    ]
+  },
+  {
+    "brand": "Easy-Off",
+    "image": "Pictures/10000000000000E200000044BB616B48.png",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      226,
+      68
+    ]
+  },
+  {
+    "brand": "Ecomedia",
+    "image": "Pictures/10000000000000CB00000049B5379492.png",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      203,
+      73
+    ]
+  },
+  {
+    "brand": "electrip",
+    "image": "Pictures/100000000000009A0000005E0A3454C3.jpg",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      154,
+      94
+    ]
+  },
+  {
+    "brand": "Eastpak",
+    "image": "Pictures/100000000000009000000060F72FF425.jpg",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      144,
+      96
+    ]
+  },
+  {
+    "brand": "Easy-On",
+    "image": "Pictures/10000000000000AB0000004A9186CA3C.png",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      171,
+      74
+    ]
+  },
+  {
+    "brand": "Eclipse",
+    "image": "Pictures/10000000000000880000005AEF359EE2.jpg",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      136,
+      90
+    ]
+  },
+  {
+    "brand": "Eduscho",
+    "image": "Pictures/10000000000000CF0000003B2FAD8864.png",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      207,
+      59
+    ]
+  },
+  {
+    "brand": "Ecover",
+    "image": "Pictures/10000000000000CB0000003809DB7505.png",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      203,
+      56
+    ]
+  },
+  {
+    "brand": "Edited",
+    "image": "Pictures/100000000000009B000000455EB3018F.png",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      155,
+      69
+    ]
+  },
+  {
+    "brand": "Elevit",
+    "image": "Pictures/10000001000000C10000003641D699DB.png",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      193,
+      54
+    ]
+  },
+  {
+    "brand": "Depot",
+    "image": "Pictures/100000010000008C000000387882E05C.png",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      140,
+      56
+    ]
+  },
+  {
+    "brand": "Edeka",
+    "image": "Pictures/100000000000009D0000002E3C9A070C.png",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      157,
+      46
+    ]
+  },
+  {
+    "brand": "Elena",
+    "image": "Pictures/100000000000009B0000002D91070A66.png",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      155,
+      45
+    ]
+  },
+  {
+    "brand": "elite",
+    "image": "Pictures/100000000000005A0000004B4A1BCB5A.png",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      90,
+      75
+    ]
+  },
+  {
+    "brand": "Zorlu",
+    "image": "Pictures/100000000000004B000000518E04E792.jpg",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      75,
+      81
+    ]
+  },
+  {
+    "brand": "e ON",
+    "image": "Pictures/10000000000000960000001CB0457F7D.png",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      150,
+      28
+    ]
+  },
+  {
+    "brand": "ebay",
+    "image": "Pictures/10000001000000390000002EAC3D51DF.png",
+    "slide": 14,
+    "method": "multi_brand_order",
+    "size": [
+      57,
+      46
+    ]
+  },
+  {
+    "brand": "Faber Castel Türkiye (AnadoluGrup)",
+    "image": "Pictures/1000000000000100000000680BDD5298.png",
+    "slide": 15,
+    "method": "multi_brand_order",
+    "size": [
+      256,
+      104
+    ]
+  },
+  {
+    "brand": "Extreme Dinosaurs",
+    "image": "Pictures/10000000000000AB0000008DEF1D3583.png",
+    "slide": 15,
+    "method": "multi_brand_order",
+    "size": [
+      171,
+      141
+    ]
+  },
+  {
+    "brand": "Enjoy Life Foods",
+    "image": "Pictures/100000000000008F000000A500BE552B.jpg",
+    "slide": 15,
+    "method": "multi_brand_order",
+    "size": [
+      143,
+      165
+    ]
+  },
+  {
+    "brand": "Ever After High",
+    "image": "Pictures/10000001000000CE000000710010DB92.png",
+    "slide": 15,
+    "method": "multi_brand_order",
+    "size": [
+      206,
+      113
+    ]
+  },
+  {
+    "brand": "F6 Zigaretten",
+    "image": "Pictures/10000000000000DB000000692E9CF3BE.jpg",
+    "slide": 15,
+    "method": "multi_brand_order",
+    "size": [
+      219,
+      105
+    ]
+  },
+  {
+    "brand": "English Home",
+    "image": "Pictures/100000000000008D000000A2518A8F93.png",
+    "slide": 15,
+    "method": "multi_brand_order",
+    "size": [
+      141,
+      162
+    ]
+  },
+  {
+    "brand": "Endearmints",
+    "image": "Pictures/10000000000000CB0000006B4BF73F4C.jpg",
+    "slide": 15,
+    "method": "multi_brand_order",
+    "size": [
+      203,
+      107
+    ]
+  },
+  {
+    "brand": "Essensity",
+    "image": "Pictures/10000001000000A4000000799079C374.png",
+    "slide": 15,
+    "method": "multi_brand_order",
+    "size": [
+      164,
+      121
+    ]
+  },
+  {
+    "brand": "Fantastic",
+    "image": "Pictures/10000000000000A1000000702381591B.png",
+    "slide": 15,
+    "method": "multi_brand_order",
+    "size": [
+      161,
+      112
+    ]
+  },
+  {
+    "brand": "Enfagrow",
+    "image": "Pictures/10000000000000C10000005C7EF82F85.png",
+    "slide": 15,
+    "method": "multi_brand_order",
+    "size": [
+      193,
+      92
+    ]
+  },
+  {
+    "brand": "Facebook",
+    "image": "Pictures/10000001000000BC0000005A1E18F152.png",
+    "slide": 15,
+    "method": "multi_brand_order",
+    "size": [
+      188,
+      90
+    ]
+  },
+  {
+    "brand": "Enfamil",
+    "image": "Pictures/10000000000000B7000000543A040C31.png",
+    "slide": 15,
+    "method": "multi_brand_order",
+    "size": [
+      183,
+      84
+    ]
+  },
+  {
+    "brand": "Eucerin",
+    "image": "Pictures/100000010000007E00000079CE45966E.png",
+    "slide": 15,
+    "method": "multi_brand_order",
+    "size": [
+      126,
+      121
+    ]
+  },
+  {
+    "brand": "Ez Care",
+    "image": "Pictures/100000010000007D00000074E522417F.png",
+    "slide": 15,
+    "method": "multi_brand_order",
+    "size": [
+      125,
+      116
+    ]
+  },
+  {
+    "brand": "Febreze",
+    "image": "Pictures/100000000000009D00000055B678EFF8.png",
+    "slide": 15,
+    "method": "multi_brand_order",
+    "size": [
+      157,
+      85
+    ]
+  },
+  {
+    "brand": "Erikli",
+    "image": "Pictures/10000000000000980000004CDDA25F58.jpg",
+    "slide": 15,
+    "method": "multi_brand_order",
+    "size": [
+      152,
+      76
+    ]
+  },
+  {
+    "brand": "Eskimo",
+    "image": "Pictures/100000000000008A0000005310ED2241.png",
+    "slide": 15,
+    "method": "multi_brand_order",
+    "size": [
+      138,
+      83
+    ]
+  },
+  {
+    "brand": "Essity",
+    "image": "Pictures/10000001000000AA000000409D05D8B5.png",
+    "slide": 15,
+    "method": "multi_brand_order",
+    "size": [
+      170,
+      64
+    ]
+  },
+  {
+    "brand": "Farmer",
+    "image": "Pictures/1000000000000087000000448FC0C1B0.png",
+    "slide": 15,
+    "method": "multi_brand_order",
+    "size": [
+      135,
+      68
+    ]
+  },
+  {
+    "brand": "Fisher-Price",
+    "image": "Pictures/10000001000000D100000057D1A0AE40.png",
+    "slide": 16,
+    "method": "multi_brand_order",
+    "size": [
+      209,
+      87
+    ]
+  },
+  {
+    "brand": "Freed Paris",
+    "image": "Pictures/10000001000000CB00000059F2C2A492.png",
+    "slide": 16,
+    "method": "multi_brand_order",
+    "size": [
+      203,
+      89
+    ]
+  },
+  {
+    "brand": "Fragrances",
+    "image": "Pictures/1000000000000093000000734C4060E1.jpg",
+    "slide": 16,
+    "method": "multi_brand_order",
+    "size": [
+      147,
+      115
+    ]
+  },
+  {
+    "brand": "Fluocaril",
+    "image": "Pictures/100000000000009F0000005E6456740E.jpg",
+    "slide": 16,
+    "method": "multi_brand_order",
+    "size": [
+      159,
+      94
+    ]
+  },
+  {
+    "brand": "Frankonia",
+    "image": "Pictures/10000000000000B0000000501C2EA9D7.png",
+    "slide": 16,
+    "method": "multi_brand_order",
+    "size": [
+      176,
+      80
+    ]
+  },
+  {
+    "brand": "Kellogg’s",
+    "image": "Pictures/10000000000000940000005F00E56215.png",
+    "slide": 16,
+    "method": "multi_brand_order",
+    "size": [
+      148,
+      95
+    ]
+  },
+  {
+    "brand": "Fenistil",
+    "image": "Pictures/10000000000000A70000004E025FAE56.png",
+    "slide": 16,
+    "method": "multi_brand_order",
+    "size": [
+      167,
+      78
+    ]
+  },
+  {
+    "brand": "Fixodent",
+    "image": "Pictures/10000000000000930000005884DEB703.jpg",
+    "slide": 16,
+    "method": "multi_brand_order",
+    "size": [
+      147,
+      88
+    ]
+  },
+  {
+    "brand": "freemans",
+    "image": "Pictures/10000000000000B1000000470D382827.png",
+    "slide": 16,
+    "method": "multi_brand_order",
+    "size": [
+      177,
+      71
+    ]
+  },
+  {
+    "brand": "Frosties",
+    "image": "Pictures/10000001000000BC000000408CCC9841.png",
+    "slide": 16,
+    "method": "multi_brand_order",
+    "size": [
+      188,
+      64
+    ]
+  },
+  {
+    "brand": "Fenjala",
+    "image": "Pictures/10000000000000CC000000380521BB89.png",
+    "slide": 16,
+    "method": "multi_brand_order",
+    "size": [
+      204,
+      56
+    ]
+  },
+  {
+    "brand": "Flavaco",
+    "image": "Pictures/1000000100000099000000452D75C2AD.png",
+    "slide": 16,
+    "method": "multi_brand_order",
+    "size": [
+      153,
+      69
+    ]
+  },
+  {
+    "brand": "Florena",
+    "image": "Pictures/10000000000000B60000003ACD886DF9.png",
+    "slide": 16,
+    "method": "multi_brand_order",
+    "size": [
+      182,
+      58
+    ]
+  },
+  {
+    "brand": "Freedom",
+    "image": "Pictures/10000000000000BF0000002FCEFF75D6.png",
+    "slide": 16,
+    "method": "multi_brand_order",
+    "size": [
+      191,
+      47
+    ]
+  },
+  {
+    "brand": "Kellogg",
+    "image": "Pictures/100000010000009F00000030F22CAD42.png",
+    "slide": 16,
+    "method": "multi_brand_order",
+    "size": [
+      159,
+      48
+    ]
+  },
+  {
+    "brand": "Finish",
+    "image": "Pictures/1000000000000093000000322B4665EA.png",
+    "slide": 16,
+    "method": "multi_brand_order",
+    "size": [
+      147,
+      50
+    ]
+  },
+  {
+    "brand": "Finlux",
+    "image": "Pictures/100000000000005700000053C029C327.jpg",
+    "slide": 16,
+    "method": "multi_brand_order",
+    "size": [
+      87,
+      83
+    ]
+  },
+  {
+    "brand": "Flavel",
+    "image": "Pictures/10000000000000B3000000248F9910B9.png",
+    "slide": 16,
+    "method": "multi_brand_order",
+    "size": [
+      179,
+      36
+    ]
+  },
+  {
+    "brand": "Frolic",
+    "image": "Pictures/10000000000000720000003117DD7EC2.jpg",
+    "slide": 16,
+    "method": "multi_brand_order",
+    "size": [
+      114,
+      49
+    ]
+  },
+  {
+    "brand": "Giorgio Armani",
+    "image": "Pictures/10000000000000FA00000075904737C1.jpg",
+    "slide": 17,
+    "method": "multi_brand_order",
+    "size": [
+      250,
+      117
+    ]
+  },
+  {
+    "brand": "Fruchtzwerge",
+    "image": "Pictures/10000001000000D00000006B41D00F12.png",
+    "slide": 17,
+    "method": "multi_brand_order",
+    "size": [
+      208,
+      107
+    ]
+  },
+  {
+    "brand": "Ginkgobene",
+    "image": "Pictures/10000000000000AE0000007ECBA25FBE.png",
+    "slide": 17,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      126
+    ]
+  },
+  {
+    "brand": "Fuze Tea",
+    "image": "Pictures/10000000000000910000009169DC43ED.png",
+    "slide": 17,
+    "method": "multi_brand_order",
+    "size": [
+      145,
+      145
+    ]
+  },
+  {
+    "brand": "Gaggenau",
+    "image": "Pictures/100000000000009F00000072D8DBB6A7.png",
+    "slide": 17,
+    "method": "multi_brand_order",
+    "size": [
+      159,
+      114
+    ]
+  },
+  {
+    "brand": "Galloway",
+    "image": "Pictures/10000001000000B600000060920A485E.png",
+    "slide": 17,
+    "method": "multi_brand_order",
+    "size": [
+      182,
+      96
+    ]
+  },
+  {
+    "brand": "Gatorade",
+    "image": "Pictures/10000000000000B00000005E619F98D4.jpg",
+    "slide": 17,
+    "method": "multi_brand_order",
+    "size": [
+      176,
+      94
+    ]
+  },
+  {
+    "brand": "Gaviscon",
+    "image": "Pictures/10000001000000AB00000060D46C08E7.png",
+    "slide": 17,
+    "method": "multi_brand_order",
+    "size": [
+      171,
+      96
+    ]
+  },
+  {
+    "brand": "Generali",
+    "image": "Pictures/10000000000000910000006B5B976A33.png",
+    "slide": 17,
+    "method": "multi_brand_order",
+    "size": [
+      145,
+      107
+    ]
+  },
+  {
+    "brand": "Gillette",
+    "image": "Pictures/10000000000000A300000057EEFCD564.png",
+    "slide": 17,
+    "method": "multi_brand_order",
+    "size": [
+      163,
+      87
+    ]
+  },
+  {
+    "brand": "Givenchy",
+    "image": "Pictures/10000000000000AA0000005291CEF227.jpg",
+    "slide": 17,
+    "method": "multi_brand_order",
+    "size": [
+      170,
+      82
+    ]
+  },
+  {
+    "brand": "Fybogel",
+    "image": "Pictures/10000000000000BD0000003D2BBCC793.jpg",
+    "slide": 17,
+    "method": "multi_brand_order",
+    "size": [
+      189,
+      61
+    ]
+  },
+  {
+    "brand": "Galbani",
+    "image": "Pictures/10000000000000AA0000003C4661F6FC.png",
+    "slide": 17,
+    "method": "multi_brand_order",
+    "size": [
+      170,
+      60
+    ]
+  },
+  {
+    "brand": "Garnier",
+    "image": "Pictures/10000000000000AC0000003B3041D58E.png",
+    "slide": 17,
+    "method": "multi_brand_order",
+    "size": [
+      172,
+      59
+    ]
+  },
+  {
+    "brand": "gevalia",
+    "image": "Pictures/100000010000007D0000004CA7A66CDA.png",
+    "slide": 17,
+    "method": "multi_brand_order",
+    "size": [
+      125,
+      76
+    ]
+  },
+  {
+    "brand": "Goldman Sachs",
+    "image": "Pictures/1000000100000152000000A7494BD0B6.png",
+    "slide": 18,
+    "method": "multi_brand_order",
+    "size": [
+      338,
+      167
+    ]
+  },
+  {
+    "brand": "golden Break",
+    "image": "Pictures/10000000000000B6000000895E8F12A8.png",
+    "slide": 18,
+    "method": "multi_brand_order",
+    "size": [
+      182,
+      137
+    ]
+  },
+  {
+    "brand": "Glow&Lovely",
+    "image": "Pictures/10000001000000B10000008198C5A998.png",
+    "slide": 18,
+    "method": "multi_brand_order",
+    "size": [
+      177,
+      129
+    ]
+  },
+  {
+    "brand": "Grand Frais",
+    "image": "Pictures/10000000000000E70000005C536E8876.png",
+    "slide": 18,
+    "method": "multi_brand_order",
+    "size": [
+      231,
+      92
+    ]
+  },
+  {
+    "brand": "Glem vital",
+    "image": "Pictures/10000001000000F1000000475BD67D06.png",
+    "slide": 18,
+    "method": "multi_brand_order",
+    "size": [
+      241,
+      71
+    ]
+  },
+  {
+    "brand": "Glamglow",
+    "image": "Pictures/10000000000000C400000049CF804E7D.jpg",
+    "slide": 18,
+    "method": "multi_brand_order",
+    "size": [
+      196,
+      73
+    ]
+  },
+  {
+    "brand": "Glucobay",
+    "image": "Pictures/1000000000000086000000654E6CF8EA.jpg",
+    "slide": 18,
+    "method": "multi_brand_order",
+    "size": [
+      134,
+      101
+    ]
+  },
+  {
+    "brand": "Goldwell",
+    "image": "Pictures/10000000000000E4000000397A740D0F.png",
+    "slide": 18,
+    "method": "multi_brand_order",
+    "size": [
+      228,
+      57
+    ]
+  },
+  {
+    "brand": "Glaceau",
+    "image": "Pictures/10000000000000900000005A193E9BC4.png",
+    "slide": 18,
+    "method": "multi_brand_order",
+    "size": [
+      144,
+      90
+    ]
+  },
+  {
+    "brand": "Gorenje",
+    "image": "Pictures/100000000000009800000052F4643559.png",
+    "slide": 18,
+    "method": "multi_brand_order",
+    "size": [
+      152,
+      82
+    ]
+  },
+  {
+    "brand": "Grattan",
+    "image": "Pictures/1000000100000084000000525F2F3A1C.png",
+    "slide": 18,
+    "method": "multi_brand_order",
+    "size": [
+      132,
+      82
+    ]
+  },
+  {
+    "brand": "Grenade",
+    "image": "Pictures/10000001000000FB000000284F8C7399.png",
+    "slide": 18,
+    "method": "multi_brand_order",
+    "size": [
+      251,
+      40
+    ]
+  },
+  {
+    "brand": "Grundig",
+    "image": "Pictures/10000000000000B6000000358DBD58F9.png",
+    "slide": 18,
+    "method": "multi_brand_order",
+    "size": [
+      182,
+      53
+    ]
+  },
+  {
+    "brand": "gurieli",
+    "image": "Pictures/10000000000000AD0000002E5B507A0E.png",
+    "slide": 18,
+    "method": "multi_brand_order",
+    "size": [
+      173,
+      46
+    ]
+  },
+  {
+    "brand": "Google",
+    "image": "Pictures/10000001000000C7000000224296E630.png",
+    "slide": 18,
+    "method": "multi_brand_order",
+    "size": [
+      199,
+      34
+    ]
+  },
+  {
+    "brand": "Glade",
+    "image": "Pictures/10000001000000B40000002335FAA3C5.png",
+    "slide": 18,
+    "method": "multi_brand_order",
+    "size": [
+      180,
+      35
+    ]
+  },
+  {
+    "brand": "Gliss",
+    "image": "Pictures/1000000000000082000000227CA520DF.png",
+    "slide": 18,
+    "method": "multi_brand_order",
+    "size": [
+      130,
+      34
+    ]
+  },
+  {
+    "brand": "Herbal Essences",
+    "image": "Pictures/10000000000000AE0000009C36385362.jpg",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      156
+    ]
+  },
+  {
+    "brand": "Hanseatic Bank",
+    "image": "Pictures/10000000000000A000000091AF512FD8.jpg",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      160,
+      145
+    ]
+  },
+  {
+    "brand": "Head & Shoulders",
+    "image": "Pictures/10000000000000F60000005DE468FF29.png",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      246,
+      93
+    ]
+  },
+  {
+    "brand": "Hermès Parfüm",
+    "image": "Pictures/10000001000000AA0000008181040F88.png",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      170,
+      129
+    ]
+  },
+  {
+    "brand": "Healthy Boy",
+    "image": "Pictures/10000000000000940000008B5F6E0950.png",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      148,
+      139
+    ]
+  },
+  {
+    "brand": "Hidro Fugal",
+    "image": "Pictures/10000000000000C3000000697D8C86F8.png",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      195,
+      105
+    ]
+  },
+  {
+    "brand": "HACI ŞAKIR",
+    "image": "Pictures/1000000100000092000000823A2249A5.png",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      146,
+      130
+    ]
+  },
+  {
+    "brand": "HAG Coffee",
+    "image": "Pictures/10000001000000780000009C71E339BB.png",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      120,
+      156
+    ]
+  },
+  {
+    "brand": "Hansaplast",
+    "image": "Pictures/10000000000000C00000005F23BADD01.png",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      192,
+      95
+    ]
+  },
+  {
+    "brand": "Hellmann’s",
+    "image": "Pictures/10000000000000AE000000659E1EB792.png",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      101
+    ]
+  },
+  {
+    "brand": "Hermesetas",
+    "image": "Pictures/10000001000000820000008278351706.png",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      130,
+      130
+    ]
+  },
+  {
+    "brand": "Heliotrop",
+    "image": "Pictures/10000000000000D50000004E1C3B71E8.png",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      213,
+      78
+    ]
+  },
+  {
+    "brand": "Hoffmanns",
+    "image": "Pictures/10000000000000A300000064C6D3197D.png",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      163,
+      100
+    ]
+  },
+  {
+    "brand": "Hayat Su",
+    "image": "Pictures/10000000000000730000008C2AA0C75D.png",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      115,
+      140
+    ]
+  },
+  {
+    "brand": "Headline",
+    "image": "Pictures/10000000000000EC00000044A986F294.png",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      236,
+      68
+    ]
+  },
+  {
+    "brand": "Hardees",
+    "image": "Pictures/100000000000008F0000005CEF8DE509.png",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      143,
+      92
+    ]
+  },
+  {
+    "brand": "Helline",
+    "image": "Pictures/10000001000000830000005A04E71451.png",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      131,
+      90
+    ]
+  },
+  {
+    "brand": "Henniez",
+    "image": "Pictures/10000001000000B00000003E609B9479.png",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      176,
+      62
+    ]
+  },
+  {
+    "brand": "Hanuta",
+    "image": "Pictures/100000000000009700000042A1293DB4.png",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      151,
+      66
+    ]
+  },
+  {
+    "brand": "Harpic",
+    "image": "Pictures/10000001000000BA00000031AAA187B8.png",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      186,
+      49
+    ]
+  },
+  {
+    "brand": "Hermes",
+    "image": "Pictures/100000000000009D000000216C920997.png",
+    "slide": 19,
+    "method": "multi_brand_order",
+    "size": [
+      157,
+      33
+    ]
+  },
+  {
+    "brand": "Hotel Chocolat",
+    "image": "Pictures/10000000000000B80000008164871F79.png",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      184,
+      129
+    ]
+  },
+  {
+    "brand": "Hudson Grace",
+    "image": "Pictures/10000000000000B700000080DBFC5906.png",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      183,
+      128
+    ]
+  },
+  {
+    "brand": "Hubba Bubba",
+    "image": "Pictures/10000000000000B400000082D0990B7F.jpg",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      180,
+      130
+    ]
+  },
+  {
+    "brand": "I’m walking",
+    "image": "Pictures/100000000000009D000000900410ECDD.jpg",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      157,
+      144
+    ]
+  },
+  {
+    "brand": "Honest Tea",
+    "image": "Pictures/10000000000000B500000078732E2CD9.jpg",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      181,
+      120
+    ]
+  },
+  {
+    "brand": "Honey Maid",
+    "image": "Pictures/100000000000008F00000084BAC1743B.jpg",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      143,
+      132
+    ]
+  },
+  {
+    "brand": "Hot Wheels",
+    "image": "Pictures/10000000000000B3000000620FF99D63.png",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      179,
+      98
+    ]
+  },
+  {
+    "brand": "HSBC Bank",
+    "image": "Pictures/10000000000000B90000005D45C7F1A6.png",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      185,
+      93
+    ]
+  },
+  {
+    "brand": "Hugo Boss",
+    "image": "Pictures/1000000000000092000000741334D1B3.png",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      146,
+      116
+    ]
+  },
+  {
+    "brand": "Iberogast",
+    "image": "Pictures/10000000000000B500000058271ECBEE.png",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      181,
+      88
+    ]
+  },
+  {
+    "brand": "Ice Break",
+    "image": "Pictures/10000001000000B2000000564A818270.png",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      178,
+      86
+    ]
+  },
+  {
+    "brand": "illycaffè",
+    "image": "Pictures/1000000100000080000000726E634F3C.png",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      128,
+      114
+    ]
+  },
+  {
+    "brand": "Horlicks",
+    "image": "Pictures/1000000000000078000000783CA2E6F6.png",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      120,
+      120
+    ]
+  },
+  {
+    "brand": "HP Sauce",
+    "image": "Pictures/10000001000000B300000050679B9F0E.png",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      179,
+      80
+    ]
+  },
+  {
+    "brand": "Hohes C",
+    "image": "Pictures/1000000000000053000000A73768F43C.png",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      83,
+      167
+    ]
+  },
+  {
+    "brand": "Hyundai",
+    "image": "Pictures/10000000000000B80000003EF4F4F73E.png",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      184,
+      62
+    ]
+  },
+  {
+    "brand": "Houzz",
+    "image": "Pictures/100000000000008E0000004A74EBB183.png",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      142,
+      74
+    ]
+  },
+  {
+    "brand": "Hylak",
+    "image": "Pictures/10000000000000A100000040293992CA.png",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      161,
+      64
+    ]
+  },
+  {
+    "brand": "Igloo",
+    "image": "Pictures/10000000000000E50000002C82D620C2.png",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      229,
+      44
+    ]
+  },
+  {
+    "brand": "Igora",
+    "image": "Pictures/100000010000009700000040DA9B6891.png",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      151,
+      64
+    ]
+  },
+  {
+    "brand": "Boss",
+    "image": "Pictures/100000000000009800000039F97DE8BA.png",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      152,
+      57
+    ]
+  },
+  {
+    "brand": "Icım",
+    "image": "Pictures/10000001000000990000002F098815E8.png",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      153,
+      47
+    ]
+  },
+  {
+    "brand": "IKEA",
+    "image": "Pictures/10000000000000970000001FDEC00207.png",
+    "slide": 20,
+    "method": "multi_brand_order",
+    "size": [
+      151,
+      31
+    ]
+  },
+  {
+    "brand": "ista International",
+    "image": "Pictures/10000001000001C300000144743FE66B.png",
+    "slide": 21,
+    "method": "multi_brand_order",
+    "size": [
+      451,
+      324
+    ]
+  },
+  {
+    "brand": "James Wellbelove",
+    "image": "Pictures/100000010000015C0000008448B12E61.png",
+    "slide": 21,
+    "method": "multi_brand_order",
+    "size": [
+      348,
+      132
+    ]
+  },
+  {
+    "brand": "Innocent Drinks",
+    "image": "Pictures/10000001000000F600000088BEF22281.png",
+    "slide": 21,
+    "method": "multi_brand_order",
+    "size": [
+      246,
+      136
+    ]
+  },
+  {
+    "brand": "JPMorgan Chase",
+    "image": "Pictures/100000000000009C000000866B3634DA.png",
+    "slide": 21,
+    "method": "multi_brand_order",
+    "size": [
+      156,
+      134
+    ]
+  },
+  {
+    "brand": "Intima Liasan",
+    "image": "Pictures/10000001000000B30000006E63E40D44.png",
+    "slide": 21,
+    "method": "multi_brand_order",
+    "size": [
+      179,
+      110
+    ]
+  },
+  {
+    "brand": "Jacobs Coffee",
+    "image": "Pictures/10000000000000B7000000684D96EC8E.jpg",
+    "slide": 21,
+    "method": "multi_brand_order",
+    "size": [
+      183,
+      104
+    ]
+  },
+  {
+    "brand": "Irish Spring",
+    "image": "Pictures/10000000000000B3000000674A2C4B16.png",
+    "slide": 21,
+    "method": "multi_brand_order",
+    "size": [
+      179,
+      103
+    ]
+  },
+  {
+    "brand": "Jimmy Choo",
+    "image": "Pictures/100000000000008500000075C1C99F00.png",
+    "slide": 21,
+    "method": "multi_brand_order",
+    "size": [
+      133,
+      117
+    ]
+  },
+  {
+    "brand": "Influbene",
+    "image": "Pictures/100000000000007D0000007929E5DEAE.png",
+    "slide": 21,
+    "method": "multi_brand_order",
+    "size": [
+      125,
+      121
+    ]
+  },
+  {
+    "brand": "Instagram",
+    "image": "Pictures/100000010000011000000036ADE392BC.png",
+    "slide": 21,
+    "method": "multi_brand_order",
+    "size": [
+      272,
+      54
+    ]
+  },
+  {
+    "brand": "Jo Malone",
+    "image": "Pictures/1000000100000078000000781B93C4FC.png",
+    "slide": 21,
+    "method": "multi_brand_order",
+    "size": [
+      120,
+      120
+    ]
+  },
+  {
+    "brand": "Influass",
+    "image": "Pictures/1000000000000099000000512A9571FF.png",
+    "slide": 21,
+    "method": "multi_brand_order",
+    "size": [
+      153,
+      81
+    ]
+  },
+  {
+    "brand": "Imanoor",
+    "image": "Pictures/10000000000000AA000000412D85E6C4.jpg",
+    "slide": 21,
+    "method": "multi_brand_order",
+    "size": [
+      170,
+      65
+    ]
+  },
+  {
+    "brand": "Imodium",
+    "image": "Pictures/100000010000009900000047845AC6AA.png",
+    "slide": 21,
+    "method": "multi_brand_order",
+    "size": [
+      153,
+      71
+    ]
+  },
+  {
+    "brand": "Jelmoli",
+    "image": "Pictures/1000000000000068000000680EE925AD.png",
+    "slide": 21,
+    "method": "multi_brand_order",
+    "size": [
+      104,
+      104
+    ]
+  },
+  {
+    "brand": "ingage",
+    "image": "Pictures/100000010000009F00000040D4B5EDD0.png",
+    "slide": 21,
+    "method": "multi_brand_order",
+    "size": [
+      159,
+      64
+    ]
+  },
+  {
+    "brand": "isabel",
+    "image": "Pictures/10000000000000A10000003B92CB16F2.png",
+    "slide": 21,
+    "method": "multi_brand_order",
+    "size": [
+      161,
+      59
+    ]
+  },
+  {
+    "brand": "istara",
+    "image": "Pictures/10000000000000B70000002D7DE905A5.png",
+    "slide": 21,
+    "method": "multi_brand_order",
+    "size": [
+      183,
+      45
+    ]
+  },
+  {
+    "brand": "Jumbo Supermarkets",
+    "image": "Pictures/100000010000013D000000972EA1E56B.png",
+    "slide": 22,
+    "method": "multi_brand_order",
+    "size": [
+      317,
+      151
+    ]
+  },
+  {
+    "brand": "Kaiser Original",
+    "image": "Pictures/10000000000000BB000000994C4DABB9.png",
+    "slide": 22,
+    "method": "multi_brand_order",
+    "size": [
+      187,
+      153
+    ]
+  },
+  {
+    "brand": "Kahve Dünyası",
+    "image": "Pictures/10000000000000980000009963277364.png",
+    "slide": 22,
+    "method": "multi_brand_order",
+    "size": [
+      152,
+      153
+    ]
+  },
+  {
+    "brand": "Kaleidoscope",
+    "image": "Pictures/10000000000000C50000006F3B2E7787.png",
+    "slide": 22,
+    "method": "multi_brand_order",
+    "size": [
+      197,
+      111
+    ]
+  },
+  {
+    "brand": "Kenco coffee",
+    "image": "Pictures/10000001000000A8000000817F9BF5E5.png",
+    "slide": 22,
+    "method": "multi_brand_order",
+    "size": [
+      168,
+      129
+    ]
+  },
+  {
+    "brand": "Kinder Bueno",
+    "image": "Pictures/10000000000000B5000000686569317C.png",
+    "slide": 22,
+    "method": "multi_brand_order",
+    "size": [
+      181,
+      104
+    ]
+  },
+  {
+    "brand": "Juicy Fruit",
+    "image": "Pictures/100000000000008A00000088646E9071.png",
+    "slide": 22,
+    "method": "multi_brand_order",
+    "size": [
+      138,
+      136
+    ]
+  },
+  {
+    "brand": "Jules Verne",
+    "image": "Pictures/100000010000009A000000748499654A.png",
+    "slide": 22,
+    "method": "multi_brand_order",
+    "size": [
+      154,
+      116
+    ]
+  },
+  {
+    "brand": "Kérastase",
+    "image": "Pictures/10000001000000AB0000005E937D6D63.png",
+    "slide": 22,
+    "method": "multi_brand_order",
+    "size": [
+      171,
+      94
+    ]
+  },
+  {
+    "brand": "Kaufland",
+    "image": "Pictures/10000000000000A800000053502E677C.png",
+    "slide": 22,
+    "method": "multi_brand_order",
+    "size": [
+      168,
+      83
+    ]
+  },
+  {
+    "brand": "Kikkoman",
+    "image": "Pictures/10000001000000A5000000533A29CFFD.png",
+    "slide": 22,
+    "method": "multi_brand_order",
+    "size": [
+      165,
+      83
+    ]
+  },
+  {
+    "brand": "Kaufhof",
+    "image": "Pictures/10000001000000B6000000395D1D729D.png",
+    "slide": 22,
+    "method": "multi_brand_order",
+    "size": [
+      182,
+      57
+    ]
+  },
+  {
+    "brand": "Kaavos",
+    "image": "Pictures/10000000000000A6000000233174A4BE.png",
+    "slide": 22,
+    "method": "multi_brand_order",
+    "size": [
+      166,
+      35
+    ]
+  },
+  {
+    "brand": "Kevita",
+    "image": "Pictures/100000010000006E0000002E85B1C824.png",
+    "slide": 22,
+    "method": "multi_brand_order",
+    "size": [
+      110,
+      46
+    ]
+  },
+  {
+    "brand": "Kinder",
+    "image": "Pictures/10000000000000EF00000015CBE50617.png",
+    "slide": 22,
+    "method": "multi_brand_order",
+    "size": [
+      239,
+      21
+    ]
+  },
+  {
+    "brand": "Kinder Milchschnitte",
+    "image": "Pictures/100000000000010A000000818EDF155F.jpg",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      266,
+      129
+    ]
+  },
+  {
+    "brand": "Kraft Heinz Germany",
+    "image": "Pictures/10000001000000CA000000966EA2EAC4.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      202,
+      150
+    ]
+  },
+  {
+    "brand": "Kinder Choco fresh",
+    "image": "Pictures/10000001000000AA0000008EE0517CCE.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      170,
+      142
+    ]
+  },
+  {
+    "brand": "Kinder Happy Hippo",
+    "image": "Pictures/1000000100000094000000905EF6382D.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      148,
+      144
+    ]
+  },
+  {
+    "brand": "Kinder Schoko Bons",
+    "image": "Pictures/100000000000009D000000832631BB49.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      157,
+      131
+    ]
+  },
+  {
+    "brand": "Kinder Überaschung",
+    "image": "Pictures/10000001000000C00000006902B99E09.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      192,
+      105
+    ]
+  },
+  {
+    "brand": "Kinder Schokolade",
+    "image": "Pictures/100000000000009C0000007FE1085D15.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      156,
+      127
+    ]
+  },
+  {
+    "brand": "Kinder Maxi King",
+    "image": "Pictures/10000001000000AB00000073CE73CA20.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      171,
+      115
+    ]
+  },
+  {
+    "brand": "Kinder Paradiso",
+    "image": "Pictures/10000001000000D7000000566B1ACC83.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      215,
+      86
+    ]
+  },
+  {
+    "brand": "King C Gillette",
+    "image": "Pictures/10000001000000BE0000005FD2EBB535.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      190,
+      95
+    ]
+  },
+  {
+    "brand": "Kinder Country",
+    "image": "Pictures/10000001000000AF00000062606C1FA6.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      175,
+      98
+    ]
+  },
+  {
+    "brand": "Kinder Pinguin",
+    "image": "Pictures/10000000000000810000008231C91DC1.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      129,
+      130
+    ]
+  },
+  {
+    "brand": "Kinder Delice",
+    "image": "Pictures/10000001000000B60000005C6CE8D57F.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      182,
+      92
+    ]
+  },
+  {
+    "brand": "Kinder Riegel",
+    "image": "Pictures/10000001000000A600000064A8654C2B.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      166,
+      100
+    ]
+  },
+  {
+    "brand": "Kinder Cards",
+    "image": "Pictures/10000000000000CB0000004CACEBE7A7.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      203,
+      76
+    ]
+  },
+  {
+    "brand": "Kindest Kare",
+    "image": "Pictures/100000010000009E0000005F67756F0C.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      158,
+      95
+    ]
+  },
+  {
+    "brand": "Kinder Joy",
+    "image": "Pictures/10000000000000CE00000048BF72A402.jpg",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      206,
+      72
+    ]
+  },
+  {
+    "brand": "ScJohnson",
+    "image": "Pictures/100000010000006F000000844BED23B1.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      111,
+      132
+    ]
+  },
+  {
+    "brand": "Krampouz",
+    "image": "Pictures/1000000000000090000000601EC8AE6C.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      144,
+      96
+    ]
+  },
+  {
+    "brand": "Kinh Do",
+    "image": "Pictures/10000000000000AF00000044278DBA3F.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      175,
+      68
+    ]
+  },
+  {
+    "brand": "KiteKat",
+    "image": "Pictures/10000000000000CE000000348A2D26FE.jpg",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      206,
+      52
+    ]
+  },
+  {
+    "brand": "Kinley",
+    "image": "Pictures/100000000000009200000041F7ED8BD1.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      146,
+      65
+    ]
+  },
+  {
+    "brand": "KitKat",
+    "image": "Pictures/100000000000009F00000022235E79C9.png",
+    "slide": 23,
+    "method": "multi_brand_order",
+    "size": [
+      159,
+      34
+    ]
+  },
+  {
+    "brand": "Lady Lockenlicht",
+    "image": "Pictures/10000000000000CE0000006E31481BFD.jpg",
+    "slide": 24,
+    "method": "multi_brand_order",
+    "size": [
+      206,
+      110
+    ]
+  },
+  {
+    "brand": "Lady Speed Stick",
+    "image": "Pictures/10000000000000AF0000007EA8F05778.png",
+    "slide": 24,
+    "method": "multi_brand_order",
+    "size": [
+      175,
+      126
+    ]
+  },
+  {
+    "brand": "La Roche Posay",
+    "image": "Pictures/10000000000000A300000087D22CD0A1.jpg",
+    "slide": 24,
+    "method": "multi_brand_order",
+    "size": [
+      163,
+      135
+    ]
+  },
+  {
+    "brand": "Speed Stick",
+    "image": "Pictures/10000000000000AC0000006F896F1420.jpg",
+    "slide": 24,
+    "method": "multi_brand_order",
+    "size": [
+      172,
+      111
+    ]
+  },
+  {
+    "brand": "La Prairie",
+    "image": "Pictures/10000000000000A400000067513C8F48.png",
+    "slide": 24,
+    "method": "multi_brand_order",
+    "size": [
+      164,
+      103
+    ]
+  },
+  {
+    "brand": "Lab Series",
+    "image": "Pictures/10000001000000B00000005B6B4A3132.png",
+    "slide": 24,
+    "method": "multi_brand_order",
+    "size": [
+      176,
+      91
+    ]
+  },
+  {
+    "brand": "Landliebe",
+    "image": "Pictures/10000000000000CD0000004CE4E25DD4.png",
+    "slide": 24,
+    "method": "multi_brand_order",
+    "size": [
+      205,
+      76
+    ]
+  },
+  {
+    "brand": "Küche&co",
+    "image": "Pictures/100000000000009B0000005C408314B3.png",
+    "slide": 24,
+    "method": "multi_brand_order",
+    "size": [
+      155,
+      92
+    ]
+  },
+  {
+    "brand": "Küsschen",
+    "image": "Pictures/10000000000000AB0000004FBBCF885C.png",
+    "slide": 24,
+    "method": "multi_brand_order",
+    "size": [
+      171,
+      79
+    ]
+  },
+  {
+    "brand": "Lacanche",
+    "image": "Pictures/10000000000000B00000004369B161D5.png",
+    "slide": 24,
+    "method": "multi_brand_order",
+    "size": [
+      176,
+      67
+    ]
+  },
+  {
+    "brand": "Lagastin",
+    "image": "Pictures/10000000000000CB00000035A3BA2B96.png",
+    "slide": 24,
+    "method": "multi_brand_order",
+    "size": [
+      203,
+      53
+    ]
+  },
+  {
+    "brand": "Lamictal",
+    "image": "Pictures/10000000000000B00000003B2DE8EA06.png",
+    "slide": 24,
+    "method": "multi_brand_order",
+    "size": [
+      176,
+      59
+    ]
+  },
+  {
+    "brand": "Labello",
+    "image": "Pictures/100000000000009F00000033B1760849.png",
+    "slide": 24,
+    "method": "multi_brand_order",
+    "size": [
+      159,
+      51
+    ]
+  },
+  {
+    "brand": "Lacoste",
+    "image": "Pictures/10000001000000B4000000257B857CFC.png",
+    "slide": 24,
+    "method": "multi_brand_order",
+    "size": [
+      180,
+      37
+    ]
+  },
+  {
+    "brand": "Laicran",
+    "image": "Pictures/100000000000009C00000025EB6E88C6.jpg",
+    "slide": 24,
+    "method": "multi_brand_order",
+    "size": [
+      156,
+      37
+    ]
+  },
+  {
+    "brand": "Libro Booksellers",
+    "image": "Pictures/100000010000009600000096983B1628.png",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      150,
+      150
+    ]
+  },
+  {
+    "brand": "LG Electronics",
+    "image": "Pictures/100000000000009300000093E37F94A3.png",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      147,
+      147
+    ]
+  },
+  {
+    "brand": "Lea&Perrins",
+    "image": "Pictures/100000000000009200000084E4D748FC.png",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      146,
+      132
+    ]
+  },
+  {
+    "brand": "Leerdammer",
+    "image": "Pictures/100000010000009A00000078074548A7.png",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      154,
+      120
+    ]
+  },
+  {
+    "brand": "Lila Pause",
+    "image": "Pictures/100000000000009900000076E916CF62.png",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      153,
+      118
+    ]
+  },
+  {
+    "brand": "Liquid I.V",
+    "image": "Pictures/10000001000000AD00000064F66216E9.png",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      173,
+      100
+    ]
+  },
+  {
+    "brand": "Lisinopril",
+    "image": "Pictures/10000000000000A300000061A58C1133.png",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      163,
+      97
+    ]
+  },
+  {
+    "brand": "Langnese",
+    "image": "Pictures/10000000000000B20000005798F7D1AD.jpg",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      178,
+      87
+    ]
+  },
+  {
+    "brand": "Lifebuoy",
+    "image": "Pictures/10000000000000B1000000570180E7C8.jpg",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      177,
+      87
+    ]
+  },
+  {
+    "brand": "LinkedIN",
+    "image": "Pictures/10000001000000A50000005DA91692CB.png",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      165,
+      93
+    ]
+  },
+  {
+    "brand": "Lipetgaz",
+    "image": "Pictures/100000000000007A0000007AD6B21F63.jpg",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      122,
+      122
+    ]
+  },
+  {
+    "brand": "Lascana",
+    "image": "Pictures/100000000000007800000078E3D3DA3F.png",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      120,
+      120
+    ]
+  },
+  {
+    "brand": "Laxbene",
+    "image": "Pictures/100000000000005B0000009CDBA8D586.jpg",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      91,
+      156
+    ]
+  },
+  {
+    "brand": "Le Labo",
+    "image": "Pictures/10000001000000AA00000051A2D4D90E.png",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      170,
+      81
+    ]
+  },
+  {
+    "brand": "Leisure",
+    "image": "Pictures/100000000000009A000000563A7BEDC8.jpg",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      154,
+      86
+    ]
+  },
+  {
+    "brand": "Levitra",
+    "image": "Pictures/10000000000000880000006050951955.png",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      136,
+      96
+    ]
+  },
+  {
+    "brand": "Lemnos",
+    "image": "Pictures/10000000000000A80000003B5CCAE0DC.png",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      168,
+      59
+    ]
+  },
+  {
+    "brand": "Lemsip",
+    "image": "Pictures/10000000000000A800000036F099D6F7.png",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      168,
+      54
+    ]
+  },
+  {
+    "brand": "Linens",
+    "image": "Pictures/10000001000000A20000002E0B66AA4C.png",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      162,
+      46
+    ]
+  },
+  {
+    "brand": "Lipton",
+    "image": "Pictures/100000010000008E0000003222BC3AC9.png",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      142,
+      50
+    ]
+  },
+  {
+    "brand": "Lay’s",
+    "image": "Pictures/100000010000009B000000290C8A7D0F.png",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      155,
+      41
+    ]
+  },
+  {
+    "brand": "Lenor",
+    "image": "Pictures/100000000000006F0000002F68DE0A7E.jpg",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      111,
+      47
+    ]
+  },
+  {
+    "brand": "Levis",
+    "image": "Pictures/10000000000000A60000001EDC842A61.png",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      166,
+      30
+    ]
+  },
+  {
+    "brand": "Lilia",
+    "image": "Pictures/100000000000009C0000001CFA147BF0.png",
+    "slide": 25,
+    "method": "multi_brand_order",
+    "size": [
+      156,
+      28
+    ]
+  },
+  {
+    "brand": "Logona Naturkosmetik",
+    "image": "Pictures/10000001000000F6000000AD6899D1F8.png",
+    "slide": 26,
+    "method": "multi_brand_order",
+    "size": [
+      246,
+      173
+    ]
+  },
+  {
+    "brand": "Lotus Bakeries",
+    "image": "Pictures/10000001000000B70000008C5FCD7C2B.png",
+    "slide": 26,
+    "method": "multi_brand_order",
+    "size": [
+      183,
+      140
+    ]
+  },
+  {
+    "brand": "Louis Vuitton",
+    "image": "Pictures/1000000100000093000000AC2179E93A.png",
+    "slide": 26,
+    "method": "multi_brand_order",
+    "size": [
+      147,
+      172
+    ]
+  },
+  {
+    "brand": "Love Nature",
+    "image": "Pictures/10000001000000B70000007853FBFCBD.png",
+    "slide": 26,
+    "method": "multi_brand_order",
+    "size": [
+      183,
+      120
+    ]
+  },
+  {
+    "brand": "LU Crackers",
+    "image": "Pictures/10000001000000A7000000826AA21F5F.png",
+    "slide": 26,
+    "method": "multi_brand_order",
+    "size": [
+      167,
+      130
+    ]
+  },
+  {
+    "brand": "Look Again",
+    "image": "Pictures/100000000000009300000084FA3B0429.png",
+    "slide": 26,
+    "method": "multi_brand_order",
+    "size": [
+      147,
+      132
+    ]
+  },
+  {
+    "brand": "Lunchables",
+    "image": "Pictures/10000000000000CE000000564763AF43.jpg",
+    "slide": 26,
+    "method": "multi_brand_order",
+    "size": [
+      206,
+      86
+    ]
+  },
+  {
+    "brand": "Listerine",
+    "image": "Pictures/10000001000000830000007FE247ED48.png",
+    "slide": 26,
+    "method": "multi_brand_order",
+    "size": [
+      131,
+      127
+    ]
+  },
+  {
+    "brand": "Locatelli",
+    "image": "Pictures/10000001000000A60000006484CA3989.png",
+    "slide": 26,
+    "method": "multi_brand_order",
+    "size": [
+      166,
+      100
+    ]
+  },
+  {
+    "brand": "Loperamid",
+    "image": "Pictures/100000000000009F000000675A78400E.png",
+    "slide": 26,
+    "method": "multi_brand_order",
+    "size": [
+      159,
+      103
+    ]
+  },
+  {
+    "brand": "Luna Bars",
+    "image": "Pictures/10000000000000BB0000005473FA7824.png",
+    "slide": 26,
+    "method": "multi_brand_order",
+    "size": [
+      187,
+      84
+    ]
+  },
+  {
+    "brand": "Lux Soap",
+    "image": "Pictures/1000000000000069000000876597FF94.png",
+    "slide": 26,
+    "method": "multi_brand_order",
+    "size": [
+      105,
+      135
+    ]
+  },
+  {
+    "brand": "Lysoform",
+    "image": "Pictures/10000000000000900000006249D69260.png",
+    "slide": 26,
+    "method": "multi_brand_order",
+    "size": [
+      144,
+      98
+    ]
+  },
+  {
+    "brand": "Lo Salt",
+    "image": "Pictures/10000000000000AD00000039C153A325.jpg",
+    "slide": 26,
+    "method": "multi_brand_order",
+    "size": [
+      173,
+      57
+    ]
+  },
+  {
+    "brand": "Lockets",
+    "image": "Pictures/10000001000000B70000002B658EFBF7.png",
+    "slide": 26,
+    "method": "multi_brand_order",
+    "size": [
+      183,
+      43
+    ]
+  },
+  {
+    "brand": "Loctite",
+    "image": "Pictures/10000001000000C600000025E83EB63B.png",
+    "slide": 26,
+    "method": "multi_brand_order",
+    "size": [
+      198,
+      37
+    ]
+  },
+  {
+    "brand": "Lurisia",
+    "image": "Pictures/10000000000000A30000002B17A807D7.png",
+    "slide": 26,
+    "method": "multi_brand_order",
+    "size": [
+      163,
+      43
+    ]
+  },
+  {
+    "brand": "Loreal",
+    "image": "Pictures/100000000000009F000000209D4A24BB.png",
+    "slide": 26,
+    "method": "multi_brand_order",
+    "size": [
+      159,
+      32
+    ]
+  },
+  {
+    "brand": "Masters of the Universe",
+    "image": "Pictures/1000000100000153000000943191EA1A.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      339,
+      148
+    ]
+  },
+  {
+    "brand": "Maybelline New York",
+    "image": "Pictures/10000000000000B700000084E5918709.jpg",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      183,
+      132
+    ]
+  },
+  {
+    "brand": "Maynard’s Bassett’s",
+    "image": "Pictures/10000000000000980000009BC06474F0.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      152,
+      155
+    ]
+  },
+  {
+    "brand": "Mattel Creations",
+    "image": "Pictures/10000000000000C200000060FA3B4499.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      194,
+      96
+    ]
+  },
+  {
+    "brand": "Maison Margiela",
+    "image": "Pictures/10000000000000A10000006E50A69151.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      161,
+      110
+    ]
+  },
+  {
+    "brand": "MAC Cosmetics",
+    "image": "Pictures/10000001000000940000007370A65871.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      148,
+      115
+    ]
+  },
+  {
+    "brand": "Manor Holding",
+    "image": "Pictures/10000000000000AB000000609518BAAE.jpg",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      171,
+      96
+    ]
+  },
+  {
+    "brand": "Maxwell House",
+    "image": "Pictures/10000001000000A60000005DE84E3566.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      166,
+      93
+    ]
+  },
+  {
+    "brand": "Magic 8 Ball",
+    "image": "Pictures/100000000000012F0000003203AFE28C.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      303,
+      50
+    ]
+  },
+  {
+    "brand": "Makro Market",
+    "image": "Pictures/10000001000000870000006942E2AD62.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      135,
+      105
+    ]
+  },
+  {
+    "brand": "Mark&Spencer",
+    "image": "Pictures/10000000000000B20000004E2206B89A.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      178,
+      78
+    ]
+  },
+  {
+    "brand": "Marc Jacobs",
+    "image": "Pictures/10000000000000740000007218E4B947.jpg",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      116,
+      114
+    ]
+  },
+  {
+    "brand": "Marc O’Polo",
+    "image": "Pictures/10000000000000B300000048D1151694.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      179,
+      72
+    ]
+  },
+  {
+    "brand": "Manufactum",
+    "image": "Pictures/10000001000000BF0000004231BEA657.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      191,
+      66
+    ]
+  },
+  {
+    "brand": "Mastercard",
+    "image": "Pictures/10000001000000B00000004597319428.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      176,
+      69
+    ]
+  },
+  {
+    "brand": "Matt Mason",
+    "image": "Pictures/10000000000000ED00000033D95E0B62.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      237,
+      51
+    ]
+  },
+  {
+    "brand": "Maybelline",
+    "image": "Pictures/10000001000000CE00000039040200D6.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      206,
+      57
+    ]
+  },
+  {
+    "brand": "Maltesers",
+    "image": "Pictures/10000000000000D6000000362A74D52C.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      214,
+      54
+    ]
+  },
+  {
+    "brand": "Maharaja",
+    "image": "Pictures/10000000000000BB00000036CBD138AE.jpg",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      187,
+      54
+    ]
+  },
+  {
+    "brand": "Marlboro",
+    "image": "Pictures/10000000000000BF00000030AA5CBC5E.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      191,
+      48
+    ]
+  },
+  {
+    "brand": "Matchbox",
+    "image": "Pictures/10000000000000970000003923FD47FE.jpg",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      151,
+      57
+    ]
+  },
+  {
+    "brand": "New York",
+    "image": "Pictures/10000000000000A50000002B55A712ED.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      165,
+      43
+    ]
+  },
+  {
+    "brand": "Maizena",
+    "image": "Pictures/10000000000000A6000000252941BF19.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      166,
+      37
+    ]
+  },
+  {
+    "brand": "Marabou",
+    "image": "Pictures/10000000000000AA0000001F5528437D.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      170,
+      31
+    ]
+  },
+  {
+    "brand": "Magnum",
+    "image": "Pictures/100000000000009A0000001238F6F40C.png",
+    "slide": 27,
+    "method": "multi_brand_order",
+    "size": [
+      154,
+      18
+    ]
+  },
+  {
+    "brand": "McKinsey&Company",
+    "image": "Pictures/10000001000000D3000000726B23F821.png",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      211,
+      114
+    ]
+  },
+  {
+    "brand": "Meister Propper",
+    "image": "Pictures/10000001000000BE0000007DCC2C48D7.png",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      190,
+      125
+    ]
+  },
+  {
+    "brand": "Mega Construx",
+    "image": "Pictures/10000001000000B20000008078AD07B8.png",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      178,
+      128
+    ]
+  },
+  {
+    "brand": "Mead Johnson",
+    "image": "Pictures/1000000100000092000000922748550D.png",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      146,
+      146
+    ]
+  },
+  {
+    "brand": "Michael Kors",
+    "image": "Pictures/10000000000000B700000073DD5D9F45.png",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      183,
+      115
+    ]
+  },
+  {
+    "brand": "Metroprolol",
+    "image": "Pictures/100000010000009000000090F4445867.png",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      144,
+      144
+    ]
+  },
+  {
+    "brand": "Mighty Leaf",
+    "image": "Pictures/10000000000000B200000070E92352E0.png",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      178,
+      112
+    ]
+  },
+  {
+    "brand": "McDonald’s",
+    "image": "Pictures/10000001000000910000008258BBEEDB.png",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      145,
+      130
+    ]
+  },
+  {
+    "brand": "Meta Mucil",
+    "image": "Pictures/10000000000000DE00000053A359AF6D.png",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      222,
+      83
+    ]
+  },
+  {
+    "brand": "Mentadent",
+    "image": "Pictures/100000000000008000000080C93C8340.jpg",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      128,
+      128
+    ]
+  },
+  {
+    "brand": "Messenger",
+    "image": "Pictures/1000000000000091000000701E4A468B.png",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      145,
+      112
+    ]
+  },
+  {
+    "brand": "Mezzo Mix",
+    "image": "Pictures/100000000000007600000088ADEDBE62.png",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      118,
+      136
+    ]
+  },
+  {
+    "brand": "Microsoft",
+    "image": "Pictures/10000000000000B700000053863BD491.png",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      183,
+      83
+    ]
+  },
+  {
+    "brand": "Metro AG",
+    "image": "Pictures/10000001000000B80000004CD4122177.png",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      184,
+      76
+    ]
+  },
+  {
+    "brand": "MilkyWay",
+    "image": "Pictures/10000000000000BF00000046EC841127.png",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      191,
+      70
+    ]
+  },
+  {
+    "brand": "Medgate",
+    "image": "Pictures/10000000000000E00000003489566B1E.png",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      224,
+      52
+    ]
+  },
+  {
+    "brand": "Meridol",
+    "image": "Pictures/10000000000000B300000033D5E9422C.jpg",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      179,
+      51
+    ]
+  },
+  {
+    "brand": "Metylan",
+    "image": "Pictures/10000000000000BD00000030B9973DB3.png",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      189,
+      48
+    ]
+  },
+  {
+    "brand": "Mexavit",
+    "image": "Pictures/10000000000000BA0000002ECA732336.png",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      186,
+      46
+    ]
+  },
+  {
+    "brand": "Mazola",
+    "image": "Pictures/10000001000000770000003BB3D7F024.png",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      119,
+      59
+    ]
+  },
+  {
+    "brand": "Merito",
+    "image": "Pictures/10000000000000960000002157303835.png",
+    "slide": 28,
+    "method": "multi_brand_order",
+    "size": [
+      150,
+      33
+    ]
+  },
+  {
+    "brand": "Mitsubishi Electric",
+    "image": "Pictures/1000000100000111000000837DB2123E.png",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      273,
+      131
+    ]
+  },
+  {
+    "brand": "Mirabell Süßwaren",
+    "image": "Pictures/10000001000000BC000000966FB68FC0.png",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      188,
+      150
+    ]
+  },
+  {
+    "brand": "Monster Energy",
+    "image": "Pictures/100000000000009900000099E2EC4F1B.jpg",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      153,
+      153
+    ]
+  },
+  {
+    "brand": "Müller Gruppe",
+    "image": "Pictures/10000001000000BC000000764B47F10F.png",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      188,
+      118
+    ]
+  },
+  {
+    "brand": "Miracle Whip",
+    "image": "Pictures/10000000000000960000009321D85BED.jpg",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      150,
+      147
+    ]
+  },
+  {
+    "brand": "Monster High",
+    "image": "Pictures/100000000000009D00000088960A4180.png",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      157,
+      136
+    ]
+  },
+  {
+    "brand": "Mountain Dew",
+    "image": "Pictures/10000000000000A20000008071914FA1.jpg",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      162,
+      128
+    ]
+  },
+  {
+    "brand": "Minute Maid",
+    "image": "Pictures/10000001000000A90000007A6E683104.png",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      169,
+      122
+    ]
+  },
+  {
+    "brand": "Moda Vilona",
+    "image": "Pictures/10000000000000910000008D0B6A0994.png",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      145,
+      141
+    ]
+  },
+  {
+    "brand": "Moroccanoil",
+    "image": "Pictures/100000010000008700000097022D91D5.png",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      135,
+      151
+    ]
+  },
+  {
+    "brand": "Mrs. Meyers",
+    "image": "Pictures/10000001000000AC00000076889CC754.png",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      172,
+      118
+    ]
+  },
+  {
+    "brand": "Mon Chéri",
+    "image": "Pictures/100000000000007A000000959B84720C.jpg",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      122,
+      149
+    ]
+  },
+  {
+    "brand": "Move Free",
+    "image": "Pictures/100000000000009C0000006C81C91BCD.png",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      156,
+      108
+    ]
+  },
+  {
+    "brand": "Mövenpick",
+    "image": "Pictures/10000000000000BA000000540522379F.png",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      186,
+      84
+    ]
+  },
+  {
+    "brand": "Mr. Muscle",
+    "image": "Pictures/100000000000009B0000006453D0D6CF.jpg",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      155,
+      100
+    ]
+  },
+  {
+    "brand": "Miracoli",
+    "image": "Pictures/10000000000000AE000000553F1D2A36.jpg",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      85
+    ]
+  },
+  {
+    "brand": "Mondamin",
+    "image": "Pictures/100000000000006C00000084FF7361AD.png",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      108,
+      132
+    ]
+  },
+  {
+    "brand": "Motorola",
+    "image": "Pictures/100000000000008600000065263DD2AB.png",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      134,
+      101
+    ]
+  },
+  {
+    "brand": "Moulinex",
+    "image": "Pictures/100000010000006800000081E1B216E9.png",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      104,
+      129
+    ]
+  },
+  {
+    "brand": "Mr. Clean",
+    "image": "Pictures/10000000000000C200000045B86826A0.png",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      194,
+      69
+    ]
+  },
+  {
+    "brand": "Mucobene",
+    "image": "Pictures/10000000000000BA0000004791172EBD.jpg",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      186,
+      71
+    ]
+  },
+  {
+    "brand": "Mirinda",
+    "image": "Pictures/10000001000000970000003D4A6963B6.png",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      151,
+      61
+    ]
+  },
+  {
+    "brand": "Moccona",
+    "image": "Pictures/10000001000000B70000002FDC61B567.png",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      183,
+      47
+    ]
+  },
+  {
+    "brand": "Mortein",
+    "image": "Pictures/10000000000000840000003F75DFE84E.png",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      132,
+      63
+    ]
+  },
+  {
+    "brand": "Mucinex",
+    "image": "Pictures/10000000000000AB0000002240415ED4.png",
+    "slide": 29,
+    "method": "multi_brand_order",
+    "size": [
+      171,
+      34
+    ]
+  },
+  {
+    "brand": "Murphy’s Irish Stout",
+    "image": "Pictures/100000010000013E000000C69A019847.png",
+    "slide": 30,
+    "method": "multi_brand_order",
+    "size": [
+      318,
+      198
+    ]
+  },
+  {
+    "brand": "My-Scene-Puppen",
+    "image": "Pictures/10000000000000B90000007FA9C72BCB.png",
+    "slide": 30,
+    "method": "multi_brand_order",
+    "size": [
+      185,
+      127
+    ]
+  },
+  {
+    "brand": "Natural Formula",
+    "image": "Pictures/10000001000000BE0000006B64B0F5FF.png",
+    "slide": 30,
+    "method": "multi_brand_order",
+    "size": [
+      190,
+      107
+    ]
+  },
+  {
+    "brand": "Next Official",
+    "image": "Pictures/10000000000000CD0000005D1B8B6BDA.jpg",
+    "slide": 30,
+    "method": "multi_brand_order",
+    "size": [
+      205,
+      93
+    ]
+  },
+  {
+    "brand": "Müller Milch",
+    "image": "Pictures/10000001000000A700000072DF1C6805.png",
+    "slide": 30,
+    "method": "multi_brand_order",
+    "size": [
+      167,
+      114
+    ]
+  },
+  {
+    "brand": "Muscle Milk",
+    "image": "Pictures/100000000000010500000046A082A2DE.png",
+    "slide": 30,
+    "method": "multi_brand_order",
+    "size": [
+      261,
+      70
+    ]
+  },
+  {
+    "brand": "New Balance",
+    "image": "Pictures/10000000000000840000008AC17A8EC2.png",
+    "slide": 30,
+    "method": "multi_brand_order",
+    "size": [
+      132,
+      138
+    ]
+  },
+  {
+    "brand": "Neutrogena",
+    "image": "Pictures/10000000000000A900000063ECBC8B76.png",
+    "slide": 30,
+    "method": "multi_brand_order",
+    "size": [
+      169,
+      99
+    ]
+  },
+  {
+    "brand": "Nespresso",
+    "image": "Pictures/10000000000000AB000000611C5378F4.png",
+    "slide": 30,
+    "method": "multi_brand_order",
+    "size": [
+      171,
+      97
+    ]
+  },
+  {
+    "brand": "Neuburger",
+    "image": "Pictures/10000001000000BB0000004ED4E6C5A1.png",
+    "slide": 30,
+    "method": "multi_brand_order",
+    "size": [
+      187,
+      78
+    ]
+  },
+  {
+    "brand": "Nicorette",
+    "image": "Pictures/10000000000000CB0000004385298626.png",
+    "slide": 30,
+    "method": "multi_brand_order",
+    "size": [
+      203,
+      67
+    ]
+  },
+  {
+    "brand": "Natreen",
+    "image": "Pictures/10000000000000AB0000004A25E33748.png",
+    "slide": 30,
+    "method": "multi_brand_order",
+    "size": [
+      171,
+      74
+    ]
+  },
+  {
+    "brand": "Natusan",
+    "image": "Pictures/10000000000000C80000003DE2D4FCE8.png",
+    "slide": 30,
+    "method": "multi_brand_order",
+    "size": [
+      200,
+      61
+    ]
+  },
+  {
+    "brand": "Nescafe",
+    "image": "Pictures/10000000000000B0000000435495815C.png",
+    "slide": 30,
+    "method": "multi_brand_order",
+    "size": [
+      176,
+      67
+    ]
+  },
+  {
+    "brand": "Nesquik",
+    "image": "Pictures/10000001000000AA0000003DF08D5052.png",
+    "slide": 30,
+    "method": "multi_brand_order",
+    "size": [
+      170,
+      61
+    ]
+  },
+  {
+    "brand": "Netflix",
+    "image": "Pictures/10000001000000CF000000312C0F9801.png",
+    "slide": 30,
+    "method": "multi_brand_order",
+    "size": [
+      207,
+      49
+    ]
+  },
+  {
+    "brand": "neuriva",
+    "image": "Pictures/10000001000000C7000000318C1629F1.png",
+    "slide": 30,
+    "method": "multi_brand_order",
+    "size": [
+      199,
+      49
+    ]
+  },
+  {
+    "brand": "NYX Professional Makeup",
+    "image": "Pictures/10000001000000E10000007ACEEE7ACF.png",
+    "slide": 31,
+    "method": "multi_brand_order",
+    "size": [
+      225,
+      122
+    ]
+  },
+  {
+    "brand": "o.b. Tampons",
+    "image": "Pictures/10000000000000DC00000058FAE27709.jpg",
+    "slide": 31,
+    "method": "multi_brand_order",
+    "size": [
+      220,
+      88
+    ]
+  },
+  {
+    "brand": "OBH Nordica",
+    "image": "Pictures/10000001000000880000008867D448A2.png",
+    "slide": 31,
+    "method": "multi_brand_order",
+    "size": [
+      136,
+      136
+    ]
+  },
+  {
+    "brand": "Nicotinell",
+    "image": "Pictures/10000001000000AE00000061AF7B9789.png",
+    "slide": 31,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      97
+    ]
+  },
+  {
+    "brand": "Nutramigen",
+    "image": "Pictures/100000000000009500000067E6D244D8.png",
+    "slide": 31,
+    "method": "multi_brand_order",
+    "size": [
+      149,
+      103
+    ]
+  },
+  {
+    "brand": "Obstgarten",
+    "image": "Pictures/100000010000008D0000006C0C3368CD.png",
+    "slide": 31,
+    "method": "multi_brand_order",
+    "size": [
+      141,
+      108
+    ]
+  },
+  {
+    "brand": "Null-Null",
+    "image": "Pictures/10000000000000AE000000539CD06218.png",
+    "slide": 31,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      83
+    ]
+  },
+  {
+    "brand": "Old Spice",
+    "image": "Pictures/10000000000000700000008078C62DAE.png",
+    "slide": 31,
+    "method": "multi_brand_order",
+    "size": [
+      112,
+      128
+    ]
+  },
+  {
+    "brand": "Novartis",
+    "image": "Pictures/10000001000000DF0000003B5FA84EED.png",
+    "slide": 31,
+    "method": "multi_brand_order",
+    "size": [
+      223,
+      59
+    ]
+  },
+  {
+    "brand": "Novomind",
+    "image": "Pictures/10000001000000A000000050D5D3122E.png",
+    "slide": 31,
+    "method": "multi_brand_order",
+    "size": [
+      160,
+      80
+    ]
+  },
+  {
+    "brand": "Nutrafol",
+    "image": "Pictures/100000000000009D000000519EAAE411.jpg",
+    "slide": 31,
+    "method": "multi_brand_order",
+    "size": [
+      157,
+      81
+    ]
+  },
+  {
+    "brand": "Nutricia",
+    "image": "Pictures/10000001000000B20000004447BB436E.png",
+    "slide": 31,
+    "method": "multi_brand_order",
+    "size": [
+      178,
+      68
+    ]
+  },
+  {
+    "brand": "Nutrilon",
+    "image": "Pictures/10000000000000A6000000431BCB3E5E.png",
+    "slide": 31,
+    "method": "multi_brand_order",
+    "size": [
+      166,
+      67
+    ]
+  },
+  {
+    "brand": "NuCrema",
+    "image": "Pictures/10000000000000D60000002F30B0CFA5.png",
+    "slide": 31,
+    "method": "multi_brand_order",
+    "size": [
+      214,
+      47
+    ]
+  },
+  {
+    "brand": "Nurofen",
+    "image": "Pictures/10000000000000B00000003724B590C1.png",
+    "slide": 31,
+    "method": "multi_brand_order",
+    "size": [
+      176,
+      55
+    ]
+  },
+  {
+    "brand": "Nutella",
+    "image": "Pictures/10000000000000B0000000378E2166A4.png",
+    "slide": 31,
+    "method": "multi_brand_order",
+    "size": [
+      176,
+      55
+    ]
+  },
+  {
+    "brand": "Nivea",
+    "image": "Pictures/100000010000006400000039B8DDAE9C.png",
+    "slide": 31,
+    "method": "multi_brand_order",
+    "size": [
+      100,
+      57
+    ]
+  },
+  {
+    "brand": "Ominio Bianco",
+    "image": "Pictures/10000000000000990000008DDD9564E4.jpg",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      153,
+      141
+    ]
+  },
+  {
+    "brand": "Open Loyalty",
+    "image": "Pictures/100000010000008B0000008B3A80C264.png",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      139,
+      139
+    ]
+  },
+  {
+    "brand": "Onko Kaffee",
+    "image": "Pictures/10000000000000870000008FB3100E51.png",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      135,
+      143
+    ]
+  },
+  {
+    "brand": "Otoeksper",
+    "image": "Pictures/100000000000008F000000786822E9A0.jpg",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      143,
+      120
+    ]
+  },
+  {
+    "brand": "Orangina",
+    "image": "Pictures/10000000000000A000000064D2CE42A0.png",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      160,
+      100
+    ]
+  },
+  {
+    "brand": "Origins",
+    "image": "Pictures/100000010000008E00000069903311B6.png",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      142,
+      105
+    ]
+  },
+  {
+    "brand": "Otriven",
+    "image": "Pictures/100000010000009700000062CDABCC5F.png",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      151,
+      98
+    ]
+  },
+  {
+    "brand": "Otrivin",
+    "image": "Pictures/10000000000000A000000055BCAEBFAF.jpg",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      160,
+      85
+    ]
+  },
+  {
+    "brand": "Olynth",
+    "image": "Pictures/10000000000000B10000004A4A01233C.jpg",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      177,
+      74
+    ]
+  },
+  {
+    "brand": "Oracle",
+    "image": "Pictures/10000001000000B0000000483A810B87.png",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      176,
+      72
+    ]
+  },
+  {
+    "brand": "Oral-B",
+    "image": "Pictures/1000000100000096000000542ED67131.png",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      150,
+      84
+    ]
+  },
+  {
+    "brand": "Oridis",
+    "image": "Pictures/10000001000000C100000041C48A19DC.png",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      193,
+      65
+    ]
+  },
+  {
+    "brand": "Orkney",
+    "image": "Pictures/10000000000000A60000004646A489F4.png",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      166,
+      70
+    ]
+  },
+  {
+    "brand": "Otokar",
+    "image": "Pictures/10000000000000B3000000407001A07D.png",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      179,
+      64
+    ]
+  },
+  {
+    "brand": "Otokoc",
+    "image": "Pictures/100000000000009E00000045B1B24FBE.png",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      158,
+      69
+    ]
+  },
+  {
+    "brand": "Omira",
+    "image": "Pictures/10000000000000A200000040B421ADA4.png",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      162,
+      64
+    ]
+  },
+  {
+    "brand": "Orbit",
+    "image": "Pictures/10000000000000E50000002D2C569AC9.png",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      229,
+      45
+    ]
+  },
+  {
+    "brand": "Mars",
+    "image": "Pictures/10000001000000C00000002E1ECE7A6B.png",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      192,
+      46
+    ]
+  },
+  {
+    "brand": "Opet",
+    "image": "Pictures/10000001000000B40000002ECE7831E2.png",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      180,
+      46
+    ]
+  },
+  {
+    "brand": "OPPO",
+    "image": "Pictures/10000000000000930000002ED2E9DFA4.png",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      147,
+      46
+    ]
+  },
+  {
+    "brand": "Oreo",
+    "image": "Pictures/1000000000000068000000353160E4E5.png",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      104,
+      53
+    ]
+  },
+  {
+    "brand": "Osis+",
+    "image": "Pictures/10000000000000600000002E6CF24F41.png",
+    "slide": 32,
+    "method": "multi_brand_order",
+    "size": [
+      96,
+      46
+    ]
+  },
+  {
+    "brand": "Paula’s Choice",
+    "image": "Pictures/100000000000009A0000009BB7CD3635.jpg",
+    "slide": 33,
+    "method": "multi_brand_order",
+    "size": [
+      154,
+      155
+    ]
+  },
+  {
+    "brand": "Peet's Coffee",
+    "image": "Pictures/10000000000000A800000070BE332C86.png",
+    "slide": 33,
+    "method": "multi_brand_order",
+    "size": [
+      168,
+      112
+    ]
+  },
+  {
+    "brand": "Paracetamol",
+    "image": "Pictures/10000000000000C70000005B5CBACA17.png",
+    "slide": 33,
+    "method": "multi_brand_order",
+    "size": [
+      199,
+      91
+    ]
+  },
+  {
+    "brand": "Palm Handy",
+    "image": "Pictures/100000000000009600000072322F90C8.png",
+    "slide": 33,
+    "method": "multi_brand_order",
+    "size": [
+      150,
+      114
+    ]
+  },
+  {
+    "brand": "Parodontax",
+    "image": "Pictures/100000000000007100000094688CE9F8.png",
+    "slide": 33,
+    "method": "multi_brand_order",
+    "size": [
+      113,
+      148
+    ]
+  },
+  {
+    "brand": "PastaVilla",
+    "image": "Pictures/100000010000007F0000007F5873741C.png",
+    "slide": 33,
+    "method": "multi_brand_order",
+    "size": [
+      127,
+      127
+    ]
+  },
+  {
+    "brand": "Pamesello",
+    "image": "Pictures/10000001000000780000007606594752.png",
+    "slide": 33,
+    "method": "multi_brand_order",
+    "size": [
+      120,
+      118
+    ]
+  },
+  {
+    "brand": "Pepsodent",
+    "image": "Pictures/10000001000000D600000042205FA08E.png",
+    "slide": 33,
+    "method": "multi_brand_order",
+    "size": [
+      214,
+      66
+    ]
+  },
+  {
+    "brand": "Parmalat",
+    "image": "Pictures/100000010000009F00000050802EFD1C.png",
+    "slide": 33,
+    "method": "multi_brand_order",
+    "size": [
+      159,
+      80
+    ]
+  },
+  {
+    "brand": "Pedigree",
+    "image": "Pictures/1000000000000092000000564B187A4E.jpg",
+    "slide": 33,
+    "method": "multi_brand_order",
+    "size": [
+      146,
+      86
+    ]
+  },
+  {
+    "brand": "Pacojet",
+    "image": "Pictures/100000010000006A000000731D16BBEB.png",
+    "slide": 33,
+    "method": "multi_brand_order",
+    "size": [
+      106,
+      115
+    ]
+  },
+  {
+    "brand": "Palette",
+    "image": "Pictures/100000000000006C000000693BF94ECC.png",
+    "slide": 33,
+    "method": "multi_brand_order",
+    "size": [
+      108,
+      105
+    ]
+  },
+  {
+    "brand": "Palmera",
+    "image": "Pictures/100000000000008C0000004F209C1356.png",
+    "slide": 33,
+    "method": "multi_brand_order",
+    "size": [
+      140,
+      79
+    ]
+  },
+  {
+    "brand": "Pampers",
+    "image": "Pictures/10000001000000C400000032FCE953D4.png",
+    "slide": 33,
+    "method": "multi_brand_order",
+    "size": [
+      196,
+      50
+    ]
+  },
+  {
+    "brand": "Panadol",
+    "image": "Pictures/100000000000008300000046CAA9E452.png",
+    "slide": 33,
+    "method": "multi_brand_order",
+    "size": [
+      131,
+      70
+    ]
+  },
+  {
+    "brand": "Pantene",
+    "image": "Pictures/10000001000000A900000036D2BBF15D.png",
+    "slide": 33,
+    "method": "multi_brand_order",
+    "size": [
+      169,
+      54
+    ]
+  },
+  {
+    "brand": "Papedis",
+    "image": "Pictures/100000000000009C00000033E3234BFF.png",
+    "slide": 33,
+    "method": "multi_brand_order",
+    "size": [
+      156,
+      51
+    ]
+  },
+  {
+    "brand": "Penaten",
+    "image": "Pictures/10000000000000490000004BA6C18EA7.jpg",
+    "slide": 33,
+    "method": "multi_brand_order",
+    "size": [
+      73,
+      75
+    ]
+  },
+  {
+    "brand": "Penguin",
+    "image": "Pictures/100000010000008A000000236668B4E8.png",
+    "slide": 33,
+    "method": "multi_brand_order",
+    "size": [
+      138,
+      35
+    ]
+  },
+  {
+    "brand": "Polo Ralph Lauren Corporation",
+    "image": "Pictures/10000000000000D80000008CA082FEBC.jpg",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      216,
+      140
+    ]
+  },
+  {
+    "brand": "Pfenningpfeiffer",
+    "image": "Pictures/10000001000000B900000073B237123E.png",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      185,
+      115
+    ]
+  },
+  {
+    "brand": "Perfect snacks",
+    "image": "Pictures/100000000000010C000000440D460DE7.jpg",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      268,
+      68
+    ]
+  },
+  {
+    "brand": "Philip Morris",
+    "image": "Pictures/10000000000000D8000000544F8C93C6.png",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      216,
+      84
+    ]
+  },
+  {
+    "brand": "Pierre Cardin",
+    "image": "Pictures/100000000000009B00000074EBB69EC6.jpg",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      155,
+      116
+    ]
+  },
+  {
+    "brand": "Pocket Coffee",
+    "image": "Pictures/10000000000000870000008226EA2059.png",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      135,
+      130
+    ]
+  },
+  {
+    "brand": "Pixar’s Cars",
+    "image": "Pictures/10000001000000770000008BFF1C5DCD.png",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      119,
+      139
+    ]
+  },
+  {
+    "brand": "Pizza Laezza",
+    "image": "Pictures/100000010000008A000000779876E747.png",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      138,
+      119
+    ]
+  },
+  {
+    "brand": "Polly Pocket",
+    "image": "Pictures/1000000000000091000000700D14011F.png",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      145,
+      112
+    ]
+  },
+  {
+    "brand": "Philadelphia",
+    "image": "Pictures/10000001000000AE0000005BF40F786D.png",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      91
+    ]
+  },
+  {
+    "brand": "Perfect Fit",
+    "image": "Pictures/100000000000008B0000006C89504757.png",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      139,
+      108
+    ]
+  },
+  {
+    "brand": "PetitSuisse",
+    "image": "Pictures/1000000000000080000000712846D333.jpg",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      128,
+      113
+    ]
+  },
+  {
+    "brand": "Pincho Sol",
+    "image": "Pictures/1000000000000076000000734239A210.jpg",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      118,
+      115
+    ]
+  },
+  {
+    "brand": "Pixel Chix",
+    "image": "Pictures/100000010000008A000000616DC474AB.png",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      138,
+      97
+    ]
+  },
+  {
+    "brand": "Poly Color",
+    "image": "Pictures/100000000000008400000065A7F06881.jpg",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      132,
+      101
+    ]
+  },
+  {
+    "brand": "Pizza Hut",
+    "image": "Pictures/10000000000000840000005AB9E48846.png",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      132,
+      90
+    ]
+  },
+  {
+    "brand": "Pickwick",
+    "image": "Pictures/100000000000007600000062122F6CD1.png",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      118,
+      98
+    ]
+  },
+  {
+    "brand": "Perwoll",
+    "image": "Pictures/10000001000000C60000002E89FA97AA.png",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      198,
+      46
+    ]
+  },
+  {
+    "brand": "PETREET",
+    "image": "Pictures/100000000000009F0000003668B89CE9.png",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      159,
+      54
+    ]
+  },
+  {
+    "brand": "Philips",
+    "image": "Pictures/100000010000009F0000002CA1F07527.png",
+    "slide": 34,
+    "method": "multi_brand_order",
+    "size": [
+      159,
+      44
+    ]
+  },
+  {
+    "brand": "Princess of Power",
+    "image": "Pictures/10000000000000DA0000007853688762.png",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      218,
+      120
+    ]
+  },
+  {
+    "brand": "Pound Puppies",
+    "image": "Pictures/10000001000000C80000006BC9ADE000.png",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      200,
+      107
+    ]
+  },
+  {
+    "brand": "Prescriptives",
+    "image": "Pictures/100000000000008D00000090F633FDBA.png",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      141,
+      144
+    ]
+  },
+  {
+    "brand": "Président SA",
+    "image": "Pictures/10000001000000AD00000061A360D496.png",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      173,
+      97
+    ]
+  },
+  {
+    "brand": "Prima Group",
+    "image": "Pictures/10000001000000BB000000598B25C393.png",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      187,
+      89
+    ]
+  },
+  {
+    "brand": "Porsche AG",
+    "image": "Pictures/10000000000000B400000058F020AD7A.jpg",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      180,
+      88
+    ]
+  },
+  {
+    "brand": "Project A",
+    "image": "Pictures/10000000000000A50000005AEF13B2A1.png",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      165,
+      90
+    ]
+  },
+  {
+    "brand": "Pull&Bear",
+    "image": "Pictures/10000001000000890000006BF592EDAA.png",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      137,
+      107
+    ]
+  },
+  {
+    "brand": "Powerade",
+    "image": "Pictures/100000010000008C0000005B9B008920.png",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      140,
+      91
+    ]
+  },
+  {
+    "brand": "Prilosec",
+    "image": "Pictures/1000000000000072000000667FD94A7F.png",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      114,
+      102
+    ]
+  },
+  {
+    "brand": "Pringles",
+    "image": "Pictures/100000010000009A0000004A2467E394.png",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      154,
+      74
+    ]
+  },
+  {
+    "brand": "Privileg",
+    "image": "Pictures/10000000000000A4000000455E22B22A.png",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      164,
+      69
+    ]
+  },
+  {
+    "brand": "Provamel",
+    "image": "Pictures/10000001000000B000000040DECE6AA8.png",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      176,
+      64
+    ]
+  },
+  {
+    "brand": "Popples",
+    "image": "Pictures/10000000000000A40000003C1ED5BEA7.png",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      164,
+      60
+    ]
+  },
+  {
+    "brand": "Porthos",
+    "image": "Pictures/100000000000007B00000050B1D1C9F3.png",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      123,
+      80
+    ]
+  },
+  {
+    "brand": "Priorix",
+    "image": "Pictures/10000000000000940000003B51C013A6.png",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      148,
+      59
+    ]
+  },
+  {
+    "brand": "Profilo",
+    "image": "Pictures/100000000000009B00000031E275A28F.jpg",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      155,
+      49
+    ]
+  },
+  {
+    "brand": "Puma SE",
+    "image": "Pictures/10000000000000B30000002AF33AB831.png",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      179,
+      42
+    ]
+  },
+  {
+    "brand": "Pond’s",
+    "image": "Pictures/10000000000000A80000001D0BC42F84.png",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      168,
+      29
+    ]
+  },
+  {
+    "brand": "Pronto",
+    "image": "Pictures/10000001000000930000000F22F2ABC3.png",
+    "slide": 35,
+    "method": "multi_brand_order",
+    "size": [
+      147,
+      15
+    ]
+  },
+  {
+    "brand": "Pure encapsulations",
+    "image": "Pictures/10000000000000AE00000091D82FE7F3.jpg",
+    "slide": 36,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      145
+    ]
+  },
+  {
+    "brand": "Real Rewe Gruppe",
+    "image": "Pictures/1000000000000094000000949CD4FEFA.jpg",
+    "slide": 36,
+    "method": "multi_brand_order",
+    "size": [
+      148,
+      148
+    ]
+  },
+  {
+    "brand": "Punica Säfte",
+    "image": "Pictures/10000000000000AB000000775A96885E.png",
+    "slide": 36,
+    "method": "multi_brand_order",
+    "size": [
+      171,
+      119
+    ]
+  },
+  {
+    "brand": "Quaker Oats",
+    "image": "Pictures/10000000000000B50000006BDBE263F3.png",
+    "slide": 36,
+    "method": "multi_brand_order",
+    "size": [
+      181,
+      107
+    ]
+  },
+  {
+    "brand": "Reine Dijon",
+    "image": "Pictures/1000000000000093000000838A72CC95.png",
+    "slide": 36,
+    "method": "multi_brand_order",
+    "size": [
+      147,
+      131
+    ]
+  },
+  {
+    "brand": "Ratiodolor",
+    "image": "Pictures/100000000000007C0000009618A472C6.png",
+    "slide": 36,
+    "method": "multi_brand_order",
+    "size": [
+      124,
+      150
+    ]
+  },
+  {
+    "brand": "Pure Life",
+    "image": "Pictures/100000000000008B00000080C185F263.png",
+    "slide": 36,
+    "method": "multi_brand_order",
+    "size": [
+      139,
+      128
+    ]
+  },
+  {
+    "brand": "Raffaello",
+    "image": "Pictures/10000000000000870000007C573FB574.jpg",
+    "slide": 36,
+    "method": "multi_brand_order",
+    "size": [
+      135,
+      124
+    ]
+  },
+  {
+    "brand": "Rad Rain",
+    "image": "Pictures/100000000000009E00000062734B0C89.png",
+    "slide": 36,
+    "method": "multi_brand_order",
+    "size": [
+      158,
+      98
+    ]
+  },
+  {
+    "brand": "Recheuli",
+    "image": "Pictures/100000010000009E00000062115989E5.png",
+    "slide": 36,
+    "method": "multi_brand_order",
+    "size": [
+      158,
+      98
+    ]
+  },
+  {
+    "brand": "Red Bull",
+    "image": "Pictures/10000001000000790000007F69D40AAA.png",
+    "slide": 36,
+    "method": "multi_brand_order",
+    "size": [
+      121,
+      127
+    ]
+  },
+  {
+    "brand": "Reis-Fit",
+    "image": "Pictures/10000000000000D600000047720A28D5.png",
+    "slide": 36,
+    "method": "multi_brand_order",
+    "size": [
+      214,
+      71
+    ]
+  },
+  {
+    "brand": "Radiant",
+    "image": "Pictures/100000010000009D0000004F0359C4F9.png",
+    "slide": 36,
+    "method": "multi_brand_order",
+    "size": [
+      157,
+      79
+    ]
+  },
+  {
+    "brand": "RC Cola",
+    "image": "Pictures/10000000000000AE00000046FCD9F60C.png",
+    "slide": 36,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      70
+    ]
+  },
+  {
+    "brand": "Redoxon",
+    "image": "Pictures/10000001000000CB00000039BF7E08B1.png",
+    "slide": 36,
+    "method": "multi_brand_order",
+    "size": [
+      203,
+      57
+    ]
+  },
+  {
+    "brand": "Quelle",
+    "image": "Pictures/10000001000000950000003ACAB80D12.png",
+    "slide": 36,
+    "method": "multi_brand_order",
+    "size": [
+      149,
+      58
+    ]
+  },
+  {
+    "brand": "Redken",
+    "image": "Pictures/10000001000000AE00000030D68A6486.png",
+    "slide": 36,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      48
+    ]
+  },
+  {
+    "brand": "Reebok",
+    "image": "Pictures/100000000000009C000000356418AADD.png",
+    "slide": 36,
+    "method": "multi_brand_order",
+    "size": [
+      156,
+      53
+    ]
+  },
+  {
+    "brand": "Quaker",
+    "image": "Pictures/100000000000008C000000323739A7C8.png",
+    "slide": 36,
+    "method": "multi_brand_order",
+    "size": [
+      140,
+      50
+    ]
+  },
+  {
+    "brand": "Rogé Cavaillès",
+    "image": "Pictures/10000001000000E70000006AC5CE69B5.png",
+    "slide": 37,
+    "method": "multi_brand_order",
+    "size": [
+      231,
+      106
+    ]
+  },
+  {
+    "brand": "Römerquelle",
+    "image": "Pictures/10000000000000AE00000089AD629DC0.jpg",
+    "slide": 37,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      137
+    ]
+  },
+  {
+    "brand": "Royal Canin",
+    "image": "Pictures/100000010000008A0000008E7E2A2E95.png",
+    "slide": 37,
+    "method": "multi_brand_order",
+    "size": [
+      138,
+      142
+    ]
+  },
+  {
+    "brand": "Roma Coco",
+    "image": "Pictures/100000010000009D0000007005EBEEE0.png",
+    "slide": 37,
+    "method": "multi_brand_order",
+    "size": [
+      157,
+      112
+    ]
+  },
+  {
+    "brand": "Rio Mare",
+    "image": "Pictures/1000000100000074000000739D5EDB7E.png",
+    "slide": 37,
+    "method": "multi_brand_order",
+    "size": [
+      116,
+      115
+    ]
+  },
+  {
+    "brand": "Rispinos",
+    "image": "Pictures/10000000000000AE0000004C0B42C3BC.jpg",
+    "slide": 37,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      76
+    ]
+  },
+  {
+    "brand": "Rockstar",
+    "image": "Pictures/1000000000000099000000551E5905DC.png",
+    "slide": 37,
+    "method": "multi_brand_order",
+    "size": [
+      153,
+      85
+    ]
+  },
+  {
+    "brand": "Regaine",
+    "image": "Pictures/10000001000000730000006A10C5CB84.png",
+    "slide": 37,
+    "method": "multi_brand_order",
+    "size": [
+      115,
+      106
+    ]
+  },
+  {
+    "brand": "Rejoice",
+    "image": "Pictures/10000001000000BC0000003DAE8649D5.png",
+    "slide": 37,
+    "method": "multi_brand_order",
+    "size": [
+      188,
+      61
+    ]
+  },
+  {
+    "brand": "Related",
+    "image": "Pictures/10000001000000C20000003B58673408.png",
+    "slide": 37,
+    "method": "multi_brand_order",
+    "size": [
+      194,
+      59
+    ]
+  },
+  {
+    "brand": "Ridsect",
+    "image": "Pictures/10000001000000B90000003B533E24B7.png",
+    "slide": 37,
+    "method": "multi_brand_order",
+    "size": [
+      185,
+      59
+    ]
+  },
+  {
+    "brand": "Rochedo",
+    "image": "Pictures/10000000000000AC0000003E3AE00007.jpg",
+    "slide": 37,
+    "method": "multi_brand_order",
+    "size": [
+      172,
+      62
+    ]
+  },
+  {
+    "brand": "Rogaine",
+    "image": "Pictures/10000000000000AE0000003BFCB15A6E.png",
+    "slide": 37,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      59
+    ]
+  },
+  {
+    "brand": "Rowenta",
+    "image": "Pictures/10000000000000A80000003AA1E68EB3.png",
+    "slide": 37,
+    "method": "multi_brand_order",
+    "size": [
+      168,
+      58
+    ]
+  },
+  {
+    "brand": "Ruffles",
+    "image": "Pictures/10000000000000C2000000302A72603B.png",
+    "slide": 37,
+    "method": "multi_brand_order",
+    "size": [
+      194,
+      48
+    ]
+  },
+  {
+    "brand": "Rennie",
+    "image": "Pictures/10000001000000B3000000128737D892.png",
+    "slide": 37,
+    "method": "multi_brand_order",
+    "size": [
+      179,
+      18
+    ]
+  },
+  {
+    "brand": "Scrubbing Bubbles",
+    "image": "Pictures/100000010000017C000000C6F2756538.png",
+    "slide": 38,
+    "method": "multi_brand_order",
+    "size": [
+      380,
+      198
+    ]
+  },
+  {
+    "brand": "Saloon Burger",
+    "image": "Pictures/10000001000001080000009AA7985D5D.png",
+    "slide": 38,
+    "method": "multi_brand_order",
+    "size": [
+      264,
+      154
+    ]
+  },
+  {
+    "brand": "Schwip Schwap",
+    "image": "Pictures/10000001000000E7000000940CE4ADBF.png",
+    "slide": 38,
+    "method": "multi_brand_order",
+    "size": [
+      231,
+      148
+    ]
+  },
+  {
+    "brand": "Santa Lucia",
+    "image": "Pictures/10000001000000FF0000007EFB4195D0.png",
+    "slide": 38,
+    "method": "multi_brand_order",
+    "size": [
+      255,
+      126
+    ]
+  },
+  {
+    "brand": "Salamander",
+    "image": "Pictures/10000001000000AC00000082C4D07F1F.png",
+    "slide": 38,
+    "method": "multi_brand_order",
+    "size": [
+      172,
+      130
+    ]
+  },
+  {
+    "brand": "Safeguard",
+    "image": "Pictures/100000010000009100000094D2CBCCC8.png",
+    "slide": 38,
+    "method": "multi_brand_order",
+    "size": [
+      145,
+      148
+    ]
+  },
+  {
+    "brand": "Sarah Lee",
+    "image": "Pictures/10000001000000BA000000705624124F.png",
+    "slide": 38,
+    "method": "multi_brand_order",
+    "size": [
+      186,
+      112
+    ]
+  },
+  {
+    "brand": "Saupiquet",
+    "image": "Pictures/10000001000000CF00000064D1DDCE18.png",
+    "slide": 38,
+    "method": "multi_brand_order",
+    "size": [
+      207,
+      100
+    ]
+  },
+  {
+    "brand": "Schweppes",
+    "image": "Pictures/10000001000000930000008C7F85EA46.png",
+    "slide": 38,
+    "method": "multi_brand_order",
+    "size": [
+      147,
+      140
+    ]
+  },
+  {
+    "brand": "Sagrotan",
+    "image": "Pictures/10000000000000AB00000069CD6A4C5F.png",
+    "slide": 38,
+    "method": "multi_brand_order",
+    "size": [
+      171,
+      105
+    ]
+  },
+  {
+    "brand": "Schaerer",
+    "image": "Pictures/10000000000000CF00000055AAC50E2B.png",
+    "slide": 38,
+    "method": "multi_brand_order",
+    "size": [
+      207,
+      85
+    ]
+  },
+  {
+    "brand": "Schöller",
+    "image": "Pictures/100000000000009100000078309967C6.png",
+    "slide": 38,
+    "method": "multi_brand_order",
+    "size": [
+      145,
+      120
+    ]
+  },
+  {
+    "brand": "Salakis",
+    "image": "Pictures/10000001000000AB00000055CBF40629.png",
+    "slide": 38,
+    "method": "multi_brand_order",
+    "size": [
+      171,
+      85
+    ]
+  },
+  {
+    "brand": "Salomon",
+    "image": "Pictures/10000000000000AB00000052903B154C.jpg",
+    "slide": 38,
+    "method": "multi_brand_order",
+    "size": [
+      171,
+      82
+    ]
+  },
+  {
+    "brand": "Samsung",
+    "image": "Pictures/100000000000009F000000584517881D.png",
+    "slide": 38,
+    "method": "multi_brand_order",
+    "size": [
+      159,
+      88
+    ]
+  },
+  {
+    "brand": "Samurai",
+    "image": "Pictures/10000001000000A1000000500286623B.png",
+    "slide": 38,
+    "method": "multi_brand_order",
+    "size": [
+      161,
+      80
+    ]
+  },
+  {
+    "brand": "Santal",
+    "image": "Pictures/10000001000000ED0000002EBC234827.png",
+    "slide": 38,
+    "method": "multi_brand_order",
+    "size": [
+      237,
+      46
+    ]
+  },
+  {
+    "brand": "Sabra",
+    "image": "Pictures/10000001000000AF0000003A9C3B7A09.png",
+    "slide": 38,
+    "method": "multi_brand_order",
+    "size": [
+      175,
+      58
+    ]
+  },
+  {
+    "brand": "Skanemejerier",
+    "image": "Pictures/100000010000014100000060605EDE29.png",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      321,
+      96
+    ]
+  },
+  {
+    "brand": "Seeds Change",
+    "image": "Pictures/10000000000000C50000009BB7A72038.jpg",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      197,
+      155
+    ]
+  },
+  {
+    "brand": "Seven Seas",
+    "image": "Pictures/10000001000000AE000000922DF1296F.png",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      146
+    ]
+  },
+  {
+    "brand": "Shockwaves",
+    "image": "Pictures/10000000000000BD00000084CD49667C.png",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      189,
+      132
+    ]
+  },
+  {
+    "brand": "Simmenthal",
+    "image": "Pictures/10000000000000C000000080210B6108.jpg",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      192,
+      128
+    ]
+  },
+  {
+    "brand": "Segafredo",
+    "image": "Pictures/10000000000000AE0000008ABF613C84.png",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      138
+    ]
+  },
+  {
+    "brand": "Segmüller",
+    "image": "Pictures/10000000000000900000009D2E63253A.png",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      144,
+      157
+    ]
+  },
+  {
+    "brand": "Sensodyne",
+    "image": "Pictures/10000001000000B30000007ABE45F4DC.png",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      179,
+      122
+    ]
+  },
+  {
+    "brand": "Seriously",
+    "image": "Pictures/10000000000000880000009FC34BB6CC.jpg",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      136,
+      159
+    ]
+  },
+  {
+    "brand": "Sketchers",
+    "image": "Pictures/10000000000000AE0000007C012C2CFF.png",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      124
+    ]
+  },
+  {
+    "brand": "Senseo’s",
+    "image": "Pictures/10000000000000A9000000756561AB4E.jpg",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      169,
+      117
+    ]
+  },
+  {
+    "brand": "Seborin",
+    "image": "Pictures/10000000000000A000000067E9F399D8.png",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      160,
+      103
+    ]
+  },
+  {
+    "brand": "Sephora",
+    "image": "Pictures/10000000000000C200000051750CFEED.png",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      194,
+      81
+    ]
+  },
+  {
+    "brand": "Sidolin",
+    "image": "Pictures/10000001000000C90000004CE9A44A80.png",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      201,
+      76
+    ]
+  },
+  {
+    "brand": "Sieh an!",
+    "image": "Pictures/100000010000009C000000618620F3F1.png",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      156,
+      97
+    ]
+  },
+  {
+    "brand": "Siemens",
+    "image": "Pictures/10000000000000A6000000554BE4C555.png",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      166,
+      85
+    ]
+  },
+  {
+    "brand": "Secret",
+    "image": "Pictures/10000001000000C20000003CD1CF0E47.png",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      194,
+      60
+    ]
+  },
+  {
+    "brand": "Sheego",
+    "image": "Pictures/10000000000000B500000040F6780661.png",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      181,
+      64
+    ]
+  },
+  {
+    "brand": "Signal",
+    "image": "Pictures/100000010000009D000000463FF2DA8B.png",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      157,
+      70
+    ]
+  },
+  {
+    "brand": "Setur",
+    "image": "Pictures/10000000000000830000003A5DCE89BB.png",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      131,
+      58
+    ]
+  },
+  {
+    "brand": "Sheba",
+    "image": "Pictures/100000000000007100000035BD9D4A1C.png",
+    "slide": 39,
+    "method": "multi_brand_order",
+    "size": [
+      113,
+      53
+    ]
+  },
+  {
+    "brand": "Sonnen-Bassermann",
+    "image": "Pictures/10000001000000D200000072096ABD03.png",
+    "slide": 40,
+    "method": "multi_brand_order",
+    "size": [
+      210,
+      114
+    ]
+  },
+  {
+    "brand": "Sour Patch Kids",
+    "image": "Pictures/10000001000000C400000070EF2E1861.png",
+    "slide": 40,
+    "method": "multi_brand_order",
+    "size": [
+      196,
+      112
+    ]
+  },
+  {
+    "brand": "SMA Nutrition",
+    "image": "Pictures/100000010000009000000090271EA3C0.png",
+    "slide": 40,
+    "method": "multi_brand_order",
+    "size": [
+      144,
+      144
+    ]
+  },
+  {
+    "brand": "Skin Stories",
+    "image": "Pictures/100000010000008D0000008DB6BA0275.png",
+    "slide": 40,
+    "method": "multi_brand_order",
+    "size": [
+      141,
+      141
+    ]
+  },
+  {
+    "brand": "Slime Mattel",
+    "image": "Pictures/100000000000009D0000007BD3C249A2.jpg",
+    "slide": 40,
+    "method": "multi_brand_order",
+    "size": [
+      157,
+      123
+    ]
+  },
+  {
+    "brand": "Smart Water",
+    "image": "Pictures/10000000000000A900000072A065CDCD.jpg",
+    "slide": 40,
+    "method": "multi_brand_order",
+    "size": [
+      169,
+      114
+    ]
+  },
+  {
+    "brand": "Solopol GFX",
+    "image": "Pictures/10000001000000C80000005EA1564C41.png",
+    "slide": 40,
+    "method": "multi_brand_order",
+    "size": [
+      200,
+      94
+    ]
+  },
+  {
+    "brand": "Sodastream",
+    "image": "Pictures/10000000000000C30000005E480DDB04.jpg",
+    "slide": 40,
+    "method": "multi_brand_order",
+    "size": [
+      195,
+      94
+    ]
+  },
+  {
+    "brand": "Somatoline",
+    "image": "Pictures/10000000000000B9000000627C716BF3.png",
+    "slide": 40,
+    "method": "multi_brand_order",
+    "size": [
+      185,
+      98
+    ]
+  },
+  {
+    "brand": "Skin Gard",
+    "image": "Pictures/10000000000000A6000000614D73FB1A.png",
+    "slide": 40,
+    "method": "multi_brand_order",
+    "size": [
+      166,
+      97
+    ]
+  },
+  {
+    "brand": "Slazenger",
+    "image": "Pictures/100000010000007A0000007E289F1E49.png",
+    "slide": 40,
+    "method": "multi_brand_order",
+    "size": [
+      122,
+      126
+    ]
+  },
+  {
+    "brand": "Skittles",
+    "image": "Pictures/10000000000000A500000057A830A5B9.jpg",
+    "slide": 40,
+    "method": "multi_brand_order",
+    "size": [
+      165,
+      87
+    ]
+  },
+  {
+    "brand": "Smarties",
+    "image": "Pictures/10000000000000950000005EDC5C4BA9.png",
+    "slide": 40,
+    "method": "multi_brand_order",
+    "size": [
+      149,
+      94
+    ]
+  },
+  {
+    "brand": "Smashbox",
+    "image": "Pictures/10000001000000C90000003F59D9FCB6.png",
+    "slide": 40,
+    "method": "multi_brand_order",
+    "size": [
+      201,
+      63
+    ]
+  },
+  {
+    "brand": "Snickers",
+    "image": "Pictures/100000000000006B00000074CA72305B.jpg",
+    "slide": 40,
+    "method": "multi_brand_order",
+    "size": [
+      107,
+      116
+    ]
+  },
+  {
+    "brand": "Softsoap",
+    "image": "Pictures/10000000000000B3000000446A25BBE4.png",
+    "slide": 40,
+    "method": "multi_brand_order",
+    "size": [
+      179,
+      68
+    ]
+  },
+  {
+    "brand": "Société",
+    "image": "Pictures/100000000000006C0000005AF47F293C.jpg",
+    "slide": 40,
+    "method": "multi_brand_order",
+    "size": [
+      108,
+      90
+    ]
+  },
+  {
+    "brand": "Softlan",
+    "image": "Pictures/10000000000000A10000003A014BF743.png",
+    "slide": 40,
+    "method": "multi_brand_order",
+    "size": [
+      161,
+      58
+    ]
+  },
+  {
+    "brand": "Sorriso",
+    "image": "Pictures/10000001000000A800000037051CB9D4.png",
+    "slide": 40,
+    "method": "multi_brand_order",
+    "size": [
+      168,
+      55
+    ]
+  },
+  {
+    "brand": "Stop The Water While Using Me!",
+    "image": "Pictures/10000001000000C9000000AEDD8A98E4.png",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      201,
+      174
+    ]
+  },
+  {
+    "brand": "Spezi Cola Mix",
+    "image": "Pictures/10000000000000A800000084A69D69CD.jpg",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      168,
+      132
+    ]
+  },
+  {
+    "brand": "Stokolan Light",
+    "image": "Pictures/100000000000009200000092BF75B444.jpg",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      146,
+      146
+    ]
+  },
+  {
+    "brand": "Street Sharks",
+    "image": "Pictures/10000000000000960000008A27FC5DC8.jpg",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      150,
+      138
+    ]
+  },
+  {
+    "brand": "Sport Direct",
+    "image": "Pictures/10000000000000AF0000006E63E557E7.png",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      175,
+      110
+    ]
+  },
+  {
+    "brand": "Star Kist",
+    "image": "Pictures/1000000000000099000000739E5D19A9.png",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      153,
+      115
+    ]
+  },
+  {
+    "brand": "Starbucks",
+    "image": "Pictures/10000000000000B700000060653EB36C.png",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      183,
+      96
+    ]
+  },
+  {
+    "brand": "Starburst",
+    "image": "Pictures/100000000000009100000078EA673798.jpg",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      145,
+      120
+    ]
+  },
+  {
+    "brand": "StepStone",
+    "image": "Pictures/10000000000000D400000049CD0A145C.png",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      212,
+      73
+    ]
+  },
+  {
+    "brand": "Strepsils",
+    "image": "Pictures/10000000000000B10000004FA3359FC0.png",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      177,
+      79
+    ]
+  },
+  {
+    "brand": "Stumptown",
+    "image": "Pictures/100000010000007300000074E8BD69DE.png",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      115,
+      116
+    ]
+  },
+  {
+    "brand": "Super Cat",
+    "image": "Pictures/10000000000000780000006E37132429.png",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      120,
+      110
+    ]
+  },
+  {
+    "brand": "Stayfree",
+    "image": "Pictures/1000000000000080000000625699B19D.jpg",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      128,
+      98
+    ]
+  },
+  {
+    "brand": "Stimorol",
+    "image": "Pictures/10000000000000A50000004521AA2E8A.png",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      165,
+      69
+    ]
+  },
+  {
+    "brand": "streu mi",
+    "image": "Pictures/10000000000000C10000003AD8783771.jpg",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      193,
+      58
+    ]
+  },
+  {
+    "brand": "Suavitel",
+    "image": "Pictures/100000000000009F000000469489597B.png",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      159,
+      70
+    ]
+  },
+  {
+    "brand": "Sucrazit",
+    "image": "Pictures/10000000000000B2000000376A79C262.png",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      178,
+      55
+    ]
+  },
+  {
+    "brand": "Sunlight",
+    "image": "Pictures/100000010000006000000055A7210EC5.png",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      96,
+      85
+    ]
+  },
+  {
+    "brand": "Superman",
+    "image": "Pictures/100000010000008F00000038A5679DB9.png",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      143,
+      56
+    ]
+  },
+  {
+    "brand": "Spontex",
+    "image": "Pictures/100000000000006E00000036C111FF3E.jpg",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      110,
+      54
+    ]
+  },
+  {
+    "brand": "Spotify",
+    "image": "Pictures/10000000000000A30000001FC0CAEC8E.png",
+    "slide": 41,
+    "method": "multi_brand_order",
+    "size": [
+      163,
+      31
+    ]
+  },
+  {
+    "brand": "Tate’s Bake Shop",
+    "image": "Pictures/10000001000000990000008565CC89FC.png",
+    "slide": 42,
+    "method": "multi_brand_order",
+    "size": [
+      153,
+      133
+    ]
+  },
+  {
+    "brand": "Swimwear365",
+    "image": "Pictures/1000000000000098000000808ADBF34A.png",
+    "slide": 42,
+    "method": "multi_brand_order",
+    "size": [
+      152,
+      128
+    ]
+  },
+  {
+    "brand": "Tasty Bite",
+    "image": "Pictures/10000000000000A50000006962BC4EEF.png",
+    "slide": 42,
+    "method": "multi_brand_order",
+    "size": [
+      165,
+      105
+    ]
+  },
+  {
+    "brand": "Telefónica (",
+    "image": "Pictures/10000000000000AC0000006206CE976B.png",
+    "slide": 42,
+    "method": "multi_brand_order",
+    "size": [
+      172,
+      98
+    ]
+  },
+  {
+    "brand": "Tag Heuer",
+    "image": "Pictures/10000000000000A70000005990C7D831.png",
+    "slide": 42,
+    "method": "multi_brand_order",
+    "size": [
+      167,
+      89
+    ]
+  },
+  {
+    "brand": "Ted Baker",
+    "image": "Pictures/10000000000000DA0000004392A887D4.png",
+    "slide": 42,
+    "method": "multi_brand_order",
+    "size": [
+      218,
+      67
+    ]
+  },
+  {
+    "brand": "Supradyn",
+    "image": "Pictures/100000000000009C00000057DEEF64F5.png",
+    "slide": 42,
+    "method": "multi_brand_order",
+    "size": [
+      156,
+      87
+    ]
+  },
+  {
+    "brand": "Sustagen",
+    "image": "Pictures/100000010000009A00000057AEA8E665.png",
+    "slide": 42,
+    "method": "multi_brand_order",
+    "size": [
+      154,
+      87
+    ]
+  },
+  {
+    "brand": "Swiffer",
+    "image": "Pictures/10000000000000D200000039FB261620.png",
+    "slide": 42,
+    "method": "multi_brand_order",
+    "size": [
+      210,
+      57
+    ]
+  },
+  {
+    "brand": "Systain",
+    "image": "Pictures/10000000000000BC0000003DB8753F9C.jpg",
+    "slide": 42,
+    "method": "multi_brand_order",
+    "size": [
+      188,
+      61
+    ]
+  },
+  {
+    "brand": "Tassimo",
+    "image": "Pictures/10000000000000CA000000369F9D79CB.jpg",
+    "slide": 42,
+    "method": "multi_brand_order",
+    "size": [
+      202,
+      54
+    ]
+  },
+  {
+    "brand": "Tahiti",
+    "image": "Pictures/10000001000000B70000003279D18FC9.png",
+    "slide": 42,
+    "method": "multi_brand_order",
+    "size": [
+      183,
+      50
+    ]
+  },
+  {
+    "brand": "Talcid",
+    "image": "Pictures/100000000000007E000000466A06A664.jpg",
+    "slide": 42,
+    "method": "multi_brand_order",
+    "size": [
+      126,
+      70
+    ]
+  },
+  {
+    "brand": "Tampax",
+    "image": "Pictures/1000000000000090000000356F6DB247.png",
+    "slide": 42,
+    "method": "multi_brand_order",
+    "size": [
+      144,
+      53
+    ]
+  },
+  {
+    "brand": "Tangit",
+    "image": "Pictures/10000000000000990000002FA9BC93F9.png",
+    "slide": 42,
+    "method": "multi_brand_order",
+    "size": [
+      153,
+      47
+    ]
+  },
+  {
+    "brand": "Tansaş",
+    "image": "Pictures/10000001000000A900000028030476B1.png",
+    "slide": 42,
+    "method": "multi_brand_order",
+    "size": [
+      169,
+      40
+    ]
+  },
+  {
+    "brand": "The Vegetaria Butcher",
+    "image": "Pictures/10000001000001520000014915252CF6.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      338,
+      329
+    ]
+  },
+  {
+    "brand": "Thomas (Katzenstreu)",
+    "image": "Pictures/100000010000015A00000080A162CF5B.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      346,
+      128
+    ]
+  },
+  {
+    "brand": "Trill Vogelfutter",
+    "image": "Pictures/10000001000000D40000006BB3B67A5C.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      212,
+      107
+    ]
+  },
+  {
+    "brand": "Tetra (Aquaristik)",
+    "image": "Pictures/10000000000000D9000000625487BCD7.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      217,
+      98
+    ]
+  },
+  {
+    "brand": "Tickle Me Elmo",
+    "image": "Pictures/10000000000000DD0000005E40B1ED3E.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      221,
+      94
+    ]
+  },
+  {
+    "brand": "Tommy Hilfiger",
+    "image": "Pictures/10000000000000940000008C3B610339.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      148,
+      140
+    ]
+  },
+  {
+    "brand": "The Body Shop",
+    "image": "Pictures/10000000000000AB00000073E5DE3845.jpg",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      171,
+      115
+    ]
+  },
+  {
+    "brand": "The Ordinary",
+    "image": "Pictures/1000000000000083000000941EEB9AFC.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      131,
+      148
+    ]
+  },
+  {
+    "brand": "Timberland",
+    "image": "Pictures/100000010000008800000088C687F726.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      136,
+      136
+    ]
+  },
+  {
+    "brand": "Toblerone",
+    "image": "Pictures/10000001000000870000007350B5A606.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      135,
+      115
+    ]
+  },
+  {
+    "brand": "Too Faced",
+    "image": "Pictures/10000001000000900000006BA960AC42.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      144,
+      107
+    ]
+  },
+  {
+    "brand": "Toys\"R\"Us",
+    "image": "Pictures/10000000000000BF0000004F455F0B2E.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      191,
+      79
+    ]
+  },
+  {
+    "brand": "Tropicana",
+    "image": "Pictures/10000000000000B0000000527ECFA00E.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      176,
+      82
+    ]
+  },
+  {
+    "brand": "Tom Ford",
+    "image": "Pictures/10000001000000AF0000004F60D783E4.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      175,
+      79
+    ]
+  },
+  {
+    "brand": "Tostitos",
+    "image": "Pictures/1000000100000086000000674CEA951B.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      134,
+      103
+    ]
+  },
+  {
+    "brand": "Tramondi",
+    "image": "Pictures/10000000000000B00000004B6C31A7CF.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      176,
+      75
+    ]
+  },
+  {
+    "brand": "Tresemme",
+    "image": "Pictures/10000000000000B300000045704D30C5.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      179,
+      69
+    ]
+  },
+  {
+    "brand": "Triscuit",
+    "image": "Pictures/1000000100000094000000507C163CFA.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      148,
+      80
+    ]
+  },
+  {
+    "brand": "Tru Fill",
+    "image": "Pictures/10000000000000830000005669AA54FD.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      131,
+      86
+    ]
+  },
+  {
+    "brand": "Tic Tac",
+    "image": "Pictures/10000001000000B000000035D84A6518.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      176,
+      53
+    ]
+  },
+  {
+    "brand": "Triumph",
+    "image": "Pictures/10000001000000AC0000002C8861C7E5.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      172,
+      44
+    ]
+  },
+  {
+    "brand": "Tropico",
+    "image": "Pictures/10000001000000960000002C5E1068EA.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      150,
+      44
+    ]
+  },
+  {
+    "brand": "Tineco",
+    "image": "Pictures/10000000000000980000001FF682050B.png",
+    "slide": 43,
+    "method": "multi_brand_order",
+    "size": [
+      152,
+      31
+    ]
+  },
+  {
+    "brand": "Under Armour",
+    "image": "Pictures/100000000000009800000088048D3A7D.png",
+    "slide": 44,
+    "method": "multi_brand_order",
+    "size": [
+      152,
+      136
+    ]
+  },
+  {
+    "brand": "Turkuaz Su",
+    "image": "Pictures/100000000000007D0000009BAFBF0D71.jpg",
+    "slide": 44,
+    "method": "multi_brand_order",
+    "size": [
+      125,
+      155
+    ]
+  },
+  {
+    "brand": "Uncle Bens",
+    "image": "Pictures/10000001000000880000008EC535084D.png",
+    "slide": 44,
+    "method": "multi_brand_order",
+    "size": [
+      136,
+      142
+    ]
+  },
+  {
+    "brand": "Universal",
+    "image": "Pictures/100000010000009F00000070F18B6664.png",
+    "slide": 44,
+    "method": "multi_brand_order",
+    "size": [
+      159,
+      112
+    ]
+  },
+  {
+    "brand": "Tru Shot",
+    "image": "Pictures/10000001000000B500000054A48230CC.png",
+    "slide": 44,
+    "method": "multi_brand_order",
+    "size": [
+      181,
+      84
+    ]
+  },
+  {
+    "brand": "Tussamag",
+    "image": "Pictures/100000010000007B0000007B9424E0E7.png",
+    "slide": 44,
+    "method": "multi_brand_order",
+    "size": [
+      123,
+      123
+    ]
+  },
+  {
+    "brand": "Tyco R/C",
+    "image": "Pictures/10000000000000620000009A90695A9D.jpg",
+    "slide": 44,
+    "method": "multi_brand_order",
+    "size": [
+      98,
+      154
+    ]
+  },
+  {
+    "brand": "Vacherel",
+    "image": "Pictures/10000000000000890000006423F68ED6.jpg",
+    "slide": 44,
+    "method": "multi_brand_order",
+    "size": [
+      137,
+      100
+    ]
+  },
+  {
+    "brand": "Valbreso",
+    "image": "Pictures/10000001000000C30000004677D96C18.png",
+    "slide": 44,
+    "method": "multi_brand_order",
+    "size": [
+      195,
+      70
+    ]
+  },
+  {
+    "brand": "Vaseline",
+    "image": "Pictures/10000000000000AE0000004B3C4ABDF6.png",
+    "slide": 44,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      75
+    ]
+  },
+  {
+    "brand": "Trü Frü",
+    "image": "Pictures/100000000000009F0000004407319CF3.png",
+    "slide": 44,
+    "method": "multi_brand_order",
+    "size": [
+      159,
+      68
+    ]
+  },
+  {
+    "brand": "Twinrix",
+    "image": "Pictures/100000000000008B0000004B54C4E98F.jpg",
+    "slide": 44,
+    "method": "multi_brand_order",
+    "size": [
+      139,
+      75
+    ]
+  },
+  {
+    "brand": "Tylenol",
+    "image": "Pictures/10000001000000860000004C3D485F8E.png",
+    "slide": 44,
+    "method": "multi_brand_order",
+    "size": [
+      134,
+      76
+    ]
+  },
+  {
+    "brand": "Valeron",
+    "image": "Pictures/10000001000000A70000003CA07A3AF3.png",
+    "slide": 44,
+    "method": "multi_brand_order",
+    "size": [
+      167,
+      60
+    ]
+  },
+  {
+    "brand": "Vaalia",
+    "image": "Pictures/100000000000007000000051D05154B6.jpg",
+    "slide": 44,
+    "method": "multi_brand_order",
+    "size": [
+      112,
+      81
+    ]
+  },
+  {
+    "brand": "Valser",
+    "image": "Pictures/10000000000000720000004E37BF51D0.png",
+    "slide": 44,
+    "method": "multi_brand_order",
+    "size": [
+      114,
+      78
+    ]
+  },
+  {
+    "brand": "Vanish",
+    "image": "Pictures/10000000000000B00000002C7F397BD6.png",
+    "slide": 44,
+    "method": "multi_brand_order",
+    "size": [
+      176,
+      44
+    ]
+  },
+  {
+    "brand": "Unito",
+    "image": "Pictures/100000000000006F0000002D57896257.png",
+    "slide": 44,
+    "method": "multi_brand_order",
+    "size": [
+      111,
+      45
+    ]
+  },
+  {
+    "brand": "VCA Animal Hospitals",
+    "image": "Pictures/100000010000018900000111777A7499.png",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      393,
+      273
+    ]
+  },
+  {
+    "brand": "Victoria’s Secret",
+    "image": "Pictures/100000010000011300000136C0B85339.png",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      275,
+      310
+    ]
+  },
+  {
+    "brand": "Vitamin Water",
+    "image": "Pictures/1000000100000165000000C94F612400.png",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      357,
+      201
+    ]
+  },
+  {
+    "brand": "Verizon (USA)",
+    "image": "Pictures/1000000100000109000000D91BCE2841.png",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      265,
+      217
+    ]
+  },
+  {
+    "brand": "Volkswagen",
+    "image": "Pictures/10000001000000D1000000FF34767FE8.png",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      209,
+      255
+    ]
+  },
+  {
+    "brand": "Viennetta",
+    "image": "Pictures/10000000000000C30000006E1137BD2E.jpg",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      195,
+      110
+    ]
+  },
+  {
+    "brand": "Velveeta",
+    "image": "Pictures/100000000000009A00000081516F84F7.jpg",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      154,
+      129
+    ]
+  },
+  {
+    "brand": "Vodafone",
+    "image": "Pictures/10000000000000890000008AF76A51FD.jpg",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      137,
+      138
+    ]
+  },
+  {
+    "brand": "Voltaren",
+    "image": "Pictures/10000000000000C400000060F6A66A92.png",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      196,
+      96
+    ]
+  },
+  {
+    "brand": "Versace",
+    "image": "Pictures/10000000000000A0000000711C1BD6AC.png",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      160,
+      113
+    ]
+  },
+  {
+    "brand": "Violife",
+    "image": "Pictures/10000000000000BA00000058E8B604A6.jpg",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      186,
+      88
+    ]
+  },
+  {
+    "brand": "Vernel",
+    "image": "Pictures/100000010000007E0000007DD4C4D935.png",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      126,
+      125
+    ]
+  },
+  {
+    "brand": "Vestel",
+    "image": "Pictures/10000000000000A400000060AFAAC919.jpg",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      164,
+      96
+    ]
+  },
+  {
+    "brand": "Vileda",
+    "image": "Pictures/10000001000000CA0000004C9EF3E73B.png",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      202,
+      76
+    ]
+  },
+  {
+    "brand": "Vittel",
+    "image": "Pictures/10000000000000A90000005AA55CA83F.png",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      169,
+      90
+    ]
+  },
+  {
+    "brand": "Voltas",
+    "image": "Pictures/10000000000000BF0000004A39CEA137.png",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      191,
+      74
+    ]
+  },
+  {
+    "brand": "Volvic",
+    "image": "Pictures/10000000000000BA0000004BB7DA6EF3.png",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      186,
+      75
+    ]
+  },
+  {
+    "brand": "Venus",
+    "image": "Pictures/10000000000000A1000000438C509C2F.png",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      161,
+      67
+    ]
+  },
+  {
+    "brand": "Vichy",
+    "image": "Pictures/10000001000000960000003133A821AD.png",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      150,
+      49
+    ]
+  },
+  {
+    "brand": "Vicks",
+    "image": "Pictures/10000000000000A200000022C99AE3A1.png",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      162,
+      34
+    ]
+  },
+  {
+    "brand": "Vizir",
+    "image": "Pictures/10000000000000960000001B64AFEE27.png",
+    "slide": 45,
+    "method": "multi_brand_order",
+    "size": [
+      150,
+      27
+    ]
+  },
+  {
+    "brand": "Western Union",
+    "image": "Pictures/10000000000000B90000008EE0070E9D.jpg",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      185,
+      142
+    ]
+  },
+  {
+    "brand": "Weißer Riese",
+    "image": "Pictures/10000000000000BA00000088915B3110.jpg",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      186,
+      136
+    ]
+  },
+  {
+    "brand": "Wheat Thins",
+    "image": "Pictures/10000001000000DC0000006BC71FE31D.png",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      220,
+      107
+    ]
+  },
+  {
+    "brand": "Wild Planet",
+    "image": "Pictures/100000010000009500000095AD82B74E.png",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      149,
+      149
+    ]
+  },
+  {
+    "brand": "Witt-Gruppe",
+    "image": "Pictures/1000000100000095000000926ABD85D1.png",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      149,
+      146
+    ]
+  },
+  {
+    "brand": "Woly Sport",
+    "image": "Pictures/100000000000009100000091575DF39E.jpg",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      145,
+      145
+    ]
+  },
+  {
+    "brand": "Wc Frisch",
+    "image": "Pictures/100000000000008A00000089B74746B4.jpg",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      138,
+      137
+    ]
+  },
+  {
+    "brand": "Wellaflex",
+    "image": "Pictures/10000000000000B5000000670384956C.png",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      181,
+      103
+    ]
+  },
+  {
+    "brand": "Whirlpool",
+    "image": "Pictures/100000010000007F0000009164B475FE.png",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      127,
+      145
+    ]
+  },
+  {
+    "brand": "Wilkinson",
+    "image": "Pictures/100000000000009B00000074CD3BBA55.jpg",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      155,
+      116
+    ]
+  },
+  {
+    "brand": "WearEver",
+    "image": "Pictures/10000000000000870000008564C0723B.png",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      135,
+      133
+    ]
+  },
+  {
+    "brand": "Wellaton",
+    "image": "Pictures/10000001000000B300000062588EC88B.png",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      179,
+      98
+    ]
+  },
+  {
+    "brand": "WhatsApp",
+    "image": "Pictures/100000010000009200000078F4D3F407.png",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      146,
+      120
+    ]
+  },
+  {
+    "brand": "Wobenzym",
+    "image": "Pictures/1000000100000082000000824E124933.png",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      130,
+      130
+    ]
+  },
+  {
+    "brand": "Walkers",
+    "image": "Pictures/10000000000000A200000050B3EDF00A.jpg",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      162,
+      80
+    ]
+  },
+  {
+    "brand": "Wc Ente",
+    "image": "Pictures/10000000000000AE00000047E0AC7CEC.png",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      71
+    ]
+  },
+  {
+    "brand": "Webasto",
+    "image": "Pictures/100000010000009E000000483E553ED6.png",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      158,
+      72
+    ]
+  },
+  {
+    "brand": "Whiskas",
+    "image": "Pictures/10000000000000C200000039FEE4548A.png",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      194,
+      57
+    ]
+  },
+  {
+    "brand": "Whisper",
+    "image": "Pictures/10000000000000B80000003AE8176691.png",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      184,
+      58
+    ]
+  },
+  {
+    "brand": "Wolford",
+    "image": "Pictures/10000001000000D00000002CFE326C6D.png",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      208,
+      44
+    ]
+  },
+  {
+    "brand": "Woolite",
+    "image": "Pictures/100000010000008B00000039B4AE4BDA.png",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      139,
+      57
+    ]
+  },
+  {
+    "brand": "Wall’s",
+    "image": "Pictures/10000001000000890000002FF8102990.png",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      137,
+      47
+    ]
+  },
+  {
+    "brand": "WC Net",
+    "image": "Pictures/10000000000000A00000002795BC59C9.png",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      160,
+      39
+    ]
+  },
+  {
+    "brand": "Weleda",
+    "image": "Pictures/100000010000009600000020D69B11CD.png",
+    "slide": 46,
+    "method": "multi_brand_order",
+    "size": [
+      150,
+      32
+    ]
+  },
+  {
+    "brand": "Your Look for less",
+    "image": "Pictures/10000000000000D00000008925AE61D7.jpg",
+    "slide": 47,
+    "method": "multi_brand_order",
+    "size": [
+      208,
+      137
+    ]
+  },
+  {
+    "brand": "Yves Saint Laurent",
+    "image": "Pictures/10000001000000AF0000007D885CFA78.png",
+    "slide": 47,
+    "method": "multi_brand_order",
+    "size": [
+      175,
+      125
+    ]
+  },
+  {
+    "brand": "YouTube Premium",
+    "image": "Pictures/100000010000008F0000008FC5C5F639.png",
+    "slide": 47,
+    "method": "multi_brand_order",
+    "size": [
+      143,
+      143
+    ]
+  },
+  {
+    "brand": "Zorlu Center",
+    "image": "Pictures/10000000000000C600000061581EE02C.png",
+    "slide": 47,
+    "method": "multi_brand_order",
+    "size": [
+      198,
+      97
+    ]
+  },
+  {
+    "brand": "WWE-Figuren",
+    "image": "Pictures/10000000000000D60000005290EC332C.png",
+    "slide": 47,
+    "method": "multi_brand_order",
+    "size": [
+      214,
+      82
+    ]
+  },
+  {
+    "brand": "Yves Rocher",
+    "image": "Pictures/10000001000000C800000054938521C0.png",
+    "slide": 47,
+    "method": "multi_brand_order",
+    "size": [
+      200,
+      84
+    ]
+  },
+  {
+    "brand": "Yapı Kredi",
+    "image": "Pictures/10000000000000AB0000005E996D24A8.png",
+    "slide": 47,
+    "method": "multi_brand_order",
+    "size": [
+      171,
+      94
+    ]
+  },
+  {
+    "brand": "Yasminelle",
+    "image": "Pictures/1000000000000064000000913F15E88F.png",
+    "slide": 47,
+    "method": "multi_brand_order",
+    "size": [
+      100,
+      145
+    ]
+  },
+  {
+    "brand": "Wrigley’s",
+    "image": "Pictures/10000000000000B90000004B021EA53D.jpg",
+    "slide": 47,
+    "method": "multi_brand_order",
+    "size": [
+      185,
+      75
+    ]
+  },
+  {
+    "brand": "Wüstenrot",
+    "image": "Pictures/10000001000000BC000000471E1FF518.png",
+    "slide": 47,
+    "method": "multi_brand_order",
+    "size": [
+      188,
+      71
+    ]
+  },
+  {
+    "brand": "Yogurette",
+    "image": "Pictures/10000000000000CB00000041118F0C1C.png",
+    "slide": 47,
+    "method": "multi_brand_order",
+    "size": [
+      203,
+      65
+    ]
+  },
+  {
+    "brand": "Yu-Gi-Oh!",
+    "image": "Pictures/10000000000000E900000037E04F7033.jpg",
+    "slide": 47,
+    "method": "multi_brand_order",
+    "size": [
+      233,
+      55
+    ]
+  },
+  {
+    "brand": "Zero Egg",
+    "image": "Pictures/10000000000000AD0000004A0D29A958.jpg",
+    "slide": 47,
+    "method": "multi_brand_order",
+    "size": [
+      173,
+      74
+    ]
+  },
+  {
+    "brand": "Yedigün",
+    "image": "Pictures/10000001000000E40000002BAAA9D93E.png",
+    "slide": 47,
+    "method": "multi_brand_order",
+    "size": [
+      228,
+      43
+    ]
+  },
+  {
+    "brand": "Zooplus",
+    "image": "Pictures/10000000000000AE00000033690C8D5A.png",
+    "slide": 47,
+    "method": "multi_brand_order",
+    "size": [
+      174,
+      51
+    ]
+  },
+  {
+    "brand": "Rocher",
+    "image": "Pictures/10000000000000BA0000002679479518.png",
+    "slide": 47,
+    "method": "multi_brand_order",
+    "size": [
+      186,
+      38
+    ]
+  },
+  {
+    "brand": "Zorlu Energy Solutions",
+    "image": "Pictures/10000000000000D400000068E2A40D77.png",
+    "slide": 48,
+    "method": "multi_brand_order",
+    "size": [
+      212,
+      104
+    ]
+  },
+  {
+    "brand": "Zorlu Gayrimenkul",
+    "image": "Pictures/10000000000000AC00000061FC54181F.png",
+    "slide": 48,
+    "method": "multi_brand_order",
+    "size": [
+      172,
+      97
+    ]
+  },
+  {
+    "brand": "Zorlu Grand Hotel",
+    "image": "Pictures/10000000000000E000000039A5E1EB1D.png",
+    "slide": 48,
+    "method": "multi_brand_order",
+    "size": [
+      224,
+      57
+    ]
+  },
+  {
+    "brand": "Zorlu Faktoring",
+    "image": "Pictures/10000000000000C20000003C8FC08EC9.png",
+    "slide": 48,
+    "method": "multi_brand_order",
+    "size": [
+      194,
+      60
+    ]
+  },
+  {
+    "brand": "ZorluEnerji",
+    "image": "Pictures/10000000000000DC0000003017F8AC02.png",
+    "slide": 48,
+    "method": "multi_brand_order",
+    "size": [
+      220,
+      48
+    ]
+  },
+  {
+    "brand": "Zovirax",
+    "image": "Pictures/10000001000000C400000032863D1EB9.png",
+    "slide": 48,
+    "method": "multi_brand_order",
+    "size": [
+      196,
+      50
+    ]
+  },
+  {
+    "brand": "ZzzQuil",
+    "image": "Pictures/10000000000000C0000000310E699D65.png",
+    "slide": 48,
+    "method": "multi_brand_order",
+    "size": [
+      192,
+      49
+    ]
+  },
+  {
+    "brand": "Zorpet",
+    "image": "Pictures/10000000000000660000004531E6B8EF.jpg",
+    "slide": 48,
+    "method": "multi_brand_order",
+    "size": [
+      102,
+      69
+    ]
+  }
+]

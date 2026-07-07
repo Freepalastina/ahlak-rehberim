@@ -1,11 +1,11 @@
-# Ahlak Rehberim V45 Görsel Sistem
+# Ahlak Rehberim V46 ODP Görseller
 
-Eklenenler:
-- Marka logosu alanı
-- Ürün görseli alanı
-- Ana firma logosu alanı
-- WebP klasör yapısı
-- Eksik görseller için placeholder
-- Kartlarda görsel gösterimi
-- Detayda büyük görsel
-- Görsele dokununca tam ekran açma
+Güncel Boykot.odp içinden görseller çıkarıldı ve slayt metinlerine göre marka eşleştirmesi yapıldı.
+
+- Toplam uygulama kaydı: 1777
+- ODP içindeki görsel: 1450
+- Okunabilir görsel: 1306
+- Otomatik eşleşen ürün görseli: 947
+
+Not:
+Sunumdaki bazı görsellerin marka eşleştirmesi slayt yerleşimine bağlı olduğu için, otomatik eşleşmeyenler ileride manuel eklenebilir.
