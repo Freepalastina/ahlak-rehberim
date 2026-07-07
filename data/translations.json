@@ -1,0 +1,17 @@
+{
+  "review": {
+    "tr": "İncelenmesi önerilir",
+    "de": "Zur Prüfung empfohlen",
+    "en": "Recommended for review"
+  },
+  "preferred": {
+    "tr": "Tercih edilebilir",
+    "de": "Bevorzugbar",
+    "en": "Preferred"
+  },
+  "controlRequired": {
+    "tr": "Bilgi/kaynak kontrolü gerekli",
+    "de": "Informations-/Quellenprüfung erforderlich",
+    "en": "Information/source check required"
+  }
+}

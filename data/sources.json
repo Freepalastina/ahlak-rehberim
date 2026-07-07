@@ -1,0 +1,2846 @@
+[
+  {
+    "id": "source_000001",
+    "brandId": "brand_000001",
+    "brandName": "3M",
+    "title": "Bilgi kaynağı",
+    "url": "https://coat.ncf.ca",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000002",
+    "brandId": "brand_000005",
+    "brandName": "7UP",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.pepsico.com/en/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "PepsiCo resmi marka portföyünde içecek markaları yer alır; bölgesel lisanslar değişebilir."
+  },
+  {
+    "id": "source_000003",
+    "brandId": "brand_000009",
+    "brandName": "About You",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.linkedin.com",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000004",
+    "brandId": "brand_000010",
+    "brandName": "Abtei",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.abtei.at/impressum/",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000005",
+    "brandId": "brand_000016",
+    "brandName": "Action",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.3i.com",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000006",
+    "brandId": "brand_000021",
+    "brandName": "Adidas",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.linkedin.com",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000007",
+    "brandId": "brand_000022",
+    "brandName": "AEG",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.bits.de",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000008",
+    "brandId": "brand_000038",
+    "brandName": "Aldi Nord",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.aldi-nord.de",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000009",
+    "brandId": "brand_000043",
+    "brandName": "Allianz",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.allianz.com",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000010",
+    "brandId": "brand_000049",
+    "brandName": "Altus",
+    "title": "Bilgi kaynağı",
+    "url": "https://de.wikipedia.org",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000011",
+    "brandId": "brand_000051",
+    "brandName": "Amazon",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.amazon-watchblog.de",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000012",
+    "brandId": "brand_000057",
+    "brandName": "Anadolu Grubu",
+    "title": "Bilgi kaynağı",
+    "url": "https://borsakafasi.com",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000013",
+    "brandId": "brand_000063",
+    "brandName": "Apple",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.handelsblatt.com",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000014",
+    "brandId": "brand_000068",
+    "brandName": "Aquarius",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.coca-colacompany.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Coca-Cola marka portföyünde hidrasyon/spor içeceği kategorisi."
+  },
+  {
+    "id": "source_000015",
+    "brandId": "brand_000070",
+    "brandName": "Arcelik",
+    "title": "Bilgi kaynağı",
+    "url": "https://de.wikipedia.org",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000016",
+    "brandId": "brand_000072",
+    "brandName": "Armani",
+    "title": "Bilgi kaynağı",
+    "url": "https://review.thewitness.news/target/giorgioarmani",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000017",
+    "brandId": "brand_000075",
+    "brandName": "Asda",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.linkedin.com",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000018",
+    "brandId": "brand_000077",
+    "brandName": "ASICS",
+    "title": "Bilgi kaynağı",
+    "url": "https://corp.asics.com",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000019",
+    "brandId": "brand_000079",
+    "brandName": "Asos",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.israel21c.org",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000020",
+    "brandId": "brand_000081",
+    "brandName": "Asus",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.ulastempat.com",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000021",
+    "brandId": "brand_000083",
+    "brandName": "Audi",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.manager-magazin.de",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000022",
+    "brandId": "brand_000086",
+    "brandName": "AutoScout24",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.bertelsmann.de",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000023",
+    "brandId": "brand_000087",
+    "brandName": "Avanti",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.naftogaz.com",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000024",
+    "brandId": "brand_000090",
+    "brandName": "AVENE",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.jpost.com",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000025",
+    "brandId": "brand_000109",
+    "brandName": "Barbie",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.timesofisrael.com",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000026",
+    "brandId": "brand_000122",
+    "brandName": "Beiersdorf",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.maxingvest.de",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000027",
+    "brandId": "brand_000123",
+    "brandName": "Beko",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.maxingvest.de",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000028",
+    "brandId": "brand_000141",
+    "brandName": "Billa",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.rewe-group.com",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000029",
+    "brandId": "brand_000145",
+    "brandName": "Bipa",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.rewe-group.com",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000030",
+    "brandId": "brand_000149",
+    "brandName": "Blackberry",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.timesofisrael.com",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000031",
+    "brandId": "brand_000153",
+    "brandName": "Blomberg",
+    "title": "Bilgi kaynağı",
+    "url": "https://forward.com",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000032",
+    "brandId": "brand_000204",
+    "brandName": "Cappy",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.coca-colacompany.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Coca-Cola içecek portföyü."
+  },
+  {
+    "id": "source_000033",
+    "brandId": "brand_000261",
+    "brandName": "Coca-Cola",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.coca-colacompany.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Coca-Cola resmi marka portföyü."
+  },
+  {
+    "id": "source_000034",
+    "brandId": "brand_000279",
+    "brandName": "Costa Coffee",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.coca-colacompany.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Coca-Cola Coffee & Tea portföyünde Costa Coffee yer alır."
+  },
+  {
+    "id": "source_000035",
+    "brandId": "brand_000295",
+    "brandName": "Damla Su",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.coca-cola.com/tr/tr/brands/damla",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye özelinde kontrol edilmeli."
+  },
+  {
+    "id": "source_000036",
+    "brandId": "brand_000402",
+    "brandName": "Erikli",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.nestle-waters.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Sahiplik ve bölgesel şirket yapısı güncel kontrol gerektirir."
+  },
+  {
+    "id": "source_000037",
+    "brandId": "brand_000410",
+    "brandName": "Evian",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.danone.com/brands/waters/evian.html",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Danone evian ürün sayfası."
+  },
+  {
+    "id": "source_000038",
+    "brandId": "brand_000420",
+    "brandName": "Fanta",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.coca-colacompany.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Coca-Cola resmi marka portföyü."
+  },
+  {
+    "id": "source_000039",
+    "brandId": "brand_000455",
+    "brandName": "Fuze Tea",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.coca-colacompany.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Coca-Cola Coffee & Tea portföyü."
+  },
+  {
+    "id": "source_000040",
+    "brandId": "brand_000465",
+    "brandName": "Gatorade",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.pepsico.com/en/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "PepsiCo resmi marka portföyü."
+  },
+  {
+    "id": "source_000041",
+    "brandId": "brand_000499",
+    "brandName": "H&M",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.tag24.de, https://www.maariv.co.il",
+    "type": "Mevcut kaynak",
+    "note": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "id": "source_000042",
+    "brandId": "brand_000501",
+    "brandName": "HAG Coffee",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.jdepeets.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "JDE Peet's marka yapısı kontrol edilmeli."
+  },
+  {
+    "id": "source_000043",
+    "brandId": "brand_000529",
+    "brandName": "Honest Tea",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.coca-colacompany.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Coca-Cola portföyünde çay markaları."
+  },
+  {
+    "id": "source_000044",
+    "brandId": "brand_000572",
+    "brandName": "Jacobs Coffee",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.jdepeets.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "JDE Peet's resmi şirket sayfası."
+  },
+  {
+    "id": "source_000045",
+    "brandId": "brand_000589",
+    "brandName": "Kahve Dünyası",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.kahvedunyasi.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; yine de kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000046",
+    "brandId": "brand_000597",
+    "brandName": "Kenco coffee",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.jdepeets.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "JDE Peet's marka yapısı kontrol edilmeli."
+  },
+  {
+    "id": "source_000047",
+    "brandId": "brand_000687",
+    "brandName": "Lipton",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.pepsico.com/en/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Lipton lisans ve ortaklık yapısı ülkeye göre değişebilir; kontrol gerekli."
+  },
+  {
+    "id": "source_000048",
+    "brandId": "brand_000765",
+    "brandName": "Mezzo Mix",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.coca-colacompany.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Coca-Cola sistem markası."
+  },
+  {
+    "id": "source_000049",
+    "brandId": "brand_000776",
+    "brandName": "Minute Maid",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.coca-colacompany.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Coca-Cola resmi marka portföyü."
+  },
+  {
+    "id": "source_000050",
+    "brandId": "brand_000780",
+    "brandName": "Mirinda",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.pepsico.com/en/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "PepsiCo resmi marka portföyü."
+  },
+  {
+    "id": "source_000051",
+    "brandId": "brand_000789",
+    "brandName": "Monster Energy",
+    "title": "Bilgi kaynağı",
+    "url": "https://investors.monsterbevcorp.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Dağıtım ortaklıkları ülkeye göre değişebilir."
+  },
+  {
+    "id": "source_000052",
+    "brandId": "brand_000795",
+    "brandName": "Mountain Dew",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.pepsico.com/en/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "PepsiCo resmi marka portföyü."
+  },
+  {
+    "id": "source_000053",
+    "brandId": "brand_000819",
+    "brandName": "Nescafe",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.nestle.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Nestlé resmi marka portföyü."
+  },
+  {
+    "id": "source_000054",
+    "brandId": "brand_000821",
+    "brandName": "Nesquik",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.nestle.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Nestlé resmi marka portföyü."
+  },
+  {
+    "id": "source_000055",
+    "brandId": "brand_000822",
+    "brandName": "Nestea",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.nestle.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Marka sahipliği ve bölgesel durum kontrol edilmeli."
+  },
+  {
+    "id": "source_000056",
+    "brandId": "brand_000909",
+    "brandName": "Peet's Coffee",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.jdepeets.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "JDE Peet's resmi şirket sayfası."
+  },
+  {
+    "id": "source_000057",
+    "brandId": "brand_000914",
+    "brandName": "PepsiCo",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.pepsico.com/en/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "PepsiCo resmi marka portföyü."
+  },
+  {
+    "id": "source_000058",
+    "brandId": "brand_000954",
+    "brandName": "Powerade",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.coca-colacompany.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Coca-Cola hidrasyon/spor içeceği portföyü."
+  },
+  {
+    "id": "source_000059",
+    "brandId": "brand_000991",
+    "brandName": "RC Cola",
+    "title": "Bilgi kaynağı",
+    "url": "https://rccola.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Lisans ve bölgesel sahiplik kontrol edilmeli."
+  },
+  {
+    "id": "source_000060",
+    "brandId": "brand_000995",
+    "brandName": "Red Bull",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.redbull.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Bu liste kapsamında durum ve gerekçe ayrıca kontrol edilmeli."
+  },
+  {
+    "id": "source_000061",
+    "brandId": "brand_001049",
+    "brandName": "Schweppes",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.coca-colacompany.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Sahiplik ve dağıtım hakları ülkeye göre değişebilir."
+  },
+  {
+    "id": "source_000062",
+    "brandId": "brand_001081",
+    "brandName": "Sirma Su",
+    "title": "Bilgi kaynağı",
+    "url": "https://sirma.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak kontrol edilmeli."
+  },
+  {
+    "id": "source_000063",
+    "brandId": "brand_001124",
+    "brandName": "Sprite",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.coca-colacompany.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Coca-Cola resmi marka portföyü."
+  },
+  {
+    "id": "source_000064",
+    "brandId": "brand_001126",
+    "brandName": "Starbucks",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.starbucks.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Kahve zinciri; durum gerekçesi ayrı kaynakla desteklenmeli."
+  },
+  {
+    "id": "source_000065",
+    "brandId": "brand_001205",
+    "brandName": "Tropicana",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.pepsico.com/en/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Sahiplik geçmişi ve güncel bölgesel yapı kontrol edilmeli."
+  },
+  {
+    "id": "source_000066",
+    "brandId": "brand_001254",
+    "brandName": "Vittel",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.nestle-waters.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Nestlé Waters portföyü; güncel yapı kontrol edilmeli."
+  },
+  {
+    "id": "source_000067",
+    "brandId": "brand_001263",
+    "brandName": "Volvic",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.danone.com/brands/waters/volvic.html",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Danone Volvic ürün sayfası."
+  },
+  {
+    "id": "source_000068",
+    "brandId": "brand_001327",
+    "brandName": "Capri sun",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.capri-sun.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Marka/lisans yapısı ülkeye göre kontrol edilmeli."
+  },
+  {
+    "id": "source_000069",
+    "brandId": "brand_000002",
+    "brandName": "5GUM",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mars.com/our-brands/mars-snacking",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mars resmî snacking portföyü."
+  },
+  {
+    "id": "source_000070",
+    "brandId": "brand_000003",
+    "brandName": "5Star",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mondelezinternational.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mondelēz resmî marka portföyü."
+  },
+  {
+    "id": "source_000071",
+    "brandId": "brand_000027",
+    "brandName": "After Eight",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.nestle.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Nestlé resmî marka portföyü."
+  },
+  {
+    "id": "source_000072",
+    "brandId": "brand_000124",
+    "brandName": "belVita",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mondelezinternational.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mondelēz resmî marka portföyü."
+  },
+  {
+    "id": "source_000073",
+    "brandId": "brand_000172",
+    "brandName": "Bounty",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mars.com/our-brands/mars-snacking",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mars resmî snacking portföyü."
+  },
+  {
+    "id": "source_000074",
+    "brandId": "brand_000194",
+    "brandName": "Cadbury",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mondelezinternational.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mondelēz resmî marka portföyü."
+  },
+  {
+    "id": "source_000075",
+    "brandId": "brand_000231",
+    "brandName": "Cheetos",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.pepsico.com/en/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "PepsiCo resmî marka portföyü."
+  },
+  {
+    "id": "source_000076",
+    "brandId": "brand_000280",
+    "brandName": "Côte d’Or",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mondelezinternational.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mondelēz resmî marka portföyü."
+  },
+  {
+    "id": "source_000077",
+    "brandId": "brand_000341",
+    "brandName": "Doritos",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.pepsico.com/en/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "PepsiCo resmî marka portföyü."
+  },
+  {
+    "id": "source_000078",
+    "brandId": "brand_000358",
+    "brandName": "Duplo",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.ferrero.com/int/en/our-brands/all-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Ferrero resmî marka portföyü."
+  },
+  {
+    "id": "source_000079",
+    "brandId": "brand_000411",
+    "brandName": "Extra",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mars.com/our-brands/mars-snacking",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mars resmî snacking portföyü."
+  },
+  {
+    "id": "source_000080",
+    "brandId": "brand_000502",
+    "brandName": "Halls",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mondelezinternational.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mondelēz resmî marka portföyü."
+  },
+  {
+    "id": "source_000081",
+    "brandId": "brand_000505",
+    "brandName": "Hanuta",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.ferrero.com/int/en/our-brands/all-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Ferrero resmî marka portföyü."
+  },
+  {
+    "id": "source_000082",
+    "brandId": "brand_000604",
+    "brandName": "Kinder",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.ferrero.com/int/en/our-brands/all-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Ferrero resmî marka portföyü."
+  },
+  {
+    "id": "source_000083",
+    "brandId": "brand_000605",
+    "brandName": "Kinder Bueno",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.ferrero.com/int/en/our-brands/all-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Ferrero resmî marka portföyü."
+  },
+  {
+    "id": "source_000084",
+    "brandId": "brand_000611",
+    "brandName": "Kinder Joy",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.ferrero.com/int/en/our-brands/all-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Ferrero resmî marka portföyü."
+  },
+  {
+    "id": "source_000085",
+    "brandId": "brand_000626",
+    "brandName": "KitKat",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.nestle.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Nestlé resmî marka portföyü."
+  },
+  {
+    "id": "source_000086",
+    "brandId": "brand_000663",
+    "brandName": "Lay's",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.pepsico.com/en/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "PepsiCo resmî marka portföyü."
+  },
+  {
+    "id": "source_000087",
+    "brandId": "brand_000715",
+    "brandName": "M&M's",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mars.com/our-brands/mars-snacking",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mars resmî snacking portföyü."
+  },
+  {
+    "id": "source_000088",
+    "brandId": "brand_000726",
+    "brandName": "Maltesers",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mars.com/our-brands/mars-snacking",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mars resmî snacking portföyü."
+  },
+  {
+    "id": "source_000089",
+    "brandId": "brand_000736",
+    "brandName": "Mars",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mars.com/our-brands/mars-snacking",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mars resmî snacking portföyü M&M'S, Snickers, Extra ve Skittles gibi markaları listeler."
+  },
+  {
+    "id": "source_000090",
+    "brandId": "brand_000772",
+    "brandName": "Milka",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mondelezinternational.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mondelēz resmî sitesinde Milka, Toblerone, Cadbury gibi çikolata markaları listelenir."
+  },
+  {
+    "id": "source_000091",
+    "brandId": "brand_000786",
+    "brandName": "Mon Chéri",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.ferrero.com/int/en/our-brands/all-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Ferrero resmî marka portföyü."
+  },
+  {
+    "id": "source_000092",
+    "brandId": "brand_000842",
+    "brandName": "Nutella",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.ferrero.com/int/en/our-brands/all-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Ferrero resmî marka portföyü Nutella, Kinder, Tic Tac, Ferrero Rocher gibi markaları listeler."
+  },
+  {
+    "id": "source_000093",
+    "brandId": "brand_000872",
+    "brandName": "Orbit",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mars.com/our-brands/mars-snacking",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mars resmî snacking portföyü."
+  },
+  {
+    "id": "source_000094",
+    "brandId": "brand_000873",
+    "brandName": "Oreo",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mondelezinternational.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mondelēz resmî marka portföyü."
+  },
+  {
+    "id": "source_000095",
+    "brandId": "brand_000942",
+    "brandName": "Pocket Coffee",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.ferrero.com/int/en/our-brands/all-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Ferrero resmî marka portföyü."
+  },
+  {
+    "id": "source_000096",
+    "brandId": "brand_000963",
+    "brandName": "Pringles",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.kellanova.com/us/en/our-food.html",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Kellanova resmî marka portföyü Pringles'i listeler; sahiplik değişimleri için güncel kontrol gerekli."
+  },
+  {
+    "id": "source_000097",
+    "brandId": "brand_000986",
+    "brandName": "Raffaello",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.ferrero.com/int/en/our-brands/all-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Ferrero resmî marka portföyü."
+  },
+  {
+    "id": "source_000098",
+    "brandId": "brand_001012",
+    "brandName": "Ritz",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mondelezinternational.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mondelēz resmî marka portföyü."
+  },
+  {
+    "id": "source_000099",
+    "brandId": "brand_001025",
+    "brandName": "Ruffles",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.pepsico.com/en/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "PepsiCo resmî marka portföyü."
+  },
+  {
+    "id": "source_000100",
+    "brandId": "brand_001092",
+    "brandName": "Skittles",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mars.com/our-brands/mars-snacking",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mars resmî snacking portföyü."
+  },
+  {
+    "id": "source_000101",
+    "brandId": "brand_001101",
+    "brandName": "Smarties",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.nestle.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Nestlé resmî marka portföyü."
+  },
+  {
+    "id": "source_000102",
+    "brandId": "brand_001104",
+    "brandName": "Snickers",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mars.com/our-brands/mars-snacking",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mars resmî snacking portföyü."
+  },
+  {
+    "id": "source_000103",
+    "brandId": "brand_001131",
+    "brandName": "Stimorol",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mondelezinternational.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mondelēz resmî marka portföyü."
+  },
+  {
+    "id": "source_000104",
+    "brandId": "brand_001185",
+    "brandName": "Tic Tac",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.ferrero.com/int/en/our-brands/all-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Ferrero resmî marka portföyü."
+  },
+  {
+    "id": "source_000105",
+    "brandId": "brand_001192",
+    "brandName": "Toblerone",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mondelezinternational.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mondelēz resmî marka portföyü."
+  },
+  {
+    "id": "source_000106",
+    "brandId": "brand_001210",
+    "brandName": "Tuc",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mondelezinternational.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mondelēz resmî marka portföyü."
+  },
+  {
+    "id": "source_000107",
+    "brandId": "brand_001214",
+    "brandName": "Twix",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mars.com/our-brands/mars-snacking",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mars resmî snacking portföyü."
+  },
+  {
+    "id": "source_000108",
+    "brandId": "brand_001330",
+    "brandName": "Chio",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.intersnackgroup.com/brands/overview",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Intersnack resmî marka portföyünde Chio ve POM-BÄR yer alır."
+  },
+  {
+    "id": "source_000109",
+    "brandId": "brand_001331",
+    "brandName": "funny-frisch:",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.intersnack.de/marken/uebersicht",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Intersnack Almanya marka portföyü funny-frisch'i listeler."
+  },
+  {
+    "id": "source_000110",
+    "brandId": "brand_001332",
+    "brandName": "Pom-Bär:",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.intersnackgroup.com/brands/overview",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Intersnack resmî marka portföyü."
+  },
+  {
+    "id": "source_000111",
+    "brandId": "brand_001341",
+    "brandName": "Ferrero Rocher",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.ferrero.com/int/en/our-brands/all-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Ferrero resmî marka portföyü."
+  },
+  {
+    "id": "source_000112",
+    "brandId": "brand_001342",
+    "brandName": "Lu",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mondelezinternational.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mondelēz resmî marka portföyü."
+  },
+  {
+    "id": "source_000113",
+    "brandId": "brand_001343",
+    "brandName": "Prince",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mondelezinternational.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Mondelēz resmî marka portföyü."
+  },
+  {
+    "id": "source_000114",
+    "brandId": "brand_001344",
+    "brandName": "Lion",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.nestle.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Nestlé resmî marka portföyü."
+  },
+  {
+    "id": "source_000115",
+    "brandId": "brand_001345",
+    "brandName": "Quality Street",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.nestle.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Nestlé resmî marka portföyü."
+  },
+  {
+    "id": "source_000116",
+    "brandId": "brand_001346",
+    "brandName": "Haribo",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.haribo.com/en",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "HARIBO resmî sitesi."
+  },
+  {
+    "id": "source_000117",
+    "brandId": "brand_001347",
+    "brandName": "Maoam",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.haribo.com/en",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "HARIBO resmî sitesi."
+  },
+  {
+    "id": "source_000118",
+    "brandId": "brand_001348",
+    "brandName": "Chupa Chups",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.perfettivanmelle.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Perfetti Van Melle marka portföyü kontrol edilmeli."
+  },
+  {
+    "id": "source_000119",
+    "brandId": "brand_001349",
+    "brandName": "Mentos",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.perfettivanmelle.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Perfetti Van Melle marka portföyü kontrol edilmeli."
+  },
+  {
+    "id": "source_000120",
+    "brandId": "brand_001350",
+    "brandName": "Eti",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.etietieti.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel sahiplik kontrolü önerilir."
+  },
+  {
+    "id": "source_000121",
+    "brandId": "brand_001351",
+    "brandName": "Ulker",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.yildizholding.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel sahiplik kontrolü önerilir."
+  },
+  {
+    "id": "source_000122",
+    "brandId": "brand_001352",
+    "brandName": "Torku",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.torku.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel sahiplik kontrolü önerilir."
+  },
+  {
+    "id": "source_000123",
+    "brandId": "brand_001353",
+    "brandName": "Elit",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.elitcikolata.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak kontrol edilmeli."
+  },
+  {
+    "id": "source_000124",
+    "brandId": "brand_001354",
+    "brandName": "Melodi",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.melodicikolata.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak kontrol edilmeli."
+  },
+  {
+    "id": "source_000125",
+    "brandId": "brand_000029",
+    "brandName": "Air Wick",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.reckitt.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Air Wick için güncel portföy ve satış işlemleri kontrol edilmeli."
+  },
+  {
+    "id": "source_000126",
+    "brandId": "brand_000032",
+    "brandName": "Ajax",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.colgatepalmolive.com/en-us/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Colgate-Palmolive marka portföyü."
+  },
+  {
+    "id": "source_000127",
+    "brandId": "brand_000053",
+    "brandName": "Ambipur",
+    "title": "Bilgi kaynağı",
+    "url": "https://us.pg.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "P&G portföyünde Ambi Pur / Ambipur yer alır."
+  },
+  {
+    "id": "source_000128",
+    "brandId": "brand_000071",
+    "brandName": "Ariel",
+    "title": "Bilgi kaynağı",
+    "url": "https://us.pg.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "P&G marka portföyünde Ariel yer alır."
+  },
+  {
+    "id": "source_000129",
+    "brandId": "brand_000181",
+    "brandName": "Bref",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.henkel.com/our-businesses/henkel-consumer-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Henkel Consumer Brands sayfasında Bref yer alır."
+  },
+  {
+    "id": "source_000130",
+    "brandId": "brand_000242",
+    "brandName": "Cif",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/all-brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever all brands sayfasında Cif listelenir."
+  },
+  {
+    "id": "source_000131",
+    "brandId": "brand_000243",
+    "brandName": "Cillit Bang",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.reckitt.com/news/reckitt-to-sharpen-its-portfolio-and-simplify-organisation-for-accelerated-growth-and-value-creation/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Reckitt portföy yeniden yapılanması nedeniyle güncel sahiplik kontrol edilmeli."
+  },
+  {
+    "id": "source_000132",
+    "brandId": "brand_000255",
+    "brandName": "Clin",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.henkel.com/our-businesses/henkel-consumer-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Henkel portföyü; ülke bazlı kontrol gerekli."
+  },
+  {
+    "id": "source_000133",
+    "brandId": "brand_000267",
+    "brandName": "Comfort",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/home-care/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever Home Care portföyü."
+  },
+  {
+    "id": "source_000134",
+    "brandId": "brand_000301",
+    "brandName": "Dash",
+    "title": "Bilgi kaynağı",
+    "url": "https://us.pg.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "P&G portföyünde Avrupa pazarlarında Dash bulunabilir; ülkeye göre kontrol edilmeli."
+  },
+  {
+    "id": "source_000135",
+    "brandId": "brand_000338",
+    "brandName": "Domestos",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/home-care/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever Home Care sayfasında Domestos yer alır."
+  },
+  {
+    "id": "source_000136",
+    "brandId": "brand_000355",
+    "brandName": "Duck",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.scjohnson.com/en/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "SC Johnson marka portföyü kontrol edilmeli."
+  },
+  {
+    "id": "source_000137",
+    "brandId": "brand_000375",
+    "brandName": "Ecover",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.ecover.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Ecover sahiplik yapısı kontrol edilmeli."
+  },
+  {
+    "id": "source_000138",
+    "brandId": "brand_000418",
+    "brandName": "Fairy",
+    "title": "Bilgi kaynağı",
+    "url": "https://us.pg.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "P&G marka portföyünde Fairy yer alır; bazı ülkelerde Fairy Non Bio çamaşır ürünü olarak da bulunabilir."
+  },
+  {
+    "id": "source_000139",
+    "brandId": "brand_000423",
+    "brandName": "Febreze",
+    "title": "Bilgi kaynağı",
+    "url": "https://us.pg.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "P&G marka portföyü."
+  },
+  {
+    "id": "source_000140",
+    "brandId": "brand_000431",
+    "brandName": "Finish",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.reckitt.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Reckitt markalar sayfasında Finish yer alır."
+  },
+  {
+    "id": "source_000141",
+    "brandId": "brand_000507",
+    "brandName": "Harpic",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.reckitt.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Reckitt markalar sayfasında Harpic yer alır."
+  },
+  {
+    "id": "source_000142",
+    "brandId": "brand_000671",
+    "brandName": "Lenor",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.lenor.co.uk/en-gb",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Lenor sayfası P&G Family bilgisini gösterir."
+  },
+  {
+    "id": "source_000143",
+    "brandId": "brand_000714",
+    "brandName": "Lysol",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.reckitt.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Reckitt markalar sayfasında Lysol yer alır."
+  },
+  {
+    "id": "source_000144",
+    "brandId": "brand_000798",
+    "brandName": "Mr. Clean",
+    "title": "Bilgi kaynağı",
+    "url": "https://us.pg.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "P&G portföy markası."
+  },
+  {
+    "id": "source_000145",
+    "brandId": "brand_000800",
+    "brandName": "Mr. Muscle",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.scjohnson.com/en/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "SC Johnson marka portföyü kontrol edilmeli."
+  },
+  {
+    "id": "source_000146",
+    "brandId": "brand_000862",
+    "brandName": "OMO",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/home-care/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever Home Care sayfasında OMO, Cif, Domestos gibi markalar listelenir."
+  },
+  {
+    "id": "source_000147",
+    "brandId": "brand_000892",
+    "brandName": "Palmolive",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.colgatepalmolive.com/en-us/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Colgate-Palmolive marka portföyü."
+  },
+  {
+    "id": "source_000148",
+    "brandId": "brand_000920",
+    "brandName": "Persil",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.henkel.com/our-businesses/henkel-consumer-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Henkel Consumer Brands sayfasında Persil, Bref gibi markalar yer alır; Persil sahipliği ülkeye göre kontrol edilmeli."
+  },
+  {
+    "id": "source_000149",
+    "brandId": "brand_000921",
+    "brandName": "Perwoll",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.henkel-brand-hub.com/business-units/Henkel-Consumer-Brands.html",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Henkel Consumer Brands sayfasında Perwoll listelenir."
+  },
+  {
+    "id": "source_000150",
+    "brandId": "brand_000940",
+    "brandName": "Pledge",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.scjohnson.com/en/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "SC Johnson marka portföyü kontrol edilmeli."
+  },
+  {
+    "id": "source_000151",
+    "brandId": "brand_000958",
+    "brandName": "Pril",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.henkel.com/our-businesses/henkel-consumer-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Henkel Consumer Brands, laundry/home care portföyü."
+  },
+  {
+    "id": "source_000152",
+    "brandId": "brand_001030",
+    "brandName": "Sagrotan",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.reckitt.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Reckitt / Dettol-Lysol bağlantılı bölgesel hijyen markası; kontrol gerekli."
+  },
+  {
+    "id": "source_000153",
+    "brandId": "brand_001074",
+    "brandName": "Sidolin",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.henkel.com/our-businesses/henkel-consumer-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Henkel portföyü; ülke bazlı kontrol gerekli."
+  },
+  {
+    "id": "source_000154",
+    "brandId": "brand_001108",
+    "brandName": "Softlan",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.colgatepalmolive.com/en-us/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Colgate-Palmolive portföyü; ülkeye göre kontrol edilmeli."
+  },
+  {
+    "id": "source_000155",
+    "brandId": "brand_001112",
+    "brandName": "Somat",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.henkel-brand-hub.com/business-units/Henkel-Consumer-Brands.html",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Henkel marka portföyünde Somat listelenir."
+  },
+  {
+    "id": "source_000156",
+    "brandId": "brand_001144",
+    "brandName": "Sunlight",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/home-care/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever Home Care sayfası Sunlight markasını listeler."
+  },
+  {
+    "id": "source_000157",
+    "brandId": "brand_001150",
+    "brandName": "Surf",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/home-care/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever Home Care / laundry portföyü."
+  },
+  {
+    "id": "source_000158",
+    "brandId": "brand_001153",
+    "brandName": "Swiffer",
+    "title": "Bilgi kaynağı",
+    "url": "https://us.pg.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "P&G marka portföyü."
+  },
+  {
+    "id": "source_000159",
+    "brandId": "brand_001232",
+    "brandName": "Vanish",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.reckitt.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Reckitt markalar sayfasında Vanish yer alır."
+  },
+  {
+    "id": "source_000160",
+    "brandId": "brand_001239",
+    "brandName": "Vernel",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.henkel.com/our-businesses/henkel-consumer-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Henkel çamaşır bakım portföyü; ülke bazlı kontrol gerekli."
+  },
+  {
+    "id": "source_000161",
+    "brandId": "brand_001246",
+    "brandName": "Vileda",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.vileda.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Vileda marka sitesi; ana firma Freudenberg yapısı kontrol edilmeli."
+  },
+  {
+    "id": "source_000162",
+    "brandId": "brand_001287",
+    "brandName": "Windex",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.scjohnson.com/en/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "SC Johnson marka portföyü kontrol edilmeli."
+  },
+  {
+    "id": "source_000163",
+    "brandId": "brand_001403",
+    "brandName": "Mr. Proper",
+    "title": "Bilgi kaynağı",
+    "url": "https://us.pg.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "P&G Around the World sayfalarında Mr Proper / Mr Clean portföy bilgisi yer alır."
+  },
+  {
+    "id": "source_000164",
+    "brandId": "brand_001404",
+    "brandName": "Scotch-Brite",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.3m.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "3M marka yapısı; Scotch-Brite 3M markasıdır."
+  },
+  {
+    "id": "source_000165",
+    "brandId": "brand_001405",
+    "brandName": "Boron",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.boron.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000166",
+    "brandId": "brand_001406",
+    "brandName": "Bingo",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.hayat.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000167",
+    "brandId": "brand_001407",
+    "brandName": "Peros",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.peros.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; ana firma kontrolü önerilir."
+  },
+  {
+    "id": "source_000168",
+    "brandId": "brand_001408",
+    "brandName": "Abc",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.abcdeterjan.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000169",
+    "brandId": "brand_001409",
+    "brandName": "Mintax",
+    "title": "Bilgi kaynağı",
+    "url": "https://mintax.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000170",
+    "brandId": "brand_001410",
+    "brandName": "Asperox",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.asperox.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; ana firma kontrolü önerilir."
+  },
+  {
+    "id": "source_000171",
+    "brandId": "brand_001411",
+    "brandName": "Camsil",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.camsil.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel sahiplik kontrol edilmeli."
+  },
+  {
+    "id": "source_000172",
+    "brandId": "brand_001412",
+    "brandName": "Parex",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.parex.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000173",
+    "brandId": "brand_001413",
+    "brandName": "Frosch",
+    "title": "Bilgi kaynağı",
+    "url": "https://frosch.de/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Avrupa merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000174",
+    "brandId": "brand_001414",
+    "brandName": "Sonett",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.sonett.eu/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Avrupa merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000175",
+    "brandId": "brand_001415",
+    "brandName": "Claro",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.claro.at/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Avusturya merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000176",
+    "brandId": "brand_001416",
+    "brandName": "Denkmit",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.dm.de/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "dm özel markası; ülke ve kategori bazlı kontrol gerekli."
+  },
+  {
+    "id": "source_000177",
+    "brandId": "brand_001417",
+    "brandName": "Domol",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.rossmann.de/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Rossmann özel markası; ülke ve kategori bazlı kontrol gerekli."
+  },
+  {
+    "id": "source_000178",
+    "brandId": "brand_000067",
+    "brandName": "Aquafresh",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.haleon.com/our-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Haleon resmî marka portföyü; güncel sahiplik kontrolü önerilir."
+  },
+  {
+    "id": "source_000179",
+    "brandId": "brand_000089",
+    "brandName": "Aveeno",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.kenvue.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Kenvue marka portföyü; güncel yapı kontrol edilmeli."
+  },
+  {
+    "id": "source_000180",
+    "brandId": "brand_000093",
+    "brandName": "AXE",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/personal-care/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever Personal Care portföyü."
+  },
+  {
+    "id": "source_000181",
+    "brandId": "brand_000121",
+    "brandName": "bebe",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.kenvue.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Kenvue/J&J ayrışması sonrası güncel yapı kontrol edilmeli."
+  },
+  {
+    "id": "source_000182",
+    "brandId": "brand_000151",
+    "brandName": "Blend-A-Med",
+    "title": "Bilgi kaynağı",
+    "url": "https://us.pg.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "P&G bölgesel ağız bakım markası; ülke bazlı kontrol gerekli."
+  },
+  {
+    "id": "source_000183",
+    "brandId": "brand_000219",
+    "brandName": "CeraVe",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.loreal.com/en/our-global-brands-portfolio/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "L'Oréal resmî marka portföyü."
+  },
+  {
+    "id": "source_000184",
+    "brandId": "brand_000250",
+    "brandName": "Clean & Clear",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.kenvue.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Kenvue marka portföyü; güncel yapı kontrol edilmeli."
+  },
+  {
+    "id": "source_000185",
+    "brandId": "brand_000251",
+    "brandName": "Clear",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/beauty-wellbeing/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever Beauty & Wellbeing portföyü."
+  },
+  {
+    "id": "source_000186",
+    "brandId": "brand_000256",
+    "brandName": "Clinique",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.elcompanies.com/en/our-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Estée Lauder Companies marka portföyünde Clinique bulunur."
+  },
+  {
+    "id": "source_000187",
+    "brandId": "brand_000259",
+    "brandName": "Closeup",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/personal-care/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever Personal Care portföyü."
+  },
+  {
+    "id": "source_000188",
+    "brandId": "brand_000264",
+    "brandName": "Colgate",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.colgatepalmolive.com/en-us/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Colgate-Palmolive resmî marka portföyü."
+  },
+  {
+    "id": "source_000189",
+    "brandId": "brand_000348",
+    "brandName": "Dove",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/personal-care/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever Personal Care sayfasında Dove, Rexona, LUX, Axe gibi markalar listelenir."
+  },
+  {
+    "id": "source_000190",
+    "brandId": "brand_000407",
+    "brandName": "Estee Lauder",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.elcompanies.com/en/our-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Estée Lauder Companies marka portföyü."
+  },
+  {
+    "id": "source_000191",
+    "brandId": "brand_000408",
+    "brandName": "Eucerin",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.beiersdorf.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Beiersdorf resmî marka portföyü."
+  },
+  {
+    "id": "source_000192",
+    "brandId": "brand_000415",
+    "brandName": "FA",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.henkel.com/brands-and-businesses",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Henkel marka portföyü."
+  },
+  {
+    "id": "source_000193",
+    "brandId": "brand_000464",
+    "brandName": "Garnier",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.loreal.com/en/our-global-brands-portfolio/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "L'Oréal resmî marka portföyü."
+  },
+  {
+    "id": "source_000194",
+    "brandId": "brand_000470",
+    "brandName": "Gillette",
+    "title": "Bilgi kaynağı",
+    "url": "https://us.pg.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "P&G resmî marka portföyünde Gillette ve Venus bulunur."
+  },
+  {
+    "id": "source_000195",
+    "brandId": "brand_000480",
+    "brandName": "Gliss",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.henkel.com/brands-and-businesses",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Henkel marka portföyü."
+  },
+  {
+    "id": "source_000196",
+    "brandId": "brand_000503",
+    "brandName": "Hansaplast",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.beiersdorf.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Beiersdorf resmî marka portföyü."
+  },
+  {
+    "id": "source_000197",
+    "brandId": "brand_000510",
+    "brandName": "Head & Shoulders",
+    "title": "Bilgi kaynağı",
+    "url": "https://us.pg.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "P&G resmî marka portföyünde Hair Care ve Grooming markaları yer alır."
+  },
+  {
+    "id": "source_000198",
+    "brandId": "brand_000520",
+    "brandName": "Herbal Essences",
+    "title": "Bilgi kaynağı",
+    "url": "https://us.pg.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "P&G resmî marka portföyü."
+  },
+  {
+    "id": "source_000199",
+    "brandId": "brand_000566",
+    "brandName": "Ipana",
+    "title": "Bilgi kaynağı",
+    "url": "https://us.pg.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "İpana/Crest bağlantısı bölgeye göre kontrol edilmeli."
+  },
+  {
+    "id": "source_000200",
+    "brandId": "brand_000599",
+    "brandName": "Kérastase",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.loreal.com/en/our-global-brands-portfolio/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "L'Oréal resmî marka portföyü."
+  },
+  {
+    "id": "source_000201",
+    "brandId": "brand_000643",
+    "brandName": "La Roche Posay",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.loreal.com/en/our-global-brands-portfolio/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "L'Oréal resmî marka portföyü."
+  },
+  {
+    "id": "source_000202",
+    "brandId": "brand_000645",
+    "brandName": "Labello",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.beiersdorf.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Beiersdorf resmî marka portföyü."
+  },
+  {
+    "id": "source_000203",
+    "brandId": "brand_000658",
+    "brandName": "Lancôme",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.loreal.com/en/our-global-brands-portfolio/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "L'Oréal resmî marka portföyü."
+  },
+  {
+    "id": "source_000204",
+    "brandId": "brand_000677",
+    "brandName": "Lifebuoy",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/personal-care/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever Personal Care portföyü."
+  },
+  {
+    "id": "source_000205",
+    "brandId": "brand_000690",
+    "brandName": "Listerine",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.kenvue.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Kenvue marka portföyü; güncel yapı kontrol edilmeli."
+  },
+  {
+    "id": "source_000206",
+    "brandId": "brand_000700",
+    "brandName": "Loreal",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.loreal.com/en/our-global-brands-portfolio/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "L'Oréal resmî marka portföyü Garnier, Maybelline, Vichy, La Roche-Posay, CeraVe gibi markaları listeler."
+  },
+  {
+    "id": "source_000207",
+    "brandId": "brand_000756",
+    "brandName": "Meridol",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.colgatepalmolive.com/en-us/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Colgate-Palmolive resmî marka portföyü."
+  },
+  {
+    "id": "source_000208",
+    "brandId": "brand_000827",
+    "brandName": "Neutrogena",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.kenvue.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Kenvue marka portföyü; J&J ayrışması sonrası güncel yapı kontrol edilmeli."
+  },
+  {
+    "id": "source_000209",
+    "brandId": "brand_000834",
+    "brandName": "Nivea",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.beiersdorf.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Beiersdorf resmî marka portföyünde NIVEA, Eucerin, Labello ve Hansaplast/Elastoplast bulunur."
+  },
+  {
+    "id": "source_000210",
+    "brandId": "brand_000857",
+    "brandName": "Olay",
+    "title": "Bilgi kaynağı",
+    "url": "https://us.pg.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "P&G resmî marka portföyü."
+  },
+  {
+    "id": "source_000211",
+    "brandId": "brand_000858",
+    "brandName": "Old Spice",
+    "title": "Bilgi kaynağı",
+    "url": "https://us.pg.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "P&G resmî marka portföyü."
+  },
+  {
+    "id": "source_000212",
+    "brandId": "brand_000869",
+    "brandName": "Oral-B",
+    "title": "Bilgi kaynağı",
+    "url": "https://us.pg.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "P&G resmî marka portföyünde Oral-B bulunur."
+  },
+  {
+    "id": "source_000213",
+    "brandId": "brand_000897",
+    "brandName": "Pantene",
+    "title": "Bilgi kaynağı",
+    "url": "https://us.pg.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "P&G resmî marka portföyü."
+  },
+  {
+    "id": "source_000214",
+    "brandId": "brand_000902",
+    "brandName": "Parodontax",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.haleon.com/our-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Haleon resmî marka portföyü; güncel sahiplik kontrolü önerilir."
+  },
+  {
+    "id": "source_000215",
+    "brandId": "brand_000910",
+    "brandName": "Penaten",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.kenvue.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Kenvue/J&J ayrışması sonrası güncel yapı kontrol edilmeli."
+  },
+  {
+    "id": "source_000216",
+    "brandId": "brand_000915",
+    "brandName": "Pepsodent",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/personal-care/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever Personal Care portföyü."
+  },
+  {
+    "id": "source_000217",
+    "brandId": "brand_000970",
+    "brandName": "Protex",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.colgatepalmolive.com/en-us/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Colgate-Palmolive resmî marka portföyü."
+  },
+  {
+    "id": "source_000218",
+    "brandId": "brand_000996",
+    "brandName": "Redken",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.loreal.com/en/our-global-brands-portfolio/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "L'Oréal resmî marka portföyü."
+  },
+  {
+    "id": "source_000219",
+    "brandId": "brand_001008",
+    "brandName": "Rexona",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/personal-care/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever Personal Care portföyü."
+  },
+  {
+    "id": "source_000220",
+    "brandId": "brand_001037",
+    "brandName": "Sanex",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.colgatepalmolive.com/en-us/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Colgate-Palmolive resmî marka portföyü."
+  },
+  {
+    "id": "source_000221",
+    "brandId": "brand_001048",
+    "brandName": "Schwarzkopf",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.henkel.com/brands-and-businesses",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Henkel resmî marka sayfaları Schwarzkopf'u listeler."
+  },
+  {
+    "id": "source_000222",
+    "brandId": "brand_001058",
+    "brandName": "Secret",
+    "title": "Bilgi kaynağı",
+    "url": "https://us.pg.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "P&G resmî marka portföyü."
+  },
+  {
+    "id": "source_000223",
+    "brandId": "brand_001063",
+    "brandName": "Sensodyne",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.haleon.com/our-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Haleon resmî marka portföyü; güncel sahiplik kontrolü önerilir."
+  },
+  {
+    "id": "source_000224",
+    "brandId": "brand_001077",
+    "brandName": "Signal",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/personal-care/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Signal/Pepsodent bölgesel ağız bakım markası; ülke bazlı kontrol gerekli."
+  },
+  {
+    "id": "source_000225",
+    "brandId": "brand_001145",
+    "brandName": "Sunsilk",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/beauty-wellbeing/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever Beauty & Wellbeing portföyü."
+  },
+  {
+    "id": "source_000226",
+    "brandId": "brand_001155",
+    "brandName": "Syoss",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.henkel.com/brands-and-businesses",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Henkel marka portföyü."
+  },
+  {
+    "id": "source_000227",
+    "brandId": "brand_001201",
+    "brandName": "Tresemme",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/beauty-wellbeing/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever marka portföyü; TRESemmé yazımı kontrol edilmeli."
+  },
+  {
+    "id": "source_000228",
+    "brandId": "brand_001233",
+    "brandName": "Vaseline",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/beauty-wellbeing/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever Beauty & Wellbeing portföyünde Vaseline bulunur."
+  },
+  {
+    "id": "source_000229",
+    "brandId": "brand_001237",
+    "brandName": "Venus",
+    "title": "Bilgi kaynağı",
+    "url": "https://us.pg.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "P&G resmî marka portföyü."
+  },
+  {
+    "id": "source_000230",
+    "brandId": "brand_001242",
+    "brandName": "Vichy",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.loreal.com/en/our-global-brands-portfolio/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "L'Oréal resmî marka portföyü."
+  },
+  {
+    "id": "source_000231",
+    "brandId": "brand_001285",
+    "brandName": "Wilkinson",
+    "title": "Bilgi kaynağı",
+    "url": "https://edgewell.com/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Edgewell Personal Care marka portföyü; Wilkinson Sword bölgesel yapı kontrol edilmeli."
+  },
+  {
+    "id": "source_000232",
+    "brandId": "brand_001448",
+    "brandName": "Sure",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/personal-care/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Sure/Rexona bölgesel marka yapısı ülkeye göre kontrol edilmeli."
+  },
+  {
+    "id": "source_000233",
+    "brandId": "brand_001449",
+    "brandName": "Lux",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/personal-care/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever Personal Care portföyü."
+  },
+  {
+    "id": "source_000234",
+    "brandId": "brand_001374",
+    "brandName": "Maybelline",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.loreal.com/en/our-global-brands-portfolio/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "L'Oréal resmî marka portföyü."
+  },
+  {
+    "id": "source_000235",
+    "brandId": "brand_001376",
+    "brandName": "Nyx",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.loreal.com/en/our-global-brands-portfolio/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "L'Oréal resmî marka portföyü."
+  },
+  {
+    "id": "source_000236",
+    "brandId": "brand_001450",
+    "brandName": "Kiehl's",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.loreal.com/en/our-global-brands-portfolio/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "L'Oréal resmî marka portföyü."
+  },
+  {
+    "id": "source_000237",
+    "brandId": "brand_001377",
+    "brandName": "Elmex",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.colgatepalmolive.com/en-us/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Colgate-Palmolive resmî marka portföyü."
+  },
+  {
+    "id": "source_000238",
+    "brandId": "brand_001451",
+    "brandName": "Johnson's",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.kenvue.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Kenvue marka portföyü; güncel yapı kontrol edilmeli."
+  },
+  {
+    "id": "source_000239",
+    "brandId": "brand_001452",
+    "brandName": "Schauma",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.henkel.com/brands-and-businesses",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Schwarzkopf/Henkel bölgesel marka; kontrol gerekli."
+  },
+  {
+    "id": "source_000240",
+    "brandId": "brand_001453",
+    "brandName": "Bic",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.bic.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "BIC resmî şirket/marka sayfası; tıraş ürünleri bulunur."
+  },
+  {
+    "id": "source_000241",
+    "brandId": "brand_001454",
+    "brandName": "Mac",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.elcompanies.com/en/our-brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Estée Lauder Companies marka portföyünde MAC bulunur."
+  },
+  {
+    "id": "source_000242",
+    "brandId": "brand_001455",
+    "brandName": "Flormar",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.flormar.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye menşeli/yerel alternatif olarak kullanılabilir; ana sahiplik kontrol edilmeli."
+  },
+  {
+    "id": "source_000243",
+    "brandId": "brand_001456",
+    "brandName": "Golden Rose",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.goldenrose.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000244",
+    "brandId": "brand_001457",
+    "brandName": "Pastel",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.pastelkozmetik.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000245",
+    "brandId": "brand_001458",
+    "brandName": "Farmasi",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.farmasi.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000246",
+    "brandId": "brand_001459",
+    "brandName": "Duru",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.duru.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; Evyap bağlantısı kontrol edilmeli."
+  },
+  {
+    "id": "source_000247",
+    "brandId": "brand_001460",
+    "brandName": "Arko",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.arko.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; Evyap bağlantısı kontrol edilmeli."
+  },
+  {
+    "id": "source_000248",
+    "brandId": "brand_001461",
+    "brandName": "Arko Men",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.arko.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir."
+  },
+  {
+    "id": "source_000249",
+    "brandId": "brand_001462",
+    "brandName": "Dalin",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.dalin.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000250",
+    "brandId": "brand_001463",
+    "brandName": "Dalan",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.dalan.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000251",
+    "brandId": "brand_001464",
+    "brandName": "Eyüp Sabri Tuncer",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.eyupsabrituncer.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000252",
+    "brandId": "brand_001465",
+    "brandName": "Rosense",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.rosense.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000253",
+    "brandId": "brand_001466",
+    "brandName": "Otaci",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.otaci.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000254",
+    "brandId": "brand_001467",
+    "brandName": "Bioxcin",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.bioxcin.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000255",
+    "brandId": "brand_001468",
+    "brandName": "Restorex",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.restorex.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000256",
+    "brandId": "brand_001469",
+    "brandName": "Privacy",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.evyap.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; marka yapısı kontrol edilmeli."
+  },
+  {
+    "id": "source_000257",
+    "brandId": "brand_001470",
+    "brandName": "Derby",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.derby.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel ana firma kontrol edilmeli."
+  },
+  {
+    "id": "source_000258",
+    "brandId": "brand_000015",
+    "brandName": "Actimel",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.danone.com/brands.html",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Danone marka portföyü."
+  },
+  {
+    "id": "source_000259",
+    "brandId": "brand_000017",
+    "brandName": "Activia",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.danone.com/brands.html",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Danone marka portföyü."
+  },
+  {
+    "id": "source_000260",
+    "brandId": "brand_000047",
+    "brandName": "Alpro",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.danone.com/brands.html",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Danone marka portföyü."
+  },
+  {
+    "id": "source_000261",
+    "brandId": "brand_000065",
+    "brandName": "Aptamil",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.danone.com/brands.html",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Hassas bebek beslenmesi kategorisi; ayrıca kontrol edilmeli."
+  },
+  {
+    "id": "source_000262",
+    "brandId": "brand_000125",
+    "brandName": "Ben & Jerry's",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/ice-cream/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Ben & Jerry's için Unilever portföy ayrışması/güncel yapı kontrol edilmeli."
+  },
+  {
+    "id": "source_000263",
+    "brandId": "brand_000200",
+    "brandName": "Calvé",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/foods/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Calvé/Calve bölgesel marka yapısı kontrol edilmeli."
+  },
+  {
+    "id": "source_000264",
+    "brandId": "brand_000220",
+    "brandName": "cerelac",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.nestle.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Nestlé marka portföyü; bebek gıdası hassas kategori olduğu için ayrıca kontrol edilmeli."
+  },
+  {
+    "id": "source_000265",
+    "brandId": "brand_000277",
+    "brandName": "Cornetto",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/ice-cream/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever Ice Cream portföyü."
+  },
+  {
+    "id": "source_000266",
+    "brandId": "brand_000514",
+    "brandName": "Heinz",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.kraftheinzcompany.com/brands.html",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Kraft Heinz marka portföyünde Heinz yer alır."
+  },
+  {
+    "id": "source_000267",
+    "brandId": "brand_000517",
+    "brandName": "Hellmann’s",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/foods/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever Foods portföyünde Hellmann's yer alır."
+  },
+  {
+    "id": "source_000268",
+    "brandId": "brand_000550",
+    "brandName": "Icım",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.icim.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "İçim ana firma yapısı ve uluslararası bağlantı kontrol edilmeli."
+  },
+  {
+    "id": "source_000269",
+    "brandId": "brand_000629",
+    "brandName": "Knorr",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/foods/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever Foods portföyünde Knorr yer alır."
+  },
+  {
+    "id": "source_000270",
+    "brandId": "brand_000718",
+    "brandName": "Maggi",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.nestle.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Nestlé marka portföyü; ürün ve ülke bazlı durum kontrol edilmeli."
+  },
+  {
+    "id": "source_000271",
+    "brandId": "brand_000720",
+    "brandName": "Magnum",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/ice-cream/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Unilever Ice Cream portföyü."
+  },
+  {
+    "id": "source_000272",
+    "brandId": "brand_000845",
+    "brandName": "Nutricia",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.danone.com/brands.html",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Danone marka portföyü; sağlık hassasiyeti kontrol edilmeli."
+  },
+  {
+    "id": "source_000273",
+    "brandId": "brand_001169",
+    "brandName": "Tat",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.tatgida.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli gıda markası; güncel sahiplik kontrolü önerilir."
+  },
+  {
+    "id": "source_000274",
+    "brandId": "brand_001266",
+    "brandName": "Wall’s",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/ice-cream/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Wall's/Algida bölgesel marka yapısı kontrol edilmeli."
+  },
+  {
+    "id": "source_000275",
+    "brandId": "brand_001497",
+    "brandName": "Buitoni",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.nestle.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Nestlé marka portföyü; bölgesel bulunabilirlik kontrol edilmeli."
+  },
+  {
+    "id": "source_000276",
+    "brandId": "brand_001498",
+    "brandName": "Thomy",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.nestle.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Nestlé marka portföyü."
+  },
+  {
+    "id": "source_000277",
+    "brandId": "brand_001499",
+    "brandName": "Garden Gourmet",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.nestle.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Nestlé marka portföyü; bölgesel kontrol gerekli."
+  },
+  {
+    "id": "source_000278",
+    "brandId": "brand_001500",
+    "brandName": "Nan",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.nestle.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Nestlé marka portföyü; sağlık/hassas kategori kontrol gerekli."
+  },
+  {
+    "id": "source_000279",
+    "brandId": "brand_001501",
+    "brandName": "Wagner",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.nestle.com/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Nestlé marka portföyü; Avrupa pazarı kontrol edilmeli."
+  },
+  {
+    "id": "source_000280",
+    "brandId": "brand_001502",
+    "brandName": "Algida",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.unilever.com/brands/ice-cream/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Algida/Wall's bölgesel marka yapısı Unilever ile bağlantılıdır; ülke bazlı kontrol edilmeli."
+  },
+  {
+    "id": "source_000281",
+    "brandId": "brand_001381",
+    "brandName": "Kraft",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.kraftheinzcompany.com/brands.html",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Kraft Heinz marka portföyü; ürün kategorisi ülkeye göre değişebilir."
+  },
+  {
+    "id": "source_000282",
+    "brandId": "brand_001382",
+    "brandName": "Philadelphia",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mondelezinternational.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Philadelphia marka sahipliği bölgeye göre kontrol edilmeli."
+  },
+  {
+    "id": "source_000283",
+    "brandId": "brand_001385",
+    "brandName": "Kellogg",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.kellanova.com/us/en/our-food.html",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Kellogg/Kellanova/WK Kellogg ayrımı ülke ve ürün bazında kontrol edilmeli."
+  },
+  {
+    "id": "source_000284",
+    "brandId": "brand_001503",
+    "brandName": "Corn Flakes",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.kellanova.com/us/en/our-food.html",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Kellanova/WK Kellogg ayrımı kontrol edilmeli."
+  },
+  {
+    "id": "source_000285",
+    "brandId": "brand_001504",
+    "brandName": "Special K",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.kellanova.com/us/en/our-food.html",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Kellanova ürün portföyü."
+  },
+  {
+    "id": "source_000286",
+    "brandId": "brand_001505",
+    "brandName": "Coco Pops",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.kellanova.com/us/en/our-food.html",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Kellanova ürün portföyü."
+  },
+  {
+    "id": "source_000287",
+    "brandId": "brand_001506",
+    "brandName": "Häagen-Dazs",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.generalmills.com/food-we-make/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "General Mills marka portföyü."
+  },
+  {
+    "id": "source_000288",
+    "brandId": "brand_001507",
+    "brandName": "Old El Paso",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.generalmills.com/food-we-make/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "General Mills marka portföyü."
+  },
+  {
+    "id": "source_000289",
+    "brandId": "brand_001508",
+    "brandName": "Nature Valley",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.generalmills.com/food-we-make/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "General Mills marka portföyü."
+  },
+  {
+    "id": "source_000290",
+    "brandId": "brand_001509",
+    "brandName": "Yoplait",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.generalmills.com/food-we-make/brands",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Yoplait sahiplik ve bölgesel lisans yapısı kontrol edilmeli."
+  },
+  {
+    "id": "source_000291",
+    "brandId": "brand_001369",
+    "brandName": "Danone",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.danone.com/brands.html",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Danone resmî marka portföyü."
+  },
+  {
+    "id": "source_000292",
+    "brandId": "brand_001392",
+    "brandName": "Sütaş",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.sutas.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli süt ürünleri markası."
+  },
+  {
+    "id": "source_000293",
+    "brandId": "brand_001393",
+    "brandName": "Pınar",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.pinar.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli gıda markası; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000294",
+    "brandId": "brand_001510",
+    "brandName": "Sek",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.sek.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Güncel ana firma/sahiplik kontrol edilmeli."
+  },
+  {
+    "id": "source_000295",
+    "brandId": "brand_001511",
+    "brandName": "Eker",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.eker.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000296",
+    "brandId": "brand_001395",
+    "brandName": "Tamek",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.tamek.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli gıda markası."
+  },
+  {
+    "id": "source_000297",
+    "brandId": "brand_001512",
+    "brandName": "Tukaş",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.tukas.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli gıda markası; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000298",
+    "brandId": "brand_001513",
+    "brandName": "Burcu",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.burcu.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli gıda markası; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000299",
+    "brandId": "brand_001514",
+    "brandName": "Kemal Kükrer",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.kemalkukrer.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Güncel ana firma bağlantısı kontrol edilmeli."
+  },
+  {
+    "id": "source_000300",
+    "brandId": "brand_001515",
+    "brandName": "Filiz",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.barillagroup.com/en/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Filiz markasının Barilla bağlantısı kontrol edilmeli."
+  },
+  {
+    "id": "source_000301",
+    "brandId": "brand_001516",
+    "brandName": "Barilla",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.barillagroup.com/en/brands/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Barilla Group resmî marka portföyü."
+  },
+  {
+    "id": "source_000302",
+    "brandId": "brand_001517",
+    "brandName": "Nuh'un Ankara",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.nuh.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000303",
+    "brandId": "brand_001518",
+    "brandName": "Oba",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.obamakarna.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000304",
+    "brandId": "brand_001519",
+    "brandName": "Arbella",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.arbella.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000305",
+    "brandId": "brand_001520",
+    "brandName": "Mutlu Makarna",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.mutlumakarna.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000306",
+    "brandId": "brand_001521",
+    "brandName": "Reis",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.reisgida.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli temel gıda markası."
+  },
+  {
+    "id": "source_000307",
+    "brandId": "brand_001522",
+    "brandName": "Yayla",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.yaylaagro.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli temel gıda markası."
+  },
+  {
+    "id": "source_000308",
+    "brandId": "brand_001523",
+    "brandName": "Duru Bulgur",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.durubulgur.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir."
+  },
+  {
+    "id": "source_000309",
+    "brandId": "brand_001524",
+    "brandName": "Bağdat",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.bagdatbaharat.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli baharat markası; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000310",
+    "brandId": "brand_001525",
+    "brandName": "Arifoğlu",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.arifoglu.com/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir."
+  },
+  {
+    "id": "source_000311",
+    "brandId": "brand_001526",
+    "brandName": "Komili",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.komili.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Güncel sahiplik ve kategori kontrol edilmeli."
+  },
+  {
+    "id": "source_000312",
+    "brandId": "brand_001527",
+    "brandName": "Kristal",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.kristalyaglari.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir."
+  },
+  {
+    "id": "source_000313",
+    "brandId": "brand_001528",
+    "brandName": "Tariş",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.taris.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli kooperatif yapısı; güncel kaynak kontrolü önerilir."
+  },
+  {
+    "id": "source_000314",
+    "brandId": "brand_001529",
+    "brandName": "Orkide",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.orkide.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Türkiye merkezli alternatif olarak listelenebilir."
+  },
+  {
+    "id": "source_000315",
+    "brandId": "brand_001530",
+    "brandName": "Yudum",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.yudum.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Güncel ana firma bağlantısı kontrol edilmeli."
+  },
+  {
+    "id": "source_000316",
+    "brandId": "brand_001531",
+    "brandName": "Bizim Yağ",
+    "title": "Bilgi kaynağı",
+    "url": "https://www.bizimyag.com.tr/",
+    "type": "Resmî şirket/marka sayfası",
+    "note": "Güncel ana firma bağlantısı kontrol edilmeli."
+  }
+]

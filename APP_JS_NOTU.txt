@@ -1,0 +1,10 @@
+Veri yolu:
+data/data.json
+
+Merkezi veri dosyaları:
+data/brands.json
+data/companies.json
+data/alternatives.json
+data/sources.json
+data/categories.json
+data/version.json

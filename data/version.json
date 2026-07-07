@@ -1,0 +1,15 @@
+{
+  "version": "2026.07.07-final-app-v1",
+  "date": "2026-07-07",
+  "statusKey": "review",
+  "statusLabel": "İncelenmesi önerilir",
+  "records": {
+    "brands": 1574,
+    "companies": 118,
+    "alternatives": 1121,
+    "sources": 316,
+    "categories": 178
+  },
+  "note": "Hukuki nedenlerle nötr inceleme dili kullanılır.",
+  "integratedApp": true
+}

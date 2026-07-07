@@ -7,21 +7,21 @@ if(location.search.includes("clear-cache") || location.search.includes("v20-clea
   }catch(e){}
 }
 
-const VERSION="20260706-v37-kamera-barkod";
+const VERSION="20260707-final-data-integrated";
 const SUPABASE_URL="https://imicltjdfzqlxzvodheq.supabase.co";
 const SUPABASE_KEY="sb_publishable_yswUDZAgEoEoB9KDLAic5A_xFSL20MC";
 const supabaseClient=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY):null;
 
 let importBusy=false;
 let DATA=[],view="home",filter="all",currentGroup=null,adminSession=null,importedRows=[];
-let favorites=loadFavorites(),lang=localStorage.getItem("boykot_lang")||"tr";
+let favorites=loadFavorites(),lang=localStorage.getItem("etik inceleme_lang")||"tr";
 const $=id=>document.getElementById(id);
 const search=$("search"),clearBtn=$("clearBtn"),barcodeBtn=$("barcodeBtn"),stats=$("stats"),quickActions=$("quickActions"),quickFilters=$("quickFilters"),sectionTitle=$("sectionTitle"),results=$("results"),themeBtn=$("themeBtn");
 
 const I={
-tr:{kicker:"V17 Güvenli Bilgilendirme",title:"Ahlak Rehberim",subtitle:"Bilinçli tüket, güvenle tercih et.",search:"Marka, firma, kategori veya barkod ara...",navHome:"Ana",navCompanies:"Firmalar",navCategories:"Kategori",navFavorites:"Favori",navAdmin:"Yönetim",boycott:"İncelenmesi Önerilir",notBoycotted:"Tercih Edilebilir",review:"Bilgi Bekleniyor",withAlt:"Alternatifli",favorites:"Favoriler",all:"Tümü",results:"sonuç",brands:"marka",companies:"Ana Firmalar",categories:"Kategoriler",countries:"Ülkeler",country:"Ülke",category:"Kategori",parent:"Ana Firma",barcode:"Barkod",alternative:"Alternatif",details:"Ayrıntıları Gör →",close:"Kapat",source:"Bilgi Kaynağı",note:"Açıklama",openSource:"Kaynağı aç",noResult:"Sonuç bulunamadı.",safeInfo:"Bu marka boykot listesinde olmayanlar bölümüne eklendi.",quickTitle:"Hızlı Erişim",admin:"Yönetim",login:"Giriş",logout:"Çıkış",email:"E-posta",password:"Şifre",brandName:"Marka adı",save:"Kaydet",resetForm:"Temizle",chooseBrand:"Marka seç",deleteBrand:"Marka Sil",confirmDelete:"Bu markayı silmek istiyor musun?",dataSaved:"Kayıt güncellendi",dataAdded:"Marka eklendi",dataDeleted:"Kayıt silindi",requiredBrand:"Marka adı gerekli",importToSupabase:"data.json → Supabase aktar",exportData:"data.json indir",localOnly:"Giriş yaptıysan değişiklikler Supabase’e kaydedilir.",dataCenter:"📥 LibreOffice / Excel Yükle",chooseFile:"V13 master.xlsx / master.ods dosyanı seç",importFileToSupabase:"☁ Seçilen Dosyayı Supabase’e Aktar",fileRows:"kayıt okundu",fileReady:"Dosya hazır",fileError:"Dosya okunamadı",importDone:"Aktarma tamamlandı",noFileData:"Önce dosya seç", importStarted:"Aktarım başladı...", importNeedLogin:"Önce admin girişi yap", importProgress:"Aktarılıyor", importError:"Aktarım hatası",downloaded:"İndirildi",supabaseReady:"Supabase bağlı",supabaseFallback:"Supabase boş/ulaşılamıyor, data.json yedeği kullanılıyor.",barcodePrompt:"Barkod numarasını yaz:",barcodeMissing:"Barkod alanı yoksa eşleşme bulunmayabilir."},
-en:{kicker:"V17 Güvenli Bilgilendirme",title:"Ahlak Rehberim",subtitle:"Choose consciously.",search:"Search brand, company, category or barcode...",navHome:"Home",navCompanies:"Companies",navCategories:"Category",navFavorites:"Favorite",navAdmin:"Admin",boycott:"Review / Caution",notBoycotted:"Alternative / Preferable",review:"Being Reviewed",withAlt:"With Alternatives",favorites:"Favorites",all:"All",results:"results",brands:"brands",companies:"Companies",categories:"Categories",countries:"Countries",country:"Country",category:"Category",parent:"Parent Company",barcode:"Barcode",alternative:"Alternative",details:"View Details →",close:"Close",source:"Information Source",note:"Explanation",openSource:"Open source",noResult:"No results found.",safeInfo:"This brand is in Not Boycotted.",quickTitle:"Quick Access",admin:"Admin",login:"Login",logout:"Logout",email:"Email",password:"Password",brandName:"Brand name",save:"Save",resetForm:"Clear",chooseBrand:"Select brand",deleteBrand:"Delete brand",confirmDelete:"Delete this brand?",dataSaved:"Record updated",dataAdded:"Brand added",dataDeleted:"Record deleted",requiredBrand:"Brand required",importToSupabase:"Import data.json to Supabase",exportData:"Download data.json",localOnly:"If logged in, changes are saved to Supabase.",dataCenter:"Data Center",chooseFile:"Choose ODS / Excel / CSV",importFileToSupabase:"Import file to Supabase",fileRows:"rows found",fileReady:"File ready",fileError:"Could not read file",importDone:"Import complete",noFileData:"Choose a file first", importStarted:"Import started...", importNeedLogin:"Please login first", importProgress:"Importing", importError:"Import error",downloaded:"Downloaded",supabaseReady:"Supabase connected",supabaseFallback:"Supabase empty/unavailable; using data.json fallback.",barcodePrompt:"Enter barcode:",barcodeMissing:"No match if barcode data is missing."},
-de:{kicker:"V17 Güvenli Bilgilendirme",title:"Ahlak Rehberim",subtitle:"Bewusst konsumieren.",search:"Marke, Firma, Kategorie oder Barcode suchen...",navHome:"Start",navCompanies:"Firmen",navCategories:"Kategorie",navFavorites:"Favorit",navAdmin:"Admin",boycott:"Prüfen / Achtung",notBoycotted:"Alternative / bevorzugbar",review:"Wird geprüft",withAlt:"Mit Alternativen",favorites:"Favoriten",all:"Alle",results:"Ergebnisse",brands:"Marken",companies:"Firmen",categories:"Kategorien",countries:"Länder",country:"Land",category:"Kategorie",parent:"Mutterfirma",barcode:"Barcode",alternative:"Alternative",details:"Details ansehen →",close:"Schließen",source:"Informationsquelle",note:"Hinweis",openSource:"Quelle öffnen",noResult:"Keine Ergebnisse gefunden.",safeInfo:"Diese Marke ist nicht boykottiert.",quickTitle:"Schnellzugriff",admin:"Verwaltung",login:"Anmelden",logout:"Abmelden",email:"E-Mail",password:"Passwort",brandName:"Markenname",save:"Speichern",resetForm:"Leeren",chooseBrand:"Marke auswählen",deleteBrand:"Marke löschen",confirmDelete:"Diese Marke löschen?",dataSaved:"Eintrag aktualisiert",dataAdded:"Marke hinzugefügt",dataDeleted:"Eintrag gelöscht",requiredBrand:"Marke erforderlich",importToSupabase:"data.json importieren",exportData:"data.json herunterladen",localOnly:"Wenn angemeldet, werden Änderungen in Supabase gespeichert.",dataCenter:"Datenzentrum",chooseFile:"ODS / Excel / CSV wählen",importFileToSupabase:"Datei importieren",fileRows:"Einträge gefunden",fileReady:"Datei bereit",fileError:"Datei konnte nicht gelesen werden",importDone:"Import abgeschlossen",noFileData:"Bitte zuerst Datei wählen", importStarted:"Import gestartet...", importNeedLogin:"Bitte zuerst anmelden", importProgress:"Import läuft", importError:"Importfehler",downloaded:"Heruntergeladen",supabaseReady:"Supabase verbunden",supabaseFallback:"Supabase leer/nicht verfügbar; data.json wird genutzt.",barcodePrompt:"Barcode eingeben:",barcodeMissing:"Keine Übereinstimmung ohne Barcode-Daten."}
+tr:{kicker:"V17 Güvenli Bilgilendirme",title:"Ahlak Rehberim",subtitle:"Bilinçli tüket, güvenle tercih et.",search:"Marka, firma, kategori veya barkod ara...",navHome:"Ana",navCompanies:"Firmalar",navCategories:"Kategori",navFavorites:"Favori",navAdmin:"Yönetim",review:"İncelenmesi Önerilir",notReviewed:"Tercih Edilebilir",review:"Bilgi Bekleniyor",withAlt:"Alternatifli",favorites:"Favoriler",all:"Tümü",results:"sonuç",brands:"marka",companies:"Ana Firmalar",categories:"Kategoriler",countries:"Ülkeler",country:"Ülke",category:"Kategori",parent:"Ana Firma",barcode:"Barkod",alternative:"Alternatif",details:"Ayrıntıları Gör →",close:"Kapat",source:"Bilgi Kaynağı",note:"Açıklama",openSource:"Kaynağı aç",noResult:"Sonuç bulunamadı.",safeInfo:"Bu marka etik inceleme listesinde olmayanlar bölümüne eklendi.",quickTitle:"Hızlı Erişim",admin:"Yönetim",login:"Giriş",logout:"Çıkış",email:"E-posta",password:"Şifre",brandName:"Marka adı",save:"Kaydet",resetForm:"Temizle",chooseBrand:"Marka seç",deleteBrand:"Marka Sil",confirmDelete:"Bu markayı silmek istiyor musun?",dataSaved:"Kayıt güncellendi",dataAdded:"Marka eklendi",dataDeleted:"Kayıt silindi",requiredBrand:"Marka adı gerekli",importToSupabase:"data.json → Supabase aktar",exportData:"data.json indir",localOnly:"Giriş yaptıysan değişiklikler Supabase’e kaydedilir.",dataCenter:"📥 LibreOffice / Excel Yükle",chooseFile:"V13 master.xlsx / master.ods dosyanı seç",importFileToSupabase:"☁ Seçilen Dosyayı Supabase’e Aktar",fileRows:"kayıt okundu",fileReady:"Dosya hazır",fileError:"Dosya okunamadı",importDone:"Aktarma tamamlandı",noFileData:"Önce dosya seç", importStarted:"Aktarım başladı...", importNeedLogin:"Önce admin girişi yap", importProgress:"Aktarılıyor", importError:"Aktarım hatası",downloaded:"İndirildi",supabaseReady:"Supabase bağlı",supabaseFallback:"Supabase boş/ulaşılamıyor, data.json yedeği kullanılıyor.",barcodePrompt:"Barkod numarasını yaz:",barcodeMissing:"Barkod alanı yoksa eşleşme bulunmayabilir."},
+en:{kicker:"V17 Güvenli Bilgilendirme",title:"Ahlak Rehberim",subtitle:"Choose consciously.",search:"Search brand, company, category or barcode...",navHome:"Home",navCompanies:"Companies",navCategories:"Category",navFavorites:"Favorite",navAdmin:"Admin",review:"Review / Caution",notReviewed:"Alternative / Preferable",review:"Being Reviewed",withAlt:"With Alternatives",favorites:"Favorites",all:"All",results:"results",brands:"brands",companies:"Companies",categories:"Categories",countries:"Countries",country:"Country",category:"Category",parent:"Parent Company",barcode:"Barcode",alternative:"Alternative",details:"View Details →",close:"Close",source:"Information Source",note:"Explanation",openSource:"Open source",noResult:"No results found.",safeInfo:"This brand is in Not Reviewed.",quickTitle:"Quick Access",admin:"Admin",login:"Login",logout:"Logout",email:"Email",password:"Password",brandName:"Brand name",save:"Save",resetForm:"Clear",chooseBrand:"Select brand",deleteBrand:"Delete brand",confirmDelete:"Delete this brand?",dataSaved:"Record updated",dataAdded:"Brand added",dataDeleted:"Record deleted",requiredBrand:"Brand required",importToSupabase:"Import data.json to Supabase",exportData:"Download data.json",localOnly:"If logged in, changes are saved to Supabase.",dataCenter:"Data Center",chooseFile:"Choose ODS / Excel / CSV",importFileToSupabase:"Import file to Supabase",fileRows:"rows found",fileReady:"File ready",fileError:"Could not read file",importDone:"Import complete",noFileData:"Choose a file first", importStarted:"Import started...", importNeedLogin:"Please login first", importProgress:"Importing", importError:"Import error",downloaded:"Downloaded",supabaseReady:"Supabase connected",supabaseFallback:"Supabase empty/unavailable; using data.json fallback.",barcodePrompt:"Enter barcode:",barcodeMissing:"No match if barcode data is missing."},
+de:{kicker:"V17 Güvenli Bilgilendirme",title:"Ahlak Rehberim",subtitle:"Bewusst konsumieren.",search:"Marke, Firma, Kategorie oder Barcode suchen...",navHome:"Start",navCompanies:"Firmen",navCategories:"Kategorie",navFavorites:"Favorit",navAdmin:"Admin",review:"Prüfen / Achtung",notReviewed:"Alternative / bevorzugbar",review:"Wird geprüft",withAlt:"Mit Alternativen",favorites:"Favoriten",all:"Alle",results:"Ergebnisse",brands:"Marken",companies:"Firmen",categories:"Kategorien",countries:"Länder",country:"Land",category:"Kategorie",parent:"Mutterfirma",barcode:"Barcode",alternative:"Alternative",details:"Details ansehen →",close:"Schließen",source:"Informationsquelle",note:"Hinweis",openSource:"Quelle öffnen",noResult:"Keine Ergebnisse gefunden.",safeInfo:"Diese Marke ist nicht etik incelemetiert.",quickTitle:"Schnellzugriff",admin:"Verwaltung",login:"Anmelden",logout:"Abmelden",email:"E-Mail",password:"Passwort",brandName:"Markenname",save:"Speichern",resetForm:"Leeren",chooseBrand:"Marke auswählen",deleteBrand:"Marke löschen",confirmDelete:"Diese Marke löschen?",dataSaved:"Eintrag aktualisiert",dataAdded:"Marke hinzugefügt",dataDeleted:"Eintrag gelöscht",requiredBrand:"Marke erforderlich",importToSupabase:"data.json importieren",exportData:"data.json herunterladen",localOnly:"Wenn angemeldet, werden Änderungen in Supabase gespeichert.",dataCenter:"Datenzentrum",chooseFile:"ODS / Excel / CSV wählen",importFileToSupabase:"Datei importieren",fileRows:"Einträge gefunden",fileReady:"Datei bereit",fileError:"Datei konnte nicht gelesen werden",importDone:"Import abgeschlossen",noFileData:"Bitte zuerst Datei wählen", importStarted:"Import gestartet...", importNeedLogin:"Bitte zuerst anmelden", importProgress:"Import läuft", importError:"Importfehler",downloaded:"Heruntergeladen",supabaseReady:"Supabase verbunden",supabaseFallback:"Supabase leer/nicht verfügbar; data.json wird genutzt.",barcodePrompt:"Barcode eingeben:",barcodeMissing:"Keine Übereinstimmung ohne Barcode-Daten."}
 };
 
 
@@ -535,18 +535,18 @@ function isSafeRecord(raw){
     .trim();
 
   return (
-    compact.includes("boykottadegil") ||
-    compact.includes("boykotdegil") ||
-    compact.includes("boykotlistesindeolmayan") ||
+    compact.includes("etik incelemetadegil") ||
+    compact.includes("etik incelemedegil") ||
+    compact.includes("etik incelemelistesindeolmayan") ||
     compact.includes("alternatifods") ||
-    compact.includes("notboycotted") ||
-    compact.includes("notboycott") ||
+    compact.includes("notreviewed") ||
+    compact.includes("notreview") ||
     compact.includes("safe") ||
-    d.includes("boykotta degil") ||
-    d.includes("boykot degil") ||
-    d.includes("boykot listesinde olmayan") ||
+    d.includes("etik incelemeta degil") ||
+    d.includes("etik inceleme degil") ||
+    d.includes("etik inceleme listesinde olmayan") ||
     d.includes("alternatif.ods") ||
-    d.includes("not boycotted")
+    d.includes("not reviewed")
   );
 }
 
@@ -563,19 +563,19 @@ function rawStatus(r){
   const d = norm(original);
 
   if(
-    compact === "boykottadegil" ||
-    compact === "boykotdegil" ||
-    compact === "boykotadegil" ||
-    compact === "notboycotted" ||
-    compact === "notboycott" ||
+    compact === "etik incelemetadegil" ||
+    compact === "etik incelemedegil" ||
+    compact === "etik incelemeadegil" ||
+    compact === "notreviewed" ||
+    compact === "notreview" ||
     compact === "safe" ||
-    compact === "boycottfree" ||
+    compact === "reviewfree" ||
     d.includes("safe") ||
-    d.includes("boykotta degil") ||
-    d.includes("boykot degil") ||
-    d.includes("boykot_degil") ||
-    d.includes("not boycotted") ||
-    d.includes("not boycott")
+    d.includes("etik incelemeta degil") ||
+    d.includes("etik inceleme degil") ||
+    d.includes("etik inceleme_degil") ||
+    d.includes("not reviewed") ||
+    d.includes("not review")
   ) return "safe";
 
   if(
@@ -601,9 +601,9 @@ function rawStatus(r){
     d.includes("review")
   ) return "inceleme";
 
-  if(compact === "boykot" || compact === "boycott") return "boykot";
+  if(compact === "review" || compact === "review") return "review";
 
-  return d ? d : "boykot";
+  return d ? d : "review";
 }
 
 
@@ -701,7 +701,7 @@ function imageError(el,name){
   el.src=fallbackBrandImage(name);
 }
 
-function statusLabel(s){return{boykot:`🔴 ${t("boycott")}`,safe:`🟢 ${t("notBoycotted")}`,alternatif:`🔵 ${t("alternative")}`,dikkat:"🟠 Dikkat",inceleme:`⚪ ${t("review")}`}[s]||s}
+function statusLabel(s){return{review:"🔴 İncelenmesi önerilir",safe:"🟢 Tercih edilebilir",alternatif:"🔵 Alternatif",dikkat:"🟠 Dikkat",inceleme:"🟡 Bilgi/kaynak kontrolü gerekli"}[s]||s}
 function hasAlternative(x){if(x.status==="alternatif")return true;const a=norm(x.alternatif);return !!a&&a!=="-"&&a!=="yok"&&!a.includes("alternatif manuel eklenmeli")}
 function normalizeItem(raw,i){
   const marka=get(raw,["marka","name","Marka","brand"])||`Marka ${i+1}`;
@@ -784,16 +784,16 @@ async function loadCompanyDb(){
 
 async function loadSession(){if(!supabaseClient)return;const{data}=await supabaseClient.auth.getSession();adminSession=data.session||null}
 async function loadSupabase(){if(!supabaseClient)throw new Error("No Supabase");let all=[],from=0,step=1000;while(true){const{data,error}=await supabaseClient.from("brand_cards").select("*").order("marka").range(from,from+step-1);if(error)throw error;all=all.concat(data||[]);if(!data||data.length<step)break;from+=step}return all}
-async function loadFallback(){const r=await fetch(`data.json?v=${VERSION}`,{cache:"reload"});const j=await r.json();return Array.isArray(j)?j:(j.data||[])}
+async function loadFallback(){const r=await fetch(`data/data.json?v=${VERSION}`,{cache:"reload"});const j=await r.json();return Array.isArray(j)?j:(j.data||[])}
 async function init(){applyTheme();applyLang();setupServiceWorker();showLegalNoticeOnce();await loadCompanyDb();await loadDataSmart(loadSession);try{let list=[];try{list=await loadSupabase()}catch(e){list=[]}if(!list.length){list=await loadFallback();toast(t("supabaseFallback"))}else toast(t("supabaseReady"));DATA=enrichCompanies(list).map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"));render()}catch(e){results.innerHTML=`<div class="empty">${esc(e.message)}</div>`}}
 
-function counts(){return{total:DATA.length,boykot:DATA.filter(x=>x.status==="boykot").length,safe:DATA.filter(x=>x.status==="safe").length,inceleme:DATA.filter(x=>x.status==="inceleme").length,altli:DATA.filter(hasAlternative).length,fav:favorites.length,firmalar:new Set(DATA.map(x=>x.anaFirma||"-")).size,kategoriler:new Set(DATA.map(x=>x.kategori||"-").filter(Boolean)).size,ulkeler:new Set(DATA.map(x=>x.ulke||"").filter(Boolean)).size}}
-function renderStats(){const c=counts();stats.innerHTML=`<button class="stat red" data-stat="boykot"><small>🔴 ${t("boycott")}</small><b>${c.boykot}</b></button><button class="stat safe" data-stat="safe"><small>✅ ${t("notBoycotted")}</small><b>${c.safe}</b></button><button class="stat green" data-stat="altli"><small>⭐ ${t("withAlt")}</small><b>${c.altli}</b></button><button class="stat gray" data-stat="inceleme"><small>⚪ ${t("review")}</small><b>${c.inceleme}</b></button>`}
+function counts(){return{total:DATA.length,review:DATA.filter(x=>x.status==="review").length,safe:DATA.filter(x=>x.status==="safe").length,inceleme:DATA.filter(x=>x.status==="inceleme").length,altli:DATA.filter(hasAlternative).length,fav:favorites.length,firmalar:new Set(DATA.map(x=>x.anaFirma||"-")).size,kategoriler:new Set(DATA.map(x=>x.kategori||"-").filter(Boolean)).size,ulkeler:new Set(DATA.map(x=>x.ulke||"").filter(Boolean)).size}}
+function renderStats(){const c=counts();stats.innerHTML=`<button class="stat red" data-stat="review"><small>🔴 ${t("review")}</small><b>${c.review}</b></button><button class="stat safe" data-stat="safe"><small>✅ ${t("notReviewed")}</small><b>${c.safe}</b></button><button class="stat green" data-stat="altli"><small>⭐ ${t("withAlt")}</small><b>${c.altli}</b></button><button class="stat gray" data-stat="inceleme"><small>⚪ ${t("review")}</small><b>${c.inceleme}</b></button>`}
 function renderQuickActions(){const c=counts();quickActions.innerHTML=`<h2>${t("quickTitle")}</h2><div class="quickGrid"><button data-go="companies"><span>🏢</span><b>${t("companies")}</b><small>${c.firmalar}</small></button><button data-go="categories"><span>📂</span><b>${t("categories")}</b><small>${c.kategoriler}</small></button><button data-go="countries"><span>🌍</span><b>${t("countries")||"Ülkeler"}</b><small>${c.ulkeler||0}</small></button><button data-go="alternatives"><span>⭐</span><b>${t("withAlt")}</b><small>${c.altli}</small></button><button data-go="favorites"><span>❤️</span><b>${t("favorites")}</b><small>${c.fav}</small></button><button data-go="moderation"><span>🛡️</span><b>Moderasyon</b><small>⚙️</small></button><button data-action="scanBarcode"><span>📷</span><b>Barkod Tara</b><small>EAN</small></button><button data-go="suggestions"><span>📝</span><b>Öneri</b><small>+</small></button><button data-go="compare"><span>⚖️</span><b>Karşılaştır</b><small>2</small></button><button data-go="admin"><span>⚙️</span><b>${t("admin")}</b><small>ODS</small></button></div>`}
-function renderFilters(){const arr=[["all",t("all")],["boykot",`🔴 ${t("boycott")}`],["safe",`✅ ${t("notBoycotted")}`],["altli",`⭐ ${t("withAlt")}`],["inceleme",`⚪ ${t("review")}`],["fav",`❤️ ${t("favorites")}`]];quickFilters.innerHTML=arr.map(([k,l])=>`<button class="chip ${filter===k?'active':''}" data-filter="${k}">${l}</button>`).join("")}
-function filteredList(base=DATA){const q=norm(search.value);return base.filter(x=>(!q||x.hay.includes(q))&&(filter==="all"||(filter==="boykot"&&x.status==="boykot")||(filter==="safe"&&x.status==="safe")||(filter==="altli"&&hasAlternative(x))||(filter==="inceleme"&&x.status==="inceleme")||(filter==="fav"&&isFav(x.marka)))).sort((a,b)=>Number(isFav(b.marka))-Number(isFav(a.marka))||a.marka.localeCompare(b.marka,"tr"))}
+function renderFilters(){const arr=[["all",t("all")],["review",`🔴 ${t("review")}`],["safe",`✅ ${t("notReviewed")}`],["altli",`⭐ ${t("withAlt")}`],["inceleme",`⚪ ${t("review")}`],["fav",`❤️ ${t("favorites")}`]];quickFilters.innerHTML=arr.map(([k,l])=>`<button class="chip ${filter===k?'active':''}" data-filter="${k}">${l}</button>`).join("")}
+function filteredList(base=DATA){const q=norm(search.value);return base.filter(x=>(!q||x.hay.includes(q))&&(filter==="all"||(filter==="review"&&x.status==="review")||(filter==="safe"&&x.status==="safe")||(filter==="altli"&&hasAlternative(x))||(filter==="inceleme"&&x.status==="inceleme")||(filter==="fav"&&isFav(x.marka)))).sort((a,b)=>Number(isFav(b.marka))-Number(isFav(a.marka))||a.marka.localeCompare(b.marka,"tr"))}
 function imageHtml(x){return x.imageUrl?`<div class="brandImage"><img src="${esc(x.imageUrl)}" alt="${esc(x.marka)}" loading="lazy" onerror="this.parentElement.classList.add('noImage');this.remove();"></div>`:`<div class="brandImage noImage"><span>🌿</span></div>`}
-function altHtml(x){if(x.status==="safe"&&!x.alternatif)return`<div class="altBox"><span>${t("notBoycotted")}</span><b>${t("safeInfo")}</b></div>`;if(!hasAlternative(x))return`<div class="altBox"><span>${t("alternative")}</span><b>-</b></div>`;const tags=String(x.alternatif).split(/[;,•]/).map(v=>v.trim()).filter(Boolean).slice(0,8);return`<div class="altBox"><span>${t("alternative")}</span><div class="tags">${tags.map(v=>`<em>${esc(v)}</em>`).join("")}</div></div>`}
+function altHtml(x){if(x.status==="safe"&&!x.alternatif)return`<div class="altBox"><span>${t("notReviewed")}</span><b>${t("safeInfo")}</b></div>`;if(!hasAlternative(x))return`<div class="altBox"><span>${t("alternative")}</span><b>-</b></div>`;const tags=String(x.alternatif).split(/[;,•]/).map(v=>v.trim()).filter(Boolean).slice(0,8);return`<div class="altBox"><span>${t("alternative")}</span><div class="tags">${tags.map(v=>`<em>${esc(v)}</em>`).join("")}</div></div>`}
 function card(x){return`<article class="card ${x.status}" data-brand="${encodeURIComponent(x.marka)}">${imageHtml(x)}<div class="cardTop"><div><div class="badgeLine"><span class="badge ${x.status}">${statusLabel(x.status)}</span>${hasAlternative(x)?`<span class="badge alternatif">⭐ ${t("withAlt")}</span>`:""}</div><h3>${esc(x.marka)}</h3><div class="company">🏢 ${esc(x.anaFirma||"-")}</div></div><button class="fav" data-fav="${encodeURIComponent(x.marka)}">${isFav(x.marka)?"❤️":"♡"}</button></div><div class="meta"><div class="box"><span>${t("category")}</span><b>${esc(x.kategori||"-")}</b></div>${x.ulke?`<div class="box" style="margin-top:8px"><span>${t("country")||"Ülke"}</span><b>${esc(x.ulke)}</b></div>`:""}</div>${altHtml(x)}<button class="more">${t("details")}</button></article>`}
 function titleFor(){if(currentGroup)return currentGroup.title;if(view==="favorites"||filter==="fav")return`❤️ ${t("favorites")}`;if(view==="alternatives"||filter==="altli")return`⭐ ${t("withAlt")}`;return t("all")}
 function renderHome(base=DATA){const list=filteredList(base);renderStats();ensureBarcodeSearch();ensureScannerButton();renderQuickActions();renderFilters();sectionTitle.innerHTML=`<h2>${esc(titleFor())}</h2><span>${list.length} ${t("results")}</span>`;results.innerHTML=(list.length?list.slice(0,800).map(card).join(""):`<div class="empty">${t("noResult")}</div>`)+renderLegalFooter()}
@@ -835,7 +835,7 @@ function mapSheetRow(row){
     alternatif:fieldValue(row,["alternatif","Alternatif","alternative"]),
     kaynak:fieldValue(row,["kaynak","Kaynak","source","url","link"]),
     not:fieldValue(row,["not","Not","note","notlar"]),
-    status:fieldValue(row,["durum","Durum","status"])||"boykot",
+    status:fieldValue(row,["durum","Durum","status"])||"review",
     barkod:barkodRaw?String(barkodRaw).split(/[;, ]+/).filter(Boolean):[],
     imageUrl:fieldValue(row,["image_url","image","logo","resim","gorsel","Görsel URL"])
   };
@@ -845,7 +845,7 @@ function rawRowToBrand(arr){
   const marka = vals[0] || "";
   if(!marka) return null;
   const second = norm(vals[1]||"");
-  let status = "boykot";
+  let status = "review";
   if(second==="" || second==="-" || second==="0") status = "inceleme";
   if(second.includes("degil") || second.includes("safe") || second.includes("not")) status = "safe";
   if(second.includes("alt")) status = "alternatif";
@@ -902,7 +902,7 @@ function parseMasterWorkbook(workbook){
       altKategori,
       kategori,
       ulke: getRowValue(row, ["Ülke","Ulke","ülke","ulke","Country","country"]),
-      status: getRowValue(row, ["Durum","status"]) || "boykot",
+      status: getRowValue(row, ["Durum","status"]) || "review",
       not: getRowValue(row, ["Not","note","notlar"]),
       imageUrl: getRowValue(row, ["Görsel URL","Gorsel URL","image_url","image","logo","resim","gorsel"]),
       kaynak: "",
@@ -932,7 +932,7 @@ function parseMasterWorkbook(workbook){
   }
 
   for(const row of altRows){
-    const marka = getRowValue(row, ["Marka","marka","Brand","Boykot Marka"]);
+    const marka = getRowValue(row, ["Marka","marka","Brand","Etik İnceleme Marka"]);
     const alt = getRowValue(row, ["Alternatif","Alternatif Marka","alternative"]);
     if(!marka || !alt) continue;
     const k = makeKey(marka);
@@ -1038,8 +1038,8 @@ async function deleteAdminBrand(){if(!adminSession){toast(t("login"));return}con
 async function reload(){const list=await loadSupabase();DATA=enrichCompanies(list).map(normalizeItem).sort((a,b)=>a.marka.localeCompare(b.marka,"tr"))}
 function adminOptions(){return DATA.map(x=>x.marka).filter((v,i,a)=>v&&a.indexOf(v)===i).sort((a,b)=>a.localeCompare(b,"tr")).map(n=>`<option value="${esc(n)}">${esc(n)}</option>`).join("")}
 function getAdminValues(){const raw=$("adminBarkod")?.value.trim()||"";return{marka:$("adminMarka").value.trim(),anaFirma:$("adminAnaFirma").value.trim(),kategori:$("adminKategori").value.trim(),alternatif:$("adminAlternatif").value.trim(),kaynak:$("adminKaynak").value.trim(),not:$("adminNot").value.trim(),barkod:raw?raw.split(/[;, ]+/).filter(Boolean):[],imageUrl:($("adminImageUrl")?.value||"").trim(),status:$("adminDurum").value}}
-function fillAdminForm(name){const x=DATA.find(v=>v.marka===name);if(!x)return;$("adminMarka").value=x.marka||"";$("adminAnaFirma").value=x.anaFirma||"";$("adminKategori").value=x.kategori||"";$("adminAlternatif").value=x.alternatif||"";$("adminKaynak").value=x.kaynak||"";$("adminNot").value=x.not||"";$("adminBarkod").value=Array.isArray(x.barkod)?x.barkod.join(", "):"";$("adminImageUrl").value=x.imageUrl||"";$("adminDurum").value=x.status||"boykot"}
-function clearAdminForm(){["adminMarka","adminAnaFirma","adminKategori","adminAlternatif","adminKaynak","adminNot","adminBarkod","adminImageUrl"].forEach(id=>$(id).value="");$("adminDurum").value="boykot"}
+function fillAdminForm(name){const x=DATA.find(v=>v.marka===name);if(!x)return;$("adminMarka").value=x.marka||"";$("adminAnaFirma").value=x.anaFirma||"";$("adminKategori").value=x.kategori||"";$("adminAlternatif").value=x.alternatif||"";$("adminKaynak").value=x.kaynak||"";$("adminNot").value=x.not||"";$("adminBarkod").value=Array.isArray(x.barkod)?x.barkod.join(", "):"";$("adminImageUrl").value=x.imageUrl||"";$("adminDurum").value=x.status||"review"}
+function clearAdminForm(){["adminMarka","adminAnaFirma","adminKategori","adminAlternatif","adminKaynak","adminNot","adminBarkod","adminImageUrl"].forEach(id=>$(id).value="");$("adminDurum").value="review"}
 async function adminLogin(){const{data,error}=await supabaseClient.auth.signInWithPassword({email:$("adminEmail").value.trim(),password:$("adminPassword").value});if(error){toast(error.message);return}adminSession=data.session;toast(t("supabaseReady"));renderAdmin()}
 async function adminLogout(){await supabaseClient.auth.signOut();adminSession=null;view="home";filter="all";search.value="";render()}
 function downloadDataJson(){const raw=DATA.map(toLegacy);const blob=new Blob([JSON.stringify(raw,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="data.json";a.click();URL.revokeObjectURL(url);toast(t("downloaded"))}
@@ -1073,7 +1073,7 @@ function adminFormHtml(existing={}){
       <label>Kategori<input id="admKategori" value="${esc(existing.kategori||"")}"></label>
       <label>Ülke<input id="admUlke" value="${esc(existing.ulke||"")}"></label>
       <label>Durum<select id="admDurum">
-        <option value="boykot">İncelenmesi Önerilir</option>
+        <option value="review">İncelenmesi Önerilir</option>
         <option value="safe">Tercih Edilebilir</option>
         <option value="inceleme">Bilgi Bekleniyor</option>
         <option value="alternatif">Alternatif</option>
@@ -1346,8 +1346,8 @@ results.innerHTML=`<section class="adminPanel">
     <label>${esc(t("note"))}<textarea id="adminNot"></textarea></label>
     <label>Durum
       <select id="adminDurum">
-        <option value="boykot">${esc(t("boycott"))}</option>
-        <option value="safe">${esc(t("notBoycotted"))}</option>
+        <option value="review">${esc(t("review"))}</option>
+        <option value="safe">${esc(t("notReviewed"))}</option>
         <option value="alternatif">${esc(t("alternative"))}</option>
         <option value="dikkat">Dikkat</option>
         <option value="inceleme">${esc(t("review"))}</option>
@@ -1377,6 +1377,6 @@ function applyLang(){document.documentElement.lang=lang;$("kicker").textContent=
 function toast(m){const el=document.createElement("div");el.className="toast";el.textContent=m;document.body.appendChild(el);requestAnimationFrame(()=>el.classList.add("show"));setTimeout(()=>{el.classList.remove("show");setTimeout(()=>el.remove(),300)},2800)}
 function setupServiceWorker(){if("serviceWorker"in navigator)navigator.serviceWorker.register(`sw.js?v=${VERSION}`).catch(()=>{})}
 
-search.addEventListener("input",()=>{currentGroup=null;if(view!=="home"){view="home";filter="all"}render()});clearBtn.addEventListener("click",()=>{search.value="";filter="all";currentGroup=null;render()});barcodeBtn.addEventListener("click",()=>{const c=prompt(`${t("barcodePrompt")}\n${t("barcodeMissing")}`);if(c)handleBarcodeValue(c.trim())});quickFilters.addEventListener("click",e=>{const b=e.target.closest("[data-filter]");if(!b)return;filter=b.dataset.filter;view="home";currentGroup=null;render()});quickActions.addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(!b)return;view=b.dataset.go;currentGroup=null;if(view==="home")filter="all";render()});stats.addEventListener("click",e=>{const b=e.target.closest("[data-stat]");if(!b)return;filter=b.dataset.stat;view="home";currentGroup=null;render()});results.addEventListener("click",e=>{const f=e.target.closest("[data-fav]");if(f){e.stopPropagation();toggleFav(decodeURIComponent(f.dataset.fav));return}const g=e.target.closest("[data-company]");if(g){const n=decodeURIComponent(g.dataset.company);currentGroup={title:`🏢 ${n}`,items:DATA.filter(x=>x.anaFirma===n)};view="home";search.value="";filter="all";render();return}const cat=e.target.closest("[data-category]");if(cat){const n=decodeURIComponent(cat.dataset.category);currentGroup={title:`${catIcon(n)} ${n}`,items:DATA.filter(x=>x.kategori===n)};view="home";search.value="";filter="all";render();return}const country=e.target.closest("[data-country]");if(country){const n=decodeURIComponent(country.dataset.country);currentGroup={title:`🌍 ${n}`,items:DATA.filter(x=>x.ulke===n)};view="home";search.value="";filter="all";render();return}const c=e.target.closest("[data-brand]");if(c){const n=decodeURIComponent(c.dataset.brand);const item=DATA.find(x=>x.marka===n);if(item)detail(item)}});document.querySelectorAll(".bottomNav button").forEach(b=>b.addEventListener("click",()=>{view=b.dataset.view;currentGroup=null;if(view==="home")filter="all";render()}));document.querySelectorAll(".langSwitch button").forEach(b=>b.addEventListener("click",()=>{lang=b.dataset.lang;localStorage.setItem("boykot_lang",lang);applyLang();render()}));themeBtn.addEventListener("click",()=>{localStorage.setItem("ahlak_theme",document.body.classList.contains("dark")?"light":"dark");applyTheme()});$("closeDialog").addEventListener("click",()=>$("detailDialog").close());
+search.addEventListener("input",()=>{currentGroup=null;if(view!=="home"){view="home";filter="all"}render()});clearBtn.addEventListener("click",()=>{search.value="";filter="all";currentGroup=null;render()});barcodeBtn.addEventListener("click",()=>{const c=prompt(`${t("barcodePrompt")}\n${t("barcodeMissing")}`);if(c)handleBarcodeValue(c.trim())});quickFilters.addEventListener("click",e=>{const b=e.target.closest("[data-filter]");if(!b)return;filter=b.dataset.filter;view="home";currentGroup=null;render()});quickActions.addEventListener("click",e=>{const b=e.target.closest("[data-go]");if(!b)return;view=b.dataset.go;currentGroup=null;if(view==="home")filter="all";render()});stats.addEventListener("click",e=>{const b=e.target.closest("[data-stat]");if(!b)return;filter=b.dataset.stat;view="home";currentGroup=null;render()});results.addEventListener("click",e=>{const f=e.target.closest("[data-fav]");if(f){e.stopPropagation();toggleFav(decodeURIComponent(f.dataset.fav));return}const g=e.target.closest("[data-company]");if(g){const n=decodeURIComponent(g.dataset.company);currentGroup={title:`🏢 ${n}`,items:DATA.filter(x=>x.anaFirma===n)};view="home";search.value="";filter="all";render();return}const cat=e.target.closest("[data-category]");if(cat){const n=decodeURIComponent(cat.dataset.category);currentGroup={title:`${catIcon(n)} ${n}`,items:DATA.filter(x=>x.kategori===n)};view="home";search.value="";filter="all";render();return}const country=e.target.closest("[data-country]");if(country){const n=decodeURIComponent(country.dataset.country);currentGroup={title:`🌍 ${n}`,items:DATA.filter(x=>x.ulke===n)};view="home";search.value="";filter="all";render();return}const c=e.target.closest("[data-brand]");if(c){const n=decodeURIComponent(c.dataset.brand);const item=DATA.find(x=>x.marka===n);if(item)detail(item)}});document.querySelectorAll(".bottomNav button").forEach(b=>b.addEventListener("click",()=>{view=b.dataset.view;currentGroup=null;if(view==="home")filter="all";render()}));document.querySelectorAll(".langSwitch button").forEach(b=>b.addEventListener("click",()=>{lang=b.dataset.lang;localStorage.setItem("etik inceleme_lang",lang);applyLang();render()}));themeBtn.addEventListener("click",()=>{localStorage.setItem("ahlak_theme",document.body.classList.contains("dark")?"light":"dark");applyTheme()});$("closeDialog").addEventListener("click",()=>$("detailDialog").close());
 window.adminLogin=adminLogin;window.adminLogout=adminLogout;window.importToSupabase=importToSupabase;window.importSpreadsheetToSupabase=importSpreadsheetToSupabase;window.saveAdminBrand=saveAdminBrand;window.deleteAdminBrand=deleteAdminBrand;window.clearAdminForm=clearAdminForm;window.downloadDataJson=downloadDataJson;
 init();

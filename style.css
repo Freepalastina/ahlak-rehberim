@@ -7,7 +7,7 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}.heroInner{max-w
 .quickActions h2{margin:18px 0 12px}.quickGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.quickGrid button{padding:16px;text-align:left}.quickGrid span{display:block;font-size:28px;margin-bottom:8px}.quickGrid b{display:block}.quickGrid small{color:var(--muted);font-weight:800}
 .quickFilters{display:flex;gap:10px;overflow:auto;padding:18px 0 10px}.chip{border:1px solid var(--line);border-radius:999px;padding:12px 17px;background:var(--paper);font-weight:950}.chip.active{background:var(--olive);color:white}
 .sectionTitle{display:flex;justify-content:space-between;align-items:end;margin:14px 2px}.sectionTitle h2{margin:0;font-size:27px}.sectionTitle span{color:var(--muted);font-weight:900}.results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.empty{grid-column:1/-1;padding:30px;text-align:center;color:var(--muted);font-weight:850}
-.card{overflow:hidden}.brandImage{height:145px;margin:14px 14px 0;border:1px solid var(--line);border-radius:24px;background:#eef3df;display:grid;place-items:center;overflow:hidden}.brandImage img{width:100%;height:100%;object-fit:contain;background:white}.brandImage span{font-size:54px}.cardTop{display:flex;justify-content:space-between;padding:18px}.badgeLine{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.badge{border-radius:999px;padding:6px 10px;font-size:11px;font-weight:950;background:#eef3df;color:var(--oliveDark)}.badge.boykot{background:#fdebe8;color:var(--red)}.badge.safe{background:#eef4dd;color:var(--safe)}.badge.alternatif{background:#e7f7eb;color:var(--green)}.card h3{margin:0 0 10px;font-size:25px;letter-spacing:-.05em}.company{display:inline-block;padding:8px 11px;border-radius:999px;background:#eef3df;font-weight:900;color:var(--oliveDark)}.fav{border:1px solid var(--line);width:46px;height:46px;border-radius:50%;background:white;font-size:22px}.meta{padding:0 18px 12px}.box,.altBox,.detailLine{border:1px solid var(--line);border-radius:22px;padding:13px;background:#f8f5ec}.box span,.altBox span,.detailLine span{display:block;font-size:11px;font-weight:950;text-transform:uppercase;color:var(--muted);margin-bottom:5px}.altBox{margin:0 18px 15px}.tags{display:flex;gap:7px;flex-wrap:wrap}.tags em{font-style:normal;border:1px solid var(--line);border-radius:999px;padding:7px 10px;background:white;font-size:12px;font-weight:900}.more{width:100%;border:0;border-top:1px solid var(--line);padding:15px;background:#edf3df;font-weight:950;color:var(--oliveDark)}
+.card{overflow:hidden}.brandImage{height:145px;margin:14px 14px 0;border:1px solid var(--line);border-radius:24px;background:#eef3df;display:grid;place-items:center;overflow:hidden}.brandImage img{width:100%;height:100%;object-fit:contain;background:white}.brandImage span{font-size:54px}.cardTop{display:flex;justify-content:space-between;padding:18px}.badgeLine{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.badge{border-radius:999px;padding:6px 10px;font-size:11px;font-weight:950;background:#eef3df;color:var(--oliveDark)}.badge.etik inceleme{background:#fdebe8;color:var(--red)}.badge.safe{background:#eef4dd;color:var(--safe)}.badge.alternatif{background:#e7f7eb;color:var(--green)}.card h3{margin:0 0 10px;font-size:25px;letter-spacing:-.05em}.company{display:inline-block;padding:8px 11px;border-radius:999px;background:#eef3df;font-weight:900;color:var(--oliveDark)}.fav{border:1px solid var(--line);width:46px;height:46px;border-radius:50%;background:white;font-size:22px}.meta{padding:0 18px 12px}.box,.altBox,.detailLine{border:1px solid var(--line);border-radius:22px;padding:13px;background:#f8f5ec}.box span,.altBox span,.detailLine span{display:block;font-size:11px;font-weight:950;text-transform:uppercase;color:var(--muted);margin-bottom:5px}.altBox{margin:0 18px 15px}.tags{display:flex;gap:7px;flex-wrap:wrap}.tags em{font-style:normal;border:1px solid var(--line);border-radius:999px;padding:7px 10px;background:white;font-size:12px;font-weight:900}.more{width:100%;border:0;border-top:1px solid var(--line);padding:15px;background:#edf3df;font-weight:950;color:var(--oliveDark)}
 .group{display:flex;justify-content:space-between;gap:14px;padding:18px;text-align:left}.group b{font-size:20px}.group small{display:block;color:var(--muted);margin-top:5px}.count{border-radius:999px;background:var(--olive);color:white;padding:10px 14px;font-weight:950}
 .bottomNav{position:fixed;left:50%;bottom:12px;z-index:20;transform:translateX(-50%);width:min(720px,calc(100% - 20px));display:grid;grid-template-columns:repeat(5,1fr);gap:5px;padding:8px;border:1px solid var(--line);border-radius:29px;background:rgba(255,254,249,.92);box-shadow:0 18px 52px rgba(48,55,31,.22);backdrop-filter:blur(18px)}.bottomNav button{border:0;border-radius:22px;padding:8px 3px;background:transparent;color:var(--muted)}.bottomNav span{display:block;font-size:21px}.bottomNav small{font-size:10px;font-weight:950}.bottomNav button.active{background:var(--olive);color:white}
 .detailDialog{width:calc(100% - 26px);max-width:560px;border:0;padding:0;border-radius:34px;overflow:hidden;background:var(--paper);color:var(--ink)}.detailHead{padding:25px;background:linear-gradient(145deg,#8f9f63,#5f7138,#3f5028);color:white}.detailHead h2{margin:0}.detailBody{display:grid;gap:10px;padding:16px}.detailImage{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:white}.detailImage img{width:100%;max-height:260px;object-fit:contain}.closeDialog{width:calc(100% - 32px);margin:0 16px 16px;border:0;border-radius:22px;padding:14px;background:var(--olive);color:white;font-weight:950}
@@ -89,19 +89,19 @@ body.dark .importStatus{
 .legalFooter a{color:#5F7138;font-weight:900;text-decoration:none}
 .legalFooter a:hover{text-decoration:underline}
 .legalDetail{font-weight:700}
-.badge.boykot{background:#FFF3CD!important;color:#7A4B00!important}
+.badge.etik inceleme{background:#FFF3CD!important;color:#7A4B00!important}
 
 
 /* V21 status colors */
-.badge.boykot{
+.badge.etik inceleme{
   background:#FDEBE8!important;
   color:#B42318!important;
   border:1px solid rgba(180,35,24,.18);
 }
-.card.boykot{
+.card.etik inceleme{
   border-color:rgba(180,35,24,.25)!important;
 }
-.stat.red,.stat.boykot{
+.stat.red,.stat.etik inceleme{
   background:linear-gradient(135deg,#FDEBE8,#FECACA)!important;
   color:#B42318!important;
 }
@@ -143,7 +143,7 @@ body.dark .importStatus{
   object-fit:contain;
   padding:18px;
 }
-.card.boykot .brandImage{
+.card.etik inceleme .brandImage{
   background:rgba(180,35,24,.08);
 }
 .card.safe .brandImage{

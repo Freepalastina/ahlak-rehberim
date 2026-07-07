@@ -1,0 +1,6 @@
+{
+  "appName": "Ahlak Rehberim",
+  "defaultStatus": "review",
+  "defaultStatusLabel": "İncelenmesi önerilir",
+  "dataMode": "central-json"
+}

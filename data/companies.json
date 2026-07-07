@@ -1,0 +1,1758 @@
+[
+  {
+    "id": "company_0001",
+    "slug": "3m",
+    "name": "3M",
+    "country": "",
+    "website": "https://www.3m.com/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001404"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0002",
+    "slug": "abc_deterjan",
+    "name": "ABC Deterjan",
+    "country": "",
+    "website": "https://www.abcdeterjan.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001408"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0003",
+    "slug": "beyaz_kagit_turkiye",
+    "name": "Beyaz Kağıt / Türkiye",
+    "country": "",
+    "website": "https://www.peros.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001407",
+      "brand_001410"
+    ],
+    "brandCount": 2
+  },
+  {
+    "id": "company_0004",
+    "slug": "claro_products_avusturya",
+    "name": "Claro Products / Avusturya",
+    "country": "",
+    "website": "https://www.claro.at/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001415"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0005",
+    "slug": "colgate_palmolive",
+    "name": "Colgate-Palmolive",
+    "country": "",
+    "website": "https://www.colgatepalmolive.com/en-us/brands",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000032",
+      "brand_000264",
+      "brand_000756",
+      "brand_000892",
+      "brand_000970",
+      "brand_001037",
+      "brand_001108",
+      "brand_001377"
+    ],
+    "brandCount": 8
+  },
+  {
+    "id": "company_0006",
+    "slug": "dirk_rossmann_gmbh",
+    "name": "Dirk Rossmann GmbH",
+    "country": "",
+    "website": "https://www.rossmann.de/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001417"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0007",
+    "slug": "eti_maden_turkiye",
+    "name": "Eti Maden / Türkiye",
+    "country": "",
+    "website": "https://www.boron.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001405"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0008",
+    "slug": "freudenberg_home_and_cleaning_solutions",
+    "name": "Freudenberg Home and Cleaning Solutions",
+    "country": "",
+    "website": "https://www.vileda.com/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001246"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0009",
+    "slug": "hayat_kimya",
+    "name": "Hayat Kimya",
+    "country": "",
+    "website": "https://www.hayat.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001406"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0010",
+    "slug": "henkel",
+    "name": "Henkel",
+    "country": "",
+    "website": "https://www.henkel.com/our-businesses/henkel-consumer-brands",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000181",
+      "brand_000255",
+      "brand_000415",
+      "brand_000480",
+      "brand_000694",
+      "brand_000920",
+      "brand_000921",
+      "brand_000958",
+      "brand_001048",
+      "brand_001074",
+      "brand_001112",
+      "brand_001155",
+      "brand_001157",
+      "brand_001239",
+      "brand_001452"
+    ],
+    "brandCount": 15
+  },
+  {
+    "id": "company_0011",
+    "slug": "mintax_turkiye",
+    "name": "Mintax / Türkiye",
+    "country": "",
+    "website": "https://mintax.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001409"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0012",
+    "slug": "parex_turkiye",
+    "name": "Parex / Türkiye",
+    "country": "",
+    "website": "https://www.parex.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001412"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0013",
+    "slug": "procter_gamble",
+    "name": "Procter & Gamble",
+    "country": "",
+    "website": "https://us.pg.com/brands/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000050",
+      "brand_000053",
+      "brand_000071",
+      "brand_000151",
+      "brand_000178",
+      "brand_000301",
+      "brand_000418",
+      "brand_000423",
+      "brand_000470",
+      "brand_000510",
+      "brand_000520",
+      "brand_000566",
+      "brand_000671",
+      "brand_000798",
+      "brand_000857",
+      "brand_000858",
+      "brand_000869",
+      "brand_000894",
+      "brand_000897",
+      "brand_001058",
+      "brand_001153",
+      "brand_001237",
+      "brand_001372",
+      "brand_001403"
+    ],
+    "brandCount": 24
+  },
+  {
+    "id": "company_0014",
+    "slug": "reckitt",
+    "name": "Reckitt",
+    "country": "",
+    "website": "https://www.reckitt.com/brands/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000029",
+      "brand_000361",
+      "brand_000431",
+      "brand_000467",
+      "brand_000507",
+      "brand_000714",
+      "brand_000841",
+      "brand_001030",
+      "brand_001135",
+      "brand_001232",
+      "brand_001235",
+      "brand_001378"
+    ],
+    "brandCount": 12
+  },
+  {
+    "id": "company_0015",
+    "slug": "reckitt_advent_portfoy_islemi_kontrol_gerekli",
+    "name": "Reckitt / Advent portföy işlemi kontrol gerekli",
+    "country": "",
+    "website": "https://www.reckitt.com/brands/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000243"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0016",
+    "slug": "sc_johnson",
+    "name": "SC Johnson",
+    "country": "",
+    "website": "https://www.scjohnson.com/en/brands",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000355",
+      "brand_000800",
+      "brand_000940",
+      "brand_001287"
+    ],
+    "brandCount": 4
+  },
+  {
+    "id": "company_0017",
+    "slug": "sc_johnson_method_products",
+    "name": "SC Johnson / Method Products",
+    "country": "",
+    "website": "https://www.ecover.com/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000375"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0018",
+    "slug": "sonett_gmbh",
+    "name": "Sonett GmbH",
+    "country": "",
+    "website": "https://www.sonett.eu/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001414"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0019",
+    "slug": "unilever",
+    "name": "Unilever",
+    "country": "",
+    "website": "https://www.unilever.com/brands/all-brands/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000093",
+      "brand_000200",
+      "brand_000242",
+      "brand_000251",
+      "brand_000259",
+      "brand_000267",
+      "brand_000277",
+      "brand_000338",
+      "brand_000348",
+      "brand_000517",
+      "brand_000629",
+      "brand_000677",
+      "brand_000712",
+      "brand_000720",
+      "brand_000862",
+      "brand_000915",
+      "brand_001008",
+      "brand_001077",
+      "brand_001144",
+      "brand_001145",
+      "brand_001150",
+      "brand_001201",
+      "brand_001233",
+      "brand_001266",
+      "brand_001370",
+      "brand_001371",
+      "brand_001448",
+      "brand_001449",
+      "brand_001502"
+    ],
+    "brandCount": 29
+  },
+  {
+    "id": "company_0020",
+    "slug": "werner_mertz",
+    "name": "Werner & Mertz",
+    "country": "",
+    "website": "https://frosch.de/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001413"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0021",
+    "slug": "dm_drogerie_markt",
+    "name": "dm-drogerie markt",
+    "country": "",
+    "website": "https://www.dm.de/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001416"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0022",
+    "slug": "sisecam_pasabahce_kontrol_gerekli",
+    "name": "Şişecam / Paşabahçe? kontrol gerekli",
+    "country": "",
+    "website": "https://www.camsil.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001411"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0023",
+    "slug": "bic_group",
+    "name": "BIC Group",
+    "country": "",
+    "website": "https://www.bic.com/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001453"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0024",
+    "slug": "beiersdorf_ag",
+    "name": "Beiersdorf AG",
+    "country": "",
+    "website": "https://www.beiersdorf.com/brands",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000408",
+      "brand_000503",
+      "brand_000645",
+      "brand_000834",
+      "brand_001379"
+    ],
+    "brandCount": 5
+  },
+  {
+    "id": "company_0025",
+    "slug": "biota_laboratories",
+    "name": "Biota Laboratories",
+    "country": "",
+    "website": "https://www.bioxcin.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001467"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0026",
+    "slug": "dalan_kimya",
+    "name": "Dalan Kimya",
+    "country": "",
+    "website": "https://www.dalin.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001462",
+      "brand_001463"
+    ],
+    "brandCount": 2
+  },
+  {
+    "id": "company_0027",
+    "slug": "derby_azmusebat_kontrol_gerekli",
+    "name": "Derby / Azmüsebat? kontrol gerekli",
+    "country": "",
+    "website": "https://www.derby.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001470"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0028",
+    "slug": "edgewell_personal_care",
+    "name": "Edgewell Personal Care",
+    "country": "",
+    "website": "https://edgewell.com/brands/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001285"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0029",
+    "slug": "erkul_kozmetik",
+    "name": "Erkul Kozmetik",
+    "country": "",
+    "website": "https://www.goldenrose.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001456"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0030",
+    "slug": "estee_lauder_companies",
+    "name": "Estée Lauder Companies",
+    "country": "",
+    "website": "https://www.elcompanies.com/en/our-brands",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000256",
+      "brand_000407",
+      "brand_001454"
+    ],
+    "brandCount": 3
+  },
+  {
+    "id": "company_0031",
+    "slug": "evyap",
+    "name": "Evyap",
+    "country": "",
+    "website": "https://www.duru.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001459",
+      "brand_001460",
+      "brand_001461"
+    ],
+    "brandCount": 3
+  },
+  {
+    "id": "company_0032",
+    "slug": "evyap_privacy",
+    "name": "Evyap / Privacy",
+    "country": "",
+    "website": "https://www.evyap.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001469"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0033",
+    "slug": "eyup_sabri_tuncer",
+    "name": "Eyüp Sabri Tuncer",
+    "country": "",
+    "website": "https://www.eyupsabrituncer.com/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001464"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0034",
+    "slug": "farmasi",
+    "name": "Farmasi",
+    "country": "",
+    "website": "https://www.farmasi.com/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001458"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0035",
+    "slug": "flormar_kosan_kozmetik_yves_rocher_baglantisi_kontrol_gerekli",
+    "name": "Flormar / Kosan Kozmetik / Yves Rocher bağlantısı kontrol gerekli",
+    "country": "",
+    "website": "https://www.flormar.com/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001455"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0036",
+    "slug": "gulbirlik_rosense",
+    "name": "Gülbirlik / Rosense",
+    "country": "",
+    "website": "https://www.rosense.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001465"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0037",
+    "slug": "haleon",
+    "name": "Haleon",
+    "country": "",
+    "website": "https://www.haleon.com/our-brands",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000067",
+      "brand_000902",
+      "brand_001063"
+    ],
+    "brandCount": 3
+  },
+  {
+    "id": "company_0038",
+    "slug": "hunca_kozmetik",
+    "name": "Hunca Kozmetik",
+    "country": "",
+    "website": "https://www.restorex.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001468"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0039",
+    "slug": "kenvue_johnson_johnson_ayrismasi_sonrasi_yapi",
+    "name": "Kenvue / Johnson & Johnson ayrışması sonrası yapı",
+    "country": "",
+    "website": "https://www.kenvue.com/brands",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001451"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0040",
+    "slug": "l_oreal_groupe",
+    "name": "L'Oréal Groupe",
+    "country": "",
+    "website": "https://www.loreal.com/en/our-global-brands-portfolio/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000219",
+      "brand_000464",
+      "brand_000599",
+      "brand_000643",
+      "brand_000658",
+      "brand_000700",
+      "brand_000996",
+      "brand_001242",
+      "brand_001373",
+      "brand_001374",
+      "brand_001375",
+      "brand_001376",
+      "brand_001450"
+    ],
+    "brandCount": 13
+  },
+  {
+    "id": "company_0041",
+    "slug": "otaci",
+    "name": "Otacı",
+    "country": "",
+    "website": "https://www.otaci.com/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001466"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0042",
+    "slug": "pinkar_kimya_pastel",
+    "name": "Pinkar Kimya / Pastel",
+    "country": "",
+    "website": "https://www.pastelkozmetik.com/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001457"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0043",
+    "slug": "ajinomoto_kemal_kukrer_baglantisi_kontrol_gerekli",
+    "name": "Ajinomoto / Kemal Kükrer bağlantısı kontrol gerekli",
+    "country": "",
+    "website": "https://www.kemalkukrer.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001514"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0044",
+    "slug": "ak_gida_lactalis_baglantisi_kontrol_gerekli",
+    "name": "Ak Gıda / Lactalis bağlantısı kontrol gerekli",
+    "country": "",
+    "website": "https://www.icim.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000550"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0045",
+    "slug": "anadolu_grubu_bunge_gecmisi_kontrol_gerekli",
+    "name": "Anadolu Grubu / Bunge geçmişi kontrol gerekli",
+    "country": "",
+    "website": "https://www.komili.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001526"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0046",
+    "slug": "arifoglu",
+    "name": "Arifoğlu",
+    "country": "",
+    "website": "https://www.arifoglu.com/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001525"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0047",
+    "slug": "barilla_group",
+    "name": "Barilla Group",
+    "country": "",
+    "website": "https://www.barillagroup.com/en/brands/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001515",
+      "brand_001516"
+    ],
+    "brandCount": 2
+  },
+  {
+    "id": "company_0048",
+    "slug": "bagdat_baharat",
+    "name": "Bağdat Baharat",
+    "country": "",
+    "website": "https://www.bagdatbaharat.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001524"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0049",
+    "slug": "burcu_gida",
+    "name": "Burcu Gıda",
+    "country": "",
+    "website": "https://www.burcu.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001513"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0050",
+    "slug": "capri_sun_group_lisansli_uretimler",
+    "name": "Capri Sun Group / lisanslı üretimler",
+    "country": "",
+    "website": "https://www.capri-sun.com/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001327"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0051",
+    "slug": "danone",
+    "name": "Danone",
+    "country": "",
+    "website": "https://www.danone.com/brands.html",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000015",
+      "brand_000017",
+      "brand_000047",
+      "brand_000065",
+      "brand_000410",
+      "brand_000845",
+      "brand_001263",
+      "brand_001369"
+    ],
+    "brandCount": 8
+  },
+  {
+    "id": "company_0052",
+    "slug": "danone_nutricia",
+    "name": "Danone / Nutricia",
+    "country": "",
+    "website": "https://www.danone.com/brands.html",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [],
+    "brandCount": 0
+  },
+  {
+    "id": "company_0053",
+    "slug": "duru_bulgur",
+    "name": "Duru Bulgur",
+    "country": "",
+    "website": "https://www.durubulgur.com/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001523"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0054",
+    "slug": "durum_gida_arbella",
+    "name": "Durum Gıda / Arbella",
+    "country": "",
+    "website": "https://www.arbella.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001519"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0055",
+    "slug": "eker_sut_urunleri",
+    "name": "Eker Süt Ürünleri",
+    "country": "",
+    "website": "https://www.eker.com/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001511"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0056",
+    "slug": "eti_gida",
+    "name": "Eti Gıda",
+    "country": "",
+    "website": "https://www.etietieti.com/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001350"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0057",
+    "slug": "general_mills",
+    "name": "General Mills",
+    "country": "",
+    "website": "https://www.generalmills.com/food-we-make/brands",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001506",
+      "brand_001507",
+      "brand_001508"
+    ],
+    "brandCount": 3
+  },
+  {
+    "id": "company_0058",
+    "slug": "general_mills_sodiaal_bolgesel_yapi_kontrol_gerekli",
+    "name": "General Mills / Sodiaal bölgesel yapı kontrol gerekli",
+    "country": "",
+    "website": "https://www.generalmills.com/food-we-make/brands",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001509"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0059",
+    "slug": "kellanova",
+    "name": "Kellanova",
+    "country": "",
+    "website": "https://www.kellanova.com/us/en/our-food.html",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001383",
+      "brand_001384",
+      "brand_001385",
+      "brand_001504",
+      "brand_001505"
+    ],
+    "brandCount": 5
+  },
+  {
+    "id": "company_0060",
+    "slug": "kellanova_wk_kellogg_ayrimi_kontrol_gerekli",
+    "name": "Kellanova / WK Kellogg ayrımı kontrol gerekli",
+    "country": "",
+    "website": "https://www.kellanova.com/us/en/our-food.html",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001503"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0061",
+    "slug": "kristal_yaglari",
+    "name": "Kristal Yağları",
+    "country": "",
+    "website": "https://www.kristalyaglari.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001527"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0062",
+    "slug": "kucukbay_yaglari_orkide",
+    "name": "Küçükbay Yağları / Orkide",
+    "country": "",
+    "website": "https://www.orkide.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001529"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0063",
+    "slug": "mondelez_international_kraft_heinz_gecmisi_kontrol_gerekli",
+    "name": "Mondelēz International / Kraft Heinz geçmişi kontrol gerekli",
+    "country": "",
+    "website": "https://www.mondelezinternational.com/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [],
+    "brandCount": 0
+  },
+  {
+    "id": "company_0064",
+    "slug": "mutlu_makarna",
+    "name": "Mutlu Makarna",
+    "country": "",
+    "website": "https://www.mutlumakarna.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001520"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0065",
+    "slug": "nestle_s_a",
+    "name": "Nestlé S.A.",
+    "country": "",
+    "website": "https://www.nestle.com/brands",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000027",
+      "brand_000220",
+      "brand_000626",
+      "brand_000718",
+      "brand_000819",
+      "brand_000821",
+      "brand_001101",
+      "brand_001344",
+      "brand_001345",
+      "brand_001358",
+      "brand_001359",
+      "brand_001360",
+      "brand_001497",
+      "brand_001498",
+      "brand_001499",
+      "brand_001500",
+      "brand_001501"
+    ],
+    "brandCount": 17
+  },
+  {
+    "id": "company_0066",
+    "slug": "nuh_un_ankara_makarnasi",
+    "name": "Nuh'un Ankara Makarnası",
+    "country": "",
+    "website": "https://www.nuh.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001517"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0067",
+    "slug": "oba_makarna",
+    "name": "Oba Makarna",
+    "country": "",
+    "website": "https://www.obamakarna.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001518"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0068",
+    "slug": "pinar",
+    "name": "Pınar",
+    "country": "",
+    "website": "https://www.pinar.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001393"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0069",
+    "slug": "reis_gida",
+    "name": "Reis Gıda",
+    "country": "",
+    "website": "https://www.reisgida.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001521"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0070",
+    "slug": "savola_yudum_baglantisi_kontrol_gerekli",
+    "name": "Savola / Yudum bağlantısı kontrol gerekli",
+    "country": "",
+    "website": "https://www.yudum.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001530"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0071",
+    "slug": "sutas",
+    "name": "Sütaş",
+    "country": "",
+    "website": "https://www.sutas.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001392"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0072",
+    "slug": "tamek",
+    "name": "Tamek",
+    "country": "",
+    "website": "https://www.tamek.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001395"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0073",
+    "slug": "taris",
+    "name": "Tariş",
+    "country": "",
+    "website": "https://www.taris.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001528"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0074",
+    "slug": "tat_gida",
+    "name": "Tat Gıda",
+    "country": "",
+    "website": "https://www.tatgida.com/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001169"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0075",
+    "slug": "tat_gida_koc_gecmisi_ve_satis_surecleri_kontrol_gerekli",
+    "name": "Tat Gıda / Koç geçmişi ve satış süreçleri kontrol gerekli",
+    "country": "",
+    "website": "https://www.sek.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001510"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0076",
+    "slug": "the_kraft_heinz_company",
+    "name": "The Kraft Heinz Company",
+    "country": "",
+    "website": "https://www.kraftheinzcompany.com/brands.html",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000514",
+      "brand_001381",
+      "brand_001382"
+    ],
+    "brandCount": 3
+  },
+  {
+    "id": "company_0077",
+    "slug": "torku_konya_seker",
+    "name": "Torku / Konya Şeker",
+    "country": "",
+    "website": "https://www.torku.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001352"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0078",
+    "slug": "tukas",
+    "name": "Tukaş",
+    "country": "",
+    "website": "https://www.tukas.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001512"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0079",
+    "slug": "unilever_ayrilma_sureci_kontrol_gerekli",
+    "name": "Unilever / ayrılma süreci kontrol gerekli",
+    "country": "",
+    "website": "https://www.unilever.com/brands/ice-cream/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000125"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0080",
+    "slug": "yayla_agro",
+    "name": "Yayla Agro",
+    "country": "",
+    "website": "https://www.yaylaagro.com/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001522"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0081",
+    "slug": "yildiz_holding_bizim_yag_baglantisi_kontrol_gerekli",
+    "name": "Yıldız Holding / Bizim Yağ bağlantısı kontrol gerekli",
+    "country": "",
+    "website": "https://www.bizimyag.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001531"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0082",
+    "slug": "yildiz_holding_pladis",
+    "name": "Yıldız Holding / Pladis",
+    "country": "",
+    "website": "https://www.yildizholding.com.tr/",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001351",
+      "brand_001388",
+      "brand_001389",
+      "brand_001390",
+      "brand_001391"
+    ],
+    "brandCount": 5
+  },
+  {
+    "id": "company_0083",
+    "slug": "pepsico_yerel_lisans_olabilir",
+    "name": "PepsiCo / yerel lisans olabilir",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000005"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0084",
+    "slug": "the_coca_cola_company",
+    "name": "The Coca-Cola Company",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000068",
+      "brand_000204",
+      "brand_000261",
+      "brand_000279",
+      "brand_000420",
+      "brand_000455",
+      "brand_000529",
+      "brand_000765",
+      "brand_000776",
+      "brand_000954",
+      "brand_001124",
+      "brand_001367",
+      "brand_001368"
+    ],
+    "brandCount": 13
+  },
+  {
+    "id": "company_0085",
+    "slug": "the_coca_cola_company_turkiye_coca_cola_icecek",
+    "name": "The Coca-Cola Company Türkiye / Coca-Cola İçecek",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000295"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0086",
+    "slug": "nestle_waters_bolgesel_yapi_kontrol_edilmeli",
+    "name": "Nestlé Waters / bölgesel yapı kontrol edilmeli",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000402",
+      "brand_001254"
+    ],
+    "brandCount": 2
+  },
+  {
+    "id": "company_0087",
+    "slug": "pepsico",
+    "name": "PepsiCo",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000231",
+      "brand_000341",
+      "brand_000465",
+      "brand_000663",
+      "brand_000780",
+      "brand_000795",
+      "brand_000914",
+      "brand_001025",
+      "brand_001363",
+      "brand_001364",
+      "brand_001365",
+      "brand_001366"
+    ],
+    "brandCount": 12
+  },
+  {
+    "id": "company_0088",
+    "slug": "jde_peet_s_jacobs_douwe_egberts",
+    "name": "JDE Peet's / Jacobs Douwe Egberts",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000501"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0089",
+    "slug": "jde_peet_s",
+    "name": "JDE Peet's",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000347",
+      "brand_000572",
+      "brand_000597",
+      "brand_000909",
+      "brand_001386",
+      "brand_001387"
+    ],
+    "brandCount": 6
+  },
+  {
+    "id": "company_0090",
+    "slug": "altinmarka_kahve_dunyasi",
+    "name": "Altınmarka / Kahve Dünyası",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000589"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0091",
+    "slug": "pepsico_unilever_ekaterra_bolgesel_ayrimlar",
+    "name": "PepsiCo / Unilever-Ekaterra bölgesel ayrımlar",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000687"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0092",
+    "slug": "monster_beverage_coca_cola_dagitim_ortakliklari",
+    "name": "Monster Beverage / Coca-Cola dağıtım ortaklıkları",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000789"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0093",
+    "slug": "nestle_coca_cola_ortaklik_gecmisi_bolgesel_kontrol_gerekli",
+    "name": "Nestlé / Coca-Cola ortaklık geçmişi; bölgesel kontrol gerekli",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000822"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0094",
+    "slug": "rc_cola_keurig_dr_pepper_lisans_yapisi_kontrol_edilmeli",
+    "name": "RC Cola / Keurig Dr Pepper lisans yapısı kontrol edilmeli",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000991"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0095",
+    "slug": "red_bull_gmbh",
+    "name": "Red Bull GmbH",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000995"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0096",
+    "slug": "the_coca_cola_company_keurig_dr_pepper_lisans_farklari",
+    "name": "The Coca-Cola Company / Keurig Dr Pepper lisans farkları",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001049"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0097",
+    "slug": "sirma_grup_yerel_yapi",
+    "name": "Sırma Grup / yerel yapı",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001081"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0098",
+    "slug": "bolgesel_marka_lisans_kontrol_gerekli",
+    "name": "Bölgesel marka/lisans kontrol gerekli",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001120"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0099",
+    "slug": "starbucks_corporation",
+    "name": "Starbucks Corporation",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001126"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0100",
+    "slug": "pepsico_pai_partners_ortakligi_sonrasi_yapi_kontrol_edilmeli",
+    "name": "PepsiCo / PAI Partners ortaklığı sonrası yapı kontrol edilmeli",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001205"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0101",
+    "slug": "coca_cola_icecek_bolgesel_yapi_kontrol_gerekli",
+    "name": "Coca-Cola İçecek / bölgesel yapı kontrol gerekli",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001211"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0102",
+    "slug": "mars_incorporated",
+    "name": "Mars, Incorporated",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000002",
+      "brand_000172",
+      "brand_000222",
+      "brand_000411",
+      "brand_000715",
+      "brand_000726",
+      "brand_000736",
+      "brand_000872",
+      "brand_000908",
+      "brand_001024",
+      "brand_001068",
+      "brand_001092",
+      "brand_001104",
+      "brand_001214",
+      "brand_001281",
+      "brand_001361",
+      "brand_001362"
+    ],
+    "brandCount": 17
+  },
+  {
+    "id": "company_0103",
+    "slug": "mondelez_international",
+    "name": "Mondelēz International",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000003",
+      "brand_000124",
+      "brand_000194",
+      "brand_000280",
+      "brand_000502",
+      "brand_000772",
+      "brand_000873",
+      "brand_001012",
+      "brand_001131",
+      "brand_001192",
+      "brand_001210",
+      "brand_001342",
+      "brand_001343",
+      "brand_001357"
+    ],
+    "brandCount": 14
+  },
+  {
+    "id": "company_0104",
+    "slug": "ferrero_group",
+    "name": "Ferrero Group",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000358",
+      "brand_000505",
+      "brand_000604",
+      "brand_000605",
+      "brand_000611",
+      "brand_000786",
+      "brand_000842",
+      "brand_000942",
+      "brand_000986",
+      "brand_001185",
+      "brand_001341"
+    ],
+    "brandCount": 11
+  },
+  {
+    "id": "company_0105",
+    "slug": "kellanova_mars_satin_alma_sureci_sonrasi_kontrol_gerekli",
+    "name": "Kellanova / Mars satın alma süreci sonrası kontrol gerekli",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000963"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0106",
+    "slug": "intersnack_group",
+    "name": "Intersnack Group",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001330",
+      "brand_001331",
+      "brand_001332"
+    ],
+    "brandCount": 3
+  },
+  {
+    "id": "company_0107",
+    "slug": "haribo_gmbh_co_kg",
+    "name": "HARIBO GmbH & Co. KG",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001346",
+      "brand_001347"
+    ],
+    "brandCount": 2
+  },
+  {
+    "id": "company_0108",
+    "slug": "perfetti_van_melle",
+    "name": "Perfetti Van Melle",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001348",
+      "brand_001349"
+    ],
+    "brandCount": 2
+  },
+  {
+    "id": "company_0109",
+    "slug": "elit_cikolata",
+    "name": "Elit Çikolata",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001353"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0110",
+    "slug": "melodi_cikolata",
+    "name": "Melodi Çikolata",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001354"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0111",
+    "slug": "dogus_cay_yerel_yapi_kontrol_gerekli",
+    "name": "Doğuş Çay / yerel yapı kontrol gerekli",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001355",
+      "brand_001356"
+    ],
+    "brandCount": 2
+  },
+  {
+    "id": "company_0112",
+    "slug": "johnson_johnson",
+    "name": "Johnson & Johnson",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_000089",
+      "brand_000121",
+      "brand_000250",
+      "brand_000690",
+      "brand_000827",
+      "brand_000910",
+      "brand_001380"
+    ],
+    "brandCount": 7
+  },
+  {
+    "id": "company_0113",
+    "slug": "kahve_dunyasi",
+    "name": "Kahve Dünyası",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [],
+    "brandCount": 0
+  },
+  {
+    "id": "company_0114",
+    "slug": "dimes",
+    "name": "DİMES",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001394"
+    ],
+    "brandCount": 1
+  },
+  {
+    "id": "company_0115",
+    "slug": "uludag_icecek",
+    "name": "Uludağ İçecek",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001396",
+      "brand_001397"
+    ],
+    "brandCount": 2
+  },
+  {
+    "id": "company_0116",
+    "slug": "caykur",
+    "name": "Çaykur",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001398",
+      "brand_001399"
+    ],
+    "brandCount": 2
+  },
+  {
+    "id": "company_0117",
+    "slug": "kurukahveci_mehmet_efendi",
+    "name": "Kurukahveci Mehmet Efendi",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001400",
+      "brand_001401"
+    ],
+    "brandCount": 2
+  },
+  {
+    "id": "company_0118",
+    "slug": "dogus_cay_dogus_grubu",
+    "name": "Doğuş Çay / Doğuş Grubu",
+    "country": "",
+    "website": "",
+    "note": "",
+    "updatedAt": "2026-07-07",
+    "brandIds": [
+      "brand_001402"
+    ],
+    "brandCount": 1
+  }
+]

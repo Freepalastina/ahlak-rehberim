@@ -53,26 +53,26 @@ Bu sürüm `master.xlsx / master.ods` dosyasındaki ayrı sayfaları okuyabilir:
 
 
 ## V13.1 Durum Fix
-Bu sürümde şu değerlerin tamamı `Boykotta Değil` olarak okunur:
-- `boykottaDegil`
-- `boykot_degil`
-- `boykot degil`
-- `boykotta degil`
+Bu sürümde şu değerlerin tamamı `Tercih Edilebilir` olarak okunur:
+- `etik incelemetaDegil`
+- `etik inceleme_degil`
+- `etik inceleme degil`
+- `etik incelemeta degil`
 - `safe`
-- `notBoycotted`
+- `notReviewed`
 
 Master dosya içe aktarılırken durum değerleri otomatik normalize edilir.
 
 
 ## V13.2 Safe Detection Fix
 Bu sürüm sadece `durum` alanına bakmaz.
-Aşağıdaki alanlarda işaret varsa kayıt otomatik `Boykotta Değil` sayılır:
-- kategori = Boykotta Değil
+Aşağıdaki alanlarda işaret varsa kayıt otomatik `Tercih Edilebilir` sayılır:
+- kategori = Tercih Edilebilir
 - kaynak = alternatif.ods
-- not = Boykot listesinde olmayan
-- durum = boykottaDegil / boykot_degil / safe / notBoycotted
+- not = Etik İnceleme listesinde olmayan
+- durum = etik incelemetaDegil / etik inceleme_degil / safe / notReviewed
 
-Bu, eski Supabase aktarımında yanlış `boykot` görünen kayıtları da ekranda doğru gösterir.
+Bu, eski Supabase aktarımında yanlış `etik inceleme` görünen kayıtları da ekranda doğru gösterir.
 
 ## V15.1 Ülke + Kategori Filtre Fix
 Bu sürüm V15 master dosyasındaki şu alanları okur:

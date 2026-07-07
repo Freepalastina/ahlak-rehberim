@@ -1,0 +1,892 @@
+[
+  {
+    "id": "sakiz",
+    "name": "sakiz",
+    "parent": ""
+  },
+  {
+    "id": "icecek",
+    "name": "İçecek",
+    "parent": ""
+  },
+  {
+    "id": "gazli_icecek",
+    "name": "Gazlı içecek",
+    "parent": "icecek"
+  },
+  {
+    "id": "spor_icecegi",
+    "name": "Spor içeceği",
+    "parent": "icecek"
+  },
+  {
+    "id": "meyve_suyu",
+    "name": "Meyve suyu",
+    "parent": "icecek"
+  },
+  {
+    "id": "gazli_icecek_kola",
+    "name": "Gazlı içecek / kola",
+    "parent": "icecek"
+  },
+  {
+    "id": "kahve_zinciri_hazir_kahve",
+    "name": "Kahve zinciri / hazır kahve",
+    "parent": "icecek"
+  },
+  {
+    "id": "su",
+    "name": "Su",
+    "parent": "icecek"
+  },
+  {
+    "id": "soguk_cay",
+    "name": "Soğuk çay",
+    "parent": "icecek"
+  },
+  {
+    "id": "kahve",
+    "name": "Kahve",
+    "parent": "icecek"
+  },
+  {
+    "id": "cay_soguk_cay",
+    "name": "Çay / soğuk çay",
+    "parent": "icecek"
+  },
+  {
+    "id": "kahve_cikolata",
+    "name": "Kahve / çikolata",
+    "parent": "icecek"
+  },
+  {
+    "id": "gazli_icecek_kola_karisimi",
+    "name": "Gazlı içecek / kola karışımı",
+    "parent": "icecek"
+  },
+  {
+    "id": "enerji_icecegi",
+    "name": "Enerji içeceği",
+    "parent": "icecek"
+  },
+  {
+    "id": "kakaolu_icecek",
+    "name": "Kakaolu içecek",
+    "parent": "icecek"
+  },
+  {
+    "id": "sirket_portfoy",
+    "name": "Şirket / portföy",
+    "parent": "icecek"
+  },
+  {
+    "id": "gazli_icecek_tonik",
+    "name": "Gazlı içecek / tonik",
+    "parent": "icecek"
+  },
+  {
+    "id": "gazli_icecek_limon",
+    "name": "Gazlı içecek / limon",
+    "parent": "icecek"
+  },
+  {
+    "id": "kahve_zinciri",
+    "name": "Kahve zinciri",
+    "parent": "icecek"
+  },
+  {
+    "id": "meyve_icecegi",
+    "name": "Meyve içeceği",
+    "parent": "icecek"
+  },
+  {
+    "id": "gida",
+    "name": "Gıda",
+    "parent": ""
+  },
+  {
+    "id": "cikolata_bar",
+    "name": "Çikolata bar",
+    "parent": "gida"
+  },
+  {
+    "id": "naneli_cikolata",
+    "name": "Naneli çikolata",
+    "parent": "gida"
+  },
+  {
+    "id": "biskuvi_kahvaltilik_biskuvi",
+    "name": "Bisküvi / kahvaltılık bisküvi",
+    "parent": "gida"
+  },
+  {
+    "id": "hindistan_cevizli_cikolata",
+    "name": "Hindistan cevizli çikolata",
+    "parent": "gida"
+  },
+  {
+    "id": "cikolata",
+    "name": "Çikolata",
+    "parent": "gida"
+  },
+  {
+    "id": "misir_atistirmaligi",
+    "name": "Mısır atıştırmalığı",
+    "parent": "gida"
+  },
+  {
+    "id": "misir_cipsi",
+    "name": "Mısır cipsi",
+    "parent": "gida"
+  },
+  {
+    "id": "cikolata_bar_gofret",
+    "name": "Çikolata bar / gofret",
+    "parent": "gida"
+  },
+  {
+    "id": "sekerleme_pastil",
+    "name": "Şekerleme / pastil",
+    "parent": "gida"
+  },
+  {
+    "id": "gofret_findikli_gofret",
+    "name": "Gofret / fındıklı gofret",
+    "parent": "gida"
+  },
+  {
+    "id": "cikolata_cocuk_urunleri",
+    "name": "Çikolata / çocuk ürünleri",
+    "parent": "gida"
+  },
+  {
+    "id": "cikolata_gofret",
+    "name": "Çikolata / gofret",
+    "parent": "gida"
+  },
+  {
+    "id": "cikolata_oyuncakli_urun",
+    "name": "Çikolata / oyuncaklı ürün",
+    "parent": "gida"
+  },
+  {
+    "id": "gofret_cikolata",
+    "name": "Gofret / çikolata",
+    "parent": "gida"
+  },
+  {
+    "id": "cips_patates_cipsi",
+    "name": "Cips / patates cipsi",
+    "parent": "gida"
+  },
+  {
+    "id": "draje_seker_kapli_cikolata",
+    "name": "Draje / şeker kaplı çikolata",
+    "parent": "gida"
+  },
+  {
+    "id": "maltli_cikolata",
+    "name": "Maltlı çikolata",
+    "parent": "gida"
+  },
+  {
+    "id": "dolgulu_cikolata",
+    "name": "Dolgulu çikolata",
+    "parent": "gida"
+  },
+  {
+    "id": "surulebilir_urun_findik_kremasi",
+    "name": "Sürülebilir ürün / fındık kreması",
+    "parent": "gida"
+  },
+  {
+    "id": "biskuvi",
+    "name": "Bisküvi",
+    "parent": "gida"
+  },
+  {
+    "id": "dolgulu_cikolata_kahveli",
+    "name": "Dolgulu çikolata / kahveli",
+    "parent": "gida"
+  },
+  {
+    "id": "cips_stack_chips",
+    "name": "Cips / stack chips",
+    "parent": "gida"
+  },
+  {
+    "id": "sekerleme_hindistan_cevizli_pralin",
+    "name": "Şekerleme / hindistan cevizli pralin",
+    "parent": "gida"
+  },
+  {
+    "id": "kraker",
+    "name": "Kraker",
+    "parent": "gida"
+  },
+  {
+    "id": "meyveli_seker",
+    "name": "Meyveli şeker",
+    "parent": "gida"
+  },
+  {
+    "id": "seker_kapli_cikolata",
+    "name": "Şeker kaplı çikolata",
+    "parent": "gida"
+  },
+  {
+    "id": "sekerleme_naneli_seker",
+    "name": "Şekerleme / naneli şeker",
+    "parent": "gida"
+  },
+  {
+    "id": "biskuvili_cikolata_bar",
+    "name": "Bisküvili çikolata bar",
+    "parent": "gida"
+  },
+  {
+    "id": "cips_tuzlu_atistirmalik",
+    "name": "Cips / tuzlu atıştırmalık",
+    "parent": "gida"
+  },
+  {
+    "id": "patates_atistirmaligi",
+    "name": "Patates atıştırmalığı",
+    "parent": "gida"
+  },
+  {
+    "id": "cikolata_pralin",
+    "name": "Çikolata / pralin",
+    "parent": "gida"
+  },
+  {
+    "id": "biskuvi_sandvic_biskuvi",
+    "name": "Bisküvi / sandviç bisküvi",
+    "parent": "gida"
+  },
+  {
+    "id": "karisik_cikolata",
+    "name": "Karışık çikolata",
+    "parent": "gida"
+  },
+  {
+    "id": "jelibon_sekerleme",
+    "name": "Jelibon / şekerleme",
+    "parent": "gida"
+  },
+  {
+    "id": "sekerleme_chew_candy",
+    "name": "Şekerleme / chew candy",
+    "parent": "gida"
+  },
+  {
+    "id": "lolipop_sekerleme",
+    "name": "Lolipop / şekerleme",
+    "parent": "gida"
+  },
+  {
+    "id": "sekerleme_draje",
+    "name": "Şekerleme / draje",
+    "parent": "gida"
+  },
+  {
+    "id": "cikolata_biskuvi_atistirmalik",
+    "name": "Çikolata / bisküvi / atıştırmalık",
+    "parent": "gida"
+  },
+  {
+    "id": "cikolata_sekerleme",
+    "name": "Çikolata / şekerleme",
+    "parent": "gida"
+  },
+  {
+    "id": "cips_misir_atistirmaligi",
+    "name": "Cips / mısır atıştırmalığı",
+    "parent": "gida"
+  },
+  {
+    "id": "temizlik",
+    "name": "Temizlik",
+    "parent": ""
+  },
+  {
+    "id": "oda_kokusu",
+    "name": "Oda kokusu",
+    "parent": "temizlik"
+  },
+  {
+    "id": "yuzey_temizleyici",
+    "name": "Yüzey temizleyici",
+    "parent": "temizlik"
+  },
+  {
+    "id": "camasir_deterjani",
+    "name": "Çamaşır deterjanı",
+    "parent": "temizlik"
+  },
+  {
+    "id": "tuvalet_temizligi",
+    "name": "Tuvalet temizliği",
+    "parent": "temizlik"
+  },
+  {
+    "id": "yuzey_temizleyici_krem_temizleyici",
+    "name": "Yüzey temizleyici / krem temizleyici",
+    "parent": "temizlik"
+  },
+  {
+    "id": "yuzey_kirec_temizleyici",
+    "name": "Yüzey/kireç temizleyici",
+    "parent": "temizlik"
+  },
+  {
+    "id": "cam_temizleyici",
+    "name": "Cam temizleyici",
+    "parent": "temizlik"
+  },
+  {
+    "id": "yumusatici",
+    "name": "Yumuşatıcı",
+    "parent": "temizlik"
+  },
+  {
+    "id": "camasir_suyu_tuvalet_temizleyici",
+    "name": "Çamaşır suyu / tuvalet temizleyici",
+    "parent": "temizlik"
+  },
+  {
+    "id": "tuvalet_temizleyici",
+    "name": "Tuvalet temizleyici",
+    "parent": "temizlik"
+  },
+  {
+    "id": "ekolojik_temizlik_urunleri",
+    "name": "Ekolojik temizlik ürünleri",
+    "parent": "temizlik"
+  },
+  {
+    "id": "bulasik_deterjani",
+    "name": "Bulaşık deterjanı",
+    "parent": "temizlik"
+  },
+  {
+    "id": "koku_giderici_oda_spreyi",
+    "name": "Koku giderici / oda spreyi",
+    "parent": "temizlik"
+  },
+  {
+    "id": "bulasik_makinesi_deterjani",
+    "name": "Bulaşık makinesi deterjanı",
+    "parent": "temizlik"
+  },
+  {
+    "id": "yumusatici_koku_guclendirici",
+    "name": "Yumuşatıcı / koku güçlendirici",
+    "parent": "temizlik"
+  },
+  {
+    "id": "dezenfektan_yuzey_temizleyici",
+    "name": "Dezenfektan / yüzey temizleyici",
+    "parent": "temizlik"
+  },
+  {
+    "id": "yuzey_cam_firin_temizleyici",
+    "name": "Yüzey/cam/fırın temizleyici",
+    "parent": "temizlik"
+  },
+  {
+    "id": "bulasik_kisisel_bakim_urunleri",
+    "name": "Bulaşık/kişisel bakım ürünleri",
+    "parent": "temizlik"
+  },
+  {
+    "id": "camasir_deterjani_hassas_bakim",
+    "name": "Çamaşır deterjanı / hassas bakım",
+    "parent": "temizlik"
+  },
+  {
+    "id": "mobilya_yuzey_bakim",
+    "name": "Mobilya/yüzey bakım",
+    "parent": "temizlik"
+  },
+  {
+    "id": "dezenfektan_hijyen_temizligi",
+    "name": "Dezenfektan / hijyen temizliği",
+    "parent": "temizlik"
+  },
+  {
+    "id": "cam_yuzey_temizleyici",
+    "name": "Cam/yüzey temizleyici",
+    "parent": "temizlik"
+  },
+  {
+    "id": "bulasik_yuzey_temizlik_urunu",
+    "name": "Bulaşık / yüzey temizlik ürünü",
+    "parent": "temizlik"
+  },
+  {
+    "id": "temizlik_aparati_bez",
+    "name": "Temizlik aparatı / bez",
+    "parent": "temizlik"
+  },
+  {
+    "id": "leke_cikarici",
+    "name": "Leke çıkarıcı",
+    "parent": "temizlik"
+  },
+  {
+    "id": "temizlik_aparati_bez_mop",
+    "name": "Temizlik aparatı / bez / mop",
+    "parent": "temizlik"
+  },
+  {
+    "id": "sunger_temizlik_bezi",
+    "name": "Sünger / temizlik bezi",
+    "parent": "temizlik"
+  },
+  {
+    "id": "camasir_yumusatici_temizlik",
+    "name": "Çamaşır / yumuşatıcı / temizlik",
+    "parent": "temizlik"
+  },
+  {
+    "id": "camasir_temizlik",
+    "name": "Çamaşır / temizlik",
+    "parent": "temizlik"
+  },
+  {
+    "id": "camasir_yuzey_bulasik",
+    "name": "Çamaşır / yüzey / bulaşık",
+    "parent": "temizlik"
+  },
+  {
+    "id": "bulasik_temizlik",
+    "name": "Bulaşık / temizlik",
+    "parent": "temizlik"
+  },
+  {
+    "id": "sunger_bez_temizlik_aparati",
+    "name": "Sünger / bez / temizlik aparatı",
+    "parent": "temizlik"
+  },
+  {
+    "id": "temizlik_deterjan_bulasik",
+    "name": "Temizlik / deterjan / bulaşık",
+    "parent": "temizlik"
+  },
+  {
+    "id": "kozmetik_ve_kisisel_bakim",
+    "name": "Kozmetik ve Kişisel Bakım",
+    "parent": ""
+  },
+  {
+    "id": "dis_macunu_agiz_bakimi",
+    "name": "Diş macunu / ağız bakımı",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "cilt_bakim",
+    "name": "Cilt bakım",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "deodorant_erkek_bakim",
+    "name": "Deodorant / erkek bakım",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "dis_macunu",
+    "name": "Diş macunu",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "dermokozmetik_cilt_bakim",
+    "name": "Dermokozmetik / cilt bakım",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "sampuan_kepek_karsiti",
+    "name": "Şampuan / kepek karşıtı",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "cilt_bakim_makyaj",
+    "name": "Cilt bakım / makyaj",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "sabun_dus_jeli_deodorant_sac_bakim",
+    "name": "Sabun / duş jeli / deodorant / saç bakım",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "luks_kozmetik_cilt_bakim",
+    "name": "Lüks kozmetik / cilt bakım",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "dus_jeli_deodorant",
+    "name": "Duş jeli / deodorant",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "sac_cilt_bakim",
+    "name": "Saç / cilt bakım",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "tiras_jilet",
+    "name": "Tıraş / jilet",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "sampuan_sac_bakim",
+    "name": "Şampuan / saç bakım",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "saglik_ve_kisisel_bakim",
+    "name": "Sağlık ve Kişisel Bakım",
+    "parent": ""
+  },
+  {
+    "id": "yara_bandi_medikal_bakim",
+    "name": "Yara bandı / medikal bakım",
+    "parent": "saglik_ve_kisisel_bakim"
+  },
+  {
+    "id": "profesyonel_sac_bakim",
+    "name": "Profesyonel saç bakım",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "dudak_bakim",
+    "name": "Dudak bakım",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "luks_kozmetik_parfum_cilt_bakim",
+    "name": "Lüks kozmetik / parfüm / cilt bakım",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "sabun_hijyen",
+    "name": "Sabun / hijyen",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "agiz_bakim_suyu",
+    "name": "Ağız bakım suyu",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "kozmetik_sac_cilt_bakim",
+    "name": "Kozmetik / saç / cilt bakım",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "cilt_bakim_deodorant_gunes_bakim",
+    "name": "Cilt bakım / deodorant / güneş bakım",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "cilt_bakimi",
+    "name": "Cilt bakımı",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "agiz_bakimi_dis_fircasi",
+    "name": "Ağız bakımı / diş fırçası",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "sabun_dus_jeli",
+    "name": "Sabun / duş jeli",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "bebek_bakim",
+    "name": "Bebek bakım",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "deodorant",
+    "name": "Deodorant",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "dus_jeli_cilt_bakim",
+    "name": "Duş jeli / cilt bakım",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "sac_bakim_boya",
+    "name": "Saç bakım / boya",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "tiras_kadin_jileti",
+    "name": "Tıraş / kadın jileti",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "makyaj",
+    "name": "Makyaj",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "bebek_bakim_kisisel_bakim",
+    "name": "Bebek bakım / kişisel bakım",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "sampuan",
+    "name": "Şampuan",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "kozmetik_kisisel_bakim",
+    "name": "Kozmetik / kişisel bakım",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "tiras_erkek_bakim",
+    "name": "Tıraş / erkek bakım",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "bebek_bakim_sampuan",
+    "name": "Bebek bakım / şampuan",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "sabun_kisisel_bakim",
+    "name": "Sabun / kişisel bakım",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "kolonya_kisisel_bakim",
+    "name": "Kolonya / kişisel bakım",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "cilt_bakim_gul_urunleri",
+    "name": "Cilt bakım / gül ürünleri",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "bitkisel_bakim_sac_cilt",
+    "name": "Bitkisel bakım / saç / cilt",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "deodorant_parfum",
+    "name": "Deodorant / parfüm",
+    "parent": "kozmetik_ve_kisisel_bakim"
+  },
+  {
+    "id": "icilebilir_yogurt_probiyotik",
+    "name": "İçilebilir yoğurt / probiyotik",
+    "parent": "gida"
+  },
+  {
+    "id": "yogurt_probiyotik_sut_urunu",
+    "name": "Yoğurt / probiyotik süt ürünü",
+    "parent": "gida"
+  },
+  {
+    "id": "bitkisel_sut_vegan_urun",
+    "name": "Bitkisel süt / vegan ürün",
+    "parent": "gida"
+  },
+  {
+    "id": "bebek_beslenmesi",
+    "name": "Bebek beslenmesi",
+    "parent": "gida"
+  },
+  {
+    "id": "dondurma",
+    "name": "Dondurma",
+    "parent": "gida"
+  },
+  {
+    "id": "sos_ketcap_mayonez",
+    "name": "Sos / ketçap / mayonez",
+    "parent": "gida"
+  },
+  {
+    "id": "bebek_gidasi_tahil_bazli",
+    "name": "Bebek gıdası / tahıl bazlı",
+    "parent": "gida"
+  },
+  {
+    "id": "ketcap_sos_konserve",
+    "name": "Ketçap / sos / konserve",
+    "parent": "gida"
+  },
+  {
+    "id": "mayonez_sos",
+    "name": "Mayonez / sos",
+    "parent": "gida"
+  },
+  {
+    "id": "sut_ve_sut_urunleri",
+    "name": "Süt ve süt ürünleri",
+    "parent": "gida"
+  },
+  {
+    "id": "hazir_corba_bulyon_sos",
+    "name": "Hazır çorba / bulyon / sos",
+    "parent": "gida"
+  },
+  {
+    "id": "medikal_bebek_beslenmesi",
+    "name": "Medikal/bebek beslenmesi",
+    "parent": "gida"
+  },
+  {
+    "id": "salca_konserve_sos",
+    "name": "Salça / konserve / sos",
+    "parent": "gida"
+  },
+  {
+    "id": "makarna_sos_donuk_gida",
+    "name": "Makarna / sos / donuk gıda",
+    "parent": "gida"
+  },
+  {
+    "id": "mayonez_hardal_sos",
+    "name": "Mayonez / hardal / sos",
+    "parent": "gida"
+  },
+  {
+    "id": "vegan_bitkisel_urun",
+    "name": "Vegan / bitkisel ürün",
+    "parent": "gida"
+  },
+  {
+    "id": "donuk_pizza_donuk_gida",
+    "name": "Donuk pizza / donuk gıda",
+    "parent": "gida"
+  },
+  {
+    "id": "peynir_hazir_gida_sos",
+    "name": "Peynir / hazır gıda / sos",
+    "parent": "gida"
+  },
+  {
+    "id": "krem_peynir",
+    "name": "Krem peynir",
+    "parent": "gida"
+  },
+  {
+    "id": "kahvaltilik_gevrek",
+    "name": "Kahvaltılık gevrek",
+    "parent": "gida"
+  },
+  {
+    "id": "tortilla_meksika_gidalari",
+    "name": "Tortilla / Meksika gıdaları",
+    "parent": "gida"
+  },
+  {
+    "id": "bar_yulafli_atistirmalik",
+    "name": "Bar / yulaflı atıştırmalık",
+    "parent": "gida"
+  },
+  {
+    "id": "yogurt_sut_urunu",
+    "name": "Yoğurt / süt ürünü",
+    "parent": "gida"
+  },
+  {
+    "id": "sut_urunu_yogurt",
+    "name": "Süt ürünü / yoğurt",
+    "parent": "gida"
+  },
+  {
+    "id": "biskuvi_cikolata_gida",
+    "name": "Bisküvi / çikolata / gıda",
+    "parent": "gida"
+  },
+  {
+    "id": "sut_seker_cikolata_temel_gida",
+    "name": "Süt / şeker / çikolata / temel gıda",
+    "parent": "gida"
+  },
+  {
+    "id": "sut_et_gida",
+    "name": "Süt / et / gıda",
+    "parent": "gida"
+  },
+  {
+    "id": "konserve_sos_meyve_suyu",
+    "name": "Konserve / sos / meyve suyu",
+    "parent": "gida"
+  },
+  {
+    "id": "konserve_salca_sos",
+    "name": "Konserve / salça / sos",
+    "parent": "gida"
+  },
+  {
+    "id": "sirke_sos",
+    "name": "Sirke / sos",
+    "parent": "gida"
+  },
+  {
+    "id": "makarna",
+    "name": "Makarna",
+    "parent": "gida"
+  },
+  {
+    "id": "makarna_sos",
+    "name": "Makarna / sos",
+    "parent": "gida"
+  },
+  {
+    "id": "bakliyat_pirinc_temel_gida",
+    "name": "Bakliyat / pirinç / temel gıda",
+    "parent": "gida"
+  },
+  {
+    "id": "bakliyat_pirinc_hazir_yemek",
+    "name": "Bakliyat / pirinç / hazır yemek",
+    "parent": "gida"
+  },
+  {
+    "id": "bulgur_bakliyat",
+    "name": "Bulgur / bakliyat",
+    "parent": "gida"
+  },
+  {
+    "id": "baharat",
+    "name": "Baharat",
+    "parent": "gida"
+  },
+  {
+    "id": "baharat_yag_bitkisel_urun",
+    "name": "Baharat / yağ / bitkisel ürün",
+    "parent": "gida"
+  },
+  {
+    "id": "zeytinyagi_yag",
+    "name": "Zeytinyağı / yağ",
+    "parent": "gida"
+  },
+  {
+    "id": "zeytinyagi_incir_uzum_tarim_urunleri",
+    "name": "Zeytinyağı / incir / üzüm / tarım ürünleri",
+    "parent": "gida"
+  },
+  {
+    "id": "aycicek_yagi_bitkisel_yag",
+    "name": "Ayçiçek yağı / bitkisel yağ",
+    "parent": "gida"
+  },
+  {
+    "id": "margarin_bitkisel_yag",
+    "name": "Margarin / bitkisel yağ",
+    "parent": "gida"
+  }
+]

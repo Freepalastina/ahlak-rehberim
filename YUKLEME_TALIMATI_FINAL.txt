@@ -1,0 +1,20 @@
+Ahlak Rehberim - Final Uygulama + Veri
+
+Bu ZIP uygulama ve veriyi birlikte içerir.
+
+GitHub'a yükleme:
+1. ZIP'i indir.
+2. İçindeki tüm dosyaları GitHub projenin ana klasörüne kopyala.
+3. Mevcut dosyaların üzerine yaz.
+4. Terminal / VS Code içinde:
+
+git add .
+git commit -m "Final veri entegrasyonu"
+git push
+
+5. GitHub Pages güncellenince siteyi aç.
+6. Eski önbellek kalırsa Ctrl+F5 yap veya telefonda site verilerini temizle.
+
+Uygulama artık data/data.json dosyasını okur.
+Teknik status: review
+Görünen etiket: İncelenmesi önerilir
