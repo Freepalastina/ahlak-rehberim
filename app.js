@@ -1,4 +1,4 @@
-const VERSION="20260707-v44-legal-notice";
+const VERSION="20260707-v45-visual-system";
 let DATA=[];
 let FILTERED=[];
 const $=s=>document.querySelector(s);
@@ -30,7 +30,9 @@ function normalizeItem(x,i){
     alternatifler:alts,
     kaynaklar:srcs,
     barkodlar:bcs,
-    image_url:x.image_url||x.imageUrl||x.productImage||x.logoUrl||"",
+    image_url:x.productImage||x.image_url||x.imageUrl||x.logoUrl||"",
+    logoUrl:x.logoUrl||"",
+    companyLogoUrl:x.companyLogoUrl||"",
     sonGuncelleme:x.sonGuncelleme||x.updatedAt||"",
     not:x.not||x.note||"",
     hay:norm([x.marka,x.name,x.anaFirma,x.companyName,x.kategori,x.altKategori,x.ulke,alts.map(a=>a.marka||a.name||a.alternatifMarka).join(" "),bcs.map(b=>b.kod||b.code).join(" ")].join(" "))
@@ -106,8 +108,12 @@ function render(){
 }
 function cardHtml(x){
   const control=x.kontrolGerekli||!x.anaFirma||!x.kaynaklar.length;
+  const img=x.image_url||x.logoUrl||"assets/placeholders/product-placeholder.webp";
   return `<article class="card">
-    <div class="brandVisual">${x.image_url?`<img src="${esc(x.image_url)}" alt="${esc(x.marka)}" loading="lazy" onerror="this.src=\'assets/product-placeholder.svg\'">`:`<div class="visualFallback"><b>${esc((x.marka||"?").slice(0,2).toLocaleUpperCase("tr"))}</b><span>Ürün görseli</span></div>`}</div>
+    <div class="brandVisual" data-fullimage="${esc(img)}">
+      <img src="${esc(img)}" alt="${esc(x.marka)}" loading="lazy" onerror="this.src='assets/placeholders/product-placeholder.webp'">
+      <div class="miniLogo">${x.logoUrl?`<img src="${esc(x.logoUrl)}" alt="Logo" onerror="this.style.display='none'">`:``}</div>
+    </div>
     <span class="badge ${x.status}">${statusLabel(x.status)}</span>
     <h3>${esc(x.marka)}</h3>
     <div class="meta">🏢 ${esc(x.anaFirma||"Ana firma kontrol gerekli")}</div>
@@ -123,12 +129,16 @@ function cardHtml(x){
 }
 function detailHtml(x){
   const control=x.kontrolGerekli||!x.anaFirma||!x.kaynaklar.length;
+  const img=x.image_url||x.logoUrl||"assets/placeholders/product-placeholder.webp";
   return `<div class="detail">
     <span class="badge ${x.status}">${statusLabel(x.status)}</span>
-    <h2>${esc(x.marka)}</h2><div class="detailVisual">${x.image_url?`<img src="${esc(x.image_url)}" alt="${esc(x.marka)}" onerror="this.src=\'assets/product-placeholder.svg\'">`:`<img src="assets/product-placeholder.svg" alt="Ürün görseli">`}</div>
+    <h2>${esc(x.marka)}</h2>
+    <div class="detailVisual" data-fullimage="${esc(img)}">
+      <img src="${esc(img)}" alt="${esc(x.marka)}" onerror="this.src='assets/placeholders/product-placeholder.webp'">
+    </div>
     <p class="meta">${esc(x.not||"Bu kayıt etik inceleme listesinde yer aldığı için incelenmesi önerilir.")}</p>
     <div class="detailGrid">
-      <div class="infoBox"><small>Ana firma</small><b>${esc(x.anaFirma||"Kontrol gerekli")}</b></div>
+      <div class="infoBox companyBox"><small>Ana firma</small>${x.companyLogoUrl?`<img class="companyLogo" src="${esc(x.companyLogoUrl)}" alt="Ana firma logosu" onerror="this.style.display='none'">`:``}<b>${esc(x.anaFirma||"Kontrol gerekli")}</b></div>
       <div class="infoBox"><small>Kategori</small><b>${esc(x.kategori||"-")}</b></div>
       <div class="infoBox"><small>Alt kategori</small><b>${esc(x.altKategori||"-")}</b></div>
       <div class="infoBox"><small>Son güncelleme</small><b>${esc(x.sonGuncelleme||"-")}</b></div>
@@ -138,7 +148,8 @@ function detailHtml(x){
     <div class="list">${x.alternatifler.length?x.alternatifler.map(a=>`<div class="listItem"><b>${esc(a.marka||a.name||a.alternatifMarka||a)}</b><br><span class="meta">${esc(a.kategori||x.altKategori||"")}</span></div>`).join(""):`<div class="listItem">Alternatif önerisi henüz eklenmemiş.</div>`}</div>
     <h3>📚 Kaynaklar</h3>
     <div class="list">${x.kaynaklar.length?x.kaynaklar.map(s=>`<div class="listItem"><b>${esc(s.baslik||s.title||"Bilgi kaynağı")}</b><br><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.url)}</a><p class="meta">${esc(s.not||"")}</p></div>`).join(""):`<div class="listItem">Kaynak kontrolü gerekli.</div>`}</div>
-    <h3>ℹ️ Bilgilendirme</h3><div class="listItem">Bu kayıt kamuya açık kaynaklar ve uygulama veri tabanı üzerinden hazırlanmıştır. Bilgiler zaman içinde değişebilir. Güncel durumu doğrulamak için ilgili kaynakları inceleyiniz.</div><h3>📦 Barkodlar</h3>
+    <h3>ℹ️ Bilgilendirme</h3><div class="listItem">Bu kayıt kamuya açık kaynaklar ve uygulama veri tabanı üzerinden hazırlanmıştır. Bilgiler zaman içinde değişebilir. Güncel durumu doğrulamak için ilgili kaynakları inceleyiniz.</div>
+    <h3>📦 Barkodlar</h3>
     <div class="pillrow">${x.barkodlar.length?x.barkodlar.map(b=>`<span class="pill">${esc(b.kod||b.code||b)}</span>`).join(""):`<span class="pill">Barkod eklenmemiş</span>`}</div>
   </div>`;
 }
@@ -251,4 +262,25 @@ document.addEventListener("click",e=>{
   if(e.target && e.target.id==="acceptLegalNoticeBtn") acceptLegalNotice();
   if(e.target && e.target.id==="exitLegalNoticeBtn") exitApp();
   if(e.target && e.target.id==="openLegalNoticeBtn") showLegalAgain();
+});
+
+function openImageViewer(src){
+  if(!src) return;
+  let d=document.getElementById("imageViewer");
+  if(!d){
+    d=document.createElement("dialog");
+    d.id="imageViewer";
+    d.innerHTML=`<div class="imageViewerBox"><button id="closeImageViewer">×</button><img id="imageViewerImg" alt="Görsel"></div>`;
+    document.body.appendChild(d);
+  }
+  document.getElementById("imageViewerImg").src=src;
+  d.showModal();
+}
+document.addEventListener("click",e=>{
+  const v=e.target.closest(".brandVisual,.detailVisual");
+  if(v && v.dataset.fullimage){openImageViewer(v.dataset.fullimage);return;}
+  if(e.target && e.target.id==="closeImageViewer"){
+    const d=document.getElementById("imageViewer");
+    if(d) d.close();
+  }
 });

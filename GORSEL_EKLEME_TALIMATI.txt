@@ -1,0 +1,28 @@
+Görsel sistemi
+
+Klasörler:
+assets/logos/       marka logoları
+assets/products/    ürün/ambalaj görselleri
+assets/companies/   ana firma logoları
+
+Önerilen format:
+.webp
+
+Dosya adı:
+Marka adı küçük harf ve alt çizgi ile yazılır.
+
+Örnek:
+Coca-Cola:
+assets/logos/coca_cola.webp
+assets/products/coca_cola.webp
+
+Ariel:
+assets/logos/ariel.webp
+assets/products/ariel.webp
+
+Ana firma:
+assets/companies/the_coca_cola_company.webp
+assets/companies/procter_gamble.webp
+
+Resim yoksa uygulama otomatik varsayılan görsel gösterir.
+Karttaki veya detaydaki görsele dokununca büyük açılır.

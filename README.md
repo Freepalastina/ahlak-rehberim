@@ -1,12 +1,11 @@
-# Ahlak Rehberim V44
+# Ahlak Rehberim V45 Görsel Sistem
 
 Eklenenler:
-- İlk açılışta zorunlu bilgilendirme/onay ekranı
-- Kabul durumu cihazda saklanır
-- Bilgilendirme butonu
-- Ürün detaylarında kısa bilgilendirme notu
-- Hukuki bilgilendirme sayfası
-- Kullanım koşulları
-- Gizlilik politikası
-- Kaynak politikası
-- Hakkında sayfası
+- Marka logosu alanı
+- Ürün görseli alanı
+- Ana firma logosu alanı
+- WebP klasör yapısı
+- Eksik görseller için placeholder
+- Kartlarda görsel gösterimi
+- Detayda büyük görsel
+- Görsele dokununca tam ekran açma

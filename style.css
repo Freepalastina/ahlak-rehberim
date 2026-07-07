@@ -58,3 +58,15 @@ h3{margin:22px 0 10px}.pillrow{display:flex;flex-wrap:wrap;gap:8px}.pill{border:
 .legalLinks a{color:#3f5028;font-weight:900;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:8px 11px;background:white}
 .legalPage{padding:24px}.legalPage p{line-height:1.7}
 @media(max-width:640px){.legalActions{grid-template-columns:1fr}}
+
+/* V45 visual system */
+.brandVisual{position:relative;cursor:zoom-in;background:#f4efdf}
+.brandVisual .miniLogo{position:absolute;left:10px;bottom:10px;width:54px;height:54px;border-radius:16px;background:white;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.12);overflow:hidden}
+.brandVisual .miniLogo img{width:100%;height:100%;object-fit:contain;padding:6px}
+.detailVisual{cursor:zoom-in}
+.companyLogo{width:56px;height:56px;object-fit:contain;background:white;border:1px solid var(--line);border-radius:16px;padding:6px;margin:6px 0}
+#imageViewer{width:min(920px,calc(100vw - 18px));border:0;padding:0;border-radius:26px;background:#111;overflow:hidden}
+#imageViewer::backdrop{background:rgba(0,0,0,.75)}
+.imageViewerBox{position:relative;display:flex;align-items:center;justify-content:center;min-height:300px}
+#imageViewerImg{max-width:100%;max-height:86vh;object-fit:contain}
+#closeImageViewer{position:absolute;top:12px;right:12px;z-index:2;border:0;border-radius:50%;width:44px;height:44px;font-size:30px;background:white;color:#111;cursor:pointer}
