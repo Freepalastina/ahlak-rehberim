@@ -1,4 +1,4 @@
-const VERSION="20260707-v38-clean-data";
+const VERSION="20260707-v41-pwa-install";
 let DATA=[];
 let FILTERED=[];
 const $=s=>document.querySelector(s);
@@ -172,7 +172,33 @@ document.addEventListener("click",e=>{
 $("#closeDialog").onclick=()=>$("#detailDialog").close();
 $("#clearBtn").onclick=clearFilters;
 $("#refreshBtn").onclick=()=>location.reload();
+$("#installBtn").onclick=installApp;
 loadData().catch(err=>{
   console.error(err);
   $("#results").innerHTML=`<div class="empty">Veri yüklenemedi: ${esc(err.message)}</div>`;
 });
+
+let deferredInstallPrompt=null;
+window.addEventListener("beforeinstallprompt",e=>{
+  e.preventDefault();
+  deferredInstallPrompt=e;
+  const btn=document.getElementById("installBtn");
+  if(btn){btn.hidden=false;btn.textContent="📲 Uygulamayı Yükle";}
+});
+window.addEventListener("appinstalled",()=>{
+  deferredInstallPrompt=null;
+  const btn=document.getElementById("installBtn");
+  if(btn){btn.textContent="✅ Uygulama Yüklendi";btn.disabled=true;}
+});
+async function installApp(){
+  if(deferredInstallPrompt){
+    deferredInstallPrompt.prompt();
+    await deferredInstallPrompt.userChoice;
+    deferredInstallPrompt=null;
+    return;
+  }
+  alert("Kurulum penceresi otomatik açılmadıysa:\n\nAndroid Chrome: ⋮ menüsü > Ana ekrana ekle / Uygulamayı yükle\niPhone Safari: Paylaş > Ana Ekrana Ekle\nBilgisayar Chrome/Edge: adres çubuğundaki yükle simgesi.");
+}
+if("serviceWorker" in navigator){
+  window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+}

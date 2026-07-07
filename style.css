@@ -40,3 +40,5 @@ h3{margin:22px 0 10px}.pillrow{display:flex;flex-wrap:wrap;gap:8px}.pill{border:
 .detailVisual{margin:14px 0 18px;border-radius:22px;overflow:hidden;background:#f4efdf;border:1px solid var(--line);max-height:300px;display:flex;align-items:center;justify-content:center}
 .detailVisual img{width:100%;max-height:300px;object-fit:cover}
 .badge.preferred{background:#EAF4DC;color:#3f5028}
+
+#installBtn{background:#fff!important;color:#3f5028!important;border:2px solid rgba(255,255,255,.65)!important}#installBtn:disabled{opacity:.75;cursor:default}
