@@ -30,7 +30,7 @@ function normalizeItem(x,i){
     alternatifler:alts,
     kaynaklar:srcs,
     barkodlar:bcs,
-    image_url:x.image_url||x.imageUrl||"",
+    image_url:x.image_url||x.imageUrl||x.productImage||x.logoUrl||"",
     sonGuncelleme:x.sonGuncelleme||x.updatedAt||"",
     not:x.not||x.note||"",
     hay:norm([x.marka,x.name,x.anaFirma,x.companyName,x.kategori,x.altKategori,x.ulke,alts.map(a=>a.marka||a.name||a.alternatifMarka).join(" "),bcs.map(b=>b.kod||b.code).join(" ")].join(" "))
@@ -60,6 +60,8 @@ function counts(){
     review:DATA.filter(x=>x.status==="review").length,
     preferred:DATA.filter(x=>x.status==="preferred").length,
     alternative:DATA.filter(x=>x.alternatifler.length>0).length,
+    sourced:DATA.filter(x=>x.kaynaklar.length>0).length,
+    companies:new Set(DATA.map(x=>x.anaFirma||"").filter(Boolean)).size,
     control:DATA.filter(x=>x.kontrolGerekli||!x.anaFirma||!x.kaynaklar.length).length
   };
 }
@@ -67,9 +69,9 @@ function renderStats(){
   const c=counts();
   $("#stats").innerHTML=`
     <article class="stat review"><span>🔴 İncelenmesi önerilir</span><b>${c.review}</b></article>
-    <article class="stat"><span>✅ Tercih edilebilir</span><b>${c.preferred}</b></article>
-    <article class="stat"><span>⭐ Alternatifli</span><b>${c.alternative}</b></article>
-    <article class="stat"><span>⚪ Bilgi/kaynak kontrolü gerekli</span><b>${c.control}</b></article>`;
+    <article class="stat preferred"><span>✅ Tercih edilebilir</span><b>${c.preferred}</b></article>
+    <article class="stat"><span>⭐ Alternatifli kayıt</span><b>${c.alternative}</b></article>
+    <article class="stat"><span>📚 Kaynaklı kayıt</span><b>${c.sourced}</b></article>`;
 }
 function currentFilters(){
   return {
@@ -104,6 +106,7 @@ function render(){
 function cardHtml(x){
   const control=x.kontrolGerekli||!x.anaFirma||!x.kaynaklar.length;
   return `<article class="card">
+    <div class="brandVisual">${x.image_url?`<img src="${esc(x.image_url)}" alt="${esc(x.marka)}" loading="lazy" onerror="this.src=\'assets/product-placeholder.svg\'">`:`<div class="visualFallback"><b>${esc((x.marka||"?").slice(0,2).toLocaleUpperCase("tr"))}</b><span>Ürün görseli</span></div>`}</div>
     <span class="badge ${x.status}">${statusLabel(x.status)}</span>
     <h3>${esc(x.marka)}</h3>
     <div class="meta">🏢 ${esc(x.anaFirma||"Ana firma kontrol gerekli")}</div>
@@ -121,7 +124,7 @@ function detailHtml(x){
   const control=x.kontrolGerekli||!x.anaFirma||!x.kaynaklar.length;
   return `<div class="detail">
     <span class="badge ${x.status}">${statusLabel(x.status)}</span>
-    <h2>${esc(x.marka)}</h2>
+    <h2>${esc(x.marka)}</h2><div class="detailVisual">${x.image_url?`<img src="${esc(x.image_url)}" alt="${esc(x.marka)}" onerror="this.src=\'assets/product-placeholder.svg\'">`:`<img src="assets/product-placeholder.svg" alt="Ürün görseli">`}</div>
     <p class="meta">${esc(x.not||"Bu kayıt etik inceleme listesinde yer aldığı için incelenmesi önerilir.")}</p>
     <div class="detailGrid">
       <div class="infoBox"><small>Ana firma</small><b>${esc(x.anaFirma||"Kontrol gerekli")}</b></div>

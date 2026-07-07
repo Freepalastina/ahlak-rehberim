@@ -1,14 +1,15 @@
 {
-  "version": "2026.07.07-final-data-v1",
+  "version": "2026.07.07-v40-final",
   "date": "2026-07-07",
   "statusKey": "review",
   "statusLabel": "İncelenmesi önerilir",
   "records": {
-    "brands": 1574,
-    "companies": 118,
-    "alternatives": 1121,
-    "sources": 316,
-    "categories": 178
+    "total": 1777,
+    "preferred": 218,
+    "review": 1559
   },
-  "note": "Hukuki nedenlerle nötr inceleme dili kullanılır."
+  "note": "Hukuki nedenlerle nötr inceleme dili kullanılır.",
+  "preferredListCount": 218,
+  "preferredMatched": 15,
+  "preferredAdded": 203
 }

@@ -2,9 +2,7 @@ Yükleme:
 1. ZIP içindeki tüm dosyaları GitHub projenin ana klasörüne kopyala.
 2. Mevcut dosyaların üzerine yaz.
 3. Terminalde:
-
 git add .
-git commit -m "V38 temiz calisan veri surumu"
+git commit -m "V40 final tercih edilebilir ve gorsel alanlari"
 git push
-
-4. GitHub Pages güncellendikten sonra siteyi Ctrl+F5 ile yenile.
+4. GitHub Pages güncellenince Ctrl+F5 ile yenile.

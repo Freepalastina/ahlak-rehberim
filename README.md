@@ -1,8 +1,8 @@
-# Ahlak Rehberim V38
+# Ahlak Rehberim V40 Final
 
-Temiz çalışan final sürüm.
-
-- Veri yolu: `data/data.json`
-- Teknik status: `review`
-- Görünen etiket: `İncelenmesi önerilir`
-- Sayaçlar, arama, filtreler, alternatifler, kaynaklar ve barkodlar yeni veri yapısıyla çalışır.
+- Tercih edilebilir liste işlendi.
+- Tercih edilebilir listedeki marka: 218
+- Mevcut veride eşleşen: 15
+- Yeni eklenen tercih edilebilir marka: 203
+- Toplam kayıt: 1777
+- Ürün görsel alanı eklendi.

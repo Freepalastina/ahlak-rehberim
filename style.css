@@ -30,3 +30,13 @@ dialog::backdrop{background:rgba(0,0,0,.45)}.dialogTop{position:sticky;top:0;bac
 h3{margin:22px 0 10px}.pillrow{display:flex;flex-wrap:wrap;gap:8px}.pill{border:1px solid var(--line);background:white;border-radius:999px;padding:8px 11px;font-weight:800}
 @media(max-width:850px){.hero{display:block}.heroActions{margin-top:18px}.searchPanel{grid-template-columns:1fr}.stats,.quick,.detailGrid{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.stats,.quick,.detailGrid{grid-template-columns:1fr}.hero{border-radius:0 0 24px 24px;padding:26px 18px}.wrap{padding-inline:12px}}
+
+.stat.preferred{background:linear-gradient(135deg,#EAF4DC,#fff)}
+.brandVisual{height:150px;border-radius:20px;background:#f4efdf;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:2px}
+.brandVisual img{width:100%;height:100%;object-fit:cover}
+.visualFallback{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#f7f1e5,#dfe8cf);color:#5F7138}
+.visualFallback b{font-size:42px;letter-spacing:1px}
+.visualFallback span{font-weight:800;color:#5F7138;opacity:.8}
+.detailVisual{margin:14px 0 18px;border-radius:22px;overflow:hidden;background:#f4efdf;border:1px solid var(--line);max-height:300px;display:flex;align-items:center;justify-content:center}
+.detailVisual img{width:100%;max-height:300px;object-fit:cover}
+.badge.preferred{background:#EAF4DC;color:#3f5028}
