@@ -1,16 +1,16 @@
-# Ahlak Rehberim V48 Düzeltme
+# Ahlak Rehberim V49 Temiz Barkodlu
 
-Bu sürüm düzeltme sürümüdür.
+Düzeltmeler:
+- Alternatifler geri korundu
+- Ana ekranda tek İncelenmesi önerilir sayacı var
+- Tercih edilebilir sayacı var
+- Kırmızı sayaç doğru hesaplanır
+- Barkod/kamera tarama eklendi
+- Kötü görseller kaldırıldı
 
-Geri alınanlar:
-- Kötü ürün görselleri kaldırıldı
-- Görsel eşleştirme sistemi kaldırıldı
-- Görsel placeholder sistemi kaldırıldı
-
-Korunan/geri getirilenler:
-- V37 kamera/barkod okuma altyapısı
-- Orijinal ikonlar
-- Ülke ve eski alanlar
-- 1777 kayıtlık veri
-- 218 tercih edilebilir kayıt
-- Hukuki bilgilendirme/onay ekranı
+Veri:
+- Toplam kayıt: 1777
+- İncelenmesi önerilir: 1559
+- Tercih edilebilir: 218
+- Alternatifli kayıt: 290
+- Kaynaklı kayıt: 316
