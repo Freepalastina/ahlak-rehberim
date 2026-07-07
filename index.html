@@ -6,6 +6,16 @@
   <meta name="theme-color" content="#5F7138">
   <title>Ahlak Rehberim</title>
   <link rel="manifest" href="manifest.json">
+
+  <meta name="application-name" content="Ahlak Rehberim">
+  <meta name="apple-mobile-web-app-title" content="Ahlak Rehberim">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -63,5 +73,18 @@
   </dialog>
 
   <script src="app.js"></script>
+
+  <dialog id="installHelp">
+    <div class="dialogTop"><button id="closeInstallHelp" aria-label="Kapat">×</button></div>
+    <div class="detail">
+      <h2>📲 Uygulamayı Telefona Ekle</h2>
+      <h3>Android Chrome</h3>
+      <div class="listItem">1. Bu siteyi Chrome ile aç.<br>2. Üstteki <b>Uygulamayı Yükle</b> butonuna bas.<br>3. Pencere çıkmazsa sağ üstteki <b>⋮</b> menüsünden <b>Ana ekrana ekle</b> veya <b>Uygulamayı yükle</b> seç.</div>
+      <h3>iPhone / iPad Safari</h3>
+      <div class="listItem">1. Bu siteyi <b>Safari</b> ile aç.<br>2. Alttaki <b>Paylaş</b> butonuna bas.<br>3. <b>Ana Ekrana Ekle</b> seç.<br>4. <b>Ekle</b> butonuna bas.</div>
+      <h3>Not</h3>
+      <div class="listItem">iPhone’da Apple kuralı nedeniyle otomatik kurulum penceresi açılamaz. Kullanıcı Safari üzerinden Ana Ekrana Ekle yapmalıdır.</div>
+    </div>
+  </dialog>
 </body>
 </html>

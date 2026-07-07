@@ -4,7 +4,20 @@ Yükleme:
 3. Terminalde:
 
 git add .
-git commit -m "V41 uygulamayi yukle butonu"
+git commit -m "V42 android apple pwa kurulum"
 git push
 
-4. GitHub Pages güncellendikten sonra Ctrl+F5 ile yenile.
+4. GitHub Pages güncellenince siteyi Ctrl+F5 ile yenile.
+
+Android:
+- Chrome ile siteyi aç.
+- Uygulamayı Yükle butonuna bas.
+- Çıkmazsa ⋮ > Ana ekrana ekle / Uygulamayı yükle.
+
+iPhone:
+- Safari ile siteyi aç.
+- Paylaş > Ana Ekrana Ekle > Ekle.
+
+Önemli:
+iPhone’da otomatik kurulum penceresi Apple tarafından desteklenmez.
+Gerçek App Store uygulaması için Apple Developer hesabı gerekir.

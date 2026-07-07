@@ -1,4 +1,4 @@
-const VERSION="20260707-v41-pwa-install";
+const VERSION="20260707-v42-android-apple-pwa";
 let DATA=[];
 let FILTERED=[];
 const $=s=>document.querySelector(s);
@@ -191,14 +191,36 @@ window.addEventListener("appinstalled",()=>{
   if(btn){btn.textContent="✅ Uygulama Yüklendi";btn.disabled=true;}
 });
 async function installApp(){
+  const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent);
+  const isStandalone=window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone;
+  if(isStandalone){
+    alert("Uygulama zaten yüklü görünüyor.");
+    return;
+  }
   if(deferredInstallPrompt){
     deferredInstallPrompt.prompt();
     await deferredInstallPrompt.userChoice;
     deferredInstallPrompt=null;
     return;
   }
-  alert("Kurulum penceresi otomatik açılmadıysa:\n\nAndroid Chrome: ⋮ menüsü > Ana ekrana ekle / Uygulamayı yükle\niPhone Safari: Paylaş > Ana Ekrana Ekle\nBilgisayar Chrome/Edge: adres çubuğundaki yükle simgesi.");
+  const help=document.getElementById("installHelp");
+  if(help && help.showModal){
+    help.showModal();
+    return;
+  }
+  if(isIOS){
+    alert("iPhone için Safari ile açın: Paylaş > Ana Ekrana Ekle.");
+  }else{
+    alert("Android Chrome: ⋮ menüsü > Ana ekrana ekle / Uygulamayı yükle.");
+  }
 }
 if("serviceWorker" in navigator){
   window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
 }
+
+document.addEventListener("click",e=>{
+  if(e.target && e.target.id==="closeInstallHelp"){
+    const d=document.getElementById("installHelp");
+    if(d) d.close();
+  }
+});
