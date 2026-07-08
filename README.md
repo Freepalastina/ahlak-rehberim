@@ -1,16 +1,17 @@
-# Ahlak Rehberim V50 Dil Desteği Düzeltildi
+# Ahlak Rehberim V51 Bayraklı Dil
 
-Düzeltmeler:
-- Türkçe / Almanca / İngilizce / Arapça dil seçimi geri eklendi
-- Alternatifler korundu
-- Sayaçlar korundu
-- Barkod tarama korundu
-- Görseller eklenmedi
-- Hukuki bilgilendirme korundu
+Diller bayraklı buton olarak eklendi:
+🇹🇷 Türkçe · 🇩🇪 Deutsch · 🇬🇧 English · 🇸🇦 العربية
 
-Veri:
-- Toplam kayıt: 1777
-- İncelenmesi önerilir: 1559
-- Tercih edilebilir: 218
-- Alternatifli kayıt: 290
-- Kaynaklı kayıt: 316
+Korunanlar:
+- Alternatifler
+- Barkod tarama
+- Sayaçlar
+- Hukuki bilgilendirme
+- Görselsiz temiz yapı
+
+Toplam: 1777
+İncelenmesi önerilir: 1559
+Tercih edilebilir: 218
+Alternatifli: 290
+Kaynaklı: 316

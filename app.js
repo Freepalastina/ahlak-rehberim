@@ -1,135 +1,25 @@
-const VERSION="20260707-v50-language-fixed";
+const VERSION="20260707-v51-flag-language";
 
 const I18N={
-  tr:{
-    title:"Etik tüketim rehberi",
-    subtitle:"Marka, ana firma, kategori, alternatif ve kaynak bilgilerini inceleyin.",
-    refresh:"Veriyi Yenile",
-    clear:"Temizle",
-    searchPlaceholder:"Marka, ana firma, kategori veya barkod ara...",
-    review:"İncelenmesi önerilir",
-    preferred:"Tercih edilebilir",
-    alternative:"Alternatifli kayıt",
-    sourced:"Kaynaklı kayıt",
-    control:"Kontrol gerekli",
-    allFilter:"Filtre / tümü",
-    categoryAll:"Kategori / tümü",
-    companyAll:"Ana firma / tümü",
-    countryAll:"Ülke / tümü",
-    detail:"Detay",
-    alternatives:"Alternatifler",
-    sources:"Kaynaklar",
-    barcodes:"Barkodlar",
-    info:"Bilgilendirme",
-    sourceCheck:"Kaynak kontrolü gerekli.",
-    altEmpty:"Alternatif önerisi henüz eklenmemiş.",
-    barcodeScan:"Barkod Tara"
-  },
-  de:{
-    title:"Ethischer Einkaufsratgeber",
-    subtitle:"Prüfe Marke, Mutterfirma, Kategorie, Alternativen und Quellen.",
-    refresh:"Daten aktualisieren",
-    clear:"Löschen",
-    searchPlaceholder:"Marke, Mutterfirma, Kategorie oder Barcode suchen...",
-    review:"Zur Prüfung empfohlen",
-    preferred:"Bevorzugbar",
-    alternative:"Mit Alternativen",
-    sourced:"Mit Quellen",
-    control:"Prüfung erforderlich",
-    allFilter:"Filter / alle",
-    categoryAll:"Kategorie / alle",
-    companyAll:"Mutterfirma / alle",
-    countryAll:"Land / alle",
-    detail:"Details",
-    alternatives:"Alternativen",
-    sources:"Quellen",
-    barcodes:"Barcodes",
-    info:"Hinweis",
-    sourceCheck:"Quellenprüfung erforderlich.",
-    altEmpty:"Noch keine Alternative eingetragen.",
-    barcodeScan:"Barcode scannen"
-  },
-  en:{
-    title:"Ethical consumption guide",
-    subtitle:"Review brands, parent companies, categories, alternatives and sources.",
-    refresh:"Refresh data",
-    clear:"Clear",
-    searchPlaceholder:"Search brand, parent company, category or barcode...",
-    review:"Recommended for review",
-    preferred:"Preferred",
-    alternative:"With alternatives",
-    sourced:"With sources",
-    control:"Check required",
-    allFilter:"Filter / all",
-    categoryAll:"Category / all",
-    companyAll:"Parent company / all",
-    countryAll:"Country / all",
-    detail:"Details",
-    alternatives:"Alternatives",
-    sources:"Sources",
-    barcodes:"Barcodes",
-    info:"Notice",
-    sourceCheck:"Source check required.",
-    altEmpty:"No alternative suggestion added yet.",
-    barcodeScan:"Scan barcode"
-  },
-  ar:{
-    title:"دليل الاستهلاك الأخلاقي",
-    subtitle:"راجع العلامات التجارية والشركات والفئات والبدائل والمصادر.",
-    refresh:"تحديث البيانات",
-    clear:"مسح",
-    searchPlaceholder:"ابحث عن علامة تجارية أو شركة أو فئة أو باركود...",
-    review:"يوصى بمراجعته",
-    preferred:"مفضل",
-    alternative:"له بدائل",
-    sourced:"له مصادر",
-    control:"يتطلب التحقق",
-    allFilter:"التصفية / الكل",
-    categoryAll:"الفئة / الكل",
-    companyAll:"الشركة / الكل",
-    countryAll:"الدولة / الكل",
-    detail:"التفاصيل",
-    alternatives:"البدائل",
-    sources:"المصادر",
-    barcodes:"الباركود",
-    info:"تنبيه",
-    sourceCheck:"يلزم التحقق من المصدر.",
-    altEmpty:"لم تتم إضافة بديل بعد.",
-    barcodeScan:"مسح الباركود"
-  }
+tr:{review:"İncelenmesi önerilir",preferred:"Tercih edilebilir",alternative:"Alternatifli kayıt",sourced:"Kaynaklı kayıt",refresh:"Veriyi Yenile",clear:"Temizle",searchPlaceholder:"Marka, ana firma, kategori veya barkod ara...",allFilter:"Filtre / tümü",categoryAll:"Kategori / tümü",companyAll:"Ana firma / tümü",countryAll:"Ülke / tümü",detail:"Detay",alternatives:"Alternatifler",sources:"Kaynaklar",barcodes:"Barkodlar",info:"Bilgilendirme",barcodeScan:"Barkod Tara",control:"Kontrol gerekli",sourceCheck:"Kaynak kontrolü gerekli.",altEmpty:"Alternatif önerisi henüz eklenmemiş."},
+de:{review:"Zur Prüfung empfohlen",preferred:"Bevorzugbar",alternative:"Mit Alternativen",sourced:"Mit Quellen",refresh:"Daten aktualisieren",clear:"Löschen",searchPlaceholder:"Marke, Mutterfirma, Kategorie oder Barcode suchen...",allFilter:"Filter / alle",categoryAll:"Kategorie / alle",companyAll:"Mutterfirma / alle",countryAll:"Land / alle",detail:"Details",alternatives:"Alternativen",sources:"Quellen",barcodes:"Barcodes",info:"Hinweis",barcodeScan:"Barcode scannen",control:"Prüfung erforderlich",sourceCheck:"Quellenprüfung erforderlich.",altEmpty:"Noch keine Alternative eingetragen."},
+en:{review:"Recommended for review",preferred:"Preferred",alternative:"With alternatives",sourced:"With sources",refresh:"Refresh Data",clear:"Clear",searchPlaceholder:"Search brand, parent company, category or barcode...",allFilter:"Filter / all",categoryAll:"Category / all",companyAll:"Parent company / all",countryAll:"Country / all",detail:"Details",alternatives:"Alternatives",sources:"Sources",barcodes:"Barcodes",info:"Notice",barcodeScan:"Scan Barcode",control:"Check required",sourceCheck:"Source check required.",altEmpty:"No alternative suggestion added yet."},
+ar:{review:"يوصى بمراجعته",preferred:"مفضل",alternative:"له بدائل",sourced:"له مصادر",refresh:"تحديث البيانات",clear:"مسح",searchPlaceholder:"ابحث عن علامة تجارية أو شركة أو فئة أو باركود...",allFilter:"التصفية / الكل",categoryAll:"الفئة / الكل",companyAll:"الشركة / الكل",countryAll:"الدولة / الكل",detail:"التفاصيل",alternatives:"البدائل",sources:"المصادر",barcodes:"الباركود",info:"تنبيه",barcodeScan:"مسح الباركود",control:"يتطلب التحقق",sourceCheck:"يلزم التحقق من المصدر.",altEmpty:"لم تتم إضافة بديل بعد."}
 };
 let LANG=localStorage.getItem("ahlak_lang")||"tr";
 function tt(k){return (I18N[LANG]&&I18N[LANG][k])||I18N.tr[k]||k}
 function applyLanguage(){
-  document.documentElement.lang=LANG;
-  document.documentElement.dir=LANG==="ar"?"rtl":"ltr";
-  const sel=document.getElementById("langSelect");
-  if(sel) sel.value=LANG;
-  document.querySelectorAll("[data-i18n]").forEach(el=>{el.textContent=tt(el.dataset.i18n)});
-  document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{el.placeholder=tt(el.dataset.i18nPlaceholder)});
-  const statusFilter=document.getElementById("statusFilter");
-  if(statusFilter){
-    const opts=statusFilter.options;
-    if(opts[0]) opts[0].textContent=tt("allFilter");
-    if(opts[1]) opts[1].textContent=tt("review");
-    if(opts[2]) opts[2].textContent=tt("preferred");
-    if(opts[3]) opts[3].textContent=tt("alternative");
-    if(opts[4]) opts[4].textContent=tt("sourced");
-    if(opts[5]) opts[5].textContent=tt("control");
-  }
-  const cat=document.getElementById("categoryFilter"); if(cat&&cat.options[0]) cat.options[0].textContent=tt("categoryAll");
-  const comp=document.getElementById("companyFilter"); if(comp&&comp.options[0]) comp.options[0].textContent=tt("companyAll");
-  const country=document.getElementById("countryFilter"); if(country&&country.options[0]) country.options[0].textContent=tt("countryAll");
-  const barcode=document.getElementById("barcodeBtn"); if(barcode) barcode.textContent="📷 "+tt("barcodeScan");
+ document.documentElement.lang=LANG; document.documentElement.dir=LANG==="ar"?"rtl":"ltr";
+ document.querySelectorAll("[data-i18n]").forEach(el=>{el.textContent=(el.dataset.i18nPrefix||"")+tt(el.dataset.i18n)});
+ document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{el.placeholder=tt(el.dataset.i18nPlaceholder)});
+ document.querySelectorAll("[data-lang]").forEach(btn=>btn.classList.toggle("active",btn.dataset.lang===LANG));
+ const sf=document.getElementById("statusFilter");
+ if(sf){["allFilter","review","preferred","alternative","sourced","control"].forEach((k,i)=>{if(sf.options[i])sf.options[i].textContent=tt(k)})}
+ const cat=document.getElementById("categoryFilter"); if(cat&&cat.options[0])cat.options[0].textContent=tt("categoryAll");
+ const comp=document.getElementById("companyFilter"); if(comp&&comp.options[0])comp.options[0].textContent=tt("companyAll");
+ const country=document.getElementById("countryFilter"); if(country&&country.options[0])country.options[0].textContent=tt("countryAll");
 }
-document.addEventListener("change",e=>{
-  if(e.target&&e.target.id==="langSelect"){
-    LANG=e.target.value;
-    localStorage.setItem("ahlak_lang",LANG);
-    applyLanguage();
-    render();
-  }
-});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-lang]"); if(b){LANG=b.dataset.lang; localStorage.setItem("ahlak_lang",LANG); applyLanguage(); if(typeof render==="function")render();}});
 
 let DATA=[];
 let FILTERED=[];

@@ -28,12 +28,12 @@
     <div class="heroActions">
       <button id="installBtn">📲 Uygulamayı Yükle</button>
       <button id="openLegalNoticeBtn">ℹ️ Bilgilendirme</button>
-      <select id="langSelect" class="langSelect" aria-label="Dil seçimi">
-        <option value="tr">Türkçe</option>
-        <option value="de">Deutsch</option>
-        <option value="en">English</option>
-        <option value="ar">العربية</option>
-      </select>
+      <div class="flagLang" aria-label="Dil seçimi">
+        <button type="button" data-lang="tr" title="Türkçe">🇹🇷</button>
+        <button type="button" data-lang="de" title="Deutsch">🇩🇪</button>
+        <button type="button" data-lang="en" title="English">🇬🇧</button>
+        <button type="button" data-lang="ar" title="العربية">🇸🇦</button>
+      </div>
       <button id="refreshBtn" data-i18n="refresh">Veriyi Yenile</button>
       <button id="clearBtn" data-i18n="clear">Temizle</button>
     </div>
@@ -41,7 +41,7 @@
 
   <main class="wrap">
     <section class="searchPanel">
-      <button id="barcodeBtn" type="button">📷 Barkod Tara</button>
+      <button id="barcodeBtn" type="button" data-i18n-prefix="📷 " data-i18n="barcodeScan">📷 Barkod Tara</button>
       <input id="searchInput" type="search" placeholder="Marka, ana firma, kategori veya barkod ara..." data-i18n-placeholder="searchPlaceholder" autocomplete="off">
       <select id="countryFilter"><option value="">Ülke / tümü</option></select>
       <select id="categoryFilter"><option value="">Kategori / tümü</option></select>
