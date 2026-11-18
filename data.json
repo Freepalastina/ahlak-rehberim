@@ -154,26 +154,8 @@
     "not": "Öncelikli marka olarak sözlüğe eklendi; kategori aşamalarında detaylandırılacak. Listedeki kayıt etik inceleme listesi kapsamında İncelenmesi önerilir olarak işaretlendi."
   },
   {
-    "marka": "8×4",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
     "marka": "A101",
-    "anaFirma": "",
+    "anaFirma": "Yeni Mağazacılık A.Ş. (Turgut Aydın Holding)",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -191,7 +173,7 @@
   },
   {
     "marka": "Aareal Bank",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -250,7 +232,7 @@
   },
   {
     "marka": "About You",
-    "anaFirma": "",
+    "anaFirma": "Otto / Zalando / Ikea",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -275,7 +257,7 @@
   },
   {
     "marka": "Abtei",
-    "anaFirma": "",
+    "anaFirma": "Perrigo Company",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -300,7 +282,7 @@
   },
   {
     "marka": "ACE",
-    "anaFirma": "",
+    "anaFirma": "Fater S.p.A. (P&G / Angelini)",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -318,7 +300,7 @@
   },
   {
     "marka": "Aciclobene",
-    "anaFirma": "",
+    "anaFirma": "Teva Pharmaceutical Industries",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -336,7 +318,7 @@
   },
   {
     "marka": "Ackermann",
-    "anaFirma": "",
+    "anaFirma": "Ackermann Versandhaus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -354,7 +336,7 @@
   },
   {
     "marka": "Acqua di Parma",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -427,31 +409,6 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "Action",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [
-      {
-        "baslik": "Bilgi kaynağı",
-        "url": "https://www.3i.com",
-        "tur": "Mevcut kaynak",
-        "not": "Henüz kategori aşamasında kontrol edilmedi."
-      }
-    ],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
     "marka": "Activia",
     "anaFirma": "Danone",
     "kategori": "Gıda",
@@ -509,7 +466,7 @@
   },
   {
     "marka": "Acuvue",
-    "anaFirma": "",
+    "anaFirma": "Acuvue / Johnson & Johnson",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -527,7 +484,7 @@
   },
   {
     "marka": "Adeg",
-    "anaFirma": "",
+    "anaFirma": "REWE / Edeka / Schwarz",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -610,7 +567,7 @@
   },
   {
     "marka": "AEG",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -671,7 +628,7 @@
   },
   {
     "marka": "Aerogard",
-    "anaFirma": "",
+    "anaFirma": "SC Johnson",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -689,7 +646,7 @@
   },
   {
     "marka": "Afrin",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -748,7 +705,7 @@
   },
   {
     "marka": "Ahava",
-    "anaFirma": "",
+    "anaFirma": "Ahava Dead Sea Laboratories",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -1023,7 +980,7 @@
   },
   {
     "marka": "Aldi Nord",
-    "anaFirma": "",
+    "anaFirma": "Aldi / Spar / Carrefour",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -1048,7 +1005,7 @@
   },
   {
     "marka": "Aldi süd",
-    "anaFirma": "",
+    "anaFirma": "Aldi / Spar / Carrefour",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -1134,7 +1091,7 @@
   },
   {
     "marka": "Alka Seltzer",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -1152,7 +1109,7 @@
   },
   {
     "marka": "All-Clad",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -1188,7 +1145,7 @@
   },
   {
     "marka": "Allianz",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -1213,7 +1170,7 @@
   },
   {
     "marka": "Allout",
-    "anaFirma": "",
+    "anaFirma": "F. Hoffmann-La Roche",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -1231,7 +1188,7 @@
   },
   {
     "marka": "AllSaints",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -1396,7 +1353,7 @@
   },
   {
     "marka": "Altoids",
-    "anaFirma": "",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -1414,7 +1371,7 @@
   },
   {
     "marka": "Altus",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -1558,7 +1515,7 @@
   },
   {
     "marka": "AMC",
-    "anaFirma": "",
+    "anaFirma": "Kenvue",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -1576,7 +1533,7 @@
   },
   {
     "marka": "Amicelli",
-    "anaFirma": "",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -1634,7 +1591,7 @@
   },
   {
     "marka": "Anadolu Grubu",
-    "anaFirma": "",
+    "anaFirma": "Anadolu Grubu",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -1659,7 +1616,7 @@
   },
   {
     "marka": "AniCura",
-    "anaFirma": "",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -1695,7 +1652,7 @@
   },
   {
     "marka": "Aoste",
-    "anaFirma": "",
+    "anaFirma": "Aoste / Sigma Alimentos",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -1713,7 +1670,7 @@
   },
   {
     "marka": "Aov",
-    "anaFirma": "",
+    "anaFirma": "AOV / Ortho",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -1753,7 +1710,7 @@
   },
   {
     "marka": "Apollinaris",
-    "anaFirma": "",
+    "anaFirma": "Coca-Cola Europacific Partners",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -2004,7 +1961,7 @@
   },
   {
     "marka": "Arcelik",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -2287,7 +2244,7 @@
   },
   {
     "marka": "Arno",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -2366,7 +2323,7 @@
   },
   {
     "marka": "ASICS",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -2479,7 +2436,7 @@
   },
   {
     "marka": "Aspirin",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -2497,7 +2454,7 @@
   },
   {
     "marka": "Asus",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -2522,7 +2479,7 @@
   },
   {
     "marka": "Atrium",
-    "anaFirma": "",
+    "anaFirma": "Atrium European Real Estate",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -2540,7 +2497,7 @@
   },
   {
     "marka": "Auchan",
-    "anaFirma": "",
+    "anaFirma": "Aldi / Spar / Carrefour",
     "kategori": "",
     "altKategori": "",
     "status": "preferred",
@@ -2562,7 +2519,7 @@
   },
   {
     "marka": "Audi",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -2623,7 +2580,7 @@
   },
   {
     "marka": "AutoScout24",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -2648,7 +2605,7 @@
   },
   {
     "marka": "Avanti",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -2775,7 +2732,7 @@
   },
   {
     "marka": "AXA",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -2844,7 +2801,7 @@
   },
   {
     "marka": "Axel Springer",
-    "anaFirma": "",
+    "anaFirma": "Axel Springer SE",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -2862,7 +2819,7 @@
   },
   {
     "marka": "Axion",
-    "anaFirma": "",
+    "anaFirma": "Aliaxis",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -2880,7 +2837,7 @@
   },
   {
     "marka": "Aydin Örme",
-    "anaFirma": "",
+    "anaFirma": "Aydın Örme",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -2898,7 +2855,7 @@
   },
   {
     "marka": "Aygaz",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -2916,7 +2873,7 @@
   },
   {
     "marka": "B&M",
-    "anaFirma": "",
+    "anaFirma": "B&M European Value Retail",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -2934,7 +2891,7 @@
   },
   {
     "marka": "B&M Retail",
-    "anaFirma": "",
+    "anaFirma": "B&M European Value Retail",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -3000,7 +2957,7 @@
   },
   {
     "marka": "Babyganics",
-    "anaFirma": "",
+    "anaFirma": "SC Johnson / Babyganics",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -3036,7 +2993,7 @@
   },
   {
     "marka": "Badagoni",
-    "anaFirma": "",
+    "anaFirma": "Badagoni",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -3148,7 +3105,7 @@
   },
   {
     "marka": "Banfield",
-    "anaFirma": "",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -3166,7 +3123,7 @@
   },
   {
     "marka": "Banjo",
-    "anaFirma": "",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -3184,7 +3141,7 @@
   },
   {
     "marka": "Bank of America",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -3202,7 +3159,7 @@
   },
   {
     "marka": "Barbie",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -3341,7 +3298,7 @@
   },
   {
     "marka": "Bauknecht",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -3359,7 +3316,7 @@
   },
   {
     "marka": "Baur",
-    "anaFirma": "",
+    "anaFirma": "Otto / Zalando / Ikea",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -3377,7 +3334,7 @@
   },
   {
     "marka": "Bayclin",
-    "anaFirma": "",
+    "anaFirma": "Reckitt",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -3395,7 +3352,7 @@
   },
   {
     "marka": "BayernLB",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -3413,7 +3370,7 @@
   },
   {
     "marka": "Baygon",
-    "anaFirma": "",
+    "anaFirma": "SC Johnson",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -3587,7 +3544,7 @@
   },
   {
     "marka": "Beko",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -3789,7 +3746,7 @@
   },
   {
     "marka": "Bepanthen",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -3807,7 +3764,7 @@
   },
   {
     "marka": "Berocca",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -3961,7 +3918,7 @@
   },
   {
     "marka": "biff",
-    "anaFirma": "",
+    "anaFirma": "Henkel",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -3979,7 +3936,7 @@
   },
   {
     "marka": "Big Jim",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -3997,7 +3954,7 @@
   },
   {
     "marka": "Big Red",
-    "anaFirma": "",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4015,7 +3972,7 @@
   },
   {
     "marka": "bilkom",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4033,7 +3990,7 @@
   },
   {
     "marka": "Billa",
-    "anaFirma": "",
+    "anaFirma": "REWE / Edeka / Schwarz",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4238,7 +4195,7 @@
   },
   {
     "marka": "Bipa",
-    "anaFirma": "",
+    "anaFirma": "REWE / Edeka / Schwarz",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4263,7 +4220,7 @@
   },
   {
     "marka": "Birmot",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4299,7 +4256,7 @@
   },
   {
     "marka": "Bison",
-    "anaFirma": "",
+    "anaFirma": "Bison International",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4358,7 +4315,7 @@
   },
   {
     "marka": "Blackberry",
-    "anaFirma": "",
+    "anaFirma": "BlackBerry Limited",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4383,7 +4340,7 @@
   },
   {
     "marka": "Blem",
-    "anaFirma": "",
+    "anaFirma": "Blemil / Ordesa",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4460,7 +4417,7 @@
   },
   {
     "marka": "Blomberg",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4503,7 +4460,7 @@
   },
   {
     "marka": "Blue",
-    "anaFirma": "",
+    "anaFirma": "Kraft Heinz / General Mills",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4575,7 +4532,7 @@
   },
   {
     "marka": "BMW",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4673,7 +4630,7 @@
   },
   {
     "marka": "Bonami",
-    "anaFirma": "",
+    "anaFirma": "Bonami.cz",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4731,7 +4688,7 @@
   },
   {
     "marka": "Bonprix",
-    "anaFirma": "",
+    "anaFirma": "Otto / Zalando / Ikea",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4749,7 +4706,7 @@
   },
   {
     "marka": "Bonux",
-    "anaFirma": "",
+    "anaFirma": "Procter & Gamble",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4767,7 +4724,7 @@
   },
   {
     "marka": "Booking",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "preferred",
@@ -4830,7 +4787,7 @@
   },
   {
     "marka": "Borotalco",
-    "anaFirma": "",
+    "anaFirma": "Bolton Group",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4848,7 +4805,7 @@
   },
   {
     "marka": "Bosch",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4866,7 +4823,7 @@
   },
   {
     "marka": "Boss",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4884,7 +4841,7 @@
   },
   {
     "marka": "Bostik",
-    "anaFirma": "",
+    "anaFirma": "Bostik / Arkema",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4956,7 +4913,7 @@
   },
   {
     "marka": "Bournvita",
-    "anaFirma": "",
+    "anaFirma": "Bournvita / Mondelēz",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4974,7 +4931,7 @@
   },
   {
     "marka": "Boxd Water",
-    "anaFirma": "",
+    "anaFirma": "Boxed Water Is Better",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4992,7 +4949,7 @@
   },
   {
     "marka": "BP",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -5046,7 +5003,7 @@
   },
   {
     "marka": "bravo",
-    "anaFirma": "",
+    "anaFirma": "Bravo / Rauch",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -5064,7 +5021,7 @@
   },
   {
     "marka": "Breaka",
-    "anaFirma": "",
+    "anaFirma": "Breaka / Parmalat",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -5167,7 +5124,7 @@
   },
   {
     "marka": "Bridel",
-    "anaFirma": "",
+    "anaFirma": "Lactalis",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -5185,7 +5142,7 @@
   },
   {
     "marka": "Brilliance",
-    "anaFirma": "",
+    "anaFirma": "Brilliance Auto",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -5243,7 +5200,7 @@
   },
   {
     "marka": "Bryza",
-    "anaFirma": "",
+    "anaFirma": "Bryza / Reckitt",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -5370,7 +5327,7 @@
   },
   {
     "marka": "Burberry",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -5452,7 +5409,7 @@
   },
   {
     "marka": "Bvlgari",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -5532,7 +5489,7 @@
   },
   {
     "marka": "C&A",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -5572,7 +5529,7 @@
   },
   {
     "marka": "Cabbage Patch Kids",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -5708,7 +5665,7 @@
   },
   {
     "marka": "Calor",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -5726,7 +5683,7 @@
   },
   {
     "marka": "Calvin Klein",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -5826,7 +5783,7 @@
   },
   {
     "marka": "Candibene",
-    "anaFirma": "",
+    "anaFirma": "Teva Pharmaceutical Industries",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -5844,7 +5801,7 @@
   },
   {
     "marka": "Canesten",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -5959,7 +5916,7 @@
   },
   {
     "marka": "Captain Power",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -6031,7 +5988,7 @@
   },
   {
     "marka": "Caro",
-    "anaFirma": "",
+    "anaFirma": "Nestlé S.A.",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -6049,7 +6006,7 @@
   },
   {
     "marka": "Carolin",
-    "anaFirma": "",
+    "anaFirma": "Bolton Group",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -6089,7 +6046,7 @@
   },
   {
     "marka": "Carrefour",
-    "anaFirma": "",
+    "anaFirma": "Aldi / Spar / Carrefour",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -6169,7 +6126,7 @@
   },
   {
     "marka": "Catsan",
-    "anaFirma": "",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -6187,7 +6144,7 @@
   },
   {
     "marka": "CB2",
-    "anaFirma": "",
+    "anaFirma": "Otto / Zalando / Ikea",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -6516,7 +6473,7 @@
   },
   {
     "marka": "Chappies",
-    "anaFirma": "",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -6534,7 +6491,7 @@
   },
   {
     "marka": "chappy",
-    "anaFirma": "",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -6552,7 +6509,7 @@
   },
   {
     "marka": "ChapStick",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -6592,7 +6549,7 @@
   },
   {
     "marka": "Charmin",
-    "anaFirma": "",
+    "anaFirma": "Procter & Gamble",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -6792,7 +6749,7 @@
   },
   {
     "marka": "Chio Foods",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -6926,7 +6883,7 @@
   },
   {
     "marka": "Christian Dior",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -7145,7 +7102,7 @@
   },
   {
     "marka": "Cini Minis",
-    "anaFirma": "",
+    "anaFirma": "Nestlé S.A.",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -7163,7 +7120,7 @@
   },
   {
     "marka": "Ciprofloxacin",
-    "anaFirma": "",
+    "anaFirma": "Teva Pharmaceutical Industries",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -7210,7 +7167,7 @@
   },
   {
     "marka": "Citigroup",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -7264,7 +7221,7 @@
   },
   {
     "marka": "Claritin",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -7792,7 +7749,7 @@
   },
   {
     "marka": "Cocoavia",
-    "anaFirma": "",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -7810,7 +7767,7 @@
   },
   {
     "marka": "Coffee Mate",
-    "anaFirma": "",
+    "anaFirma": "Nestlé S.A.",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -7904,7 +7861,7 @@
   },
   {
     "marka": "Columbia Sportswear",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -7973,7 +7930,7 @@
   },
   {
     "marka": "Commerzbank",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -8009,7 +7966,7 @@
   },
   {
     "marka": "Condor",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -8027,7 +7984,7 @@
   },
   {
     "marka": "Constructa",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -8045,7 +8002,7 @@
   },
   {
     "marka": "Converse",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -8139,7 +8096,7 @@
   },
   {
     "marka": "Corega",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -8157,7 +8114,7 @@
   },
   {
     "marka": "Corn Flakes",
-    "anaFirma": "Kellanova / WK Kellogg ayrımı kontrol gerekli",
+    "anaFirma": "Kraft Heinz / General Mills",
     "kategori": "Gıda",
     "altKategori": "Kahvaltılık gevrek",
     "status": "review",
@@ -8303,7 +8260,7 @@
   },
   {
     "marka": "Crate&Barrel",
-    "anaFirma": "",
+    "anaFirma": "Otto / Zalando / Ikea",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -8321,7 +8278,7 @@
   },
   {
     "marka": "Crate&Kids",
-    "anaFirma": "",
+    "anaFirma": "Otto / Zalando / Ikea",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -8339,7 +8296,7 @@
   },
   {
     "marka": "Crave",
-    "anaFirma": "",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -8357,7 +8314,7 @@
   },
   {
     "marka": "Creation L",
-    "anaFirma": "",
+    "anaFirma": "Otto Group",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -8429,7 +8386,7 @@
   },
   {
     "marka": "Crocs",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -8487,7 +8444,7 @@
   },
   {
     "marka": "Curtis",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -8505,7 +8462,7 @@
   },
   {
     "marka": "Curvissa",
-    "anaFirma": "",
+    "anaFirma": "Otto Group",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -8600,7 +8557,7 @@
   },
   {
     "marka": "Daimler Truck",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -8690,7 +8647,7 @@
   },
   {
     "marka": "Dallmayr",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -9036,7 +8993,7 @@
   },
   {
     "marka": "Dawlance",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -9054,7 +9011,7 @@
   },
   {
     "marka": "Dawn",
-    "anaFirma": "",
+    "anaFirma": "Procter & Gamble",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -9072,7 +9029,7 @@
   },
   {
     "marka": "DB Bahn",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -9148,7 +9105,7 @@
   },
   {
     "marka": "Defy",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -9166,7 +9123,7 @@
   },
   {
     "marka": "Deichmann",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -9323,7 +9280,7 @@
   },
   {
     "marka": "Dentagard",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -9454,7 +9411,7 @@
   },
   {
     "marka": "Desigual",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -9494,7 +9451,7 @@
   },
   {
     "marka": "Deutsche Bank",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -9530,7 +9487,7 @@
   },
   {
     "marka": "DHL",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -9566,7 +9523,7 @@
   },
   {
     "marka": "Diane-35",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -9714,7 +9671,7 @@
   },
   {
     "marka": "Diskont Tank",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -9732,7 +9689,7 @@
   },
   {
     "marka": "Disney",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -9768,7 +9725,7 @@
   },
   {
     "marka": "Divan",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -9880,7 +9837,7 @@
   },
   {
     "marka": "Dolobene",
-    "anaFirma": "",
+    "anaFirma": "Teva Pharmaceutical Industries",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -10085,7 +10042,7 @@
   },
   {
     "marka": "Dosenbach",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -10544,7 +10501,7 @@
   },
   {
     "marka": "Dunkin Donuts",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -10775,7 +10732,7 @@
   },
   {
     "marka": "Dyson",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -10829,7 +10786,7 @@
   },
   {
     "marka": "Eastpack",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -10851,7 +10808,7 @@
   },
   {
     "marka": "Eastpak",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -10905,7 +10862,7 @@
   },
   {
     "marka": "ebay",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -10977,7 +10934,7 @@
   },
   {
     "marka": "Eclipse",
-    "anaFirma": "",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -11054,7 +11011,7 @@
   },
   {
     "marka": "Edeka",
-    "anaFirma": "",
+    "anaFirma": "REWE / Edeka / Schwarz",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -11108,7 +11065,7 @@
   },
   {
     "marka": "Eduscho",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -11194,7 +11151,7 @@
   },
   {
     "marka": "el Primero",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -11248,7 +11205,7 @@
   },
   {
     "marka": "elektrabregenz",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -11266,7 +11223,7 @@
   },
   {
     "marka": "Elektrolux",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -11302,7 +11259,7 @@
   },
   {
     "marka": "Elevit",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -11482,7 +11439,7 @@
   },
   {
     "marka": "emsa",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -11500,7 +11457,7 @@
   },
   {
     "marka": "Enalapril",
-    "anaFirma": "",
+    "anaFirma": "Teva Pharmaceutical Industries",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -11590,7 +11547,7 @@
   },
   {
     "marka": "ENI",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -11752,7 +11709,7 @@
   },
   {
     "marka": "Ernsting's family",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -11774,7 +11731,7 @@
   },
   {
     "marka": "Eskimo",
-    "anaFirma": "",
+    "anaFirma": "Unilever",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -11792,7 +11749,7 @@
   },
   {
     "marka": "Esprit",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -12038,7 +11995,7 @@
   },
   {
     "marka": "Eurospar",
-    "anaFirma": "",
+    "anaFirma": "Aldi / Spar / Carrefour",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -12060,7 +12017,7 @@
   },
   {
     "marka": "Ever After High",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -12209,7 +12166,7 @@
   },
   {
     "marka": "Extreme Dinosaurs",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -12673,7 +12630,7 @@
   },
   {
     "marka": "Fenistil",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -12809,7 +12766,7 @@
   },
   {
     "marka": "Fiat",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -12970,7 +12927,7 @@
   },
   {
     "marka": "Fisher-Price",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -12988,7 +12945,7 @@
   },
   {
     "marka": "Fixodent",
-    "anaFirma": "",
+    "anaFirma": "Procter & Gamble",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -13024,7 +12981,7 @@
   },
   {
     "marka": "Flavel",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -13213,7 +13170,7 @@
   },
   {
     "marka": "Ford",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -13253,7 +13210,7 @@
   },
   {
     "marka": "Fox",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -13343,7 +13300,7 @@
   },
   {
     "marka": "freemans",
-    "anaFirma": "",
+    "anaFirma": "Otto Group",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -13464,7 +13421,7 @@
   },
   {
     "marka": "Frosties",
-    "anaFirma": "",
+    "anaFirma": "Kraft Heinz / General Mills",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -13649,7 +13606,7 @@
   },
   {
     "marka": "Gabor",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -13671,7 +13628,7 @@
   },
   {
     "marka": "Gaggenau",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -13689,7 +13646,7 @@
   },
   {
     "marka": "Gain",
-    "anaFirma": "",
+    "anaFirma": "Procter & Gamble",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -13707,7 +13664,7 @@
   },
   {
     "marka": "Galbani",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -13743,7 +13700,7 @@
   },
   {
     "marka": "Gammon",
-    "anaFirma": "",
+    "anaFirma": "Beiersdorf AG",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -13761,7 +13718,7 @@
   },
   {
     "marka": "Gant",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -13971,7 +13928,7 @@
   },
   {
     "marka": "Generali",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -13989,7 +13946,7 @@
   },
   {
     "marka": "Geox",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -14142,7 +14099,7 @@
   },
   {
     "marka": "Ginkgobene",
-    "anaFirma": "",
+    "anaFirma": "Teva Pharmaceutical Industries",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -14196,7 +14153,7 @@
   },
   {
     "marka": "Givenchy",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -14350,7 +14307,7 @@
   },
   {
     "marka": "Glucobay",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -14386,7 +14343,7 @@
   },
   {
     "marka": "golden Break",
-    "anaFirma": "",
+    "anaFirma": "Nestlé S.A.",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -14445,7 +14402,7 @@
   },
   {
     "marka": "Goldman Sachs",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -14579,7 +14536,7 @@
   },
   {
     "marka": "Grattan",
-    "anaFirma": "",
+    "anaFirma": "Otto Group",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -14673,7 +14630,7 @@
   },
   {
     "marka": "Grundig",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -14691,7 +14648,7 @@
   },
   {
     "marka": "Gucci",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -14709,7 +14666,7 @@
   },
   {
     "marka": "Guess",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -14978,7 +14935,7 @@
   },
   {
     "marka": "Hanseatic Bank",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -15059,7 +15016,7 @@
   },
   {
     "marka": "Hardees",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -15291,7 +15248,7 @@
   },
   {
     "marka": "Heine",
-    "anaFirma": "",
+    "anaFirma": "Otto / Zalando / Ikea",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -15551,7 +15508,7 @@
   },
   {
     "marka": "Hermes",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -15627,7 +15584,7 @@
   },
   {
     "marka": "Hervis",
-    "anaFirma": "",
+    "anaFirma": "Aldi / Spar / Carrefour",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -15685,7 +15642,7 @@
   },
   {
     "marka": "Hills Pet Nutrition",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -15747,7 +15704,7 @@
   },
   {
     "marka": "Hofer",
-    "anaFirma": "",
+    "anaFirma": "Aldi / Spar / Carrefour",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -15909,7 +15866,7 @@
   },
   {
     "marka": "Hot Wheels",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -15927,7 +15884,7 @@
   },
   {
     "marka": "Hotel Chocolat",
-    "anaFirma": "",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -15981,7 +15938,7 @@
   },
   {
     "marka": "HP Sauce",
-    "anaFirma": "",
+    "anaFirma": "Kraft Heinz / General Mills",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -15999,7 +15956,7 @@
   },
   {
     "marka": "HSBC Bank",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -16071,7 +16028,7 @@
   },
   {
     "marka": "Hugo Boss",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -16089,7 +16046,7 @@
   },
   {
     "marka": "Humanic",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -16129,7 +16086,7 @@
   },
   {
     "marka": "Hylak",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -16169,7 +16126,7 @@
   },
   {
     "marka": "Hyundai",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -16251,7 +16208,7 @@
   },
   {
     "marka": "Iberogast",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -16269,7 +16226,7 @@
   },
   {
     "marka": "IBM",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -16392,7 +16349,7 @@
   },
   {
     "marka": "IKEA",
-    "anaFirma": "",
+    "anaFirma": "Otto / Zalando / Ikea",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -16410,7 +16367,7 @@
   },
   {
     "marka": "illycaffè",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -16464,7 +16421,7 @@
   },
   {
     "marka": "imusa",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -16500,7 +16457,7 @@
   },
   {
     "marka": "Influbene",
-    "anaFirma": "",
+    "anaFirma": "Teva Pharmaceutical Industries",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -16608,7 +16565,7 @@
   },
   {
     "marka": "Interspar",
-    "anaFirma": "",
+    "anaFirma": "Aldi / Spar / Carrefour",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -16728,7 +16685,7 @@
   },
   {
     "marka": "Irish Spring",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -16822,7 +16779,7 @@
   },
   {
     "marka": "Ivory",
-    "anaFirma": "",
+    "anaFirma": "Procter & Gamble",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -17038,7 +16995,7 @@
   },
   {
     "marka": "Jet",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -17200,7 +17157,7 @@
   },
   {
     "marka": "JPMorgan Chase",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -17518,7 +17475,7 @@
   },
   {
     "marka": "Kaufland",
-    "anaFirma": "",
+    "anaFirma": "REWE / Edeka / Schwarz",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -17595,7 +17552,7 @@
   },
   {
     "marka": "Kellogg’s",
-    "anaFirma": "",
+    "anaFirma": "Kraft Heinz / General Mills",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -17613,7 +17570,7 @@
   },
   {
     "marka": "Kelly‘s",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -17740,7 +17697,7 @@
   },
   {
     "marka": "Kenzo",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -17794,7 +17751,7 @@
   },
   {
     "marka": "Kiabi",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -17880,7 +17837,7 @@
   },
   {
     "marka": "KIK",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -18283,7 +18240,7 @@
   },
   {
     "marka": "Kindest Kare",
-    "anaFirma": "",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -18622,7 +18579,7 @@
   },
   {
     "marka": "Koçtaş",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -18696,7 +18653,7 @@
   },
   {
     "marka": "Kraft Heinz Germany",
-    "anaFirma": "",
+    "anaFirma": "Kraft Heinz / General Mills",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -18714,7 +18671,7 @@
   },
   {
     "marka": "Krampouz",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -18791,7 +18748,7 @@
   },
   {
     "marka": "Krups",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -19166,7 +19123,7 @@
   },
   {
     "marka": "Lacoste",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -19202,7 +19159,7 @@
   },
   {
     "marka": "Lactalis",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -19220,7 +19177,7 @@
   },
   {
     "marka": "Lactel",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -19274,7 +19231,7 @@
   },
   {
     "marka": "Lady Speed Stick",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -19346,7 +19303,7 @@
   },
   {
     "marka": "Lamisil",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -19451,7 +19408,7 @@
   },
   {
     "marka": "Lascana",
-    "anaFirma": "",
+    "anaFirma": "Otto / Zalando / Ikea",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -19469,7 +19426,7 @@
   },
   {
     "marka": "Laxbene",
-    "anaFirma": "",
+    "anaFirma": "Teva Pharmaceutical Industries",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -19573,7 +19530,7 @@
   },
   {
     "marka": "Lea&Perrins",
-    "anaFirma": "",
+    "anaFirma": "Kraft Heinz / General Mills",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -19591,7 +19548,7 @@
   },
   {
     "marka": "Leerdammer",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -19631,7 +19588,7 @@
   },
   {
     "marka": "Leisure",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -19736,7 +19693,7 @@
   },
   {
     "marka": "Leroy Merlin",
-    "anaFirma": "",
+    "anaFirma": "Aldi / Spar / Carrefour",
     "kategori": "",
     "altKategori": "",
     "status": "preferred",
@@ -19772,7 +19729,7 @@
   },
   {
     "marka": "Levitra",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -19790,7 +19747,7 @@
   },
   {
     "marka": "LG Electronics",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -19844,7 +19801,7 @@
   },
   {
     "marka": "Lidl",
-    "anaFirma": "",
+    "anaFirma": "REWE / Edeka / Schwarz",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -19862,7 +19819,7 @@
   },
   {
     "marka": "Liebherr",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -19984,7 +19941,7 @@
   },
   {
     "marka": "Limango.de",
-    "anaFirma": "",
+    "anaFirma": "Otto / Zalando / Ikea",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -20038,7 +19995,7 @@
   },
   {
     "marka": "LinkedIN",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -20115,7 +20072,7 @@
   },
   {
     "marka": "Lipetgaz",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -20220,7 +20177,7 @@
   },
   {
     "marka": "Lisinopril",
-    "anaFirma": "",
+    "anaFirma": "Teva Pharmaceutical Industries",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -20292,7 +20249,7 @@
   },
   {
     "marka": "Locatelli",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -20310,7 +20267,7 @@
   },
   {
     "marka": "Lockets",
-    "anaFirma": "",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -20346,7 +20303,7 @@
   },
   {
     "marka": "Loewe",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -20422,7 +20379,7 @@
   },
   {
     "marka": "Look Again",
-    "anaFirma": "",
+    "anaFirma": "Otto Group",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -20440,7 +20397,7 @@
   },
   {
     "marka": "Loperamid",
-    "anaFirma": "",
+    "anaFirma": "Teva Pharmaceutical Industries",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -20559,7 +20516,7 @@
   },
   {
     "marka": "Louis Vuitton",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -20690,7 +20647,7 @@
   },
   {
     "marka": "Lunchables",
-    "anaFirma": "",
+    "anaFirma": "Kraft Heinz / General Mills",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -21125,7 +21082,7 @@
   },
   {
     "marka": "Magic 8 Ball",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -21373,7 +21330,7 @@
   },
   {
     "marka": "Manufactum",
-    "anaFirma": "",
+    "anaFirma": "Otto Group",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -21468,7 +21425,7 @@
   },
   {
     "marka": "Marc Jacobs",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -21486,7 +21443,7 @@
   },
   {
     "marka": "Marc O’Polo",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -21603,7 +21560,7 @@
   },
   {
     "marka": "Mastercard",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -21621,7 +21578,7 @@
   },
   {
     "marka": "Masters of the Universe",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -21639,7 +21596,7 @@
   },
   {
     "marka": "Matchbox",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -21937,7 +21894,7 @@
   },
   {
     "marka": "Mega Construx",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -22013,7 +21970,7 @@
   },
   {
     "marka": "Mellita",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -22130,7 +22087,7 @@
   },
   {
     "marka": "Mercedes-Benz",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -22256,7 +22213,7 @@
   },
   {
     "marka": "Metroprolol",
-    "anaFirma": "",
+    "anaFirma": "Teva Pharmaceutical Industries",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -22391,7 +22348,7 @@
   },
   {
     "marka": "Michael Kors",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -22427,7 +22384,7 @@
   },
   {
     "marka": "Miele",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -22709,7 +22666,7 @@
   },
   {
     "marka": "Miracle Whip",
-    "anaFirma": "",
+    "anaFirma": "Kraft Heinz / General Mills",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -22786,7 +22743,7 @@
   },
   {
     "marka": "Mirro",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -22804,7 +22761,7 @@
   },
   {
     "marka": "Mitsubishi Electric",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -22858,7 +22815,7 @@
   },
   {
     "marka": "Mogaz",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -23012,7 +22969,7 @@
   },
   {
     "marka": "Monster High",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -23110,7 +23067,7 @@
   },
   {
     "marka": "Motorola",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -23128,7 +23085,7 @@
   },
   {
     "marka": "Moulinex",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -23444,7 +23401,7 @@
   },
   {
     "marka": "Mucobene",
-    "anaFirma": "",
+    "anaFirma": "Teva Pharmaceutical Industries",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -23562,7 +23519,7 @@
   },
   {
     "marka": "My-Scene-Puppen",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -23580,7 +23537,7 @@
   },
   {
     "marka": "myToys",
-    "anaFirma": "",
+    "anaFirma": "Otto / Zalando / Ikea",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -23877,7 +23834,7 @@
   },
   {
     "marka": "Neff",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -24064,7 +24021,7 @@
   },
   {
     "marka": "Netflix",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -24082,7 +24039,7 @@
   },
   {
     "marka": "Netto",
-    "anaFirma": "",
+    "anaFirma": "REWE / Edeka / Schwarz",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -24204,7 +24161,7 @@
   },
   {
     "marka": "New Balance",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -24302,7 +24259,7 @@
   },
   {
     "marka": "Nicotinell",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -24429,7 +24386,7 @@
   },
   {
     "marka": "NKD",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -24451,7 +24408,7 @@
   },
   {
     "marka": "Nokia",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -24491,7 +24448,7 @@
   },
   {
     "marka": "North Face",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -24820,7 +24777,7 @@
   },
   {
     "marka": "Nutro",
-    "anaFirma": "",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -25006,7 +24963,7 @@
   },
   {
     "marka": "OBH Nordica",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -25042,7 +24999,7 @@
   },
   {
     "marka": "ODOL",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -25284,7 +25241,7 @@
   },
   {
     "marka": "Olynth",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -25399,7 +25356,7 @@
   },
   {
     "marka": "OMV",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -25475,7 +25432,7 @@
   },
   {
     "marka": "Opet",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -25493,7 +25450,7 @@
   },
   {
     "marka": "OPPO",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -25511,7 +25468,7 @@
   },
   {
     "marka": "Oracle",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -25806,7 +25763,7 @@
   },
   {
     "marka": "Orsay",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -25923,7 +25880,7 @@
   },
   {
     "marka": "Otokar",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -25941,7 +25898,7 @@
   },
   {
     "marka": "Otokoc",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -25959,7 +25916,7 @@
   },
   {
     "marka": "Otriven",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -25977,7 +25934,7 @@
   },
   {
     "marka": "Otrivin",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -25995,7 +25952,7 @@
   },
   {
     "marka": "OTTO group",
-    "anaFirma": "",
+    "anaFirma": "Otto / Zalando / Ikea",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -26075,7 +26032,7 @@
   },
   {
     "marka": "Pacojet",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -26280,7 +26237,7 @@
   },
   {
     "marka": "Panadol",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -26412,7 +26369,7 @@
   },
   {
     "marka": "Paracetamol",
-    "anaFirma": "",
+    "anaFirma": "Teva Pharmaceutical Industries",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -26466,7 +26423,7 @@
   },
   {
     "marka": "Parmalat",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -26882,7 +26839,7 @@
   },
   {
     "marka": "PENNY",
-    "anaFirma": "",
+    "anaFirma": "REWE / Edeka / Schwarz",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -27481,7 +27438,7 @@
   },
   {
     "marka": "Philips",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -27553,7 +27510,7 @@
   },
   {
     "marka": "PIMCO",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -27571,7 +27528,7 @@
   },
   {
     "marka": "Pimkie",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -27651,7 +27608,7 @@
   },
   {
     "marka": "Pixel Chix",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -27886,7 +27843,7 @@
   },
   {
     "marka": "Polly Pocket",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -27904,7 +27861,7 @@
   },
   {
     "marka": "Polo Ralph Lauren Corporation",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -27981,7 +27938,7 @@
   },
   {
     "marka": "Ponal",
-    "anaFirma": "",
+    "anaFirma": "Henkel",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -28053,7 +28010,7 @@
   },
   {
     "marka": "Popples",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -28071,7 +28028,7 @@
   },
   {
     "marka": "Porsche AG",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -28334,7 +28291,7 @@
   },
   {
     "marka": "Primark",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -28433,7 +28390,7 @@
   },
   {
     "marka": "Pringles",
-    "anaFirma": "Kellanova / Mars satın alma süreci sonrası kontrol gerekli",
+    "anaFirma": "Kraft Heinz / General Mills",
     "kategori": "Gıda",
     "altKategori": "Cips / stack chips",
     "status": "review",
@@ -28474,7 +28431,7 @@
   },
   {
     "marka": "Priorix",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -28591,7 +28548,7 @@
   },
   {
     "marka": "Profilo",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -28817,7 +28774,7 @@
   },
   {
     "marka": "Pure encapsulations",
-    "anaFirma": "",
+    "anaFirma": "Nestlé S.A.",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -29053,7 +29010,7 @@
   },
   {
     "marka": "Quelle",
-    "anaFirma": "",
+    "anaFirma": "Otto / Zalando / Ikea",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -29206,7 +29163,7 @@
   },
   {
     "marka": "Ratiodolor",
-    "anaFirma": "",
+    "anaFirma": "Teva Pharmaceutical Industries",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -29224,7 +29181,7 @@
   },
   {
     "marka": "Rauch FRUCHTSAFTE",
-    "anaFirma": "",
+    "anaFirma": "Bravo / Rauch",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -29283,7 +29240,7 @@
   },
   {
     "marka": "Real Rewe Gruppe",
-    "anaFirma": "",
+    "anaFirma": "REWE / Edeka / Schwarz",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -29595,7 +29552,7 @@
   },
   {
     "marka": "Rejoice",
-    "anaFirma": "",
+    "anaFirma": "Procter & Gamble",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -29631,7 +29588,7 @@
   },
   {
     "marka": "Rennie",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -29712,7 +29669,7 @@
   },
   {
     "marka": "REWE",
-    "anaFirma": "",
+    "anaFirma": "REWE / Edeka / Schwarz",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -29794,7 +29751,7 @@
   },
   {
     "marka": "Rio Mare",
-    "anaFirma": "",
+    "anaFirma": "Bolton Group",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -29959,7 +29916,7 @@
   },
   {
     "marka": "Rochedo",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -30188,7 +30145,7 @@
   },
   {
     "marka": "Rowenta",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -30377,7 +30334,7 @@
   },
   {
     "marka": "Safeguard",
-    "anaFirma": "",
+    "anaFirma": "Procter & Gamble",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -30441,7 +30398,7 @@
   },
   {
     "marka": "Salakis",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -30459,7 +30416,7 @@
   },
   {
     "marka": "Salamander",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -30477,7 +30434,7 @@
   },
   {
     "marka": "Salomon",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -30513,7 +30470,7 @@
   },
   {
     "marka": "Samsung",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -30531,7 +30488,7 @@
   },
   {
     "marka": "Samurai",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -30626,7 +30583,7 @@
   },
   {
     "marka": "Santal",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -30662,7 +30619,7 @@
   },
   {
     "marka": "SAP",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -30738,7 +30695,7 @@
   },
   {
     "marka": "Saupiquet",
-    "anaFirma": "",
+    "anaFirma": "Bolton Group",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -30756,7 +30713,7 @@
   },
   {
     "marka": "Schaerer",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -31019,7 +30976,7 @@
   },
   {
     "marka": "Scope",
-    "anaFirma": "",
+    "anaFirma": "Procter & Gamble",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -31141,7 +31098,7 @@
   },
   {
     "marka": "Seat",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -31263,7 +31220,7 @@
   },
   {
     "marka": "Seeds Change",
-    "anaFirma": "",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -31281,7 +31238,7 @@
   },
   {
     "marka": "Segafredo",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -31417,7 +31374,7 @@
   },
   {
     "marka": "Sephora",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -31453,7 +31410,7 @@
   },
   {
     "marka": "Setur",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -31507,7 +31464,7 @@
   },
   {
     "marka": "Sheego",
-    "anaFirma": "",
+    "anaFirma": "Otto / Zalando / Ikea",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -31525,7 +31482,7 @@
   },
   {
     "marka": "Shell",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -31683,7 +31640,7 @@
   },
   {
     "marka": "Siemens",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -31755,7 +31712,7 @@
   },
   {
     "marka": "Silit",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -31876,7 +31833,7 @@
   },
   {
     "marka": "Sista",
-    "anaFirma": "",
+    "anaFirma": "Henkel",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -31948,7 +31905,7 @@
   },
   {
     "marka": "Sketchers",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -32020,7 +31977,7 @@
   },
   {
     "marka": "Skin Stories",
-    "anaFirma": "",
+    "anaFirma": "Beiersdorf AG",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -32097,7 +32054,7 @@
   },
   {
     "marka": "Slazenger",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -32151,7 +32108,7 @@
   },
   {
     "marka": "SMA Nutrition",
-    "anaFirma": "",
+    "anaFirma": "Nestlé S.A.",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -32169,7 +32126,7 @@
   },
   {
     "marka": "SMAC",
-    "anaFirma": "",
+    "anaFirma": "Bolton Group",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -32187,7 +32144,7 @@
   },
   {
     "marka": "Smacks",
-    "anaFirma": "",
+    "anaFirma": "Nestlé S.A.",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -32403,7 +32360,7 @@
   },
   {
     "marka": "Société",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -32521,7 +32478,7 @@
   },
   {
     "marka": "Solero",
-    "anaFirma": "",
+    "anaFirma": "Unilever",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -32724,7 +32681,7 @@
   },
   {
     "marka": "Sony",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -32742,7 +32699,7 @@
   },
   {
     "marka": "Sorriso",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -32778,7 +32735,7 @@
   },
   {
     "marka": "Spar",
-    "anaFirma": "",
+    "anaFirma": "Aldi / Spar / Carrefour",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -32903,7 +32860,7 @@
   },
   {
     "marka": "Speed Stick",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -33013,7 +32970,7 @@
   },
   {
     "marka": "Spotify",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -33207,7 +33164,7 @@
   },
   {
     "marka": "StepStone",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -33351,7 +33308,7 @@
   },
   {
     "marka": "Street Sharks",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -33441,7 +33398,7 @@
   },
   {
     "marka": "Suavitel",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -33513,7 +33470,7 @@
   },
   {
     "marka": "sun",
-    "anaFirma": "",
+    "anaFirma": "Unilever",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -33691,7 +33648,7 @@
   },
   {
     "marka": "Supor",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -33933,7 +33890,7 @@
   },
   {
     "marka": "Swimwear365",
-    "anaFirma": "",
+    "anaFirma": "Otto Group",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -34124,7 +34081,7 @@
   },
   {
     "marka": "Tag Heuer",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -34160,7 +34117,7 @@
   },
   {
     "marka": "Takko",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -34178,7 +34135,7 @@
   },
   {
     "marka": "Talcid",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -34196,7 +34153,7 @@
   },
   {
     "marka": "Tamaris",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -34305,7 +34262,7 @@
   },
   {
     "marka": "Tang",
-    "anaFirma": "",
+    "anaFirma": "Kraft Heinz / General Mills",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -34323,7 +34280,7 @@
   },
   {
     "marka": "Tangit",
-    "anaFirma": "",
+    "anaFirma": "Henkel",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -34500,7 +34457,7 @@
   },
   {
     "marka": "Ted Baker",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -34540,7 +34497,7 @@
   },
   {
     "marka": "Tefal",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -34666,7 +34623,7 @@
   },
   {
     "marka": "Tesla",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -34764,7 +34721,7 @@
   },
   {
     "marka": "The Vegetaria Butcher",
-    "anaFirma": "",
+    "anaFirma": "Unilever",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -34931,7 +34888,7 @@
   },
   {
     "marka": "Tickle Me Elmo",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -34985,7 +34942,7 @@
   },
   {
     "marka": "Timberland",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -35003,7 +34960,7 @@
   },
   {
     "marka": "Tineco",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -35021,7 +34978,7 @@
   },
   {
     "marka": "Tixo",
-    "anaFirma": "",
+    "anaFirma": "Beiersdorf AG",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -35125,7 +35082,7 @@
   },
   {
     "marka": "Tom tailor",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -35147,7 +35104,7 @@
   },
   {
     "marka": "Tommy Hilfiger",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -35265,7 +35222,7 @@
   },
   {
     "marka": "Toyota",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -35559,7 +35516,7 @@
   },
   {
     "marka": "Trü Frü",
-    "anaFirma": "",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -35698,7 +35655,7 @@
   },
   {
     "marka": "Turmöl",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -35738,7 +35695,7 @@
   },
   {
     "marka": "Twinrix",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -35797,7 +35754,7 @@
   },
   {
     "marka": "Tyco R/C",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -35833,7 +35790,7 @@
   },
   {
     "marka": "UBS",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -35869,7 +35826,7 @@
   },
   {
     "marka": "UHU",
-    "anaFirma": "",
+    "anaFirma": "Bolton Group",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -35991,7 +35948,7 @@
   },
   {
     "marka": "Uncle Bens",
-    "anaFirma": "",
+    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -36009,7 +35966,7 @@
   },
   {
     "marka": "Under Armour",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -36027,7 +35984,7 @@
   },
   {
     "marka": "Unito",
-    "anaFirma": "",
+    "anaFirma": "Otto Group",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -36045,7 +36002,7 @@
   },
   {
     "marka": "Universal",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -36063,7 +36020,7 @@
   },
   {
     "marka": "Uno",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -36081,7 +36038,7 @@
   },
   {
     "marka": "UPS",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -36157,7 +36114,7 @@
   },
   {
     "marka": "Valbreso",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -36262,7 +36219,7 @@
   },
   {
     "marka": "Vans",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -36371,7 +36328,7 @@
   },
   {
     "marka": "Velveeta",
-    "anaFirma": "",
+    "anaFirma": "Kraft Heinz / General Mills",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -36489,7 +36446,7 @@
   },
   {
     "marka": "Versace",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -36693,7 +36650,7 @@
   },
   {
     "marka": "Vim",
-    "anaFirma": "",
+    "anaFirma": "Unilever",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -36747,7 +36704,7 @@
   },
   {
     "marka": "Visa & Mastercard",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -36765,7 +36722,7 @@
   },
   {
     "marka": "viss",
-    "anaFirma": "",
+    "anaFirma": "Unilever",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -36860,7 +36817,7 @@
   },
   {
     "marka": "Vivo",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -36932,7 +36889,7 @@
   },
   {
     "marka": "Volkswagen",
-    "anaFirma": "",
+    "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -36950,7 +36907,7 @@
   },
   {
     "marka": "Voltaren",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -36968,7 +36925,7 @@
   },
   {
     "marka": "Voltas",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -36986,7 +36943,7 @@
   },
   {
     "marka": "Voltbek",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -37195,7 +37152,7 @@
   },
   {
     "marka": "Wc Ente",
-    "anaFirma": "",
+    "anaFirma": "SC Johnson",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -37213,7 +37170,7 @@
   },
   {
     "marka": "Wc Frisch",
-    "anaFirma": "",
+    "anaFirma": "SC Johnson",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -37231,7 +37188,7 @@
   },
   {
     "marka": "WC Net",
-    "anaFirma": "",
+    "anaFirma": "Bolton Group",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -37249,7 +37206,7 @@
   },
   {
     "marka": "WearEver",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -37375,7 +37332,7 @@
   },
   {
     "marka": "Western Union",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -37429,7 +37386,7 @@
   },
   {
     "marka": "Whirlpool",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -37587,7 +37544,7 @@
   },
   {
     "marka": "Wilson",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -37646,7 +37603,7 @@
   },
   {
     "marka": "Witt-Gruppe",
-    "anaFirma": "",
+    "anaFirma": "Otto / Zalando / Ikea",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -37664,7 +37621,7 @@
   },
   {
     "marka": "WMF",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -37682,7 +37639,7 @@
   },
   {
     "marka": "Wobenzym",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -37700,7 +37657,7 @@
   },
   {
     "marka": "Wolford",
-    "anaFirma": "",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -37794,7 +37751,7 @@
   },
   {
     "marka": "WWE-Figuren",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -37812,7 +37769,7 @@
   },
   {
     "marka": "Wüstenrot",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -37830,7 +37787,7 @@
   },
   {
     "marka": "Xiaomi",
-    "anaFirma": "",
+    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -37874,7 +37831,7 @@
   },
   {
     "marka": "Yapı Kredi",
-    "anaFirma": "",
+    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -37892,7 +37849,7 @@
   },
   {
     "marka": "Yasminelle",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -37987,7 +37944,7 @@
   },
   {
     "marka": "Yoplait",
-    "anaFirma": "General Mills / Sodiaal bölgesel yapı kontrol gerekli",
+    "anaFirma": "Kraft Heinz / General Mills",
     "kategori": "Gıda",
     "altKategori": "Yoğurt / süt ürünü",
     "status": "review",
@@ -38061,7 +38018,7 @@
   },
   {
     "marka": "Your Look for less",
-    "anaFirma": "",
+    "anaFirma": "Otto Group",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -38192,7 +38149,7 @@
   },
   {
     "marka": "Zalando",
-    "anaFirma": "",
+    "anaFirma": "Otto / Zalando / Ikea",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -38228,7 +38185,7 @@
   },
   {
     "marka": "Zenith",
-    "anaFirma": "",
+    "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -38300,7 +38257,7 @@
   },
   {
     "marka": "Zoom",
-    "anaFirma": "",
+    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -38502,7 +38459,7 @@
   },
   {
     "marka": "Zovirax",
-    "anaFirma": "",
+    "anaFirma": "Colgate / Bayer / Haleon",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -38614,7 +38571,7 @@
   },
   {
     "marka": "ültje",
-    "anaFirma": "",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
     "kategori": "",
     "altKategori": "",
     "status": "preferred",
