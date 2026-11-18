@@ -5,60 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Ahlak Rehberim</title>
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=6">
   <script src="https://unpkg.com" defer></script>
-  <script src="app.js?v=4" defer></script>
+  <script src="app.js?v=6" defer></script>
 </head>
 <body>
-  <header class="app-header">
-    <div class="top-bar">
-      <div class="lang-switch">
-        <button data-lang="tr" class="active">🇹🇷</button>
-        <button data-lang="de">🇩🇪</button>
-        <button data-lang="en">🇬🇧</button>
-        <button data-lang="ar">🇸🇦</button>
-      </div>
-      <button id="installBtn" class="btn-install" hidden>📲 Yükle</button>
+  <header>
+    <div class="header-inner">
+      <h1>Ahlak Rehberim</h1>
+      <p>Bilinçli Tüketim ve Alternatif Rehberi</p>
     </div>
-    <h1>Ahlak Rehberim</h1>
   </header>
 
   <main class="container">
-    <section class="panel">
+    <section class="controls">
       <div class="search-row">
-        <input type="text" id="searchInput" placeholder="Marka, ana firma veya barkod...">
-        <button id="openScanBtn" class="btn-primary">📷 Barkod</button>
+        <input type="text" id="searchInput" placeholder="Marka, ana firma veya barkod ara..." autocomplete="off">
+        <button id="openScanBtn" class="btn-scan" type="button">📷 Tara</button>
       </div>
-      <div class="pills">
+
+      <div class="filter-row">
         <button class="pill active" data-filter="all">Tümü</button>
-        <button class="pill" data-filter="boycott">🔴 İnceleme</button>
-        <button class="pill" data-filter="safe">🟢 Tercih Edilebilir</button>
+        <button class="pill" data-filter="review">🔴 İnceleme</button>
+        <button class="pill" data-filter="preferred">🟢 Tercih Edilebilir</button>
         <button class="pill" data-filter="alt">⭐ Alternatifli</button>
       </div>
-      <div class="select-row">
-        <select id="categorySelect"><option value="all">Tüm Kategoriler</option></select>
-        <select id="parentSelect"><option value="all">Tüm Ana Firmalar</option></select>
-      </div>
+
+      <select id="categorySelect"><option value="all">📂 Tüm Kategoriler</option></select>
     </section>
 
-    <section id="brandGrid" class="grid"><p class="empty">Markalar Yükleniyor...</p></section>
-    <button id="loadMoreBtn" class="btn-more" hidden>Daha Fazla Göster</button>
-  </main>
-
-  <div id="scanModal" class="modal" hidden>
-    <div class="modal-box">
-      <div class="modal-head"><h2>📷 Barkod Tara</h2><button id="closeScanBtn">✕</button></div>
+    <div id="scanner-box" hidden>
       <div id="reader"></div>
       <div class="manual-row">
-        <input type="text" id="manualBarcode" placeholder="Barkod numarası girin...">
-        <button id="manualSearchBtn" class="btn-primary">Ara</button>
+        <input type="text" id="manualBarcode" placeholder="Barkod numarasını girin...">
+        <button id="manualSearchBtn" class="btn-scan" type="button">Ara</button>
+        <button id="closeScanBtn" class="btn-close" type="button">✕</button>
       </div>
     </div>
-  </div>
 
-  <footer class="app-footer">
-    <a href="#hakkinda">Hakkında</a> • <a href="#kaynak">Kaynak Politikası</a> •
-    <a href="#duzeltme">Düzeltme</a> • <a href="#gizlilik">Gizlilik</a> • <a href="#hukuki">Hukuki Bilgilendirme</a>
-  </footer>
+    <div id="countBar" class="count-bar"></div>
+    <section id="brandGrid" class="grid"><p class="empty">Markalar yükleniyor...</p></section>
+    <button id="loadMoreBtn" class="btn-more" hidden>Daha Fazla Göster</button>
+  </main>
 </body>
 </html>
