@@ -5,15 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Ahlak Rehberim</title>
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="icon-512.png">
+  <link rel="stylesheet" href="style.css?v=8">
   <script src="https://unpkg.com" defer></script>
-  <script src="app.js?v=6" defer></script>
+  <script src="app.js?v=8" defer></script>
 </head>
 <body>
   <header>
-    <div class="header-inner">
-      <h1>Ahlak Rehberim</h1>
-      <p>Bilinçli Tüketim ve Alternatif Rehberi</p>
+    <div class="brand-hero">
+      <img src="icon-512.png" alt="Ahlak Rehberim Logo" class="app-logo">
+      <div>
+        <h1>AHLAK REHBERİM</h1>
+        <p>Bilinçli Tüket, Doğru Tercih</p>
+      </div>
     </div>
   </header>
 
@@ -23,14 +28,12 @@
         <input type="text" id="searchInput" placeholder="Marka, ana firma veya barkod ara..." autocomplete="off">
         <button id="openScanBtn" class="btn-scan" type="button">📷 Tara</button>
       </div>
-
       <div class="filter-row">
         <button class="pill active" data-filter="all">Tümü</button>
-        <button class="pill" data-filter="review">🔴 İnceleme</button>
+        <button class="pill" data-filter="review">🔴 İnceleme / Boykot</button>
         <button class="pill" data-filter="preferred">🟢 Tercih Edilebilir</button>
         <button class="pill" data-filter="alt">⭐ Alternatifli</button>
       </div>
-
       <select id="categorySelect"><option value="all">📂 Tüm Kategoriler</option></select>
     </section>
 
