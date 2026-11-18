@@ -66,6 +66,69 @@ function render() {
       <div class="card-head">
         <span class="brand-name">${b.marka}</span>
         <span class="badge ${isPref ? 'preferred' : 'review'}">${isPref ? '🟢 Tercih Edilebilir' : '🔴 İnceleme / Boykot'}</span>
+function resolveParent(brandName, existingParent) {
+  if (existingParent && existingParent.trim()) return existingParent.trim();
+  const key = norm(brandName);
+  for (const [parent, list] of PARENT_RULES) {
+    if (list.includes(key)) return parent;
+  }
+  return '';
+}
+
+async function init() {
+  try {
+    const res = await fetch('data.json?v=' + Date.now());
+    const raw = await res.json();
+    const parents = new Set(raw.map(x => norm(x.anaFirma)).filter(Boolean));
+    PARENT_RULES.forEach(([p]) => parents.add(norm(p)));
+    const map = new Map();
+
+    raw.forEach(b => {
+      const cleanName = (b.marka || '').replace(/:$/, '').trim();
+      const key = norm(cleanName);
+      if (!key || JUNK.has(cleanName.toLowerCase()) || (parents.has(key) && !b.anaFirma && !b.kategori)) return;
+      const linkedParent = resolveParent(cleanName, b.anaFirma);
+      const item = { ...b, marka: cleanName, anaFirma: linkedParent };
+      const prev = map.get(key);
+      if (!prev || (!prev.kategori && item.kategori) || (!prev.anaFirma && item.anaFirma) || (item.alternatifler?.length > (prev.alternatifler?.length || 0))) {
+        map.set(key, item);
+      }
+    });
+
+    allBrands = [...map.values()].sort((a, b) => a.marka.localeCompare(b.marka, 'tr'));
+    [...new Set(allBrands.map(b => b.kategori).filter(Boolean))].sort()
+      .forEach(c => categorySelect.add(new Option(c, c)));
+    applyFilters();
+  } catch { grid.innerHTML = '<p class="empty">Veriler yüklenemedi.</p>'; }
+}
+
+function applyFilters() {
+  const q = searchInput.value.toLowerCase().trim();
+  const cat = categorySelect.value;
+  filtered = allBrands.filter(b => {
+    const matchText = b.marka.toLowerCase().includes(q) ||
+      (b.anaFirma || '').toLowerCase().includes(q) || (b.barkodlar || []).some(c => String(c).includes(q));
+    const matchCat = cat === 'all' || b.kategori === cat;
+    const hasAlt = Array.isArray(b.alternatifler) && b.alternatifler.some(a => norm(a.marka) !== norm(b.marka));
+    const matchStatus = currentFilter === 'all' || b.status === currentFilter || (currentFilter === 'alt' && hasAlt);
+    return matchText && matchCat && matchStatus;
+  });
+  shown = 40;
+  render();
+}
+
+function render() {
+  countBar.textContent = `${filtered.length} marka listeleniyor`;
+  if (!filtered.length) { grid.innerHTML = '<p class="empty">Aramanıza uygun marka bulunamadı.</p>'; loadMoreBtn.hidden = true; return; }
+  grid.innerHTML = filtered.slice(0, shown).map(b => {
+    const isPref = b.status === 'preferred';
+    const alts = (b.alternatifler || []).map(a => a.marka).filter(m => m && norm(m) !== norm(b.marka)).join(', ');
+    const meta = [b.anaFirma ? `🏢 ${b.anaFirma}` : '', b.kategori, b.altKategori].filter(Boolean).join(' • ');
+    const src = (b.kaynaklar || []);
+    return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')">
+      <div class="card-head">
+        <span class="brand-name">${b.marka}</span>
+        <span class="badge ${isPref ? 'preferred' : 'review'}">${isPref ? '🟢 Tercih Edilebilir' : '🔴 İnceleme / Boykot'}</span>
       </div>
       ${meta ? `<div class="meta">${meta}</div>` : ''}
       ${alts ? `<div class="alt">⭐ <b>Alternatifler:</b> ${alts}</div>` : ''}
