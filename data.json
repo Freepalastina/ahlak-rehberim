@@ -2304,24 +2304,6 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "Asia",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
     "marka": "ASICS",
     "anaFirma": "Mode & Schuhe",
     "kategori": "",
@@ -2341,6 +2323,24 @@
         "not": "Henüz kategori aşamasında kontrol edilmedi."
       }
     ],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "marka": "Asia",
+    "anaFirma": "",
+    "kategori": "",
+    "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [],
+    "kaynaklar": [],
     "barkodlar": [],
     "image_url": "",
     "sonGuncelleme": "2026-07-07",
@@ -3028,6 +3028,42 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
+    "marka": "Bağdat",
+    "anaFirma": "Bağdat Baharat",
+    "kategori": "Gıda",
+    "altKategori": "Baharat",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Türkiye merkezli baharat markası; güncel kaynak kontrolü önerilir.",
+    "alternatifler": [
+      {
+        "marka": "Arifoğlu",
+        "kategori": "Baharat",
+        "not": "Alternatif önerisi"
+      },
+      {
+        "marka": "yerel baharat markaları",
+        "kategori": "Baharat",
+        "not": "Alternatif önerisi"
+      }
+    ],
+    "kaynaklar": [
+      {
+        "baslik": "Bilgi kaynağı",
+        "url": "https://www.bagdatbaharat.com.tr/",
+        "tur": "Resmî şirket/marka sayfası",
+        "not": "Türkiye merkezli baharat markası; güncel kaynak kontrolü önerilir."
+      }
+    ],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Türkiye merkezli baharat markası; güncel kaynak kontrolü önerilir."
+  },
+  {
     "marka": "Balisto",
     "anaFirma": "Mars, Incorporated",
     "kategori": "",
@@ -3387,42 +3423,6 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "Bağdat",
-    "anaFirma": "Bağdat Baharat",
-    "kategori": "Gıda",
-    "altKategori": "Baharat",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Türkiye merkezli baharat markası; güncel kaynak kontrolü önerilir.",
-    "alternatifler": [
-      {
-        "marka": "Arifoğlu",
-        "kategori": "Baharat",
-        "not": "Alternatif önerisi"
-      },
-      {
-        "marka": "yerel baharat markaları",
-        "kategori": "Baharat",
-        "not": "Alternatif önerisi"
-      }
-    ],
-    "kaynaklar": [
-      {
-        "baslik": "Bilgi kaynağı",
-        "url": "https://www.bagdatbaharat.com.tr/",
-        "tur": "Resmî şirket/marka sayfası",
-        "not": "Türkiye merkezli baharat markası; güncel kaynak kontrolü önerilir."
-      }
-    ],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Türkiye merkezli baharat markası; güncel kaynak kontrolü önerilir."
-  },
-  {
     "marka": "Be-Kind",
     "anaFirma": "Mars, Incorporated",
     "kategori": "",
@@ -3673,6 +3673,24 @@
     "not": "Öncelikli marka olarak sözlüğe eklendi; kategori aşamalarında detaylandırılacak. Listedeki kayıt etik inceleme listesi kapsamında İncelenmesi önerilir olarak işaretlendi."
   },
   {
+    "marka": "Ben’s Original",
+    "anaFirma": "Mars, Incorporated",
+    "kategori": "",
+    "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
     "marka": "Benadryl",
     "anaFirma": "",
     "kategori": "",
@@ -3711,24 +3729,6 @@
   {
     "marka": "Bensdrop",
     "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
-    "marka": "Ben’s Original",
-    "anaFirma": "Mars, Incorporated",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -4647,7 +4647,7 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "Boni bokyot",
+    "marka": "Boni",
     "anaFirma": "",
     "kategori": "",
     "altKategori": "",
@@ -5408,6 +5408,28 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
+    "marka": "Bübchen",
+    "anaFirma": "",
+    "kategori": "",
+    "altKategori": "",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Tercih edilebilir listeden eklendi.",
+    "status": "preferred",
+    "durum": "preferred",
+    "statusLabel": "Tercih edilebilir",
+    "durumEtiketi": "Tercih edilebilir",
+    "kontrolGerekli": false,
+    "kontrolNotu": "",
+    "reviewLabel": "Tercih edilebilir",
+    "logoUrl": "",
+    "productImage": "",
+    "visualKey": ""
+  },
+  {
     "marka": "Bvlgari",
     "anaFirma": "LVMH / Kering / Luxus",
     "kategori": "",
@@ -5466,26 +5488,22 @@
     "visualKey": ""
   },
   {
-    "marka": "Bübchen",
+    "marka": "C.Dairy Milk",
     "anaFirma": "",
     "kategori": "",
     "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
     "alternatifler": [],
     "kaynaklar": [],
     "barkodlar": [],
     "image_url": "",
     "sonGuncelleme": "2026-07-07",
-    "not": "Tercih edilebilir listeden eklendi.",
-    "status": "preferred",
-    "durum": "preferred",
-    "statusLabel": "Tercih edilebilir",
-    "durumEtiketi": "Tercih edilebilir",
-    "kontrolGerekli": false,
-    "kontrolNotu": "",
-    "reviewLabel": "Tercih edilebilir",
-    "logoUrl": "",
-    "productImage": "",
-    "visualKey": ""
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
     "marka": "C&A",
@@ -5508,24 +5526,6 @@
     "logoUrl": "",
     "productImage": "",
     "visualKey": ""
-  },
-  {
-    "marka": "C.Dairy Milk",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
     "marka": "Cabbage Patch Kids",
@@ -5682,24 +5682,6 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "Calvin Klein",
-    "anaFirma": "LVMH / Kering / Luxus",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
     "marka": "Calvé",
     "anaFirma": "Unilever",
     "kategori": "Gıda",
@@ -5740,6 +5722,24 @@
         "not": "Calvé/Calve bölgesel marka yapısı kontrol edilmeli."
       }
     ],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "marka": "Calvin Klein",
+    "anaFirma": "LVMH / Kering / Luxus",
+    "kategori": "",
+    "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [],
+    "kaynaklar": [],
     "barkodlar": [],
     "image_url": "",
     "sonGuncelleme": "2026-07-07",
@@ -6419,7 +6419,7 @@
   },
   {
     "marka": "Chanel",
-    "anaFirma": "",
+    "anaFirma": "Chanel Limited",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -8259,6 +8259,47 @@
     "not": "Coca-Cola Coffee & Tea portföyünde Costa Coffee yer alır."
   },
   {
+    "marka": "Côte d’Or",
+    "anaFirma": "Mondelēz International",
+    "kategori": "Gıda",
+    "altKategori": "Çikolata",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [
+      {
+        "marka": "Elit",
+        "kategori": "Çikolata",
+        "not": "Alternatif önerisi"
+      },
+      {
+        "marka": "Melodi",
+        "kategori": "Çikolata",
+        "not": "Alternatif önerisi"
+      },
+      {
+        "marka": "yerel bitter çikolatalar",
+        "kategori": "Çikolata",
+        "not": "Alternatif önerisi"
+      }
+    ],
+    "kaynaklar": [
+      {
+        "baslik": "Bilgi kaynağı",
+        "url": "https://www.mondelezinternational.com/",
+        "tur": "Resmî şirket/marka sayfası",
+        "not": "Mondelēz resmî marka portföyü."
+      }
+    ],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
     "marka": "Crate&Barrel",
     "anaFirma": "Otto / Zalando / Ikea",
     "kategori": "",
@@ -8479,45 +8520,22 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "Côte d’Or",
-    "anaFirma": "Mondelēz International",
-    "kategori": "Gıda",
-    "altKategori": "Çikolata",
+    "marka": "Çaykur",
+    "anaFirma": "Çaykur",
+    "kategori": "",
+    "altKategori": "",
     "status": "review",
     "statusLabel": "İncelenmesi önerilir",
     "durum": "review",
     "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [
-      {
-        "marka": "Elit",
-        "kategori": "Çikolata",
-        "not": "Alternatif önerisi"
-      },
-      {
-        "marka": "Melodi",
-        "kategori": "Çikolata",
-        "not": "Alternatif önerisi"
-      },
-      {
-        "marka": "yerel bitter çikolatalar",
-        "kategori": "Çikolata",
-        "not": "Alternatif önerisi"
-      }
-    ],
-    "kaynaklar": [
-      {
-        "baslik": "Bilgi kaynağı",
-        "url": "https://www.mondelezinternational.com/",
-        "tur": "Resmî şirket/marka sayfası",
-        "not": "Mondelēz resmî marka portföyü."
-      }
-    ],
+    "kontrolGerekli": false,
+    "kontrolNotu": "",
+    "alternatifler": [],
+    "kaynaklar": [],
     "barkodlar": [],
     "image_url": "",
     "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
+    "not": "Öncelikli marka olarak sözlüğe eklendi; kategori aşamalarında detaylandırılacak. Listedeki kayıt etik inceleme listesi kapsamında İncelenmesi önerilir olarak işaretlendi."
   },
   {
     "marka": "D-Con",
@@ -9083,7 +9101,7 @@
   },
   {
     "marka": "Decathlon",
-    "anaFirma": "",
+    "anaFirma": "Association Familiale Mulliez",
     "kategori": "",
     "altKategori": "",
     "status": "preferred",
@@ -9779,7 +9797,7 @@
   },
   {
     "marka": "DM",
-    "anaFirma": "",
+    "anaFirma": "dm-drogerie markt",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -9834,6 +9852,24 @@
     "image_url": "",
     "sonGuncelleme": "2026-07-07",
     "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "marka": "Doğuş",
+    "anaFirma": "Doğuş Çay / Doğuş Grubu",
+    "kategori": "",
+    "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": false,
+    "kontrolNotu": "",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Öncelikli marka olarak sözlüğe eklendi; kategori aşamalarında detaylandırılacak. Listedeki kayıt etik inceleme listesi kapsamında İncelenmesi önerilir olarak işaretlendi."
   },
   {
     "marka": "Dolobene",
@@ -10223,24 +10259,6 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "Doğuş",
-    "anaFirma": "Doğuş Çay / Doğuş Grubu",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": false,
-    "kontrolNotu": "",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Öncelikli marka olarak sözlüğe eklendi; kategori aşamalarında detaylandırılacak. Listedeki kayıt etik inceleme listesi kapsamında İncelenmesi önerilir olarak işaretlendi."
-  },
-  {
     "marka": "Dr. Best",
     "anaFirma": "",
     "kategori": "",
@@ -10601,7 +10619,7 @@
   },
   {
     "marka": "Duracell",
-    "anaFirma": "",
+    "anaFirma": "Berkshire Hathaway",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -11082,7 +11100,7 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "Egetürk etik inceleme",
+    "marka": "Egetürk",
     "anaFirma": "",
     "kategori": "",
     "altKategori": "",
@@ -12747,24 +12765,6 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "fgh",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
     "marka": "Fiat",
     "anaFirma": "Auto / Energie / Logistik",
     "kategori": "",
@@ -13891,24 +13891,6 @@
     "not": "PepsiCo resmi marka portföyü."
   },
   {
-    "marka": "Gau#5",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
     "marka": "Gaviscon",
     "anaFirma": "Reckitt",
     "kategori": "",
@@ -14744,6 +14726,52 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
+    "marka": "Häagen-Dazs",
+    "anaFirma": "General Mills",
+    "kategori": "Gıda",
+    "altKategori": "Dondurma",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "",
+    "alternatifler": [
+      {
+        "marka": "Golf",
+        "kategori": "Dondurma",
+        "not": "Alternatif önerisi"
+      },
+      {
+        "marka": "Mado",
+        "kategori": "Dondurma",
+        "not": "Alternatif önerisi"
+      },
+      {
+        "marka": "Panda",
+        "kategori": "Dondurma",
+        "not": "Alternatif önerisi"
+      },
+      {
+        "marka": "yerel dondurma üreticileri",
+        "kategori": "Dondurma",
+        "not": "Alternatif önerisi"
+      }
+    ],
+    "kaynaklar": [
+      {
+        "baslik": "Bilgi kaynağı",
+        "url": "https://www.generalmills.com/food-we-make/brands",
+        "tur": "Resmî şirket/marka sayfası",
+        "not": "General Mills marka portföyü."
+      }
+    ],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "General Mills marka portföyü."
+  },
+  {
     "marka": "HACI ŞAKIR",
     "anaFirma": "",
     "kategori": "",
@@ -15525,7 +15553,7 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "Hermesetas",
+    "marka": "Hermès Parfüm",
     "anaFirma": "",
     "kategori": "",
     "altKategori": "",
@@ -15543,7 +15571,7 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "Hermès Parfüm",
+    "marka": "Hermesetas",
     "anaFirma": "",
     "kategori": "",
     "altKategori": "",
@@ -15825,7 +15853,7 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "Hoogvliet etik inceleme",
+    "marka": "Hoogvliet",
     "anaFirma": "",
     "kategori": "",
     "altKategori": "",
@@ -16143,53 +16171,7 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "Häagen-Dazs",
-    "anaFirma": "General Mills",
-    "kategori": "Gıda",
-    "altKategori": "Dondurma",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "",
-    "alternatifler": [
-      {
-        "marka": "Golf",
-        "kategori": "Dondurma",
-        "not": "Alternatif önerisi"
-      },
-      {
-        "marka": "Mado",
-        "kategori": "Dondurma",
-        "not": "Alternatif önerisi"
-      },
-      {
-        "marka": "Panda",
-        "kategori": "Dondurma",
-        "not": "Alternatif önerisi"
-      },
-      {
-        "marka": "yerel dondurma üreticileri",
-        "kategori": "Dondurma",
-        "not": "Alternatif önerisi"
-      }
-    ],
-    "kaynaklar": [
-      {
-        "baslik": "Bilgi kaynağı",
-        "url": "https://www.generalmills.com/food-we-make/brands",
-        "tur": "Resmî şirket/marka sayfası",
-        "not": "General Mills marka portföyü."
-      }
-    ],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "General Mills marka portföyü."
-  },
-  {
-    "marka": "iba",
+    "marka": "I’m walking",
     "anaFirma": "",
     "kategori": "",
     "altKategori": "",
@@ -16366,24 +16348,6 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "illycaffè",
-    "anaFirma": "Intersnack / Lactalis / Kaffe",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
     "marka": "Imanoor",
     "anaFirma": "",
     "kategori": "",
@@ -16404,24 +16368,6 @@
   {
     "marka": "Imodium",
     "anaFirma": "Kenvue / Johnson & Johnson",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
-    "marka": "imusa",
-    "anaFirma": "BSH / SEB / Elektronik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -16492,24 +16438,6 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "ingage",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
     "marka": "Innocent Drinks",
     "anaFirma": "",
     "kategori": "",
@@ -16562,6 +16490,28 @@
     "image_url": "",
     "sonGuncelleme": "2026-07-07",
     "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "marka": "ıntermarche/E.leclerc",
+    "anaFirma": "",
+    "kategori": "",
+    "altKategori": "",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Tercih edilebilir listeden eklendi.",
+    "status": "preferred",
+    "durum": "preferred",
+    "statusLabel": "Tercih edilebilir",
+    "durumEtiketi": "Tercih edilebilir",
+    "kontrolGerekli": false,
+    "kontrolNotu": "",
+    "reviewLabel": "Tercih edilebilir",
+    "logoUrl": "",
+    "productImage": "",
+    "visualKey": ""
   },
   {
     "marka": "Interspar",
@@ -16702,6 +16652,96 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
+    "marka": "Ivory",
+    "anaFirma": "Procter & Gamble",
+    "kategori": "",
+    "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "marka": "iba",
+    "anaFirma": "",
+    "kategori": "",
+    "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "marka": "illycaffè",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
+    "kategori": "",
+    "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "marka": "imusa",
+    "anaFirma": "BSH / SEB / Elektronik",
+    "kategori": "",
+    "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "marka": "ingage",
+    "anaFirma": "",
+    "kategori": "",
+    "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
     "marka": "isabel",
     "anaFirma": "",
     "kategori": "",
@@ -16776,42 +16816,6 @@
     "logoUrl": "",
     "productImage": "",
     "visualKey": ""
-  },
-  {
-    "marka": "Ivory",
-    "anaFirma": "Procter & Gamble",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
-    "marka": "I’m walking",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
     "marka": "Jacobs",
@@ -17456,6 +17460,28 @@
     "visualKey": ""
   },
   {
+    "marka": "Kärcher",
+    "anaFirma": "",
+    "kategori": "",
+    "altKategori": "",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Tercih edilebilir listeden eklendi.",
+    "status": "preferred",
+    "durum": "preferred",
+    "statusLabel": "Tercih edilebilir",
+    "durumEtiketi": "Tercih edilebilir",
+    "kontrolGerekli": false,
+    "kontrolNotu": "",
+    "reviewLabel": "Tercih edilebilir",
+    "logoUrl": "",
+    "productImage": "",
+    "visualKey": ""
+  },
+  {
     "marka": "Kaufhof",
     "anaFirma": "",
     "kategori": "",
@@ -17714,6 +17740,52 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
+    "marka": "Kérastase",
+    "anaFirma": "L'Oréal Groupe",
+    "kategori": "Kozmetik ve Kişisel Bakım",
+    "altKategori": "Profesyonel saç bakım",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [
+      {
+        "marka": "Bioxcin",
+        "kategori": "Profesyonel saç bakım",
+        "not": "Alternatif önerisi"
+      },
+      {
+        "marka": "Otacı",
+        "kategori": "Profesyonel saç bakım",
+        "not": "Alternatif önerisi"
+      },
+      {
+        "marka": "Restorex",
+        "kategori": "Profesyonel saç bakım",
+        "not": "Alternatif önerisi"
+      },
+      {
+        "marka": "Tresan",
+        "kategori": "Profesyonel saç bakım",
+        "not": "Alternatif önerisi"
+      }
+    ],
+    "kaynaklar": [
+      {
+        "baslik": "Bilgi kaynağı",
+        "url": "https://www.loreal.com/en/our-global-brands-portfolio/",
+        "tur": "Resmî şirket/marka sayfası",
+        "not": "L'Oréal resmî marka portföyü."
+      }
+    ],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
     "marka": "Kevita",
     "anaFirma": "PepsiCo",
     "kategori": "",
@@ -17734,6 +17806,24 @@
   {
     "marka": "KFC",
     "anaFirma": "Fast Food & Coffee",
+    "kategori": "",
+    "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "marka": "KIK",
+    "anaFirma": "Mode & Schuhe",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -17834,24 +17924,6 @@
     "image_url": "",
     "sonGuncelleme": "2026-07-07",
     "not": "L'Oréal resmî marka portföyü."
-  },
-  {
-    "marka": "KIK",
-    "anaFirma": "Mode & Schuhe",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
     "marka": "Kikkoman",
@@ -18497,6 +18569,24 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
+    "marka": "Koçtaş",
+    "anaFirma": "Koç Holding / Arçelik",
+    "kategori": "",
+    "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
     "marka": "Komili",
     "anaFirma": "Anadolu Grubu / Bunge geçmişi kontrol gerekli",
     "kategori": "Gıda",
@@ -18562,24 +18652,6 @@
   {
     "marka": "Kotex",
     "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
-    "marka": "Koçtaş",
-    "anaFirma": "Koç Holding / Arçelik",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -18819,74 +18891,6 @@
     "not": "Öncelikli marka olarak sözlüğe eklendi; kategori aşamalarında detaylandırılacak. Listedeki kayıt etik inceleme listesi kapsamında İncelenmesi önerilir olarak işaretlendi."
   },
   {
-    "marka": "Kärcher",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Tercih edilebilir listeden eklendi.",
-    "status": "preferred",
-    "durum": "preferred",
-    "statusLabel": "Tercih edilebilir",
-    "durumEtiketi": "Tercih edilebilir",
-    "kontrolGerekli": false,
-    "kontrolNotu": "",
-    "reviewLabel": "Tercih edilebilir",
-    "logoUrl": "",
-    "productImage": "",
-    "visualKey": ""
-  },
-  {
-    "marka": "Kérastase",
-    "anaFirma": "L'Oréal Groupe",
-    "kategori": "Kozmetik ve Kişisel Bakım",
-    "altKategori": "Profesyonel saç bakım",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [
-      {
-        "marka": "Bioxcin",
-        "kategori": "Profesyonel saç bakım",
-        "not": "Alternatif önerisi"
-      },
-      {
-        "marka": "Otacı",
-        "kategori": "Profesyonel saç bakım",
-        "not": "Alternatif önerisi"
-      },
-      {
-        "marka": "Restorex",
-        "kategori": "Profesyonel saç bakım",
-        "not": "Alternatif önerisi"
-      },
-      {
-        "marka": "Tresan",
-        "kategori": "Profesyonel saç bakım",
-        "not": "Alternatif önerisi"
-      }
-    ],
-    "kaynaklar": [
-      {
-        "baslik": "Bilgi kaynağı",
-        "url": "https://www.loreal.com/en/our-global-brands-portfolio/",
-        "tur": "Resmî şirket/marka sayfası",
-        "not": "L'Oréal resmî marka portföyü."
-      }
-    ],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
     "marka": "Küche&co",
     "anaFirma": "",
     "kategori": "",
@@ -18921,6 +18925,28 @@
     "image_url": "",
     "sonGuncelleme": "2026-07-07",
     "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "marka": "L‘artisan Parf",
+    "anaFirma": "",
+    "kategori": "",
+    "altKategori": "",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Tercih edilebilir listeden eklendi.",
+    "status": "preferred",
+    "durum": "preferred",
+    "statusLabel": "Tercih edilebilir",
+    "durumEtiketi": "Tercih edilebilir",
+    "kontrolGerekli": false,
+    "kontrolNotu": "",
+    "reviewLabel": "Tercih edilebilir",
+    "logoUrl": "",
+    "productImage": "",
+    "visualKey": ""
   },
   {
     "marka": "L&M",
@@ -20859,28 +20885,6 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "L‘artisan Parf",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Tercih edilebilir listeden eklendi.",
-    "status": "preferred",
-    "durum": "preferred",
-    "statusLabel": "Tercih edilebilir",
-    "durumEtiketi": "Tercih edilebilir",
-    "kontrolGerekli": false,
-    "kontrolNotu": "",
-    "reviewLabel": "Tercih edilebilir",
-    "logoUrl": "",
-    "productImage": "",
-    "visualKey": ""
-  },
-  {
     "marka": "m&m’s",
     "anaFirma": "Mars, Incorporated",
     "kategori": "Gıda",
@@ -20970,6 +20974,24 @@
   {
     "marka": "MAC Cosmetics",
     "anaFirma": "Estée Lauder Companies",
+    "kategori": "",
+    "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "marka": "Mäc Gaiz",
+    "anaFirma": "",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -23161,6 +23183,24 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
+    "marka": "Mövenpick",
+    "anaFirma": "Nestlé S.A.",
+    "kategori": "",
+    "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
     "marka": "Mpreis!",
     "anaFirma": "",
     "kategori": "",
@@ -23518,78 +23558,6 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "My-Scene-Puppen",
-    "anaFirma": "Medien / Finanzen / Toys",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
-    "marka": "myToys",
-    "anaFirma": "Otto / Zalando / Ikea",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
-    "marka": "Mäc Gaiz",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
-    "marka": "Mövenpick",
-    "anaFirma": "Nestlé S.A.",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
     "marka": "Müller Gruppe",
     "anaFirma": "",
     "kategori": "",
@@ -23610,6 +23578,42 @@
   {
     "marka": "Müller Milch",
     "anaFirma": "",
+    "kategori": "",
+    "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "marka": "My-Scene-Puppen",
+    "anaFirma": "Medien / Finanzen / Toys",
+    "kategori": "",
+    "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "marka": "myToys",
+    "anaFirma": "Otto / Zalando / Ikea",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -24056,7 +24060,7 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "Nettorama bokyot",
+    "marka": "Nettorama",
     "anaFirma": "",
     "kategori": "",
     "altKategori": "",
@@ -24505,6 +24509,28 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
+    "marka": "Nöm",
+    "anaFirma": "",
+    "kategori": "",
+    "altKategori": "",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Tercih edilebilir listeden eklendi.",
+    "status": "preferred",
+    "durum": "preferred",
+    "statusLabel": "Tercih edilebilir",
+    "durumEtiketi": "Tercih edilebilir",
+    "kontrolGerekli": false,
+    "kontrolNotu": "",
+    "reviewLabel": "Tercih edilebilir",
+    "logoUrl": "",
+    "productImage": "",
+    "visualKey": ""
+  },
+  {
     "marka": "NuCrema",
     "anaFirma": "",
     "kategori": "",
@@ -24858,28 +24884,6 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "Nöm",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Tercih edilebilir listeden eklendi.",
-    "status": "preferred",
-    "durum": "preferred",
-    "statusLabel": "Tercih edilebilir",
-    "durumEtiketi": "Tercih edilebilir",
-    "kontrolGerekli": false,
-    "kontrolNotu": "",
-    "reviewLabel": "Tercih edilebilir",
-    "logoUrl": "",
-    "productImage": "",
-    "visualKey": ""
-  },
-  {
     "marka": "o.b. Tampons",
     "anaFirma": "Kenvue / Johnson & Johnson",
     "kategori": "",
@@ -25034,6 +25038,28 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
+    "marka": "OIL Tankstelle",
+    "anaFirma": "",
+    "kategori": "",
+    "altKategori": "",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Tercih edilebilir listeden eklendi.",
+    "status": "preferred",
+    "durum": "preferred",
+    "statusLabel": "Tercih edilebilir",
+    "durumEtiketi": "Tercih edilebilir",
+    "kontrolGerekli": false,
+    "kontrolNotu": "",
+    "reviewLabel": "Tercih edilebilir",
+    "logoUrl": "",
+    "productImage": "",
+    "visualKey": ""
+  },
+  {
     "marka": "Oikos",
     "anaFirma": "Danone",
     "kategori": "",
@@ -25068,28 +25094,6 @@
     "image_url": "",
     "sonGuncelleme": "2026-07-07",
     "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
-    "marka": "OIL Tankstelle",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Tercih edilebilir listeden eklendi.",
-    "status": "preferred",
-    "durum": "preferred",
-    "statusLabel": "Tercih edilebilir",
-    "durumEtiketi": "Tercih edilebilir",
-    "kontrolGerekli": false,
-    "kontrolNotu": "",
-    "reviewLabel": "Tercih edilebilir",
-    "logoUrl": "",
-    "productImage": "",
-    "visualKey": ""
   },
   {
     "marka": "Olay",
@@ -27455,6 +27459,75 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
+    "marka": "PIMCO",
+    "anaFirma": "Medien / Finanzen / Toys",
+    "kategori": "",
+    "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "marka": "Pınar",
+    "anaFirma": "Pınar",
+    "kategori": "Gıda",
+    "altKategori": "Süt / et / gıda",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Türkiye merkezli gıda markası; güncel kaynak kontrolü önerilir.",
+    "alternatifler": [
+      {
+        "marka": "Sütaş",
+        "kategori": "Süt / et / gıda",
+        "not": "Alternatif önerisi"
+      },
+      {
+        "marka": "İçim",
+        "kategori": "Süt / et / gıda",
+        "not": "Alternatif önerisi"
+      },
+      {
+        "marka": "Sek",
+        "kategori": "Süt / et / gıda",
+        "not": "Alternatif önerisi"
+      },
+      {
+        "marka": "Torku",
+        "kategori": "Süt / et / gıda",
+        "not": "Alternatif önerisi"
+      },
+      {
+        "marka": "Eker",
+        "kategori": "Süt / et / gıda",
+        "not": "Alternatif önerisi"
+      }
+    ],
+    "kaynaklar": [
+      {
+        "baslik": "Bilgi kaynağı",
+        "url": "https://www.pinar.com.tr/",
+        "tur": "Resmî şirket/marka sayfası",
+        "not": "Türkiye merkezli gıda markası; güncel kaynak kontrolü önerilir."
+      }
+    ],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Öncelikli marka olarak sözlüğe eklendi; kategori aşamalarında detaylandırılacak. Listedeki kayıt etik inceleme listesi kapsamında İncelenmesi önerilir olarak işaretlendi."
+  },
+  {
     "marka": "Pickwick",
     "anaFirma": "",
     "kategori": "",
@@ -27493,24 +27566,6 @@
   {
     "marka": "Pilao",
     "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
-    "marka": "PIMCO",
-    "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -28140,6 +28195,24 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
+    "marka": "Président SA",
+    "anaFirma": "",
+    "kategori": "",
+    "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
     "marka": "Pretty Baby",
     "anaFirma": "",
     "kategori": "",
@@ -28683,24 +28756,6 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "Président SA",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
     "marka": "Puleva",
     "anaFirma": "",
     "kategori": "",
@@ -28861,57 +28916,6 @@
     "image_url": "",
     "sonGuncelleme": "2026-07-07",
     "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
-    "marka": "Pınar",
-    "anaFirma": "Pınar",
-    "kategori": "Gıda",
-    "altKategori": "Süt / et / gıda",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Türkiye merkezli gıda markası; güncel kaynak kontrolü önerilir.",
-    "alternatifler": [
-      {
-        "marka": "Sütaş",
-        "kategori": "Süt / et / gıda",
-        "not": "Alternatif önerisi"
-      },
-      {
-        "marka": "İçim",
-        "kategori": "Süt / et / gıda",
-        "not": "Alternatif önerisi"
-      },
-      {
-        "marka": "Sek",
-        "kategori": "Süt / et / gıda",
-        "not": "Alternatif önerisi"
-      },
-      {
-        "marka": "Torku",
-        "kategori": "Süt / et / gıda",
-        "not": "Alternatif önerisi"
-      },
-      {
-        "marka": "Eker",
-        "kategori": "Süt / et / gıda",
-        "not": "Alternatif önerisi"
-      }
-    ],
-    "kaynaklar": [
-      {
-        "baslik": "Bilgi kaynağı",
-        "url": "https://www.pinar.com.tr/",
-        "tur": "Resmî şirket/marka sayfası",
-        "not": "Türkiye merkezli gıda markası; güncel kaynak kontrolü önerilir."
-      }
-    ],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Öncelikli marka olarak sözlüğe eklendi; kategori aşamalarında detaylandırılacak. Listedeki kayıt etik inceleme listesi kapsamında İncelenmesi önerilir olarak işaretlendi."
   },
   {
     "marka": "QBB",
@@ -30123,7 +30127,7 @@
   },
   {
     "marka": "Rossman",
-    "anaFirma": "",
+    "anaFirma": "Dirk Rossmann GmbH",
     "kategori": "",
     "altKategori": "",
     "alternatifler": [],
@@ -30182,6 +30186,24 @@
   {
     "marka": "Royal Canin",
     "anaFirma": "Mars, Incorporated",
+    "kategori": "",
+    "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
+  },
+  {
+    "marka": "Römerquelle",
+    "anaFirma": "",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -30262,24 +30284,6 @@
   },
   {
     "marka": "Rummo",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
-    "marka": "Römerquelle",
     "anaFirma": "",
     "kategori": "",
     "altKategori": "",
@@ -30730,6 +30734,28 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
+    "marka": "Schärginger",
+    "anaFirma": "",
+    "kategori": "",
+    "altKategori": "",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Tercih edilebilir listeden eklendi.",
+    "status": "preferred",
+    "durum": "preferred",
+    "statusLabel": "Tercih edilebilir",
+    "durumEtiketi": "Tercih edilebilir",
+    "kontrolGerekli": false,
+    "kontrolNotu": "",
+    "reviewLabel": "Tercih edilebilir",
+    "logoUrl": "",
+    "productImage": "",
+    "visualKey": ""
+  },
+  {
     "marka": "Schauma",
     "anaFirma": "Henkel",
     "kategori": "Kozmetik ve Kişisel Bakım",
@@ -30818,6 +30844,24 @@
     "logoUrl": "",
     "productImage": "",
     "visualKey": ""
+  },
+  {
+    "marka": "Schöller",
+    "anaFirma": "",
+    "kategori": "",
+    "altKategori": "",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
     "marka": "Schwarzkopf",
@@ -30918,46 +30962,6 @@
   },
   {
     "marka": "Schwip Schwap",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
-    "marka": "Schärginger",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Tercih edilebilir listeden eklendi.",
-    "status": "preferred",
-    "durum": "preferred",
-    "statusLabel": "Tercih edilebilir",
-    "durumEtiketi": "Tercih edilebilir",
-    "kontrolGerekli": false,
-    "kontrolNotu": "",
-    "reviewLabel": "Tercih edilebilir",
-    "logoUrl": "",
-    "productImage": "",
-    "visualKey": ""
-  },
-  {
-    "marka": "Schöller",
     "anaFirma": "",
     "kategori": "",
     "altKategori": "",
@@ -32072,24 +32076,6 @@
   },
   {
     "marka": "Slime Mattel",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "Ana firma/kaynak kontrolü gerekli.",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
-    "marka": "sm",
     "anaFirma": "",
     "kategori": "",
     "altKategori": "",
@@ -33803,6 +33789,57 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
+    "marka": "Sütaş",
+    "anaFirma": "Sütaş",
+    "kategori": "Gıda",
+    "altKategori": "Süt ve süt ürünleri",
+    "status": "review",
+    "statusLabel": "İncelenmesi önerilir",
+    "durum": "review",
+    "durumEtiketi": "İncelenmesi önerilir",
+    "kontrolGerekli": true,
+    "kontrolNotu": "",
+    "alternatifler": [
+      {
+        "marka": "Pınar",
+        "kategori": "Süt ve süt ürünleri",
+        "not": "Alternatif önerisi"
+      },
+      {
+        "marka": "İçim",
+        "kategori": "Süt ve süt ürünleri",
+        "not": "Alternatif önerisi"
+      },
+      {
+        "marka": "Sek",
+        "kategori": "Süt ve süt ürünleri",
+        "not": "Alternatif önerisi"
+      },
+      {
+        "marka": "Torku",
+        "kategori": "Süt ve süt ürünleri",
+        "not": "Alternatif önerisi"
+      },
+      {
+        "marka": "Eker",
+        "kategori": "Süt ve süt ürünleri",
+        "not": "Alternatif önerisi"
+      }
+    ],
+    "kaynaklar": [
+      {
+        "baslik": "Bilgi kaynağı",
+        "url": "https://www.sutas.com.tr/",
+        "tur": "Resmî şirket/marka sayfası",
+        "not": "Türkiye merkezli süt ürünleri markası."
+      }
+    ],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Öncelikli marka olarak sözlüğe eklendi; kategori aşamalarında detaylandırılacak. Listedeki kayıt etik inceleme listesi kapsamında İncelenmesi önerilir olarak işaretlendi."
+  },
+  {
     "marka": "Sveva",
     "anaFirma": "",
     "kategori": "",
@@ -33971,55 +34008,26 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "Sütaş",
-    "anaFirma": "Sütaş",
-    "kategori": "Gıda",
-    "altKategori": "Süt ve süt ürünleri",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": true,
-    "kontrolNotu": "",
-    "alternatifler": [
-      {
-        "marka": "Pınar",
-        "kategori": "Süt ve süt ürünleri",
-        "not": "Alternatif önerisi"
-      },
-      {
-        "marka": "İçim",
-        "kategori": "Süt ve süt ürünleri",
-        "not": "Alternatif önerisi"
-      },
-      {
-        "marka": "Sek",
-        "kategori": "Süt ve süt ürünleri",
-        "not": "Alternatif önerisi"
-      },
-      {
-        "marka": "Torku",
-        "kategori": "Süt ve süt ürünleri",
-        "not": "Alternatif önerisi"
-      },
-      {
-        "marka": "Eker",
-        "kategori": "Süt ve süt ürünleri",
-        "not": "Alternatif önerisi"
-      }
-    ],
-    "kaynaklar": [
-      {
-        "baslik": "Bilgi kaynağı",
-        "url": "https://www.sutas.com.tr/",
-        "tur": "Resmî şirket/marka sayfası",
-        "not": "Türkiye merkezli süt ürünleri markası."
-      }
-    ],
+    "marka": "Şok",
+    "anaFirma": "",
+    "kategori": "",
+    "altKategori": "",
+    "alternatifler": [],
+    "kaynaklar": [],
     "barkodlar": [],
     "image_url": "",
     "sonGuncelleme": "2026-07-07",
-    "not": "Öncelikli marka olarak sözlüğe eklendi; kategori aşamalarında detaylandırılacak. Listedeki kayıt etik inceleme listesi kapsamında İncelenmesi önerilir olarak işaretlendi."
+    "not": "Tercih edilebilir listeden eklendi.",
+    "status": "preferred",
+    "durum": "preferred",
+    "statusLabel": "Tercih edilebilir",
+    "durumEtiketi": "Tercih edilebilir",
+    "kontrolGerekli": false,
+    "kontrolNotu": "",
+    "reviewLabel": "Tercih edilebilir",
+    "logoUrl": "",
+    "productImage": "",
+    "visualKey": ""
   },
   {
     "marka": "Tadim",
@@ -34514,7 +34522,7 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "Telefónica (",
+    "marka": "Telefónica",
     "anaFirma": "",
     "kategori": "",
     "altKategori": "",
@@ -36077,6 +36085,28 @@
     "visualKey": ""
   },
   {
+    "marka": "ültje",
+    "anaFirma": "Intersnack / Lactalis / Kaffe",
+    "kategori": "",
+    "altKategori": "",
+    "status": "preferred",
+    "statusLabel": "Tercih edilebilir",
+    "durum": "preferred",
+    "durumEtiketi": "Tercih edilebilir",
+    "kontrolGerekli": false,
+    "kontrolNotu": "",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Henüz kategori aşamasında kontrol edilmedi.",
+    "reviewLabel": "Tercih edilebilir",
+    "logoUrl": "",
+    "productImage": "",
+    "visualKey": ""
+  },
+  {
     "marka": "Vaalia",
     "anaFirma": "",
     "kategori": "",
@@ -36464,7 +36494,7 @@
   },
   {
     "marka": "Vestel",
-    "anaFirma": "",
+    "anaFirma": "Zorlu Holding",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -36853,7 +36883,7 @@
   },
   {
     "marka": "Vodafone",
-    "anaFirma": "",
+    "anaFirma": "Vodafone Group",
     "kategori": "",
     "altKategori": "",
     "status": "review",
@@ -37750,7 +37780,7 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "WWE-Figuren",
+    "marka": "Wüstenrot",
     "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
@@ -37768,7 +37798,7 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
-    "marka": "Wüstenrot",
+    "marka": "WWE-Figuren",
     "anaFirma": "Medien / Finanzen / Toys",
     "kategori": "",
     "altKategori": "",
@@ -38494,6 +38524,28 @@
     "not": "Henüz kategori aşamasında kontrol edilmedi."
   },
   {
+    "marka": "Züber",
+    "anaFirma": "",
+    "kategori": "",
+    "altKategori": "",
+    "alternatifler": [],
+    "kaynaklar": [],
+    "barkodlar": [],
+    "image_url": "",
+    "sonGuncelleme": "2026-07-07",
+    "not": "Tercih edilebilir listeden eklendi.",
+    "status": "preferred",
+    "durum": "preferred",
+    "statusLabel": "Tercih edilebilir",
+    "durumEtiketi": "Tercih edilebilir",
+    "kontrolGerekli": false,
+    "kontrolNotu": "",
+    "reviewLabel": "Tercih edilebilir",
+    "logoUrl": "",
+    "productImage": "",
+    "visualKey": ""
+  },
+  {
     "marka": "Zyrtec",
     "anaFirma": "",
     "kategori": "",
@@ -38528,111 +38580,5 @@
     "image_url": "",
     "sonGuncelleme": "2026-07-07",
     "not": "Henüz kategori aşamasında kontrol edilmedi."
-  },
-  {
-    "marka": "Züber",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Tercih edilebilir listeden eklendi.",
-    "status": "preferred",
-    "durum": "preferred",
-    "statusLabel": "Tercih edilebilir",
-    "durumEtiketi": "Tercih edilebilir",
-    "kontrolGerekli": false,
-    "kontrolNotu": "",
-    "reviewLabel": "Tercih edilebilir",
-    "logoUrl": "",
-    "productImage": "",
-    "visualKey": ""
-  },
-  {
-    "marka": "Çaykur",
-    "anaFirma": "Çaykur",
-    "kategori": "",
-    "altKategori": "",
-    "status": "review",
-    "statusLabel": "İncelenmesi önerilir",
-    "durum": "review",
-    "durumEtiketi": "İncelenmesi önerilir",
-    "kontrolGerekli": false,
-    "kontrolNotu": "",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Öncelikli marka olarak sözlüğe eklendi; kategori aşamalarında detaylandırılacak. Listedeki kayıt etik inceleme listesi kapsamında İncelenmesi önerilir olarak işaretlendi."
-  },
-  {
-    "marka": "ültje",
-    "anaFirma": "Intersnack / Lactalis / Kaffe",
-    "kategori": "",
-    "altKategori": "",
-    "status": "preferred",
-    "statusLabel": "Tercih edilebilir",
-    "durum": "preferred",
-    "durumEtiketi": "Tercih edilebilir",
-    "kontrolGerekli": false,
-    "kontrolNotu": "",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Henüz kategori aşamasında kontrol edilmedi.",
-    "reviewLabel": "Tercih edilebilir",
-    "logoUrl": "",
-    "productImage": "",
-    "visualKey": ""
-  },
-  {
-    "marka": "ıntermarche/E.leclerc",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Tercih edilebilir listeden eklendi.",
-    "status": "preferred",
-    "durum": "preferred",
-    "statusLabel": "Tercih edilebilir",
-    "durumEtiketi": "Tercih edilebilir",
-    "kontrolGerekli": false,
-    "kontrolNotu": "",
-    "reviewLabel": "Tercih edilebilir",
-    "logoUrl": "",
-    "productImage": "",
-    "visualKey": ""
-  },
-  {
-    "marka": "Şok",
-    "anaFirma": "",
-    "kategori": "",
-    "altKategori": "",
-    "alternatifler": [],
-    "kaynaklar": [],
-    "barkodlar": [],
-    "image_url": "",
-    "sonGuncelleme": "2026-07-07",
-    "not": "Tercih edilebilir listeden eklendi.",
-    "status": "preferred",
-    "durum": "preferred",
-    "statusLabel": "Tercih edilebilir",
-    "durumEtiketi": "Tercih edilebilir",
-    "kontrolGerekli": false,
-    "kontrolNotu": "",
-    "reviewLabel": "Tercih edilebilir",
-    "logoUrl": "",
-    "productImage": "",
-    "visualKey": ""
   }
 ]
