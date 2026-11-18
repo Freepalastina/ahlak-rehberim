@@ -66,22 +66,28 @@ async function init() {
     const parents = new Set(raw.map(x => norm(x.anaFirma)).filter(Boolean));
     PARENT_RULES.forEach(([p]) => parents.add(norm(p)));
     const map = new Map();
+function setLang(l) {
+  lang = l; const t = I18N[l];
+  document.getElementById('subTitle').textContent = t.sub;
+  searchInput.placeholder = t.ph;
+  document.getElementById('scanTxt').textContent = t.scan;
+  document.getElementById('fAll').textContent = t.all;
+  document.getElementById('fRev').textContent = t.rev;
+  document.getElementById('fPref').textContent = t.pref;
+  document.getElementById('fAlt').textContent = t.alt;
+  if (categorySelect.options.length > 0) categorySelect.options.item(0).textContent = t.allCat;
+  loadMoreBtn.textContent = t.more;
+  render();
+}
 
-    raw.forEach(b => {
-      const clean = (b.marka || '').replace(/:$/, '').trim();
-      const key = norm(clean);
-      if (!key || JUNK.has(clean.toLowerCase()) || (parents.has(key) && !b.anaFirma && !b.kategori)) return;
-      let parent = (b.anaFirma || '').trim();
-      if (!parent) for (const [p, list] of PARENT_RULES) if (list.includes(key)) { parent = p; break; }
-      const item = { ...b, marka: clean, anaFirma: parent };
-      const prev = map.get(key);
-      if (!prev || (!prev.kategori && item.kategori) || (!prev.anaFirma && item.anaFirma) || (item.alternatifler?.length > (prev.alternatifler?.length || 0))) map.set(key, item);
-    });
-
-    allBrands = [...map.values()].sort((a, b) => a.marka.localeCompare(b.marka, 'tr'));
+async function init() {
+  try {
+    const res = await fetch('data.json?v=' + Date.now());
+    const raw = await res.json();
+    allBrands = raw.filter(b => norm(b.marka) !== 'action').sort((a, b) => a.marka.localeCompare(b.marka, 'tr'));
     [...new Set(allBrands.map(b => b.kategori).filter(Boolean))].sort().forEach(c => categorySelect.add(new Option(c, c)));
     applyFilters();
-  } catch (err) { grid.innerHTML = '<p class="empty">Veriler yüklenemedi.</p>'; }
+  } catch { grid.innerHTML = '<p class="empty">Veriler yüklenemedi.</p>'; }
 }
 
 function applyFilters() {
@@ -105,9 +111,10 @@ function render() {
     const alts = (b.alternatifler || []).map(a => a.marka).filter(m => m && norm(m) !== norm(b.marka)).join(', ');
     const meta = [b.anaFirma ? `🏢 ${b.anaFirma}` : '', b.kategori, b.altKategori].filter(Boolean).join(' • ');
     const firstSrc = Array.isArray(b.kaynaklar) ? b.kaynaklar.find(k => k && k.url) : null;
+    const fb = `if(!this.dataset.f){this.dataset.f=1;this.src='https://google.com{logo.replace('https://clearbit.com','')}&sz=128';}else{this.parentElement.textContent='${initials}';}`;
     return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')">
       <div class="card-main">
-        <div class="brand-avatar">${logo ? `<img src="${logo}" alt="" loading="lazy" onerror="this.parentElement.textContent='${initials}'">` : initials}</div>
+        <div class="brand-avatar">${logo ? `<img src="${logo}" alt="" loading="lazy" onerror="${fb}">` : initials}</div>
         <div class="card-info">
           <div class="card-head">
             <span class="brand-name">${b.marka}</span>
