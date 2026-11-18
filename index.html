@@ -1,70 +1,46 @@
-:root {
-  --bg: #f4f6f9; --card: #ffffff; --text: #1a202c; --muted: #64748b;
-  --primary: #0f766e; --red: #dc2626; --green: #16a34a; --amber: #d97706;
-  --border: #e2e8f0; --radius: 14px;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-body { background: var(--bg); color: var(--text); padding-bottom: env(safe-area-inset-bottom, 20px); }
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Ahlak Rehberim</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Ahlak Rehberim</h1>
+  </header>
 
-header {
-  background: var(--primary); color: #fff; text-align: center;
-  padding: calc(16px + env(safe-area-inset-top, 0px)) 16px 20px;
-  border-radius: 0 0 20px 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-header h1 { font-size: 1.45rem; font-weight: 700; letter-spacing: -0.3px; }
+  <main class="container">
+    <section class="controls">
+      <div class="search-row">
+        <input type="text" id="searchInput" placeholder="Marka veya barkod ara...">
+        <button id="scanBtn" class="btn-scan" type="button">📷 Tara</button>
+      </div>
 
-.container { max-width: 760px; margin: 0 auto; padding: 14px; }
-.controls { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
-.search-row { display: flex; gap: 8px; }
+      <select id="categorySelect">
+        <option value="all">Tüm Kategoriler</option>
+      </select>
 
-input, select, button {
-  padding: 12px 14px; border-radius: var(--radius); border: 1px solid var(--border);
-  font-size: 0.95rem; background: var(--card); color: var(--text); outline: none;
-}
-input { flex: 1; }
-input:focus, select:focus { border-color: var(--primary); }
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Tümü</button>
+        <button class="filter-btn" data-filter="boycott">🔴 İnceleme / Boykot</button>
+        <button class="filter-btn" data-filter="safe">🟢 Tercih Edilebilir</button>
+        <button class="filter-btn" data-filter="alt">⭐ Alternatifli</button>
+      </div>
+    </section>
 
-.btn-scan {
-  background: var(--primary); color: #fff; border: none; font-weight: 600;
-  cursor: pointer; display: flex; align-items: center; gap: 6px; white-space: nowrap;
-}
-.btn-scan:active { transform: scale(0.97); }
+    <div id="scanner-box">
+      <div id="reader"></div>
+      <button id="closeScanBtn" class="btn-close-scan" type="button">Kamerayı Kapat</button>
+    </div>
 
-.filters { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
-.filters::-webkit-scrollbar { display: none; }
-.filter-btn {
-  padding: 8px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;
-  cursor: pointer; white-space: nowrap; transition: 0.2s;
-}
-.filter-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
-
-#scanner-box {
-  display: none; background: #000; border-radius: var(--radius);
-  overflow: hidden; margin-bottom: 14px; position: relative;
-}
-#scanner-box.active { display: block; }
-#reader { width: 100%; }
-.btn-close-scan {
-  width: 100%; background: var(--red); color: #fff; border: none;
-  border-radius: 0; font-weight: 600; cursor: pointer;
-}
-
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
-.card {
-  background: var(--card); border-radius: var(--radius); padding: 14px;
-  border-left: 5px solid var(--border); box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-  display: flex; flex-direction: column; gap: 6px;
-}
-.card.boycott { border-left-color: var(--red); }
-.card.safe { border-left-color: var(--green); }
-.card-header { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-.brand-name { font-weight: 700; font-size: 1.05rem; }
-.badge { font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 8px; }
-.badge.boycott { background: #fee2e2; color: var(--red); }
-.badge.safe { background: #dcfce7; color: var(--green); }
-.category { font-size: 0.8rem; color: var(--muted); }
-.alt-box {
-  margin-top: 4px; padding: 8px 10px; background: #fffbeb; color: #92400e;
-  border-radius: 8px; font-size: 0.85rem; border: 1px solid #fde68a;
-}
-.empty { text-align: center; color: var(--muted); padding: 30px 10px; grid-column: 1 / -1; }
+    <section id="brandGrid" class="grid">
+      <p class="empty">Yükleniyor...</p>
+    </section>
+  </main>
+</body>
+</html>
