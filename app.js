@@ -93,3 +93,41 @@ function stopScan() { scanBox.hidden = true; if (scanner) scanner.stop().then(()
 document.getElementById('closeScanBtn').onclick = stopScan;
 document.getElementById('manualSearchBtn').onclick = () => { searchInput.value = document.getElementById('manualBarcode').value; stopScan(); applyFilters(); };
 init();
+// EINMALIGER AUTO-EXPORT (nach dem Download wieder aus app.js löschen!)
+setTimeout(() => {
+  if (!allBrands.length) return;
+  const P = {
+    a101:'Yeni Mağazacılık A.Ş.', aboutyou:'Otto Group', abtei:'Perrigo Company', ace:'Fater S.p.A.',
+    ackermann:'Otto Group', acuvue:'Johnson & Johnson', adidas:'Adidas AG', aeg:'Electrolux AB',
+    apple:'Apple Inc.', arcelik:'Arçelik (Koç Holding)', asus:'ASUSTeK Computer', audi:'Volkswagen AG',
+    bauknecht:'Beko Europe', beko:'Arçelik (Koç Holding)', bershka:'Inditex', bmw:'BMW AG',
+    bosch:'Robert Bosch GmbH', bp:'BP p.l.c.', braun:'Procter & Gamble', burgerking:'Restaurant Brands International',
+    carrefour:'Carrefour S.A.', chanel:'Chanel Limited', converse:'Nike, Inc.', decathlon:'Association Familiale Mulliez',
+    dell:'Dell Technologies', dm:'dm-drogerie markt', dominospizza:"Domino's Pizza, Inc.", duracell:'Berkshire Hathaway',
+    dyson:'Dyson Ltd.', edeka:'Edeka Zentrale', fiat:'Stellantis', ford:'Ford Motor Company',
+    grundig:'Arçelik (Koç Holding)', gucci:'Kering', hm:'H&M Group', hp:'HP Inc.', hyundai:'Hyundai Motor Group',
+    ikea:'Ingka Group', intel:'Intel Corporation', kaufland:'Schwarz Gruppe', kfc:'Yum! Brands',
+    levis:'Levi Strauss & Co.', lidl:'Schwarz Gruppe', mango:'Punto Fa, S.L.', mcdonalds:"McDonald's Corp.",
+    mercedesbenz:'Mercedes-Benz Group', microsoft:'Microsoft Corporation', miele:'Miele & Cie. KG',
+    netflix:'Netflix, Inc.', nike:'Nike, Inc.', nokia:'Nokia Corporation', oppo:'BBK Electronics',
+    penny:'REWE Group', philips:'Koninklijke Philips N.V.', pizzahut:'Yum! Brands', pullbear:'Inditex',
+    puma:'Puma SE', rewe:'REWE Group', rossmann:'Dirk Rossmann GmbH', rossman:'Dirk Rossmann GmbH',
+    samsung:'Samsung Electronics', seat:'Volkswagen AG', shell:'Shell plc', siemens:'Siemens AG',
+    sony:'Sony Group Corp.', spotify:'Spotify Technology S.A.', starbucks:'Starbucks Corporation',
+    subway:'Roark Capital', tefal:'Groupe SEB', tesla:'Tesla, Inc.', toyota:'Toyota Motor Corp.',
+    vestel:'Zorlu Holding', vodafone:'Vodafone Group', volkswagen:'Volkswagen AG', whatsapp:'Meta Platforms',
+    whirlpool:'Whirlpool Corp.', wmf:'Groupe SEB', xiaomi:'Xiaomi Corporation', zalando:'Zalando SE', zara:'Inditex'
+  };
+  const map = new Map();
+  allBrands.forEach(b => {
+    const clean = (b.marka || '').replace(/bokyot|etik inceleme/gi, '').replace(/[:(]+$/, '').trim();
+    const k = norm(clean);
+    if (!k || ['action','fgh','sm','gau5'].includes(k)) return;
+    const parent = (b.anaFirma && !b.anaFirma.includes('kontrol')) ? b.anaFirma : (P[k] || b.anaFirma || '');
+    const alts = (b.alternatifler || []).filter(a => norm(a.marka) !== k);
+    if (!map.has(k)) map.set(k, { ...b, marka: clean, anaFirma: parent, alternatifler: alts });
+  });
+  const out = [...map.values()].sort((a, b) => a.marka.localeCompare(b.marka, 'tr'));
+  const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob([JSON.stringify(out, null, 2)], { type: 'application/json' })), download: 'data.json' });
+  a.click();
+}, 2500);
