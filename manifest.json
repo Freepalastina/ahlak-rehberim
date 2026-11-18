@@ -1,17 +1,14 @@
 {
   "name": "Ahlak Rehberim",
   "short_name": "Ahlak Rehberim",
-  "description": "Bilinçli Tüketim ve Alternatif Rehberi",
+  "description": "Bilinçli Tüket, Doğru Tercih",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#F6F7F9",
-  "theme_color": "#1B4332",
+  "background_color": "#141615",
+  "theme_color": "#141615",
   "icons": [
-    {
-      "src": "https://flaticon.com",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
   ]
 }
