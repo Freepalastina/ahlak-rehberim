@@ -65,6 +65,39 @@ async function init() {
     const parents = new Set(raw.map(x => norm(x.anaFirma)).filter(Boolean));
     PARENT_RULES.forEach(([p]) => parents.add(norm(p)));
     const map = new Map();
+function getLogoUrl(b) {
+  if (b.logoUrl || b.image_url) return b.logoUrl || b.image_url;
+  const firstSrc = Array.isArray(b.kaynaklar) && b.kaynaklar.length > 0 ? b.kaynaklar[0] : null;
+  if (!firstSrc || !firstSrc.url) return '';
+  try {
+    const cleanUrl = firstSrc.url.split(',')[0].trim();
+    const host = new URL(cleanUrl).hostname.replace(/^www\./, '');
+    if (['wikipedia.org', 'linkedin.com', 'timesofisrael.com', 'jpost.com', 'tag24.de'].some(d => host.includes(d))) return '';
+    return `https://google.com{host}&sz=128`;
+  } catch { return ''; }
+}
+
+function setLang(l) {
+  lang = l; const t = I18N[l];
+  document.getElementById('subTitle').textContent = t.sub;
+  searchInput.placeholder = t.ph;
+  document.getElementById('scanTxt').textContent = t.scan;
+  document.getElementById('fAll').textContent = t.all;
+  document.getElementById('fRev').textContent = t.rev;
+  document.getElementById('fPref').textContent = t.pref;
+  document.getElementById('fAlt').textContent = t.alt;
+  categorySelect.options[0].textContent = t.allCat;
+  loadMoreBtn.textContent = t.more;
+  render();
+}
+
+async function init() {
+  try {
+    const res = await fetch('data.json?v=' + Date.now());
+    const raw = await res.json();
+    const parents = new Set(raw.map(x => norm(x.anaFirma)).filter(Boolean));
+    PARENT_RULES.forEach(([p]) => parents.add(norm(p)));
+    const map = new Map();
 
     raw.forEach(b => {
       const clean = (b.marka || '').replace(/:$/, '').trim();
@@ -103,7 +136,7 @@ function render() {
     const initials = b.marka.slice(0, 2).toUpperCase();
     const alts = (b.alternatifler || []).map(a => a.marka).filter(m => m && norm(m) !== norm(b.marka)).join(', ');
     const meta = [b.anaFirma ? `🏢 ${b.anaFirma}` : '', b.kategori, b.altKategori].filter(Boolean).join(' • ');
-    const src = (b.kaynaklar || []);
+    const firstSrc = Array.isArray(b.kaynaklar) && b.kaynaklar.length > 0 ? b.kaynaklar[0] : null;
     return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')">
       <div class="card-main">
         <div class="brand-avatar">${logo ? `<img src="${logo}" alt="" loading="lazy" onerror="this.parentElement.textContent='${initials}'">` : initials}</div>
@@ -116,7 +149,7 @@ function render() {
         </div>
       </div>
       ${alts ? `<div class="alt">⭐ <b>${t.altLbl}</b> ${alts}</div>` : ''}
-      ${(b.not || src) ? `<div class="details" hidden>${b.not ? `<p>${b.not}</p>` : ''}${src?.url ? `<a href="${src.url.split(',')}" target="_blank" rel="noopener">${t.src}</a>` : ''}</div>` : ''}
+      ${(b.not || firstSrc) ? `<div class="details" hidden>${b.not ? `<p>${b.not}</p>` : ''}${firstSrc?.url ? `<a href="${firstSrc.url.split(',')[0].trim()}" target="_blank" rel="noopener">${t.src}</a>` : ''}</div>` : ''}
     </article>`;
   }).join('');
   loadMoreBtn.hidden = shown >= filtered.length;
@@ -139,3 +172,4 @@ function stopScan() { scanBox.hidden = true; if (scanner) scanner.stop().then(()
 document.getElementById('closeScanBtn').onclick = stopScan;
 document.getElementById('manualSearchBtn').onclick = () => { searchInput.value = document.getElementById('manualBarcode').value; stopScan(); applyFilters(); };
 init();
+
