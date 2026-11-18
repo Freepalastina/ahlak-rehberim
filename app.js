@@ -7,8 +7,32 @@ const I18N = {
   en: { sub: 'Consume Consciously, Choose Right', ph: 'Search brand, parent company or barcode...', scan: 'Scan', all: 'All', rev: '🔴 Review / Boycott', pref: '🟢 Recommended', alt: '⭐ Alternatives', allCat: '📂 All Categories', more: 'Show More', found: 'brands listed', empty: 'No results found.', altLbl: 'Alternatives:', src: '🔗 View Source' }
 };
 
-const DOMAINS = {
-  a101: 'a101.com.tr', aarealbank: 'aareal-bank.com', aboutyou: 'aboutyou.de', abtei: 'abtei.de', adidas: 'adidas.com', nike: 'nike.com', puma: 'puma.com', zara: 'zara.com', hm: 'hm.com', apple: 'apple.com', microsoft: 'microsoft.com', google: 'google.com', amazon: 'amazon.com', starbucks: 'starbucks.com', mcdonalds: 'mcdonalds.com', burgerking: 'burgerking.de', kfc: 'kfc.com', cocacola: 'coca-cola.com', pepsi: 'pepsi.com', fanta: 'fanta.com', sprite: 'sprite.com', nestle: 'nestle.com', nescafe: 'nescafe.com', nesquik: 'nesquik.com', kitkat: 'kitkat.com', nutella: 'nutella.com', kinder: 'kinder.com', milka: 'milka.de', oreo: 'oreo.com', nivea: 'nivea.de', dove: 'dove.com', loreal: 'loreal.com', garnier: 'garnier.de', ariel: 'ariel.de', persil: 'persil.de', domestos: 'domestos.com', bosch: 'bosch.com', siemens: 'siemens.com', miele: 'miele.de', samsung: 'samsung.com', ulker: 'ulker.com.tr', eti: 'etietieti.com', torku: 'torku.com.tr', sutas: 'sutas.com.tr', pinar: 'pinar.com.tr', bingo: 'bingo.com.tr', frosch: 'frosch.de', haribo: 'haribo.com', '8x4': '8x4.de', colgate: 'colgate.com', palmolive: 'palmolive.com', bim: 'bim.com.tr', sok: 'sokmarket.com.tr', migros: 'migros.com.tr', carrefour: 'carrefour.com', lidl: 'lidl.de', aldisud: 'aldi-sued.de', aldinord: 'aldi-nord.de', dm: 'dm.de', rossmann: 'rossmann.de', ikea: 'ikea.com', bershka: 'bershka.com', pullbear: 'pullandbear.com', mango: 'mango.com', levis: 'levi.com', hp: 'hp.com', dell: 'dell.com', asus: 'asus.com', sony: 'sony.com', philips: 'philips.com', dyson: 'dyson.com', tesla: 'tesla.com', bmw: 'bmw.com', audi: 'audi.com', volkswagen: 'volkswagen.com', mercedesbenz: 'mercedes-benz.com'
+const FIX_DATA = {
+  airwaves: ['Mars, Incorporated', 'mars.com'], ajax: ['Colgate-Palmolive', 'colgatepalmolive.com'],
+  akmina: ['Danone', 'danone.com'], aktren: ['Bayer AG', 'bayer.com'], alfajr: ['Al-Fajr', 'alfajr.com'],
+  albert: ['Ahold Delhaize', 'albert.cz'], albertheijn: ['Ahold Delhaize', 'ah.nl'],
+  alcare: ['SC Johnson', 'scjohnson.com'], aldinord: ['Unternehmensgruppe Aldi Nord', 'aldi-nord.de'],
+  aldisud: ['Unternehmensgruppe Aldi Süd', 'aldi-sued.de'], a101: ['Yeni Mağazacılık A.Ş.', 'a101.com.tr'],
+  aboutyou: ['Otto Group', 'aboutyou.de'], abtei: ['Perrigo Company', 'abtei.de'],
+  adidas: ['Adidas AG', 'adidas.com'], nike: ['Nike, Inc.', 'nike.com'], puma: ['Puma SE', 'puma.com'],
+  zara: ['Inditex', 'zara.com'], hm: ['H&M Group', 'hm.com'], apple: ['Apple Inc.', 'apple.com'],
+  microsoft: ['Microsoft Corporation', 'microsoft.com'], google: ['Alphabet Inc.', 'google.com'],
+  amazon: ['Amazon.com, Inc.', 'amazon.com'], starbucks: ['Starbucks Corporation', 'starbucks.com'],
+  mcdonalds: ["McDonald's Corp.", 'mcdonalds.com'], burgerking: ['Restaurant Brands International', 'burgerking.de'],
+  cocacola: ['The Coca-Cola Company', 'coca-cola.com'], pepsi: ['PepsiCo', 'pepsi.com'],
+  nestle: ['Nestlé S.A.', 'nestle.com'], nescafe: ['Nestlé S.A.', 'nescafe.com'],
+  kitkat: ['Nestlé S.A.', 'kitkat.com'], nutella: ['Ferrero Group', 'nutella.com'],
+  kinder: ['Ferrero Group', 'kinder.com'], milka: ['Mondelēz International', 'milka.de'],
+  oreo: ['Mondelēz International', 'oreo.com'], nivea: ['Beiersdorf AG', 'nivea.de'],
+  dove: ['Unilever', 'dove.com'], loreal: ["L'Oréal Groupe", 'loreal.com'],
+  ariel: ['Procter & Gamble', 'ariel.de'], persil: ['Henkel', 'persil.de'],
+  bosch: ['Robert Bosch GmbH', 'bosch.com'], siemens: ['Siemens AG', 'siemens.com'],
+  samsung: ['Samsung Electronics', 'samsung.com'], ulker: ['Yıldız Holding', 'ulker.com.tr'],
+  eti: ['Eti Gıda', 'etietieti.com'], torku: ['Konya Şeker', 'torku.com.tr'],
+  bim: ['BİM Birleşik Mağazalar', 'bim.com.tr'], sok: ['Yıldız Holding', 'sokmarket.com.tr'],
+  migros: ['Migros Ticaret', 'migros.com.tr'], spar: ['SPAR Österreich / International', 'spar.at'],
+  carrefour: ['Carrefour S.A.', 'carrefour.com'], lidl: ['Schwarz Gruppe', 'lidl.de'],
+  dm: ['dm-drogerie markt', 'dm.de'], rossmann: ['Dirk Rossmann GmbH', 'rossmann.de']
 };
 
 const norm = s => (s || '').toLowerCase().replace(/ı/g, 'i').replace(/×/g, 'x').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, '');
@@ -16,7 +40,7 @@ const norm = s => (s || '').toLowerCase().replace(/ı/g, 'i').replace(/×/g, 'x'
 function getLogoUrl(b) {
   if (b.logoUrl || b.image_url) return b.logoUrl || b.image_url;
   const k = norm(b.marka);
-  if (DOMAINS[k]) return `https://google.com{DOMAINS[k]}&sz=128`;
+  if (FIX_DATA[k]?.at(1)) return `https://google.com{FIX_DATA[k].at(1)}&sz=128`;
   if (Array.isArray(b.kaynaklar)) {
     const src = b.kaynaklar.find(x => x && x.url);
     if (src) {
@@ -48,7 +72,10 @@ async function init() {
       const clean = (b.marka || '').replace(/bokyot|etik inceleme/gi, '').replace(/[:(]+$/, '').trim();
       const k = norm(clean);
       if (!k || ['action', 'fgh', 'sm', 'gau5'].includes(k)) return;
-      if (!map.has(k)) map.set(k, { ...b, marka: clean });
+      let parent = (b.anaFirma || '').trim();
+      if (FIX_DATA[k]) parent = FIX_DATA[k].at(0);
+      else if (parent.includes('/')) parent = '';
+      if (!map.has(k)) map.set(k, { ...b, marka: clean, anaFirma: parent });
     });
     allBrands = [...map.values()].sort((a, b) => a.marka.localeCompare(b.marka, 'tr'));
     [...new Set(allBrands.map(b => b.kategori).filter(Boolean))].sort().forEach(c => categorySelect.add(new Option(c, c)));
@@ -78,7 +105,7 @@ function render() {
     const firstSrc = Array.isArray(b.kaynaklar) ? b.kaynaklar.find(k => k && k.url) : null;
     return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')">
       <div class="card-main">
-        <div class="brand-avatar">${logo ? `<img src="${logo}" alt="" loading="lazy" onload="if(this.naturalWidth<20)this.parentElement.textContent='${initials}'" onerror="this.parentElement.textContent='${initials}'">` : initials}</div>
+        <div class="brand-avatar">${logo ? `<img src="${logo}" alt="" loading="lazy" onload="if(this.naturalWidth<=16)this.parentElement.textContent='${initials}'" onerror="this.parentElement.textContent='${initials}'">` : initials}</div>
         <div class="card-info">
           <div class="card-head"><span class="brand-name">${b.marka}</span><span class="badge ${isPref ? 'preferred' : 'review'}">${isPref ? t.pref : t.rev}</span></div>
           ${meta ? `<div class="meta">${meta}</div>` : ''}
