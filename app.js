@@ -33,3 +33,109 @@ const PARENT_RULES = [
 
 const JUNK = new Set(['temizlik', 'gıda', 'içecek', 'kozmetik ve kişisel bakım', 'sağlık ve kişisel bakım', 'çamaşır deterjanı', 'bulaşık deterjanı', 'bulaşık makinesi deterjanı', 'yüzey temizleyici', 'tuvalet temizleyici', 'yumuşatıcı', 'cam temizleyici', 'oda kokusu', 'sünger / bez / temizlik aparatı', 'şampuan / saç bakım', 'sabun / duş jeli', 'diş macunu / ağız bakım', 'deodorant', 'tıraş / jilet', 'makyaj', 'cilt bakım / dermokozmetik', 'bebek bakım', 'makarna', 'süt ve süt ürünleri', 'dondurma', 'kahvaltılık gevrek', 'konserve / salça / sos', 'baharat', 'vegan / bitkisel ürün', 'hazır çorba / bulyon / sos', 'temel gıda / bakliyat / pirinç', 'bitkisel yağ / zeytinyağı', 'bebek gıdası / hassas kategori']);
 const norm = s => (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, '');
+function getLogoUrl(b) {
+  if (b.logoUrl || b.image_url) return b.logoUrl || b.image_url;
+  const url = b.kaynaklar?.?.url;
+  if (!url) return '';
+  try {
+    const host = new URL(url.split(',')).hostname.replace(/^www\./, '');
+    if (['wikipedia.org', 'linkedin.com', 'timesofisrael.com', 'jpost.com', 'tag24.de'].some(d => host.includes(d))) return '';
+    return `https://google.com{host}&sz=128`;
+  } catch { return ''; }
+}
+
+function setLang(l) {
+  lang = l; const t = I18N[l];
+  document.getElementById('subTitle').textContent = t.sub;
+  searchInput.placeholder = t.ph;
+  document.getElementById('scanTxt').textContent = t.scan;
+  document.getElementById('fAll').textContent = t.all;
+  document.getElementById('fRev').textContent = t.rev;
+  document.getElementById('fPref').textContent = t.pref;
+  document.getElementById('fAlt').textContent = t.alt;
+  categorySelect.options.textContent = t.allCat;
+  loadMoreBtn.textContent = t.more;
+  render();
+}
+
+async function init() {
+  try {
+    const res = await fetch('data.json?v=' + Date.now());
+    const raw = await res.json();
+    const parents = new Set(raw.map(x => norm(x.anaFirma)).filter(Boolean));
+    PARENT_RULES.forEach(([p]) => parents.add(norm(p)));
+    const map = new Map();
+
+    raw.forEach(b => {
+      const clean = (b.marka || '').replace(/:$/, '').trim();
+      const key = norm(clean);
+      if (!key || JUNK.has(clean.toLowerCase()) || (parents.has(key) && !b.anaFirma && !b.kategori)) return;
+      let parent = (b.anaFirma || '').trim();
+      if (!parent) for (const [p, list] of PARENT_RULES) if (list.includes(key)) { parent = p; break; }
+      const item = { ...b, marka: clean, anaFirma: parent };
+      const prev = map.get(key);
+      if (!prev || (!prev.kategori && item.kategori) || (!prev.anaFirma && item.anaFirma) || (item.alternatifler?.length > (prev.alternatifler?.length || 0))) map.set(key, item);
+    });
+
+    allBrands = [...map.values()].sort((a, b) => a.marka.localeCompare(b.marka, 'tr'));
+    [...new Set(allBrands.map(b => b.kategori).filter(Boolean))].sort().forEach(c => categorySelect.add(new Option(c, c)));
+    applyFilters();
+  } catch { grid.innerHTML = '<p class="empty">Veriler yüklenemedi.</p>'; }
+}
+
+function applyFilters() {
+  const q = searchInput.value.toLowerCase().trim(), cat = categorySelect.value;
+  filtered = allBrands.filter(b => {
+    const mTxt = b.marka.toLowerCase().includes(q) || (b.anaFirma || '').toLowerCase().includes(q) || (b.barkodlar || []).some(c => String(c).includes(q));
+    const mCat = cat === 'all' || b.kategori === cat;
+    const hasAlt = Array.isArray(b.alternatifler) && b.alternatifler.some(a => norm(a.marka) !== norm(b.marka));
+    return mTxt && mCat && (currentFilter === 'all' || b.status === currentFilter || (currentFilter === 'alt' && hasAlt));
+  });
+  shown = 40; render();
+}
+
+function render() {
+  const t = I18N[lang];
+  countBar.textContent = `${filtered.length} ${t.found}`;
+  if (!filtered.length) { grid.innerHTML = `<p class="empty">${t.empty}</p>`; loadMoreBtn.hidden = true; return; }
+  grid.innerHTML = filtered.slice(0, shown).map(b => {
+    const isPref = b.status === 'preferred', logo = getLogoUrl(b);
+    const initials = b.marka.slice(0, 2).toUpperCase();
+    const alts = (b.alternatifler || []).map(a => a.marka).filter(m => m && norm(m) !== norm(b.marka)).join(', ');
+    const meta = [b.anaFirma ? `🏢 ${b.anaFirma}` : '', b.kategori, b.altKategori].filter(Boolean).join(' • ');
+    const src = (b.kaynaklar || []);
+    return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')">
+      <div class="card-main">
+        <div class="brand-avatar">${logo ? `<img src="${logo}" alt="" loading="lazy" onerror="this.parentElement.textContent='${initials}'">` : initials}</div>
+        <div class="card-info">
+          <div class="card-head">
+            <span class="brand-name">${b.marka}</span>
+            <span class="badge ${isPref ? 'preferred' : 'review'}">${isPref ? t.pref : t.rev}</span>
+          </div>
+          ${meta ? `<div class="meta">${meta}</div>` : ''}
+        </div>
+      </div>
+      ${alts ? `<div class="alt">⭐ <b>${t.altLbl}</b> ${alts}</div>` : ''}
+      ${(b.not || src) ? `<div class="details" hidden>${b.not ? `<p>${b.not}</p>` : ''}${src?.url ? `<a href="${src.url.split(',')}" target="_blank" rel="noopener">${t.src}</a>` : ''}</div>` : ''}
+    </article>`;
+  }).join('');
+  loadMoreBtn.hidden = shown >= filtered.length;
+}
+
+document.querySelectorAll('.lang-btn').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.lang-btn').forEach(x => x.classList.remove('active')); b.classList.add('active'); setLang(b.dataset.lang);
+});
+loadMoreBtn.onclick = () => { shown += 40; render(); };
+searchInput.oninput = applyFilters; categorySelect.onchange = applyFilters;
+document.querySelectorAll('.pill').forEach(p => p.onclick = () => {
+  document.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); currentFilter = p.dataset.filter; applyFilters();
+});
+const scanBox = document.getElementById('scanner-box');
+document.getElementById('openScanBtn').onclick = () => {
+  scanBox.hidden = false; scanner = new Html5Qrcode("reader");
+  scanner.start({ facingMode: "environment" }, { fps: 10, qrbox: { width: 220, height: 140 } }, txt => { searchInput.value = txt; stopScan(); applyFilters(); }).catch(() => stopScan());
+};
+function stopScan() { scanBox.hidden = true; if (scanner) scanner.stop().then(() => scanner.clear()).catch(() => {}); }
+document.getElementById('closeScanBtn').onclick = stopScan;
+document.getElementById('manualSearchBtn').onclick = () => { searchInput.value = document.getElementById('manualBarcode').value; stopScan(); applyFilters(); };
+init();
