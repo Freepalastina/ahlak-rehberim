@@ -7,25 +7,28 @@ const I18N = {
   en: { sub: 'Consume Consciously, Choose Right', ph: 'Search brand, parent company or barcode...', scan: 'Scan', all: 'All', rev: '🔴 Review / Boycott', pref: '🟢 Recommended', alt: '⭐ Alternatives', allCat: '📂 All Categories', more: 'Show More', found: 'brands listed', empty: 'No results found.', altLbl: 'Alternatives:', src: '🔗 View Source' }
 };
 
-const HINTS = {
-  a101: 'a101.com.tr', aarealbank: 'aareal-bank.com', aboutyou: 'aboutyou.de', abtei: 'abtei.de', adidas: 'adidas.com', nike: 'nike.com', puma: 'puma.com', zara: 'zara.com', hm: 'hm.com', apple: 'apple.com', microsoft: 'microsoft.com', google: 'google.com', amazon: 'amazon.com', starbucks: 'starbucks.com', mcdonalds: 'mcdonalds.com', burgerking: 'burgerking.de', kfc: 'kfc.com', cocacola: 'coca-cola.com', pepsi: 'pepsi.com', fanta: 'fanta.com', sprite: 'sprite.com', nestle: 'nestle.com', nescafe: 'nescafe.com', nesquik: 'nesquik.com', kitkat: 'kitkat.com', nutella: 'nutella.com', kinder: 'kinder.com', milka: 'milka.de', oreo: 'oreo.com', nivea: 'nivea.de', dove: 'dove.com', loreal: 'loreal.com', garnier: 'garnier.de', ariel: 'ariel.de', persil: 'persil.de', domestos: 'domestos.com', bosch: 'bosch.com', siemens: 'siemens.com', miele: 'miele.de', samsung: 'samsung.com', ulker: 'ulker.com.tr', eti: 'etietieti.com', torku: 'torku.com.tr', sutas: 'sutas.com.tr', pinar: 'pinar.com.tr', bingo: 'bingo.com.tr', frosch: 'frosch.de', haribo: 'haribo.com', '8x4': '8x4.de', colgate: 'colgate.com', palmolive: 'palmolive.com'
+const DOMAINS = {
+  a101: 'a101.com.tr', aarealbank: 'aareal-bank.com', aboutyou: 'aboutyou.de', abtei: 'abtei.de', adidas: 'adidas.com', nike: 'nike.com', puma: 'puma.com', zara: 'zara.com', hm: 'hm.com', apple: 'apple.com', microsoft: 'microsoft.com', google: 'google.com', amazon: 'amazon.com', starbucks: 'starbucks.com', mcdonalds: 'mcdonalds.com', burgerking: 'burgerking.de', kfc: 'kfc.com', cocacola: 'coca-cola.com', pepsi: 'pepsi.com', fanta: 'fanta.com', sprite: 'sprite.com', nestle: 'nestle.com', nescafe: 'nescafe.com', nesquik: 'nesquik.com', kitkat: 'kitkat.com', nutella: 'nutella.com', kinder: 'kinder.com', milka: 'milka.de', oreo: 'oreo.com', nivea: 'nivea.de', dove: 'dove.com', loreal: 'loreal.com', garnier: 'garnier.de', ariel: 'ariel.de', persil: 'persil.de', domestos: 'domestos.com', bosch: 'bosch.com', siemens: 'siemens.com', miele: 'miele.de', samsung: 'samsung.com', ulker: 'ulker.com.tr', eti: 'etietieti.com', torku: 'torku.com.tr', sutas: 'sutas.com.tr', pinar: 'pinar.com.tr', bingo: 'bingo.com.tr', frosch: 'frosch.de', haribo: 'haribo.com', '8x4': '8x4.de', colgate: 'colgate.com', palmolive: 'palmolive.com', bim: 'bim.com.tr', sok: 'sokmarket.com.tr', migros: 'migros.com.tr', carrefour: 'carrefour.com', lidl: 'lidl.de', aldisud: 'aldi-sued.de', aldinord: 'aldi-nord.de', dm: 'dm.de', rossmann: 'rossmann.de', ikea: 'ikea.com', bershka: 'bershka.com', pullbear: 'pullandbear.com', mango: 'mango.com', levis: 'levi.com', hp: 'hp.com', dell: 'dell.com', asus: 'asus.com', sony: 'sony.com', philips: 'philips.com', dyson: 'dyson.com', tesla: 'tesla.com', bmw: 'bmw.com', audi: 'audi.com', volkswagen: 'volkswagen.com', mercedesbenz: 'mercedes-benz.com'
 };
 
 const norm = s => (s || '').toLowerCase().replace(/ı/g, 'i').replace(/×/g, 'x').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, '');
 
-function getHost(b) {
+function getLogoUrl(b) {
+  if (b.logoUrl || b.image_url) return b.logoUrl || b.image_url;
   const k = norm(b.marka);
-  if (HINTS[k]) return HINTS[k];
+  if (DOMAINS[k]) return `https://google.com{DOMAINS[k]}&sz=128`;
   if (Array.isArray(b.kaynaklar)) {
     const src = b.kaynaklar.find(x => x && x.url);
     if (src) {
       try {
         const h = new URL(src.url.split(',').at(0).trim()).hostname.replace(/^www\./, '');
-        if (!['wikipedia.org', 'linkedin.com', 'timesofisrael.com', 'jpost.com', 'tag24.de'].some(d => h.includes(d))) return h;
+        if (!['wikipedia.org', 'linkedin.com', 'timesofisrael.com', 'jpost.com', 'tag24.de'].some(d => h.includes(d))) {
+          return `https://google.com{h}&sz=128`;
+        }
       } catch {}
     }
   }
-  return k.length >= 3 ? `${k}.com` : '';
+  return k.length >= 3 ? `https://google.com{k}.com&sz=128` : '';
 }
 
 function setLang(l) {
@@ -40,7 +43,14 @@ async function init() {
   try {
     const res = await fetch('data.json?v=' + Date.now());
     const raw = await res.json();
-    allBrands = raw.filter(b => norm(b.marka) !== 'action').sort((a, b) => a.marka.localeCompare(b.marka, 'tr'));
+    const map = new Map();
+    raw.forEach(b => {
+      const clean = (b.marka || '').replace(/bokyot|etik inceleme/gi, '').replace(/[:(]+$/, '').trim();
+      const k = norm(clean);
+      if (!k || ['action', 'fgh', 'sm', 'gau5'].includes(k)) return;
+      if (!map.has(k)) map.set(k, { ...b, marka: clean });
+    });
+    allBrands = [...map.values()].sort((a, b) => a.marka.localeCompare(b.marka, 'tr'));
     [...new Set(allBrands.map(b => b.kategori).filter(Boolean))].sort().forEach(c => categorySelect.add(new Option(c, c)));
     applyFilters();
   } catch { grid.innerHTML = '<p class="empty">Veriler yüklenemedi.</p>'; }
@@ -62,15 +72,13 @@ function render() {
   countBar.textContent = `${filtered.length} ${t.found}`;
   if (!filtered.length) { grid.innerHTML = `<p class="empty">${t.empty}</p>`; loadMoreBtn.hidden = true; return; }
   grid.innerHTML = filtered.slice(0, shown).map(b => {
-    const isPref = b.status === 'preferred', host = getHost(b), initials = b.marka.slice(0, 2).toUpperCase();
-    const logo = b.logoUrl || b.image_url || (host ? `https://duckduckgo.com{host}.ico` : '');
+    const isPref = b.status === 'preferred', logo = getLogoUrl(b), initials = b.marka.slice(0, 2).toUpperCase();
     const alts = (b.alternatifler || []).map(a => a.marka).filter(m => m && norm(m) !== norm(b.marka)).join(', ');
     const meta = [b.anaFirma ? `🏢 ${b.anaFirma}` : '', b.kategori, b.altKategori].filter(Boolean).join(' • ');
     const firstSrc = Array.isArray(b.kaynaklar) ? b.kaynaklar.find(k => k && k.url) : null;
-    const fb = `if(!this.dataset.f){this.dataset.f=1;this.src='https://google.com{host}&sz=128';}else{this.parentElement.textContent='${initials}';}`;
     return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')">
       <div class="card-main">
-        <div class="brand-avatar">${logo ? `<img src="${logo}" alt="" loading="lazy" onerror="${fb}">` : initials}</div>
+        <div class="brand-avatar">${logo ? `<img src="${logo}" alt="" loading="lazy" onload="if(this.naturalWidth<20)this.parentElement.textContent='${initials}'" onerror="this.parentElement.textContent='${initials}'">` : initials}</div>
         <div class="card-info">
           <div class="card-head"><span class="brand-name">${b.marka}</span><span class="badge ${isPref ? 'preferred' : 'review'}">${isPref ? t.pref : t.rev}</span></div>
           ${meta ? `<div class="meta">${meta}</div>` : ''}
