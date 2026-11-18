@@ -35,42 +35,10 @@ const JUNK = new Set(['temizlik', 'gıda', 'içecek', 'kozmetik ve kişisel bak�
 const norm = s => (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, '');
 function getLogoUrl(b) {
   if (b.logoUrl || b.image_url) return b.logoUrl || b.image_url;
-  const url = b.kaynaklar?.?.url;
-  if (!url) return '';
+  const firstSrc = Array.isArray(b.kaynaklar) ? b.kaynaklar.find(k => k && k.url) : null;
+  if (!firstSrc) return '';
   try {
-    const host = new URL(url.split(',')).hostname.replace(/^www\./, '');
-    if (['wikipedia.org', 'linkedin.com', 'timesofisrael.com', 'jpost.com', 'tag24.de'].some(d => host.includes(d))) return '';
-    return `https://google.com{host}&sz=128`;
-  } catch { return ''; }
-}
-
-function setLang(l) {
-  lang = l; const t = I18N[l];
-  document.getElementById('subTitle').textContent = t.sub;
-  searchInput.placeholder = t.ph;
-  document.getElementById('scanTxt').textContent = t.scan;
-  document.getElementById('fAll').textContent = t.all;
-  document.getElementById('fRev').textContent = t.rev;
-  document.getElementById('fPref').textContent = t.pref;
-  document.getElementById('fAlt').textContent = t.alt;
-  categorySelect.options.textContent = t.allCat;
-  loadMoreBtn.textContent = t.more;
-  render();
-}
-
-async function init() {
-  try {
-    const res = await fetch('data.json?v=' + Date.now());
-    const raw = await res.json();
-    const parents = new Set(raw.map(x => norm(x.anaFirma)).filter(Boolean));
-    PARENT_RULES.forEach(([p]) => parents.add(norm(p)));
-    const map = new Map();
-function getLogoUrl(b) {
-  if (b.logoUrl || b.image_url) return b.logoUrl || b.image_url;
-  const firstSrc = Array.isArray(b.kaynaklar) && b.kaynaklar.length > 0 ? b.kaynaklar[0] : null;
-  if (!firstSrc || !firstSrc.url) return '';
-  try {
-    const cleanUrl = firstSrc.url.split(',')[0].trim();
+    const cleanUrl = firstSrc.url.split(',').at(0).trim();
     const host = new URL(cleanUrl).hostname.replace(/^www\./, '');
     if (['wikipedia.org', 'linkedin.com', 'timesofisrael.com', 'jpost.com', 'tag24.de'].some(d => host.includes(d))) return '';
     return `https://google.com{host}&sz=128`;
@@ -86,7 +54,7 @@ function setLang(l) {
   document.getElementById('fRev').textContent = t.rev;
   document.getElementById('fPref').textContent = t.pref;
   document.getElementById('fAlt').textContent = t.alt;
-  categorySelect.options[0].textContent = t.allCat;
+  if (categorySelect.options.length > 0) categorySelect.options.item(0).textContent = t.allCat;
   loadMoreBtn.textContent = t.more;
   render();
 }
@@ -113,7 +81,7 @@ async function init() {
     allBrands = [...map.values()].sort((a, b) => a.marka.localeCompare(b.marka, 'tr'));
     [...new Set(allBrands.map(b => b.kategori).filter(Boolean))].sort().forEach(c => categorySelect.add(new Option(c, c)));
     applyFilters();
-  } catch { grid.innerHTML = '<p class="empty">Veriler yüklenemedi.</p>'; }
+  } catch (err) { grid.innerHTML = '<p class="empty">Veriler yüklenemedi.</p>'; }
 }
 
 function applyFilters() {
@@ -136,7 +104,7 @@ function render() {
     const initials = b.marka.slice(0, 2).toUpperCase();
     const alts = (b.alternatifler || []).map(a => a.marka).filter(m => m && norm(m) !== norm(b.marka)).join(', ');
     const meta = [b.anaFirma ? `🏢 ${b.anaFirma}` : '', b.kategori, b.altKategori].filter(Boolean).join(' • ');
-    const firstSrc = Array.isArray(b.kaynaklar) && b.kaynaklar.length > 0 ? b.kaynaklar[0] : null;
+    const firstSrc = Array.isArray(b.kaynaklar) ? b.kaynaklar.find(k => k && k.url) : null;
     return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')">
       <div class="card-main">
         <div class="brand-avatar">${logo ? `<img src="${logo}" alt="" loading="lazy" onerror="this.parentElement.textContent='${initials}'">` : initials}</div>
@@ -149,7 +117,7 @@ function render() {
         </div>
       </div>
       ${alts ? `<div class="alt">⭐ <b>${t.altLbl}</b> ${alts}</div>` : ''}
-      ${(b.not || firstSrc) ? `<div class="details" hidden>${b.not ? `<p>${b.not}</p>` : ''}${firstSrc?.url ? `<a href="${firstSrc.url.split(',')[0].trim()}" target="_blank" rel="noopener">${t.src}</a>` : ''}</div>` : ''}
+      ${(b.not || firstSrc) ? `<div class="details" hidden>${b.not ? `<p>${b.not}</p>` : ''}${firstSrc ? `<a href="${firstSrc.url.split(',').at(0).trim()}" target="_blank" rel="noopener">${t.src}</a>` : ''}</div>` : ''}
     </article>`;
   }).join('');
   loadMoreBtn.hidden = shown >= filtered.length;
@@ -172,4 +140,3 @@ function stopScan() { scanBox.hidden = true; if (scanner) scanner.stop().then(()
 document.getElementById('closeScanBtn').onclick = stopScan;
 document.getElementById('manualSearchBtn').onclick = () => { searchInput.value = document.getElementById('manualBarcode').value; stopScan(); applyFilters(); };
 init();
-
