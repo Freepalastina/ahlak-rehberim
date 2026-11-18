@@ -1,72 +1,76 @@
 :root {
-  --bg: #f4f3ef; --card: #ffffff; --text: #181a19; --muted: #5c635e;
-  --dark: #141615; --gold: #c5a45c; --olive: #4a5d32;
-  --red: #dc2626; --green: #15803d; --border: #e4e2da;
+  --bg: #f6f8f5; --card: #ffffff; --text: #1e2923; --muted: #64746b;
+  --primary: #2d5a43; --primary-soft: #e8f1ec; --gold: #b89648;
+  --red: #dc2626; --green: #15803d; --border: #e2e8e4;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
 body { background: var(--bg); color: var(--text); padding-bottom: 48px; }
 
 header {
-  background: radial-gradient(circle at top, #232724 0%, #121413 100%);
-  color: #fff; padding: calc(20px + env(safe-area-inset-top, 0px)) 16px 38px;
-  border-bottom: 2px solid var(--gold);
+  background: linear-gradient(135deg, #244b37 0%, #3a6e53 100%);
+  color: #fff; padding: calc(12px + env(safe-area-inset-top, 0px)) 16px 36px;
 }
+.top-nav { max-width: 760px; margin: 0 auto 10px; display: flex; justify-content: flex-end; }
+.lang-bar { display: flex; gap: 6px; }
+.lang-btn {
+  background: rgba(255,255,255,0.14); color: #fff; border: 1px solid rgba(255,255,255,0.22);
+  padding: 4px 10px; border-radius: 99px; font-size: 0.76rem; font-weight: 600; cursor: pointer;
+}
+.lang-btn.active { background: #fff; color: var(--primary); border-color: #fff; }
+
 .brand-hero { max-width: 760px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 14px; }
-.app-logo { width: 64px; height: 64px; border-radius: 16px; border: 1.5px solid var(--gold); box-shadow: 0 6px 18px rgba(0,0,0,0.45); object-fit: cover; }
-header h1 { font-size: 1.4rem; font-weight: 800; letter-spacing: 0.6px; color: #e6cb88; }
-header p { font-size: 0.82rem; color: #cbd5c0; margin-top: 2px; letter-spacing: 0.3px; }
+.app-logo { width: 58px; height: 58px; border-radius: 15px; border: 1.5px solid rgba(255,255,255,0.5); box-shadow: 0 6px 16px rgba(0,0,0,0.18); object-fit: cover; }
+header h1 { font-size: 1.35rem; font-weight: 800; letter-spacing: 0.4px; color: #fff; }
+header p { font-size: 0.82rem; color: #d8e8df; margin-top: 2px; }
 
 .container { max-width: 760px; margin: -22px auto 0; padding: 0 14px; }
 .controls {
   background: var(--card); padding: 15px; border-radius: 18px;
-  box-shadow: 0 10px 25px -5px rgba(20, 22, 21, 0.08); border: 1px solid var(--border);
-  display: flex; flex-direction: column; gap: 11px; margin-bottom: 16px;
+  box-shadow: 0 10px 25px -5px rgba(36, 75, 55, 0.08); border: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px;
 }
 .search-row, .manual-row { display: flex; gap: 8px; }
 input, select {
-  width: 100%; padding: 12px 14px; border-radius: 12px; border: 1.5px solid var(--border);
-  font-size: 0.95rem; background: #faf9f6; color: var(--text); outline: none; transition: 0.2s;
+  width: 100%; padding: 11px 13px; border-radius: 12px; border: 1.5px solid var(--border);
+  font-size: 0.94rem; background: #fbfcfb; color: var(--text); outline: none;
 }
-input:focus, select:focus { border-color: var(--olive); background: #fff; }
+input:focus, select:focus { border-color: var(--primary); background: #fff; }
 
-.btn-scan {
-  background: linear-gradient(135deg, #4a5d32, #364623); color: #fff; border: 1px solid #5f7542;
-  border-radius: 12px; padding: 0 18px; font-weight: 600; cursor: pointer; white-space: nowrap;
-}
+.btn-scan { background: var(--primary); color: #fff; border: none; border-radius: 12px; padding: 0 16px; font-weight: 600; cursor: pointer; white-space: nowrap; }
 .btn-close { background: var(--red); color: #fff; border: none; border-radius: 12px; padding: 0 14px; font-weight: 700; cursor: pointer; }
 
-.filter-row { display: flex; gap: 7px; overflow-x: auto; scrollbar-width: none; }
+.filter-row { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
 .filter-row::-webkit-scrollbar { display: none; }
-.pill {
-  padding: 8px 14px; border-radius: 20px; border: 1px solid var(--border);
-  background: #fff; font-size: 0.84rem; font-weight: 600; cursor: pointer; white-space: nowrap;
-}
-.pill.active { background: var(--dark); color: #e6cb88; border-color: var(--gold); }
+.pill { padding: 7px 13px; border-radius: 20px; border: 1px solid var(--border); background: #fff; font-size: 0.83rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.pill.active { background: var(--primary); color: #fff; border-color: var(--primary); }
 
-#scanner-box { background: #121413; border-radius: 18px; overflow: hidden; margin-bottom: 16px; padding: 12px; border: 1px solid var(--gold); }
+#scanner-box { background: #1e2923; border-radius: 18px; overflow: hidden; margin-bottom: 14px; padding: 12px; }
 #reader { border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
 
-.count-bar { font-size: 0.82rem; font-weight: 600; color: var(--muted); margin-bottom: 10px; padding: 0 4px; }
-.grid { display: flex; flex-direction: column; gap: 11px; }
+.count-bar { font-size: 0.82rem; font-weight: 600; color: var(--muted); margin-bottom: 8px; padding: 0 4px; }
+.grid { display: flex; flex-direction: column; gap: 10px; }
 .card {
-  background: var(--card); border-radius: 16px; padding: 15px 17px;
-  border: 1px solid var(--border); border-left: 5px solid var(--border);
-  box-shadow: 0 2px 8px rgba(20, 22, 21, 0.04); cursor: pointer;
+  background: var(--card); border-radius: 16px; padding: 14px 16px; border: 1px solid var(--border);
+  border-left: 5px solid var(--border); box-shadow: 0 2px 6px rgba(0,0,0,0.03); cursor: pointer;
 }
 .card.review { border-left-color: var(--red); }
 .card.preferred { border-left-color: var(--green); }
-.card-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
-.brand-name { font-weight: 700; font-size: 1.08rem; }
-.badge { font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 99px; white-space: nowrap; }
-.badge.review { background: #fef2f2; color: var(--red); border: 1px solid #fecaca; }
-.badge.preferred { background: #f0fdf4; color: var(--green); border: 1px solid #bbf7d0; }
-.meta { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
-.alt { margin-top: 8px; font-size: 0.84rem; color: #713f12; background: #fefce8; padding: 8px 11px; border-radius: 10px; border: 1px solid #fde047; }
-.details { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border); font-size: 0.8rem; color: var(--muted); }
-.details a { color: var(--olive); font-weight: 700; text-decoration: none; display: inline-block; margin-top: 4px; }
-
-.btn-more {
-  width: 100%; margin-top: 16px; padding: 13px; border-radius: 14px;
-  border: 1px solid var(--gold); background: var(--dark); font-weight: 700; color: #e6cb88; cursor: pointer;
+.card-main { display: flex; align-items: center; gap: 12px; }
+.brand-avatar {
+  width: 44px; height: 44px; border-radius: 12px; background: var(--primary-soft); color: var(--primary);
+  display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem;
+  flex-shrink: 0; border: 1px solid var(--border); overflow: hidden;
 }
+.brand-avatar img { width: 100%; height: 100%; object-fit: contain; background: #fff; padding: 4px; }
+.card-info { flex: 1; min-width: 0; }
+.card-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.brand-name { font-weight: 700; font-size: 1.04rem; }
+.badge { font-size: 0.73rem; font-weight: 700; padding: 3px 9px; border-radius: 99px; white-space: nowrap; }
+.badge.review { background: #fef2f2; color: var(--red); }
+.badge.preferred { background: #f0fdf4; color: var(--green); }
+.meta { font-size: 0.8rem; color: var(--muted); margin-top: 3px; }
+.alt { margin-top: 8px; font-size: 0.83rem; color: #854d0e; background: #fefce8; padding: 7px 10px; border-radius: 10px; }
+.details { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border); font-size: 0.8rem; color: var(--muted); }
+.details a { color: var(--primary); font-weight: 700; text-decoration: none; display: inline-block; margin-top: 4px; }
+.btn-more { width: 100%; margin-top: 14px; padding: 12px; border-radius: 14px; border: 1px solid var(--border); background: #fff; font-weight: 700; color: var(--primary); cursor: pointer; }
 .empty { text-align: center; color: var(--muted); padding: 36px; }
