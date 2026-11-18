@@ -58,7 +58,6 @@
       overscroll-behavior-y: none;
     }
 
-    /* Moderner App-Header */
     .header {
       position: sticky;
       top: 0;
@@ -70,10 +69,7 @@
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
     }
 
-    .header-wrap {
-      max-width: 880px;
-      margin: 0 auto;
-    }
+    .header-wrap { max-width: 880px; margin: 0 auto; }
 
     .nav-bar {
       display: flex;
@@ -83,42 +79,23 @@
       margin-bottom: 14px;
     }
 
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .logo-area { display: flex; align-items: center; gap: 10px; }
 
     .logo-badge {
       width: 38px;
       height: 38px;
       border-radius: 12px;
       background: rgba(255, 255, 255, 0.16);
-      backdrop-filter: blur(6px);
       display: grid;
       place-items: center;
       font-weight: 900;
       font-size: 16px;
     }
 
-    .logo-area h1 {
-      margin: 0;
-      font-size: 19px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
+    .logo-area h1 { margin: 0; font-size: 19px; font-weight: 800; letter-spacing: -0.02em; }
+    .logo-area span { display: block; font-size: 11px; opacity: 0.85; }
 
-    .logo-area span {
-      display: block;
-      font-size: 11px;
-      opacity: 0.85;
-    }
-
-    .actions {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
+    .actions { display: flex; align-items: center; gap: 6px; }
 
     .lang-pills {
       display: flex;
@@ -177,11 +154,7 @@
       #installBtn { display: none !important; }
     }
 
-    /* Suchleiste */
-    .search-group {
-      display: flex;
-      gap: 8px;
-    }
+    .search-group { display: flex; gap: 8px; }
 
     .search-field {
       position: relative;
@@ -203,9 +176,7 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
 
-    .search-field input::placeholder {
-      color: var(--muted);
-    }
+    .search-field input::placeholder { color: var(--muted); }
 
     #clearBtn {
       position: absolute;
@@ -238,14 +209,12 @@
       gap: 6px;
     }
 
-    /* Hauptbereich */
     .content {
       max-width: 880px;
       margin: 0 auto;
       padding: 14px 14px calc(44px + env(safe-area-inset-bottom));
     }
 
-    /* Zähler-Leiste */
     .stats-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -262,24 +231,11 @@
       box-shadow: var(--shadow);
     }
 
-    .stat-box b {
-      display: block;
-      font-size: 17px;
-      font-weight: 800;
-    }
-
-    .stat-box span {
-      display: block;
-      font-size: 11px;
-      color: var(--muted);
-      font-weight: 600;
-      margin-top: 1px;
-    }
-
+    .stat-box b { display: block; font-size: 17px; font-weight: 800; }
+    .stat-box span { display: block; font-size: 11px; color: var(--muted); font-weight: 600; margin-top: 1px; }
     .stat-box.red b { color: var(--red); }
     .stat-box.green b { color: var(--accent-text); }
 
-    /* Filter-Tabs */
     .filter-tabs {
       display: flex;
       gap: 7px;
@@ -308,7 +264,6 @@
       border-color: var(--accent);
     }
 
-    /* Dropdown-Filter */
     .dropdowns {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -338,7 +293,6 @@
       color: var(--muted);
     }
 
-    /* Markenkarten */
     .grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -372,12 +326,7 @@
       gap: 8px;
     }
 
-    .card h3 {
-      margin: 0;
-      font-size: 17px;
-      font-weight: 800;
-      line-height: 1.25;
-    }
+    .card h3 { margin: 0; font-size: 17px; font-weight: 800; line-height: 1.25; }
 
     .badge {
       font-size: 11px;
@@ -429,10 +378,7 @@
       font-size: 14px;
     }
 
-    .more-area {
-      text-align: center;
-      margin-top: 18px;
-    }
+    .more-area { text-align: center; margin-top: 18px; }
 
     #loadMoreBtn {
       height: 44px;
@@ -447,7 +393,24 @@
       box-shadow: var(--shadow);
     }
 
-    /* Dialog-Fenster */
     dialog {
       width: min(540px, calc(100vw - 24px));
       border: 0;
+      border-radius: 22px;
+      padding: 0;
+      background: var(--surface);
+      color: var(--text);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.38);
+      max-height: 86vh;
+      overflow: auto;
+    }
+
+    dialog::backdrop { background: rgba(0, 0, 0, 0.55); backdrop-filter: blur(2px); }
+
+    .dlg-top {
+      position: sticky;
+      top: 0;
+      background: var(--surface);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
