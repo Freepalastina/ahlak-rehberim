@@ -7,27 +7,25 @@ const I18N = {
   en: { sub: 'Consume Consciously, Choose Right', ph: 'Search brand, parent company or barcode...', scan: 'Scan', all: 'All', rev: '🔴 Review / Boycott', pref: '🟢 Recommended', alt: '⭐ Alternatives', allCat: '📂 All Categories', more: 'Show More', found: 'brands listed', empty: 'No results found.', altLbl: 'Alternatives:', src: '🔗 View Source' }
 };
 
-const DOMAIN_HINTS = {
-  a101: 'a101.com.tr', aarealbank: 'aareal-bank.com', aboutyou: 'aboutyou.de', abtei: 'abtei.de', adidas: 'adidas.com', nike: 'nike.com', puma: 'puma.com', zara: 'zara.com', hm: 'hm.com', apple: 'apple.com', microsoft: 'microsoft.com', google: 'google.com', amazon: 'amazon.com', starbucks: 'starbucks.com', mcdonalds: 'mcdonalds.com', burgerking: 'burgerking.de', kfc: 'kfc.com', cocacola: 'coca-cola.com', pepsi: 'pepsi.com', fanta: 'fanta.com', sprite: 'sprite.com', nestle: 'nestle.com', nescafe: 'nescafe.com', nesquik: 'nesquik.com', kitkat: 'kitkat.com', nutella: 'nutella.com', kinder: 'kinder.com', milka: 'milka.de', oreo: 'oreo.com', nivea: 'nivea.de', dove: 'dove.com', loreal: 'loreal.com', garnier: 'garnier.de', ariel: 'ariel.de', persil: 'persil.de', fairy: 'fairy-dish.co.uk', domestos: 'domestos.com', bosch: 'bosch.com', siemens: 'siemens.com', miele: 'miele.de', samsung: 'samsung.com', ulker: 'ulker.com.tr', eti: 'etietieti.com', torku: 'torku.com.tr', sutas: 'sutas.com.tr', pinar: 'pinar.com.tr', bingo: 'bingo.com.tr', frosch: 'frosch.de', haribo: 'haribo.com', '8x4': '8x4.de', colgate: 'colgate.com', palmolive: 'palmolive.com'
+const HINTS = {
+  a101: 'a101.com.tr', aarealbank: 'aareal-bank.com', aboutyou: 'aboutyou.de', abtei: 'abtei.de', adidas: 'adidas.com', nike: 'nike.com', puma: 'puma.com', zara: 'zara.com', hm: 'hm.com', apple: 'apple.com', microsoft: 'microsoft.com', google: 'google.com', amazon: 'amazon.com', starbucks: 'starbucks.com', mcdonalds: 'mcdonalds.com', burgerking: 'burgerking.de', kfc: 'kfc.com', cocacola: 'coca-cola.com', pepsi: 'pepsi.com', fanta: 'fanta.com', sprite: 'sprite.com', nestle: 'nestle.com', nescafe: 'nescafe.com', nesquik: 'nesquik.com', kitkat: 'kitkat.com', nutella: 'nutella.com', kinder: 'kinder.com', milka: 'milka.de', oreo: 'oreo.com', nivea: 'nivea.de', dove: 'dove.com', loreal: 'loreal.com', garnier: 'garnier.de', ariel: 'ariel.de', persil: 'persil.de', domestos: 'domestos.com', bosch: 'bosch.com', siemens: 'siemens.com', miele: 'miele.de', samsung: 'samsung.com', ulker: 'ulker.com.tr', eti: 'etietieti.com', torku: 'torku.com.tr', sutas: 'sutas.com.tr', pinar: 'pinar.com.tr', bingo: 'bingo.com.tr', frosch: 'frosch.de', haribo: 'haribo.com', '8x4': '8x4.de', colgate: 'colgate.com', palmolive: 'palmolive.com'
 };
 
 const norm = s => (s || '').toLowerCase().replace(/ı/g, 'i').replace(/×/g, 'x').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, '');
 
-function getLogoUrl(b) {
-  if (b.logoUrl || b.image_url) return b.logoUrl || b.image_url;
+function getHost(b) {
   const k = norm(b.marka);
-  let host = DOMAIN_HINTS[k] || '';
-  if (!host && Array.isArray(b.kaynaklar)) {
+  if (HINTS[k]) return HINTS[k];
+  if (Array.isArray(b.kaynaklar)) {
     const src = b.kaynaklar.find(x => x && x.url);
     if (src) {
       try {
         const h = new URL(src.url.split(',').at(0).trim()).hostname.replace(/^www\./, '');
-        if (!['wikipedia.org', 'linkedin.com', 'timesofisrael.com', 'jpost.com', 'tag24.de'].some(d => h.includes(d))) host = h;
+        if (!['wikipedia.org', 'linkedin.com', 'timesofisrael.com', 'jpost.com', 'tag24.de'].some(d => h.includes(d))) return h;
       } catch {}
     }
   }
-  if (!host && k.length >= 3) host = `${k}.com`;
-  return host ? `https://clearbit.com{host}` : '';
+  return k.length >= 3 ? `${k}.com` : '';
 }
 
 function setLang(l) {
@@ -43,11 +41,9 @@ async function init() {
     const res = await fetch('data.json?v=' + Date.now());
     const raw = await res.json();
     allBrands = raw.filter(b => norm(b.marka) !== 'action').sort((a, b) => a.marka.localeCompare(b.marka, 'tr'));
-    [...new Set(allBrands.map(b => b.kategori).filter(Boolean))].sort().forEach(c => {
-      categorySelect.add(new Option(c, c));
-    });
+    [...new Set(allBrands.map(b => b.kategori).filter(Boolean))].sort().forEach(c => categorySelect.add(new Option(c, c)));
     applyFilters();
-  } catch (e) { grid.innerHTML = '<p class="empty">Veriler yüklenemedi.</p>'; }
+  } catch { grid.innerHTML = '<p class="empty">Veriler yüklenemedi.</p>'; }
 }
 
 function applyFilters() {
@@ -66,12 +62,12 @@ function render() {
   countBar.textContent = `${filtered.length} ${t.found}`;
   if (!filtered.length) { grid.innerHTML = `<p class="empty">${t.empty}</p>`; loadMoreBtn.hidden = true; return; }
   grid.innerHTML = filtered.slice(0, shown).map(b => {
-    const isPref = b.status === 'preferred', logo = getLogoUrl(b), initials = b.marka.slice(0, 2).toUpperCase();
-    const domain = logo.replace('https://clearbit.com', '');
+    const isPref = b.status === 'preferred', host = getHost(b), initials = b.marka.slice(0, 2).toUpperCase();
+    const logo = b.logoUrl || b.image_url || (host ? `https://duckduckgo.com{host}.ico` : '');
     const alts = (b.alternatifler || []).map(a => a.marka).filter(m => m && norm(m) !== norm(b.marka)).join(', ');
     const meta = [b.anaFirma ? `🏢 ${b.anaFirma}` : '', b.kategori, b.altKategori].filter(Boolean).join(' • ');
     const firstSrc = Array.isArray(b.kaynaklar) ? b.kaynaklar.find(k => k && k.url) : null;
-    const fb = `if(!this.dataset.f){this.dataset.f=1;this.src='https://google.com{domain}&sz=128';}else{this.parentElement.textContent='${initials}';}`;
+    const fb = `if(!this.dataset.f){this.dataset.f=1;this.src='https://google.com{host}&sz=128';}else{this.parentElement.textContent='${initials}';}`;
     return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')">
       <div class="card-main">
         <div class="brand-avatar">${logo ? `<img src="${logo}" alt="" loading="lazy" onerror="${fb}">` : initials}</div>
