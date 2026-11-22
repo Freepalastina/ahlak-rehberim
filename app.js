@@ -167,7 +167,7 @@ function render() {
     const srcHtml = sources.map(s => `<a href="${s.url.split(',')[0].trim()}" target="_blank" rel="noopener">${t.src}</a>`).join(' ');
     return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')">
       <div class="card-main">
-        <div class="brand-avatar">${logo ? `<img src="${logo}" alt="" loading="lazy" onload="if(this.naturalWidth<=16)this.parentElement.textContent='${initials}'" onerror="this.parentElement.textContent='${initials}'">` : initials}</div>
+        <div class="brand-avatar">${logo ? `<img src="${logo}" alt="" loading="lazy" onload="if(this.naturalWidth<=1)this.parentElement.textContent='${initials}'" onerror="this.parentElement.textContent='${initials}'">` : initials}</div>
         <div class="card-info">
           <div class="card-head"><span class="brand-name">${b.marka}</span><span class="badge ${isPref ? 'preferred' : 'review'}">${isPref ? t.pref : t.rev}</span></div>
           ${meta ? `<div class="meta">${meta}</div>` : ''}
