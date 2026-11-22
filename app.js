@@ -122,15 +122,15 @@ async function init() {
     const res = await fetch('data.json?v=' + Date.now());
     const raw = await res.json();
     const map = new Map();
-    raw.forEach(b => {
+    raw.forEach(function(b) {
       const clean = (b.marka || '').replace(/bokyot|etik inceleme/gi, '').replace(/[:(]+$/, '').trim();
       const k = norm(clean);
-      if (!k || ['action', 'fgh', 'sm', 'gau5'].includes(k)) return;
+      if (!k || ['action', 'fgh', 'sm', 'gau5'].indexOf(k) !== -1) return;
       let parent = (b.anaFirma || '').trim();
       if (FIX_DATA[k]) parent = FIX_DATA[k][0];
-      else if (parent.includes('/')) parent = '';
+      else if (parent.indexOf('/') !== -1) parent = '';
       if (!map.has(k)) {
-        map.set(k, { ...b, marka: clean, anaFirma: parent });
+        map.set(k, Object.assign({}, b, { marka: clean, anaFirma: parent }));
       } else {
         const prev = map.get(k);
         if (!prev.anaFirma && parent) prev.anaFirma = parent;
@@ -138,11 +138,12 @@ async function init() {
         if ((!prev.alternatifler || !prev.alternatifler.length) && Array.isArray(b.alternatifler) && b.alternatifler.length) prev.alternatifler = b.alternatifler;
       }
     });
-    allBrands = [...map.values()].sort((a, b) => a.marka.localeCompare(b.marka, 'tr'));
-    [...new Set(allBrands.map(b => b.kategori).filter(Boolean))].sort().forEach(c => categorySelect.add(new Option(c, c)));
+    allBrands = Array.from(map.values()).sort(function(a, b) { return a.marka.localeCompare(b.marka, 'tr'); });
+    Array.from(new Set(allBrands.map(function(b) { return b.kategori; }).filter(Boolean))).sort().forEach(function(c) { categorySelect.add(new Option(c, c)); });
     applyFilters();
   } catch (e) { grid.innerHTML = '<p class="empty">Veriler yüklenemedi.</p>'; }
 }
+
 
 function applyFilters() {
   const q = searchInput.value.toLowerCase().trim(), cat = categorySelect.value;
