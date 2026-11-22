@@ -38,16 +38,25 @@ const FIX_DATA = {
 const norm = s => (s || '').toLowerCase().replace(/ı/g, 'i').replace(/×/g, 'x').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, '');
 
 function getLogoUrl(b) {
-  if (b.logoUrl || b.image_url) return b.logoUrl || b.image_url;
+  const rawUrl = b.logoUrl || b.image_url || '';
+  if (rawUrl && /\.(png|jpg|jpeg|svg|webp)(\?.*)?$/i.test(rawUrl)) return rawUrl;
   const k = norm(b.marka);
-  if (FIX_DATA[k]?.at(1)) return `https://google.com{FIX_DATA[k].at(1)}&sz=128`;
-  if (Array.isArray(b.kaynaklar)) {
+  let domain = (FIX_DATA[k] && FIX_DATA[k][1]) ? FIX_DATA[k][1] : '';
+  if (!domain && rawUrl) {
+    try { domain = new URL(rawUrl).hostname.replace(/^www\./, ''); } catch (e) {}
+  }
+  if (!domain && Array.isArray(b.kaynaklar)) {
     const src = b.kaynaklar.find(x => x && x.url);
     if (src) {
       try {
-        const h = new URL(src.url.split(',').at(0).trim()).hostname.replace(/^www\./, '');
-        if (!['wikipedia.org', 'linkedin.com', 'timesofisrael.com', 'jpost.com', 'tag24.de'].some(d => h.includes(d))) {
-          return `https://google.com{h}&sz=128`;
+        const h = new URL(src.url.split(',')[0].trim()).hostname.replace(/^www\./, '');
+        if (!['wikipedia.org', 'linkedin.com', 'timesofisrael.com', 'jpost.com', 'tag24.de', 'reuters.com', 'handelsblatt.com'].some(d => h.includes(d))) domain = h;
+      } catch (e) {}
+    }
+  }
+  return domain ? 'https://google.com' + domain + '&sz=128' : (k.length >= 3 ? 'https://google.com' + k + '.com&sz=128' : '');
+}
+
         }
       } catch {}
     }
