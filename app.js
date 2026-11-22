@@ -8,40 +8,92 @@ const I18N = {
 };
 
 const FIX_DATA = {
-  airwaves: ['Mars, Incorporated', 'mars.com'], ajax: ['Colgate-Palmolive', 'colgatepalmolive.com'],
-  akmina: ['Danone', 'danone.com'], aktren: ['Bayer AG', 'bayer.com'], alfajr: ['Al-Fajr', 'alfajr.com'],
-  albert: ['Ahold Delhaize', 'albert.cz'], albertheijn: ['Ahold Delhaize', 'ah.nl'],
-  alcare: ['SC Johnson', 'scjohnson.com'], aldinord: ['Unternehmensgruppe Aldi Nord', 'aldi-nord.de'],
-  aldisud: ['Unternehmensgruppe Aldi Süd', 'aldi-sued.de'], a101: ['Yeni Mağazacılık A.Ş.', 'a101.com.tr'],
-  aboutyou: ['Otto Group', 'aboutyou.de'], abtei: ['Perrigo Company', 'abtei.de'],
-  adidas: ['Adidas AG', 'adidas.com'], nike: ['Nike, Inc.', 'nike.com'], puma: ['Puma SE', 'puma.com'],
-  zara: ['Inditex', 'zara.com'], hm: ['H&M Group', 'hm.com'], apple: ['Apple Inc.', 'apple.com'],
-  microsoft: ['Microsoft Corporation', 'microsoft.com'], google: ['Alphabet Inc.', 'google.com'],
-  amazon: ['Amazon.com, Inc.', 'amazon.com'], starbucks: ['Starbucks Corporation', 'starbucks.com'],
-  mcdonalds: ["McDonald's Corp.", 'mcdonalds.com'], burgerking: ['Restaurant Brands International', 'burgerking.de'],
-  cocacola: ['The Coca-Cola Company', 'coca-cola.com'], pepsi: ['PepsiCo', 'pepsi.com'],
-  nestle: ['Nestlé S.A.', 'nestle.com'], nescafe: ['Nestlé S.A.', 'nescafe.com'],
-  kitkat: ['Nestlé S.A.', 'kitkat.com'], nutella: ['Ferrero Group', 'nutella.com'],
-  kinder: ['Ferrero Group', 'kinder.com'], milka: ['Mondelēz International', 'milka.de'],
-  oreo: ['Mondelēz International', 'oreo.com'], nivea: ['Beiersdorf AG', 'nivea.de'],
-  dove: ['Unilever', 'dove.com'], loreal: ["L'Oréal Groupe", 'loreal.com'],
-  ariel: ['Procter & Gamble', 'ariel.de'], persil: ['Henkel', 'persil.de'],
-  bosch: ['Robert Bosch GmbH', 'bosch.com'], siemens: ['Siemens AG', 'siemens.com'],
-  samsung: ['Samsung Electronics', 'samsung.com'], ulker: ['Yıldız Holding', 'ulker.com.tr'],
-  eti: ['Eti Gıda', 'etietieti.com'], torku: ['Konya Şeker', 'torku.com.tr'],
-  bim: ['BİM Birleşik Mağazalar', 'bim.com.tr'], sok: ['Yıldız Holding', 'sokmarket.com.tr'],
-  migros: ['Migros Ticaret', 'migros.com.tr'], spar: ['SPAR Österreich / International', 'spar.at'],
-  carrefour: ['Carrefour S.A.', 'carrefour.com'], lidl: ['Schwarz Gruppe', 'lidl.de'],
-  dm: ['dm-drogerie markt', 'dm.de'], rossmann: ['Dirk Rossmann GmbH', 'rossmann.de']
+  '3m': ['3M Company', '3m.com'], '5gum': ['Mars, Incorporated', 'mars.com'], '5star': ['Mondelēz International', 'mondelezinternational.com'],
+  '7days': ['Mondelēz International', '7days.com'], '7up': ['PepsiCo, Inc.', '7up.com'], '8x4': ['Beiersdorf AG', '8x4.de'],
+  a101: ['Turgut Aydın Holding A.Ş.', 'a101.com.tr'], aarealbank: ['Aareal Bank AG', 'aareal-bank.com'],
+  abc: ['ABC Deterjan Sanayi ve Ticaret A.Ş.', 'abcdeterjan.com.tr'], aboutyou: ['ABOUT YOU Holding SE', 'aboutyou.de'],
+  abtei: ['Perrigo Company plc', 'abtei.de'], ace: ['Fater S.p.A.', 'ace.info'],
+  acquadiparma: ['LVMH Moët Hennessy Louis Vuitton SE', 'acquadiparma.com'], actimel: ['Danone S.A.', 'actimel.de'],
+  action: ['3i Group plc', 'action.com'], activia: ['Danone S.A.', 'activia.de'],
+  acuvue: ['Johnson & Johnson', 'acuvue.com'], adeg: ['REWE International AG', 'adeg.at'],
+  adidas: ['adidas AG', 'adidas.com'], aeg: ['AB Electrolux', 'aeg.de'],
+  airwick: ['Reckitt Benckiser Group plc', 'airwick.de'], airwaves: ['Mars, Incorporated', 'mars.com'],
+  ajax: ['Colgate-Palmolive Company', 'colgatepalmolive.com'], albert: ['Koninklijke Ahold Delhaize N.V.', 'albert.cz'],
+  albertheijn: ['Koninklijke Ahold Delhaize N.V.', 'ah.nl'], aldinord: ['Unternehmensgruppe Aldi Nord', 'aldi-nord.de'],
+  aldisud: ['Unternehmensgruppe Aldi Süd', 'aldi-sued.de'], algida: ['Unilever plc', 'algida.com.tr'],
+  allianz: ['Allianz SE', 'allianz.com'], almdudler: ['Almdudler Limonade A. & S. Klein GmbH & Co KG', 'almdudler.com'],
+  alnatura: ['Alnatura Produktions- und Handels GmbH', 'alnatura.de'], alpecin: ['Dr. Kurt Wolff GmbH & Co. KG', 'alpecin.com'],
+  alpecine: ['Dr. Kurt Wolff GmbH & Co. KG', 'alpecin.com'], alpro: ['Danone S.A.', 'alpro.com'],
+  altus: ['Arçelik A.Ş.', 'altus.com.tr'], always: ['Procter & Gamble Company', 'always.com'],
+  alza: ['Alza.cz a.s.', 'alza.at'], amazon: ['Amazon.com, Inc.', 'amazon.com'],
+  apple: ['Apple Inc.', 'apple.com'], aptamil: ['Danone S.A.', 'aptaclub.de'],
+  aquafresh: ['Haleon plc', 'aquafresh.com'], arcelik: ['Arçelik A.Ş.', 'arcelik.com.tr'],
+  ariel: ['Procter & Gamble Company', 'ariel.co.uk'], armani: ['Giorgio Armani S.p.A.', 'armani.com'],
+  asics: ['ASICS Corporation', 'asics.com'], asperox: ['Beyaz Kağıt ve Hijyenik Ürünler A.Ş.', 'asperox.com.tr'],
+  aspirin: ['Bayer AG', 'aspirin.de'], asus: ['ASUSTeK Computer Inc.', 'asus.com'],
+  auchan: ['Auchan Retail International S.A.', 'auchan-retail.com'], audi: ['AUDI AG', 'audi.com'],
+  axe: ['Unilever plc', 'axe.com'], aygaz: ['Aygaz A.Ş.', 'aygaz.com.tr'],
+  barbie: ['Mattel, Inc.', 'mattel.com'], barilla: ['Barilla G. e R. Fratelli S.p.A.', 'barilla.com'],
+  bauknecht: ['Beko Europe B.V.', 'bauknecht.de'], beiersdorf: ['Beiersdorf AG', 'beiersdorf.com'],
+  beko: ['Arçelik A.Ş.', 'beko.com'], benjerrys: ['Unilever plc', 'benjerry.com'],
+  bepanthen: ['Bayer AG', 'bepanthen.de'], bershka: ['Industria de Diseño Textil, S.A. (Inditex)', 'bershka.com'],
+  billa: ['REWE International AG', 'billa.at'], bim: ['BİM Birleşik Mağazalar A.Ş.', 'bim.com.tr'],
+  bipa: ['REWE International AG', 'bipa.at'], bmw: ['Bayerische Motoren Werke AG', 'bmw.com'],
+  booking: ['Booking Holdings Inc.', 'booking.com'], bosch: ['Robert Bosch GmbH', 'bosch.com'],
+  braun: ['Procter & Gamble Company', 'braun.de'], burgerking: ['Restaurant Brands International Inc.', 'burgerking.de'],
+  ca: ['COFRA Holding AG', 'c-and-a.com'], carrefour: ['Carrefour S.A.', 'carrefour.com'],
+  cerave: ["L'Oréal S.A.", 'cerave.de'], chanel: ['Chanel Limited', 'chanel.com'],
+  cocacola: ['The Coca-Cola Company', 'coca-cola.com'], colgate: ['Colgate-Palmolive Company', 'colgate.de'],
+  danone: ['Danone S.A.', 'danone.com'], decathlon: ['Association Familiale Mulliez', 'decathlon.at'],
+  deichmann: ['Deichmann SE', 'deichmann.com'], dm: ['dm-drogerie markt GmbH + Co. KG', 'dm.at'],
+  dove: ['Unilever plc', 'dove.com'], droetker: ['Dr. August Oetker KG', 'oetker.at'],
+  dyson: ['Dyson Limited', 'dyson.at'], edeka: ['EDEKA Zentrale Stiftung & Co. KG', 'edeka.de'],
+  eti: ['Eti Gıda Sanayi ve Ticaret A.Ş.', 'etietieti.com'], fanta: ['The Coca-Cola Company', 'coca-cola.com'],
+  farmasi: ['Tanalize Kozmetik A.Ş.', 'farmasi.com.tr'], ferrero: ['Ferrero International S.A.', 'ferrero.com'],
+  finish: ['Reckitt Benckiser Group plc', 'finish.de'], frosch: ['Werner & Mertz GmbH', 'frosch.de'],
+  garnier: ["L'Oréal S.A.", 'garnier.de'], gillette: ['Procter & Gamble Company', 'gillette.de'],
+  google: ['Alphabet Inc.', 'google.com'], haribo: ['HARIBO GmbH & Co. KG', 'haribo.com'],
+  heinz: ['The Kraft Heinz Company', 'heinz.com'], hm: ['H & M Hennes & Mauritz AB', 'hm.com'],
+  hofer: ['Unternehmensgruppe Aldi Süd', 'hofer.at'], ikea: ['Inter IKEA Holding B.V.', 'ikea.com'],
+  instagram: ['Meta Platforms, Inc.', 'instagram.com'], jacobs: ["JDE Peet's N.V.", 'jacobs-kaffee.at'],
+  kaufland: ['Schwarz Gruppe', 'kaufland.de'], kelloggs: ['Kellanova', 'kelloggs.de'],
+  kfc: ['Yum! Brands, Inc.', 'kfc.at'], kinder: ['Ferrero International S.A.', 'kinder.com'],
+  kitkat: ['Nestlé S.A.', 'kitkat.de'], knorr: ['Unilever plc', 'knorr.com'],
+  lays: ['PepsiCo, Inc.', 'lays.com'], lenor: ['Procter & Gamble Company', 'lenor.de'],
+  lidl: ['Schwarz Gruppe', 'lidl.at'], lipton: ['LIPTON Teas and Infusions', 'lipton.com'],
+  loreal: ["L'Oréal S.A.", 'loreal-paris.at'], magnum: ['Unilever plc', 'magnumicecream.com'],
+  mars: ['Mars, Incorporated', 'mars.com'], maybelline: ["L'Oréal S.A.", 'maybelline.at'],
+  mcdonalds: ["McDonald's Corporation", 'mcdonalds.at'], mediamarkt: ['Ceconomy AG', 'mediamarkt.at'],
+  microsoft: ['Microsoft Corporation', 'microsoft.com'], miele: ['Miele & Cie. KG', 'miele.at'],
+  migros: ['Migros-Genossenschafts-Bund', 'migros.ch'], milka: ['Mondelēz International', 'milka.at'],
+  nescafe: ['Nestlé S.A.', 'nescafe.com'], nestle: ['Nestlé S.A.', 'nestle.com'],
+  netflix: ['Netflix, Inc.', 'netflix.com'], nike: ['Nike, Inc.', 'nike.com'],
+  nivea: ['Beiersdorf AG', 'nivea.at'], nutella: ['Ferrero International S.A.', 'nutella.com'],
+  oralb: ['Procter & Gamble Company', 'oralb.de'], oreo: ['Mondelēz International', 'oreo.com'],
+  pampers: ['Procter & Gamble Company', 'pampers.de'], pantene: ['Procter & Gamble Company', 'pantene.de'],
+  penny: ['REWE Group', 'penny.at'], pepsi: ['PepsiCo, Inc.', 'pepsi.com'],
+  persil: ['Henkel AG & Co. KGaA', 'persil.at'], philips: ['Koninklijke Philips N.V.', 'philips.at'],
+  prima: ['Procter & Gamble Company', 'prima.com.tr'], pringles: ['Kellanova', 'pringles.com'],
+  puma: ['PUMA SE', 'puma.com'], redbull: ['Red Bull GmbH', 'redbull.com'],
+  rewe: ['REWE Group', 'rewe.de'], rexona: ['Unilever plc', 'rexona.com'],
+  rossmann: ['Dirk Rossmann GmbH', 'rossmann.de'], samsung: ['Samsung Electronics Co., Ltd.', 'samsung.com'],
+  schwarzkopf: ['Henkel AG & Co. KGaA', 'schwarzkopf.at'], sensodyne: ['Haleon plc', 'sensodyne.at'],
+  siemens: ['Siemens AG', 'siemens.com'], snickers: ['Mars, Incorporated', 'snickers.com'],
+  sok: ['Yıldız Holding A.Ş.', 'sokmarket.com.tr'], spar: ['SPAR Österreichische Warenhandels-AG', 'spar.at'],
+  sprite: ['The Coca-Cola Company', 'coca-cola.com'], starbucks: ['Starbucks Corporation', 'starbucks.com'],
+  torku: ['Konya Şeker Sanayi ve Ticaret A.Ş.', 'torku.com.tr'], ulker: ['Yıldız Holding A.Ş.', 'ulker.com.tr'],
+  unilever: ['Unilever plc', 'unilever.com'], vichy: ["L'Oréal S.A.", 'vichy.at'],
+  volkswagen: ['Volkswagen AG', 'volkswagen.at'], whatsapp: ['Meta Platforms, Inc.', 'whatsapp.com'],
+  xiaomi: ['Xiaomi Corporation', 'mi.com'], zalando: ['Zalando SE', 'zalando.at'],
+  zara: ['Industria de Diseño Textil, S.A. (Inditex)', 'zara.com']
 };
-
 const norm = s => (s || '').toLowerCase().replace(/ı/g, 'i').replace(/×/g, 'x').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, '');
 
 function getLogoUrl(b) {
   const rawUrl = b.logoUrl || b.image_url || '';
   if (rawUrl && /\.(png|jpg|jpeg|svg|webp)(\?.*)?$/i.test(rawUrl)) return rawUrl;
   const k = norm(b.marka);
-  let domain = (FIX_DATA[k] && FIX_DATA[k][1]) ? FIX_DATA[k][1] : '';
+  let domain = FIX_DATA[k] ? FIX_DATA[k][1] : '';
   if (!domain && rawUrl) {
     try { domain = new URL(rawUrl).hostname.replace(/^www\./, ''); } catch (e) {}
   }
@@ -57,18 +109,11 @@ function getLogoUrl(b) {
   return domain ? 'https://google.com' + domain + '&sz=128' : (k.length >= 3 ? 'https://google.com' + k + '.com&sz=128' : '');
 }
 
-        }
-      } catch {}
-    }
-  }
-  return k.length >= 3 ? `https://google.com{k}.com&sz=128` : '';
-}
-
 function setLang(l) {
   lang = l; const t = I18N[l];
   document.getElementById('subTitle').textContent = t.sub; searchInput.placeholder = t.ph; document.getElementById('scanTxt').textContent = t.scan;
   document.getElementById('fAll').textContent = t.all; document.getElementById('fRev').textContent = t.rev; document.getElementById('fPref').textContent = t.pref; document.getElementById('fAlt').textContent = t.alt;
-  if (categorySelect.options.length > 0) categorySelect.options.item(0).textContent = t.allCat;
+  if (categorySelect.options.length > 0) categorySelect.options[0].textContent = t.allCat;
   loadMoreBtn.textContent = t.more; render();
 }
 
@@ -82,59 +127,7 @@ async function init() {
       const k = norm(clean);
       if (!k || ['action', 'fgh', 'sm', 'gau5'].includes(k)) return;
       let parent = (b.anaFirma || '').trim();
-      if (FIX_DATA[k]) parent = FIX_DATA[k].at(0);
-      else if (parent.includes('/')) parent = '';
-      if (!map.has(k)) map.set(k, { ...b, marka: clean, anaFirma: parent });
-    });
-    allBrands = [...map.values()].sort((a, b) => a.marka.localeCompare(b.marka, 'tr'));
-    [...new Set(allBrands.map(b => b.kategori).filter(Boolean))].sort().forEach(c => categorySelect.add(new Option(c, c)));
-    applyFilters();
-  } catch { grid.innerHTML = '<p class="empty">Veriler yüklenemedi.</p>'; }
-}
-
-function applyFilters() {
-  const q = searchInput.value.toLowerCase().trim(), cat = categorySelect.value;
-const norm = s => (s || '').toLowerCase().replace(/ı/g, 'i').replace(/×/g, 'x').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, '');
-
-function getLogoUrl(b) {
-  const rawUrl = b.logoUrl || b.image_url || '';
-  if (rawUrl && /\.(png|jpg|jpeg|svg|webp)(\?.*)?$/i.test(rawUrl)) return rawUrl;
-  const k = norm(b.marka);
-  let domain = FIX_DATA[k]?.at(1) || '';
-  if (!domain && rawUrl) {
-    try { domain = new URL(rawUrl).hostname.replace(/^www\./, ''); } catch {}
-  }
-  if (!domain && Array.isArray(b.kaynaklar)) {
-    const src = b.kaynaklar.find(x => x && x.url);
-    if (src) {
-      try {
-        const h = new URL(src.url.split(',').at(0).trim()).hostname.replace(/^www\./, '');
-        if (!['wikipedia.org', 'linkedin.com', 'timesofisrael.com', 'jpost.com', 'tag24.de', 'reuters.com', 'handelsblatt.com'].some(d => h.includes(d))) domain = h;
-      } catch {}
-    }
-  }
-  return domain ? `https://google.com{domain}&sz=128` : (k.length >= 3 ? `https://google.com{k}.com&sz=128` : '');
-}
-
-function setLang(l) {
-  lang = l; const t = I18N[l];
-  document.getElementById('subTitle').textContent = t.sub; searchInput.placeholder = t.ph; document.getElementById('scanTxt').textContent = t.scan;
-  document.getElementById('fAll').textContent = t.all; document.getElementById('fRev').textContent = t.rev; document.getElementById('fPref').textContent = t.pref; document.getElementById('fAlt').textContent = t.alt;
-  if (categorySelect.options.length > 0) categorySelect.options.item(0).textContent = t.allCat;
-  loadMoreBtn.textContent = t.more; render();
-}
-
-async function init() {
-  try {
-    const res = await fetch('data.json?v=' + Date.now());
-    const raw = await res.json();
-    const map = new Map();
-    raw.forEach(b => {
-      const clean = (b.marka || '').replace(/bokyot|etik inceleme/gi, '').replace(/[:(]+$/, '').trim();
-      const k = norm(clean);
-      if (!k || ['action', 'fgh', 'sm', 'gau5'].includes(k)) return;
-      let parent = (b.anaFirma || '').trim();
-      if (FIX_DATA[k]) parent = FIX_DATA[k].at(0);
+      if (FIX_DATA[k]) parent = FIX_DATA[k][0];
       else if (parent.includes('/')) parent = '';
       if (!map.has(k)) {
         map.set(k, { ...b, marka: clean, anaFirma: parent });
@@ -148,7 +141,7 @@ async function init() {
     allBrands = [...map.values()].sort((a, b) => a.marka.localeCompare(b.marka, 'tr'));
     [...new Set(allBrands.map(b => b.kategori).filter(Boolean))].sort().forEach(c => categorySelect.add(new Option(c, c)));
     applyFilters();
-  } catch { grid.innerHTML = '<p class="empty">Veriler yüklenemedi.</p>'; }
+  } catch (e) { grid.innerHTML = '<p class="empty">Veriler yüklenemedi.</p>'; }
 }
 
 function applyFilters() {
@@ -171,7 +164,7 @@ function render() {
     const alts = (b.alternatifler || []).map(a => a.marka).filter(m => m && norm(m) !== norm(b.marka)).join(', ');
     const meta = [b.anaFirma ? `🏢 ${b.anaFirma}` : '', b.kategori, b.altKategori].filter(Boolean).join(' • ');
     const sources = Array.isArray(b.kaynaklar) ? b.kaynaklar.filter(k => k && k.url) : [];
-    const srcHtml = sources.map(s => `<a href="${s.url.split(',').at(0).trim()}" target="_blank" rel="noopener">${t.src}</a>`).join(' ');
+    const srcHtml = sources.map(s => `<a href="${s.url.split(',')[0].trim()}" target="_blank" rel="noopener">${t.src}</a>`).join(' ');
     return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')">
       <div class="card-main">
         <div class="brand-avatar">${logo ? `<img src="${logo}" alt="" loading="lazy" onload="if(this.naturalWidth<=16)this.parentElement.textContent='${initials}'" onerror="this.parentElement.textContent='${initials}'">` : initials}</div>
