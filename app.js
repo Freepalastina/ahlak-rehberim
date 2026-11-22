@@ -144,7 +144,6 @@ async function init() {
   } catch (e) { grid.innerHTML = '<p class="empty">Veriler yüklenemedi.</p>'; }
 }
 
-
 function applyFilters() {
   const q = searchInput.value.toLowerCase().trim(), cat = categorySelect.value;
   filtered = allBrands.filter(b => {
