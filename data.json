@@ -1,4 +1,4 @@
-
+[
   {"marka": "3M", "anaFirma": "3M Company", "logoUrl": "https://3m.com", "status": "review", "kaynak": "https://ncf.ca"},
   {"marka": "5GUM", "anaFirma": "Mars, Incorporated", "logoUrl": "https://mars.com", "status": "review", "kaynak": "https://mars.com"},
   {"marka": "5Star", "anaFirma": "Mondelēz International", "logoUrl": "https://mondelezinternational.com", "status": "review", "kaynak": "https://mondelezinternational.com"},
@@ -294,7 +294,7 @@
   {"marka": "Duplo", "anaFirma": "Ferrero International S.A.", "logoUrl": "duplo.de", "status": "review", "kaynak": ""},
   {"marka": "Durex", "anaFirma": "Reckitt Benckiser Group plc", "logoUrl": "durex.de", "status": "review", "kaynak": ""},
   {"marka": "Duschdas", "anaFirma": "Unilever plc", "logoUrl": "duschdas.de", "status": "review", "kaynak": ""},
-  {"marka": "Dyson", "anaFirma": "Dyson Limited", "logoUrl": "dyson.at", "status": "review", "kaynak": "thejc.com"}
+  {"marka": "Dyson", "anaFirma": "Dyson Limited", "logoUrl": "dyson.at", "status": "review", "kaynak": "thejc.com"},
   {"marka": "E.ON", "anaFirma": "E.ON SE", "logoUrl": "https://eon.com", "status": "review", "kaynak": ""},
   {"marka": "Eastpak", "anaFirma": "VF Corporation", "logoUrl": "https://eastpak.com", "status": "preferred", "kaynak": ""},
   {"marka": "eBay", "anaFirma": "eBay Inc.", "logoUrl": "https://ebay.com", "status": "review", "kaynak": "https://supportisrael.biz"},
