@@ -34,7 +34,6 @@
   {"marka": "Airwaves", "anaFirma": "Mars, Incorporated", "logoUrl": "https://mars.com", "status": "review", "kaynak": ""},
   {"marka": "Ajax", "anaFirma": "Colgate-Palmolive Company", "logoUrl": "https://colgatepalmolive.com", "status": "review", "kaynak": "https://colgatepalmolive.com"},
   {"marka": "Albert", "anaFirma": "Koninklijke Ahold Delhaize N.V.", "logoUrl": "https://albert.cz", "status": "preferred", "kaynak": ""},
-  {"marka": "Albert Heijn", "anaFirma": "Koninklijke Ahold Delhaize N.V.", "logoUrl": "https://ah.nl", "status": "review", "kaynak": ""},
   {"marka": "Aldi Nord", "anaFirma": "Unternehmensgruppe Aldi Nord", "logoUrl": "https://aldi-nord.de", "status": "review", "kaynak": "https://aldi-nord.de/unternehmen/presse/aldi_nord_und_trigo.html"},
   {"marka": "Aldi Süd", "anaFirma": "Unternehmensgruppe Aldi Süd", "logoUrl": "https://aldi-sued.de", "status": "preferred", "kaynak": ""},
   {"marka": "Algida", "anaFirma": "Unilever plc", "logoUrl": "https://algida.com.tr", "status": "review", "kaynak": "https://unilever.com"},
