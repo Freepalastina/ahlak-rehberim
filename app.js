@@ -18,7 +18,7 @@ const I18N = {
 function getLogoUrl(b) {
   let d = (b.logoUrl || '').trim().replace(/^https?:\/\//i, '').replace(/^www\./i, '').split('/').shift();
   if (!d) d = (b.marka || '').toLowerCase().replace(/[^a-z0-9]/g, '') + '.com';
-  return d.length > 4 ? 'https:' + ':google.com' + '/s2/favicons?domain=' + d + '&sz=128' : '';
+  return d.length > 4 ? 'https://' + 'google.com' + '/s2/favicons?domain=' + d + '&sz=128' : '';
 }
 
 function setLang(l) {
