@@ -61,19 +61,28 @@ async function init() {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const raw = await res.json();
     allBrands = raw.map(b => Object.assign({}, b, { kategori: guessCat(b) })).sort((a, b) => (a.marka || '').localeCompare(b.marka || '', 'tr'));
+    const prefByCat = {};
+    allBrands.filter(b => b.status === 'preferred').forEach(b => {
+      if (!prefByCat[b.kategori]) prefByCat[b.kategori] = [];
+      if (prefByCat[b.kategori].length < 4) prefByCat[b.kategori].push(b.marka);
+    });
+    allBrands.forEach(b => {
+      if (b.status !== 'preferred' && prefByCat[b.kategori]) b.autoAlts = prefByCat[b.kategori].join(', ');
+    });
     if (categorySelect) Array.from(new Set(allBrands.map(b => b.kategori))).sort().forEach(c => categorySelect.add(new Option(c, c)));
     applyFilters();
   } catch (e) { if (grid) grid.innerHTML = '<p class="empty">Hata: ' + e.message + '</p>'; }
 }
-
 
 let lastBarcode = '';
 function applyFilters() {
   const q = searchInput.value.toLowerCase().trim(), cat = categorySelect ? categorySelect.value : 'all';
   filtered = allBrands.filter(b => {
     const mTxt = (b.marka || '').toLowerCase().includes(q) || (b.anaFirma || '').toLowerCase().includes(q);
-    return mTxt && (cat === 'all' || b.kategori === cat) && (currentFilter === 'all' || b.status === currentFilter);
+    const hasAlt = Boolean(b.autoAlts || (Array.isArray(b.alternatifler) && b.alternatifler.length));
+    return mTxt && (cat === 'all' || b.kategori === cat) && (currentFilter === 'all' || b.status === currentFilter || (currentFilter === 'alt' && hasAlt));
   });
+
   shown = 40; render();
   if (!filtered.length && /^\d{8,14}$/.test(q) && q !== lastBarcode) {
     lastBarcode = q;
@@ -91,21 +100,15 @@ function applyFilters() {
 function render() {
   const t = I18N[lang]; countBar.textContent = filtered.length + ' ' + t.found;
   if (!filtered.length) { grid.innerHTML = '<p class="empty">' + t.empty + '</p>'; loadMoreBtn.hidden = true; return; }
-  grid.innerHTML = filtered.slice(0, shown).map(b => {
+    grid.innerHTML = filtered.slice(0, shown).map(b => {
     const isPref = b.status === 'preferred', logo = getLogoUrl(b), ini = (b.marka || '?').slice(0, 2).toUpperCase();
+    const alts = b.autoAlts || (Array.isArray(b.alternatifler) ? b.alternatifler.map(a => a.marka).filter(Boolean).join(', ') : '');
+    const meta = [b.anaFirma ? '🏢 ' + b.anaFirma : '', b.kategori].filter(Boolean).join(' • ');
     let srcUrl = (b.kaynak || '').trim();
     if (srcUrl && !/^https?:\/\//i.test(srcUrl)) srcUrl = 'https://' + srcUrl;
-    return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')">
-      <div class="card-main">
-        <div class="brand-avatar">${logo ? `<img src="${logo}" loading="lazy" onload="if(this.naturalWidth<=16)this.parentElement.textContent='${ini}'" onerror="this.parentElement.textContent='${ini}'">` : ini}</div>
-        <div class="card-info">
-          <div class="card-head"><span class="brand-name">${b.marka}</span><span class="badge ${isPref ? 'preferred' : 'review'}">${isPref ? t.pref : t.rev}</span></div>
-          ${b.anaFirma ? `<div class="meta">🏢 ${b.anaFirma}</div>` : ''}
-        </div>
-      </div>
-      ${srcUrl ? `<div class="details" hidden><a href="${srcUrl}" target="_blank" rel="noopener">${t.src}</a></div>` : ''}
-    </article>`;
+    return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')"><div class="card-main"><div class="brand-avatar">${logo ? `<img src="${logo}" loading="lazy" onload="if(this.naturalWidth<=32)this.parentElement.textContent='${ini}'" onerror="this.parentElement.textContent='${ini}'">` : ini}</div><div class="card-info"><div class="card-head"><span class="brand-name">${b.marka}</span><span class="badge ${isPref ? 'preferred' : 'review'}">${isPref ? t.pref : t.rev}</span></div>${meta ? `<div class="meta">${meta}</div>` : ''}</div></div>${alts ? `<div class="alt">⭐ <b>${t.altLbl}</b> ${alts}</div>` : ''}${srcUrl ? `<div class="details" hidden><a href="${srcUrl}" target="_blank" rel="noopener">${t.src}</a></div>` : ''}</article>`;
   }).join('');
+
   loadMoreBtn.hidden = shown >= filtered.length;
 }
 
@@ -135,13 +138,18 @@ if (installBtn) {
 const pdfBtn = document.getElementById('pdfBtn');
 if (pdfBtn) {
   pdfBtn.onclick = () => {
-    const w = window.open('', '_blank');
-    if (!w) { alert('Lütfen açılır pencerelere (Pop-up) izin verin.'); return; }
     const rows = filtered.map(b => `<tr><td><b>${b.marka}</b></td><td>${b.anaFirma || '-'}</td><td>${b.kategori || '-'}</td><td>${b.status === 'preferred' ? '🟢 Tercih Edilebilir' : '🔴 İnceleme / Boykot'}</td></tr>`).join('');
-    w.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>Ahlak Rehberim - Marka Listesi</title><style>body{font-family:sans-serif;padding:20px}h2{color:#1b4332}table{width:100%;border-collapse:collapse;font-size:12px}th,td{border:1px solid #ccc;padding:6px 8px;text-align:left}th{background:#f0f4f1}</style></head><body><h2>Ahlak Rehberim (${filtered.length} Marka)</h2><table><thead><tr><th>Marka</th><th>Ana Firma</th><th>Kategori</th><th>Durum</th></tr></thead><tbody>${rows}</tbody></table><script>window.onload=function(){window.print();}<\/script></body></html>`);
-    w.document.close();
+    const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Ahlak Rehberim</title><style>body{font-family:sans-serif;padding:20px}h2{color:#1b4332}table{width:100%;border-collapse:collapse;font-size:12px}th,td{border:1px solid #ccc;padding:6px 8px;text-align:left}th{background:#f0f4f1}</style></head><body><h2>Ahlak Rehberim (${filtered.length} Marka)</h2><table><thead><tr><th>Marka</th><th>Ana Firma</th><th>Kategori</th><th>Durum</th></tr></thead><tbody>${rows}</tbody></table></body></html>`;
+    const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'Ahlak-Rehberim-Liste.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   };
 }
+
 
 }
 
