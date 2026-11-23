@@ -1,3 +1,7 @@
+const sc = document.createElement('script');
+sc.src = 'https://' + 'cdnjs.cloudflare.com' + '/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js';
+document.head.appendChild(sc);
+
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister()));
 }
@@ -15,7 +19,7 @@ function getLogoUrl(b) {
   let d = (b.logoUrl || '').trim();
   if (!d) return '';
   d = d.replace(/^https?:\/\//i, '').replace(/^www\./i, '').split('/').shift();
-  return d ? 'https://google.com/s2/favicons?domain=' + d + '&sz=128' : '';
+    return d ? 'https://' + '://google.com' + '/s2/favicons?domain=' + d + '&sz=128' : '';
 }
 
 function setLang(l) {
