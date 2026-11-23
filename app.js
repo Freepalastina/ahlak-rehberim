@@ -20,7 +20,6 @@ function getLogoUrl(b) {
   if (!d) d = (b.marka || '').toLowerCase().replace(/[^a-z0-9]/g, '') + '.com';
   return d.length > 4 ? 'https://' + '://google.com' + '/s2/favicons?domain=' + d + '&sz=128' : '';
 }
-}
 
 function setLang(l) {
   lang = l; const t = I18N[l];
