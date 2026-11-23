@@ -42,23 +42,37 @@ function setLang(l) {
   document.getElementById('fAll').textContent = t.all; document.getElementById('fRev').textContent = t.rev; document.getElementById('fPref').textContent = t.pref; document.getElementById('fAlt').textContent = t.alt;
   loadMoreBtn.textContent = t.more; render();
 }
+function guessCat(b) {
+  if (b.kategori) return b.kategori;
+  const s = ((b.marka || '') + ' ' + (b.anaFirma || '')).toLowerCase();
+  if (/coca|pepsi|fanta|sprite|su|tea|coffee|nescafe|jacobs|pfanner|almdudler|red bull|monster|danone|activia/.test(s)) return 'İçecek & Süt Ürünleri';
+  if (/nestle|mars|mondelez|ferrero|kinder|milka|haribo|eti|ulker|torku|barilla|kellogg|lays|pringles|oetker|knorr|maggi|heinz/.test(s)) return 'Gıda & Atıştırmalık';
+  if (/loreal|nivea|dove|garnier|gillette|oral-b|colgate|sensodyne|estee|chanel|dior|puig|rossmann|dm|vichy|cerave/.test(s)) return 'Kozmetik & Bakım';
+  if (/henkel|procter|reckitt|unilever|persil|ariel|finish|fairy|frosch|domestos|cif|ajax|vanish|abc|asperox/.test(s)) return 'Temizlik & Ev';
+  if (/inditex|zara|hm|nike|adidas|puma|deichmann|lcw|mavi|mango|bershka|hugo|lacoste|gucci|lvmh/.test(s)) return 'Giyim & Moda';
+  if (/aldi|lidl|rewe|spar|hofer|bim|a101|sok|migros|carrefour|edeka|kaufland|penny|auchan|tesco/.test(s)) return 'Market & Perakende';
+  if (/apple|samsung|microsoft|google|meta|sony|bosch|siemens|arcelik|beko|dyson|philips|xiaomi|lg|asus|huawei/.test(s)) return 'Teknoloji & Ev Aletleri';
+  return 'Diğer';
+}
 
 async function init() {
   try {
     const res = await fetch('data.json?v=' + Date.now());
     if (!res.ok) throw new Error('HTTP ' + res.status);
-    allBrands = await res.json();
-    allBrands.sort((a, b) => (a.marka || '').localeCompare(b.marka || '', 'tr'));
+    const raw = await res.json();
+    allBrands = raw.map(b => Object.assign({}, b, { kategori: guessCat(b) })).sort((a, b) => (a.marka || '').localeCompare(b.marka || '', 'tr'));
+    if (categorySelect) Array.from(new Set(allBrands.map(b => b.kategori))).sort().forEach(c => categorySelect.add(new Option(c, c)));
     applyFilters();
-  } catch (e) { grid.innerHTML = '<p class="empty">Hata: ' + e.message + '</p>'; }
+  } catch (e) { if (grid) grid.innerHTML = '<p class="empty">Hata: ' + e.message + '</p>'; }
 }
+
 
 let lastBarcode = '';
 function applyFilters() {
-  const q = searchInput.value.toLowerCase().trim();
+  const q = searchInput.value.toLowerCase().trim(), cat = categorySelect ? categorySelect.value : 'all';
   filtered = allBrands.filter(b => {
     const mTxt = (b.marka || '').toLowerCase().includes(q) || (b.anaFirma || '').toLowerCase().includes(q);
-    return mTxt && (currentFilter === 'all' || b.status === currentFilter);
+    return mTxt && (cat === 'all' || b.kategori === cat) && (currentFilter === 'all' || b.status === currentFilter);
   });
   shown = 40; render();
   if (!filtered.length && /^\d{8,14}$/.test(q) && q !== lastBarcode) {
@@ -116,4 +130,18 @@ if (installBtn) {
     deferredPrompt.prompt();
     deferredPrompt.userChoice.then(() => { deferredPrompt = null; installBtn.hidden = true; });
   };
+  if (categorySelect) categorySelect.onchange = applyFilters;
+
+const pdfBtn = document.getElementById('pdfBtn');
+if (pdfBtn) {
+  pdfBtn.onclick = () => {
+    const w = window.open('', '_blank');
+    if (!w) { alert('Lütfen açılır pencerelere (Pop-up) izin verin.'); return; }
+    const rows = filtered.map(b => `<tr><td><b>${b.marka}</b></td><td>${b.anaFirma || '-'}</td><td>${b.kategori || '-'}</td><td>${b.status === 'preferred' ? '🟢 Tercih Edilebilir' : '🔴 İnceleme / Boykot'}</td></tr>`).join('');
+    w.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>Ahlak Rehberim - Marka Listesi</title><style>body{font-family:sans-serif;padding:20px}h2{color:#1b4332}table{width:100%;border-collapse:collapse;font-size:12px}th,td{border:1px solid #ccc;padding:6px 8px;text-align:left}th{background:#f0f4f1}</style></head><body><h2>Ahlak Rehberim (${filtered.length} Marka)</h2><table><thead><tr><th>Marka</th><th>Ana Firma</th><th>Kategori</th><th>Durum</th></tr></thead><tbody>${rows}</tbody></table><script>window.onload=function(){window.print();}<\/script></body></html>`);
+    w.document.close();
+  };
 }
+
+}
+
