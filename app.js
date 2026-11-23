@@ -10,9 +10,9 @@ let allBrands = [], filtered = [], shown = 40, currentFilter = 'all', lang = 'tr
 const grid = document.getElementById('brandGrid'), countBar = document.getElementById('countBar'), searchInput = document.getElementById('searchInput'), categorySelect = document.getElementById('categorySelect'), loadMoreBtn = document.getElementById('loadMoreBtn');
 
 const I18N = {
-  tr: { sub: 'Bilinçli Tüket, Doğru Tercih', ph: 'Marka, ana firma veya barkod...', scan: 'Tara', all: 'Tümü', rev: '🟡 İnceleme Önerisi', pref: '🟢 Yerel / Alternatif', alt: '⭐ Alternatifli', allCat: '📂 Tüm Kategoriler', more: 'Daha Fazla Göster', found: 'marka listeleniyor', empty: 'Sonuç bulunamadı.', altLbl: 'Alternatifler:', src: '🔗 Kaynağı İncele' },
-  de: { sub: 'Bewusst konsumieren, richtig wählen', ph: 'Marke, Mutterkonzern oder Barcode...', scan: 'Scannen', all: 'Alle', rev: '🟡 Prüfhinweis', pref: '🟢 Alternative / Regional', alt: '⭐ Mit Alternativen', allCat: '📂 Alle Kategorien', more: 'Mehr anzeigen', found: 'Marken gefunden', empty: 'Keine Ergebnisse gefunden.', altLbl: 'Alternativen:', src: '🔗 Quelle ansehen' },
-  en: { sub: 'Consume Consciously, Choose Right', ph: 'Search brand, parent company or barcode...', scan: 'Scan', all: 'All', rev: '🟡 Review Note', pref: '🟢 Regional / Alternative', alt: '⭐ Alternatives', allCat: '📂 All Categories', more: 'Show More', found: 'brands listed', empty: 'No results found.', altLbl: 'Alternatives:', src: '🔗 View Source' }
+  tr: { sub: 'Bilinçli Tüket, Doğru Tercih', ph: 'Marka, ana firma veya barkod...', scan: 'Tara', all: 'Tümü', rev: '🔴 Dikkat', pref: '🟢 Tercih Edilebilir', alt: '⭐ Alternatifli', allCat: '📂 Tüm Kategoriler', more: 'Daha Fazla Göster', found: 'marka listeleniyor', empty: 'Sonuç bulunamadı.', altLbl: 'Alternatifler:', src: '🔗 Kaynağı İncele' },
+  de: { sub: 'Bewusst konsumieren, richtig wählen', ph: 'Marke, Mutterkonzern oder Barcode...', scan: 'Scannen', all: 'Alle', rev: '🔴 Achtung / Hinweis', pref: '🟢 Empfehlenswert', alt: '⭐ Mit Alternativen', allCat: '📂 Alle Kategorien', more: 'Mehr anzeigen', found: 'Marken gefunden', empty: 'Keine Ergebnisse gefunden.', altLbl: 'Alternativen:', src: '🔗 Quelle ansehen' },
+  en: { sub: 'Consume Consciously, Choose Right', ph: 'Search brand, parent company or barcode...', scan: 'Scan', all: 'All', rev: '🔴 Caution / Note', pref: '🟢 Recommended', alt: '⭐ Alternatives', allCat: '📂 All Categories', more: 'Show More', found: 'brands listed', empty: 'No results found.', altLbl: 'Alternatives:', src: '🔗 View Source' }
 };
 
 function getLogoUrl(b) {
@@ -138,8 +138,13 @@ if (installBtn) {
 const pdfBtn = document.getElementById('pdfBtn');
 if (pdfBtn) {
   pdfBtn.onclick = () => {
-    const rows = filtered.map(b => `<tr><td><b>${b.marka}</b></td><td>${b.anaFirma || '-'}</td><td>${b.kategori || '-'}</td><td>${b.status === 'preferred' ? '🟢 Tercih Edilebilir' : '🔴 İnceleme / Boykot'}</td></tr>`).join('');
-    const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Ahlak Rehberim</title><style>body{font-family:sans-serif;padding:20px}h2{color:#1b4332}table{width:100%;border-collapse:collapse;font-size:12px}th,td{border:1px solid #ccc;padding:6px 8px;text-align:left}th{background:#f0f4f1}</style></head><body><h2>Ahlak Rehberim (${filtered.length} Marka)</h2><table><thead><tr><th>Marka</th><th>Ana Firma</th><th>Kategori</th><th>Durum</th></tr></thead><tbody>${rows}</tbody></table></body></html>`;
+    const t = I18N[lang];
+    const rows = filtered.map(b => {
+      const alt = (lang === 'tr' ? b.altsTr : b.altsEu) || '-';
+      const st = b.status === 'preferred' ? t.pref : t.rev;
+      return `<tr><td><b>${b.marka}</b></td><td>${b.anaFirma || '-'}</td><td>${b.kategori || '-'}</td><td>${st}</td><td>${alt}</td></tr>`;
+    }).join('');
+    const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Ahlak Rehberim</title><style>body{font-family:sans-serif;padding:20px;color:#1f2937}h2{color:#1b4332;margin-bottom:6px}.btn{padding:8px 14px;background:#1b4332;color:#fff;border:none;border-radius:8px;cursor:pointer;margin-bottom:14px}@media print{.btn{display:none}}table{width:100%;border-collapse:collapse;font-size:12px}th,td{border:1px solid #ccc;padding:6px 8px;text-align:left}th{background:#f0f4f1}.note{margin-top:14px;font-size:11px;color:#6b7280}</style></head><body><h2>Ahlak Rehberim (${filtered.length})</h2><button class="btn" onclick="window.print()">🖨️ PDF / Yazdır / Drucken</button><table><thead><tr><th>Marka</th><th>Ana Firma</th><th>Kategori</th><th>Durum</th><th>Alternatifler</th></tr></thead><tbody>${rows}</tbody></table><p class="note">⚖️ Bilgilendirme amaçlıdır, boykot çağrısı veya hukuki tavsiye değildir / Rein privates Informationsprojekt ohne Gewähr.</p></body></html>`;
     const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
