@@ -138,7 +138,6 @@ function render() {
   }).join('');
   if (loadMoreBtn) loadMoreBtn.hidden = shown >= filtered.length;
 }
-}
 
 document.querySelectorAll('.lang-btn').forEach(b => b.onclick = () => { document.querySelectorAll('.lang-btn').forEach(x => x.classList.remove('active')); b.classList.add('active'); setLang(b.dataset.lang); });
 loadMoreBtn.onclick = () => { shown += 40; render(); }; searchInput.oninput = applyFilters;
