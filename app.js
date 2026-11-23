@@ -15,15 +15,33 @@ const I18N = {
   en: { sub: 'Consume Consciously, Choose Right', ph: 'Search brand, parent company or barcode...', scan: 'Scan', all: 'All', rev: '🔴 Caution / Note', pref: '🟢 Recommended', alt: '⭐ Alternatives', allCat: '📂 All Categories', more: 'Show More', found: 'brands listed', empty: 'No results found.', altLbl: 'Alternatives:', src: '🔗 View Source' }
 };
 
-function getLogoUrl(b) {
+const PARENT_DOMAINS = {
+  mars: 'mars.com', wrigley: 'mars.com', nestle: 'nestle.com', unilever: 'unilever.com',
+  procter: 'pg.com', 'p&g': 'pg.com', mondelez: 'mondelezinternational.com', kraft: 'kraftheinzcompany.com',
+  pepsi: 'pepsico.com', coca: 'coca-cola.com', loreal: 'loreal.com', henkel: 'henkel.com',
+  ferrero: 'ferrero.com', danone: 'danone.com', reckitt: 'reckitt.com', beiersdorf: 'beiersdorf.com',
+  bayer: 'bayer.com', teva: 'tevapharm.com', stada: 'stada.com', novartis: 'novartis.com',
+  roche: 'roche.com', pfizer: 'pfizer.com', sanofi: 'sanofi.com', gsk: 'gsk.com',
+  colgate: 'colgatepalmolive.com', estee: 'elcompanies.com', lvmh: 'lvmh.com', puig: 'puig.com',
+  coty: 'coty.com', shiseido: 'shiseido.com', haleon: 'haleon.com', kenvue: 'kenvue.com',
+  johnson: 'jnj.com', mattel: 'mattel.com', hasbro: 'hasbro.com', lactalis: 'lactalis.fr',
+  rewe: 'rewe-group.com', spar: 'spar.at', aldi: 'aldi-sued.de', lidl: 'lidl.at', schwarz: 'gruppe.schwarz',
+  arcelik: 'arcelikglobal.com', bsh: 'bsh-group.com', seb: 'groupeseb.com', deichmann: 'deichmann.com',
+  inditex: 'inditex.com', kellogg: 'kellanova.com', 'general mills': 'generalmills.com',
+  heineken: 'theheinekencompany.com', carlsberg: 'carlsberggroup.com', 'ab inbev': 'ab-inbev.com',
+  'philip morris': 'pmi.com', british: 'bat.com', japan: 'jt.com', perrigo: 'perrigo.com', fater: 'fatergroup.com'
+};
+
+function getLogoDomain(b) {
   let d = (b.logoUrl || '').trim().replace(/^https?:\/\//i, '').replace(/^www\./i, '').split('/').shift();
-  if (!d || /^5gum\.com$/i.test(d)) {
+  if (!d) {
     const p = (b.anaFirma || '').toLowerCase();
     const key = Object.keys(PARENT_DOMAINS).find(k => p.includes(k));
     d = key ? PARENT_DOMAINS[key] : (b.marka || '').toLowerCase().replace(/[^a-z0-9]/g, '') + '.com';
   }
-  return d.length > 4 ? 'https://' + 'icons' + '.duckduckgo.' + 'com/ip3/' + d + '.ico' : '';
+  return d.length > 4 ? d : '';
 }
+
 
 function setLang(l) {
   lang = l; const t = I18N[l];
@@ -95,21 +113,31 @@ function applyFilters() {
 }
 
 function render() {
-  const t = I18N[lang]; countBar.textContent = filtered.length + ' ' + t.found;
-  if (!filtered.length) { grid.innerHTML = '<p class="empty">' + t.empty + '</p>'; loadMoreBtn.hidden = true; return; }
-      grid.innerHTML = filtered.slice(0, shown).map(b => {
-    const isPref = b.status === 'preferred', logo = getLogoUrl(b), ini = (b.marka || '?').slice(0, 2).toUpperCase();
+  const t = I18N[lang];
+  if (countBar) countBar.textContent = filtered.length + ' ' + t.found;
+  if (!grid) return;
+  if (!filtered.length) {
+    grid.innerHTML = '<p class="empty">' + t.empty + '</p>';
+    if (loadMoreBtn) loadMoreBtn.hidden = true;
+    return;
+  }
+  grid.innerHTML = filtered.slice(0, shown).map(b => {
+    const isPref = b.status === 'preferred';
+    const dom = getLogoDomain(b);
+    const ini = (b.marka || '?').slice(0, 2).toUpperCase();
+    const ddg = dom ? 'https://' + 'icons' + '.duckduckgo.' + 'com/ip3/' + dom + '.ico' : '';
+    const ih = dom ? 'https://' + 'icon.' + 'horse' + '/icon/' + dom : '';
     const alts = (lang === 'tr' ? b.altsTr : b.altsEu) || '';
     const meta = [b.anaFirma ? '🏢 ' + b.anaFirma : '', b.kategori].filter(Boolean).join(' • ');
     let srcUrl = (b.kaynak || '').trim();
     if (srcUrl && !/^https?:\/\//i.test(srcUrl)) srcUrl = 'https://' + srcUrl;
-    const imgHtml = logo ? `<img src="${logo}" loading="lazy" onload="if(this.naturalWidth<=16||this.naturalWidth===64)this.parentElement.textContent='${ini}'" onerror="this.parentElement.textContent='${ini}'">` : ini;
+    const imgHtml = dom ? `<img src="${ddg}" loading="lazy" onload="if(this.naturalWidth<=16||this.naturalWidth===64){this.onerror=null;this.src='${ih}';}" onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='${ih}';}else{this.parentElement.textContent='${ini}';}">` : ini;
     const altHtml = alts ? `<div class="alt">⭐ <b>${t.altLbl}</b> ${alts}</div>` : '';
     const detHtml = srcUrl ? `<div class="details" hidden><a href="${srcUrl}" target="_blank" rel="noopener">${t.src}</a></div>` : '';
     return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')"><div class="card-main"><div class="brand-avatar">${imgHtml}</div><div class="card-info"><div class="card-head"><span class="brand-name">${b.marka}</span><span class="badge ${isPref ? 'preferred' : 'review'}">${isPref ? t.pref : t.rev}</span></div>${meta ? `<div class="meta">${meta}</div>` : ''}</div></div>${altHtml}${detHtml}</article>`;
   }).join('');
-
-  loadMoreBtn.hidden = shown >= filtered.length;
+  if (loadMoreBtn) loadMoreBtn.hidden = shown >= filtered.length;
+}
 }
 
 document.querySelectorAll('.lang-btn').forEach(b => b.onclick = () => { document.querySelectorAll('.lang-btn').forEach(x => x.classList.remove('active')); b.classList.add('active'); setLang(b.dataset.lang); });
