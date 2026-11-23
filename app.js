@@ -33,7 +33,7 @@ function getLogoUrl(b) {
     const key = Object.keys(PARENT_DOMAINS).find(k => p.includes(k));
     d = key ? PARENT_DOMAINS[key] : (b.marka || '').toLowerCase().replace(/[^a-z0-9]/g, '') + '.com';
   }
-  return d.length > 4 ? 'https://' + 'icons' + '://' + d + '.ico' : '';
+    return d.length > 4 ? 'https://' + 'icons' + '.duckduckgo.' + 'com/ip3/' + d + '.ico' : '';
 }
 
 function setLang(l) {
