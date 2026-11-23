@@ -44,12 +44,13 @@ function guessCat(b) {
   return 'Diğer';
 }
 const SMART_ALTS = [
-  { test: /a101|carrefour|aldi|lidl|rewe|tesco|auchan|walmart|edenred|sodexo/i, alts: 'BİM, ŞOK, Migros, Tarım Kredi' },
-  { test: /5gum|orbit|mentos|vivident|falım|haribo|mars|snickers|twix|milka|kitkat|oreo|5star|7days/i, alts: 'Torku, Eti, Ülker, Şölen' },
-  { test: /coca|pepsi|fanta|sprite|7up|lipton|nescafe|jacobs|starbucks|red bull|monster/i, alts: 'Uludağ, Çaykur, Beypazarı, Niğde Gazozu, Kızılay' },
-  { test: /ariel|persil|omo|tide|finish|fairy|domestos|cif|ajax|vanish|henkel|reckitt/i, alts: 'ABC, Boron, Bingo, Asperox, Duru' },
-  { test: /loreal|garnier|nivea|dove|head|pantene|elidor|gillette|oral-b|colgate|sensodyne|rexona|axe|8x4/i, alts: 'Duru, Arko, Eyüp Sabri Tuncer, Otacı, Bebak' },
-  { test: /zara|bershka|pull|stradivarius|mango|hm|nike|adidas|puma|lcw|defacto/i, alts: 'Koton, Mavi, Kiğılı, Sarar, DeFacto' }
+  { test: /a101|carrefour|aldi|lidl|rewe|billa|penny|tesco|auchan|walmart|edenred|sodexo/i, tr: 'BİM, ŞOK, Migros, Tarım Kredi', eu: 'Hofer / Aldi Süd, SPAR, DM, Rossmann, Denn’s BioMarkt' },
+  { test: /5gum|orbit|mentos|vivident|falım|haribo|mars|snickers|twix|milka|kitkat|oreo|5star|7days|kinder|ferrero|nutella/i, tr: 'Torku, Eti, Ülker, Şölen', eu: 'Manner, Zotter, Ritter Sport, Katjes, Alnatura' },
+  { test: /coca|pepsi|fanta|sprite|7up|lipton|nescafe|jacobs|starbucks|red bull|monster|danone|activia|actimel/i, tr: 'Uludağ, Çaykur, Beypazarı, Niğde Gazozu, Kızılay', eu: 'Almdudler, Rauch, Vöslauer, Fritz-Kola, Ja! Natürlich' },
+  { test: /ariel|persil|omo|tide|finish|fairy|domestos|cif|ajax|vanish|henkel|reckitt|lenor|calgon/i, tr: 'ABC, Boron, Bingo, Asperox, Duru', eu: 'Frosch, Claro, Denkmit (DM), Ecover, Sonett' },
+  { test: /loreal|garnier|nivea|dove|head|pantene|elidor|gillette|oral-b|colgate|sensodyne|rexona|axe|8x4|cerave|vichy/i, tr: 'Duru, Arko, Eyüp Sabri Tuncer, Otacı, Bebak', eu: 'Balea (DM), Alverde, Alterra (Rossmann), Weleda, Lavera' },
+  { test: /zara|bershka|pull|stradivarius|mango|hm|nike|adidas|puma|reebok|lcw|defacto|levi|hugo|lacoste/i, tr: 'Koton, Mavi, Kiğılı, Sarar, DeFacto', eu: 'Armedangels, Hessnatur, Trigema, C&A' },
+  { test: /apple|samsung|microsoft|google|hp|dell|lenovo|asus|intel|siemens|bosch|dyson|philips|braun|oral/i, tr: 'Arçelik, Beko, Vestel, Grundig', eu: 'Miele, Grundig, Kärcher, Fairphone' }
 ];
 
 async function init() {
@@ -58,12 +59,13 @@ async function init() {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const raw = await res.json();
     allBrands = raw.map(b => Object.assign({}, b, { kategori: guessCat(b) })).sort((a, b) => (a.marka || '').localeCompare(b.marka || '', 'tr'));
-    allBrands.forEach(b => {
+        allBrands.forEach(b => {
       if (b.status === 'preferred') return;
       const txt = (b.marka || '') + ' ' + (b.anaFirma || '');
       const match = SMART_ALTS.find(s => s.test.test(txt));
-      if (match) b.autoAlts = match.alts;
+      if (match) { b.altsTr = match.tr; b.altsEu = match.eu; }
     });
+
     if (categorySelect) Array.from(new Set(allBrands.map(b => b.kategori))).sort().forEach(c => categorySelect.add(new Option(c, c)));
     applyFilters();
   } catch (e) { if (grid) grid.innerHTML = '<p class="empty">Hata: ' + e.message + '</p>'; }
@@ -74,7 +76,7 @@ function applyFilters() {
   const q = searchInput.value.toLowerCase().trim(), cat = categorySelect ? categorySelect.value : 'all';
   filtered = allBrands.filter(b => {
     const mTxt = (b.marka || '').toLowerCase().includes(q) || (b.anaFirma || '').toLowerCase().includes(q);
-    const hasAlt = Boolean(b.autoAlts || (Array.isArray(b.alternatifler) && b.alternatifler.length));
+    const hasAlt = Boolean(b.altsTr || b.altsEu); 
     return mTxt && (cat === 'all' || b.kategori === cat) && (currentFilter === 'all' || b.status === currentFilter || (currentFilter === 'alt' && hasAlt));
   });
 
@@ -97,11 +99,12 @@ function render() {
   if (!filtered.length) { grid.innerHTML = '<p class="empty">' + t.empty + '</p>'; loadMoreBtn.hidden = true; return; }
     grid.innerHTML = filtered.slice(0, shown).map(b => {
     const isPref = b.status === 'preferred', logo = getLogoUrl(b), ini = (b.marka || '?').slice(0, 2).toUpperCase();
-    const alts = b.autoAlts || (Array.isArray(b.alternatifler) ? b.alternatifler.map(a => a.marka).filter(Boolean).join(', ') : '');
+    const alts = (lang === 'tr' ? b.altsTr : b.altsEu) || '';
     const meta = [b.anaFirma ? '🏢 ' + b.anaFirma : '', b.kategori].filter(Boolean).join(' • ');
     let srcUrl = (b.kaynak || '').trim();
     if (srcUrl && !/^https?:\/\//i.test(srcUrl)) srcUrl = 'https://' + srcUrl;
-    return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')"><div class="card-main"><div class="brand-avatar">${logo ? `<img src="${logo}" loading="lazy" onload="if(this.naturalWidth<=16)this.parentElement.textContent='${ini}'" onerror="this.parentElement.textContent='${ini}'">` : ini}</div><div class="card-info"><div class="card-head"><span class="brand-name">${b.marka}</span><span class="badge ${isPref ? 'preferred' : 'review'}">${isPref ? t.pref : t.rev}</span></div>${meta ? `<div class="meta">${meta}</div>` : ''}</div></div>${alts ? `<div class="alt">⭐ <b>${t.altLbl}</b> ${alts}</div>` : ''}${srcUrl ? `<div class="details" hidden><a href="${srcUrl}" target="_blank" rel="noopener">${t.src}</a></div>` : ''}</article>`;
+    return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')"><div class="card-main"><div class="brand-avatar">${logo ? `<img src="${logo}" loading="lazy" onload="if(this.naturalWidth<=16||this.naturalWidth===64)this.parentElement.textContent='${ini}'"
+ ${isPref ? 'preferred' : 'review'}">${isPref ? t.pref : t.rev}</span></div>${meta ? `<div class="meta">${meta}</div>` : ''}</div></div>${alts ? `<div class="alt">⭐ <b>${t.altLbl}</b> ${alts}</div>` : ''}${srcUrl ? `<div class="details" hidden><a href="${srcUrl}" target="_blank" rel="noopener">${t.src}</a></div>` : ''}</article>`;
   }).join('');
 
   loadMoreBtn.hidden = shown >= filtered.length;
