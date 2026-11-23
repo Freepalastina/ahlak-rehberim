@@ -59,17 +59,20 @@
     <section id="brandGrid" class="grid"><p class="empty">Yükleniyor...</p></section>
     <button id="loadMoreBtn" class="btn-more" hidden>Daha Fazla Göster</button>
   </main>
-<footer style="margin-top:32px;padding:18px;border-top:1px solid #d8e2dc;font-size:12px;line-height:1.55;color:#4a5568;background:#f8faf9;border-radius:12px;">
-  <p><strong>⚖️ Yasal Uyarı / Rechtlicher Hinweis / Legal Disclaimer:</strong><br>
-  <b>TR:</b> Bu uygulama tamamen ticari olmayan, bireysel bilgilendirme amaçlı bir rehberdir. Herhangi bir boykot çağrısı veya hukuki/finansal tavsiye niteliği taşımaz. Tüm bilgiler halka açık kaynaklara dayanmakta olup güncellik veya eksiksizlik garantisi verilmez. Gösterilen tüm marka adları ve logolar ilgili hak sahiplerine aittir ve yalnızca tanımlayıcı bilgilendirme amacıyla kullanılmaktadır.<br>
-  <b>DE:</b> Diese Web-App ist ein rein privates, nicht-kommerzielles Informationsprojekt zur persönlichen Orientierung und stellt keinen Boykottaufruf sowie keine Rechts- oder Finanzberatung dar. Alle Angaben basieren auf öffentlich zugänglichen Quellen ohne Gewähr auf Richtigkeit, Vollständigkeit oder Aktualität. Alle angezeigten Marken und Logos sind Eigentum der jeweiligen Rechteinhaber und dienen ausschließlich der identifizierenden Verbraucherinformation.<br>
-  <b>EN:</b> This is a strictly non-commercial, private informational project and does not constitute a boycott call or legal/financial advice. Information is compiled from public sources without warranty. All trademarks and logos belong to their respective owners and are used solely for descriptive identification.</p>
+<div id="legalModal" style="position:fixed;inset:0;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;padding:16px;z-index:9999;">
+  <div style="background:#fff;color:#1f2937;max-width:520px;width:100%;max-height:85vh;overflow-y:auto;border-radius:16px;padding:20px;box-shadow:0 20px 40px rgba(0,0,0,.25);font-size:13px;line-height:1.5;">
+    <h3 style="margin:0 0 10px;color:#1b4332;">⚖️ Bilgilendirme / Rechtlicher Hinweis / Legal Notice</h3>
+    <p><b>🇹🇷 TR:</b> Bu uygulama ticari olmayan, bireysel bilgilendirme rehberidir; boykot çağrısı veya hukuki tavsiye değildir. Bilgiler halka açık kaynaklara dayanır, garanti verilmez. Marka adları ve logolar ilgili hak sahiplerine aittir. Kamera görüntüsü yalnızca cihazınızda yerel işlenir ve kaydedilmez.</p>
+    <p><b>🇩🇪 DE:</b> Diese App ist ein rein privates, nicht-kommerzielles Informationsprojekt (kein Boykottaufruf, keine Rechtsberatung). Angaben aus öffentlichen Quellen ohne Gewähr. Marken und Logos gehören den jeweiligen Rechteinhabern. Die Kamera verarbeitet Barcodes ausschließlich lokal auf Ihrem Gerät.</p>
+    <p><b>🇬🇧 EN:</b> Strictly non-commercial informational guide (not a boycott call or legal advice). Public sources without warranty. Trademarks belong to their owners. Camera scans barcodes locally on your device only.</p>
+    <p style="font-size:12px;color:#4b5563;">📩 İletişim / Kontakt: <a href="mailto:ahlakrehberim.info@gmail.com">ahlakrehberim.info@gmail.com</a></p>
+    <button id="acceptLegalBtn" type="button" style="width:100%;margin-top:12px;padding:12px;border:none;border-radius:10px;background:#1b4332;color:#fff;font-weight:700;font-size:14px;cursor:pointer;">✅ Okudum, Kabul Ediyorum / Akzeptieren / Accept</button>
+  </div>
+</div>
 
-  <p style="margin-top:10px;"><strong>🔒 Gizlilik & Kamera (DSGVO / Privacy):</strong><br>
-  <b>TR / DE / EN:</b> Barkod tarayıcı kamera görüntüsünü yalnızca cihazınızda yerel olarak işler; hiçbir görüntü veya kişisel veri kaydedilmez ya da sunuculara gönderilmez. Teknik olarak yalnızca sayfa barındırma (GitHub Pages), marka ikonları (DuckDuckGo Icons) ve barkod sorgusu (Open Food Facts) için standart IP bağlantısı kurulur. / Die Kamera verarbeitet Barcodes ausschließlich lokal auf Ihrem Gerät (keine Speicherung oder Übertragung).</p>
-
-  <p style="margin-top:10px;"><strong>📩 Düzeltme & Bildirim (Notice & Takedown):</strong><br>
-  Hatalı bir kayıt veya marka/logo bildirimi için bizimle iletişime geçebilirsiniz (İnceleme sonrası gerekli düzeltme derhal yapılır): <a href="mailto:ahlakrehberim.info@gmail.com">ahlakrehberim.info@gmail.com</a></p>
+<footer style="text-align:center;padding:14px;font-size:12px;color:#6b7280;">
+  <a href="#" id="openLegalLink" style="color:#4b5563;text-decoration:underline;">⚖️ Yasal Uyarı & Gizlilik / Rechtliches & Datenschutz</a>
 </footer>
+
 </body>
 </html>
