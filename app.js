@@ -10,20 +10,9 @@ let allBrands = [], filtered = [], shown = 40, currentFilter = 'all', lang = 'tr
 const grid = document.getElementById('brandGrid'), countBar = document.getElementById('countBar'), searchInput = document.getElementById('searchInput'), categorySelect = document.getElementById('categorySelect'), loadMoreBtn = document.getElementById('loadMoreBtn');
 
 const I18N = {
-  tr: { sub: 'Bilinçli Tüket, Doğru Tercih', ph: 'Marka veya ana firma ara...', scan: 'Tara', all: 'Tümü', rev: '🔴 İnceleme / Boykot', pref: '🟢 Tercih Edilebilir', alt: '⭐ Alternatifli', allCat: '📂 Tüm Kategoriler', more: 'Daha Fazla Göster', found: 'marka listeleniyor', empty: 'Sonuç bulunamadı.', src: '🔗 Kaynağı Görüntüle' },
-  de: { sub: 'Bewusst konsumieren, richtig wählen', ph: 'Marke oder Konzern suchen...', scan: 'Scannen', all: 'Alle', rev: '🔴 Prüfung / Boykott', pref: '🟢 Empfehlenswert', alt: '⭐ Mit Alternativen', allCat: '📂 Alle Kategorien', more: 'Mehr anzeigen', found: 'Marken gefunden', empty: 'Keine Ergebnisse gefunden.', src: '🔗 Quelle ansehen' },
-  en: { sub: 'Consume Consciously, Choose Right', ph: 'Search brand or parent company...', scan: 'Scan', all: 'All', rev: '🔴 Review / Boycott', pref: '🟢 Recommended', alt: '⭐ Alternatives', allCat: '📂 All Categories', more: 'Show More', found: 'brands listed', empty: 'No results found.', src: '🔗 View Source' }
-};
-
-const PARENT_DOMAINS = {
-  mars: 'mars.com', nestle: 'nestle.com', unilever: 'unilever.com', procter: 'pg.com',
-  mondelez: 'mondelezinternational.com', pepsi: 'pepsico.com', coca: 'coca-cola.com',
-  loreal: 'loreal.com', henkel: 'henkel.com', ferrero: 'ferrero.com', danone: 'danone.com',
-  reckitt: 'reckitt.com', beiersdorf: 'beiersdorf.com', bayer: 'bayer.com', teva: 'tevapharm.com',
-  colgate: 'colgatepalmolive.com', estee: 'elcompanies.com', lvmh: 'lvmh.com', puig: 'puig.com',
-  haleon: 'haleon.com', kenvue: 'kenvue.com', mattel: 'mattel.com', lactalis: 'lactalis.fr',
-  rewe: 'rewe-group.com', spar: 'spar.at', aldi: 'aldi-sued.de', lidl: 'lidl.at', schwarz: 'gruppe.schwarz',
-  arcelik: 'arcelikglobal.com', bsh: 'bsh-group.com', seb: 'groupeseb.com', deichmann: 'deichmann.com'
+  tr: { sub: 'Bilinçli Tüket, Doğru Tercih', ph: 'Marka, ana firma veya barkod...', scan: 'Tara', all: 'Tümü', rev: '🔴 İnceleme / Boykot', pref: '🟢 Tercih Edilebilir', alt: '⭐ Alternatifli', allCat: '📂 Tüm Kategoriler', more: 'Daha Fazla Göster', found: 'marka listeleniyor', empty: 'Sonuç bulunamadı.', altLbl: 'Alternatifler:', src: '🔗 Kaynağı Görüntüle' },
+  de: { sub: 'Bewusst konsumieren, richtig wählen', ph: 'Marke, Mutterkonzern oder Barcode...', scan: 'Scannen', all: 'Alle', rev: '🔴 Prüfung / Boykott', pref: '🟢 Empfehlenswert', alt: '⭐ Mit Alternativen', allCat: '📂 Alle Kategorien', more: 'Mehr anzeigen', found: 'Marken gefunden', empty: 'Keine Ergebnisse gefunden.', altLbl: 'Alternativen:', src: '🔗 Quelle ansehen' },
+  en: { sub: 'Consume Consciously, Choose Right', ph: 'Search brand, parent company or barcode...', scan: 'Scan', all: 'All', rev: '🔴 Review / Boycott', pref: '🟢 Recommended', alt: '⭐ Alternatives', allCat: '📂 All Categories', more: 'Show More', found: 'brands listed', empty: 'No results found.', altLbl: 'Alternatives:', src: '🔗 View Source' }
 };
 
 function getLogoUrl(b) {
@@ -33,7 +22,7 @@ function getLogoUrl(b) {
     const key = Object.keys(PARENT_DOMAINS).find(k => p.includes(k));
     d = key ? PARENT_DOMAINS[key] : (b.marka || '').toLowerCase().replace(/[^a-z0-9]/g, '') + '.com';
   }
-    return d.length > 4 ? 'https://' + 'icons' + '.duckduckgo.' + 'com/ip3/' + d + '.ico' : '';
+  return d.length > 4 ? 'https://' + 'icons' + '.duckduckgo.' + 'com/ip3/' + d + '.ico' : '';
 }
 
 function setLang(l) {
@@ -54,6 +43,14 @@ function guessCat(b) {
   if (/apple|samsung|microsoft|google|meta|sony|bosch|siemens|arcelik|beko|dyson|philips|xiaomi|lg|asus|huawei/.test(s)) return 'Teknoloji & Ev Aletleri';
   return 'Diğer';
 }
+const SMART_ALTS = [
+  { test: /a101|carrefour|aldi|lidl|rewe|tesco|auchan|walmart|edenred|sodexo/i, alts: 'BİM, ŞOK, Migros, Tarım Kredi' },
+  { test: /5gum|orbit|mentos|vivident|falım|haribo|mars|snickers|twix|milka|kitkat|oreo|5star|7days/i, alts: 'Torku, Eti, Ülker, Şölen' },
+  { test: /coca|pepsi|fanta|sprite|7up|lipton|nescafe|jacobs|starbucks|red bull|monster/i, alts: 'Uludağ, Çaykur, Beypazarı, Niğde Gazozu, Kızılay' },
+  { test: /ariel|persil|omo|tide|finish|fairy|domestos|cif|ajax|vanish|henkel|reckitt/i, alts: 'ABC, Boron, Bingo, Asperox, Duru' },
+  { test: /loreal|garnier|nivea|dove|head|pantene|elidor|gillette|oral-b|colgate|sensodyne|rexona|axe|8x4/i, alts: 'Duru, Arko, Eyüp Sabri Tuncer, Otacı, Bebak' },
+  { test: /zara|bershka|pull|stradivarius|mango|hm|nike|adidas|puma|lcw|defacto/i, alts: 'Koton, Mavi, Kiğılı, Sarar, DeFacto' }
+];
 
 async function init() {
   try {
@@ -61,13 +58,11 @@ async function init() {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const raw = await res.json();
     allBrands = raw.map(b => Object.assign({}, b, { kategori: guessCat(b) })).sort((a, b) => (a.marka || '').localeCompare(b.marka || '', 'tr'));
-    const prefByCat = {};
-    allBrands.filter(b => b.status === 'preferred').forEach(b => {
-      if (!prefByCat[b.kategori]) prefByCat[b.kategori] = [];
-      if (prefByCat[b.kategori].length < 4) prefByCat[b.kategori].push(b.marka);
-    });
     allBrands.forEach(b => {
-      if (b.status !== 'preferred' && prefByCat[b.kategori]) b.autoAlts = prefByCat[b.kategori].join(', ');
+      if (b.status === 'preferred') return;
+      const txt = (b.marka || '') + ' ' + (b.anaFirma || '');
+      const match = SMART_ALTS.find(s => s.test.test(txt));
+      if (match) b.autoAlts = match.alts;
     });
     if (categorySelect) Array.from(new Set(allBrands.map(b => b.kategori))).sort().forEach(c => categorySelect.add(new Option(c, c)));
     applyFilters();
