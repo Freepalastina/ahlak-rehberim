@@ -15,10 +15,25 @@ const I18N = {
   en: { sub: 'Consume Consciously, Choose Right', ph: 'Search brand or parent company...', scan: 'Scan', all: 'All', rev: '🔴 Review / Boycott', pref: '🟢 Recommended', alt: '⭐ Alternatives', allCat: '📂 All Categories', more: 'Show More', found: 'brands listed', empty: 'No results found.', src: '🔗 View Source' }
 };
 
+const PARENT_DOMAINS = {
+  mars: 'mars.com', nestle: 'nestle.com', unilever: 'unilever.com', procter: 'pg.com',
+  mondelez: 'mondelezinternational.com', pepsi: 'pepsico.com', coca: 'coca-cola.com',
+  loreal: 'loreal.com', henkel: 'henkel.com', ferrero: 'ferrero.com', danone: 'danone.com',
+  reckitt: 'reckitt.com', beiersdorf: 'beiersdorf.com', bayer: 'bayer.com', teva: 'tevapharm.com',
+  colgate: 'colgatepalmolive.com', estee: 'elcompanies.com', lvmh: 'lvmh.com', puig: 'puig.com',
+  haleon: 'haleon.com', kenvue: 'kenvue.com', mattel: 'mattel.com', lactalis: 'lactalis.fr',
+  rewe: 'rewe-group.com', spar: 'spar.at', aldi: 'aldi-sued.de', lidl: 'lidl.at', schwarz: 'gruppe.schwarz',
+  arcelik: 'arcelikglobal.com', bsh: 'bsh-group.com', seb: 'groupeseb.com', deichmann: 'deichmann.com'
+};
+
 function getLogoUrl(b) {
   let d = (b.logoUrl || '').trim().replace(/^https?:\/\//i, '').replace(/^www\./i, '').split('/').shift();
-  if (!d) d = (b.marka || '').toLowerCase().replace(/[^a-z0-9]/g, '') + '.com';
-    return d.length > 4 ? 'https://' + 'icons' + '.duckduckgo.com' + '/ip3/' + d + '.ico' : '';
+  if (!d) {
+    const p = (b.anaFirma || '').toLowerCase();
+    const key = Object.keys(PARENT_DOMAINS).find(k => p.includes(k));
+    d = key ? PARENT_DOMAINS[key] : (b.marka || '').toLowerCase().replace(/[^a-z0-9]/g, '') + '.com';
+  }
+  return d.length > 4 ? 'https://' + 'icons' + '://' + d + '.ico' : '';
 }
 
 function setLang(l) {
@@ -68,7 +83,7 @@ function render() {
     if (srcUrl && !/^https?:\/\//i.test(srcUrl)) srcUrl = 'https://' + srcUrl;
     return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')">
       <div class="card-main">
-        <div class="brand-avatar">${logo ? `<img src="${logo}" loading="lazy" onerror="this.parentElement.textContent='${ini}'">` : ini}</div>
+        <div class="brand-avatar">${logo ? `<img src="${logo}" loading="lazy" onload="if(this.naturalWidth<=16)this.parentElement.textContent='${ini}'" onerror="this.parentElement.textContent='${ini}'">` : ini}</div>
         <div class="card-info">
           <div class="card-head"><span class="brand-name">${b.marka}</span><span class="badge ${isPref ? 'preferred' : 'review'}">${isPref ? t.pref : t.rev}</span></div>
           ${b.anaFirma ? `<div class="meta">🏢 ${b.anaFirma}</div>` : ''}
