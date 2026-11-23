@@ -151,4 +151,8 @@ if (pdfBtn) {
 }
 
 }
+const legalModal = document.getElementById('legalModal'), acceptLegalBtn = document.getElementById('acceptLegalBtn'), openLegalLink = document.getElementById('openLegalLink');
+if (legalModal && localStorage.getItem('ahlak_legal_ok') === '1') legalModal.style.display = 'none';
+if (acceptLegalBtn) acceptLegalBtn.onclick = () => { localStorage.setItem('ahlak_legal_ok', '1'); legalModal.style.display = 'none'; };
+if (openLegalLink) openLegalLink.onclick = e => { e.preventDefault(); legalModal.style.display = 'flex'; };
 
