@@ -17,7 +17,7 @@ const I18N = {
 
 function getLogoUrl(b) {
   let d = (b.logoUrl || '').trim().replace(/^https?:\/\//i, '').replace(/^www\./i, '').split('/').shift();
-  if (!d) {
+  if (!d || /^5gum\.com$/i.test(d)) {
     const p = (b.anaFirma || '').toLowerCase();
     const key = Object.keys(PARENT_DOMAINS).find(k => p.includes(k));
     d = key ? PARENT_DOMAINS[key] : (b.marka || '').toLowerCase().replace(/[^a-z0-9]/g, '') + '.com';
@@ -101,7 +101,7 @@ function render() {
     const meta = [b.anaFirma ? '🏢 ' + b.anaFirma : '', b.kategori].filter(Boolean).join(' • ');
     let srcUrl = (b.kaynak || '').trim();
     if (srcUrl && !/^https?:\/\//i.test(srcUrl)) srcUrl = 'https://' + srcUrl;
-    return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')"><div class="card-main"><div class="brand-avatar">${logo ? `<img src="${logo}" loading="lazy" onload="if(this.naturalWidth<=32)this.parentElement.textContent='${ini}'" onerror="this.parentElement.textContent='${ini}'">` : ini}</div><div class="card-info"><div class="card-head"><span class="brand-name">${b.marka}</span><span class="badge ${isPref ? 'preferred' : 'review'}">${isPref ? t.pref : t.rev}</span></div>${meta ? `<div class="meta">${meta}</div>` : ''}</div></div>${alts ? `<div class="alt">⭐ <b>${t.altLbl}</b> ${alts}</div>` : ''}${srcUrl ? `<div class="details" hidden><a href="${srcUrl}" target="_blank" rel="noopener">${t.src}</a></div>` : ''}</article>`;
+    return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')"><div class="card-main"><div class="brand-avatar">${logo ? `<img src="${logo}" loading="lazy" onload="if(this.naturalWidth<=16)this.parentElement.textContent='${ini}'" onerror="this.parentElement.textContent='${ini}'">` : ini}</div><div class="card-info"><div class="card-head"><span class="brand-name">${b.marka}</span><span class="badge ${isPref ? 'preferred' : 'review'}">${isPref ? t.pref : t.rev}</span></div>${meta ? `<div class="meta">${meta}</div>` : ''}</div></div>${alts ? `<div class="alt">⭐ <b>${t.altLbl}</b> ${alts}</div>` : ''}${srcUrl ? `<div class="details" hidden><a href="${srcUrl}" target="_blank" rel="noopener">${t.src}</a></div>` : ''}</article>`;
   }).join('');
 
   loadMoreBtn.hidden = shown >= filtered.length;
@@ -144,7 +144,6 @@ if (pdfBtn) {
     document.body.removeChild(a);
   };
 }
-
 
 }
 
