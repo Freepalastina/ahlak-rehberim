@@ -15,7 +15,7 @@ function getLogoUrl(b) {
   let d = (b.logoUrl || '').trim();
   if (!d) return '';
   d = d.replace(/^https?:\/\//i, '').replace(/^www\./i, '').split('/').shift();
-  return d ? 'https://google.com' + d + '&sz=128' : '';
+  return d ? 'https://google.com/s2/favicons?domain=' + d + '&sz=128' : '';
 }
 
 function setLang(l) {
