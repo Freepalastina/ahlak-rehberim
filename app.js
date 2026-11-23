@@ -1,3 +1,7 @@
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations().then(regs => regs.forEach(r => r.unregister()));
+}
+
 let allBrands = [], filtered = [], shown = 40, currentFilter = 'all', lang = 'tr', scanner = null;
 const grid = document.getElementById('brandGrid'), countBar = document.getElementById('countBar'), searchInput = document.getElementById('searchInput'), categorySelect = document.getElementById('categorySelect'), loadMoreBtn = document.getElementById('loadMoreBtn');
 
@@ -14,13 +18,9 @@ function getLogoUrl(b) {
   if (raw && /\.(png|jpg|jpeg|svg|webp)(\?.*)?$/i.test(raw)) return raw;
   let domain = '';
   if (raw) { try { domain = new URL(raw).hostname.replace(/^www\./, ''); } catch (e) {} }
-  if (!domain && Array.isArray(b.kaynaklar)) {
-    const src = b.kaynaklar.find(x => x && x.url);
-    if (src) { try { const h = new URL(src.url.split(',').shift().trim()).hostname.replace(/^www\./, ''); if (!['wikipedia.org', 'linkedin.com', 'timesofisrael.com', 'jpost.com', 'tag24.de'].some(d => h.includes(d))) domain = h; } catch (e) {} }
-  }
   const k = norm(b.marka);
   if (!domain && k.length >= 3) domain = k + '.com';
-  return domain ? 'https://google.com' + domain + '&sz=128' : '';
+  return domain ? 'https://icon.horse' + domain : '';
 }
 
 function setLang(l) {
@@ -34,6 +34,7 @@ function setLang(l) {
 async function init() {
   try {
     const res = await fetch('data.json?v=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
     const raw = await res.json();
     const map = new Map();
     raw.forEach(b => {
@@ -46,7 +47,7 @@ async function init() {
     allBrands = Array.from(map.values()).sort((a, b) => a.marka.localeCompare(b.marka, 'tr'));
     Array.from(new Set(allBrands.map(b => b.kategori).filter(Boolean))).sort().forEach(c => categorySelect.add(new Option(c, c)));
     applyFilters();
-  } catch (e) { grid.innerHTML = '<p class="empty">Veriler yüklenemedi.</p>'; }
+  } catch (e) { grid.innerHTML = '<p class="empty">Hata: ' + e.message + '</p>'; }
 }
 
 function applyFilters() {
@@ -63,7 +64,7 @@ function render() {
     const alts = (b.alternatifler || []).map(a => a.marka).filter(Boolean).join(', ');
     const meta = [b.anaFirma ? '🏢 ' + b.anaFirma : '', b.kategori, b.altKategori].filter(Boolean).join(' • ');
     const src = Array.isArray(b.kaynaklar) ? b.kaynaklar.find(k => k && k.url) : null;
-    return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')"><div class="card-main"><div class="brand-avatar">${logo ? `<img src="${logo}" loading="lazy" onload="if(this.naturalWidth<=1)this.parentElement.textContent='${ini}'" onerror="this.parentElement.textContent='${ini}'">` : ini}</div><div class="card-info"><div class="card-head"><span class="brand-name">${b.marka}</span><span class="badge ${isPref ? 'preferred' : 'review'}">${isPref ? t.pref : t.rev}</span></div>${meta ? `<div class="meta">${meta}</div>` : ''}</div></div>${alts ? `<div class="alt">⭐ <b>${t.altLbl}</b> ${alts}</div>` : ''}${(b.not || src) ? `<div class="details" hidden>${b.not ? `<p>${b.not}</p>` : ''}${src ? `<a href="${src.url.split(',').shift().trim()}" target="_blank">${t.src}</a>` : ''}</div>` : ''}</article>`;
+    return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')"><div class="card-main"><div class="brand-avatar">${logo ? `<img src="${logo}" loading="lazy" onerror="this.parentElement.textContent='${ini}'">` : ini}</div><div class="card-info"><div class="card-head"><span class="brand-name">${b.marka}</span><span class="badge ${isPref ? 'preferred' : 'review'}">${isPref ? t.pref : t.rev}</span></div>${meta ? `<div class="meta">${meta}</div>` : ''}</div></div>${alts ? `<div class="alt">⭐ <b>${t.altLbl}</b> ${alts}</div>` : ''}${(b.not || src) ? `<div class="details" hidden>${b.not ? `<p>${b.not}</p>` : ''}${src ? `<a href="${src.url.split(',').shift().trim()}" target="_blank">${t.src}</a>` : ''}</div>` : ''}</article>`;
   }).join('');
   loadMoreBtn.hidden = shown >= filtered.length;
 }
@@ -72,7 +73,7 @@ document.querySelectorAll('.lang-btn').forEach(b => b.onclick = () => { document
 loadMoreBtn.onclick = () => { shown += 40; render(); }; searchInput.oninput = applyFilters; categorySelect.onchange = applyFilters;
 document.querySelectorAll('.pill').forEach(p => p.onclick = () => { document.querySelectorAll('.pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); currentFilter = p.dataset.filter; applyFilters(); });
 const scanBox = document.getElementById('scanner-box');
-document.getElementById('openScanBtn').onclick = () => { if (typeof Html5Qrcode === 'undefined') { alert('Scanner yükleniyor, tekrar deneyin.'); return; } scanBox.hidden = false; scanner = new Html5Qrcode('reader'); scanner.start({ facingMode: 'environment' }, { fps: 10, qrbox: { width: 220, height: 140 } }, txt => { searchInput.value = txt; stopScan(); applyFilters(); }).catch(() => stopScan()); };
+document.getElementById('openScanBtn').onclick = () => { if (typeof Html5Qrcode === 'undefined') { alert('Scanner yükleniyor...'); return; } scanBox.hidden = false; scanner = new Html5Qrcode('reader'); scanner.start({ facingMode: 'environment' }, { fps: 10, qrbox: { width: 220, height: 140 } }, txt => { searchInput.value = txt; stopScan(); applyFilters(); }).catch(() => stopScan()); };
 function stopScan() { scanBox.hidden = true; if (scanner) scanner.stop().then(() => scanner.clear()).catch(() => {}); }
 document.getElementById('closeScanBtn').onclick = stopScan; document.getElementById('manualSearchBtn').onclick = () => { searchInput.value = document.getElementById('manualBarcode').value; stopScan(); applyFilters(); };
 init();
