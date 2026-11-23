@@ -38,6 +38,7 @@ async function init() {
   } catch (e) { grid.innerHTML = '<p class="empty">Hata: ' + e.message + '</p>'; }
 }
 
+let lastBarcode = '';
 function applyFilters() {
   const q = searchInput.value.toLowerCase().trim();
   filtered = allBrands.filter(b => {
@@ -45,6 +46,17 @@ function applyFilters() {
     return mTxt && (currentFilter === 'all' || b.status === currentFilter);
   });
   shown = 40; render();
+  if (!filtered.length && /^\d{8,14}$/.test(q) && q !== lastBarcode) {
+    lastBarcode = q;
+    countBar.textContent = '🔍 Barkod aranıyor...';
+    fetch('https://' + 'world.' + 'openfoodfacts.org/api/v0/product/' + q + '.json')
+      .then(r => r.json())
+      .then(d => {
+        const rawB = (d.product && (d.product.brands || d.product.brand_owner)) || '';
+        const brand = rawB.split(',').shift().trim();
+        if (brand) { searchInput.value = brand; applyFilters(); }
+      }).catch(() => {});
+  }
 }
 
 function render() {
