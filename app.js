@@ -125,13 +125,14 @@ function render() {
     const isPref = b.status === 'preferred';
     const dom = getLogoDomain(b);
     const ini = (b.marka || '?').slice(0, 2).toUpperCase();
-    const ddg = dom ? 'https://' + 'icons' + '.duckduckgo.' + 'com/ip3/' + dom + '.ico' : '';
-    const ih = dom ? 'https://' + 'icon.' + 'horse' + '/icon/' + dom : '';
+    const u1 = dom ? 'https://' + 'icons' + '.duckduckgo.' + 'com/ip3/' + dom + '.ico' : '';
+    const u2 = dom ? 'https://' + 'icon.' + 'horse' + '/icon/' + dom : '';
+    const u3 = dom ? 'https://' + 'favicon.' + 'im/' + dom + '?larger=true' : '';
     const alts = (lang === 'tr' ? b.altsTr : b.altsEu) || '';
     const meta = [b.anaFirma ? '🏢 ' + b.anaFirma : '', b.kategori].filter(Boolean).join(' • ');
     let srcUrl = (b.kaynak || '').trim();
     if (srcUrl && !/^https?:\/\//i.test(srcUrl)) srcUrl = 'https://' + srcUrl;
-    const imgHtml = dom ? `<img src="${ddg}" loading="lazy" onload="if(this.naturalWidth<=16||this.naturalWidth===64){this.onerror=null;this.src='${ih}';}" onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='${ih}';}else{this.parentElement.textContent='${ini}';}">` : ini;
+    const imgHtml = dom ? `<img src="${u1}" loading="lazy" onload="if(this.naturalWidth<=16||this.naturalWidth===64)this.onerror()" onerror="const s=this.dataset.s||0;if(s==0){this.dataset.s=1;this.src='${u2}';}else if(s==1){this.dataset.s=2;this.src='${u3}';}else{this.parentElement.textContent='${ini}';}">` : ini;
     const altHtml = alts ? `<div class="alt">⭐ <b>${t.altLbl}</b> ${alts}</div>` : '';
     const detHtml = srcUrl ? `<div class="details" hidden><a href="${srcUrl}" target="_blank" rel="noopener">${t.src}</a></div>` : '';
     return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')"><div class="card-main"><div class="brand-avatar">${imgHtml}</div><div class="card-info"><div class="card-head"><span class="brand-name">${b.marka}</span><span class="badge ${isPref ? 'preferred' : 'review'}">${isPref ? t.pref : t.rev}</span></div>${meta ? `<div class="meta">${meta}</div>` : ''}</div></div>${altHtml}${detHtml}</article>`;
