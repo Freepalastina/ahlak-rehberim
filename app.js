@@ -124,14 +124,16 @@ function render() {
   grid.innerHTML = filtered.slice(0, shown).map(b => {
     const isPref = b.status === 'preferred';
     const dom = getLogoDomain(b);
+    const cleanDom = dom.replace(/^www\./i, '');
     const ini = (b.marka || '?').slice(0, 2).toUpperCase();
-    const u1 = dom ? 'https://' + 't0.gstatic.' + 'com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://' + dom + '&size=64' : '';
-    const u2 = dom ? 'https://' + 'icons' + '.duckduckgo.' + 'com/ip3/' + dom + '.ico' : '';
+    const u1 = cleanDom ? 'https://' + 't0.gstatic.' + 'com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://www.' + cleanDom + '&size=64' : '';
+    const u2 = cleanDom ? 'https://' + 't0.gstatic.' + 'com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://' + cleanDom + '&size=64' : '';
+    const u3 = cleanDom ? 'https://' + 'icons' + '.duckduckgo.' + 'com/ip3/' + cleanDom + '.ico' : '';
     const alts = (lang === 'tr' ? b.altsTr : b.altsEu) || '';
     const meta = [b.anaFirma ? '🏢 ' + b.anaFirma : '', b.kategori].filter(Boolean).join(' • ');
     let srcUrl = (b.kaynak || '').trim();
     if (srcUrl && !/^https?:\/\//i.test(srcUrl)) srcUrl = 'https://' + srcUrl;
-    const imgHtml = dom ? `<img src="${u1}" loading="lazy" onload="if(this.naturalWidth<=16)this.onerror()" onerror="if(!this.dataset.s){this.dataset.s=1;this.src='${u2}';}else{this.parentElement.textContent='${ini}';}">` : ini;
+    const imgHtml = cleanDom ? `<img src="${u1}" loading="lazy" onload="if(this.naturalWidth<=16)this.onerror()" onerror="const s=this.dataset.s||0;if(s==0){this.dataset.s=1;this.src='${u2}';}else if(s==1){this.dataset.s=2;this.src='${u3}';}else{this.parentElement.textContent='${ini}';}">` : ini;
     const altHtml = alts ? `<div class="alt">⭐ <b>${t.altLbl}</b> ${alts}</div>` : '';
     const detHtml = srcUrl ? `<div class="details" hidden><a href="${srcUrl}" target="_blank" rel="noopener">${t.src}</a></div>` : '';
     return `<article class="card ${isPref ? 'preferred' : 'review'}" onclick="this.querySelector('.details')?.toggleAttribute('hidden')"><div class="card-main"><div class="brand-avatar">${imgHtml}</div><div class="card-info"><div class="card-head"><span class="brand-name">${b.marka}</span><span class="badge ${isPref ? 'preferred' : 'review'}">${isPref ? t.pref : t.rev}</span></div>${meta ? `<div class="meta">${meta}</div>` : ''}</div></div>${altHtml}${detHtml}</article>`;
