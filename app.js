@@ -34,7 +34,7 @@ const PARENT_DOMAINS = {
 
 function getLogoDomain(b) {
   const raw = (b.logoUrl || '').trim();
-  let d = (!raw || /google|duckduckgo|5gum/i.test(raw)) ? '' : raw.replace(/^https?:\/\//i, '').replace(/^www\./i, '').split('/').shift();
+  let d = (!raw || /google|duckduckgo|5gum|blend-a-med|blomberg|bounty/i.test(raw)) ? '' : raw.replace(/^https?:\/\//i, '').replace(/^www\./i, '').split('/').shift();
   if (!d) {
     const p = ((b.anaFirma || '') + ' ' + (b.marka || '')).toLowerCase();
     const key = Object.keys(PARENT_DOMAINS).find(k => p.includes(k));
