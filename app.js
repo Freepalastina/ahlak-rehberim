@@ -34,13 +34,13 @@ const PARENT_DOMAINS = {
 
 function getLogoDomain(b) {
   const raw = (b.logoUrl || '').trim();
-  let d = (!raw || /google|duckduckgo|5gum|blend-a-med|blomberg|bounty/i.test(raw)) ? '' : raw.replace(/^https?:\/\//i, '').replace(/^www\./i, '').split('/').shift();
-  if (!d) {
-    const p = ((b.anaFirma || '') + ' ' + (b.marka || '')).toLowerCase();
-    const key = Object.keys(PARENT_DOMAINS).find(k => p.includes(k));
-    d = key ? PARENT_DOMAINS[key] : (b.marka || '').toLowerCase().replace(/[^a-z0-9]/g, '') + '.com';
+  const p = ((b.anaFirma || '') + ' ' + (b.marka || '')).toLowerCase();
+  const key = Object.keys(PARENT_DOMAINS).find(k => p.includes(k));
+  if (!raw || /google|duckduckgo|5gum|blend-a-med|blomberg|bounty/i.test(raw)) {
+    return key ? PARENT_DOMAINS[key] : (b.marka || '').toLowerCase().replace(/[^a-z0-9]/g, '') + '.com';
   }
-  return d.length > 4 ? d : '';
+  const d = raw.replace(/^https?:\/\//i, '').replace(/^www\./i, '').split('/').shift();
+  return d.length > 4 ? d : (key ? PARENT_DOMAINS[key] : '');
 }
 
 function setLang(l) {
