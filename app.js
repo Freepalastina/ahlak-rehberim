@@ -33,10 +33,11 @@ const PARENT_DOMAINS = {
 };
 
 function getLogoDomain(b) {
-  let d = (b.logoUrl || '').trim().replace(/^https?:\/\//i, '').replace(/^www\./i, '').split('/').shift();
-  const p = ((b.anaFirma || '') + ' ' + (b.marka || '')).toLowerCase();
-  const key = Object.keys(PARENT_DOMAINS).find(k => p.includes(k));
-  if (!d || /^5gum\.com$/i.test(d)) {
+  const raw = (b.logoUrl || '').trim();
+  let d = (!raw || /google|duckduckgo|5gum/i.test(raw)) ? '' : raw.replace(/^https?:\/\//i, '').replace(/^www\./i, '').split('/').shift();
+  if (!d) {
+    const p = ((b.anaFirma || '') + ' ' + (b.marka || '')).toLowerCase();
+    const key = Object.keys(PARENT_DOMAINS).find(k => p.includes(k));
     d = key ? PARENT_DOMAINS[key] : (b.marka || '').toLowerCase().replace(/[^a-z0-9]/g, '') + '.com';
   }
   return d.length > 4 ? d : '';
