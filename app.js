@@ -125,9 +125,9 @@ function render() {
     const isPref = b.status === 'preferred';
     const dom = getLogoDomain(b);
     const ini = (b.marka || '?').slice(0, 2).toUpperCase();
-    const u1 = dom ? 'https://' + 'icons' + '.duckduckgo.' + 'com/ip3/' + dom + '.ico' : '';
-    const u2 = dom ? 'https://' + 'icon.' + 'horse' + '/icon/' + dom : '';
-    const u3 = dom ? 'https://' + 'favicon.' + 'im/' + dom + '?larger=true' : '';
+    const u1 = dom ? 'https://' + 'unavatar' + '.io/' + dom + '?fallback=false' : '';
+    const u2 = dom ? 'https://' + 'favicon.' + 'im/' + dom + '?larger=true' : '';
+    const u3 = dom ? 'https://' + 'icons' + '.duckduckgo.' + 'com/ip3/' + dom + '.ico' : '';
     const alts = (lang === 'tr' ? b.altsTr : b.altsEu) || '';
     const meta = [b.anaFirma ? '🏢 ' + b.anaFirma : '', b.kategori].filter(Boolean).join(' • ');
     let srcUrl = (b.kaynak || '').trim();
