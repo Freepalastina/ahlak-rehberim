@@ -85,7 +85,7 @@
   {"marka": "Axel Springer", "anaFirma": "Axel Springer SE", "logoUrl": "axelspringer.com", "status": "review", "kaynak": ""},
   {"marka": "Axion", "anaFirma": "Colgate-Palmolive Company", "logoUrl": "colgatepalmolive.com", "status": "review", "kaynak": ""},
   {"marka": "Aydın Örme", "anaFirma": "Aydın Örme Sanayi ve Ticaret A.Ş.", "logoUrl": "aydinorme.com.tr", "status": "review", "kaynak": ""},
-  {"marka": "B&M", "anaFirma": "B&M European Value Retail S.A.", "logoUrl": "https://bmstores.co.uk", "status": "review", "kaynak": ""},
+  {"marka": "B&M", "anaFirma": "B&M European Value Retail S.A.", "logoUrl": "https://bmstores.co.uk", "status": "preferred", "kaynak": ""},
   {"marka": "B&Q", "anaFirma": "Kingfisher plc", "logoUrl": "https://diy.com", "status": "preferred", "kaynak": ""},
   {"marka": "Babou", "anaFirma": "B&M European Value Retail S.A.", "logoUrl": "https://bmstores.fr", "status": "preferred", "kaynak": ""},
   {"marka": "Badoit", "anaFirma": "Danone S.A.", "logoUrl": "https://badoit.fr", "status": "review", "kaynak": "https://danone.com"},
